@@ -1,5 +1,14 @@
 {
     "empty" :"Empty",
+    "business_name" : "PetroJac",
+    "welcome_to_businessName": "Welcome to {businessName}",
+    "@welcome_to_businessName": {
+        "placeholders": {
+            "businessName": {
+                "type": "String"
+            }
+        }
+    },
     "search": "Search",
     "error": "Error",
     "understood": "Understood",

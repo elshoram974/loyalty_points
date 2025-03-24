@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m2(pageName) => "الصفحة \'${pageName}\' غير موجودة في الصفحات";
 
+  static String m3(businessName) => "مرحبا بك في ${businessName}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accountAlreadyExistsForThatEmail":
@@ -34,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureYouWantToReturnBack": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد العودة؟"),
         "back": MessageLookupByLibrary.simpleMessage("رجوع"),
+        "business_name": MessageLookupByLibrary.simpleMessage("بتروجاك"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cantBeLessThan": m0,
         "cantBeMoreThan": m1,
@@ -113,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
         "unknownErrorOccurred":
             MessageLookupByLibrary.simpleMessage("حدث خطأ غير معروف."),
+        "welcome_to_businessName": m3,
         "wrongPasswordProvidedForThatUser":
             MessageLookupByLibrary.simpleMessage(
                 "تم تقديم كلمة مرور خاطئة لهذا المستخدم.")

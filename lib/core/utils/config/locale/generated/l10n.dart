@@ -60,6 +60,26 @@ class S {
     );
   }
 
+  /// `PetroJac`
+  String get business_name {
+    return Intl.message(
+      'PetroJac',
+      name: 'business_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to {businessName}`
+  String welcome_to_businessName(String businessName) {
+    return Intl.message(
+      'Welcome to $businessName',
+      name: 'welcome_to_businessName',
+      desc: '',
+      args: [businessName],
+    );
+  }
+
   /// `Search`
   String get search {
     return Intl.message(

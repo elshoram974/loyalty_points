@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m2(pageName) => "Page \'${pageName}\' not found in pages";
 
+  static String m3(businessName) => "Welcome to ${businessName}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accountAlreadyExistsForThatEmail":
@@ -34,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "areYouSureYouWantToReturnBack": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to return back"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "business_name": MessageLookupByLibrary.simpleMessage("PetroJac"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cantBeLessThan": m0,
         "cantBeMoreThan": m1,
@@ -110,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
         "unknownErrorOccurred":
             MessageLookupByLibrary.simpleMessage("An unknown error occurred."),
+        "welcome_to_businessName": m3,
         "wrongPasswordProvidedForThatUser":
             MessageLookupByLibrary.simpleMessage(
                 "Wrong password provided for that user.")

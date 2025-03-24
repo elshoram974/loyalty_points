@@ -1,5 +1,14 @@
 {
     "empty": "فارغ",
+    "business_name" : "بتروجاك",
+    "welcome_to_businessName": "مرحبا بك في {businessName}",
+    "@welcome_to_businessName": {
+        "placeholders": {
+            "businessName": {
+                "type": "String"
+            }
+        }
+    },
     "search": "بحث",
     "error": "خطأ",
     "understood": "فهمت",
