@@ -50,21 +50,11 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Terms & Conditions`
-  String get termsConditions {
+  /// `Empty`
+  String get empty {
     return Intl.message(
-      'Terms & Conditions',
-      name: 'termsConditions',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Privacy Policy`
-  String get privacyPolicy {
-    return Intl.message(
-      'Privacy Policy',
-      name: 'privacyPolicy',
+      'Empty',
+      name: 'empty',
       desc: '',
       args: [],
     );
@@ -75,16 +65,6 @@ class S {
     return Intl.message(
       'Search',
       name: 'search',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Report Details`
-  String get reportDetails {
-    return Intl.message(
-      'Report Details',
-      name: 'reportDetails',
       desc: '',
       args: [],
     );
@@ -110,61 +90,11 @@ class S {
     );
   }
 
-  /// `Please answer all questions`
-  String get pleaseAnswerAllQuestions {
-    return Intl.message(
-      'Please answer all questions',
-      name: 'pleaseAnswerAllQuestions',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Save`
   String get save {
     return Intl.message(
       'Save',
       name: 'save',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Type your answer here ...`
-  String get typeYourAnswerHere_ {
-    return Intl.message(
-      'Type your answer here ...',
-      name: 'typeYourAnswerHere_',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add Report`
-  String get addReport {
-    return Intl.message(
-      'Add Report',
-      name: 'addReport',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Question {number}:`
-  String questionNo(String number) {
-    return Intl.message(
-      'Question $number:',
-      name: 'questionNo',
-      desc: '',
-      args: [number],
-    );
-  }
-
-  /// `Empty`
-  String get empty {
-    return Intl.message(
-      'Empty',
-      name: 'empty',
       desc: '',
       args: [],
     );
@@ -177,36 +107,6 @@ class S {
       name: 'totalOrder',
       desc: '',
       args: [],
-    );
-  }
-
-  /// `{amount} EGP`
-  String amountEGP(String amount) {
-    return Intl.message(
-      '$amount EGP',
-      name: 'amountEGP',
-      desc: '',
-      args: [amount],
-    );
-  }
-
-  /// `Order No.`
-  String get orderNo {
-    return Intl.message(
-      'Order No.',
-      name: 'orderNo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Order No: {orderNumber}`
-  String orderNoNumber(String orderNumber) {
-    return Intl.message(
-      'Order No: $orderNumber',
-      name: 'orderNoNumber',
-      desc: '',
-      args: [orderNumber],
     );
   }
 
@@ -230,26 +130,6 @@ class S {
     );
   }
 
-  /// `Report No.`
-  String get reportNo {
-    return Intl.message(
-      'Report No.',
-      name: 'reportNo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Report No: {reportNumber}`
-  String reportNoNumber(String reportNumber) {
-    return Intl.message(
-      'Report No: $reportNumber',
-      name: 'reportNoNumber',
-      desc: '',
-      args: [reportNumber],
-    );
-  }
-
   /// `Select date`
   String get selectDate {
     return Intl.message(
@@ -257,66 +137,6 @@ class S {
       name: 'selectDate',
       desc: '',
       args: [],
-    );
-  }
-
-  /// `Find what you're looking for`
-  String get findWhatYouAreLookingFor {
-    return Intl.message(
-      'Find what you\'re looking for',
-      name: 'findWhatYouAreLookingFor',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Reports`
-  String get reports {
-    return Intl.message(
-      'Reports',
-      name: 'reports',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Orders`
-  String get orders {
-    return Intl.message(
-      'Orders',
-      name: 'orders',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Unverified`
-  String get unverified {
-    return Intl.message(
-      'Unverified',
-      name: 'unverified',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Verified`
-  String get verified {
-    return Intl.message(
-      'Verified',
-      name: 'verified',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Last Order : {date}`
-  String lastOrder(String date) {
-    return Intl.message(
-      'Last Order : $date',
-      name: 'lastOrder',
-      desc: '',
-      args: [date],
     );
   }
 
@@ -335,16 +155,6 @@ class S {
     return Intl.message(
       'Enter your mobile number',
       name: 'enterYourMobileNumber',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Log in Now`
-  String get loginNow {
-    return Intl.message(
-      'Log in Now',
-      name: 'loginNow',
       desc: '',
       args: [],
     );
@@ -430,56 +240,6 @@ class S {
     );
   }
 
-  /// `Enable Service`
-  String get enableService {
-    return Intl.message(
-      'Enable Service',
-      name: 'enableService',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `The location service on the device is disabled.`
-  String get locationServiceDisabled {
-    return Intl.message(
-      'The location service on the device is disabled.',
-      name: 'locationServiceDisabled',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Allow Location Access`
-  String get grantLocationAccess {
-    return Intl.message(
-      'Allow Location Access',
-      name: 'grantLocationAccess',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please grant permission to access your device's location`
-  String get requestLocationPermission {
-    return Intl.message(
-      'Please grant permission to access your device\'s location',
-      name: 'requestLocationPermission',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `successfully`
-  String get successfully {
-    return Intl.message(
-      'successfully',
-      name: 'successfully',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Log out`
   String get logOut {
     return Intl.message(
@@ -505,16 +265,6 @@ class S {
     return Intl.message(
       'No internet connection',
       name: 'noInternetConnection',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Needs synchronization`
-  String get needsSynchronization {
-    return Intl.message(
-      'Needs synchronization',
-      name: 'needsSynchronization',
       desc: '',
       args: [],
     );
@@ -600,36 +350,6 @@ class S {
     );
   }
 
-  /// `Enter your credentials to continue.`
-  String get enterYourCredentialsToContinue {
-    return Intl.message(
-      'Enter your credentials to continue.',
-      name: 'enterYourCredentialsToContinue',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Email address`
-  String get emailAddress {
-    return Intl.message(
-      'Email address',
-      name: 'emailAddress',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter email address`
-  String get enterEmailAddress {
-    return Intl.message(
-      'Enter email address',
-      name: 'enterEmailAddress',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `fill this field`
   String get fillField {
     return Intl.message(
@@ -700,21 +420,11 @@ class S {
     );
   }
 
-  /// `Forget password ? `
+  /// `Forget password ?`
   String get forgetPassword {
     return Intl.message(
-      'Forget password ? ',
+      'Forget password ?',
       name: 'forgetPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Recover`
-  String get recover {
-    return Intl.message(
-      'Recover',
-      name: 'recover',
       desc: '',
       args: [],
     );
@@ -730,10 +440,10 @@ class S {
     );
   }
 
-  /// `Don't have an account ? `
+  /// `Don't have an account ?`
   String get doNotHaveAnAccount {
     return Intl.message(
-      'Don\'t have an account ? ',
+      'Don\'t have an account ?',
       name: 'doNotHaveAnAccount',
       desc: '',
       args: [],
@@ -750,21 +460,11 @@ class S {
     );
   }
 
-  /// `Create your own email`
-  String get createYourOwnEmail {
+  /// `Full Name`
+  String get fullName {
     return Intl.message(
-      'Create your own email',
-      name: 'createYourOwnEmail',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Name`
-  String get name {
-    return Intl.message(
-      'Name',
-      name: 'name',
+      'Full Name',
+      name: 'fullName',
       desc: '',
       args: [],
     );
@@ -917,6 +617,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

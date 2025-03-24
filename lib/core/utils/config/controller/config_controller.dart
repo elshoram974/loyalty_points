@@ -29,7 +29,7 @@ class ConfigControllerImp extends ConfigController {
       ? _currentLocal(prefs.getString(AppString.kLocaleCode)!)
       : Get.deviceLocale != null
           ? _currentLocal(Get.deviceLocale!.languageCode)
-          : AppInfo.supportedLocales.first.locale;
+          : AppInfo.supportedLocales.first.toLocale;
 
   Locale _currentLocal(String langCode) {
     final LocaleModel lang = AppInfo.supportedLocales

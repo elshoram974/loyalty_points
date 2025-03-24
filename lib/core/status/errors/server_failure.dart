@@ -5,7 +5,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
-import '../../utils/config/locale/generated/l10n.dart';
+import '../../utils/config/locale/local_lang.dart';
 import '../../utils/config/routes/routes.dart';
 import 'failure.dart';
 import 'failure_body.dart';
@@ -21,7 +21,7 @@ class ServerFailure<T> extends Failure<T> {
           res.copyWith(
             code: 408,
             type: 'connection-timeout',
-            message: S.current.serverTookTooLongToRespond,
+            message: localeLang().serverTookTooLongToRespond,
           ),
         );
 
@@ -30,7 +30,7 @@ class ServerFailure<T> extends Failure<T> {
           res.copyWith(
             code: 403,
             type: 'certificate-error',
-            message: S.current.sslCertificateNotTrusted,
+            message: localeLang().sslCertificateNotTrusted,
           ),
         );
 
@@ -41,7 +41,7 @@ class ServerFailure<T> extends Failure<T> {
           res.copyWith(
             code: 499,
             type: 'request-canceled',
-            message: S.current.cancel,
+            message: localeLang().cancel,
           ),
         );
 
@@ -50,7 +50,7 @@ class ServerFailure<T> extends Failure<T> {
           res.copyWith(
             code: 503,
             type: 'connection-error',
-            message: S.current.noInternetConnection,
+            message: localeLang().noInternetConnection,
           ),
         );
 
@@ -59,7 +59,7 @@ class ServerFailure<T> extends Failure<T> {
           res.copyWith(
             code: 504,
             type: 'receive-timeout',
-            message: S.current.serverTookTooLong,
+            message: localeLang().serverTookTooLong,
           ),
         );
 
@@ -68,7 +68,7 @@ class ServerFailure<T> extends Failure<T> {
           res.copyWith(
             code: 504,
             type: 'send-timeout',
-            message: S.current.clientTookTooLong,
+            message: localeLang().clientTookTooLong,
           ),
         );
       default:
@@ -76,7 +76,7 @@ class ServerFailure<T> extends Failure<T> {
         return ServerFailure(
           res.copyWith(
             type: 'unknown-error',
-            message: S.current.unknownErrorOccurred,
+            message: localeLang().unknownErrorOccurred,
           ),
         );
     }
@@ -98,18 +98,18 @@ class ServerFailure<T> extends Failure<T> {
 
     if (statusCode == 500) {
       return ServerFailure(
-        res.copyWith(message: S.current.thereIsProblemWithServerTryAgainLater),
+        res.copyWith(message: localeLang().thereIsProblemWithServerTryAgainLater),
       );
     } else if (statusCode == 401 && Get.currentRoute != AppRoute.login) {
       // Get.find<AuthLocalDataSource>().logOut().then(
       //       (_) => Get.offAllNamed(AppRoute.login),
       //     );
       return ServerFailure(
-        res.copyWith(message: S.current.unauthorizedError),
+        res.copyWith(message: localeLang().unauthorizedError),
       );
     } else if (statusCode == 404) {
       return ServerFailure(
-        res.copyWith(message: S.current.pageNotFound),
+        res.copyWith(message: localeLang().pageNotFound),
       );
     }
     return ServerFailure(res);

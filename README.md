@@ -1,4 +1,4 @@
-# loyalty_points
+# Loyalty Points
 
 A loyalty program, where points can be collected with every purchase products.
 

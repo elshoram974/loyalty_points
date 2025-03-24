@@ -1,0 +1,79 @@
+{
+    "empty" :"Empty",
+    "search": "Search",
+    "error": "Error",
+    "understood": "Understood",
+    "save": "Save",
+    "totalOrder": "Total Order",
+    "selectMonth": "Select Month",
+    "date": "Date",
+    "selectDate": "Select date",
+    "mobileNumber": "Mobile Number",
+    "enterYourMobileNumber": "Enter your mobile number",
+    "unauthorizedError": "Your session has expired or you are not authorized. Please log in again.",
+    "thereIsProblemWithServerTryAgainLater": "There is a problem with the server. Try again later.",
+    "serverTookTooLongToRespond": "The server took too long to respond.",
+    "sslCertificateNotTrusted": "The SSL certificate is not trusted.",
+    "unknownErrorOccurred": "An unknown error occurred.",
+    "clientTookTooLong": "The client took too long to respond.",
+    "serverTookTooLong": "The server took too long to respond.",
+    "connectedToInternet": "Connected to the internet",
+    "logOut": "Log out",
+    "done": "Done",
+    "noInternetConnection": "No internet connection",
+    "noData": "No Data",
+    "unknown": "Unknown",
+    "pageNotFound": "Page not found",
+    "pageNameNotFoundInRoutes": "Page '{pageName}' not found in routes",
+    "@pageNameNotFoundInRoutes": {
+        "placeholders": {
+            "pageName": {
+                "type": "String"
+            }
+        }
+    },
+    "back": "Back",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "login": "Log in",
+    "fillField": "fill this field",
+    "notSamePass": "Not same password",
+    "enterValidEmail": "Enter valid E-mail",
+    "cantBeLessThan": "Can't be less than {min}",
+    "@cantBeLessThan": {
+        "placeholders": {
+            "min": {
+                "type": "String"
+            }
+        }
+    },
+    "cantBeMoreThan": "Can't be more than {max}",
+    "@cantBeMoreThan": {
+        "placeholders": {
+            "max": {
+                "type": "String"
+            }
+        }
+    },
+    "password": "Password",
+    "enterThePassword": "Enter the password",
+    "forgetPassword": "Forget password ?",
+    "signUp": "Sign up",
+    "doNotHaveAnAccount": "Don't have an account ?",
+    "rememberMe": "Remember me",
+    "fullName": "Full Name",
+    "confirmPassword": "Confirm Password",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "goBack": "Go back",
+    "stayHere": "Stay here",
+    "areYouSureYouWantToReturnBack": "Are you sure you want to return back",
+    "ifYouReturnNowYouWillLoseAllData": "If you return now, you will lose all data!",
+    "passwordProvidedIsTooWeak": "The password provided is too weak.",
+    "pressAgainToExit": "Press again to exit",
+    "accountAlreadyExistsForThatEmail": "The account already exists for that email.",
+    "noUserFoundForThatEmail": "No user found for that email.",
+    "wrongPasswordProvidedForThatUser": "Wrong password provided for that user.",
+    "theSuppliedAuthCredentialIsIncorrect": "The supplied auth credential is incorrect, malformed or has expired.",
+    "home": "Home"
+}

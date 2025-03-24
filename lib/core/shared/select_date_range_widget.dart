@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:loyalty_points/core/utils/extensions/date_ex.dart';
 import 'package:loyalty_points/core/utils/extensions/responsive_ex.dart';
 
-import '../utils/config/locale/generated/l10n.dart';
+import '../utils/config/locale/local_lang.dart';
 import '../utils/constants/app_constants.dart';
 
 class SelectDateRangeWidget extends StatefulWidget {
@@ -38,8 +38,8 @@ class _SelectDateRangeWidgetState extends State<SelectDateRangeWidget> {
             : () {
                 showDateRangePicker(
                   context: context,
-                  confirmText: S.of(context).search,
-                  saveText: S.of(context).search,
+                  confirmText: localeLang(context).search,
+                  saveText: localeLang(context).search,
                   initialEntryMode: DatePickerEntryMode.calendarOnly,
                   initialDateRange: widget.initRange,
                   builder: context.isPhoneWidth
@@ -102,7 +102,7 @@ class _SelectDateRangeWidgetState extends State<SelectDateRangeWidget> {
                 child: selectedDate != null
                     ? Text(selectedDate!, textAlign: TextAlign.center)
                     : Text(
-                        S.of(context).selectDate,
+                        localeLang(context).selectDate,
                         style: const TextStyle(color: Colors.grey),
                       ),
               ),

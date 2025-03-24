@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../utils/config/locale/generated/l10n.dart';
+import '../../../utils/config/locale/local_lang.dart';
 
 class DialogButtons extends StatelessWidget {
   const DialogButtons({
@@ -31,7 +31,7 @@ class DialogButtons extends StatelessWidget {
             child: FilledButton(
               onPressed: onPressConfirm,
               child: Text(
-                textConfirm ?? S.of(context).confirm,
+                textConfirm ?? localeLang(context).confirm,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -47,7 +47,7 @@ class DialogButtons extends StatelessWidget {
             flex: 10,
             child: OutlinedButton(
               onPressed: onPressCancel ?? Get.back,
-              child: Text(textCancel ?? S.of(context).cancel),
+              child: Text(textCancel ?? localeLang(context).cancel),
             ),
           ),
         ),

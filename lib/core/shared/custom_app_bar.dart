@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../utils/config/locale/generated/l10n.dart';
+import '../utils/config/locale/local_lang.dart';
 import '../utils/constants/app_constants.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -73,7 +73,7 @@ class LeadingBackButton extends StatelessWidget {
               children: [
                 const Icon(Icons.arrow_back_ios, size: 16),
                 Text(
-                  S.of(context).back,
+                  localeLang(context).back,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],

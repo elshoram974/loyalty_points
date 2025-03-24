@@ -2,7 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../config/locale/generated/l10n.dart';
+import '../config/locale/local_lang.dart';
 import '../functions/show_my_snack_bar.dart';
 
 class NetworkInfo {
@@ -46,12 +46,12 @@ class NetworkInfo {
     }
     if (isConnected) {
       ShowMySnackBar.call(
-        S.current.connectedToInternet,
+        localeLang().connectedToInternet,
         backgroundColor: Colors.green,
       );
     } else {
       ShowMySnackBar.call(
-        S.current.noInternetConnection,
+        localeLang().noInternetConnection,
         backgroundColor: Get.theme.colorScheme.error,
       );
     }
@@ -62,7 +62,7 @@ class NetworkInfo {
   static bool get showSnackBarWhenNoInternet {
     if (isConnected) return false;
     ShowMySnackBar.call(
-      S.current.noInternetConnection,
+      localeLang().noInternetConnection,
       backgroundColor: Get.theme.colorScheme.error,
     );
     return true;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../shared/dialog/custom_dialog.dart';
-import '../config/locale/generated/l10n.dart';
+import '../config/locale/local_lang.dart';
 
 abstract final class ShowMyDialog {
   const ShowMyDialog();
@@ -19,10 +19,10 @@ abstract final class ShowMyDialog {
       context: context,
       builder: (context) {
         return CustomDialog(
-          title: S.of(context).error,
+          title: localeLang(context).error,
           body: body,
           crossAxisAlignment: CrossAxisAlignment.center,
-          textCancel: S.of(context).understood,
+          textCancel: localeLang(context).understood,
           onPressCancel: Get.back,
         );
       },
@@ -38,16 +38,16 @@ abstract final class ShowMyDialog {
       context: context,
       builder: (context) {
         return CustomDialog(
-          title: S.of(context).goBack,
-          body: body ?? S.of(context).areYouSureYouWantToReturnBack,
+          title: localeLang(context).goBack,
+          body: body ?? localeLang(context).areYouSureYouWantToReturnBack,
           crossAxisAlignment: CrossAxisAlignment.center,
-          textCancel: S.of(context).goBack,
+          textCancel: localeLang(context).goBack,
           onPressCancel: () {
             if (onGoBack != null) onGoBack();
             Get.back();
             Get.back();
           },
-          textConfirm: S.of(context).stayHere,
+          textConfirm: localeLang(context).stayHere,
           onPressConfirm: Get.back,
         );
       },
