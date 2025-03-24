@@ -1,79 +1,80 @@
 {
-    "empty" :"Empty",
-    "search": "Search",
-    "error": "Error",
-    "understood": "Understood",
-    "save": "Save",
-    "totalOrder": "Total Order",
-    "selectMonth": "Select Month",
-    "date": "Date",
-    "selectDate": "Select date",
-    "mobileNumber": "Mobile Number",
-    "enterYourMobileNumber": "Enter your mobile number",
-    "unauthorizedError": "Your session has expired or you are not authorized. Please log in again.",
-    "thereIsProblemWithServerTryAgainLater": "There is a problem with the server. Try again later.",
-    "serverTookTooLongToRespond": "The server took too long to respond.",
-    "sslCertificateNotTrusted": "The SSL certificate is not trusted.",
-    "unknownErrorOccurred": "An unknown error occurred.",
-    "clientTookTooLong": "The client took too long to respond.",
-    "serverTookTooLong": "The server took too long to respond.",
-    "connectedToInternet": "Connected to the internet",
-    "logOut": "Log out",
-    "done": "Done",
-    "noInternetConnection": "No internet connection",
-    "noData": "No Data",
-    "unknown": "Unknown",
-    "pageNotFound": "Page not found",
-    "pageNameNotFoundInRoutes": "Page '{pageName}' not found in routes",
+    "empty": "فارغ",
+    "search": "بحث",
+    "error": "خطأ",
+    "understood": "فهمت",
+    "save": "حفظ",
+    "totalOrder": "إجمالي الطلب",
+    "selectMonth": "اختر الشهر",
+    "date": "التاريخ",
+    "selectDate": "اختر التاريخ",
+    "mobileNumber": "رقم الجوال",
+    "enterYourMobileNumber": "أدخل رقم هاتفك",
+    "unauthorizedError": "انتهت صلاحية جلستك أو ليس لديك الصلاحية. يرجى تسجيل الدخول مرة أخرى.",
+    "thereIsProblemWithServerTryAgainLater": "هناك مشكلة في الخادم. حاول مرة أخرى لاحقًا.",
+    "serverTookTooLongToRespond": "استغرق الخادم وقتًا طويلاً للرد.",
+    "sslCertificateNotTrusted": "شهادة SSL غير موثوقة.",
+    "unknownErrorOccurred": "حدث خطأ غير معروف.",
+    "clientTookTooLong": "استغرق العميل وقتًا طويلاً للرد.",
+    "serverTookTooLong": "استغرق الخادم وقتًا طويلاً للرد.",
+    "connectedToInternet": "متصل بالإنترنت",
+    "logOut": "تسجيل الخروج",
+    "done": "تم",
+    "noInternetConnection": "لا يوجد اتصال بالإنترنت",
+    "noData": "لا توجد بيانات",
+    "unknown": "غير معروف",
+    "pageNotFound": "الصفحة غير موجودة",
+    "pageNameNotFoundInRoutes": "الصفحة '{pageName}' غير موجودة في الصفحات",
     "@pageNameNotFoundInRoutes": {
-        "placeholders": {
-            "pageName": {
-                "type": "String"
-            }
+      "placeholders": {
+        "pageName": {
+          "type": "String"
         }
+      }
     },
-    "back": "Back",
-    "showPassword": "Show password",
-    "hidePassword": "Hide password",
-    "login": "Log in",
-    "fillField": "fill this field",
-    "notSamePass": "Not same password",
-    "enterValidEmail": "Enter valid E-mail",
-    "cantBeLessThan": "Can't be less than {min}",
+    "back": "رجوع",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "login": "تسجيل الدخول",
+    "fillField": "يرجى ملء هذا الحقل",
+    "notSamePass": "كلمة المرور غير متطابقة",
+    "enterValidEmail": "أدخل بريدًا إلكترونيًا صالحًا",
+    "cantBeLessThan": "لا يمكن أن يكون أقل من {min}",
     "@cantBeLessThan": {
-        "placeholders": {
-            "min": {
-                "type": "String"
-            }
+      "placeholders": {
+        "min": {
+          "type": "String"
         }
+      }
     },
-    "cantBeMoreThan": "Can't be more than {max}",
+    "cantBeMoreThan": "لا يمكن أن يكون أكثر من {max}",
     "@cantBeMoreThan": {
-        "placeholders": {
-            "max": {
-                "type": "String"
-            }
+      "placeholders": {
+        "max": {
+          "type": "String"
         }
+      }
     },
-    "password": "Password",
-    "enterThePassword": "Enter the password",
-    "forgetPassword": "Forget password ?",
-    "signUp": "Sign up",
-    "doNotHaveAnAccount": "Don't have an account ?",
-    "rememberMe": "Remember me",
-    "fullName": "Full Name",
-    "confirmPassword": "Confirm Password",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
-    "goBack": "Go back",
-    "stayHere": "Stay here",
-    "areYouSureYouWantToReturnBack": "Are you sure you want to return back",
-    "ifYouReturnNowYouWillLoseAllData": "If you return now, you will lose all data!",
-    "passwordProvidedIsTooWeak": "The password provided is too weak.",
-    "pressAgainToExit": "Press again to exit",
-    "accountAlreadyExistsForThatEmail": "The account already exists for that email.",
-    "noUserFoundForThatEmail": "No user found for that email.",
-    "wrongPasswordProvidedForThatUser": "Wrong password provided for that user.",
-    "theSuppliedAuthCredentialIsIncorrect": "The supplied auth credential is incorrect, malformed or has expired.",
-    "home": "Home"
-}
+    "password": "كلمة المرور",
+    "enterThePassword": "أدخل كلمة المرور",
+    "forgetPassword": "نسيت كلمة المرور؟",
+    "signUp": "إنشاء حساب",
+    "doNotHaveAnAccount": "ليس لديك حساب؟",
+    "rememberMe": "تذكرني",
+    "fullName": "الاسم الكامل",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء",
+    "goBack": "العودة",
+    "stayHere": "البقاء هنا",
+    "areYouSureYouWantToReturnBack": "هل أنت متأكد أنك تريد العودة؟",
+    "ifYouReturnNowYouWillLoseAllData": "إذا عدت الآن، ستفقد جميع البيانات!",
+    "passwordProvidedIsTooWeak": "كلمة المرور المقدمة ضعيفة جدًا.",
+    "pressAgainToExit": "اضغط مرة أخرى للخروج",
+    "accountAlreadyExistsForThatEmail": "الحساب موجود بالفعل لهذا البريد الإلكتروني.",
+    "noUserFoundForThatEmail": "لم يتم العثور على مستخدم لهذا البريد الإلكتروني.",
+    "wrongPasswordProvidedForThatUser": "تم تقديم كلمة مرور خاطئة لهذا المستخدم.",
+    "theSuppliedAuthCredentialIsIncorrect": "بيانات الاعتماد المقدمة غير صحيحة أو تالفة أو منتهية الصلاحية.",
+    "home": "الرئيسية",
+    "loyalty_program_for_PetroJac_oil_shops_and_station_agents_____products.": "برنامج ولاء لمحلات زيوت ووكلاء محطات بتروجاك و الذي يمكن تجميع النقاط مع كل عملية شرائية من منتجات بتروجاك من الزيوت"
+  }  

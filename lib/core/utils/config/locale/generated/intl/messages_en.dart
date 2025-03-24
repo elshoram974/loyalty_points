@@ -24,7 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(max) => "Can\'t be more than ${max}";
 
-  static String m2(pageName) => "Page \'${pageName}\' not found in routes";
+  static String m2(pageName) => "Page \'${pageName}\' not found in pages";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{

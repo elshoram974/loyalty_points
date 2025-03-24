@@ -300,10 +300,10 @@ class S {
     );
   }
 
-  /// `Page '{pageName}' not found in routes`
+  /// `Page '{pageName}' not found in pages`
   String pageNameNotFoundInRoutes(String pageName) {
     return Intl.message(
-      'Page \'$pageName\' not found in routes',
+      'Page \'$pageName\' not found in pages',
       name: 'pageNameNotFoundInRoutes',
       desc: '',
       args: [pageName],
@@ -609,6 +609,8 @@ class S {
       args: [],
     );
   }
+
+  // skipped getter for the 'loyalty_program_for_PetroJac_oil_shops_and_station_agents_____products.' key
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

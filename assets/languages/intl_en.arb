@@ -24,7 +24,7 @@
     "noData": "No Data",
     "unknown": "Unknown",
     "pageNotFound": "Page not found",
-    "pageNameNotFoundInRoutes": "Page '{pageName}' not found in routes",
+    "pageNameNotFoundInRoutes": "Page '{pageName}' not found in pages",
     "@pageNameNotFoundInRoutes": {
         "placeholders": {
             "pageName": {
@@ -75,5 +75,6 @@
     "noUserFoundForThatEmail": "No user found for that email.",
     "wrongPasswordProvidedForThatUser": "Wrong password provided for that user.",
     "theSuppliedAuthCredentialIsIncorrect": "The supplied auth credential is incorrect, malformed or has expired.",
-    "home": "Home"
+    "home": "Home",
+    "loyalty_program_for_PetroJac_oil_shops_and_station_agents_____products." : "A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products."
 }

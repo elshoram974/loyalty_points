@@ -20,98 +20,101 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(min) => "Can\'t be less than ${min}";
+  static String m0(min) => "لا يمكن أن يكون أقل من ${min}";
 
-  static String m1(max) => "Can\'t be more than ${max}";
+  static String m1(max) => "لا يمكن أن يكون أكثر من ${max}";
 
-  static String m2(pageName) => "Page \'${pageName}\' not found in routes";
+  static String m2(pageName) => "الصفحة \'${pageName}\' غير موجودة في الصفحات";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accountAlreadyExistsForThatEmail":
             MessageLookupByLibrary.simpleMessage(
-                "The account already exists for that email."),
+                "الحساب موجود بالفعل لهذا البريد الإلكتروني."),
         "areYouSureYouWantToReturnBack": MessageLookupByLibrary.simpleMessage(
-            "Are you sure you want to return back"),
-        "back": MessageLookupByLibrary.simpleMessage("Back"),
-        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+            "هل أنت متأكد أنك تريد العودة؟"),
+        "back": MessageLookupByLibrary.simpleMessage("رجوع"),
+        "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cantBeLessThan": m0,
         "cantBeMoreThan": m1,
         "clientTookTooLong": MessageLookupByLibrary.simpleMessage(
-            "The client took too long to respond."),
-        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+            "استغرق العميل وقتًا طويلاً للرد."),
+        "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirmPassword":
-            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "connectedToInternet":
-            MessageLookupByLibrary.simpleMessage("Connected to the internet"),
-        "date": MessageLookupByLibrary.simpleMessage("Date"),
+            MessageLookupByLibrary.simpleMessage("متصل بالإنترنت"),
+        "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
         "doNotHaveAnAccount":
-            MessageLookupByLibrary.simpleMessage("Don\'t have an account ?"),
-        "done": MessageLookupByLibrary.simpleMessage("Done"),
-        "empty": MessageLookupByLibrary.simpleMessage("Empty"),
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "done": MessageLookupByLibrary.simpleMessage("تم"),
+        "empty": MessageLookupByLibrary.simpleMessage("فارغ"),
         "enterThePassword":
-            MessageLookupByLibrary.simpleMessage("Enter the password"),
-        "enterValidEmail":
-            MessageLookupByLibrary.simpleMessage("Enter valid E-mail"),
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+        "enterValidEmail": MessageLookupByLibrary.simpleMessage(
+            "أدخل بريدًا إلكترونيًا صالحًا"),
         "enterYourMobileNumber":
-            MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
-        "error": MessageLookupByLibrary.simpleMessage("Error"),
-        "fillField": MessageLookupByLibrary.simpleMessage("fill this field"),
+            MessageLookupByLibrary.simpleMessage("أدخل رقم هاتفك"),
+        "error": MessageLookupByLibrary.simpleMessage("خطأ"),
+        "fillField": MessageLookupByLibrary.simpleMessage("يرجى ملء هذا الحقل"),
         "forgetPassword":
-            MessageLookupByLibrary.simpleMessage("Forget password ?"),
-        "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
-        "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
-        "hidePassword": MessageLookupByLibrary.simpleMessage("Hide password"),
-        "home": MessageLookupByLibrary.simpleMessage("Home"),
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+        "goBack": MessageLookupByLibrary.simpleMessage("العودة"),
+        "hidePassword":
+            MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "ifYouReturnNowYouWillLoseAllData":
             MessageLookupByLibrary.simpleMessage(
-                "If you return now, you will lose all data!"),
-        "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
-        "login": MessageLookupByLibrary.simpleMessage("Log in"),
-        "mobileNumber": MessageLookupByLibrary.simpleMessage("Mobile Number"),
-        "noData": MessageLookupByLibrary.simpleMessage("No Data"),
+                "إذا عدت الآن، ستفقد جميع البيانات!"),
+        "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "mobileNumber": MessageLookupByLibrary.simpleMessage("رقم الجوال"),
+        "noData": MessageLookupByLibrary.simpleMessage("لا توجد بيانات"),
         "noInternetConnection":
-            MessageLookupByLibrary.simpleMessage("No internet connection"),
+            MessageLookupByLibrary.simpleMessage("لا يوجد اتصال بالإنترنت"),
         "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
-            "No user found for that email."),
+            "لم يتم العثور على مستخدم لهذا البريد الإلكتروني."),
         "notSamePass":
-            MessageLookupByLibrary.simpleMessage("Not same password"),
+            MessageLookupByLibrary.simpleMessage("كلمة المرور غير متطابقة"),
         "pageNameNotFoundInRoutes": m2,
-        "pageNotFound": MessageLookupByLibrary.simpleMessage("Page not found"),
-        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "pageNotFound":
+            MessageLookupByLibrary.simpleMessage("الصفحة غير موجودة"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordProvidedIsTooWeak": MessageLookupByLibrary.simpleMessage(
-            "The password provided is too weak."),
+            "كلمة المرور المقدمة ضعيفة جدًا."),
         "pressAgainToExit":
-            MessageLookupByLibrary.simpleMessage("Press again to exit"),
-        "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
-        "save": MessageLookupByLibrary.simpleMessage("Save"),
-        "search": MessageLookupByLibrary.simpleMessage("Search"),
-        "selectDate": MessageLookupByLibrary.simpleMessage("Select date"),
-        "selectMonth": MessageLookupByLibrary.simpleMessage("Select Month"),
+            MessageLookupByLibrary.simpleMessage("اضغط مرة أخرى للخروج"),
+        "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
+        "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+        "search": MessageLookupByLibrary.simpleMessage("بحث"),
+        "selectDate": MessageLookupByLibrary.simpleMessage("اختر التاريخ"),
+        "selectMonth": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
         "serverTookTooLong": MessageLookupByLibrary.simpleMessage(
-            "The server took too long to respond."),
+            "استغرق الخادم وقتًا طويلاً للرد."),
         "serverTookTooLongToRespond": MessageLookupByLibrary.simpleMessage(
-            "The server took too long to respond."),
-        "showPassword": MessageLookupByLibrary.simpleMessage("Show password"),
-        "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
-        "sslCertificateNotTrusted": MessageLookupByLibrary.simpleMessage(
-            "The SSL certificate is not trusted."),
-        "stayHere": MessageLookupByLibrary.simpleMessage("Stay here"),
+            "استغرق الخادم وقتًا طويلاً للرد."),
+        "showPassword":
+            MessageLookupByLibrary.simpleMessage("إظهار كلمة المرور"),
+        "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "sslCertificateNotTrusted":
+            MessageLookupByLibrary.simpleMessage("شهادة SSL غير موثوقة."),
+        "stayHere": MessageLookupByLibrary.simpleMessage("البقاء هنا"),
         "theSuppliedAuthCredentialIsIncorrect":
             MessageLookupByLibrary.simpleMessage(
-                "The supplied auth credential is incorrect, malformed or has expired."),
+                "بيانات الاعتماد المقدمة غير صحيحة أو تالفة أو منتهية الصلاحية."),
         "thereIsProblemWithServerTryAgainLater":
             MessageLookupByLibrary.simpleMessage(
-                "There is a problem with the server. Try again later."),
-        "totalOrder": MessageLookupByLibrary.simpleMessage("Total Order"),
+                "هناك مشكلة في الخادم. حاول مرة أخرى لاحقًا."),
+        "totalOrder": MessageLookupByLibrary.simpleMessage("إجمالي الطلب"),
         "unauthorizedError": MessageLookupByLibrary.simpleMessage(
-            "Your session has expired or you are not authorized. Please log in again."),
-        "understood": MessageLookupByLibrary.simpleMessage("Understood"),
-        "unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
+            "انتهت صلاحية جلستك أو ليس لديك الصلاحية. يرجى تسجيل الدخول مرة أخرى."),
+        "understood": MessageLookupByLibrary.simpleMessage("فهمت"),
+        "unknown": MessageLookupByLibrary.simpleMessage("غير معروف"),
         "unknownErrorOccurred":
-            MessageLookupByLibrary.simpleMessage("An unknown error occurred."),
+            MessageLookupByLibrary.simpleMessage("حدث خطأ غير معروف."),
         "wrongPasswordProvidedForThatUser":
             MessageLookupByLibrary.simpleMessage(
-                "Wrong password provided for that user.")
+                "تم تقديم كلمة مرور خاطئة لهذا المستخدم.")
       };
 }
