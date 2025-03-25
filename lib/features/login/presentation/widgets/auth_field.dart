@@ -50,10 +50,12 @@ class AuthField extends StatelessWidget {
           style: context.textTheme.bodyLarge
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 0.5 * AppConst.defaultPadding),
+        const SizedBox(height: 0.5 * AppConst.paddingDefault),
         MyDefaultField(
           readOnly: readOnly,
           controller: controller,
+          filled: true,
+          fillColor: Theme.of(context).scaffoldBackgroundColor,
           hintText: hintText,
           keyboardType: keyboardType,
           textInputAction: textInputAction,

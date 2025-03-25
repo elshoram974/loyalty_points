@@ -30,11 +30,11 @@ abstract final class ShowMySnackBar {
         action: action,
         dismissDirection: DismissDirection.horizontal,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppConst.borderRadius),
+          borderRadius: BorderRadius.circular(AppConst.radiusDefault),
         ),
         backgroundColor: backgroundColor,
         behavior: SnackBarBehavior.floating,
-        margin: const EdgeInsets.all(AppConst.defaultPadding),
+        margin: const EdgeInsets.all(AppConst.paddingDefault),
         duration: duration ?? AppConst.duration,
         actionOverflowThreshold: 1,
       ),

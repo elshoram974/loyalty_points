@@ -4,11 +4,13 @@ abstract final class AppColor {
   const AppColor();
   // static Color error = Colors.redAccent.shade100;
 
-  static const Color primaryLight = Color(0xFF0D47A1);
-  static const Color primaryDark = Color(0xFF00325B);
+  static const Color primaryLight = Color(0xFFd80f0e);
+  static const Color primaryDark = Color(0xFFd80f0e);
 
-  static const Color secondaryLight = Color(0xFFE88412);
-  static const Color secondaryDark = Color(0xFF6B3900);
+  static const Color secondaryLight = Color(0xFF000000);
+  static const Color secondaryDark = Color(0xFF000000);
+
+  static List<Color> backgroundGradient = [Colors.white, Colors.grey.shade400];
 
   // static const Color active = Color(0xFFE87282);
 

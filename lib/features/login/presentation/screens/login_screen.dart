@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/shared/responsive/constrained_box.dart';
+import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_assets.dart';
 import '../../../../core/utils/constants/app_constants.dart';
@@ -14,34 +14,38 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
+    return CustomScaffold(
       canPop: false,
-      onPopInvokedWithResult: (_, __) =>
-          Get.find<LoginController>().onPopInvoked(),
-      child: Scaffold(
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(AppConst.defaultPadding),
-            child: MyResConstrainedBoxAlign(
-              child: ListView(
-                children: [
-                  Image.asset(AppAssets.logo,
-                      height: MediaQuery.sizeOf(context).height * 0.25),
-                  const SizedBox(height: AppConst.defaultPadding),
-                  Text(
-                    localeLang(context).login,
-                    textAlign: TextAlign.center,
-                    style: context.textTheme.titleLarge
-                        ?.copyWith(fontWeight: FontWeight.w600),
-                  ),
-                  const SizedBox(height: 70),
-                  const LoginFields(),
-                  const LoginButtons(),
-                ],
-              ),
-            ),
+      onPopInvokedWithResult: (_, __) => Get.find<LoginController>().onPopInvoked(),
+      body: ListView(
+        padding: const EdgeInsets.all(AppConst.paddingBig),
+        children: [
+          const SizedBox(height: AppConst.paddingExtraBig),
+          Text(
+            localeLang(context).welcome_to_businessName(localeLang(context).business_name),
+            textAlign: TextAlign.center,
+            style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingExtraBig),
+            child: Image.asset(AppAssets.fullLogo),
+          ),
+          const SizedBox(height: AppConst.paddingDefault),
+          Text(
+            localeLang(context).loyalty_program_for_PetroJac_oil_shops_and_station_agents_products,
+            textAlign: TextAlign.center,
+            style: context.textTheme.bodySmall,
+          ),
+          const SizedBox(height: AppConst.paddingExtraBig),
+          Text(
+            localeLang(context).login,
+            textAlign: TextAlign.center,
+            style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: AppConst.paddingExtraBig),
+          const LoginFields(),
+          const LoginButtons(),
+        ],
       ),
     );
   }

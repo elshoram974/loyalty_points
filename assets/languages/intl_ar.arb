@@ -1,4 +1,5 @@
 {
+    "loyalty_program_for_PetroJac_oil_shops_and_station_agents_products": "برنامج ولاء لمحلات زيوت ووكلاء محطات بتروجاك و الذي يمكن تجميع النقاط مع كل عملية شرائية من منتجات بتروجاك من الزيوت",
     "empty": "فارغ",
     "business_name" : "بتروجاك",
     "welcome_to_businessName": "مرحبا بك في {businessName}",
@@ -84,6 +85,5 @@
     "noUserFoundForThatEmail": "لم يتم العثور على مستخدم لهذا البريد الإلكتروني.",
     "wrongPasswordProvidedForThatUser": "تم تقديم كلمة مرور خاطئة لهذا المستخدم.",
     "theSuppliedAuthCredentialIsIncorrect": "بيانات الاعتماد المقدمة غير صحيحة أو تالفة أو منتهية الصلاحية.",
-    "home": "الرئيسية",
-    "loyalty_program_for_PetroJac_oil_shops_and_station_agents_____products.": "برنامج ولاء لمحلات زيوت ووكلاء محطات بتروجاك و الذي يمكن تجميع النقاط مع كل عملية شرائية من منتجات بتروجاك من الزيوت"
+    "home": "الرئيسية"
   }  

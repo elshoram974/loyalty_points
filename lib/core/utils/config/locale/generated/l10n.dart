@@ -50,6 +50,18 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.`
+  String
+      get loyalty_program_for_PetroJac_oil_shops_and_station_agents_products {
+    return Intl.message(
+      'A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.',
+      name:
+          'loyalty_program_for_PetroJac_oil_shops_and_station_agents_products',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Empty`
   String get empty {
     return Intl.message(
@@ -629,8 +641,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the 'loyalty_program_for_PetroJac_oil_shops_and_station_agents_____products.' key
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

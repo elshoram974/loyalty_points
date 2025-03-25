@@ -45,7 +45,7 @@ class _PasswordFieldState extends State<PasswordField> {
           ? (val) => AppValidator.samePassword(val, widget.otherPass!)
           : (val) => AppValidator.auth(val, 0, 100, FieldType.password),
       obscureText: obscureText,
-      suffixIconData: Icons.lock_outline_rounded,
+      suffixIconData: Icons.lock_rounded,
       label: widget.label,
       hintText: widget.hintText,
       autofillHints: [AutofillHints.password, ...widget.autofillHints ?? []],
@@ -58,8 +58,8 @@ class _PasswordFieldState extends State<PasswordField> {
             : localeLang(context).hidePassword,
         icon: Icon(
           obscureText
-              ? Icons.visibility_off_outlined
-              : Icons.visibility_outlined,
+              ? Icons.visibility_off
+              : Icons.visibility,
         ),
       ),
     );

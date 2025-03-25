@@ -1,13 +1,17 @@
 abstract final class AppConst {
   const AppConst();
 
-  static const double borderSmallRadius = 5;
-  static const double borderRadius = 10;
-  static const double extraSmallPadding = 4;
-  static const double smallPadding = 8;
-  static const double defaultPadding = 16;
-  static const double bigPadding = 24;
-  static const double extraBigPadding = 32;
+  static const double radiusSmall = 5;
+  static const double radiusDefault = 10;
+  static const double radiusBig = 20;
+  static const double radiusExtraBig = 40;
+  static const double radiusNearCircle = 200;
+
+  static const double paddingExtraSmall = 4;
+  static const double paddingSmall = 8;
+  static const double paddingDefault = 16;
+  static const double paddingBig = 24;
+  static const double paddingExtraBig = 32;
 
   static const double constraint = 600;
   static const double dialogConstraint = 400;

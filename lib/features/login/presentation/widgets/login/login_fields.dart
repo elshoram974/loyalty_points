@@ -27,7 +27,7 @@ class LoginFields extends StatelessWidget {
                   hintText: localeLang(context).enterYourMobileNumber,
                   autofillHints: const [AutofillHints.email],
                 ),
-                const SizedBox(height: 2 * AppConst.defaultPadding),
+                const SizedBox(height: 2 * AppConst.paddingDefault),
                 PasswordField(
                   readOnly: controller.isLoading,
                   label: localeLang(context).password,

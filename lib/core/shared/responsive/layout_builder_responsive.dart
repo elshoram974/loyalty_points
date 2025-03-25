@@ -17,7 +17,7 @@ class ResLayoutBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        double width = constraints.maxWidth;
+        final double width = constraints.maxWidth;
         if (width <= AppConst.maxPhone) {
           return phone;
         } else if (width <= AppConst.maxTablet) {

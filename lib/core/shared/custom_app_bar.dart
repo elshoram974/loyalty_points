@@ -40,7 +40,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               preferredSize: const Size.fromHeight(40),
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: AppConst.defaultPadding,
+                  horizontal: AppConst.paddingDefault,
                 ),
                 child: bottom,
               ),
@@ -65,7 +65,7 @@ class LeadingBackButton extends StatelessWidget {
       child: Align(
         child: Padding(
           padding:
-              const EdgeInsets.symmetric(horizontal: AppConst.defaultPadding),
+              const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
           child: IconButton(
             onPressed: onPressBack ?? Get.back,
             icon: Row(

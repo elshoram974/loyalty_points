@@ -33,7 +33,7 @@ class CustomDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: AppConst.defaultPadding),
+        padding: const EdgeInsets.symmetric(vertical: AppConst.paddingDefault),
         constraints: const BoxConstraints(maxWidth: AppConst.constraint),
         child: Column(
           mainAxisSize: MainAxisSize.min,

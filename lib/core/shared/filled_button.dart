@@ -42,16 +42,16 @@ class CustomFilledButton extends StatelessWidget {
     return Builder(
       builder: (context) {
         return SizedBox.fromSize(
-          size: minimumSize ?? const Size(256, 64),
+          size: minimumSize ?? const Size(256, 50),
           child: FilledButton(
             onPressed: onPressed,
             onLongPress: onLongPress,
             style: FilledButton.styleFrom(
               padding: padding,
-              minimumSize: minimumSize ?? const Size(256, 64),
+              minimumSize: minimumSize ?? const Size(256, 50),
               backgroundColor: filledColor ?? context.theme.primaryColor,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(AppConst.borderSmallRadius),
+                borderRadius: BorderRadius.circular(AppConst.radiusNearCircle),
               ),
             ),
             child: text == null
@@ -86,10 +86,10 @@ class CustomFilledButton extends StatelessWidget {
         return FilledButton(
           onPressed: null,
           style: FilledButton.styleFrom(
-            minimumSize: minimumSize ?? const Size(256, 64),
+            minimumSize: minimumSize ?? const Size(256, 50),
             backgroundColor: filledColor ?? context.theme.primaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppConst.borderRadius),
+              borderRadius: BorderRadius.circular(AppConst.radiusDefault),
             ),
           ),
           child: SizedBox.square(

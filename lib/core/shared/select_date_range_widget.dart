@@ -49,7 +49,7 @@ class _SelectDateRangeWidgetState extends State<SelectDateRangeWidget> {
                           return Align(
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(
-                                  AppConst.defaultPadding),
+                                  AppConst.paddingDefault),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
                                   maxWidth: size.shortestSide * 0.7,
@@ -75,7 +75,7 @@ class _SelectDateRangeWidgetState extends State<SelectDateRangeWidget> {
                   },
                 );
               },
-        borderRadius: BorderRadius.circular(AppConst.borderSmallRadius),
+        borderRadius: BorderRadius.circular(AppConst.radiusSmall),
         child: Container(
           height: 45,
           padding: EdgeInsetsDirectional.only(
@@ -84,7 +84,7 @@ class _SelectDateRangeWidgetState extends State<SelectDateRangeWidget> {
           ),
           decoration: BoxDecoration(
             border: Border.all(),
-            borderRadius: BorderRadius.circular(AppConst.borderSmallRadius),
+            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
           ),
           child: Row(
             children: [

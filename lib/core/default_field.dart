@@ -103,7 +103,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
       return InternationalPhoneNumberInput(
         textFieldController: widget.controller,
         selectorConfig: SelectorConfig(
-          leadingPadding: widget.horizontalPadding ?? AppConst.defaultPadding,
+          leadingPadding: widget.horizontalPadding ?? AppConst.paddingDefault,
           selectorType: PhoneInputSelectorType.DIALOG,
           setSelectorButtonAsPrefixIcon: true,
         ),
@@ -140,11 +140,11 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
           fillColor: widget.fillColor,
           suffixIconColor: widget.suffixIconColor,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.grey),
-            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
           ),
           constraints: const BoxConstraints(maxWidth: AppConst.constraint),
           alignLabelWithHint: widget.alignLabelWithHint,
@@ -171,11 +171,11 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
           fillColor: widget.fillColor,
           suffixIconColor: widget.suffixIconColor,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.grey),
-            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
           ),
           constraints: const BoxConstraints(maxWidth: AppConst.constraint),
           alignLabelWithHint: widget.alignLabelWithHint,

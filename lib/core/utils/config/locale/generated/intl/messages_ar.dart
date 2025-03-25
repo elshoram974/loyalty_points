@@ -72,6 +72,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "إذا عدت الآن، ستفقد جميع البيانات!"),
         "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "loyalty_program_for_PetroJac_oil_shops_and_station_agents_products":
+            MessageLookupByLibrary.simpleMessage(
+                "برنامج ولاء لمحلات زيوت ووكلاء محطات بتروجاك و الذي يمكن تجميع النقاط مع كل عملية شرائية من منتجات بتروجاك من الزيوت"),
         "mobileNumber": MessageLookupByLibrary.simpleMessage("رقم الجوال"),
         "noData": MessageLookupByLibrary.simpleMessage("لا توجد بيانات"),
         "noInternetConnection":

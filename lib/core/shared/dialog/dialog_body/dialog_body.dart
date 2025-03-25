@@ -32,7 +32,7 @@ class DialogBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppConst.defaultPadding,
+        horizontal: AppConst.paddingDefault,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -46,7 +46,7 @@ class DialogBody extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
               textAlign: bodyAlign,
             ),
-          ).verticalPadding(2 * AppConst.defaultPadding),
+          ).verticalPadding(2 * AppConst.paddingDefault),
           DialogButtons(
             onPressConfirm: onPressConfirm,
             showCancelButton: showCancelButton,
