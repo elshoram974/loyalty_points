@@ -1,3 +1,5 @@
+import 'package:loyalty_points/features/login/domain/entity/sign_up_body_data.dart';
+
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/functions/execute_and_handle_remote_errors.dart';
 import '../../domain/repositories/auth_repositories.dart';
@@ -34,5 +36,11 @@ class AuthRepositoriesImp extends AuthRepositories {
         return res.user;
       },
     );
+  }
+
+  @override
+  Future<Status<UserModel>> signUp(SignUpBodyData body) {
+    // TODO: implement signUp
+    throw UnimplementedError();
   }
 }

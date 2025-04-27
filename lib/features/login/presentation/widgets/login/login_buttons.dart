@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../../core/shared/filled_button.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../../core/utils/config/routes/routes.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../controller/login_controller.dart';
 
@@ -49,9 +50,7 @@ class LoginButtons extends StatelessWidget {
                     decorationColor: context.theme.primaryColor,
                     decorationThickness: 2,
                   ),
-                  recognizer: TapGestureRecognizer()..onTap = (){
-                    print("object");
-                  }
+                  recognizer: TapGestureRecognizer()..onTap = () => Get.toNamed(AppRoute.signUp)
                 ),
               ]
             ),
