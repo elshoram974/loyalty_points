@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../../core/utils/constants/app_constants.dart';
+import '../../controller/sign_up_controller.dart';
+import '../auth_field.dart';
+import '../password_field.dart';
+
+class SignUpFields extends StatelessWidget {
+  const SignUpFields({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<SignUpController>(
+      builder: (controller) {
+        return AutofillGroup(
+          child: Column(
+            spacing: AppConst.paddingDefault,
+            children: [
+              AuthField(
+                readOnly: controller.isLoading,
+                onChanged: (v) => controller.fullName = v.trim(),
+                label: localeLang(context).fullName,
+                suffixIconData: Icons.person,
+                autofillHints: const [AutofillHints.name],
+                hintText: localeLang(context).enterYourFullName,
+              ),
+              AuthField(
+                readOnly: controller.isLoading,
+                isPhoneNumber: true,
+                onPhoneInputChanged: (v) => controller.phone = v,
+                label: localeLang(context).mobileNumber,
+                hintText: localeLang(context).enterYourMobileNumber,
+                autofillHints: const [
+                  AutofillHints.telephoneNumber,
+                  AutofillHints.telephoneNumberDevice,
+                ],
+              ),
+              PasswordField(
+                isNewPass: true,
+                readOnly: controller.isLoading,
+                label: localeLang(context).password,
+                textInputAction: TextInputAction.next,
+                onChanged: (val) => {controller.password = val, controller.update(['confirm-password'])},
+                autofillHints: const [AutofillHints.newPassword],
+                hintText: localeLang(context).enterNewPassword,
+              ),
+              GetBuilder<SignUpController>(
+                id: 'confirm-password',
+                builder: (controller) {
+                  return PasswordField(
+                    readOnly: controller.isLoading,
+                    label: localeLang(context).confirmPassword,
+                    otherPass: controller.password,
+                    autofillHints: const [AutofillHints.newPassword],
+                    hintText: localeLang(context).enterTheSamePassword,
+                  );
+                }
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}

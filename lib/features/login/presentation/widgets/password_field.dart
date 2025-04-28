@@ -15,13 +15,15 @@ class PasswordField extends StatefulWidget {
     this.autofillHints,
     this.readOnly = false,
     this.onFieldSubmitted,
-    this.textInputAction = TextInputAction.done,
+    this.textInputAction = TextInputAction.done, 
+    this.isNewPass = false,
   });
   final String? otherPass;
   final TextEditingController? controller;
   final String? hintText;
   final String label;
   final bool readOnly;
+  final bool isNewPass;
   final TextInputAction textInputAction;
   final Iterable<String>? autofillHints;
   final void Function(String)? onFieldSubmitted;
@@ -43,7 +45,7 @@ class _PasswordFieldState extends State<PasswordField> {
       keyboardType: TextInputType.visiblePassword,
       validator: widget.otherPass != null
           ? (val) => AppValidator.samePassword(val, widget.otherPass!)
-          : (val) => AppValidator.auth(val, 0, 100, FieldType.password),
+          : (val) => AppValidator.auth(val, (widget.isNewPass? 8 : 0), 100, FieldType.password),
       obscureText: obscureText,
       suffixIconData: Icons.lock_rounded,
       label: widget.label,
