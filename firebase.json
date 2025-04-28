@@ -1,0 +1,30 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "petrojacapp",
+                    "appId": "1:73977020857:android:1d55edb74f29dadc987668",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "ios": {
+                "default": {
+                    "projectId": "petrojacapp",
+                    "appId": "1:73977020857:ios:e7c496e33acc011c987668",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "ios/Runner/GoogleService-Info.plist"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "petrojacapp",
+                    "configurations": {
+                        "android": "1:73977020857:android:1d55edb74f29dadc987668",
+                        "ios": "1:73977020857:ios:e7c496e33acc011c987668"
+                    }
+                }
+            }
+        }
+    }
+}

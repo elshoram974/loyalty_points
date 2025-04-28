@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,7 @@ import 'core/utils/config/routes/routes.dart';
 import 'core/utils/config/theme/dark_theme.dart';
 import 'core/utils/config/theme/light_theme.dart';
 import 'core/utils/helper/network_helper.dart';
+import 'firebase_options.dart';
 
 void main() async {
   if (AppInfo.isDebugMode) HttpOverrides.global = MyHttpOverrides();
@@ -21,6 +23,7 @@ void main() async {
 
   await Future.wait(
     [
+      Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
       NetworkInfo.init(),
       Hive.initFlutter(),
     ],

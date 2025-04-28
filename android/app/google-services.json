@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "73977020857",
+    "project_id": "petrojacapp",
+    "storage_bucket": "petrojacapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73977020857:android:db71db41800d71ce987668",
+        "android_client_info": {
+          "package_name": "com.petrojac"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFtXTJ7QFSRYotlhKaulIGD9V9H3V7uWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73977020857:android:1d55edb74f29dadc987668",
+        "android_client_info": {
+          "package_name": "com.petrojac.loyaltyPoints"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFtXTJ7QFSRYotlhKaulIGD9V9H3V7uWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
