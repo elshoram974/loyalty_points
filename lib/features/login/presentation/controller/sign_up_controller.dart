@@ -58,7 +58,7 @@ class SignUpControllerImp extends SignUpController {
         password: password,
         governorate: governorate,
         city: city,
-        accountType: accountType ?? const StoreAccount(),
+        accountType: accountType!,
         profile: profile!,
         attachments: attachments,
       ),

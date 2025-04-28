@@ -7,42 +7,75 @@ import '../../../../../core/utils/types/account_type.dart';
 import '../../controller/sign_up_controller.dart';
 
 class ChooseAccountTypeWidget extends StatelessWidget {
-  const ChooseAccountTypeWidget({
-    super.key,
-  });
+  const ChooseAccountTypeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: AppConst.paddingDefault),
-        Text(
-          localeLang(context).type,
-          style: context.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
-        ),
-        GetBuilder<SignUpController>(
-          builder: (controller) {
-            return Row(
-              spacing: AppConst.paddingSmall,
-              children: [
-                _AccountTypeRadioWidget(
-                  value: const StoreAccount(),
-                  groupValue: controller.accountType,
-                  title: localeLang(context).distributorOrStore,
-                  onChanged: controller.changeAccountType,
+    final SignUpController c = Get.find<SignUpController>();
+    return FormField<AccountType>(
+      initialValue: c.accountType,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: (_) {
+        if(c.accountType == null) return localeLang(context).uHaveToChooseAccountType;
+        return null;
+      },
+      builder: (state) {
+        void onChangeAccountType(AccountType? accountType){
+          state.didChange(accountType);
+          c.changeAccountType(accountType);
+        }
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: AppConst.paddingDefault),
+            Text(
+              localeLang(context).type,
+              style: context.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            Container(
+              margin: state.hasError 
+              ? const EdgeInsets.only(top: AppConst.paddingDefault) 
+              : null,
+              decoration: state.hasError 
+              ? BoxDecoration(
+                border: Border.all(color: context.theme.colorScheme.error),
+                borderRadius: BorderRadius.circular(AppConst.radiusSmall)
+              )
+              : null,
+              child: GetBuilder<SignUpController>(
+                builder: (controller) {
+                  return Row(
+                    spacing: AppConst.paddingSmall,
+                    children: [
+                      _AccountTypeRadioWidget(
+                        value: const StoreAccount(),
+                        groupValue: controller.accountType,
+                        title: localeLang(context).distributorOrStore,
+                        onChanged: onChangeAccountType,
+                      ),
+                      _AccountTypeRadioWidget(
+                        value: const DeliveryManAccount(),
+                        groupValue: controller.accountType,
+                        title: localeLang(context).deliveryMan,
+                        onChanged: onChangeAccountType,
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+            if(state.hasError && state.errorText != null) ...[
+              Padding(
+                padding: const EdgeInsetsDirectional.only(start: AppConst.paddingBig, top: 3),
+                child: Text(
+                  state.errorText!,
+                  style: context.textTheme.bodySmall?.copyWith(color: context.theme.colorScheme.error),
                 ),
-                _AccountTypeRadioWidget(
-                  value: const DeliveryManAccount(),
-                  groupValue: controller.accountType,
-                  title: localeLang(context).deliveryMan,
-                  onChanged: controller.changeAccountType,
-                ),
-              ],
-            );
-          },
-        ),
-      ],
+              ),
+            ]
+          ],
+        );
+      }
     );
   }
 }
