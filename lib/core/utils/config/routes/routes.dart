@@ -4,6 +4,7 @@ import '../../../../features/login/data/datasources/auth_local_data_source.dart'
 import '../../../../features/login/presentation/screens/login_screen.dart';
 import '../../../../features/login/presentation/screens/sign_up_screen.dart';
 import '../../bindings/login_bindings.dart';
+import '../../bindings/sign_up_bindings.dart';
 import '../../middleware/login_middleware.dart';
 
 // import '../../bindings/questions_bindings.dart';
@@ -29,6 +30,7 @@ abstract final class AppRoute {
         ),
         GetPage(
           name: signUp,
+          binding: SignUpBindings(),
           page: () => const SignUpScreen(),
         ),
         // GetPage(

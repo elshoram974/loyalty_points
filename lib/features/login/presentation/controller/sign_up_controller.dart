@@ -5,10 +5,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/status/status.dart';
-import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
-import '../../../../core/utils/functions/show_my_snack_bar.dart';
+import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../../../core/utils/types/account_type.dart';
 import '../../data/models/user_model.dart';
@@ -74,28 +73,18 @@ class SignUpControllerImp extends SignUpController {
     update();
   }
 
-  DateTime _back = DateTime.now();
 
   @override
-  void onPopInvoked() {
+  void onPopInvoked() async {
     if ((phone?.parseNumber().trim() ?? '').isNotEmpty ||
         password.isNotEmpty ||
         fullName.isNotEmpty ||
         governorate.isNotEmpty ||
         city.isNotEmpty ||
         profile != null ||
-        attachments.isNotEmpty ||
         attachments.any((e) => e != null)) {
-      if (DateTime.now().difference(_back) < const Duration(seconds: 2)) {
-        Get.back();
-      }
-      ShowMySnackBar.call(
-        localeLang().pressAgainToExit,
-        duration: const Duration(seconds: 2),
-      );
-      _back = DateTime.now();
 
-      return;
+      await ShowMyDialog.back(Get.context!);
     } else {
       Get.back();
     }
