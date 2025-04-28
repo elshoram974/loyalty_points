@@ -1,13 +1,18 @@
-abstract class AccountType{
+import 'package:equatable/equatable.dart';
+
+ abstract class AccountType extends Equatable{
   const AccountType();
   String get type;
+  
+  @override
+  List<Object?> get props => [type];
 }
-class DeliveryManAccount implements AccountType{
+class DeliveryManAccount extends AccountType{
   const DeliveryManAccount();
   @override
   String get type => 'Delivery';
 }
-class StoreAccount implements AccountType{
+class StoreAccount extends AccountType{
   const StoreAccount();
   @override
   String get type => 'store';

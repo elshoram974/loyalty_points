@@ -23,12 +23,14 @@ abstract class SignUpController extends GetxController {
   String password = '';
   String governorate = '';
   String city = '';
-  AccountType accountType = const StoreAccount();
+  AccountType? accountType;
 
   XFile? profile;
   final List<XFile?> attachments = List.filled(3, null, growable: false);
 
   Future<void> signUp();
+
+  void changeAccountType(AccountType? type);
 
   void onPopInvoked();
 }
@@ -56,7 +58,7 @@ class SignUpControllerImp extends SignUpController {
         password: password,
         governorate: governorate,
         city: city,
-        accountType: accountType,
+        accountType: accountType ?? const StoreAccount(),
         profile: profile!,
         attachments: attachments,
       ),
@@ -73,12 +75,19 @@ class SignUpControllerImp extends SignUpController {
     update();
   }
 
+  @override
+  void changeAccountType(AccountType? type) {
+    accountType = type;
+    update();
+  }
+
 
   @override
   void onPopInvoked() async {
     if ((phone?.parseNumber().trim() ?? '').isNotEmpty ||
         password.isNotEmpty ||
         fullName.isNotEmpty ||
+        accountType != null ||
         governorate.isNotEmpty ||
         city.isNotEmpty ||
         profile != null ||
