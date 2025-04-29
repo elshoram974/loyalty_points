@@ -40,7 +40,17 @@ class AuthRepositoriesImp extends AuthRepositories {
 
   @override
   Future<Status<UserModel>> signUp(SignUpBodyData body) {
-    // TODO: implement signUp
-    throw UnimplementedError();
+    return executeAndHandleErrors<UserModel>(
+      () async {
+        final ({UserModel user, String token}) res = await remoteDataSource.signUp(body);
+        await Future.wait(
+          [
+            localDataSource.saveUser(res.user),
+            localDataSource.saveToken(res.token),
+          ],
+        );
+        return res.user;
+      },
+    );
   }
 }
