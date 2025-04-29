@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../app_info.dart';
 import '../constants/app_strings.dart';
@@ -21,6 +22,40 @@ class APIServices {
     final Response response = await _dio.post(
       link,
       data: body,
+      queryParameters: token != null ? {"token": token} : null,
+      options: Options(headers: {'content-type': "application/json"}),
+    );
+
+    if (response.data is! Map<String, dynamic>) {
+      return {"response": response.data};
+    }
+
+    if (response.data!['is_success'] == false) {
+      throw response.data!['message'];
+    }
+
+    return response.data!;
+  }
+
+  Future<Map<String, dynamic>> postWithFile(
+    final String link,
+    final Map<String,dynamic>? body,
+    final Map<String, List<XFile>> files,
+  ) async {
+    final String? token = await _getAuthToken;
+    final Map<String,dynamic> data = {};
+    data.addAll(body ?? {});
+
+    files.forEach(
+      (key, files) async{
+        final List<MultipartFile> multiFiles = await Future.wait(files.map((e) => MultipartFile.fromFile(e.path, filename: '')));
+        data[key] = multiFiles;
+      },
+    );
+
+    final Response response = await _dio.post(
+      link,
+      data: FormData.fromMap(data),
       queryParameters: token != null ? {"token": token} : null,
       options: Options(headers: {'content-type': "application/json"}),
     );

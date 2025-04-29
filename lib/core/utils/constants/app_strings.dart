@@ -5,8 +5,14 @@ abstract final class AppString {
   static const String kTokenKey = "kTokenKey";
   static const String kUserBox = "kUserBox";
 
-  static const String phone = 'phone';
+  static const String name = 'name';
+  static const String email = 'email';
   static const String password = 'password';
+  static const String type = 'type';
+  static const String phone = 'phone';
+  static const String image = 'image';
+  static const String attachments = 'attachments[]';
+  static const String providerId = 'provider_id';
 
   static const String customerId = 'customer-id';
   static const String reportData = 'report-data';

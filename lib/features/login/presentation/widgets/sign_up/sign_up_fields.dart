@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
+import '../../../../../core/utils/functions/app_validate.dart';
 import '../../controller/sign_up_controller.dart';
 import '../auth_field.dart';
 import '../password_field.dart';
@@ -25,6 +26,7 @@ class SignUpFields extends StatelessWidget {
                 suffixIconData: Icons.person,
                 autofillHints: const [AutofillHints.name],
                 hintText: localeLang(context).enterYourFullName,
+                validator: (val) => AppValidator.auth(val, 3, 100, FieldType.name),
               ),
               AuthField(
                 readOnly: controller.isLoading,
