@@ -5,6 +5,7 @@ import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../../../core/utils/types/account_type.dart';
 import '../../controller/sign_up_controller.dart';
+import 'sign_up_buttons.dart';
 
 class ChooseAccountTypeWidget extends StatelessWidget {
   const ChooseAccountTypeWidget({super.key});
@@ -64,15 +65,7 @@ class ChooseAccountTypeWidget extends StatelessWidget {
                 },
               ),
             ),
-            if(state.hasError && state.errorText != null) ...[
-              Padding(
-                padding: const EdgeInsetsDirectional.only(start: AppConst.paddingBig, top: 3),
-                child: Text(
-                  state.errorText!,
-                  style: context.textTheme.bodySmall?.copyWith(color: context.theme.colorScheme.error),
-                ),
-              ),
-            ]
+            TextErrorIfErrorWidget(state),
           ],
         );
       }

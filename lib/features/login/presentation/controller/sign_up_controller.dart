@@ -26,7 +26,8 @@ abstract class SignUpController extends GetxController {
   AccountType? accountType;
 
   XFile? profile;
-  final List<XFile?> attachments = List.filled(3, null, growable: false);
+  final List<XFile?> _attachments = List.filled(3, null, growable: false);
+  List<XFile?> get  attachments => List.unmodifiable(_attachments); 
 
   Future<void> signUp();
 

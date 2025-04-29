@@ -12,6 +12,8 @@ abstract final class AppColor {
 
   static List<Color> backgroundGradient = [Colors.white, Colors.grey.shade400];
 
+  static const Color borderColor = Colors.grey;
+
   // static const Color active = Color(0xFFE87282);
 
   // static const Color _selectedLight = secondary;
