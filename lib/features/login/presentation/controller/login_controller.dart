@@ -64,7 +64,7 @@ class LoginControllerImp extends LoginController {
   void onPopInvoked() {
     if ((phone?.parseNumber().trim() ?? '').isNotEmpty || password.isNotEmpty) {
       if (DateTime.now().difference(_back) < const Duration(seconds: 2)) {
-        if(!AppInfo.isDebugMode) exit(0);
+        if (!AppInfo.isDebugMode) exit(0);
       }
       ShowMySnackBar.call(
         localeLang().pressAgainToExit,
@@ -73,9 +73,9 @@ class LoginControllerImp extends LoginController {
       _back = DateTime.now();
 
       return;
-    }else{
+    } else {
       print('Close app');
-      if(!AppInfo.isDebugMode) exit(0);
+      if (!AppInfo.isDebugMode) exit(0);
     }
   }
 }

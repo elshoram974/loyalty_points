@@ -98,7 +98,8 @@ class ServerFailure<T> extends Failure<T> {
 
     if (statusCode == 500) {
       return ServerFailure(
-        res.copyWith(message: localeLang().thereIsProblemWithServerTryAgainLater),
+        res.copyWith(
+            message: localeLang().thereIsProblemWithServerTryAgainLater),
       );
     } else if (statusCode == 401 && Get.currentRoute != AppRoute.login) {
       // Get.find<AuthLocalDataSource>().logOut().then(

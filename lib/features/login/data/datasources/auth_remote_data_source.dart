@@ -41,26 +41,23 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       token: token,
     );
   }
-  
+
   @override
-  Future<({String token, UserModel user})> signUp(SignUpBodyData data) async{
-    final Map<String, dynamic> res = await apiServices.postWithFile(
-      AppLinks.signUp,
-      {
-        AppString.name: data.fullName,
-        AppString.email: data.email,
-        AppString.password: data.password,
-        AppString.passwordConfirmation: data.passwordConfirmation,
-        AppString.country: data.address,
-        AppString.type: data.accountType.type,
-        AppString.phone: data.phone.phoneNumber,
-        AppString.providerId: data.providerId,
-      },
-      files: {
-        AppString.attachments: data.attachments,
-        AppString.image: [data.profile],
-      }
-    );
+  Future<({String token, UserModel user})> signUp(SignUpBodyData data) async {
+    final Map<String, dynamic> res =
+        await apiServices.postWithFile(AppLinks.signUp, {
+      AppString.name: data.fullName,
+      AppString.email: data.email,
+      AppString.password: data.password,
+      AppString.passwordConfirmation: data.passwordConfirmation,
+      AppString.country: data.address,
+      AppString.type: data.accountType.type,
+      AppString.phone: data.phone.phoneNumber,
+      AppString.providerId: data.providerId,
+    }, files: {
+      AppString.attachments: data.attachments,
+      AppString.image: [data.profile],
+    });
     final String token = res['token'];
     log(res.toString());
 

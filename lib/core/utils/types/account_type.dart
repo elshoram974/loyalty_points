@@ -13,7 +13,7 @@ abstract class AccountType extends Equatable {
 
   factory AccountType.fromMap(String type) {
     for (AccountType t in allTypes) {
-      if(type == t.type) return t;
+      if (type == t.type) return t;
     }
     return const DeliveryManAccount();
   }

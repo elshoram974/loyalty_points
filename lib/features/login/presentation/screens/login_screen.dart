@@ -16,23 +16,28 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       canPop: false,
-      onPopInvokedWithResult: (_, __) => Get.find<LoginController>().onPopInvoked(),
+      onPopInvokedWithResult: (_, __) =>
+          Get.find<LoginController>().onPopInvoked(),
       body: ListView(
         padding: const EdgeInsets.all(AppConst.paddingBig),
         children: [
           const SizedBox(height: AppConst.paddingExtraBig),
           Text(
-            localeLang(context).welcome_to_businessName(localeLang(context).business_name),
+            localeLang(context)
+                .welcome_to_businessName(localeLang(context).business_name),
             textAlign: TextAlign.center,
-            style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),
+            style: context.textTheme.titleLarge
+                ?.copyWith(fontWeight: FontWeight.w500),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingExtraBig),
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppConst.paddingExtraBig),
             child: Image.asset(AppAssets.fullLogo),
           ),
           const SizedBox(height: AppConst.paddingDefault),
           Text(
-            localeLang(context).loyalty_program_for_PetroJac_oil_shops_and_station_agents_products,
+            localeLang(context)
+                .loyalty_program_for_PetroJac_oil_shops_and_station_agents_products,
             textAlign: TextAlign.center,
             style: context.textTheme.bodySmall,
           ),
@@ -40,7 +45,8 @@ class LoginScreen extends StatelessWidget {
           Text(
             localeLang(context).login,
             textAlign: TextAlign.center,
-            style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
+            style: context.textTheme.titleLarge
+                ?.copyWith(fontWeight: FontWeight.w600),
           ),
           const SizedBox(height: AppConst.paddingExtraBig),
           const LoginFields(),

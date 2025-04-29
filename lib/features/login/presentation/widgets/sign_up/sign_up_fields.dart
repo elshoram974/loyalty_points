@@ -26,7 +26,8 @@ class SignUpFields extends StatelessWidget {
                 suffixIconData: Icons.person,
                 autofillHints: const [AutofillHints.name],
                 hintText: localeLang(context).enterYourFullName,
-                validator: (val) => AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
+                validator: (val) =>
+                    AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
               ),
               AuthField(
                 readOnly: controller.isLoading,
@@ -35,7 +36,8 @@ class SignUpFields extends StatelessWidget {
                 suffixIconData: Icons.mail_rounded,
                 autofillHints: const [AutofillHints.email],
                 hintText: localeLang(context).enterYourEmailAddress,
-                validator: (val) => AppValidator.auth(val?.trim(), 0, 100, FieldType.email),
+                validator: (val) =>
+                    AppValidator.auth(val?.trim(), 0, 100, FieldType.email),
               ),
               AuthField(
                 readOnly: controller.isLoading,
@@ -53,23 +55,25 @@ class SignUpFields extends StatelessWidget {
                 readOnly: controller.isLoading,
                 label: localeLang(context).password,
                 textInputAction: TextInputAction.next,
-                onChanged: (val) => {controller.password = val, controller.update(['confirm-password'])},
+                onChanged: (val) => {
+                  controller.password = val,
+                  controller.update(['confirm-password'])
+                },
                 autofillHints: const [AutofillHints.newPassword],
                 hintText: localeLang(context).enterNewPassword,
               ),
               GetBuilder<SignUpController>(
-                id: 'confirm-password',
-                builder: (controller) {
-                  return PasswordField(
-                    readOnly: controller.isLoading,
-                    label: localeLang(context).confirmPassword,
-                    otherPass: controller.password,
-                    autofillHints: const [AutofillHints.newPassword],
-                    hintText: localeLang(context).enterTheSamePassword,
-                    onChanged: (val) => controller.passwordConfirmation = val,
-                  );
-                }
-              ),
+                  id: 'confirm-password',
+                  builder: (controller) {
+                    return PasswordField(
+                      readOnly: controller.isLoading,
+                      label: localeLang(context).confirmPassword,
+                      otherPass: controller.password,
+                      autofillHints: const [AutofillHints.newPassword],
+                      hintText: localeLang(context).enterTheSamePassword,
+                      onChanged: (val) => controller.passwordConfirmation = val,
+                    );
+                  }),
               AuthField(
                 readOnly: controller.isLoading,
                 onChanged: (v) => controller.address = v.trim(),
@@ -77,7 +81,8 @@ class SignUpFields extends StatelessWidget {
                 suffixIconData: Icons.location_on,
                 autofillHints: const [AutofillHints.fullStreetAddress],
                 hintText: localeLang(context).enterYourFullName,
-                validator: (val) => AppValidator.auth(val?.trim(), 3, 100, FieldType.other),
+                validator: (val) =>
+                    AppValidator.auth(val?.trim(), 3, 100, FieldType.other),
               ),
             ],
           ),

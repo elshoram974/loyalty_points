@@ -1,4 +1,3 @@
-
 import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
 
 import '../config/locale/local_lang.dart';

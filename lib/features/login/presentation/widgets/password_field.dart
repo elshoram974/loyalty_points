@@ -15,7 +15,7 @@ class PasswordField extends StatefulWidget {
     this.autofillHints,
     this.readOnly = false,
     this.onFieldSubmitted,
-    this.textInputAction = TextInputAction.done, 
+    this.textInputAction = TextInputAction.done,
     this.isNewPass = false,
   });
   final String? otherPass;
@@ -45,7 +45,8 @@ class _PasswordFieldState extends State<PasswordField> {
       keyboardType: TextInputType.visiblePassword,
       validator: widget.otherPass != null
           ? (val) => AppValidator.samePassword(val, widget.otherPass!)
-          : (val) => AppValidator.auth(val, (widget.isNewPass? 8 : 0), 100, FieldType.password),
+          : (val) => AppValidator.auth(
+              val, (widget.isNewPass ? 8 : 0), 100, FieldType.password),
       obscureText: obscureText,
       suffixIconData: Icons.lock_rounded,
       label: widget.label,
@@ -59,9 +60,7 @@ class _PasswordFieldState extends State<PasswordField> {
             ? localeLang(context).showPassword
             : localeLang(context).hidePassword,
         icon: Icon(
-          obscureText
-              ? Icons.visibility_off
-              : Icons.visibility,
+          obscureText ? Icons.visibility_off : Icons.visibility,
         ),
       ),
     );

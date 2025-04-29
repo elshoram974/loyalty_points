@@ -13,16 +13,16 @@ class LocaleModel {
 
   Locale get toLocale => Locale(languageCode, countryCode);
 
-  factory LocaleModel.fromLocale(Locale locale){
+  factory LocaleModel.fromLocale(Locale locale) {
     return LocaleModel(
       languageName: intl.Intl.canonicalizedLocale(locale.toString()),
       languageCode: locale.languageCode,
       countryCode: locale.countryCode,
     );
   }
-  static List<LocaleModel> fromLocales(List<Locale> locals){
+  static List<LocaleModel> fromLocales(List<Locale> locals) {
     final List<LocaleModel> temp = [];
-    for(int i = 0; i < locals.length; i++){
+    for (int i = 0; i < locals.length; i++) {
       temp.add(LocaleModel.fromLocale(locals[i]));
     }
 

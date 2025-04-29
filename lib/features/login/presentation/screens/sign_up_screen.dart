@@ -15,7 +15,8 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       canPop: false,
-      onPopInvokedWithResult: (_, __) => Get.find<SignUpController>().onPopInvoked(),
+      onPopInvokedWithResult: (_, __) =>
+          Get.find<SignUpController>().onPopInvoked(),
       body: Form(
         key: Get.find<SignUpController>().formKey,
         child: ListView(

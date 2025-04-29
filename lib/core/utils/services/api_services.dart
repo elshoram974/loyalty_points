@@ -39,20 +39,18 @@ class APIServices {
 
   Future<Map<String, dynamic>> postWithFile(
     final String link,
-    final Map<String,dynamic>? body,
-    {
-      required final Map<String, List<XFile>> files,
-    }
-  ) async {
+    final Map<String, dynamic>? body, {
+    required final Map<String, List<XFile>> files,
+  }) async {
     final String? token = await _getAuthToken;
-    final Map<String,dynamic> data = {};
+    final Map<String, dynamic> data = {};
     data.addAll(body ?? {});
 
     for (MapEntry<String, List<XFile>> e in files.entries) {
-      final List<MultipartFile> multiFiles = await Future.wait(e.value.map((e) => MultipartFile.fromFile(e.path, filename: e.name)));
+      final List<MultipartFile> multiFiles = await Future.wait(
+          e.value.map((e) => MultipartFile.fromFile(e.path, filename: e.name)));
       data[e.key] = multiFiles;
     }
-
 
     final Response response = await _dio.post(
       link,

@@ -23,7 +23,8 @@ class LoginButtons extends StatelessWidget {
               onPressed: controller.isLoading ? null : () {},
               child: Text(
                 localeLang(context).forgetPassword,
-                style: context.textTheme.titleSmall?.copyWith(color: context.theme.primaryColor),
+                style: context.textTheme.titleSmall
+                    ?.copyWith(color: context.theme.primaryColor),
               ),
             ),
           ),
@@ -37,12 +38,10 @@ class LoginButtons extends StatelessWidget {
           const SizedBox(height: 70),
           RichText(
             textAlign: TextAlign.center,
-            text: TextSpan(
-              style: context.textTheme.titleMedium,
-              children: [
-                TextSpan(text: localeLang(context).doNotHaveAnAccount),
-                const TextSpan(text: ' '),
-                TextSpan(
+            text: TextSpan(style: context.textTheme.titleMedium, children: [
+              TextSpan(text: localeLang(context).doNotHaveAnAccount),
+              const TextSpan(text: ' '),
+              TextSpan(
                   text: localeLang(context).signUp,
                   style: context.textTheme.titleMedium?.copyWith(
                     color: context.theme.primaryColor,
@@ -50,10 +49,9 @@ class LoginButtons extends StatelessWidget {
                     decorationColor: context.theme.primaryColor,
                     decorationThickness: 2,
                   ),
-                  recognizer: TapGestureRecognizer()..onTap = () => Get.toNamed(AppRoute.signUp)
-                ),
-              ]
-            ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => Get.toNamed(AppRoute.signUp)),
+            ]),
           ),
         ],
       );

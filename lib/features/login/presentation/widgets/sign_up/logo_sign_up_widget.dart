@@ -13,12 +13,13 @@ class LogoSignUpWidget extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: AppConst.paddingExtraBig),
-        Center(child: Image.asset(AppAssets.fullLogo,width: 120)),
+        Center(child: Image.asset(AppAssets.fullLogo, width: 120)),
         const SizedBox(height: AppConst.paddingDefault),
         Text(
           localeLang(context).signUp,
           textAlign: TextAlign.center,
-          style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
+          style: context.textTheme.titleLarge
+              ?.copyWith(fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: AppConst.paddingExtraBig),
       ],

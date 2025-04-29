@@ -14,62 +14,65 @@ class ChooseAccountTypeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final SignUpController c = Get.find<SignUpController>();
     return FormField<AccountType>(
-      initialValue: c.accountType,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: (_) {
-        if(c.accountType == null) return localeLang(context).uHaveToChooseAccountType;
-        return null;
-      },
-      builder: (state) {
-        void onChangeAccountType(AccountType? accountType){
-          state.didChange(accountType);
-          c.changeAccountType(accountType);
-        }
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: AppConst.paddingDefault),
-            Text(
-              localeLang(context).type,
-              style: context.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
-            ),
-            Container(
-              margin: state.hasError 
-              ? const EdgeInsets.only(top: AppConst.paddingDefault) 
-              : null,
-              decoration: state.hasError 
-              ? BoxDecoration(
-                border: Border.all(color: context.theme.colorScheme.error),
-                borderRadius: BorderRadius.circular(AppConst.radiusSmall)
-              )
-              : null,
-              child: GetBuilder<SignUpController>(
-                builder: (controller) {
-                  return Row(
-                    spacing: AppConst.paddingSmall,
-                    children: [
-                      _AccountTypeRadioWidget(
-                        value: const StoreAccount(),
-                        groupValue: controller.accountType,
-                        title: localeLang(context).distributorOrStore,
-                        onChanged: onChangeAccountType,
-                      ),
-                      _AccountTypeRadioWidget(
-                        value: const DeliveryManAccount(),
-                        groupValue: controller.accountType,
-                        title: localeLang(context).deliveryMan,
-                        onChanged: onChangeAccountType,
-                      ),
-                    ],
-                  );
-                },
+        initialValue: c.accountType,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        validator: (_) {
+          if (c.accountType == null)
+            return localeLang(context).uHaveToChooseAccountType;
+          return null;
+        },
+        builder: (state) {
+          void onChangeAccountType(AccountType? accountType) {
+            state.didChange(accountType);
+            c.changeAccountType(accountType);
+          }
+
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: AppConst.paddingDefault),
+              Text(
+                localeLang(context).type,
+                style: context.textTheme.bodyLarge
+                    ?.copyWith(fontWeight: FontWeight.bold),
               ),
-            ),
-            TextErrorIfErrorWidget(state),
-          ],
-        );
-      }
-    );
+              Container(
+                margin: state.hasError
+                    ? const EdgeInsets.only(top: AppConst.paddingDefault)
+                    : null,
+                decoration: state.hasError
+                    ? BoxDecoration(
+                        border:
+                            Border.all(color: context.theme.colorScheme.error),
+                        borderRadius:
+                            BorderRadius.circular(AppConst.radiusSmall))
+                    : null,
+                child: GetBuilder<SignUpController>(
+                  builder: (controller) {
+                    return Row(
+                      spacing: AppConst.paddingSmall,
+                      children: [
+                        _AccountTypeRadioWidget(
+                          value: const StoreAccount(),
+                          groupValue: controller.accountType,
+                          title: localeLang(context).distributorOrStore,
+                          onChanged: onChangeAccountType,
+                        ),
+                        _AccountTypeRadioWidget(
+                          value: const DeliveryManAccount(),
+                          groupValue: controller.accountType,
+                          title: localeLang(context).deliveryMan,
+                          onChanged: onChangeAccountType,
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+              TextErrorIfErrorWidget(state),
+            ],
+          );
+        });
   }
 }
 
@@ -89,10 +92,12 @@ class _AccountTypeRadioWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: RadioListTile<AccountType>(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppConst.radiusDefault)),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppConst.radiusDefault)),
         dense: true,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        visualDensity: const VisualDensity(horizontal: VisualDensity.minimumDensity),
+        visualDensity:
+            const VisualDensity(horizontal: VisualDensity.minimumDensity),
         value: value,
         groupValue: groupValue,
         onChanged: onChanged,

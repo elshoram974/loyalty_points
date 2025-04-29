@@ -16,7 +16,7 @@ abstract final class InitialBindings {
 
   static Future<void> dependencies() async {
     Get.put(await Hive.openBox<Map>(AppString.kUserBox));
-    
+
     Get.put<AppLocalizationDelegate>(const AppLocalizationDelegate());
 
     Get.put<FlutterSecureStorage>(const FlutterSecureStorage());

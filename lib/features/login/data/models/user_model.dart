@@ -52,8 +52,8 @@ class UserModel extends Equatable {
         'updated_at': updatedAt.toIso8601String(),
         'created_at': createdAt.toIso8601String(),
       };
-  
-  factory UserModel.empty(){
+
+  factory UserModel.empty() {
     return UserModel(
       id: -1,
       providerId: -1,

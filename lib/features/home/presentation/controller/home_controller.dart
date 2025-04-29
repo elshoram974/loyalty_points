@@ -6,7 +6,6 @@
 
 // import '../../../login/data/models/user_model.dart';
 
-
 // abstract class HomeController extends GetxController {
 //   HomeController({required this.repo, required this.user});
 //   UserModel? user;
