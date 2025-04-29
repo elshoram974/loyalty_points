@@ -7,7 +7,7 @@ import 'core/utils/config/locale/locale_model.dart';
 abstract final class AppInfo {
   const AppInfo();
 
-  static const String baseURL = "https://omegacuremart.com";
+  static const String baseURL = "https://points.petrojac.com";
 
   static const String appName = "Loyalty Points";
   static const String appId = "com.petrojac.loyaltyPoints";
