@@ -40,7 +40,9 @@ class APIServices {
   Future<Map<String, dynamic>> postWithFile(
     final String link,
     final Map<String,dynamic>? body,
-    final Map<String, List<XFile>> files,
+    {
+      required final Map<String, List<XFile>> files,
+    }
   ) async {
     final String? token = await _getAuthToken;
     final Map<String,dynamic> data = {};
