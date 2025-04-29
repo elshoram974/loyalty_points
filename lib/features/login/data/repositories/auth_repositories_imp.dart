@@ -24,8 +24,8 @@ class AuthRepositoriesImp extends AuthRepositories {
       () async {
         final ({UserModel user, String token}) res =
             await remoteDataSource.login(
-          phone: '+201210119384',
-          password: 'Rep@2468',
+          phone: phone,
+          password: password,
         );
         await Future.wait(
           [

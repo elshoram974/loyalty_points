@@ -9,6 +9,8 @@ class SignUpBodyData {
   final String password;
   final String passwordConfirmation;
   final String address;
+  final String email;
+  final int providerId;
   final AccountType accountType;
   final XFile profile;
   final List<XFile> attachments;
@@ -22,5 +24,7 @@ class SignUpBodyData {
     required this.accountType,
     required this.profile,
     required this.attachments,
+    required this.providerId,
+    required this.email,
   });
 }

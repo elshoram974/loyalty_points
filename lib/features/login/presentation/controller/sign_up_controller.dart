@@ -5,7 +5,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/status/status.dart';
-import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/helper/network_helper.dart';
@@ -20,6 +19,7 @@ abstract class SignUpController extends GetxController {
 
   PhoneNumber? phone;
   String fullName = '';
+  String email = '';
   String password = '';
   String passwordConfirmation = '';
   String address = '';
@@ -61,13 +61,15 @@ class SignUpControllerImp extends SignUpController {
         accountType: accountType!,
         profile: profile!,
         attachments: attachments.cast<XFile>(),
+        email: email,
+        providerId: 2,
       ),
     );
     handleResponseInController<UserModel>(
       status: signUpState,
       onSuccess: (data) {
         TextInput.finishAutofillContext();
-        Get.offAllNamed(AppRoute.home);
+        // Get.offAllNamed(AppRoute.home);
       },
     );
 
@@ -88,6 +90,7 @@ class SignUpControllerImp extends SignUpController {
         password.isNotEmpty ||
         passwordConfirmation.isNotEmpty ||
         fullName.isNotEmpty ||
+        email.isNotEmpty ||
         accountType != null ||
         address.isNotEmpty ||
         profile != null ||

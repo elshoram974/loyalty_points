@@ -48,12 +48,11 @@ class APIServices {
     final Map<String,dynamic> data = {};
     data.addAll(body ?? {});
 
-    files.forEach(
-      (key, files) async{
-        final List<MultipartFile> multiFiles = await Future.wait(files.map((e) => MultipartFile.fromFile(e.path, filename: '')));
-        data[key] = multiFiles;
-      },
-    );
+    for (MapEntry<String, List<XFile>> e in files.entries) {
+      final List<MultipartFile> multiFiles = await Future.wait(e.value.map((e) => MultipartFile.fromFile(e.path, filename: e.name)));
+      data[e.key] = multiFiles;
+    }
+
 
     final Response response = await _dio.post(
       link,

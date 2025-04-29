@@ -48,13 +48,13 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppLinks.signUp,
       {
         AppString.name: data.fullName,
-        AppString.email: data.phone.phoneNumber,
+        AppString.email: data.email,
         AppString.password: data.password,
         AppString.passwordConfirmation: data.passwordConfirmation,
         AppString.country: data.address,
         AppString.type: data.accountType.type,
         AppString.phone: data.phone.phoneNumber,
-        AppString.providerId: 2,
+        AppString.providerId: data.providerId,
       },
       files: {
         AppString.attachments: data.attachments,
