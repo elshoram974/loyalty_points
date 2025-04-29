@@ -8,11 +8,13 @@ abstract final class AppString {
   static const String name = 'name';
   static const String email = 'email';
   static const String password = 'password';
+  static const String passwordConfirmation = 'password_confirmation';
   static const String type = 'type';
   static const String phone = 'phone';
   static const String image = 'image';
   static const String attachments = 'attachments[]';
   static const String providerId = 'provider_id';
+  static const String country = 'country';
 
   static const String customerId = 'customer-id';
   static const String reportData = 'report-data';

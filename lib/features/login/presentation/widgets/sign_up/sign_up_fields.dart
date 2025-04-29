@@ -26,7 +26,7 @@ class SignUpFields extends StatelessWidget {
                 suffixIconData: Icons.person,
                 autofillHints: const [AutofillHints.name],
                 hintText: localeLang(context).enterYourFullName,
-                validator: (val) => AppValidator.auth(val, 3, 100, FieldType.name),
+                validator: (val) => AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
               ),
               AuthField(
                 readOnly: controller.isLoading,
@@ -57,8 +57,18 @@ class SignUpFields extends StatelessWidget {
                     otherPass: controller.password,
                     autofillHints: const [AutofillHints.newPassword],
                     hintText: localeLang(context).enterTheSamePassword,
+                    onChanged: (val) => controller.passwordConfirmation = val,
                   );
                 }
+              ),
+              AuthField(
+                readOnly: controller.isLoading,
+                onChanged: (v) => controller.address = v.trim(),
+                label: localeLang(context).address,
+                suffixIconData: Icons.location_on,
+                autofillHints: const [AutofillHints.fullStreetAddress],
+                hintText: localeLang(context).enterYourFullName,
+                validator: (val) => AppValidator.auth(val?.trim(), 10, 100, FieldType.other),
               ),
             ],
           ),

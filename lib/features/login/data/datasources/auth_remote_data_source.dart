@@ -37,31 +37,35 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     log(res.toString());
 
     return (
-      user: UserModel(name: "name", email: "email"), //TODO:* Remove this
+      user: UserModel.empty(),
       token: token,
     );
   }
   
   @override
   Future<({String token, UserModel user})> signUp(SignUpBodyData data) async{
-    final Map<String, dynamic> res = await apiServices.post(
-      AppLinks.login,
+    final Map<String, dynamic> res = await apiServices.postWithFile(
+      AppLinks.signUp,
       {
         AppString.name: data.fullName,
-        AppString.email: data.phone,
+        AppString.email: data.phone.phoneNumber,
         AppString.password: data.password,
+        AppString.passwordConfirmation: data.passwordConfirmation,
+        AppString.country: data.address,
         AppString.type: data.accountType.type,
-        AppString.phone: data.phone,
-        AppString.image: data.profile,
-        AppString.attachments: data.attachments,
+        AppString.phone: data.phone.phoneNumber,
         AppString.providerId: 2,
       },
+      files: {
+        AppString.attachments: data.attachments,
+        AppString.image: [data.profile],
+      }
     );
     final String token = res['token'];
     log(res.toString());
 
     return (
-      user: UserModel(name: "name", email: "email"), //TODO:* Remove this
+      user: UserModel.fromMap(res['user']),
       token: token,
     );
   }

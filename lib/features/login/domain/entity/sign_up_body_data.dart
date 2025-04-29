@@ -7,18 +7,18 @@ class SignUpBodyData {
   final PhoneNumber phone;
   final String fullName;
   final String password;
-  final String governorate;
-  final String city;
+  final String passwordConfirmation;
+  final String address;
   final AccountType accountType;
   final XFile profile;
-  final List<XFile?> attachments;
+  final List<XFile> attachments;
 
   SignUpBodyData({
     required this.phone,
     required this.fullName,
     required this.password,
-    required this.governorate,
-    required this.city,
+    required this.passwordConfirmation,
+    required this.address,
     required this.accountType,
     required this.profile,
     required this.attachments,

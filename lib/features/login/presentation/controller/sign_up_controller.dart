@@ -21,8 +21,8 @@ abstract class SignUpController extends GetxController {
   PhoneNumber? phone;
   String fullName = '';
   String password = '';
-  String governorate = '';
-  String city = '';
+  String passwordConfirmation = '';
+  String address = '';
   AccountType? accountType;
 
   XFile? profile;
@@ -56,11 +56,11 @@ class SignUpControllerImp extends SignUpController {
         phone: phone!,
         fullName: fullName,
         password: password,
-        governorate: governorate,
-        city: city,
+        passwordConfirmation: passwordConfirmation,
+        address: address,
         accountType: accountType!,
         profile: profile!,
-        attachments: attachments,
+        attachments: attachments.cast<XFile>(),
       ),
     );
     handleResponseInController<UserModel>(
@@ -86,10 +86,10 @@ class SignUpControllerImp extends SignUpController {
   void onPopInvoked() async {
     if ((phone?.parseNumber().trim() ?? '').isNotEmpty ||
         password.isNotEmpty ||
+        passwordConfirmation.isNotEmpty ||
         fullName.isNotEmpty ||
         accountType != null ||
-        governorate.isNotEmpty ||
-        city.isNotEmpty ||
+        address.isNotEmpty ||
         profile != null ||
         attachments.any((e) => e != null)) {
 
