@@ -1,67 +1,96 @@
 import 'package:equatable/equatable.dart';
 
+import '../../../../core/utils/types/account_type.dart';
+
 class UserModel extends Equatable {
-  final int? id;
-  final int? userId;
+  final int id;
+  final int providerId;
   final String name;
   final String email;
+  final String phone;
+  final AccountType type;
+  final String address;
   final String? image;
-  final String? employeeId;
-  final String? startDate;
-  final String? endDate;
+  final DateTime updatedAt;
+  final DateTime createdAt;
 
   const UserModel({
-    this.id,
-    this.userId,
+    required this.id,
+    required this.providerId,
     required this.name,
     required this.email,
-    this.image,
-    this.employeeId,
-    this.startDate,
-    this.endDate,
+    required this.phone,
+    required this.type,
+    required this.address,
+    required this.image,
+    required this.updatedAt,
+    required this.createdAt,
   });
 
   factory UserModel.fromMap(Map json) => UserModel(
-        id: json['id'] as int?,
-        userId: json['user_id'] as int?,
+        id: int.parse("${json['id'] ?? -1}"),
         name: json['name'] as String,
         email: json['email'] as String,
-        image: json['image'] as String?,
-        employeeId: json['employee_id'] as String?,
-        startDate: json['start_date'] as String?,
-        endDate: json['end_date'] as String?,
+        image: json['image_full_url']?['path'] as String?,
+        providerId: int.parse("${json['provider_id'] ?? -1}"),
+        phone: json['phone'] as String,
+        type: AccountType.fromString(json['type'] as String),
+        address: json['country'] as String,
+        updatedAt: DateTime.parse(json['updated_at'] as String),
+        createdAt: DateTime.parse(json['created_at'] as String),
       );
 
   Map<String, dynamic> toMap() => {
         'id': id,
-        'user_id': userId,
         'name': name,
         'email': email,
-        'image': image,
-        'employee_id': employeeId,
-        'start_date': startDate,
-        'end_date': endDate,
+        'image_full_url': {'path': image},
+        'provider_id': providerId,
+        'phone': phone,
+        'type': type.type,
+        'country': address,
+        'updated_at': updatedAt.toIso8601String(),
+        'created_at': createdAt.toIso8601String(),
       };
+  
+  factory UserModel.empty(){
+    return UserModel(
+      id: -1,
+      providerId: -1,
+      name: 'name',
+      email: 'email',
+      phone: 'phone',
+      type: const DeliveryManAccount(),
+      address: 'address',
+      image: null,
+      updatedAt: DateTime.now(),
+      createdAt: DateTime(2001),
+    );
+  }
 
   UserModel copyWith({
     int? id,
-    int? userId,
+    int? providerId,
     String? name,
     String? email,
+    String? phone,
     String? image,
-    String? employeeId,
-    String? startDate,
-    String? endDate,
+    AccountType? type,
+    String? address,
+    DateTime? updatedAt,
+    DateTime? createdAt,
   }) {
     return UserModel(
       id: id ?? this.id,
-      userId: userId ?? this.userId,
+      providerId: providerId ?? this.providerId,
       name: name ?? this.name,
       email: email ?? this.email,
+      phone: phone ?? this.phone,
+      type: type ?? this.type,
+      address: address ?? this.address,
       image: image ?? this.image,
-      employeeId: employeeId ?? this.employeeId,
-      startDate: startDate ?? this.startDate,
-      endDate: endDate ?? this.endDate,
+      updatedAt: updatedAt ?? this.updatedAt,
+      createdAt: createdAt ?? this.createdAt,
     );
   }
 
@@ -69,13 +98,15 @@ class UserModel extends Equatable {
   List<Object?> get props {
     return [
       id,
-      userId,
+      providerId,
       name,
       email,
+      phone,
+      type,
+      address,
       image,
-      employeeId,
-      startDate,
-      endDate,
+      updatedAt,
+      createdAt,
     ];
   }
 }
