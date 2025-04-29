@@ -34,7 +34,7 @@ class UserModel extends Equatable {
         image: json['image_full_url']?['path'] as String?,
         providerId: int.parse("${json['provider_id'] ?? -1}"),
         phone: json['phone'] as String,
-        type: AccountType.fromString(json['type'] as String),
+        type: AccountType.fromMap(json['type'] as String),
         address: json['country'] as String,
         updatedAt: DateTime.parse(json['updated_at'] as String),
         createdAt: DateTime.parse(json['created_at'] as String),
