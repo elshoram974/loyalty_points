@@ -23,18 +23,14 @@ class SignUpButtons extends StatelessWidget {
           title: localeLang(context).attachProfilePhoto, 
           errorMessage: localeLang(context).uHaveToAddProfileImage, 
           files: [controller.profile],
-          onChanged: (image) {
-            
-          },
+          onChanged: (images) => controller.profile = images.firstOrNull,
         ),
         const SizedBox(height: AppConst.paddingDefault),
         AttachmentsValidationWidget(
           title: localeLang(context).attachStorefrontPhotos, 
           errorMessage: localeLang(context).uHaveToAddTheThreeImages, 
           files: controller.attachments,
-          onChanged: (files) {
-            
-          },
+          onChanged: (images) => controller.attachments = images,
         ),
         const SizedBox(height: AppConst.paddingExtraBig),
         GetBuilder<SignUpController>(
