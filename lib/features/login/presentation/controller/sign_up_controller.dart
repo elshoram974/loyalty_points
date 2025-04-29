@@ -5,17 +5,24 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/status/status.dart';
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../../../core/utils/types/account_type.dart';
+import '../../data/models/provider_model/provider_model.dart';
 import '../../data/models/user_model.dart';
 import '../../domain/entity/sign_up_body_data.dart';
 import '../../domain/repositories/auth_repositories.dart';
 
 abstract class SignUpController extends GetxController {
+  SignUpController(this.repo);
+  final AuthRepositories repo;
+
   bool get isLoading;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  List<ProviderModel> get providers;
 
   PhoneNumber? phone;
   String fullName = '';
@@ -28,6 +35,8 @@ abstract class SignUpController extends GetxController {
   XFile? profile;
   List<XFile?> attachments = List.filled(3, null, growable: false);
 
+  Future<void> getProviderList();
+
   Future<void> signUp();
 
   void changeAccountType(AccountType? type);
@@ -36,13 +45,34 @@ abstract class SignUpController extends GetxController {
 }
 
 class SignUpControllerImp extends SignUpController {
-  SignUpControllerImp(this.repo);
-  final AuthRepositories repo;
+  SignUpControllerImp(super.repo){
+    getProviderList();
+  }
 
   bool _isLoading = false;
 
   @override
   bool get isLoading => _isLoading;
+
+  final List<ProviderModel> _providers = [];
+
+  @override
+  List<ProviderModel> get providers => List.unmodifiable(_providers);
+
+  @override
+  Future<void> getProviderList() async {
+    if (NetworkInfo.showSnackBarWhenNoInternet) return;
+    final Status<List<ProviderModel>> providerRes = await repo.getProviderList();
+    handleResponseInController<List<ProviderModel>>(
+      status: providerRes,
+      onSuccess: (providersList) {
+        _providers.clear();
+        _providers.addAll(providersList);
+        update();
+      },
+    );
+
+  }
 
   @override
   Future<void> signUp() async {
@@ -69,7 +99,7 @@ class SignUpControllerImp extends SignUpController {
       status: signUpState,
       onSuccess: (data) {
         TextInput.finishAutofillContext();
-        // Get.offAllNamed(AppRoute.home);
+        Get.offAllNamed(AppRoute.home);
       },
     );
 
@@ -83,7 +113,6 @@ class SignUpControllerImp extends SignUpController {
     update();
   }
 
-
   @override
   void onPopInvoked() async {
     if ((phone?.parseNumber().trim() ?? '').isNotEmpty ||
@@ -95,7 +124,6 @@ class SignUpControllerImp extends SignUpController {
         address.isNotEmpty ||
         profile != null ||
         attachments.any((e) => e != null)) {
-
       await ShowMyDialog.back(Get.context!);
     } else {
       Get.back();

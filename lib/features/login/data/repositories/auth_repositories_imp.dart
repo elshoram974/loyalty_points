@@ -1,3 +1,4 @@
+import 'package:loyalty_points/features/login/data/models/provider_model/provider_model.dart';
 import 'package:loyalty_points/features/login/domain/entity/sign_up_body_data.dart';
 
 import '../../../../core/status/status.dart';
@@ -36,6 +37,12 @@ class AuthRepositoriesImp extends AuthRepositories {
         return res.user;
       },
     );
+  }
+
+  @override
+  Future<Status<List<ProviderModel>>> getProviderList() {
+    // TODO: implement getProviderList
+    throw UnimplementedError();
   }
 
   @override
