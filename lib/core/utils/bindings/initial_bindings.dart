@@ -21,9 +21,11 @@ abstract final class InitialBindings {
 
     Get.put<FlutterSecureStorage>(const FlutterSecureStorage());
 
+    Get.put<Dio>(Dio(BaseOptions(baseUrl: AppInfo.baseURL)));
+
     Get.put<APIServices>(
       APIServices(
-        Dio(BaseOptions(baseUrl: AppInfo.baseURL)),
+        Get.find<Dio>(),
         Get.find<FlutterSecureStorage>(),
       ),
     );

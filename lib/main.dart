@@ -15,6 +15,7 @@ import 'core/utils/config/routes/routes.dart';
 import 'core/utils/config/theme/dark_theme.dart';
 import 'core/utils/config/theme/light_theme.dart';
 import 'core/utils/helper/network_helper.dart';
+import 'core/utils/services/push_notification_service.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -29,6 +30,7 @@ void main() async {
     ],
   );
   await InitialBindings.dependencies();
+  await NotificationService.initialize();
   runApp(
     DevicePreview(
       enabled: AppInfo.isDebugMode,
