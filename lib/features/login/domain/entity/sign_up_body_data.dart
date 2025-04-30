@@ -11,7 +11,8 @@ class SignUpBodyData {
   final String passwordConfirmation;
   final String address;
   final String email;
-  final ProviderModel provider;
+  final String fcmToken;
+  final ProviderModel? provider;
   final AccountType accountType;
   final XFile profile;
   final List<XFile> attachments;
@@ -27,5 +28,6 @@ class SignUpBodyData {
     required this.attachments,
     required this.provider,
     required this.email,
+    required this.fcmToken,
   });
 }

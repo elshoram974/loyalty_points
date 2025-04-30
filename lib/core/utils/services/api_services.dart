@@ -52,6 +52,10 @@ class APIServices {
       data[e.key] = multiFiles;
     }
 
+    if(AppInfo.isDebugMode){
+      print("endpoint: $link, body: $body with ${files.length} files");
+    }
+
     final Response response = await _dio.post(
       link,
       data: FormData.fromMap(data),

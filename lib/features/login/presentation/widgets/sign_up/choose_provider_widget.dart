@@ -26,18 +26,18 @@ class ChooseProviderWidget extends StatelessWidget {
         GetBuilder<SignUpController>(
           id: AppString.providerId,
           builder: (controller) {
-            return DropdownButtonFormField<ProviderModel>(
+            return DropdownButtonFormField<ProviderModel?>(
               isExpanded: true,
               hint: Text(localeLang(context).selectProvider),
               borderRadius: BorderRadius.circular(AppConst.radiusSmall),
               autovalidateMode: AutovalidateMode.onUserInteraction,
               decoration: MyTextFieldDecoration.defaultDecoration(context, Icons.storefront),
-              validator: (value) {
-                if (controller.selectedProvider == null) {
-                  return localeLang(context).uHaveToSelectAProvider;
-                }
-                return null;
-              },
+              // validator: (value) {
+              //   if (controller.selectedProvider == null) {
+              //     return localeLang(context).uHaveToSelectAProvider;
+              //   }
+              //   return null;
+              // },
               items: List.generate(
                 controller.providers.length,
                 (i) {

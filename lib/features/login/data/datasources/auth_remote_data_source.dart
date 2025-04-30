@@ -68,9 +68,10 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppString.password: data.password,
       AppString.passwordConfirmation: data.passwordConfirmation,
       AppString.country: data.address,
+      AppString.fcmToken: data.fcmToken,
       AppString.type: data.accountType.type,
       AppString.phone: data.phone.phoneNumber,
-      AppString.providerId: data.provider.id,
+      if(data.provider != null) AppString.providerId: data.provider?.id,
     }, files: {
       AppString.attachments: data.attachments,
       AppString.image: [data.profile],
