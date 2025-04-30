@@ -133,7 +133,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
         },
         textAlign: widget.textAlign,
         onFieldSubmitted: widget.onFieldSubmitted,
-        autoValidateMode: AutovalidateMode.onUnfocus,
+        autoValidateMode: AutovalidateMode.onUserInteraction,
         fieldKey: widget.fieldKey,
         isEnabled: !widget.readOnly,
         textStyle: widget.style,
@@ -189,7 +189,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
         maxLength: widget.maxLength,
         initialValue: widget.initialValue,
         controller: widget.controller,
-        autovalidateMode: AutovalidateMode.onUnfocus,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         keyboardType: widget.keyboardType ??
             (widget.isDouble ? TextInputType.number : TextInputType.text),
         inputFormatters: widget.inputFormatters,

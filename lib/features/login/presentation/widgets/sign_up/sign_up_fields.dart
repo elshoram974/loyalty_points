@@ -24,6 +24,7 @@ class SignUpFields extends StatelessWidget {
                 onChanged: (v) => controller.fullName = v.trim(),
                 label: localeLang(context).fullName,
                 suffixIconData: Icons.person,
+                textCapitalization: TextCapitalization.words,
                 autofillHints: const [AutofillHints.name],
                 hintText: localeLang(context).enterYourFullName,
                 validator: (val) =>
@@ -31,13 +32,13 @@ class SignUpFields extends StatelessWidget {
               ),
               AuthField(
                 readOnly: controller.isLoading,
-                onChanged: (v) => controller.email = v.trim(),
+                onChanged: (v) => controller.email = v.trim().toLowerCase(),
                 label: localeLang(context).email,
                 suffixIconData: Icons.mail_rounded,
                 autofillHints: const [AutofillHints.email],
                 hintText: localeLang(context).enterYourEmailAddress,
                 validator: (val) =>
-                    AppValidator.auth(val?.trim(), 0, 100, FieldType.email),
+                    AppValidator.auth(val?.trim().toLowerCase(), 0, 100, FieldType.email),
               ),
               AuthField(
                 readOnly: controller.isLoading,
@@ -78,6 +79,7 @@ class SignUpFields extends StatelessWidget {
                 readOnly: controller.isLoading,
                 onChanged: (v) => controller.address = v.trim(),
                 label: localeLang(context).address,
+                textCapitalization: TextCapitalization.words,
                 suffixIconData: Icons.location_on,
                 autofillHints: const [AutofillHints.fullStreetAddress],
                 hintText: localeLang(context).enterYourFullAddress,

@@ -22,9 +22,11 @@ class AuthField extends StatelessWidget {
     this.keyboardType,
     this.textInputAction = TextInputAction.next,
     this.isPhoneNumber = false,
-    this.onPhoneInputChanged,
+    this.onPhoneInputChanged, 
+    this.textCapitalization = TextCapitalization.none,
   });
   final TextEditingController? controller;
+  final TextCapitalization textCapitalization;
   final IconData? suffixIconData;
   final String? hintText;
   final String label;
@@ -60,7 +62,7 @@ class AuthField extends StatelessWidget {
           keyboardType: keyboardType,
           textInputAction: textInputAction,
           validator: validator,
-          textCapitalization: TextCapitalization.none,
+          textCapitalization: textCapitalization,
           prefix: suffixIconData == null
               ? null
               : Icon(

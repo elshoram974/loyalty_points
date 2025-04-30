@@ -5,6 +5,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
+import '../../../features/login/data/datasources/auth_local_data_source.dart';
 import '../../utils/config/locale/local_lang.dart';
 import '../../utils/config/routes/routes.dart';
 import 'failure.dart';
@@ -89,9 +90,10 @@ class ServerFailure<T> extends Failure<T> {
       type: e.type.name,
       code: statusCode ?? -1,
       message: e.response!.data is Map
-          ? (e.response!.data['errors'] as List)
-              .map<String>((e) => "${e['message']} with code ${e['code']}")
-              .join(", and")
+          ? e.response!.data['message']
+          // (e.response!.data['errors'] as List)
+          //     .map<String>((e) => "${e['message']} with code ${e['code']}")
+          //     .join(", and")
           : "unKnownMessage",
       dioExceptionType: e.type,
     );
@@ -102,9 +104,9 @@ class ServerFailure<T> extends Failure<T> {
             message: localeLang().thereIsProblemWithServerTryAgainLater),
       );
     } else if (statusCode == 401 && Get.currentRoute != AppRoute.login) {
-      // Get.find<AuthLocalDataSource>().logOut().then(
-      //       (_) => Get.offAllNamed(AppRoute.login),
-      //     );
+      Get.find<AuthLocalDataSource>().logOut().then(
+            (_) => Get.offAllNamed(AppRoute.login),
+          );
       return ServerFailure(
         res.copyWith(message: localeLang().unauthorizedError),
       );

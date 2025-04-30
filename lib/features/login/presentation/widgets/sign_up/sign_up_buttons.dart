@@ -34,7 +34,7 @@ class SignUpButtons extends StatelessWidget {
           files: controller.attachments,
           onChanged: (images) => controller.attachments = images,
         ),
-        const SizedBox(height: AppConst.paddingExtraBig),
+        const SizedBox(height: 70),
         GetBuilder<SignUpController>(builder: (controller) {
           return CustomFilledButton(
             text: localeLang(context).signUp,
@@ -43,7 +43,7 @@ class SignUpButtons extends StatelessWidget {
             style: context.textTheme.headlineMedium,
           );
         }),
-        const SizedBox(height: 70),
+        const SizedBox(height: AppConst.paddingExtraBig),
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(style: context.textTheme.titleMedium, children: [
