@@ -24,7 +24,7 @@ class ProviderModel extends Equatable {
   });
 
   factory ProviderModel.fromMap(Map<String, dynamic> data) => ProviderModel(
-        id: data['id'] as int?,
+        id: int.tryParse("${data['id']}"),
         name: data['name'] as String?,
         image: data['image'] as String?,
         custom: data['custom'] as dynamic,

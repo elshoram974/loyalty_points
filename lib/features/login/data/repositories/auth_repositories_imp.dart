@@ -41,8 +41,9 @@ class AuthRepositoriesImp extends AuthRepositories {
 
   @override
   Future<Status<List<ProviderModel>>> getProviderList() {
-    // TODO: implement getProviderList
-    throw UnimplementedError();
+    return executeAndHandleErrors<List<ProviderModel>>(
+      () => remoteDataSource.getProvidersList(),
+    );
   }
 
   @override

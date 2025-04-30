@@ -17,8 +17,9 @@ class ChooseAccountTypeWidget extends StatelessWidget {
         initialValue: c.accountType,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: (_) {
-          if (c.accountType == null)
+          if (c.accountType == null){
             return localeLang(context).uHaveToChooseAccountType;
+          }
           return null;
         },
         builder: (state) {

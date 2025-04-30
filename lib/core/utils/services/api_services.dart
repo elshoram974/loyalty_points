@@ -70,7 +70,7 @@ class APIServices {
     return response.data!;
   }
 
-  Future<Map<String, dynamic>> get(final String link) async {
+  Future get(final String link) async {
     final String? token = await _getAuthToken;
 
     if (AppInfo.isDebugMode) {
@@ -78,12 +78,14 @@ class APIServices {
       print("user token is $token ");
     }
 
-    final Response<Map<String, dynamic>> response = await _dio.get(
+    final Response response = await _dio.get(
       link,
       queryParameters: token != null ? {"token": token} : null,
       options: Options(headers: {'content-type': "application/json"}),
     );
     if (AppInfo.isDebugMode) log("body ${response.data}");
+
+    if(response is! Map) return response.data;
 
     if (response.data!['is_success'] == false) {
       throw response.data!['message'];

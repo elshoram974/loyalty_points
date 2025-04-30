@@ -1,4 +1,8 @@
 {
+    "uHaveToSelectAProvider": "You have to select a provider",
+    "selectProvider": "Select a provider",
+    "provider": "Provider",
+    "enterYourFullAddress": "Enter your full address",
     "enterYourEmailAddress": "Enter your email address",
     "email": "Email",
     "address": "Address",

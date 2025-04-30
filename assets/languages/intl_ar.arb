@@ -1,4 +1,8 @@
 {
+  "uHaveToSelectAProvider": "يجب عليك اختيار مزود الخدمة",
+  "selectProvider": "اختر مزود الخدمة",
+  "provider": "مزود الخدمة",
+  "enterYourFullAddress": "أدخل العنوان بالكامل",
   "enterYourEmailAddress": "أدخل البريد الإلكتروني الخاص بك",
   "email": "البريد الالكتروني",
   "address": "العنوان",

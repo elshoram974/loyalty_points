@@ -4,7 +4,9 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:loyalty_points/core/utils/extensions/string_ex.dart';
 
 import '../app_info.dart';
+import 'utils/constants/app_color.dart';
 import 'utils/constants/app_constants.dart';
+import 'utils/helper/my_text_decoration.dart';
 
 class MyDefaultField extends StatefulWidget {
   const MyDefaultField({
@@ -139,17 +141,12 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
           filled: widget.filled,
           fillColor: widget.fillColor,
           suffixIconColor: widget.suffixIconColor,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-          ),
+          border: MyTextFieldDecoration.border,
+          enabledBorder: MyTextFieldDecoration.enabledBorder,
           constraints: const BoxConstraints(maxWidth: AppConst.constraint),
           alignLabelWithHint: widget.alignLabelWithHint,
           labelText: widget.labelText,
-          hintStyle: widget.hintStyle ?? const TextStyle(color: Colors.grey),
+          hintStyle: widget.hintStyle ?? const TextStyle(color: AppColor.borderColor),
           suffixIcon: widget.suffix,
           prefixIcon: widget.prefix,
           hintText: widget.hintText,
@@ -170,13 +167,8 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
           filled: widget.filled,
           fillColor: widget.fillColor,
           suffixIconColor: widget.suffixIconColor,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-          ),
+          border: MyTextFieldDecoration.border,
+          enabledBorder: MyTextFieldDecoration.enabledBorder,
           constraints: const BoxConstraints(maxWidth: AppConst.constraint),
           alignLabelWithHint: widget.alignLabelWithHint,
           labelText: widget.labelText,
@@ -223,6 +215,8 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
       ),
     );
   }
+
+
 
   PhoneNumber removeZerosInFirstNum(PhoneNumber phone) {
     return PhoneNumber(

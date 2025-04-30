@@ -80,7 +80,7 @@ class SignUpFields extends StatelessWidget {
                 label: localeLang(context).address,
                 suffixIconData: Icons.location_on,
                 autofillHints: const [AutofillHints.fullStreetAddress],
-                hintText: localeLang(context).enterYourFullName,
+                hintText: localeLang(context).enterYourFullAddress,
                 validator: (val) =>
                     AppValidator.auth(val?.trim(), 3, 100, FieldType.other),
               ),

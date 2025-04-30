@@ -2,6 +2,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/utils/types/account_type.dart';
+import '../../data/models/provider_model/provider_model.dart';
 
 class SignUpBodyData {
   final PhoneNumber phone;
@@ -10,7 +11,7 @@ class SignUpBodyData {
   final String passwordConfirmation;
   final String address;
   final String email;
-  final int providerId;
+  final ProviderModel provider;
   final AccountType accountType;
   final XFile profile;
   final List<XFile> attachments;
@@ -24,7 +25,7 @@ class SignUpBodyData {
     required this.accountType,
     required this.profile,
     required this.attachments,
-    required this.providerId,
+    required this.provider,
     required this.email,
   });
 }

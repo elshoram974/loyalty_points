@@ -6,6 +6,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/config/routes/routes.dart';
+import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/helper/network_helper.dart';
@@ -30,6 +31,7 @@ abstract class SignUpController extends GetxController {
   String password = '';
   String passwordConfirmation = '';
   String address = '';
+  ProviderModel? selectedProvider;
   AccountType? accountType;
 
   XFile? profile;
@@ -68,7 +70,7 @@ class SignUpControllerImp extends SignUpController {
       onSuccess: (providersList) {
         _providers.clear();
         _providers.addAll(providersList);
-        update();
+        update([AppString.providerId]);
       },
     );
 
@@ -92,7 +94,7 @@ class SignUpControllerImp extends SignUpController {
         profile: profile!,
         attachments: attachments.cast<XFile>(),
         email: email,
-        providerId: 2,
+        provider: selectedProvider!,
       ),
     );
     handleResponseInController<UserModel>(
@@ -123,6 +125,7 @@ class SignUpControllerImp extends SignUpController {
         accountType != null ||
         address.isNotEmpty ||
         profile != null ||
+        selectedProvider != null ||
         attachments.any((e) => e != null)) {
       await ShowMyDialog.back(Get.context!);
     } else {
