@@ -13,6 +13,13 @@ class APIServices {
   final Dio _dio;
   final FlutterSecureStorage _storage;
 
+  Map<String, dynamic> _header(String? token) {
+    return {
+      'content-type': "application/json",
+      if (token != null) 'Authorization': "Bearer $token",
+    };
+  }
+
   Future<Map<String, dynamic>> post(
     final String link,
     final Object? body,
@@ -22,8 +29,7 @@ class APIServices {
     final Response response = await _dio.post(
       link,
       data: body,
-      queryParameters: token != null ? {"token": token} : null,
-      options: Options(headers: {'content-type': "application/json"}),
+      options: Options(headers: _header(token)),
     );
 
     if (response.data!['success'] == false) {
@@ -44,19 +50,19 @@ class APIServices {
 
     for (MapEntry<String, List<XFile>> e in files.entries) {
       final List<MultipartFile> multiFiles = await Future.wait(
-          e.value.map((e) => MultipartFile.fromFile(e.path, filename: e.name)));
+        e.value.map((e) => MultipartFile.fromFile(e.path, filename: e.name)),
+      );
       data[e.key] = multiFiles;
     }
 
-    if(AppInfo.isDebugMode){
+    if (AppInfo.isDebugMode) {
       print("endpoint: $link, body: $body with ${files.entries.length} files");
     }
 
     final Response response = await _dio.post(
       link,
       data: FormData.fromMap(data),
-      queryParameters: token != null ? {"token": token} : null,
-      options: Options(headers: {'content-type': "application/json"}),
+      options: Options(headers: _header(token)),
     );
 
     if (response.data!['success'] == false) {
@@ -66,7 +72,7 @@ class APIServices {
     return response.data!;
   }
 
-  Future<Map<String,dynamic>> get(final String link) async {
+  Future<Map<String, dynamic>> get(final String link) async {
     final String? token = await _getAuthToken;
 
     if (AppInfo.isDebugMode) {
@@ -76,8 +82,7 @@ class APIServices {
 
     final Response response = await _dio.get(
       link,
-      queryParameters: token != null ? {"token": token} : null,
-      options: Options(headers: {'content-type': "application/json"}),
+      options: Options(headers: _header(token)),
     );
     if (AppInfo.isDebugMode) log("body ${response.data}");
 
