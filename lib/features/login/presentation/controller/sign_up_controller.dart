@@ -12,7 +12,6 @@ import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/functions/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
-import '../../../../core/utils/services/push_notification_service.dart';
 import '../../../../core/utils/types/account_type.dart';
 import '../../data/models/provider_model/provider_model.dart';
 import '../../data/models/user_model.dart';

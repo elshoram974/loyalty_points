@@ -13,6 +13,7 @@ import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/functions/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../data/models/user_model.dart';
+import '../../domain/entity/login_request_data.dart';
 import '../../domain/repositories/auth_repositories.dart';
 
 abstract class LoginController extends GetxController {
@@ -44,8 +45,11 @@ class LoginControllerImp extends LoginController {
     _isLoading = true;
     update();
     final Status<UserModel> loginState = await repo.login(
-      phone: phone!.phoneNumber!,
-      password: password,
+      LoginRequestData(
+        loginBy: 'phone', // email
+        emailOrPhone: phone!.phoneNumber!, 
+        password: password,
+      ),
     );
     handleResponseInController<UserModel>(
       status: loginState,

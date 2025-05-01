@@ -16,6 +16,8 @@ abstract final class AppString {
   static const String providerId = 'provider_id';
   static const String country = 'country';
   static const String fcmToken = 'fcm_token';
+  static const String emailOrPhone = 'email_or_phone';
+  static const String loginBy = 'login_by';
 
   static const String allUsers = 'all_users';
 }
