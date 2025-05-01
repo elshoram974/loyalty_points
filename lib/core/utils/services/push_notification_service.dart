@@ -7,9 +7,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 
-import '../constants/app_strings.dart';
-
-final FirebaseMessaging _fcm = FirebaseMessaging.instance;
+final FirebaseMessaging fcm = FirebaseMessaging.instance;
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
   '0', // id
@@ -23,8 +21,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 class NotificationService {
   static String? deviceToken;
   static Future<void> initialize() async {
-    _fcm.subscribeToTopic(AppString.allUsers);
-    await _fcm.requestPermission(
+    await fcm.requestPermission(
       alert: true,
       announcement: false,
       badge: true,
@@ -122,7 +119,7 @@ class NotificationService {
   }
 
   static Future<String> getDeviceToken() async {
-    deviceToken = await _fcm.getToken() ?? '';
+    deviceToken = await fcm.getToken() ?? '';
     print("fcmToken $deviceToken");
     return deviceToken!;
   }
