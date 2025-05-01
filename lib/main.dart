@@ -25,7 +25,6 @@ void main() async {
   await Future.wait(
     [
       Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
-      NetworkInfo.init(),
       Hive.initFlutter(),
     ],
   );
@@ -64,7 +63,13 @@ class MyApp extends StatelessWidget {
       getPages: AppRoute.pages,
       initialRoute: AppRoute.login,
       debugShowCheckedModeBanner: AppInfo.isDebugMode,
-      // initialBinding: InitialBindings(),
+      initialBinding: BindingsBuilder(
+        () async {
+          // await S.load(Get.find<ConfigController>().locale);
+          await NetworkInfo.init();
+          
+        },
+      ),
     );
   }
 }

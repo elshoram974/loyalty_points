@@ -6,6 +6,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../app_info.dart';
 import '../../../features/login/data/datasources/auth_local_data_source.dart';
+import '../../../features/login/data/datasources/auth_remote_data_source.dart';
+import '../../../features/login/data/repositories/auth_repositories_imp.dart';
+import '../../../features/login/domain/repositories/auth_repositories.dart';
 import '../config/controller/config_controller.dart';
 import '../config/locale/generated/l10n.dart';
 import '../constants/app_strings.dart';
@@ -38,6 +41,15 @@ abstract final class InitialBindings {
       AuthLocalDataSourceImp(
         Get.find(),
         Get.find<FlutterSecureStorage>(),
+      ),
+    );
+    Get.put<AuthRemoteDataSource>(
+      AuthRemoteDataSourceImp(Get.find<APIServices>()),
+    );
+    Get.put<AuthRepositories>(
+      AuthRepositoriesImp(
+        localDataSource: Get.find<AuthLocalDataSource>(),
+        remoteDataSource: Get.find<AuthRemoteDataSource>(),
       ),
     );
   }
