@@ -17,10 +17,5 @@ abstract final class AppString {
   static const String country = 'country';
   static const String fcmToken = 'fcm_token';
 
-  static const String customerId = 'customer-id';
-  static const String reportData = 'report-data';
-
-  static const String search = 'search';
-  static const String reportDate = 'report_date';
-  static const String orderDate = 'order_date';
+  static const String allUsers = 'all_users';
 }

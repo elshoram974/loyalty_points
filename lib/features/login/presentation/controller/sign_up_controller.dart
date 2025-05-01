@@ -5,10 +5,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/status/status.dart';
+import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/functions/show_my_dialog.dart';
+import '../../../../core/utils/functions/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../../../core/utils/services/push_notification_service.dart';
 import '../../../../core/utils/types/account_type.dart';
@@ -81,7 +83,13 @@ class SignUpControllerImp extends SignUpController {
   Future<void> signUp() async {
     if (NetworkInfo.showSnackBarWhenNoInternet) return;
 
-    if (!formKey.currentState!.validate()) return;
+    if (!formKey.currentState!.validate()){ 
+      ShowMySnackBar.call(
+        localeLang(Get.context!).uHaveToFillFields,
+        backgroundColor: Get.theme.colorScheme.error,
+      );
+      return;
+    }
     _isLoading = true;
     update();
     final Status<UserModel> signUpState = await repo.signUp(
@@ -96,7 +104,6 @@ class SignUpControllerImp extends SignUpController {
         attachments: attachments.cast<XFile>(),
         email: email,
         provider: selectedProvider,
-        fcmToken: NotificationService.deviceToken ?? await NotificationService.getDeviceToken(),
       ),
     );
     handleResponseInController<UserModel>(

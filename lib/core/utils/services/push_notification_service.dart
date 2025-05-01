@@ -7,6 +7,8 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
 import 'package:path_provider/path_provider.dart';
 
+import '../constants/app_strings.dart';
+
 final FirebaseMessaging _fcm = FirebaseMessaging.instance;
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
@@ -21,6 +23,7 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 class NotificationService {
   static String? deviceToken;
   static Future<void> initialize() async {
+    _fcm.subscribeToTopic(AppString.allUsers);
     await _fcm.requestPermission(
       alert: true,
       announcement: false,

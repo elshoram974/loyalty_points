@@ -91,9 +91,6 @@ class ServerFailure<T> extends Failure<T> {
       code: statusCode ?? -1,
       message: e.response!.data is Map
           ? e.response!.data['message']
-          // (e.response!.data['errors'] as List)
-          //     .map<String>((e) => "${e['message']} with code ${e['code']}")
-          //     .join(", and")
           : "unKnownMessage",
       dioExceptionType: e.type,
     );

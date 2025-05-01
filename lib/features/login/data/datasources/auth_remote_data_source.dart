@@ -46,13 +46,13 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
   }
   @override
   Future<List<ProviderModel>> getProvidersList() async{
-    final List res = await apiServices.get(
+    final Map<String, dynamic> res = await apiServices.get(
       AppLinks.providersList,
     );
 
     final List<ProviderModel> providers = [];
 
-    for (var r in res) {
+    for (Map<String, dynamic> r in res['data'] as List) {
       providers.add(ProviderModel.fromMap(r));
     }
 
@@ -68,7 +68,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppString.password: data.password,
       AppString.passwordConfirmation: data.passwordConfirmation,
       AppString.country: data.address,
-      AppString.fcmToken: data.fcmToken,
       AppString.type: data.accountType.type,
       AppString.phone: data.phone.phoneNumber,
       if(data.provider != null) AppString.providerId: data.provider?.id,
@@ -76,12 +75,11 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppString.attachments: data.attachments,
       AppString.image: [data.profile],
     });
-    final String token = res['token'];
     log(res.toString());
 
     return (
-      user: UserModel.fromMap(res['user']),
-      token: token,
+      user: UserModel.fromMap(res['data']['user']),
+      token: res['data']['token'] as String,
     );
   }
 }

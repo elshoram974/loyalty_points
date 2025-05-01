@@ -26,11 +26,7 @@ class APIServices {
       options: Options(headers: {'content-type': "application/json"}),
     );
 
-    if (response.data is! Map<String, dynamic>) {
-      return {"response": response.data};
-    }
-
-    if (response.data!['is_success'] == false) {
+    if (response.data!['success'] == false) {
       throw response.data!['message'];
     }
 
@@ -53,7 +49,7 @@ class APIServices {
     }
 
     if(AppInfo.isDebugMode){
-      print("endpoint: $link, body: $body with ${files.length} files");
+      print("endpoint: $link, body: $body with ${files.entries.length} files");
     }
 
     final Response response = await _dio.post(
@@ -63,18 +59,14 @@ class APIServices {
       options: Options(headers: {'content-type': "application/json"}),
     );
 
-    if (response.data is! Map<String, dynamic>) {
-      return {"response": response.data};
-    }
-
-    if (response.data!['is_success'] == false) {
+    if (response.data!['success'] == false) {
       throw response.data!['message'];
     }
 
     return response.data!;
   }
 
-  Future get(final String link) async {
+  Future<Map<String,dynamic>> get(final String link) async {
     final String? token = await _getAuthToken;
 
     if (AppInfo.isDebugMode) {
@@ -89,9 +81,7 @@ class APIServices {
     );
     if (AppInfo.isDebugMode) log("body ${response.data}");
 
-    if(response is! Map) return response.data;
-
-    if (response.data!['is_success'] == false) {
+    if (response.data!['success'] == false) {
       throw response.data!['message'];
     }
 
