@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../../app_info.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/functions/show_my_snack_bar.dart';
-import '../../../login/domain/repositories/auth_repositories.dart';
+import '../../domain/repositories/home_repositories.dart';
 
 abstract class HomeController extends GetxController {
   bool get isLoading;
@@ -15,8 +15,8 @@ abstract class HomeController extends GetxController {
 }
 
 class HomeControllerImp extends HomeController {
-  HomeControllerImp(this.repo);
-  final AuthRepositories repo;
+  HomeControllerImp(this._repo);
+  final HomeRepositories _repo;
 
   bool _isLoading = false;
 
