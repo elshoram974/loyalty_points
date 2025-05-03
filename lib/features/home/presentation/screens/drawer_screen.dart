@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 import '../controller/home_controller.dart';
+import '../widgets/drawer_widgets/tile_button_widget.dart';
 
 class HomeDrawer extends GetView<HomeController> {
   const HomeDrawer({
@@ -14,45 +16,34 @@ class HomeDrawer extends GetView<HomeController> {
     return Drawer(
       backgroundColor: context.theme.primaryColor,
       child: Column(
+        spacing: AppConst.paddingDefault,
         children: [
-          Spacer(flex: 4),
-          Spacer(flex: 5),
+          const Spacer(flex: 4),
           TileButtonWidget(
+            icon: Icons.person_outline_outlined,
+            title: localeLang(context).profile,
+          ),
+          TileButtonWidget(
+            icon: Icons.stars_outlined,
+            title: localeLang(context).pointsHistory,
+          ),
+          TileButtonWidget(
+            icon: Icons.sync_outlined,
+            title: localeLang(context).redeemPoints,
+          ),
+          const Spacer(flex: 5),
+          TileButtonWidget(
+            icon: Icons.language_outlined,
             title: localeLang(context).changeLanguageTo("arabic"),
           ),
           TileButtonWidget(
+            icon: Icons.login_outlined,
             title: localeLang(context).logOut,
             onTap: controller.logOut,
           ),
+          const SizedBox(height: AppConst.paddingDefault)
         ],
       ),
-    );
-  }
-}
-
-class TileButtonWidget extends StatelessWidget {
-  const TileButtonWidget({
-    super.key,
-    required this.title,
-    this.onTap,
-    this.icon,
-  });
-  final String title;
-  final IconData? icon;
-  final void Function()? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onTap == null
-      ? null 
-      : (){
-        Get.back();
-        onTap!();
-      },
-      titleTextStyle: context.textTheme.titleMedium?.copyWith(color: Colors.white),
-      title: Text(title),
-      trailing: icon == null ? null : Icon(icon),
     );
   }
 }
