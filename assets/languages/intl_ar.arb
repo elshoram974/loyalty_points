@@ -1,4 +1,39 @@
 {
+  "pointsBalance": "رصيد النقاط",
+  "transferablePointsBalance": "رصيد نقاط يسمح بالتحويل",
+  "howToRedeemCode": "كيفية حرق الكود",
+  "findCode": "إيجاد الكود",
+  "uniqueCodeUnderLabel": "ستجد كود مميز أسفل الملصق",
+  "addNewCode": "إضافة كود جديد",
+  "enterCode": "قم بإدخال الكود",
+  "enterCodeOnWebsiteOrApp": "ادخل الكود على الموقع أو التطبيق",
+  "removeSticker": "إزالة الملصق",
+  "removeStickerFromApp": "قم بإزالة الملصق من فوق {appName}",
+  "@removeStickerFromApp": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "orders": "الطلبات",
+  "points": "النقاط",
+  "menu": "القائمة",
+  "profile": "الملف الشخصي",
+  "pointsHistory": "سجل النقاط",
+  "redeemPoints": "استبدال النقاط",
+  "changeLanguageTo": "تغيير اللغة إلى {langName}",
+  "@changeLanguageTo": {
+    "placeholders": {
+      "langName": {
+        "type": "String"
+      }
+    }
+  },
+  "logout": "تسجيل الخروج",
+  "privacyPolicy": "سياسة الخصوصية",
+  "termsAndConditions": "الشروط والأحكام",
+  "welcomeToYou": "أهلاً بك",
   "uHaveToFillFields": "يجب عليك ملء الحقول الفارغة",
   "uHaveToSelectAProvider": "يجب عليك اختيار مزود الخدمة",
   "selectProvider": "اختر مزود الخدمة",
@@ -10,103 +45,103 @@
   "uHaveToAddTheThreeImages": "يجب عليك إضافة الثلاث صور",
   "uHaveToAddProfileImage": "يجب عليك إضافة صورة شخصية",
   "uHaveToChooseAccountType": "يجب عليك اختيار نوع الحساب",
-  "city" :"المدينة",
-  "governorate" :"المحافظة",
-  "type" :"النوع",
+  "city": "المدينة",
+  "governorate": "المحافظة",
+  "type": "النوع",
   "haveAnAccount": "لديك حساب؟",
   "loyalty_program_for_PetroJac_oil_shops_and_station_agents_products": "برنامج ولاء لمحلات زيوت ووكلاء محطات بتروجاك و الذي يمكن تجميع النقاط مع كل عملية شرائية من منتجات بتروجاك من الزيوت",
-    "empty": "فارغ",
-    "business_name" : "بتروجاك",
-    "welcome_to_businessName": "مرحبا بك في {businessName}",
-    "@welcome_to_businessName": {
-        "placeholders": {
-            "businessName": {
-                "type": "String"
-            }
-        }
-    },
-    "search": "بحث",
-    "error": "خطأ",
-    "understood": "فهمت",
-    "save": "حفظ",
-    "totalOrder": "إجمالي الطلب",
-    "selectMonth": "اختر الشهر",
-    "date": "التاريخ",
-    "selectDate": "اختر التاريخ",
-    "delivery_man": "مندوب",
-    "deliveryMan": "مندوب",
-    "distributorOrStore": "موزع / متجر",
-    "attachProfilePhoto": "إرفاق صورة شخصية",
-    "attachStorefrontPhotos": "إرفاق صور واجهة المحل",
-    "enterYourFullName": "أدخل اسمك الكامل",
-    "enterNewPassword": "أدخل كلمة مرور جديدة",
-    "enterTheSamePassword": "أدخل نفس كلمة المرور",
-    "mobileNumber": "رقم الهاتف",
-    "enterYourMobileNumber": "أدخل رقم هاتفك",
-    "unauthorizedError": "انتهت صلاحية جلستك أو ليس لديك الصلاحية. يرجى تسجيل الدخول مرة أخرى.",
-    "thereIsProblemWithServerTryAgainLater": "هناك مشكلة في الخادم. حاول مرة أخرى لاحقًا.",
-    "serverTookTooLongToRespond": "استغرق الخادم وقتًا طويلاً للرد.",
-    "sslCertificateNotTrusted": "شهادة SSL غير موثوقة.",
-    "unknownErrorOccurred": "حدث خطأ غير معروف.",
-    "clientTookTooLong": "استغرق العميل وقتًا طويلاً للرد.",
-    "serverTookTooLong": "استغرق الخادم وقتًا طويلاً للرد.",
-    "connectedToInternet": "متصل بالإنترنت",
-    "logOut": "تسجيل الخروج",
-    "done": "تم",
-    "noInternetConnection": "لا يوجد اتصال بالإنترنت",
-    "noData": "لا توجد بيانات",
-    "unknown": "غير معروف",
-    "pageNotFound": "الصفحة غير موجودة",
-    "pageNameNotFoundInRoutes": "الصفحة '{pageName}' غير موجودة في الصفحات",
-    "@pageNameNotFoundInRoutes": {
-      "placeholders": {
-        "pageName": {
-          "type": "String"
-        }
+  "empty": "فارغ",
+  "business_name": "بتروجاك",
+  "welcome_to_businessName": "مرحبا بك في {businessName}",
+  "@welcome_to_businessName": {
+    "placeholders": {
+      "businessName": {
+        "type": "String"
       }
-    },
-    "back": "رجوع",
-    "showPassword": "إظهار كلمة المرور",
-    "hidePassword": "إخفاء كلمة المرور",
-    "login": "تسجيل الدخول",
-    "fillField": "يرجى ملء هذا الحقل",
-    "notSamePass": "كلمة المرور غير متطابقة",
-    "enterValidEmail": "أدخل بريدًا إلكترونيًا صالحًا",
-    "cantBeLessThan": "لا يمكن أن يكون أقل من {min}",
-    "@cantBeLessThan": {
-      "placeholders": {
-        "min": {
-          "type": "String"
-        }
+    }
+  },
+  "search": "بحث",
+  "error": "خطأ",
+  "understood": "فهمت",
+  "save": "حفظ",
+  "totalOrder": "إجمالي الطلب",
+  "selectMonth": "اختر الشهر",
+  "date": "التاريخ",
+  "selectDate": "اختر التاريخ",
+  "delivery_man": "مندوب",
+  "deliveryMan": "مندوب",
+  "distributorOrStore": "موزع / متجر",
+  "attachProfilePhoto": "إرفاق صورة شخصية",
+  "attachStorefrontPhotos": "إرفاق صور واجهة المحل",
+  "enterYourFullName": "أدخل اسمك الكامل",
+  "enterNewPassword": "أدخل كلمة مرور جديدة",
+  "enterTheSamePassword": "أدخل نفس كلمة المرور",
+  "mobileNumber": "رقم الهاتف",
+  "enterYourMobileNumber": "أدخل رقم هاتفك",
+  "unauthorizedError": "انتهت صلاحية جلستك أو ليس لديك الصلاحية. يرجى تسجيل الدخول مرة أخرى.",
+  "thereIsProblemWithServerTryAgainLater": "هناك مشكلة في الخادم. حاول مرة أخرى لاحقًا.",
+  "serverTookTooLongToRespond": "استغرق الخادم وقتًا طويلاً للرد.",
+  "sslCertificateNotTrusted": "شهادة SSL غير موثوقة.",
+  "unknownErrorOccurred": "حدث خطأ غير معروف.",
+  "clientTookTooLong": "استغرق العميل وقتًا طويلاً للرد.",
+  "serverTookTooLong": "استغرق الخادم وقتًا طويلاً للرد.",
+  "connectedToInternet": "متصل بالإنترنت",
+  "logOut": "تسجيل الخروج",
+  "done": "تم",
+  "noInternetConnection": "لا يوجد اتصال بالإنترنت",
+  "noData": "لا توجد بيانات",
+  "unknown": "غير معروف",
+  "pageNotFound": "الصفحة غير موجودة",
+  "pageNameNotFoundInRoutes": "الصفحة '{pageName}' غير موجودة في الصفحات",
+  "@pageNameNotFoundInRoutes": {
+    "placeholders": {
+      "pageName": {
+        "type": "String"
       }
-    },
-    "cantBeMoreThan": "لا يمكن أن يكون أكثر من {max}",
-    "@cantBeMoreThan": {
-      "placeholders": {
-        "max": {
-          "type": "String"
-        }
+    }
+  },
+  "back": "رجوع",
+  "showPassword": "إظهار كلمة المرور",
+  "hidePassword": "إخفاء كلمة المرور",
+  "login": "تسجيل الدخول",
+  "fillField": "يرجى ملء هذا الحقل",
+  "notSamePass": "كلمة المرور غير متطابقة",
+  "enterValidEmail": "أدخل بريدًا إلكترونيًا صالحًا",
+  "cantBeLessThan": "لا يمكن أن يكون أقل من {min}",
+  "@cantBeLessThan": {
+    "placeholders": {
+      "min": {
+        "type": "String"
       }
-    },
-    "password": "كلمة المرور",
-    "enterThePassword": "أدخل كلمة المرور",
-    "forgetPassword": "نسيت كلمة المرور؟",
-    "signUp": "إنشاء حساب",
-    "doNotHaveAnAccount": "ليس لديك حساب؟",
-    "rememberMe": "تذكرني",
-    "fullName": "الاسم الكامل",
-    "confirmPassword": "تأكيد كلمة المرور",
-    "confirm": "تأكيد",
-    "cancel": "إلغاء",
-    "goBack": "العودة",
-    "stayHere": "البقاء هنا",
-    "areYouSureYouWantToReturnBack": "هل أنت متأكد أنك تريد العودة؟",
-    "ifYouReturnNowYouWillLoseAllData": "إذا عدت الآن، ستفقد جميع البيانات!",
-    "passwordProvidedIsTooWeak": "كلمة المرور المقدمة ضعيفة جدًا.",
-    "pressAgainToExit": "اضغط مرة أخرى للخروج",
-    "accountAlreadyExistsForThatEmail": "الحساب موجود بالفعل لهذا البريد الإلكتروني.",
-    "noUserFoundForThatEmail": "لم يتم العثور على مستخدم لهذا البريد الإلكتروني.",
-    "wrongPasswordProvidedForThatUser": "تم تقديم كلمة مرور خاطئة لهذا المستخدم.",
-    "theSuppliedAuthCredentialIsIncorrect": "بيانات الاعتماد المقدمة غير صحيحة أو تالفة أو منتهية الصلاحية.",
-    "home": "الرئيسية"
-  }  
+    }
+  },
+  "cantBeMoreThan": "لا يمكن أن يكون أكثر من {max}",
+  "@cantBeMoreThan": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "password": "كلمة المرور",
+  "enterThePassword": "أدخل كلمة المرور",
+  "forgetPassword": "نسيت كلمة المرور؟",
+  "signUp": "إنشاء حساب",
+  "doNotHaveAnAccount": "ليس لديك حساب؟",
+  "rememberMe": "تذكرني",
+  "fullName": "الاسم الكامل",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "confirm": "تأكيد",
+  "cancel": "إلغاء",
+  "goBack": "العودة",
+  "stayHere": "البقاء هنا",
+  "areYouSureYouWantToReturnBack": "هل أنت متأكد أنك تريد العودة؟",
+  "ifYouReturnNowYouWillLoseAllData": "إذا عدت الآن، ستفقد جميع البيانات!",
+  "passwordProvidedIsTooWeak": "كلمة المرور المقدمة ضعيفة جدًا.",
+  "pressAgainToExit": "اضغط مرة أخرى للخروج",
+  "accountAlreadyExistsForThatEmail": "الحساب موجود بالفعل لهذا البريد الإلكتروني.",
+  "noUserFoundForThatEmail": "لم يتم العثور على مستخدم لهذا البريد الإلكتروني.",
+  "wrongPasswordProvidedForThatUser": "تم تقديم كلمة مرور خاطئة لهذا المستخدم.",
+  "theSuppliedAuthCredentialIsIncorrect": "بيانات الاعتماد المقدمة غير صحيحة أو تالفة أو منتهية الصلاحية.",
+  "home": "الرئيسية"
+}

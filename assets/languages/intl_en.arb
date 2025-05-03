@@ -1,4 +1,39 @@
 {
+    "pointsBalance": "Points Balance",
+    "transferablePointsBalance": "Transferable Points Balance",
+    "howToRedeemCode": "How to redeem the code",
+    "findCode": "Find Code",
+    "uniqueCodeUnderLabel": "You will find a unique code under the label",
+    "addNewCode": "Add New Code",
+    "enterCode": "Enter the code",
+    "enterCodeOnWebsiteOrApp": "Enter the code on the website or the app",
+    "removeSticker": "Remove the sticker",
+    "removeStickerFromApp": "Remove the sticker from above {appName}",
+    "@removeStickerFromApp": {
+        "placeholders": {
+            "appName": {
+                "type": "String"
+            }
+        }
+    },
+    "orders": "Orders",
+    "points": "Points",
+    "menu": "Menu",
+    "profile": "Profile",
+    "pointsHistory": "Points History",
+    "redeemPoints": "Redeem Points",
+    "changeLanguageTo": "Change language to {langName}",
+    "@changeLanguageTo": {
+        "placeholders": {
+            "langName": {
+                "type": "String"
+            }
+        }
+    },
+    "logout": "Log Out",
+    "privacyPolicy": "Privacy Policy",
+    "termsAndConditions": "Terms and Conditions",
+    "welcomeToYou": "Welcome to you",
     "uHaveToFillFields": "You have to fill fields",
     "uHaveToSelectAProvider": "You have to select a provider",
     "selectProvider": "Select a provider",
@@ -10,13 +45,13 @@
     "uHaveToAddTheThreeImages": "You have to add the three images",
     "uHaveToAddProfileImage": "You have to add a profile image",
     "uHaveToChooseAccountType": "You have to choose an account type",
-    "city" :"City",
-    "governorate" :"Governorate",
-    "type" :"Type",
-    "haveAnAccount" :"Have an account ?",
-    "loyalty_program_for_PetroJac_oil_shops_and_station_agents_products" : "A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.",
-    "empty" :"Empty",
-    "business_name" : "PetroJac",
+    "city": "City",
+    "governorate": "Governorate",
+    "type": "Type",
+    "haveAnAccount": "Have an account ?",
+    "loyalty_program_for_PetroJac_oil_shops_and_station_agents_products": "A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.",
+    "empty": "Empty",
+    "business_name": "PetroJac",
     "welcome_to_businessName": "Welcome to {businessName}",
     "@welcome_to_businessName": {
         "placeholders": {
