@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart' as dio;
@@ -10,13 +11,12 @@ import 'package:path_provider/path_provider.dart';
 final FirebaseMessaging fcm = FirebaseMessaging.instance;
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
-  '0', // id
+  'high_importance_channel', // id
   'High Importance Notifications', // title
   importance: Importance.max,
 );
 
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-    FlutterLocalNotificationsPlugin();
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
 class NotificationService {
   static String? deviceToken;
@@ -35,8 +35,10 @@ class NotificationService {
 
     getDeviceToken();
 
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
     FirebaseMessaging.onMessage.listen((event) async{
-      print("onLaunch: ${jsonEncode(event.toMap())}");
+      log("onMessage: ${jsonEncode(event.toMap())}");
       if(Platform.isIOS) {
         _showIosMessage(event);
         return;
@@ -107,9 +109,10 @@ class NotificationService {
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      print("onResume: ${message.toMap()}");
+      log("onResume: ${message.toMap()}");
       _navigate(message.toMap());
     });
+  
   }
   static Future<String> _downloadAndSaveFile(String url, String fileName) async {
     final Directory directory = await getApplicationDocumentsDirectory();
@@ -120,12 +123,12 @@ class NotificationService {
 
   static Future<String> getDeviceToken() async {
     deviceToken = await fcm.getToken() ?? '';
-    print("fcmToken $deviceToken");
+    log("fcmToken $deviceToken");
     return deviceToken!;
   }
 
   static void _showIosMessage(RemoteMessage message) {
-    //print("onMessage: $message");
+    //log("onMessage: $message");
 
     // OneContext().showDialog(
     //   // barrierDismissible: false,
@@ -214,3 +217,8 @@ class NotificationService {
 //     );
 //   }
 // }
+
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  log('Handling a background message ${jsonEncode(message.toMap())}');
+}
