@@ -83,8 +83,15 @@ class SignUpFields extends StatelessWidget {
                 suffixIconData: Icons.location_on,
                 autofillHints: const [AutofillHints.fullStreetAddress],
                 hintText: localeLang(context).enterYourFullAddress,
-                validator: (val) =>
-                    AppValidator.auth(val?.trim(), 3, 100, FieldType.other),
+                validator: (val) => AppValidator.auth(val?.trim(), 3, 100, FieldType.other),
+              ),
+              AuthField(
+                readOnly: controller.isLoading,
+                onChanged: (v) => controller.provider = v.trim(),
+                label: localeLang(context).provider,
+                textCapitalization: TextCapitalization.words,
+                suffixIconData: Icons.storefront,
+                hintText: localeLang(context).enterYourProviderName,
               ),
             ],
           ),

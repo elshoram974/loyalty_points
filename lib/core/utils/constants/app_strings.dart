@@ -13,7 +13,7 @@ abstract final class AppString {
   static const String phone = 'phone';
   static const String image = 'image';
   static const String attachments = 'attachments[]';
-  static const String providerId = 'provider_id';
+  static const String providerName = 'provider_name';
   static const String country = 'country';
   static const String fcmToken = 'fcm_token';
   static const String emailOrPhone = 'email_or_phone';

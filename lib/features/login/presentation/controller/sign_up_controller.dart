@@ -7,13 +7,11 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
-import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/functions/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../../../core/utils/types/account_type.dart';
-import '../../data/models/provider_model/provider_model.dart';
 import '../../data/models/user_model.dart';
 import '../../domain/entity/sign_up_body_data.dart';
 import '../../domain/repositories/auth_repositories.dart';
@@ -25,7 +23,6 @@ abstract class SignUpController extends GetxController {
   bool get isLoading;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  List<ProviderModel> get providers;
 
   PhoneNumber? phone;
   String fullName = '';
@@ -33,13 +30,11 @@ abstract class SignUpController extends GetxController {
   String password = '';
   String passwordConfirmation = '';
   String address = '';
-  ProviderModel? selectedProvider;
+  String? provider;
   AccountType? accountType;
 
   XFile? profile;
   List<XFile?> attachments = List.filled(3, null, growable: false);
-
-  Future<void> getProviderList();
 
   Future<void> signUp();
 
@@ -49,34 +44,13 @@ abstract class SignUpController extends GetxController {
 }
 
 class SignUpControllerImp extends SignUpController {
-  SignUpControllerImp(super.repo){
-    getProviderList();
-  }
+  SignUpControllerImp(super.repo);
 
   bool _isLoading = false;
 
   @override
   bool get isLoading => _isLoading;
 
-  final List<ProviderModel> _providers = [];
-
-  @override
-  List<ProviderModel> get providers => List.unmodifiable(_providers);
-
-  @override
-  Future<void> getProviderList() async {
-    if (NetworkInfo.showSnackBarWhenNoInternet) return;
-    final Status<List<ProviderModel>> providerRes = await repo.getProviderList();
-    handleResponseInController<List<ProviderModel>>(
-      status: providerRes,
-      onSuccess: (providersList) {
-        _providers.clear();
-        _providers.addAll(providersList);
-        update([AppString.providerId]);
-      },
-    );
-
-  }
 
   @override
   Future<void> signUp() async {
@@ -102,7 +76,7 @@ class SignUpControllerImp extends SignUpController {
         profile: profile!,
         attachments: attachments.cast<XFile>(),
         email: email,
-        provider: selectedProvider,
+        provider: provider,
       ),
     );
     handleResponseInController<UserModel>(
@@ -130,10 +104,10 @@ class SignUpControllerImp extends SignUpController {
         passwordConfirmation.isNotEmpty ||
         fullName.isNotEmpty ||
         email.isNotEmpty ||
+        provider?.isNotEmpty == true ||
         accountType != null ||
         address.isNotEmpty ||
         profile != null ||
-        selectedProvider != null ||
         attachments.any((e) => e != null)) {
       await ShowMyDialog.back(Get.context!);
     } else {

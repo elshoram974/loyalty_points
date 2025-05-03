@@ -5,15 +5,12 @@ import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/services/api_services.dart';
 import '../../domain/entity/login_request_data.dart';
 import '../../domain/entity/sign_up_body_data.dart';
-import '../models/provider_model/provider_model.dart';
 import '../models/user_model.dart';
 
 abstract class AuthRemoteDataSource {
   const AuthRemoteDataSource();
   Future<({UserModel user, String token})> login(LoginRequestData data);
-  
-  Future<List<ProviderModel>> getProvidersList();
-  
+    
   Future<({UserModel user, String token})> signUp(SignUpBodyData data);
 }
 
@@ -38,20 +35,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       token: res['data']['token'] as String,
     );
   }
-  @override
-  Future<List<ProviderModel>> getProvidersList() async{
-    final Map<String, dynamic> res = await apiServices.get(
-      AppLinks.providersList,
-    );
-
-    final List<ProviderModel> providers = [];
-
-    for (Map<String, dynamic> r in res['data'] as List) {
-      providers.add(ProviderModel.fromMap(r));
-    }
-
-    return providers;
-  }
 
   @override
   Future<({String token, UserModel user})> signUp(SignUpBodyData data) async {
@@ -64,7 +47,7 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppString.country: data.address,
       AppString.type: data.accountType.type,
       AppString.phone: data.phone.phoneNumber,
-      if(data.provider != null) AppString.providerId: data.provider?.id,
+      if(data.provider?.trim().isNotEmpty == true) AppString.providerName: data.provider,
     }, files: {
       AppString.attachments: data.attachments,
       AppString.image: [data.profile],

@@ -38,6 +38,7 @@
   "uHaveToSelectAProvider": "يجب عليك اختيار مزود الخدمة",
   "selectProvider": "اختر مزود الخدمة",
   "provider": "مزود الخدمة",
+  "enterYourProviderName": "أدخل اسم مزود الخدمة لك",
   "enterYourFullAddress": "أدخل العنوان بالكامل",
   "enterYourEmailAddress": "أدخل البريد الإلكتروني الخاص بك",
   "email": "البريد الالكتروني",

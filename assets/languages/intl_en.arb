@@ -38,6 +38,7 @@
     "uHaveToSelectAProvider": "You have to select a provider",
     "selectProvider": "Select a provider",
     "provider": "Provider",
+    "enterYourProviderName": "Enter your provider name",
     "enterYourFullAddress": "Enter your full address",
     "enterYourEmailAddress": "Enter your email address",
     "email": "Email",
