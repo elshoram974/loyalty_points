@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../controller/home_controller.dart';
+import '../widgets/my_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,11 +14,10 @@ class HomeScreen extends StatelessWidget {
     return CustomScaffold(
       canPop: false,
       onPopInvokedWithResult: (_, __) => Get.find<HomeController>().onPopInvoked(),
+      appBar: const MyAppBar(),
       body: ListView(
         padding: const EdgeInsets.all(AppConst.paddingBig),
-        children: [
-         
-        ],
+        children: [],
       ),
     );
   }
