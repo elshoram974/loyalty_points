@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 
 import '../../../../app_info.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
+import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/functions/show_my_snack_bar.dart';
 import '../../../../core/utils/services/push_notification_service.dart';
 import '../../domain/repositories/home_repositories.dart';
@@ -16,6 +18,8 @@ abstract class HomeController extends GetxController {
   Future<void> getAllData();
 
   Future<void> updateFCMToken();
+  
+  Future<void> logOut();
 
   void onPopInvoked();
 }
@@ -50,6 +54,19 @@ class HomeControllerImp extends HomeController {
         NotificationService.deviceToken ?? await NotificationService.getDeviceToken(),
       ),
       onSuccess: (_) {},
+    );
+  }
+
+
+  @override
+  Future<void> logOut() async {
+    return ShowMyDialog.loading(
+      () async => await handleResponseInController<void>(
+          status: await repo.logout(),
+          onSuccess: (_) {
+            Get.offAllNamed(AppRoute.login);
+          },
+        )
     );
   }
 

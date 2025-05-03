@@ -7,10 +7,10 @@ import '../config/locale/local_lang.dart';
 abstract final class ShowMyDialog {
   const ShowMyDialog();
 
-  static void loading() {
-    Get.dialog(
-      const Align(child: CircularProgressIndicator()),
-      barrierDismissible: false,
+  static Future<T> loading<T>(Future<T> Function() asyncFunction) {
+    return Get.showOverlay<T>(
+      loadingWidget: const Center(child: CircularProgressIndicator()),
+      asyncFunction: asyncFunction,
     );
   }
 

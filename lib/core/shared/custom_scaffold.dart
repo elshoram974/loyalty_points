@@ -11,13 +11,15 @@ class CustomScaffold extends StatelessWidget {
     this.onPopInvokedWithResult,
     this.drawer,
     this.bottomNavigationBar,
-    this.appBar,
+    this.appBar, 
+    this.scaffoldKey,
   });
   final bool canPop;
   final Widget? body;
   final Widget? drawer;
   final Widget? bottomNavigationBar;
   final PreferredSizeWidget? appBar;
+  final GlobalKey<ScaffoldState>? scaffoldKey;
   final void Function(bool, Object?)? onPopInvokedWithResult;
 
   @override
@@ -35,9 +37,10 @@ class CustomScaffold extends StatelessWidget {
         canPop: canPop,
         onPopInvokedWithResult: onPopInvokedWithResult,
         child: Scaffold(
+          key: scaffoldKey,
           appBar: appBar,
           backgroundColor: Colors.transparent,
-          drawer: drawer,
+          endDrawer: drawer,
           bottomNavigationBar: bottomNavigationBar,
           body: SafeArea(
             child: MyResConstrainedBoxAlign(child: body ?? const SizedBox()),

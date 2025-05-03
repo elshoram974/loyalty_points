@@ -7,10 +7,10 @@ import '../../status/status.dart';
 import '../../status/success/success.dart';
 import 'show_my_snack_bar.dart';
 
-FutureOr<void> handleResponseInController<T>({
+FutureOr<T?> handleResponseInController<T>({
   required Status<T> status,
-  required FutureOr<void> Function(T data) onSuccess,
-}) async {
+  required FutureOr<T?> Function(T data) onSuccess,
+}) {
   if (status is Success<T>) return onSuccess(status.data);
 
   if (status is Failure<T>) {
@@ -19,4 +19,5 @@ FutureOr<void> handleResponseInController<T>({
       backgroundColor: Get.theme.colorScheme.error,
     );
   }
+  return null;
 }
