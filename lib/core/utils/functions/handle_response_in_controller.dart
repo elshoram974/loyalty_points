@@ -7,9 +7,9 @@ import '../../status/status.dart';
 import '../../status/success/success.dart';
 import 'show_my_snack_bar.dart';
 
-FutureOr<T?> handleResponseInController<T>({
+FutureOr<void> handleResponseInController<T>({
   required Status<T> status,
-  required FutureOr<T?> Function(T data) onSuccess,
+  required FutureOr<void> Function(T data) onSuccess,
 }) {
   if (status is Success<T>) return onSuccess(status.data);
 
