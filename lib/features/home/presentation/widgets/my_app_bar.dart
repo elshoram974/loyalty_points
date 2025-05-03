@@ -54,7 +54,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 ],
               ),
-              Image.asset(AppAssets.fullLogo, height: 50),
+              Image.asset(AppAssets.fullLogo),
             ],
           ),
         ),
@@ -63,5 +63,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => AppBar().preferredSize;
+  Size get preferredSize => const Size.fromHeight(50);
 }
