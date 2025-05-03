@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:intl/intl.dart' as intl;
 
 class LocaleModel {
@@ -15,7 +16,7 @@ class LocaleModel {
 
   factory LocaleModel.fromLocale(Locale locale) {
     return LocaleModel(
-      languageName: intl.Intl.canonicalizedLocale(locale.toString()),
+      languageName: LocaleNamesLocalizationsDelegate.nativeLocaleNames[locale.languageCode] ?? intl.Intl.canonicalizedLocale(locale.languageCode),
       languageCode: locale.languageCode,
       countryCode: locale.countryCode,
     );

@@ -4,6 +4,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
+        LocaleNamesLocalizationsDelegate(),
       ],
       supportedLocales: S.delegate.supportedLocales,
       useInheritedMediaQuery: AppInfo.isDebugMode,

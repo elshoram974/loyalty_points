@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../controller/home_controller.dart';
@@ -34,7 +35,8 @@ class HomeDrawer extends GetView<HomeController> {
           const Spacer(flex: 5),
           TileButtonWidget(
             icon: Icons.language_outlined,
-            title: localeLang(context).changeLanguageTo("arabic"),
+            title: localeLang(context).changeLanguageTo(Get.find<ConfigController>().alternateLocale.languageName),
+            onTap: Get.find<ConfigController>().toggleLanguage,
           ),
           TileButtonWidget(
             icon: Icons.login_outlined,

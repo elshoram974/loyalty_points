@@ -14,6 +14,9 @@ abstract class ConfigController extends GetxController {
 
   Locale get locale;
   void changeLocale(Locale newLocale);
+
+  LocaleModel get alternateLocale;
+  void toggleLanguage();
 }
 
 class ConfigControllerImp extends ConfigController {
@@ -26,12 +29,12 @@ class ConfigControllerImp extends ConfigController {
   }
 
   late Locale _locale = prefs.containsKey(AppString.kLocaleCode)
-      ? _currentLocal(prefs.getString(AppString.kLocaleCode)!)
+      ? _localeFromCode(prefs.getString(AppString.kLocaleCode)!)
       : Get.deviceLocale != null
-          ? _currentLocal(Get.deviceLocale!.languageCode)
+          ? _localeFromCode(Get.deviceLocale!.languageCode)
           : AppInfo.supportedLocales.first.toLocale;
 
-  Locale _currentLocal(String langCode) {
+  Locale _localeFromCode(String langCode) {
     final LocaleModel lang = AppInfo.supportedLocales
             .where((e) => e.languageCode == langCode)
             .firstOrNull ??
@@ -48,9 +51,20 @@ class ConfigControllerImp extends ConfigController {
   @override
   void changeLocale(Locale newLocale) {
     if (newLocale.languageCode == _locale.languageCode) return;
-    _locale = _currentLocal(newLocale.languageCode);
+    _locale = _localeFromCode(newLocale.languageCode);
     S.load(newLocale);
     Get.updateLocale(newLocale);
     prefs.setString(AppString.kLocaleCode, _locale.languageCode);
   }
+
+  @override
+  LocaleModel get alternateLocale {
+    for (LocaleModel l in AppInfo.supportedLocales) {
+      if(l.languageCode != _locale.languageCode) return l;
+    }
+    return AppInfo.supportedLocales.first;
+  }
+  
+  @override
+  void toggleLanguage() => changeLocale(alternateLocale.toLocale);
 }
