@@ -41,7 +41,7 @@ class UserModel extends Equatable {
         address: json['country'] as String,
         updatedAt: DateTime.parse(json['updated_at'] as String),
         createdAt: DateTime.parse(json['created_at'] as String),
-        emailVerifiedAt: DateTime.tryParse(json['created_at'] as String? ?? 'unKnown'),
+        emailVerifiedAt: DateTime.tryParse(json['email_verified_at'] as String? ?? 'unKnown'),
       );
 
   Map<String, dynamic> toMap() => {
