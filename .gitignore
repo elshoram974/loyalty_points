@@ -46,7 +46,7 @@ app.*.map.json
 
 
 
-/lib/core/utils/config/locale/generated/
+/lib/core/utils/config/locale/generated/intl/
 
 
 
