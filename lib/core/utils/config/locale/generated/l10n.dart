@@ -76,10 +76,10 @@ class S {
   }
 
   /// `Please wait, this may take some time`
-  String get PleaseWaitthisMayTakeSomeTime {
+  String get PleaseWaitThisMayTakeSomeTime {
     return Intl.message(
       'Please wait, this may take some time',
-      name: 'PleaseWaitthisMayTakeSomeTime',
+      name: 'PleaseWaitThisMayTakeSomeTime',
       desc: '',
       args: [],
     );

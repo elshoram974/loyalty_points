@@ -1,11 +1,8 @@
 {
     "invalidPhoneNumber": "Invalid phone number",
-
     "backToLogin": "Back to login",
-    "PleaseWaitthisMayTakeSomeTime": "Please wait, this may take some time",
-
+    "PleaseWaitThisMayTakeSomeTime": "Please wait, this may take some time",
     "beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount": "Before you can log in, an administrator must manually activate your account",
-
     "successfully":"Successfully!",
     "loginCompleted": "Login Completed",
     "pointsBalance": "Points Balance",
