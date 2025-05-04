@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../../../features/auth/presentation/screens/waiting_screen.dart';
 import '../../../../features/home/presentation/screens/home_screen.dart';
 import '../../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../../../features/auth/presentation/screens/login_screen.dart';
@@ -22,6 +23,8 @@ abstract final class AppRoute {
   static const String login = "/login";
   static const String signUp = "/sign-up";
   static const String home = "/home";
+  static const String waiting = "/waiting";
+
 
   static List<GetPage> get pages => [
         GetPage(
@@ -40,10 +43,9 @@ abstract final class AppRoute {
           page: () => const HomeScreen(),
           binding: HomeBindings(),
         ),
-        // GetPage(
-        //   name: orders,
-        //   page: () => const OrdersScreen(),
-        //   binding: OrdersBindings(),
-        // ),
+        GetPage(
+          name: waiting,
+          page: () => const WaitingScreen(),
+        ),
       ];
 }
