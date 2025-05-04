@@ -105,9 +105,11 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
     if (widget.isPhoneNumber) {
       return InternationalPhoneNumberInput(
         textFieldController: widget.controller,
-        errorMessage:localeLang(context).invalidPhoneNumber, 
+        hintText: widget.hintText,
+        errorMessage: localeLang(context).invalidPhoneNumber, 
         selectorConfig: SelectorConfig(
           leadingPadding: widget.horizontalPadding ?? AppConst.paddingDefault,
+          trailingSpace: false,
           selectorType: PhoneInputSelectorType.DIALOG,
           setSelectorButtonAsPrefixIcon: true,
         ),
