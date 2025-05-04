@@ -7,5 +7,5 @@ abstract class AuthRepositories {
   const AuthRepositories();
 
   Future<Status<UserModel>> login(LoginRequestData data);
-  Future<Status<UserModel>> signUp(SignUpBodyData body);
+  Future<Status<void>> signUp(SignUpBodyData body);
 }

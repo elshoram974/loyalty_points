@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/get_utils.dart';
-import 'package:loyalty_points/core/utils/constants/app_color.dart';
 import 'package:loyalty_points/features/auth/presentation/widgets/waiting/waiting_text_image.dart';
 
 import '../../../../core/shared/custom_scaffold.dart';

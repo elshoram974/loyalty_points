@@ -15,6 +15,7 @@ class UserModel extends Equatable {
   final DateTime updatedAt;
   final DateTime createdAt;
   final DateTime? emailVerifiedAt;
+  bool get isVerified => emailVerifiedAt != null;
 
   const UserModel({
     required this.id,

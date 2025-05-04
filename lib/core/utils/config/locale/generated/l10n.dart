@@ -105,10 +105,10 @@ class S {
     );
   }
 
-  /// `Login Completed`
+  /// `Register Completed`
   String get loginCompleted {
     return Intl.message(
-      'Login Completed',
+      'Register Completed',
       name: 'loginCompleted',
       desc: '',
       args: [],

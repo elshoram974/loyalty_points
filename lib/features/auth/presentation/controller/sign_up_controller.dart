@@ -12,7 +12,6 @@ import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/functions/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../../../core/utils/types/account_type.dart';
-import '../../data/models/user_model.dart';
 import '../../domain/entity/sign_up_body_data.dart';
 import '../../domain/repositories/auth_repositories.dart';
 
@@ -54,8 +53,6 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   Future<void> signUp() async {
-     Get.offNamed(AppRoute.waiting);
-    return;
     if (NetworkInfo.showSnackBarWhenNoInternet) return;
 
     if (!formKey.currentState!.validate()){ 
@@ -67,7 +64,7 @@ class SignUpControllerImp extends SignUpController {
     }
     _isLoading = true;
     update();
-    final Status<UserModel> signUpState = await repo.signUp(
+    final Status<void> signUpState = await repo.signUp(
       SignUpBodyData(
         phone: phone!,
         fullName: fullName,
@@ -81,11 +78,11 @@ class SignUpControllerImp extends SignUpController {
         provider: provider,
       ),
     );
-    handleResponseInController<UserModel>(
+    handleResponseInController<void>(
       status: signUpState,
       onSuccess: (data) {
         TextInput.finishAutofillContext();
-        Get.offAllNamed(AppRoute.home);
+        Get.offNamed(AppRoute.waiting);
       },
     );
 

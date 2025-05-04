@@ -55,9 +55,9 @@ class LoginControllerImp extends LoginController {
       status: loginState,
       onSuccess: (data) {
         TextInput.finishAutofillContext();
-        if(true){
+        if(data.isVerified){
           Get.offAllNamed(AppRoute.home);
-        }else {
+        }else{
           Get.toNamed(AppRoute.waiting);
         }
       },
