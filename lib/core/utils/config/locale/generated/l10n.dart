@@ -66,20 +66,20 @@ class S {
   }
 
   /// `Please wait, this may take some time`
-  String get pleaseWaiting {
+  String get PleaseWaitthisMayTakeSomeTime {
     return Intl.message(
       'Please wait, this may take some time',
-      name: 'pleaseWaiting',
+      name: 'PleaseWaitthisMayTakeSomeTime',
       desc: '',
       args: [],
     );
   }
 
   /// `Before you can log in, an administrator must manually activate your account`
-  String get BeforeLogin {
+  String get beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount {
     return Intl.message(
       'Before you can log in, an administrator must manually activate your account',
-      name: 'BeforeLogin',
+      name: 'beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount',
       desc: '',
       args: [],
     );

@@ -1,8 +1,8 @@
 {
     "backToLogin": "Back to login",
-    "pleaseWaiting": "Please wait, this may take some time",
+    "PleaseWaitthisMayTakeSomeTime": "Please wait, this may take some time",
 
-    "BeforeLogin": "Before you can log in, an administrator must manually activate your account",
+    "beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount": "Before you can log in, an administrator must manually activate your account",
 
     "successfully":"Successfully!",
     "loginCompleted": "Login Completed",

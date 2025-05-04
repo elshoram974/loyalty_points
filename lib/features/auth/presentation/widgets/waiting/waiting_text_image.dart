@@ -18,14 +18,14 @@ class WaitingTextImageWidget extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           textAlign: TextAlign.center,
-          localeLang(context).BeforeLogin,
+          localeLang(context).beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount,
           style: context.textTheme.titleLarge
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 5),
         Text(
           textAlign: TextAlign.center,
-          localeLang(context).pleaseWaiting,
+          localeLang(context).PleaseWaitthisMayTakeSomeTime,
           style: context.textTheme.titleMedium?.copyWith(
             color: AppColor.primaryLight,
             fontWeight: FontWeight.bold,
