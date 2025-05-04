@@ -6,4 +6,6 @@ abstract final class AppAssets {
   // static const String placeholder = "$_imagesPath/placeholder.png";
   static const String fullLogo = "$_imagesPath/full_logo.png";
   static const String placeholder = "$_imagesPath/placeholder.jpg";
+  static const String trueIcon = "$_imagesPath/true_icon.png";
+  static const String waitingImage = "$_imagesPath/waiting_image.png";
 }
