@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/shared/custom_scaffold.dart';
-import '../../../../core/utils/constants/app_constants.dart';
+import '../../../../core/utils/constants/app_strings.dart';
 import '../controller/home_controller.dart';
+import '../widgets/my_bottom_nav_bar.dart';
+import '../widgets/replace_points_floating_button_widget.dart';
 import 'drawer_screen.dart';
 import '../widgets/my_app_bar.dart';
 
@@ -12,35 +14,19 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    GlobalKey<ScaffoldState> key = GlobalKey<ScaffoldState>(); 
     return CustomScaffold(
       canPop: false,
-      scaffoldKey: key,
       onPopInvokedWithResult: (_, __) => Get.find<HomeController>().onPopInvoked(),
       appBar: const MyAppBar(),
       drawer: const HomeDrawer(),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (value) {
-          switch (value) {
-            case 1:
-            
-              key.currentState?.openEndDrawer();
-              break;
-            default:
-          }
+      floatingActionButton: const ReplacePointsFloatingButtonWidget(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: const MyBottomNavBar(),
+      body: GetBuilder<HomeController>(
+        id: AppString.updateSelectedScreen,
+        builder: (controller) {
+          return MyBottomNavBar.navigationData[controller.selectedScreen]?.screen ?? const SizedBox();
         },
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.document_scanner), label: ''),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: '',
-          ),
-        ],
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(AppConst.paddingBig),
-        children: [],
       ),
     );
   }

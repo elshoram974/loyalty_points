@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 class NavigationBarEntity extends Equatable{
   final Widget screen;
   final IconData icon;
-  final String label;
+  final IconData activeIcon;
+  final String? label;
 
   const NavigationBarEntity({
     required this.screen, 
     required this.icon, 
-    required this.label,
+    required this.activeIcon, 
+    this.label,
   });
 
   @override
