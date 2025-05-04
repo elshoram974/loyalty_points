@@ -39,8 +39,6 @@ class LoginControllerImp extends LoginController {
 
   @override
   Future<void> login() async {
-    Get.toNamed(AppRoute.waiting);
-    return; // TODO: implement login
     if (NetworkInfo.showSnackBarWhenNoInternet) return;
 
     if (!formKey.currentState!.validate()) return;
@@ -57,7 +55,11 @@ class LoginControllerImp extends LoginController {
       status: loginState,
       onSuccess: (data) {
         TextInput.finishAutofillContext();
-        Get.offAllNamed(AppRoute.home);
+        if(true){
+          Get.offAllNamed(AppRoute.home);
+        }else {
+          Get.toNamed(AppRoute.waiting);
+        }
       },
     );
 

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+import '../../../../core/utils/models/image_full_url.dart';
 import '../../../../core/utils/types/account_type.dart';
 
 class UserModel extends Equatable {
@@ -10,7 +11,7 @@ class UserModel extends Equatable {
   final String phone;
   final AccountType type;
   final String address;
-  final String? image;
+  final ImageFullUrl? image;
   final DateTime updatedAt;
   final DateTime createdAt;
 
@@ -31,7 +32,7 @@ class UserModel extends Equatable {
         id: int.parse("${json['id'] ?? -1}"),
         name: json['name'] as String,
         email: json['email'] as String,
-        image: json['image_full_url']?['path'] as String?,
+        image: json['image_full_url'] == null ? null : ImageFullUrl.fromMap(json['image_full_url']),
         providerId: int.parse("${json['provider_id'] ?? -1}"),
         phone: json['phone'] as String,
         type: AccountType.fromMap(json['type'] as String),
@@ -44,7 +45,7 @@ class UserModel extends Equatable {
         'id': id,
         'name': name,
         'email': email,
-        'image_full_url': {'path': image},
+        'image_full_url': image?.toMap(),
         'provider_id': providerId,
         'phone': phone,
         'type': type.type,
@@ -74,7 +75,7 @@ class UserModel extends Equatable {
     String? name,
     String? email,
     String? phone,
-    String? image,
+    ImageFullUrl? image,
     AccountType? type,
     String? address,
     DateTime? updatedAt,
