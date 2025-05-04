@@ -9,7 +9,7 @@ class ImageFullUrl extends Equatable {
 
   const ImageFullUrl({this.key, this.path, this.status});
 
-  factory ImageFullUrl.fromMap(Map<String, dynamic> data) => ImageFullUrl(
+  factory ImageFullUrl.fromMap(Map data) => ImageFullUrl(
         key: data['key'] as String?,
         path: data['path'] as String?,
         status: data['status'] as int?,

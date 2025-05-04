@@ -14,6 +14,7 @@ class UserModel extends Equatable {
   final ImageFullUrl? image;
   final DateTime updatedAt;
   final DateTime createdAt;
+  final DateTime? emailVerifiedAt;
 
   const UserModel({
     required this.id,
@@ -26,6 +27,7 @@ class UserModel extends Equatable {
     required this.image,
     required this.updatedAt,
     required this.createdAt,
+    required this.emailVerifiedAt,
   });
 
   factory UserModel.fromMap(Map json) => UserModel(
@@ -39,6 +41,7 @@ class UserModel extends Equatable {
         address: json['country'] as String,
         updatedAt: DateTime.parse(json['updated_at'] as String),
         createdAt: DateTime.parse(json['created_at'] as String),
+        emailVerifiedAt: DateTime.tryParse(json['created_at'] as String? ?? 'unKnown'),
       );
 
   Map<String, dynamic> toMap() => {
@@ -52,6 +55,7 @@ class UserModel extends Equatable {
         'country': address,
         'updated_at': updatedAt.toIso8601String(),
         'created_at': createdAt.toIso8601String(),
+        'email_verified_at': emailVerifiedAt?.toIso8601String(),
       };
 
   factory UserModel.empty() {
@@ -66,6 +70,7 @@ class UserModel extends Equatable {
       image: null,
       updatedAt: DateTime.now(),
       createdAt: DateTime(2001),
+      emailVerifiedAt: null,
     );
   }
 
@@ -80,6 +85,7 @@ class UserModel extends Equatable {
     String? address,
     DateTime? updatedAt,
     DateTime? createdAt,
+    DateTime? emailVerifiedAt,
   }) {
     return UserModel(
       id: id ?? this.id,
@@ -92,6 +98,7 @@ class UserModel extends Equatable {
       image: image ?? this.image,
       updatedAt: updatedAt ?? this.updatedAt,
       createdAt: createdAt ?? this.createdAt,
+      emailVerifiedAt: emailVerifiedAt ?? this.emailVerifiedAt,
     );
   }
 
@@ -108,6 +115,7 @@ class UserModel extends Equatable {
       image,
       updatedAt,
       createdAt,
+      emailVerifiedAt,
     ];
   }
 }
