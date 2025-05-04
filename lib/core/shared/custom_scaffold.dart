@@ -12,15 +12,19 @@ class CustomScaffold extends StatelessWidget {
     this.drawer,
     this.bottomNavigationBar,
     this.appBar, 
-    this.scaffoldKey,
+    this.scaffoldKey, 
+    this.floatingActionButton, 
+    this.floatingActionButtonLocation,
   });
   final bool canPop;
   final Widget? body;
   final Widget? drawer;
+  final Widget? floatingActionButton;
   final Widget? bottomNavigationBar;
   final PreferredSizeWidget? appBar;
   final GlobalKey<ScaffoldState>? scaffoldKey;
   final void Function(bool, Object?)? onPopInvokedWithResult;
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +43,8 @@ class CustomScaffold extends StatelessWidget {
         child: Scaffold(
           key: scaffoldKey,
           appBar: appBar,
+          floatingActionButton: floatingActionButton,
+          floatingActionButtonLocation: floatingActionButtonLocation,
           backgroundColor: Colors.transparent,
           endDrawer: drawer,
           bottomNavigationBar: bottomNavigationBar,
