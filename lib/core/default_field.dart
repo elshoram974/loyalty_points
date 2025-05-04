@@ -154,6 +154,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
           hintText: widget.hintText,
           contentPadding: EdgeInsets.symmetric(
             vertical: widget.verticalPadding,
+            horizontal: widget.horizontalPadding ?? 22,
           ),
         ),
       );
