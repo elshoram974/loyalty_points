@@ -1,4 +1,11 @@
 {
+    "backToLogin": "Back to login",
+    "pleaseWaiting": "Please wait, this may take some time",
+
+    "BeforeLogin": "Before you can log in, an administrator must manually activate your account",
+
+    "successfully":"Successfully!",
+    "loginCompleted": "Login Completed",
     "pointsBalance": "Points Balance",
     "transferablePointsBalance": "Transferable Points Balance",
     "howToRedeemCode": "How to redeem the code",

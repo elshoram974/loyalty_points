@@ -55,6 +55,56 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Back to login`
+  String get backToLogin {
+    return Intl.message(
+      'Back to login',
+      name: 'backToLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please wait, this may take some time`
+  String get pleaseWaiting {
+    return Intl.message(
+      'Please wait, this may take some time',
+      name: 'pleaseWaiting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Before you can log in, an administrator must manually activate your account`
+  String get BeforeLogin {
+    return Intl.message(
+      'Before you can log in, an administrator must manually activate your account',
+      name: 'BeforeLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successfully!`
+  String get successfully {
+    return Intl.message(
+      'Successfully!',
+      name: 'successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login Completed`
+  String get loginCompleted {
+    return Intl.message(
+      'Login Completed',
+      name: 'loginCompleted',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Points Balance`
   String get pointsBalance {
     return Intl.message(

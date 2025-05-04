@@ -1,4 +1,9 @@
 {
+  "backToLogin": "العوده لتسجيل الدخول",
+  "pleaseWaiting":"يرجي الانتظار ، فقد يستغرق ذلك بعض الوقت ",
+  "BeforeLogin":"قبل أن تتمكن من تسجيل الدخول ،يجب أن يقوم المسئول بتفعيل حسابك يدويا",
+  "successfully":"بنجاح!",
+  "loginCompleted": "اكتمل التسجيل",
   "pointsBalance": "رصيد النقاط",
   "transferablePointsBalance": "رصيد نقاط يسمح بالتحويل",
   "howToRedeemCode": "كيفية حرق الكود",
