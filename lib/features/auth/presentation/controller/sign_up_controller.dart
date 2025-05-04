@@ -54,6 +54,8 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   Future<void> signUp() async {
+     Get.toNamed(AppRoute.waiting);
+    return;
     if (NetworkInfo.showSnackBarWhenNoInternet) return;
 
     if (!formKey.currentState!.validate()){ 

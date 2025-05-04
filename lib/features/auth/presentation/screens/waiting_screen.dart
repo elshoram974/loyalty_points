@@ -7,6 +7,7 @@ import 'package:loyalty_points/features/auth/presentation/widgets/waiting/waitin
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/filled_button.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_assets.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../widgets/waiting/signup_image_text.dart';
@@ -29,7 +30,7 @@ class WaitingScreen extends StatelessWidget {
           const WaitingTextImageWidget(),
           const SizedBox(height: 25),
           CustomFilledButton(
-            onPressed: () => Get.back(),
+            onPressed: () => Get.offAllNamed(AppRoute.login),
             text: localeLang(context).backToLogin,
             style: context.textTheme.headlineSmall,
           ),
