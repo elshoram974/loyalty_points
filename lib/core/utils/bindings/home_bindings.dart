@@ -4,7 +4,7 @@ import '../../../features/home/data/datasources/home_remote_data_source.dart';
 import '../../../features/home/data/repositories/home_repositories_imp.dart';
 import '../../../features/home/domain/repositories/home_repositories.dart';
 import '../../../features/home/presentation/controller/home_controller.dart';
-import '../../../features/login/data/datasources/auth_local_data_source.dart';
+import '../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../services/api_services.dart';
 
 class HomeBindings extends Bindings {

@@ -1,4 +1,4 @@
-import 'package:loyalty_points/features/login/domain/entity/sign_up_body_data.dart';
+import 'package:loyalty_points/features/auth/domain/entity/sign_up_body_data.dart';
 
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/functions/execute_and_handle_remote_errors.dart';

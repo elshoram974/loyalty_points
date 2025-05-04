@@ -1,6 +1,6 @@
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/functions/execute_and_handle_remote_errors.dart';
-import '../../../login/data/datasources/auth_local_data_source.dart';
+import '../../../auth/data/datasources/auth_local_data_source.dart';
 import '../../domain/repositories/home_repositories.dart';
 import '../datasources/home_remote_data_source.dart';
 

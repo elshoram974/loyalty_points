@@ -5,10 +5,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../app_info.dart';
-import '../../../features/login/data/datasources/auth_local_data_source.dart';
-import '../../../features/login/data/datasources/auth_remote_data_source.dart';
-import '../../../features/login/data/repositories/auth_repositories_imp.dart';
-import '../../../features/login/domain/repositories/auth_repositories.dart';
+import '../../../features/auth/data/datasources/auth_local_data_source.dart';
+import '../../../features/auth/data/datasources/auth_remote_data_source.dart';
+import '../../../features/auth/data/repositories/auth_repositories_imp.dart';
+import '../../../features/auth/domain/repositories/auth_repositories.dart';
 import '../config/controller/config_controller.dart';
 import '../config/locale/generated/l10n.dart';
 import '../constants/app_strings.dart';

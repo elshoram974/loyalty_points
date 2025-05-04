@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../../../features/login/domain/repositories/auth_repositories.dart';
-import '../../../features/login/presentation/controller/sign_up_controller.dart';
+import '../../../features/auth/domain/repositories/auth_repositories.dart';
+import '../../../features/auth/presentation/controller/sign_up_controller.dart';
 
 class SignUpBindings extends Bindings {
   @override

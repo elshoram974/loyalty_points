@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../features/login/data/datasources/auth_local_data_source.dart';
+import '../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../config/routes/routes.dart';
 
 class LoginMiddleWare extends GetMiddleware {

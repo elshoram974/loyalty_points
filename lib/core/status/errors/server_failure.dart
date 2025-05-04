@@ -5,7 +5,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 
-import '../../../features/login/data/datasources/auth_local_data_source.dart';
+import '../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../utils/config/locale/local_lang.dart';
 import '../../utils/config/routes/routes.dart';
 import 'failure.dart';
