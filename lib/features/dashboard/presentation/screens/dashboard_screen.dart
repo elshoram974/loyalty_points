@@ -9,8 +9,8 @@ import '../widgets/replace_points_floating_button_widget.dart';
 import 'drawer_screen.dart';
 import '../widgets/my_app_bar.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
