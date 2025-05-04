@@ -1,4 +1,6 @@
 {
+    "invalidPhoneNumber": "Invalid phone number",
+
     "backToLogin": "Back to login",
     "PleaseWaitthisMayTakeSomeTime": "Please wait, this may take some time",
 

@@ -1,4 +1,5 @@
 {
+  "invalidPhoneNumber":"رقم الهاتف غير صحيح",
   "backToLogin": "العودة لتسجيل الدخول",
   "PleaseWaitthisMayTakeSomeTime":"يرجي الانتظار ، فقد يستغرق ذلك بعض الوقت ",
   "beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount":"قبل أن تتمكن من تسجيل الدخول ،يجب أن يقوم المسئول بتفعيل حسابك يدويا",

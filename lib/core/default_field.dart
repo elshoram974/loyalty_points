@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 import 'package:loyalty_points/core/utils/extensions/string_ex.dart';
 
 import '../app_info.dart';
@@ -104,6 +105,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
     if (widget.isPhoneNumber) {
       return InternationalPhoneNumberInput(
         textFieldController: widget.controller,
+        errorMessage:localeLang(context).invalidPhoneNumber, 
         selectorConfig: SelectorConfig(
           leadingPadding: widget.horizontalPadding ?? AppConst.paddingDefault,
           selectorType: PhoneInputSelectorType.DIALOG,
