@@ -1,4 +1,5 @@
 {
+    "couldNotLaunch":"Could not launch",
     "invalidPhoneNumber": "Invalid phone number",
     "backToLogin": "Back to login",
     "PleaseWaitThisMayTakeSomeTime": "Please wait, this may take some time",

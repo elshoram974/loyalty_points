@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Could not launch`
+  String get couldNotLaunch {
+    return Intl.message(
+      'Could not launch',
+      name: 'couldNotLaunch',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Invalid phone number`
   String get invalidPhoneNumber {
     return Intl.message(

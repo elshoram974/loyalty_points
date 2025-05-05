@@ -1,4 +1,5 @@
 {
+"couldNotLaunch": "تعذر الفتح",
   "invalidPhoneNumber":"رقم الهاتف غير صحيح",
   "backToLogin": "العودة لتسجيل الدخول",
   "PleaseWaitThisMayTakeSomeTime":"يرجي الانتظار ، فقد يستغرق ذلك بعض الوقت ",
