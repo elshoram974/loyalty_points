@@ -18,7 +18,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     String? image =  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s";
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
+        padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault).copyWith(bottom: AppConst.paddingDefault),
         child: MyResConstrainedBoxAlign(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,5 +63,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(50);
+  Size get preferredSize => const Size.fromHeight(60);
 }

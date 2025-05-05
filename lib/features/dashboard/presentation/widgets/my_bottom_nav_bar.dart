@@ -6,6 +6,7 @@ import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../../domain/entity/navigation_bar_entity.dart';
 import '../controller/home_controller.dart';
+import '../screens/home_screen.dart';
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar({super.key});
@@ -56,7 +57,7 @@ class MyBottomNavBar extends StatelessWidget {
   }
   static List<NavigationBarEntity?> get navigationData => [
     NavigationBarEntity(
-      screen: ListView(), 
+      screen:const HomeScreen(), 
       icon: Icons.home_outlined, 
       activeIcon: Icons.home, 
       label: localeLang().home,
