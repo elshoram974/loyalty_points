@@ -10,37 +10,42 @@ class MyNetworkImage extends StatelessWidget {
     this.height,
     this.width,
     this.fit = BoxFit.cover,
-    this.placeHolder,
+    this.placeHolder, 
+    this.borderRadius = BorderRadius.zero,
   });
   final String? imageUrl;
   final double? height;
   final double? width;
   final BoxFit? fit;
+  final BorderRadiusGeometry borderRadius;
   final Widget? placeHolder;
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: imageUrl ?? '',
-      height: height,
-      width: width,
-      fit: fit,
-      placeholder: (context, url) =>
-          placeHolder ??
-          Image.asset(
-            AppAssets.placeholder,
-            height: height,
-            width: width,
-            fit: fit,
-          ),
-      errorWidget: (context, url, error) =>
-      imageUrl == null && placeHolder != null
-      ? _placeHolder!
-      : Image.asset(
-        AppAssets.placeholder,
+    return ClipRRect(
+      borderRadius: borderRadius,
+      child: CachedNetworkImage(
+        imageUrl: imageUrl ?? '',
         height: height,
         width: width,
         fit: fit,
+        placeholder: (context, url) =>
+            placeHolder ??
+            Image.asset(
+              AppAssets.placeholder,
+              height: height,
+              width: width,
+              fit: fit,
+            ),
+        errorWidget: (context, url, error) =>
+        imageUrl == null && placeHolder != null
+        ? _placeHolder!
+        : Image.asset(
+          AppAssets.placeholder,
+          height: height,
+          width: width,
+          fit: fit,
+        ),
       ),
     );
   }
