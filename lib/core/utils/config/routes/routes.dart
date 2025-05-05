@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../../../features/auth/presentation/screens/waiting_screen.dart';
-import '../../../../features/home/presentation/screens/home_screen.dart';
+import '../../../../features/dashboard/presentation/screens/dashboard_screen.dart';
 import '../../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../../../features/auth/presentation/screens/login_screen.dart';
 import '../../../../features/auth/presentation/screens/sign_up_screen.dart';
@@ -40,7 +40,7 @@ abstract final class AppRoute {
         ),
         GetPage(
           name: home,
-          page: () => const HomeScreen(),
+          page: () => const DashboardScreen(),
           binding: HomeBindings(),
         ),
         GetPage(
