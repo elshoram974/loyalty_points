@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/shared/custom_carousel_slider.dart';
-import '../widgets/home_widgets/font_awasem_icons.dart';
+import '../../../../core/utils/types/social_media_type.dart';
+import '../widgets/home_widgets/social_media_widget.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -11,7 +12,8 @@ class HomeScreen extends StatelessWidget {
     return ListView(
       children: [
         CustomCarouselSlider(images: imgList),
-        FontAwasemIcons()
+        SocialMediaWidget(items: SocialMediaType.allTypes)
+
       ],
     );
   }
