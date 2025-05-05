@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:loyalty_points/core/utils/constants/app_color.dart';
 
 import '../../../../../core/shared/my_network_image.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
@@ -37,7 +38,7 @@ class CustomCarouselSlider extends StatelessWidget {
             enableInfiniteScroll: true,
             reverse: false,
             autoPlay: true,
-            autoPlayInterval:AppConst.duration,
+            autoPlayInterval: AppConst.duration,
             autoPlayAnimationDuration: AppConst.autoPlayAnimationDuration,
             autoPlayCurve: Curves.fastOutSlowIn,
             enlargeCenterPage: true,
@@ -46,7 +47,7 @@ class CustomCarouselSlider extends StatelessWidget {
             scrollDirection: Axis.horizontal,
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: AppConst.paddingSmall),
         SizedBox(
           height: 8,
           child: ListenableBuilder(
@@ -60,11 +61,17 @@ class CustomCarouselSlider extends StatelessWidget {
                     final bool isSelected = i == _currentPage.value;
                     return AnimatedContainer(
                       duration: AppConst.animationsDefualt,
-                      width: isSelected ? 24 : 8,
-                      margin: const EdgeInsets.symmetric(horizontal: 3),
+                      width: isSelected
+                          ? AppConst.paddingBig
+                          : AppConst.paddingSmall,
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: AppConst.paddingExtraSmall),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: isSelected ? Colors.black : Colors.grey,
+                        borderRadius:
+                            BorderRadius.circular(AppConst.radiusNearCircle),
+                        color: isSelected
+                            ? AppColor.secondaryLight
+                            : AppColor.borderColor,
                       ),
                     );
                   },
