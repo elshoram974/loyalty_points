@@ -37,7 +37,7 @@ class CustomCarouselSlider extends StatelessWidget {
             enableInfiniteScroll: true,
             reverse: false,
             autoPlay: true,
-            autoPlayInterval: AppConst.animationsDefualt,
+            autoPlayInterval:AppConst.duration,
             autoPlayAnimationDuration: AppConst.autoPlayAnimationDuration,
             autoPlayCurve: Curves.fastOutSlowIn,
             enlargeCenterPage: true,
@@ -61,7 +61,7 @@ class CustomCarouselSlider extends StatelessWidget {
                     return AnimatedContainer(
                       duration: AppConst.animationsDefualt,
                       width: isSelected ? 24 : 8,
-                      margin: const EdgeInsets.symmetric(horizontal: AppConst.paddingSmall),
+                      margin: const EdgeInsets.symmetric(horizontal: 3),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: isSelected ? Colors.black : Colors.grey,

@@ -20,5 +20,10 @@ abstract final class AppConst {
   static const int maxTablet = 900;
 
   static const int debounceMilliseconds = 900;
+
+  // * Animations duration
   static const Duration duration = Duration(seconds: 2);
+  static const Duration animationsDefualt = Duration(milliseconds: 300);
+  static const Duration autoPlayAnimationDuration = Duration(milliseconds: 800);
+
 }
