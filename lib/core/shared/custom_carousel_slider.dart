@@ -39,7 +39,7 @@ class CustomCarouselSlider extends StatelessWidget {
             enableInfiniteScroll: true,
             reverse: false,
             autoPlay: true,
-            autoPlayInterval: const Duration(seconds: 4),
+            autoPlayInterval: const Duration(seconds: 7),
             autoPlayCurve: Curves.fastOutSlowIn,
             enlargeCenterPage: true,
             enlargeFactor: 0.3,

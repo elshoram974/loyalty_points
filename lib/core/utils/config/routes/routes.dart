@@ -52,7 +52,7 @@ abstract final class AppRoute {
         ),
          GetPage(
           name: newBarcode,
-          page: () => const AddNewCode(),
+          page: () => const AddNewCodeScreen(),
         ),
       ];
 }

@@ -17,6 +17,7 @@ class CustomFilledButton extends StatelessWidget {
     this.filledColor,
     this.padding,
     this.minimumSize,
+    this.borderRadius,
     this.makeFittedBox = false,
   });
   final Widget? icon;
@@ -27,6 +28,7 @@ class CustomFilledButton extends StatelessWidget {
   final Size? minimumSize;
   final bool makeFittedBox;
   final EdgeInsetsGeometry? padding;
+  final BorderRadiusGeometry? borderRadius;
   final void Function()? onPressed;
   final void Function()? onLongPress;
 
@@ -51,7 +53,7 @@ class CustomFilledButton extends StatelessWidget {
               minimumSize: minimumSize ?? const Size(256, 50),
               backgroundColor: filledColor ?? context.theme.primaryColor,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(AppConst.radiusNearCircle),
+                borderRadius: borderRadius ?? BorderRadius.circular(AppConst.radiusNearCircle),
               ),
             ),
             child: text == null
@@ -89,7 +91,7 @@ class CustomFilledButton extends StatelessWidget {
             minimumSize: minimumSize ?? const Size(256, 50),
             backgroundColor: filledColor ?? context.theme.primaryColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppConst.radiusDefault),
+              borderRadius: borderRadius ?? BorderRadius.circular(AppConst.radiusDefault),
             ),
           ),
           child: SizedBox.square(

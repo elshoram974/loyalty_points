@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:loyalty_points/features/dashboard/presentation/screens/add_new_code_screen.dart';
-
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/config/routes/routes.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
