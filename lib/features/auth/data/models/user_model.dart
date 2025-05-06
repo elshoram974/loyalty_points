@@ -3,19 +3,24 @@ import 'package:equatable/equatable.dart';
 import '../../../../core/utils/models/image_full_url.dart';
 import '../../../../core/utils/types/account_type.dart';
 
+enum AccountStatusEnum {pending, active, cancelled}
+
+
 class UserModel extends Equatable {
   final int id;
   final int providerId;
   final String name;
   final String email;
   final String phone;
+  final AccountStatusEnum status;
   final AccountType type;
   final String address;
   final ImageFullUrl? image;
   final DateTime updatedAt;
   final DateTime createdAt;
   final DateTime? emailVerifiedAt;
-  bool get isVerified => emailVerifiedAt != null;
+  bool get isVerified => status == AccountStatusEnum.active;
+  // bool get isVerified => emailVerifiedAt != null;
 
   const UserModel({
     required this.id,
@@ -29,6 +34,7 @@ class UserModel extends Equatable {
     required this.updatedAt,
     required this.createdAt,
     required this.emailVerifiedAt,
+    required this.status,
   });
 
   factory UserModel.fromMap(Map json) => UserModel(
@@ -39,6 +45,7 @@ class UserModel extends Equatable {
         providerId: int.parse("${json['provider_id'] ?? -1}"),
         phone: json['phone'] as String,
         type: AccountType.fromMap(json['type'] as String),
+        status: AccountStatusEnum.values[int.parse("${json['status'] ?? 0}")],
         address: json['country'] as String,
         updatedAt: DateTime.parse(json['updated_at'] as String),
         createdAt: DateTime.parse(json['created_at'] as String),
@@ -53,6 +60,7 @@ class UserModel extends Equatable {
         'provider_id': providerId,
         'phone': phone,
         'type': type.type,
+        'status': status.index,
         'country': address,
         'updated_at': updatedAt.toIso8601String(),
         'created_at': createdAt.toIso8601String(),
@@ -67,6 +75,7 @@ class UserModel extends Equatable {
       email: 'email',
       phone: 'phone',
       type: const DeliveryManAccount(),
+      status: AccountStatusEnum.active,
       address: 'address',
       image: null,
       updatedAt: DateTime.now(),
@@ -84,6 +93,7 @@ class UserModel extends Equatable {
     ImageFullUrl? image,
     AccountType? type,
     String? address,
+    AccountStatusEnum? status,
     DateTime? updatedAt,
     DateTime? createdAt,
     DateTime? emailVerifiedAt,
@@ -95,6 +105,7 @@ class UserModel extends Equatable {
       email: email ?? this.email,
       phone: phone ?? this.phone,
       type: type ?? this.type,
+      status: status ?? this.status,
       address: address ?? this.address,
       image: image ?? this.image,
       updatedAt: updatedAt ?? this.updatedAt,
@@ -112,6 +123,7 @@ class UserModel extends Equatable {
       email,
       phone,
       type,
+      status,
       address,
       image,
       updatedAt,
