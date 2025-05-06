@@ -60,7 +60,7 @@ class CustomCarouselSlider extends StatelessWidget {
                 itemBuilder: (context, i) {
                   final bool isSelected = i == _currentPage.value;
                   return AnimatedContainer(
-                    duration: AppConst.animationsDefualt,
+                    duration: AppConst.animationsDefault,
                     width: isSelected
                         ? AppConst.paddingBig
                         : AppConst.paddingSmall,

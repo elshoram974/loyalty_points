@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../../features/dashboard/data/datasources/home_remote_data_source.dart';
 import '../../../features/dashboard/data/repositories/home_repositories_imp.dart';
 import '../../../features/dashboard/domain/repositories/home_repositories.dart';
-import '../../../features/dashboard/presentation/controller/home_controller.dart';
+import '../../../features/dashboard/presentation/controller/dashboard_controller.dart';
 import '../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../services/api_services.dart';
 
@@ -19,6 +19,6 @@ class HomeBindings extends Bindings {
         authLocalDataSource: Get.find<AuthLocalDataSource>(),
       ),
     );
-    Get.put<HomeController>(HomeControllerImp(Get.find<HomeRepositories>()));
+    Get.put<DashboardController>(DashboardControllerImp(Get.find<HomeRepositories>()));
   }
 }

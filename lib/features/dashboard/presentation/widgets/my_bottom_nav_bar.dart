@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/constants/app_strings.dart';
-import '../../domain/entity/navigation_bar_entity.dart';
-import '../controller/home_controller.dart';
-import '../screens/home_screen.dart';
+import '../../../../core/utils/types/dashboard_tabs.dart';
+import '../controller/dashboard_controller.dart';
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar({super.key});
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(AppConst.radiusBig)),
-        child: GetBuilder<HomeController>(
+      borderRadius:
+          const BorderRadius.vertical(top: Radius.circular(AppConst.radiusBig)),
+      child: GetBuilder<DashboardController>(
           id: AppString.updateSelectedScreen,
           builder: (controller) {
             return BottomNavigationBar(
               onTap: (value) {
-                if(value == 2) {
-                  return;
-                } else if(value == navigationData.length - 1){ 
+                if (value == DashboardTabsEnum.menu.index) {
                   return Scaffold.of(context).openEndDrawer();
                 }
                 controller.changeHomeScreen(value);
@@ -34,52 +32,27 @@ class MyBottomNavBar extends StatelessWidget {
               selectedItemColor: context.theme.primaryColor,
               type: BottomNavigationBarType.fixed,
               items: List.generate(
-                navigationData.length,
+                DashboardTabsEnum.values.length,
                 (i) {
-                  final NavigationBarEntity? button = navigationData[i];
-                  if (button == null) {
+                  final DashboardTabItem type = DashboardTabsEnum.values[i].data;
+                  if (type.isHidden) {
                     return const BottomNavigationBarItem(
                       icon: SizedBox.shrink(),
                       label: '',
                     );
                   }
                   return BottomNavigationBarItem(
-                    icon: Icon(button.icon, color: context.iconColor),
-                    label: button.label ?? '',
-                    activeIcon: Icon(button.icon, color: context.theme.primaryColor),
+                    icon: Icon(type.icon, color: context.iconColor),
+                    label: type.label,
+                    activeIcon: FaIcon(
+                      type.icon,
+                      color: context.theme.primaryColor,
+                    ),
                   );
                 },
               ),
             );
-          }
-        ),
-      );
+          }),
+    );
   }
-  static List<NavigationBarEntity?> get navigationData => [
-    NavigationBarEntity(
-      screen:const HomeScreen(), 
-      icon: Icons.home_outlined, 
-      activeIcon: Icons.home, 
-      label: localeLang().home,
-    ),
-    NavigationBarEntity(
-      screen: const Placeholder(), 
-      icon: Icons.assignment_outlined, 
-      activeIcon: Icons.assignment, 
-      label: localeLang().orders,
-    ),
-    null,
-    NavigationBarEntity(
-      screen: const Placeholder(), 
-      icon: Icons.assignment_outlined, 
-      activeIcon: Icons.assignment, 
-      label: localeLang().points,
-    ),
-    NavigationBarEntity(
-      screen: const Placeholder(), 
-      icon: Icons.menu_outlined, 
-      activeIcon: Icons.menu, 
-      label: localeLang().menu,
-    ),
-  ];
 }

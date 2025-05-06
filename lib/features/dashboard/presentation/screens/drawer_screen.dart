@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_constants.dart';
-import '../controller/home_controller.dart';
+import '../controller/dashboard_controller.dart';
 import '../widgets/drawer_widgets/tile_button_widget.dart';
 
-class HomeDrawer extends GetView<HomeController> {
+class HomeDrawer extends GetView<DashboardController> {
   const HomeDrawer({
     super.key,
   });

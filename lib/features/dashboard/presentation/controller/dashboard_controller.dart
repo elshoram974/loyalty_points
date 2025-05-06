@@ -14,8 +14,8 @@ import '../../domain/repositories/home_repositories.dart';
 
 const int _initSelectedPage = 0;
 
-abstract class HomeController extends GetxController {
-  HomeController();
+abstract class DashboardController extends GetxController {
+  DashboardController();
   bool get isLoading;
 
   int get selectedScreen;
@@ -30,8 +30,8 @@ abstract class HomeController extends GetxController {
   void onPopInvoked();
 }
 
-class HomeControllerImp extends HomeController {
-  HomeControllerImp(this.repo);
+class DashboardControllerImp extends DashboardController {
+  DashboardControllerImp(this.repo);
   final HomeRepositories repo;
 
   bool _isLoading = false;
