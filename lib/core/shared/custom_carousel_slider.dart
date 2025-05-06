@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/constants/app_color.dart';
 
 import '../../../../../core/shared/my_network_image.dart';
@@ -38,8 +39,7 @@ class CustomCarouselSlider extends StatelessWidget {
             enableInfiniteScroll: true,
             reverse: false,
             autoPlay: true,
-            autoPlayInterval: AppConst.duration,
-            autoPlayAnimationDuration: AppConst.autoPlayAnimationDuration,
+            autoPlayInterval: const Duration(seconds: 4),
             autoPlayCurve: Curves.fastOutSlowIn,
             enlargeCenterPage: true,
             enlargeFactor: 0.3,
@@ -51,32 +51,33 @@ class CustomCarouselSlider extends StatelessWidget {
         SizedBox(
           height: 8,
           child: ListenableBuilder(
-              listenable: _currentPage,
-              builder: (context, _) {
-                return ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemCount: images.length,
-                  itemBuilder: (context, i) {
-                    final bool isSelected = i == _currentPage.value;
-                    return AnimatedContainer(
-                      duration: AppConst.animationsDefualt,
-                      width: isSelected
-                          ? AppConst.paddingBig
-                          : AppConst.paddingSmall,
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: AppConst.paddingExtraSmall),
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(AppConst.radiusNearCircle),
-                        color: isSelected
-                            ? AppColor.secondaryLight
-                            : AppColor.borderColor,
-                      ),
-                    );
-                  },
-                );
-              }),
+            listenable: _currentPage,
+            builder: (context, _) {
+              return ListView.builder(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: images.length,
+                itemBuilder: (context, i) {
+                  final bool isSelected = i == _currentPage.value;
+                  return AnimatedContainer(
+                    duration: AppConst.animationsDefualt,
+                    width: isSelected
+                        ? AppConst.paddingBig
+                        : AppConst.paddingSmall,
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: AppConst.paddingExtraSmall),
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          BorderRadius.circular(AppConst.radiusNearCircle),
+                      color: isSelected
+                          ? context.theme.colorScheme.secondary
+                          : AppColor.greyBackground,
+                    ),
+                  );
+                },
+              );
+            },
+          ),
         ),
       ],
     );

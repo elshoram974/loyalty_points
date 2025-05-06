@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_assets.dart';
-import '../../../../../core/utils/constants/app_color.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 
 class PointsBalanceWidget extends StatelessWidget {
@@ -18,7 +17,7 @@ class PointsBalanceWidget extends StatelessWidget {
         vertical: AppConst.paddingSmall,
       ),
       decoration: BoxDecoration(
-        color: AppColor.primaryLight,
+        color: context.theme.primaryColor,
         borderRadius: BorderRadius.circular(AppConst.radiusDefault),
       ),
       child: Column(
@@ -55,7 +54,7 @@ class PointsBalanceWidget extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    '100 ج.م',
+                    '100'+localeLang(context).egyptianPound,
                     style: context.textTheme.titleSmall?.copyWith(
                       color: Colors.white,
                     ),

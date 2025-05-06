@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_assets.dart';
-import '../../../../../core/utils/constants/app_color.dart';
 
 class WaitingTextImageWidget extends StatelessWidget {
   const WaitingTextImageWidget({super.key});
@@ -25,7 +24,7 @@ class WaitingTextImageWidget extends StatelessWidget {
           textAlign: TextAlign.center,
           localeLang(context).PleaseWaitThisMayTakeSomeTime,
           style: context.textTheme.titleMedium?.copyWith(
-            color: AppColor.primaryLight,
+            color: context.theme.primaryColor,
             fontWeight: FontWeight.bold,
           ),
         ),
