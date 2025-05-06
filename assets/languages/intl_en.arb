@@ -1,4 +1,12 @@
 {
+    "deleteSticker": "Remove sticker",
+"deleteStickerFromApp": "Delete sticker from {appName}",
+
+    "enterCodeInWebsiteOrApp":"Enter code in website or app",
+    "enterBarCode":"Enter Code",
+    "willFindAUniqueCodeUnderTheLabel": "will find a unique code under the label",
+    "findBarCode": "Find Bar Code",
+
     "howToAbusingCode": "How to abuse promo codes?",
 
     "egyptianPound":"L.E",

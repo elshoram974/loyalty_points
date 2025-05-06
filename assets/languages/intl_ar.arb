@@ -1,4 +1,11 @@
 {
+  "deleteSticker":"إزاله الملصق",
+  "deleteStickerFromApp":"حذف الملصق من {appName}",
+  "enterCodeInWebsiteOrApp":"ادخل الكود علي الموقع او التطبيق",
+  "enterBarCode":"قم بادخال الكود",
+  "willFindAUniqueCodeUnderTheLabel": "ستجد كود مميز أسفل الملصق",
+
+  "findBarCode": "ايجاد الكود",
   "howToAbusingCode": "كيفية حرق الكود؟",
   "egyptianPound":"ج.م",
 "couldNotLaunch": "تعذر الفتح",

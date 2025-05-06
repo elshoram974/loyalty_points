@@ -55,6 +55,61 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Remove sticker`
+  String get deleteSticker {
+    return Intl.message(
+      'Remove sticker',
+      name: 'deleteSticker',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete sticker from {appName}`
+  String deleteStickerFromApp(Object appName) {
+    return Intl.message(
+      'Delete sticker from $appName',
+      name: 'deleteStickerFromApp',
+      desc: '',
+      args: [appName],
+    );
+  }
+
+  /// `Enter code in website or app`
+  String get enterCodeInWebsiteOrApp {
+    return Intl.message(
+      'Enter code in website or app',
+      name: 'enterCodeInWebsiteOrApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Code`
+  String get enterBarCode {
+    return Intl.message('Enter Code', name: 'enterBarCode', desc: '', args: []);
+  }
+
+  /// `will find a unique code under the label`
+  String get willFindAUniqueCodeUnderTheLabel {
+    return Intl.message(
+      'will find a unique code under the label',
+      name: 'willFindAUniqueCodeUnderTheLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Find Bar Code`
+  String get findBarCode {
+    return Intl.message(
+      'Find Bar Code',
+      name: 'findBarCode',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `How to abuse promo codes?`
   String get howToAbusingCode {
     return Intl.message(
