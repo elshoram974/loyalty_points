@@ -14,7 +14,7 @@ class AddNewCode extends StatelessWidget {
       body: Column(
         children: [
           PointsBalanceWidget(),
-          Text()
+          Text('')
         ],
       ),
     );
