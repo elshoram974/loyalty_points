@@ -18,7 +18,9 @@ class AddNewBarcodeWidget extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),
                 side: const BorderSide(
-                    color: Colors.white, width: AppConst.borderDefualtWidth),
+                  color: Colors.white,
+                  width: AppConst.borderDefaultWidth,
+                ),
                 padding: const EdgeInsets.all(AppConst.paddingBig),
                 backgroundColor: context.theme.primaryColor),
             child: const FaIcon(
@@ -30,8 +32,9 @@ class AddNewBarcodeWidget extends StatelessWidget {
           Text(
             localeLang(context).addNewCode,
             style: context.textTheme.titleLarge?.copyWith(
-                color: context.theme.primaryColor,
-                 fontWeight: FontWeight.bold),
+              color: context.theme.primaryColor,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ],
       ),
