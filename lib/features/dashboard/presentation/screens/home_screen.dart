@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/shared/custom_carousel_slider.dart';
+import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/types/social_media_type.dart';
 import '../widgets/home_widgets/abusing_code.dart';
-import '../widgets/home_widgets/points_balance_widget.dart';
 import '../widgets/home_widgets/social_media_widget.dart';
 
 
