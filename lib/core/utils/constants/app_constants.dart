@@ -27,5 +27,5 @@ abstract final class AppConst {
   
 
   // * borders width
-  static const double borderDefualtWidth = 5;  
+  static const double borderDefaultWidth = 5;  
 }

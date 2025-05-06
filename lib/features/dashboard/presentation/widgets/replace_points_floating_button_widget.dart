@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/utils/constants/app_constants.dart';
+
 class ReplacePointsFloatingButtonWidget extends StatelessWidget {
   const ReplacePointsFloatingButtonWidget({super.key});
 
@@ -11,7 +13,7 @@ class ReplacePointsFloatingButtonWidget extends StatelessWidget {
       shape: CircleBorder(
         side: BorderSide(
           color: context.theme.bottomNavigationBarTheme.backgroundColor!,
-          width: 5
+          width: AppConst.borderDefaultWidth,
         ),
       ),
     );
