@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 import 'package:loyalty_points/features/dashboard/presentation/widgets/home_widgets/abusing_code_steps.dart';
+import 'package:loyalty_points/features/dashboard/presentation/widgets/home_widgets/add_new_barcode_widget.dart';
 
 import '../../../../../core/utils/constants/app_assets.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
@@ -15,39 +16,40 @@ class AbusingCode extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding:
-              const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
+          padding: const EdgeInsets.all(AppConst.paddingDefault),
           child: Text(localeLang(context).howToAbusingCode,
               style: context.textTheme.headlineSmall),
         ),
         Center(
           child: AbusingCodeSteps(
               ico: AppAssets.findBarCode,
-              title: localeLang().findBarCode,
-              subTitle: localeLang().willFindAUniqueCodeUnderTheLabel),
+              title: localeLang().findCode,
+              subTitle: localeLang().uniqueCodeUnderLabel),
         ),
-       const SizedBox(height: 70),
+        const SizedBox(height: AppConst.paddingDefault),
+        const AddNewBarcodeWidget(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Flexible(
               child: AbusingCodeSteps(
                 ico: AppAssets.enterBarCode,
-                title: localeLang().enterBarCode,
-                subTitle: localeLang().enterCodeInWebsiteOrApp,
+                title: localeLang().enterCode,
+                subTitle: localeLang().enterCodeOnWebsiteOrApp,
               ),
             ),
-           const SizedBox(width: 10),
+            const SizedBox(width: AppConst.paddingSmall),
             Flexible(
               child: AbusingCodeSteps(
-                  ico: AppAssets.removeSticker,
-                  title: localeLang().removeSticker,
-                  subTitle: localeLang()
-                      .removeStickerFromApp(localeLang().business_name)),
+                ico: AppAssets.removeSticker,
+                title: localeLang().removeSticker,
+                subTitle: localeLang()
+                    .removeStickerFromApp(localeLang().business_name),
+              ),
             ),
           ],
         ),
-       const SizedBox(height: 50),
+        const SizedBox(height: AppConst.paddingExtraBig),
       ],
     );
   }
