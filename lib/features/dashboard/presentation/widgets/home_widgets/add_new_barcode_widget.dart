@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:loyalty_points/features/dashboard/presentation/screens/add_new_code_screen.dart';
 
 import '../../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../../core/utils/config/routes/routes.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 
 class AddNewBarcodeWidget extends StatelessWidget {
@@ -14,7 +16,7 @@ class AddNewBarcodeWidget extends StatelessWidget {
       child: Column(
         children: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Get.toNamed(AppRoute.newBarcode),
             style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),
                 side: const BorderSide(
@@ -30,8 +32,7 @@ class AddNewBarcodeWidget extends StatelessWidget {
           Text(
             localeLang(context).addNewCode,
             style: context.textTheme.titleLarge?.copyWith(
-                color: context.theme.primaryColor,
-                 fontWeight: FontWeight.bold),
+                color: context.theme.primaryColor, fontWeight: FontWeight.bold),
           ),
         ],
       ),
