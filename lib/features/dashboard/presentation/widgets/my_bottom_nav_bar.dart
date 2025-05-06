@@ -13,7 +13,7 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-        borderRadius: BorderRadius.circular(AppConst.radiusBig),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(AppConst.radiusBig)),
         child: GetBuilder<HomeController>(
           id: AppString.updateSelectedScreen,
           builder: (controller) {
