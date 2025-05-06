@@ -55,6 +55,21 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `How to abuse promo codes?`
+  String get howToAbusingCode {
+    return Intl.message(
+      'How to abuse promo codes?',
+      name: 'howToAbusingCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `L.E`
+  String get egyptianPound {
+    return Intl.message('L.E', name: 'egyptianPound', desc: '', args: []);
+  }
+
   /// `Could not launch`
   String get couldNotLaunch {
     return Intl.message(
