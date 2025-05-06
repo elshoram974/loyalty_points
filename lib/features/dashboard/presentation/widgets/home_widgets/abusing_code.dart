@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
+import 'package:loyalty_points/features/dashboard/presentation/widgets/home_widgets/abusing_code_steps.dart';
+
+import '../../../../../core/utils/constants/app_assets.dart';
+import '../../../../../core/utils/constants/app_constants.dart';
 
 class AbusingCode extends StatelessWidget {
   const AbusingCode({super.key});
@@ -8,12 +12,42 @@ class AbusingCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(right: 20),
-          child: Text(localeLang(context).howToAbusingCode,style: context.textTheme.headlineSmall,),
+          padding:
+              const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
+          child: Text(localeLang(context).howToAbusingCode,
+              style: context.textTheme.headlineSmall),
         ),
+        Center(
+          child: AbusingCodeSteps(
+              ico: AppAssets.findBarCode,
+              title: localeLang().findBarCode,
+              subTitle: localeLang().willFindAUniqueCodeUnderTheLabel),
+        ),
+       const SizedBox(height: 70),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Flexible(
+              child: AbusingCodeSteps(
+                ico: AppAssets.enterBarCode,
+                title: localeLang().enterBarCode,
+                subTitle: localeLang().enterCodeInWebsiteOrApp,
+              ),
+            ),
+           const SizedBox(width: 10),
+            Flexible(
+              child: AbusingCodeSteps(
+                  ico: AppAssets.removeSticker,
+                  title: localeLang().removeSticker,
+                  subTitle: localeLang()
+                      .removeStickerFromApp(localeLang().business_name)),
+            ),
+          ],
+        ),
+       const SizedBox(height: 50),
       ],
     );
   }
