@@ -16,14 +16,19 @@ class ReplacePointsFloatingButtonWidget extends StatelessWidget {
     return GetBuilder<DashboardController>(
       id: AppString.updateSelectedScreen,
       builder: (controller) {
+        final bool isSelected = controller.selectedScreen == redeemData.index;
+        final Color foregroundColor = isSelected
+            ? context.theme.primaryColor
+            : context.theme.bottomNavigationBarTheme.backgroundColor!;
         return FloatingActionButton(
           onPressed: () => controller.changeHomeScreen(redeemData.index),
+          backgroundColor: isSelected
+              ? context.theme.bottomNavigationBarTheme.backgroundColor!
+              : context.theme.primaryColor,
+          foregroundColor: foregroundColor,
           shape: CircleBorder(
             side: BorderSide(
-              style: controller.selectedScreen == redeemData.index
-                  ? BorderStyle.none
-                  : BorderStyle.solid,
-              color: context.theme.bottomNavigationBarTheme.backgroundColor!,
+              color: foregroundColor,
               width: AppConst.borderDefaultWidth,
             ),
           ),
