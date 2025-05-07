@@ -28,7 +28,7 @@ class CancelAndConfirmButtons extends StatelessWidget {
         const SizedBox(width: AppConst.paddingDefault),
         Expanded(
           child: CustomFilledButton(
-            onPressed: Get.back,
+            onPressed: (){},
             filledColor: context.theme.primaryColor,
             borderRadius: BorderRadius.circular(AppConst.radiusSmall),
             text: localeLang(context).confirm,

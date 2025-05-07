@@ -11,7 +11,6 @@ import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/helper/permissions_helper.dart';
 import '../widgets/home_widgets/cancel_confirm_buttons.dart';
 import '../widgets/my_app_bar.dart';
-import 'bar_code_scanner_screen.dart';
 
 class AddNewCodeScreen extends StatelessWidget {
   const AddNewCodeScreen({super.key});
@@ -54,7 +53,10 @@ class AddNewCodeScreen extends StatelessWidget {
             onTap: () async {
               final allowed = await requestCameraPermission();
               if (allowed) {
-                Get.toNamed(AppRoute.barCodeScanner);
+                final result = await Get.toNamed(AppRoute.barCodeScanner);
+                if(result is String) {
+                  print("From main result is ${result}");
+                }
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(

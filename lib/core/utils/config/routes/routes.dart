@@ -27,10 +27,7 @@ abstract final class AppRoute {
   static const String home = "/home";
   static const String waiting = "/waiting";
   static const String newBarcode = "/newBarcode";
-    static const String barCodeScanner = "/barCodeScanner";
-
-
-
+  static const String barCodeScanner = "/barCodeScanner";
 
   static List<GetPage> get pages => [
         GetPage(
@@ -53,7 +50,7 @@ abstract final class AppRoute {
           name: waiting,
           page: () => const WaitingScreen(),
         ),
-         GetPage(
+        GetPage(
           name: newBarcode,
           page: () => const AddNewCodeScreen(),
         ),
