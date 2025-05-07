@@ -17,7 +17,7 @@ class ReplacePointsFloatingButtonWidget extends StatelessWidget {
       id: AppString.updateSelectedScreen,
       builder: (controller) {
         final bool isSelected = controller.selectedScreen == redeemData.index;
-        final Color color = isSelected
+        final Color foregroundColor = isSelected
             ? context.theme.primaryColor
             : context.theme.bottomNavigationBarTheme.backgroundColor!;
         return FloatingActionButton(
@@ -25,10 +25,10 @@ class ReplacePointsFloatingButtonWidget extends StatelessWidget {
           backgroundColor: isSelected
               ? context.theme.bottomNavigationBarTheme.backgroundColor!
               : context.theme.primaryColor,
-          foregroundColor: color,
+          foregroundColor: foregroundColor,
           shape: CircleBorder(
             side: BorderSide(
-              color: color,
+              color: foregroundColor,
               width: AppConst.borderDefaultWidth,
             ),
           ),
