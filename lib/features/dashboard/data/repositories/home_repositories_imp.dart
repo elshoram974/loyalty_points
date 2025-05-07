@@ -24,6 +24,10 @@ class HomeRepositoriesImp extends HomeRepositories {
   @override
   Stream<Status<UserModel?>> getUserData() async* {
     yield Success<UserModel?>(authLocalDataSource.getCurrentUser());
+
+    yield await executeAndHandleErrors<UserModel>(
+      remoteDataSource.getCurrentUser,
+    );
   }
 
   @override

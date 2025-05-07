@@ -107,6 +107,8 @@ class DashboardControllerImp extends DashboardController {
         if (realStatus is Failure<UserModel?>) {
           handleFailureStatus(realStatus as Failure<UserModel>);
         }
+
+        print("onDone");
       },
     );
   }
