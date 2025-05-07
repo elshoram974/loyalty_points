@@ -18,55 +18,60 @@ class AddNewCodeScreen extends StatelessWidget {
     return CustomScaffold(
       appBar: const MyAppBar(),
       body: ListView(
+        padding: const EdgeInsets.symmetric(
+            horizontal: AppConst.paddingDefault,
+            vertical: AppConst.paddingDefault),
         children: [
           const PointsBalanceWidget(),
           const SizedBox(height: 100),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppConst.paddingDefault,
-              vertical: AppConst.paddingDefault,
-            ),
-            child: Text(
-              localeLang(context).addNewCode,
-              style: context.textTheme.headlineSmall,
-            ),
+          Text(
+            localeLang(context).addNewCode,
+            style: context.textTheme.headlineSmall,
           ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                fillColor: Colors.white,
-                filled: true,
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: AppColor.greyBackground,
-                    width: 1.0,
-                  ),
+          TextFormField(
+            decoration: const InputDecoration(
+              fillColor: Colors.white,
+              filled: true,
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppColor.greyBackground,
+                  width: 1.0,
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: AppColor.greyBackground,
-                    width: 2.0,
-                  ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppColor.greyBackground,
+                  width: 2.0,
                 ),
               ),
             ),
           ),
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: AppConst.paddingDefault,
-                    horizontal: AppConst.paddingDefault),
-                child: Text(
-                  localeLang(context).pressToUseCamera,
-                  style: context.textTheme.titleMedium,
-                ),
+          const SizedBox(height: AppConst.paddingDefault),
+          InkWell(
+            onTap: () {},
+            splashFactory: NoSplash.splashFactory,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: AppConst.paddingSmall,
               ),
-              Flexible(child: Image.asset(AppAssets.findBarCode)),
-            ],
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      localeLang(context).pressToUseCamera,
+                      style: context.textTheme.titleMedium,
+                    ),
+                  ),
+                  CircleAvatar(
+                    backgroundColor: AppColor.greyBackground,
+                    radius: 30,
+                    child: Image.asset(AppAssets.findBarCode),
+                  ),
+                ],
+              ),
+            ),
           ),
+         const SizedBox(height: 100),
           const CancelAndConfirmButtons(),
         ],
       ),
