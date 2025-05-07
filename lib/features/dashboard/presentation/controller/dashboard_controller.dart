@@ -20,7 +20,7 @@ abstract class DashboardController extends GetxController {
   DashboardController();
   bool get isLoadingUserData;
 
-  UserModel get user;
+  UserModel? get user;
 
   int get selectedScreen;
   void changeHomeScreen(int selected);
@@ -48,7 +48,7 @@ class DashboardControllerImp extends DashboardController {
   UserModel? _user;
 
   @override
-  UserModel get user => _user ?? UserModel.empty();
+  UserModel? get user => _user;
 
   int _selectedScreen = _initSelectedPage;
   @override
@@ -97,7 +97,7 @@ class DashboardControllerImp extends DashboardController {
         if (status is Success<UserModel?>) {
           realStatus ??= status;
           _user = status.data;
-          _isLoadingUserData = true;
+          _isLoadingUserData = false;
           update([AppString.updateHomeUser]);
         } else {
           realStatus = status;

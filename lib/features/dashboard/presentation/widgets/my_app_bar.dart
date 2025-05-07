@@ -2,57 +2,69 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/extensions/string_ex.dart';
 
+import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/my_network_image.dart';
 import '../../../../core/shared/responsive/constrained_box.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_assets.dart';
 import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
+import '../../../../core/utils/constants/app_strings.dart';
+import '../controller/dashboard_controller.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String name = "Mohammed Shora";
-    String? image =  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s";
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault).copyWith(bottom: AppConst.paddingDefault),
+        padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault)
+            .copyWith(bottom: AppConst.paddingDefault),
         child: MyResConstrainedBoxAlign(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  AspectRatio(
-                    aspectRatio: 1,
-                    child: ClipOval(
-                      child: MyNetworkImage(
-                        image,
-                        placeHolder: CircleAvatar(
-                          radius: double.maxFinite,
-                          backgroundColor: AppColor.greyBackground,
-                          child: FittedBox(
-                            child: Text(
-                              name.nameAbbreviation,
-                              style: context.textTheme.headlineLarge,
+              GetBuilder<DashboardController>(
+                id: AppString.updateHomeUser,
+                builder: (controller) {
+                  final String name = controller.user?.name ?? '';
+                  return CustomLoadingWidget(
+                    isLoading: controller.isLoadingUserData,
+                    child: Row(
+                      children: [
+                        AspectRatio(
+                          aspectRatio: 1,
+                          child: ClipOval(
+                            child: MyNetworkImage(
+                              controller.user?.image?.path,
+                              placeHolder: CircleAvatar(
+                                radius: double.maxFinite,
+                                backgroundColor: AppColor.greyBackground,
+                                child: FittedBox(
+                                  child: Text(
+                                    name.nameAbbreviation,
+                                    style: context.textTheme.headlineLarge,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        RichText(
+                          text: TextSpan(
+                            style: context.textTheme.bodyMedium,
+                            children: [
+                              TextSpan(text: localeLang(context).welcomeToYou),
+                              const TextSpan(text: ",\n"),
+                              TextSpan(text: name),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                        style: context.textTheme.bodyMedium,
-                        children: [
-                          TextSpan(text: localeLang(context).welcomeToYou),
-                          const TextSpan(text: ",\n"),
-                          TextSpan(text: name),
-                        ]),
-                  ),
-                ],
+                  );
+                },
               ),
               Image.asset(AppAssets.fullLogo),
             ],
