@@ -1,4 +1,5 @@
 {
+  "cameraPermissionisRequired": "يتطلب صلاحية الكاميرا",
 "pressToUseCamera": "اواضغط لاستخدام الكاميرا",
   "findBarCode": "ايجاد الكود",
   "howToAbusingCode": "كيفية حرق الاكواد؟",

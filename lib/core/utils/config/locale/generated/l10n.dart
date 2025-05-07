@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Camera permission is required`
+  String get cameraPermissionisRequired {
+    return Intl.message(
+      'Camera permission is required',
+      name: 'cameraPermissionisRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `ORPress to use camera`
   String get pressToUseCamera {
     return Intl.message(
