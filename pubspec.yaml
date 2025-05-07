@@ -46,12 +46,12 @@ dependencies:
       url: https://github.com/Shahidbangash/intl_phone_number_input.git
       ref: develop 
 
-  # # * for loading
-  # skeletonizer: ^1.4.3
-
   # * for pick or take image
   image_picker: ^1.1.2
 
+  # * for loading
+  skeletonizer: ^1.4.3
+  
   # * for easy ui
   dotted_border: ^2.1.0
   font_awesome_flutter: ^10.8.0
