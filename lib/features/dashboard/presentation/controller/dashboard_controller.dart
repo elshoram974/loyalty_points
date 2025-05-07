@@ -88,13 +88,13 @@ class DashboardControllerImp extends DashboardController {
 
   @override
   Future<void> getUserData() async {
-    Status<UserModel>? realStatus;
+    Status<UserModel?>? realStatus;
     _isLoadingUserData = true;
     update([AppString.updateHomeUser]);
 
     repo.getUserData().listen(
       (status) {
-        if (status is Success<UserModel>) {
+        if (status is Success<UserModel?>) {
           realStatus ??= status;
           _user = status.data;
           _isLoadingUserData = true;
@@ -104,7 +104,7 @@ class DashboardControllerImp extends DashboardController {
         }
       },
       onDone: () {
-        if (realStatus is Failure<UserModel>) {
+        if (realStatus is Failure<UserModel?>) {
           handleFailureStatus(realStatus as Failure<UserModel>);
         }
       },

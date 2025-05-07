@@ -6,7 +6,7 @@ abstract class HomeRepositories {
 
   Future<Status<void>> updateFCMTokenAndTopic(String token);
 
-  Stream<Status<UserModel>> getUserData();
+  Stream<Status<UserModel?>> getUserData();
 
   Future<Status<void>> logout();
 }
