@@ -1,8 +1,8 @@
 import '../../../../core/status/status.dart';
 import '../../../auth/data/models/user_model.dart';
 
-abstract class HomeRepositories {
-  const HomeRepositories();
+abstract class DashboardRepositories {
+  const DashboardRepositories();
 
   Future<Status<void>> updateFCMTokenAndTopic(String token);
 

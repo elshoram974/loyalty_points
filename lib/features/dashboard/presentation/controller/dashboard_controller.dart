@@ -12,7 +12,7 @@ import '../../../../core/utils/functions/show_my_dialog.dart';
 import '../../../../core/utils/functions/show_my_snack_bar.dart';
 import '../../../../core/utils/services/push_notification_service.dart';
 import '../../../auth/data/models/user_model.dart';
-import '../../domain/repositories/home_repositories.dart';
+import '../../domain/repositories/dashboard_repositories.dart';
 
 const int _initSelectedPage = 0;
 
@@ -38,7 +38,7 @@ abstract class DashboardController extends GetxController {
 
 class DashboardControllerImp extends DashboardController {
   DashboardControllerImp(this.repo);
-  final HomeRepositories repo;
+  final DashboardRepositories repo;
 
   bool _isLoadingUserData = false;
 
