@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
+import 'package:loyalty_points/core/utils/config/routes/routes.dart';
 import 'package:loyalty_points/core/utils/constants/app_color.dart';
 
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/constants/app_assets.dart';
 import '../../../../core/utils/constants/app_constants.dart';
+import '../../../../core/utils/helper/permissions_helper.dart';
 import '../widgets/home_widgets/cancel_confirm_buttons.dart';
 import '../widgets/my_app_bar.dart';
+import 'bar_code_scanner_screen.dart';
 
 class AddNewCodeScreen extends StatelessWidget {
   const AddNewCodeScreen({super.key});
@@ -48,7 +51,19 @@ class AddNewCodeScreen extends StatelessWidget {
           ),
           const SizedBox(height: AppConst.paddingDefault),
           InkWell(
-            onTap: () {},
+            onTap: () async {
+              final allowed = await requestCameraPermission();
+              if (allowed) {
+                Get.toNamed(AppRoute.barCodeScanner);
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content:
+                        Text(localeLang(context).cameraPermissionisRequired),
+                  ),
+                );
+              }
+            },
             splashFactory: NoSplash.splashFactory,
             child: Padding(
               padding: const EdgeInsets.symmetric(
@@ -71,7 +86,7 @@ class AddNewCodeScreen extends StatelessWidget {
               ),
             ),
           ),
-         const SizedBox(height: 100),
+          const SizedBox(height: 100),
           const CancelAndConfirmButtons(),
         ],
       ),
