@@ -64,7 +64,7 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                   left: 0,
                   top: 0,
                   right: 0,
-                  height: top,
+                  height: top, 
                   child: Container(color: shadowColor),
                 ),
                 Positioned(
