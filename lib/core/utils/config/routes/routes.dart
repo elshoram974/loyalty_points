@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../../features/auth/presentation/screens/waiting_screen.dart';
 import '../../../../features/dashboard/presentation/screens/add_new_code_screen.dart';
 import '../../../../features/dashboard/presentation/screens/bar_code_scanner_screen.dart';
+import '../../../../features/dashboard/presentation/screens/code_added_screen.dart';
 import '../../../../features/dashboard/presentation/screens/dashboard_screen.dart';
 import '../../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../../../features/auth/presentation/screens/login_screen.dart';
@@ -28,6 +29,8 @@ abstract final class AppRoute {
   static const String waiting = "/waiting";
   static const String newBarcode = "/newBarcode";
   static const String barCodeScanner = "/barCodeScanner";
+  static const String codeAddedScreen = "/codeAddedScreen";
+
 
   static List<GetPage> get pages => [
         GetPage(
@@ -57,6 +60,10 @@ abstract final class AppRoute {
         GetPage(
           name: barCodeScanner,
           page: () => const BarcodeScannerScreen(),
+        ),
+        GetPage(
+          name: codeAddedScreen,
+          page: () => const CodeAddedScreen(),
         ),
       ];
 }

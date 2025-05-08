@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../../core/shared/filled_button.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../../core/utils/config/routes/routes.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 
 class CancelAndConfirmButtons extends StatelessWidget {
@@ -28,7 +29,9 @@ class CancelAndConfirmButtons extends StatelessWidget {
         const SizedBox(width: AppConst.paddingDefault),
         Expanded(
           child: CustomFilledButton(
-            onPressed: (){},
+            onPressed: (){
+              Get.toNamed(AppRoute.codeAddedScreen);
+            },
             filledColor: context.theme.primaryColor,
             borderRadius: BorderRadius.circular(AppConst.radiusSmall),
             text: localeLang(context).confirm,
