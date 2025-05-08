@@ -8,4 +8,10 @@ abstract final class AppLinks {
   static const String updateFCMToken = '/api/update-fcm-token';
 
   static const String user = '/api/user';
+
+  static const String createRedeem = '/api/redeem/create';
+
+  static const String scanCode = '/api/scan';
+
+  static const String config = '/api/config';
 }
