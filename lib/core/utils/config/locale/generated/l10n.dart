@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Congratulations Code added successfully`
+  String get congratueCodeAddedSuccessfully {
+    return Intl.message(
+      'Congratulations Code added successfully',
+      name: 'congratueCodeAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Camera permission is required`
   String get cameraPermissionisRequired {
     return Intl.message(
