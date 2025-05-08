@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-import '../../../../core/utils/constants/app_constants.dart';
-
 class BarcodeScannerScreen extends StatefulWidget {
   const BarcodeScannerScreen({super.key});
 
@@ -35,9 +33,10 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-    final left = (size.width - dimensions) / 2;
-    final top = (size.height - dimensions) / 2;
+    final Size size = MediaQuery.sizeOf(context);
+    final double left = (size.width - dimensions) / 2;
+    final double top = (size.height - dimensions) / 2;
+    final Color shadowColor = Colors.black.withValues(alpha: 0.6);
 
     return Scaffold(
       body: Stack(
@@ -58,47 +57,38 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
             },
           ),
 
-          // ✅ طبقة سوداء شفافة حوالين المربع فقط
           Positioned.fill(
             child: Stack(
               children: [
-                // أعلى المربع
                 Positioned(
                   left: 0,
                   top: 0,
                   right: 0,
                   height: top,
-                  child: Container(color: Colors.black.withOpacity(0.6)),
+                  child: Container(color: shadowColor),
                 ),
-
-                // أسفل المربع
                 Positioned(
                   left: 0,
                   top: top + dimensions,
                   right: 0,
                   bottom: 0,
-                  child: Container(color: Colors.black.withOpacity(0.6)),
+                  child: Container(color: shadowColor),
                 ),
-
-                // يسار المربع
                 Positioned(
                   left: 0,
                   top: top,
                   width: left,
                   height: dimensions,
-                  child: Container(color: Colors.black.withOpacity(0.6)),
+                  child: Container(color: shadowColor),
                 ),
 
-                // يمين المربع
                 Positioned(
                   left: left + dimensions,
                   top: top,
                   right: 0,
                   height: dimensions,
-                  child: Container(color: Colors.black.withOpacity(0.6)),
+                  child: Container(color: shadowColor),
                 ),
-
-                // ✅ إطار المربع نفسه
                 Positioned(
                   left: left,
                   top: top,
@@ -111,7 +101,6 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                         color: context.theme.primaryColor,
                         width: 2,
                       ),
-                      borderRadius: BorderRadius.circular(AppConst.radiusSmall),
                     ),
                   ),
                 ),
