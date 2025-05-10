@@ -1,18 +1,17 @@
 {
+    "ourPartners": "Our Partners",
+
     "congratueCodeAddedSuccessfully": "Congratulations Code added successfully",
-
-"cameraPermissionisRequired": "Camera permission is required",
-
-"pressToUseCamera": "ORPress to use camera",
+    "cameraPermissionisRequired": "Camera permission is required",
+    "pressToUseCamera": "ORPress to use camera",
     "howToAbusingCode": "How to abuse promo codes?",
-
-    "egyptianPound":"L.E",
-    "couldNotLaunch":"Could not launch",
+    "egyptianPound": "L.E",
+    "couldNotLaunch": "Could not launch",
     "invalidPhoneNumber": "Invalid phone number",
     "backToLogin": "Back to login",
     "PleaseWaitThisMayTakeSomeTime": "Please wait, this may take some time",
     "beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount": "Before you can log in, an administrator must manually activate your account",
-    "successfully":"Successfully!",
+    "successfully": "Successfully!",
     "loginCompleted": "Register Completed",
     "pointsBalance": "Points Balance",
     "transferablePointsBalance": "Transferable Points Balance",

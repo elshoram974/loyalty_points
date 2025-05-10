@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Our Partners`
+  String get ourPartners {
+    return Intl.message(
+      'Our Partners',
+      name: 'ourPartners',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Congratulations Code added successfully`
   String get congratueCodeAddedSuccessfully {
     return Intl.message(
