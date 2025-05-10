@@ -19,16 +19,17 @@ class PointssWidget extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Text(
-                    points.orderStatus.name,
-                    style: context.textTheme.labelLarge?.copyWith(
-                      color: points.orderStatus == PointsStatusEnum.earned
-                          ? Colors.green
-                          : points.orderStatus == PointsStatusEnum.replaced
-                              ? const Color.fromARGB(255, 239, 173, 67)
-                              : Colors.green,
+                  if (points.orderStatus != null)
+                    Text(
+                      points.orderStatus!.name,
+                      style: context.textTheme.labelLarge?.copyWith(
+                        color: points.orderStatus == PointsStatusEnum.earned
+                            ? Colors.green
+                            : points.orderStatus == PointsStatusEnum.replaced
+                                ? const Color.fromARGB(255, 239, 173, 67)
+                                : Colors.red,
+                      ),
                     ),
-                  ),
                   Text(
                     '${points.orderNumber}',
                     style: context.textTheme.labelLarge?.copyWith(

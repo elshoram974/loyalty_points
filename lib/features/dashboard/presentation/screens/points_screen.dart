@@ -44,7 +44,19 @@ class PointssScreen extends StatelessWidget {
                   );
                 },
               ),
-              Text("data"),
+              ListView.separated(
+                addRepaintBoundaries: false,
+                itemCount: _coupons .length,
+                itemBuilder: (context, index) {
+                  return PointssWidget(points: _coupons [index]);
+                },
+                separatorBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(AppConst.paddingDefault).copyWith(bottom: 0),
+                    child: const Divider(thickness: 0.5),
+                  );
+                },
+              ),
             ],
           ),
         ),
@@ -52,7 +64,29 @@ class PointssScreen extends StatelessWidget {
     );
   }
 }
-
+List <PointsEntity> get _coupons => [
+  PointsEntity(
+        points: 540,
+        orderNumber: 2222221400.25,
+        date: DateTime(2000),
+      ),
+      PointsEntity(
+        points: 540,
+        orderNumber: 2222221400.25,
+        date: DateTime(2000),
+      ),
+      PointsEntity(
+        points: 540,
+        orderNumber: 2222221400.25,
+        date: DateTime(2000),
+      ),
+      PointsEntity(
+        orderStatus: PointsStatusEnum.canceled,
+        points: 540,
+        orderNumber: 2222221400.25,
+        date: DateTime(2000),
+      ),
+];
 List<PointsEntity> get _points => [
       PointsEntity(
         orderStatus: PointsStatusEnum.earned,
@@ -225,7 +259,7 @@ class TapWidget extends SliverPersistentHeaderDelegate {
                     text: localeLang(context).pointsHistory,
                   ),
                   Tab(
-                    text: "Text",
+                    text:localeLang(context).couponsHistory,
                   ),
                 ]),
           ],
