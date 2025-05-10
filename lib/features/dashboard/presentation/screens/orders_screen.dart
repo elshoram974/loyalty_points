@@ -7,7 +7,7 @@ import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../domain/entity/order_entity.dart';
-import '../widgets/home_widgets/orders_widget.dart';
+import '../widgets/orders_widgets/orders_widget.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
