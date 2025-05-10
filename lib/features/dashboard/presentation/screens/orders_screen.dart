@@ -14,6 +14,7 @@ class OrdersScreen extends StatelessWidget {
       body: ListView(
         children: [
           const PointsBalanceWidget(),
+          
           ...List.generate(
             _orders.length,
             (index) {
@@ -29,6 +30,12 @@ class OrdersScreen extends StatelessWidget {
 }
 
 List<OrderEntity> get _orders => [
+   OrderEntity(
+        orderStatus: OrderStatusEnum.rejected,
+        points: 540,
+        price: 1400.25,
+        date: DateTime(2000),
+      ),
       OrderEntity(
         orderStatus: OrderStatusEnum.pending,
         points: 100,
@@ -36,15 +43,10 @@ List<OrderEntity> get _orders => [
         date: DateTime.now(),
       ),
       OrderEntity(
-        orderStatus: OrderStatusEnum.pending,
+        orderStatus: OrderStatusEnum.accepted,
         points: 300,
         price: 3001.25,
         date: DateTime(2001),
       ),
-      OrderEntity(
-        orderStatus: OrderStatusEnum.pending,
-        points: 540,
-        price: 1400.25,
-        date: DateTime(2000),
-      ),
+     
     ];

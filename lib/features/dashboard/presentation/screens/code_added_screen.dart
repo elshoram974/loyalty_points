@@ -16,35 +16,28 @@ class CodeAddedScreen extends StatelessWidget {
     return CustomScaffold(
       appBar: const MyAppBar(),
       body: Column(
-        
         children: [
-           const PointsBalanceWidget(),
-           Expanded(
-             child: Center(
-               child: Text(
+          const PointsBalanceWidget(),
+          Expanded(
+            child: Center(
+              child: Text(
                 localeLang(context).congratueCodeAddedSuccessfully,
-                style: context.textTheme.headlineSmall,),
-             ),
-           ),
-           Padding(
-             padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingExtraBig),
-             child: CustomFilledButton(
-              onPressed: (){
-                Get.back();
-              },
-              filledColor: context.theme.primaryColor,
-              borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-              text: localeLang(context).home,
-              style: context.textTheme.headlineSmall,
-              minimumSize: Size.fromHeight(AppConst.radiusExtraBig),
-                       ),
-           ),
-          const SizedBox(height: AppConst.paddingExtraBig,)
-
+                textAlign: TextAlign.center,
+                style: context.textTheme.headlineSmall,
+              ),
+            ),
+          ),
+          CustomFilledButton(
+            onPressed: Get.back,
+            filledColor: context.theme.primaryColor,
+            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
+            text: localeLang(context).home,
+            style: context.textTheme.headlineSmall,
+            minimumSize: const Size(200, 50),
+          ),
+          const SizedBox(height: AppConst.paddingExtraBig)
         ],
       ),
-      
-
     );
   }
 }
