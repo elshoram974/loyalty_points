@@ -1,6 +1,6 @@
 {
-  "congratueCodeAddedSuccessfully":"تهانينا تم اضافه الكود بنجاح",
-  "cameraPermissionisRequired": "يتطلب صلاحية الكاميرا",
+  "congratulationsCodeAddedSuccessfully":"تهانينا تم اضافه الكود بنجاح",
+  "cameraPermissionsRequired": "يتطلب صلاحية الكاميرا",
 "pressToUseCamera": "اواضغط لاستخدام الكاميرا",
   "findBarCode": "ايجاد الكود",
   "howToAbusingCode": "كيفية حرق الاكواد؟",

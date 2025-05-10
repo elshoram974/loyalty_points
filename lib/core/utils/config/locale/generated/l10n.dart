@@ -28,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -55,20 +56,20 @@ class S {
   }
 
   /// `Congratulations Code added successfully`
-  String get congratueCodeAddedSuccessfully {
+  String get congratulationsCodeAddedSuccessfully {
     return Intl.message(
       'Congratulations Code added successfully',
-      name: 'congratueCodeAddedSuccessfully',
+      name: 'congratulationsCodeAddedSuccessfully',
       desc: '',
       args: [],
     );
   }
 
   /// `Camera permission is required`
-  String get cameraPermissionisRequired {
+  String get cameraPermissionsRequired {
     return Intl.message(
       'Camera permission is required',
-      name: 'cameraPermissionisRequired',
+      name: 'cameraPermissionsRequired',
       desc: '',
       args: [],
     );
@@ -476,7 +477,7 @@ class S {
 
   /// `A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.`
   String
-      get loyalty_program_for_PetroJac_oil_shops_and_station_agents_products {
+  get loyalty_program_for_PetroJac_oil_shops_and_station_agents_products {
     return Intl.message(
       'A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.',
       name:

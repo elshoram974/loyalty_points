@@ -63,7 +63,7 @@ class AddNewCodeScreen extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content:
-                        Text(localeLang(context).cameraPermissionisRequired),
+                        Text(localeLang(context).cameraPermissionsRequired),
                   ),
                 );
               }
