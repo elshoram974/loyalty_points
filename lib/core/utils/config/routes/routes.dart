@@ -55,7 +55,7 @@ abstract final class AppRoute {
         ),
         GetPage(
           name: newBarcode,
-          page: () => const AddNewCodeScreen(),
+          page: () =>  AddNewCodeScreen(),
         ),
         GetPage(
           name: barCodeScanner,

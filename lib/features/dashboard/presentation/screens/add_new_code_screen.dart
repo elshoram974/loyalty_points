@@ -13,7 +13,8 @@ import '../widgets/home_widgets/cancel_confirm_buttons.dart';
 import '../widgets/my_app_bar.dart';
 
 class AddNewCodeScreen extends StatelessWidget {
-  const AddNewCodeScreen({super.key});
+   AddNewCodeScreen({super.key});
+final TextEditingController codeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class AddNewCodeScreen extends StatelessWidget {
             style: context.textTheme.headlineSmall,
           ),
           TextFormField(
+            controller:codeController ,
             decoration: const InputDecoration(
               fillColor: Colors.white,
               filled: true,
@@ -55,7 +57,7 @@ class AddNewCodeScreen extends StatelessWidget {
               if (allowed) {
                 final result = await Get.toNamed(AppRoute.barCodeScanner);
                 if(result is String) {
-                  print("From main result is ${result}");
+                  codeController.text = result;
                 }
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(

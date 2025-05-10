@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../features/dashboard/presentation/screens/home_screen.dart';
+import '../../../features/dashboard/presentation/screens/orders_screen.dart';
 import '../config/locale/local_lang.dart';
 
 enum DashboardTabsEnum {
@@ -59,7 +60,7 @@ class OrdersTabItem extends DashboardTabItem {
   String get label => localeLang().orders;
 
   @override
-  Widget get screen => const Placeholder();
+  Widget get screen => const OrdersScreen();
 }
 
 class RedeemPointsTabItem extends DashboardTabItem {

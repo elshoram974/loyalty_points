@@ -30,7 +30,7 @@ class CancelAndConfirmButtons extends StatelessWidget {
         Expanded(
           child: CustomFilledButton(
             onPressed: (){
-              Get.toNamed(AppRoute.codeAddedScreen);
+              Get.offNamed(AppRoute.codeAddedScreen);
             },
             filledColor: context.theme.primaryColor,
             borderRadius: BorderRadius.circular(AppConst.radiusSmall),

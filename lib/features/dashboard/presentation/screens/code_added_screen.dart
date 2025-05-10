@@ -5,7 +5,6 @@ import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/filled_button.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
-import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../widgets/my_app_bar.dart';
 
@@ -31,7 +30,7 @@ class CodeAddedScreen extends StatelessWidget {
              padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingExtraBig),
              child: CustomFilledButton(
               onPressed: (){
-                Get.toNamed(AppRoute.codeAddedScreen);
+                Get.back();
               },
               filledColor: context.theme.primaryColor,
               borderRadius: BorderRadius.circular(AppConst.radiusSmall),
@@ -40,7 +39,7 @@ class CodeAddedScreen extends StatelessWidget {
               minimumSize: Size.fromHeight(AppConst.radiusExtraBig),
                        ),
            ),
-          const SizedBox(height: AppConst.paddingDefault,)
+          const SizedBox(height: AppConst.paddingExtraBig,)
 
         ],
       ),
