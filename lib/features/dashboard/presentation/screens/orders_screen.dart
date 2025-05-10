@@ -8,6 +8,7 @@ import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../domain/entity/order_entity.dart';
 import '../widgets/orders_widgets/orders_widget.dart';
+import '../widgets/our_partners_container_widget.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
@@ -19,33 +20,7 @@ class OrdersScreen extends StatelessWidget {
         slivers: [
           const SliverToBoxAdapter(child: PointsBalanceWidget()),
           SliverToBoxAdapter(
-            child: Container(
-              margin: const EdgeInsets.symmetric(
-                  horizontal: AppConst.paddingDefault,
-                  vertical: AppConst.paddingSmall),
-              decoration: const BoxDecoration(
-                color: AppColor.greyBackground,
-                border: Border(
-                  bottom: BorderSide(color: Colors.black, width: 1.0),
-                ),
-              ),
-              width: double.infinity,
-              height: 40,
-              child: Padding(
-                padding: const EdgeInsetsDirectional.all(AppConst.paddingSmall),
-                child: Row(
-                  children: [
-                    Text(localeLang(context).ourPartners,
-                        style: context.textTheme.titleLarge?.copyWith(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                        )),
-                    const Spacer(),
-                    const Icon(Icons.arrow_forward_ios_rounded)
-                  ],
-                ),
-              ),
-            ),
+            child: OurPartnersWidget(),
           ),
           SliverToBoxAdapter(
               child: Padding(
