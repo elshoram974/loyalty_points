@@ -24,6 +24,7 @@ abstract class ConfigController extends GetxController {
   LocaleModel get alternateLocale;
   void toggleLanguage();
 
+  bool get isLoadingConfig;
   Future<void> getConfigData();
 }
 
@@ -78,11 +79,23 @@ class ConfigControllerImp extends ConfigController {
   @override
   void toggleLanguage() => changeLocale(alternateLocale.toLocale);
 
+
+  bool _isLoadingConfig = false;
+  @override
+  bool get isLoadingConfig => _isLoadingConfig;
   @override
   Future<void> getConfigData() async {
+    final List<String> ids = [AppString.updateHomeBanners];
+
+    _isLoadingConfig = true;
+    update(ids);
+
     final Status<ConfigModel> status = await executeAndHandleErrors(
       () => dataSource(),
     );
     if (status is Success<ConfigModel>) AppInfo.config = status.data;
+
+    _isLoadingConfig = false;
+    update(ids);
   }
 }
