@@ -21,28 +21,21 @@ class CodeAddedScreen extends StatelessWidget {
           Expanded(
             child: Center(
               child: Text(
-                localeLang(context).congratulationsCodeAddedSuccessfully,
+                localeLang(context).congratueCodeAddedSuccessfully,
+                textAlign: TextAlign.center,
                 style: context.textTheme.headlineSmall,
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: AppConst.paddingExtraBig),
-            child: CustomFilledButton(
-              onPressed: () {
-                Get.back();
-              },
-              filledColor: context.theme.primaryColor,
-              borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-              text: localeLang(context).home,
-              style: context.textTheme.headlineSmall,
-              minimumSize: Size.fromHeight(AppConst.radiusExtraBig),
-            ),
+          CustomFilledButton(
+            onPressed: Get.back,
+            filledColor: context.theme.primaryColor,
+            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
+            text: localeLang(context).home,
+            style: context.textTheme.headlineSmall,
+            minimumSize: const Size(200, 50),
           ),
-          const SizedBox(
-            height: AppConst.paddingExtraBig,
-          )
+          const SizedBox(height: AppConst.paddingExtraBig)
         ],
       ),
     );

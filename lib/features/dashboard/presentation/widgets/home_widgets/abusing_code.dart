@@ -31,6 +31,7 @@ class AbusingCode extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            const SizedBox(width: AppConst.paddingDefault),
             Flexible(
               child: AbusingCodeSteps(
                 ico: AppAssets.enterBarCode,
@@ -38,7 +39,7 @@ class AbusingCode extends StatelessWidget {
                 subTitle: localeLang().enterCodeOnWebsiteOrApp,
               ),
             ),
-            const SizedBox(width: AppConst.paddingSmall),
+            const SizedBox(width: AppConst.paddingDefault),
             Flexible(
               child: AbusingCodeSteps(
                 ico: AppAssets.removeSticker,
@@ -47,6 +48,7 @@ class AbusingCode extends StatelessWidget {
                     .removeStickerFromApp(localeLang().business_name),
               ),
             ),
+            const SizedBox(width: AppConst.paddingDefault),
           ],
         ),
         const SizedBox(height: AppConst.paddingExtraBig),
