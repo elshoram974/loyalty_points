@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../app_info.dart';
 import '../../constants/app_strings.dart';
 import '../../functions/execute_and_handle_remote_errors.dart';
-import '../../models/config_model/config_model.dart';
+import '../../models/config_model.dart';
 import '../locale/generated/l10n.dart';
 import '../locale/locale_model.dart';
 import 'config_datasource.dart';

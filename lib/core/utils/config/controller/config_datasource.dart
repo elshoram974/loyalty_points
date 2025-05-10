@@ -1,7 +1,7 @@
 
 import '../../../../../core/utils/constants/app_links.dart';
 import '../../../../../core/utils/services/api_services.dart';
-import '../../models/config_model/config_model.dart';
+import '../../models/config_model.dart';
 
 abstract class ConfigRemoteDataSource {
   const ConfigRemoteDataSource();

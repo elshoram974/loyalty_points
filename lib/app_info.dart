@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import 'core/utils/config/locale/generated/l10n.dart';
 import 'core/utils/config/locale/locale_model.dart';
-import 'core/utils/models/config_model/config_model.dart';
+import 'core/utils/models/config_model.dart';
 
 abstract final class AppInfo {
   const AppInfo();
