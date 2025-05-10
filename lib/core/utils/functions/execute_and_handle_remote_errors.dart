@@ -1,11 +1,9 @@
 import 'package:dio/dio.dart';
 
 import '../../../app_info.dart';
-import '../../status/errors/failure.dart';
 import '../../status/errors/failure_body.dart';
 import '../../status/errors/server_failure.dart';
 import '../../status/status.dart';
-import '../../status/success/success.dart';
 
 Future<Status<T>> executeAndHandleErrors<T>(
   Future<T> Function() function, [
