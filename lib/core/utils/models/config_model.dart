@@ -13,6 +13,8 @@ class ConfigModel extends Equatable {
   final int? sellerOnePoundEquity;
   final int? repOnePoundEquity;
 
+  List<String> get homeBanners => [banner1, banner2].nonNulls.toList();
+
   const ConfigModel({
     this.pointsValue,
     this.currency,

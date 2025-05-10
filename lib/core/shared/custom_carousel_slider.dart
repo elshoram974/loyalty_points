@@ -15,6 +15,8 @@ class CustomCarouselSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (images.isEmpty) return const SizedBox();
+    final bool autoPlay = images.length > 1;
     return Column(
       children: [
         CarouselSlider.builder(
@@ -36,9 +38,9 @@ class CustomCarouselSlider extends StatelessWidget {
             aspectRatio: 3.18,
             viewportFraction: 0.94,
             initialPage: 0,
-            enableInfiniteScroll: true,
+            enableInfiniteScroll: autoPlay,
             reverse: false,
-            autoPlay: true,
+            autoPlay: autoPlay,
             autoPlayInterval: const Duration(seconds: 7),
             autoPlayCurve: Curves.fastOutSlowIn,
             enlargeCenterPage: true,

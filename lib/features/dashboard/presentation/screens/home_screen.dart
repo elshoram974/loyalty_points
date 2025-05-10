@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app_info.dart';
 import '../../../../core/shared/custom_carousel_slider.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/types/social_media_type.dart';
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        CustomCarouselSlider(images: imgList),
+        CustomCarouselSlider(images: AppInfo.config?.homeBanners ?? []),
         SocialMediaWidget(items: SocialMediaType.allTypes),
         const PointsBalanceWidget(),
         const AbusingCode()
@@ -20,9 +21,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-List<String> get imgList => [
-      "https://images.playground.com/222e3af2-b63d-4a06-91fb-d015aa7ea48a.jpeg",
-      "https://images.playground.com/222e3af2-b63d-4a06-91fb-d015aa7ea48a.jpeg",
-      "https://images.playground.com/222e3af2-b63d-4a06-91fb-d015aa7ea48a.jpeg",
-    ];
