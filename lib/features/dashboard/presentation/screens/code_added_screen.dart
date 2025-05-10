@@ -21,7 +21,7 @@ class CodeAddedScreen extends StatelessWidget {
           Expanded(
             child: Center(
               child: Text(
-                localeLang(context).congratueCodeAddedSuccessfully,
+                localeLang(context).congratulationsCodeAddedSuccessfully,
                 textAlign: TextAlign.center,
                 style: context.textTheme.headlineSmall,
               ),
