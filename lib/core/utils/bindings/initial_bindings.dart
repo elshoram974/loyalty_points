@@ -13,6 +13,7 @@ import '../config/controller/config_controller.dart';
 import '../config/locale/generated/l10n.dart';
 import '../constants/app_strings.dart';
 import '../services/api_services.dart';
+import '../config/controller/config_datasource.dart';
 
 abstract final class InitialBindings {
   const InitialBindings();
@@ -34,8 +35,16 @@ abstract final class InitialBindings {
     );
 
     await Get.putAsync<SharedPreferences>(SharedPreferences.getInstance);
+
+    Get.put<ConfigRemoteDataSource>(
+      ConfigRemoteDataSourceImp(Get.find<APIServices>()),
+    );
+
     Get.put<ConfigController>(
-      ConfigControllerImp(Get.find<SharedPreferences>()),
+      ConfigControllerImp(
+        prefs: Get.find<SharedPreferences>(),
+        dataSource: Get.find<ConfigRemoteDataSource>(),
+      ),
     );
     Get.put<AuthLocalDataSource>(
       AuthLocalDataSourceImp(
@@ -46,11 +55,13 @@ abstract final class InitialBindings {
     Get.put<AuthRemoteDataSource>(
       AuthRemoteDataSourceImp(Get.find<APIServices>()),
     );
+
     Get.put<AuthRepositories>(
       AuthRepositoriesImp(
         localDataSource: Get.find<AuthLocalDataSource>(),
         remoteDataSource: Get.find<AuthRemoteDataSource>(),
       ),
     );
+    Get.find<ConfigRemoteDataSource>()();
   }
 }

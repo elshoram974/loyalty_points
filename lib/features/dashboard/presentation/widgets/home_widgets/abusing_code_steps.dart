@@ -22,7 +22,7 @@ class AbusingCodeSteps extends StatelessWidget {
           backgroundColor: AppColor.greyBackground,
           radius: 30,
           child: Padding(
-            padding:  EdgeInsets.all(AppConst.paddingSmall),
+            padding: EdgeInsets.all(AppConst.paddingSmall),
             child: Image.asset(ico),
           ),
         ),

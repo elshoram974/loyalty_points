@@ -13,8 +13,8 @@ import '../widgets/home_widgets/cancel_confirm_buttons.dart';
 import '../widgets/my_app_bar.dart';
 
 class AddNewCodeScreen extends StatelessWidget {
-   AddNewCodeScreen({super.key});
-final TextEditingController codeController = TextEditingController();
+  AddNewCodeScreen({super.key});
+  final TextEditingController codeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ final TextEditingController codeController = TextEditingController();
             style: context.textTheme.headlineSmall,
           ),
           TextFormField(
-            controller:codeController ,
+            controller: codeController,
             decoration: const InputDecoration(
               fillColor: Colors.white,
               filled: true,
@@ -56,14 +56,14 @@ final TextEditingController codeController = TextEditingController();
               final allowed = await requestCameraPermission();
               if (allowed) {
                 final result = await Get.toNamed(AppRoute.barCodeScanner);
-                if(result is String) {
+                if (result is String) {
                   codeController.text = result;
                 }
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content:
-                        Text(localeLang(context).cameraPermissionisRequired),
+                        Text(localeLang(context).cameraPermissionsRequired),
                   ),
                 );
               }

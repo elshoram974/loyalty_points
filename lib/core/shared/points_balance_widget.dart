@@ -54,7 +54,7 @@ class PointsBalanceWidget extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    '100'+localeLang(context).egyptianPound,
+                    '100' + localeLang(context).egyptianPound,
                     style: context.textTheme.titleSmall?.copyWith(
                       color: Colors.white,
                     ),
@@ -70,8 +70,8 @@ class PointsBalanceWidget extends StatelessWidget {
               const SizedBox(width: AppConst.paddingExtraSmall),
               Text(
                 localeLang(context).transferablePointsBalance,
-                style:
-                    context.textTheme.labelMedium?.copyWith(color: Colors.white),
+                style: context.textTheme.labelMedium
+                    ?.copyWith(color: Colors.white),
               ),
             ],
           ),

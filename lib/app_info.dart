@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'core/utils/config/locale/generated/l10n.dart';
 import 'core/utils/config/locale/locale_model.dart';
+import 'core/utils/models/config_model.dart';
 
 abstract final class AppInfo {
   const AppInfo();
@@ -20,9 +21,14 @@ abstract final class AppInfo {
   // static const bool isDebugMode = false;
   static const bool isDebugMode = kDebugMode;
 
+  /// Config data that we get from dashboard
+  static ConfigModel? config;
+
   /// To add locale .. You have to add it in package(flutter intel)
   /// and add text in its file .arb and don't forget to add it in info.plist file
-  static List<LocaleModel> get supportedLocales => LocaleModel.fromLocales(Get.find<AppLocalizationDelegate>().supportedLocales);
+  static List<LocaleModel> get supportedLocales => LocaleModel.fromLocales(
+        Get.find<AppLocalizationDelegate>().supportedLocales,
+      );
 
   // static const String appIcon = AppAssets.appIcon;
   // static const String splashIcon = AppAssets.splashIcon;

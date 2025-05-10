@@ -15,7 +15,8 @@ class WaitingTextImageWidget extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           textAlign: TextAlign.center,
-          localeLang(context).beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount,
+          localeLang(context)
+              .beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount,
           style: context.textTheme.titleLarge
               ?.copyWith(fontWeight: FontWeight.bold),
         ),

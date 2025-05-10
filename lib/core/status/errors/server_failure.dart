@@ -100,7 +100,8 @@ class ServerFailure<T> extends Failure<T> {
         res.copyWith(
             message: localeLang().thereIsProblemWithServerTryAgainLater),
       );
-    } else if ((statusCode == 401 || statusCode == 302) && Get.currentRoute != AppRoute.login) {
+    } else if ((statusCode == 401 || statusCode == 302) &&
+        Get.currentRoute != AppRoute.login) {
       Get.find<AuthLocalDataSource>().logOut().then(
             (_) => Get.offAllNamed(AppRoute.login),
           );

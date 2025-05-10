@@ -47,7 +47,7 @@ class LoginControllerImp extends LoginController {
     final Status<UserModel> loginState = await repo.login(
       LoginRequestData(
         loginBy: 'phone', // email
-        emailOrPhone: phone!.phoneNumber!, 
+        emailOrPhone: phone!.phoneNumber!,
         password: password,
       ),
     );
@@ -55,9 +55,9 @@ class LoginControllerImp extends LoginController {
       status: loginState,
       onSuccess: (data) {
         TextInput.finishAutofillContext();
-        if(data.isVerified){
+        if (data.isVerified) {
           Get.offAllNamed(AppRoute.home);
-        }else{
+        } else {
           Get.toNamed(AppRoute.waiting);
         }
       },

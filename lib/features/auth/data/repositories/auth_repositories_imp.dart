@@ -20,7 +20,8 @@ class AuthRepositoriesImp extends AuthRepositories {
   Future<Status<UserModel>> login(LoginRequestData data) {
     return executeAndHandleErrors<UserModel>(
       () async {
-        final ({UserModel user, String token}) res = await remoteDataSource.login(data);
+        final ({UserModel user, String token}) res =
+            await remoteDataSource.login(data);
         if (res.user.isVerified) {
           await Future.wait(
             [
@@ -29,7 +30,7 @@ class AuthRepositoriesImp extends AuthRepositories {
             ],
           );
         }
-        
+
         return res.user;
       },
     );

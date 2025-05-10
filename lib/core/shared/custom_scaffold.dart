@@ -11,9 +11,9 @@ class CustomScaffold extends StatelessWidget {
     this.onPopInvokedWithResult,
     this.drawer,
     this.bottomNavigationBar,
-    this.appBar, 
-    this.scaffoldKey, 
-    this.floatingActionButton, 
+    this.appBar,
+    this.scaffoldKey,
+    this.floatingActionButton,
     this.floatingActionButtonLocation,
   });
   final bool canPop;

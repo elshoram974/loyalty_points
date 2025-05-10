@@ -18,7 +18,8 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       canPop: false,
-      onPopInvokedWithResult: (_, __) => Get.find<DashboardController>().onPopInvoked(),
+      onPopInvokedWithResult: (_, __) =>
+          Get.find<DashboardController>().onPopInvoked(),
       appBar: const MyAppBar(),
       drawer: const HomeDrawer(),
       floatingActionButton: const ReplacePointsFloatingButtonWidget(),
@@ -34,7 +35,8 @@ class DashboardScreen extends StatelessWidget {
             },
             child: KeyedSubtree(
               key: ValueKey(controller.selectedScreen),
-              child: DashboardTabsEnum.values[controller.selectedScreen].data.screen,
+              child: DashboardTabsEnum
+                  .values[controller.selectedScreen].data.screen,
             ),
           );
         },

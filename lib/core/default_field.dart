@@ -106,7 +106,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
       return InternationalPhoneNumberInput(
         textFieldController: widget.controller,
         hintText: widget.hintText,
-        errorMessage: localeLang(context).invalidPhoneNumber, 
+        errorMessage: localeLang(context).invalidPhoneNumber,
         selectorConfig: SelectorConfig(
           leadingPadding: widget.horizontalPadding ?? AppConst.paddingDefault,
           trailingSpace: false,
@@ -150,7 +150,8 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
           constraints: const BoxConstraints(maxWidth: AppConst.constraint),
           alignLabelWithHint: widget.alignLabelWithHint,
           labelText: widget.labelText,
-          hintStyle: widget.hintStyle ?? const TextStyle(color: AppColor.borderColor),
+          hintStyle:
+              widget.hintStyle ?? const TextStyle(color: AppColor.borderColor),
           suffixIcon: widget.suffix,
           prefixIcon: widget.prefix,
           hintText: widget.hintText,
@@ -220,8 +221,6 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
       ),
     );
   }
-
-
 
   PhoneNumber removeZerosInFirstNum(PhoneNumber phone) {
     return PhoneNumber(

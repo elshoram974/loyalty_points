@@ -66,20 +66,20 @@ class S {
   }
 
   /// `Congratulations Code added successfully`
-  String get congratueCodeAddedSuccessfully {
+  String get congratulationsCodeAddedSuccessfully {
     return Intl.message(
       'Congratulations Code added successfully',
-      name: 'congratueCodeAddedSuccessfully',
+      name: 'congratulationsCodeAddedSuccessfully',
       desc: '',
       args: [],
     );
   }
 
   /// `Camera permission is required`
-  String get cameraPermissionisRequired {
+  String get cameraPermissionsRequired {
     return Intl.message(
       'Camera permission is required',
-      name: 'cameraPermissionisRequired',
+      name: 'cameraPermissionsRequired',
       desc: '',
       args: [],
     );

@@ -3,8 +3,7 @@ import 'package:equatable/equatable.dart';
 import '../../../../core/utils/models/image_full_url.dart';
 import '../../../../core/utils/types/account_type.dart';
 
-enum AccountStatusEnum {pending, active, cancelled}
-
+enum AccountStatusEnum { pending, active, cancelled }
 
 class UserModel extends Equatable {
   final int id;
@@ -41,7 +40,9 @@ class UserModel extends Equatable {
         id: int.parse("${json['id'] ?? -1}"),
         name: json['name'] as String,
         email: json['email'] as String,
-        image: json['image_full_url'] == null ? null : ImageFullUrl.fromMap(json['image_full_url']),
+        image: json['image_full_url'] == null
+            ? null
+            : ImageFullUrl.fromMap(json['image_full_url']),
         providerId: int.parse("${json['provider_id'] ?? -1}"),
         phone: json['phone'] as String,
         type: AccountType.fromMap(json['type'] as String),
@@ -49,7 +50,8 @@ class UserModel extends Equatable {
         address: json['country'] as String,
         updatedAt: DateTime.parse(json['updated_at'] as String),
         createdAt: DateTime.parse(json['created_at'] as String),
-        emailVerifiedAt: DateTime.tryParse(json['email_verified_at'] as String? ?? 'unKnown'),
+        emailVerifiedAt: DateTime.tryParse(
+            json['email_verified_at'] as String? ?? 'unKnown'),
       );
 
   Map<String, dynamic> toMap() => {

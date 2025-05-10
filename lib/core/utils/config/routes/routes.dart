@@ -31,7 +31,6 @@ abstract final class AppRoute {
   static const String barCodeScanner = "/barCodeScanner";
   static const String codeAddedScreen = "/codeAddedScreen";
 
-
   static List<GetPage> get pages => [
         GetPage(
           name: login,
@@ -55,7 +54,7 @@ abstract final class AppRoute {
         ),
         GetPage(
           name: newBarcode,
-          page: () =>  AddNewCodeScreen(),
+          page: () => AddNewCodeScreen(),
         ),
         GetPage(
           name: barCodeScanner,

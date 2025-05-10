@@ -22,7 +22,7 @@ class AuthField extends StatelessWidget {
     this.keyboardType,
     this.textInputAction = TextInputAction.next,
     this.isPhoneNumber = false,
-    this.onPhoneInputChanged, 
+    this.onPhoneInputChanged,
     this.textCapitalization = TextCapitalization.none,
   });
   final TextEditingController? controller;

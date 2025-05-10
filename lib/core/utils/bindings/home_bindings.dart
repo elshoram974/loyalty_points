@@ -19,6 +19,7 @@ class HomeBindings extends Bindings {
         authLocalDataSource: Get.find<AuthLocalDataSource>(),
       ),
     );
-    Get.put<DashboardController>(DashboardControllerImp(Get.find<DashboardRepositories>()));
+    Get.put<DashboardController>(
+        DashboardControllerImp(Get.find<DashboardRepositories>()));
   }
 }

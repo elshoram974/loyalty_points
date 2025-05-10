@@ -21,11 +21,10 @@ abstract final class AppString {
 
   static const String allUsers = 'all_users';
 
-
-
   // Getx controllers updates id
   static const String _update = 'update';
   static const String updateSelectedScreen = '$_update selected home screen';
 
   static const String updateHomeUser = '$_update home user';
+  static const String updateHomeBanners = '$_update home banners';
 }
