@@ -22,7 +22,8 @@ abstract final class AppInfo {
 
   /// To add locale .. You have to add it in package(flutter intel)
   /// and add text in its file .arb and don't forget to add it in info.plist file
-  static List<LocaleModel> get supportedLocales => LocaleModel.fromLocales(Get.find<AppLocalizationDelegate>().supportedLocales);
+  static List<LocaleModel> get supportedLocales => LocaleModel.fromLocales(
+      Get.find<AppLocalizationDelegate>().supportedLocales);
 
   // static const String appIcon = AppAssets.appIcon;
   // static const String splashIcon = AppAssets.splashIcon;

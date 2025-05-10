@@ -60,11 +60,11 @@ class ConfigControllerImp extends ConfigController {
   @override
   LocaleModel get alternateLocale {
     for (LocaleModel l in AppInfo.supportedLocales) {
-      if(l.languageCode != _locale.languageCode) return l;
+      if (l.languageCode != _locale.languageCode) return l;
     }
     return AppInfo.supportedLocales.first;
   }
-  
+
   @override
   void toggleLanguage() => changeLocale(alternateLocale.toLocale);
 }

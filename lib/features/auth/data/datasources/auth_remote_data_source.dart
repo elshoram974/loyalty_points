@@ -10,7 +10,7 @@ import '../models/user_model.dart';
 abstract class AuthRemoteDataSource {
   const AuthRemoteDataSource();
   Future<({UserModel user, String token})> login(LoginRequestData data);
-    
+
   Future<({UserModel user, String token})> signUp(SignUpBodyData data);
 }
 
@@ -47,7 +47,8 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppString.country: data.address,
       AppString.type: data.accountType.type,
       AppString.phone: data.phone.phoneNumber,
-      if(data.provider?.trim().isNotEmpty == true) AppString.providerName: data.provider,
+      if (data.provider?.trim().isNotEmpty == true)
+        AppString.providerName: data.provider,
     }, files: {
       AppString.attachments: data.attachments,
       AppString.image: [data.profile],

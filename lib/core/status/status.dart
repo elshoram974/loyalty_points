@@ -9,4 +9,3 @@ class Loading extends Status {
   const Loading([this.loadingMore = false]);
   final bool loadingMore;
 }
-

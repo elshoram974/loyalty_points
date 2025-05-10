@@ -10,7 +10,6 @@ Future<void> launchURL(String url) async {
       await launchUrlString(url, mode: LaunchMode.externalApplication);
     } else {
       throw '${localeLang().couldNotLaunch} $url';
-
     }
   } catch (e) {
     ShowMySnackBar.call(

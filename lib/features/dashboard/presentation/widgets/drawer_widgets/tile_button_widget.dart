@@ -17,12 +17,13 @@ class TileButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap == null
-      ? null 
-      : (){
-        Get.back();
-        onTap!();
-      },
-      titleTextStyle: context.textTheme.titleMedium?.copyWith(color: Colors.white),
+          ? null
+          : () {
+              Get.back();
+              onTap!();
+            },
+      titleTextStyle:
+          context.textTheme.titleMedium?.copyWith(color: Colors.white),
       title: Text(title),
       trailing: icon == null ? null : FaIcon(icon, color: Colors.white),
     );

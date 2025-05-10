@@ -80,7 +80,8 @@ class DashboardControllerImp extends DashboardController {
   Future<void> updateFCMToken() async {
     return handleResponseInController<void>(
       status: await repo.updateFCMTokenAndTopic(
-        NotificationService.deviceToken ?? await NotificationService.getDeviceToken(),
+        NotificationService.deviceToken ??
+            await NotificationService.getDeviceToken(),
       ),
       onSuccess: (_) {},
     );

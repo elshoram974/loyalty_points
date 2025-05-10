@@ -6,7 +6,6 @@ import '../../../../core/utils/types/social_media_type.dart';
 import '../widgets/home_widgets/abusing_code.dart';
 import '../widgets/home_widgets/social_media_widget.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
@@ -15,9 +14,8 @@ class HomeScreen extends StatelessWidget {
       children: [
         CustomCarouselSlider(images: imgList),
         SocialMediaWidget(items: SocialMediaType.allTypes),
-         const PointsBalanceWidget(),
-         const AbusingCode()
-
+        const PointsBalanceWidget(),
+        const AbusingCode()
       ],
     );
   }

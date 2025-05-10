@@ -47,7 +47,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -70,7 +69,6 @@ class MyApp extends StatelessWidget {
         () async {
           // await S.load(Get.find<ConfigController>().locale);
           await NetworkInfo.init();
-          
         },
       ),
     );

@@ -16,7 +16,9 @@ class LocaleModel {
 
   factory LocaleModel.fromLocale(Locale locale) {
     return LocaleModel(
-      languageName: LocaleNamesLocalizationsDelegate.nativeLocaleNames[locale.languageCode] ?? intl.Intl.canonicalizedLocale(locale.languageCode),
+      languageName: LocaleNamesLocalizationsDelegate
+              .nativeLocaleNames[locale.languageCode] ??
+          intl.Intl.canonicalizedLocale(locale.languageCode),
       languageCode: locale.languageCode,
       countryCode: locale.countryCode,
     );

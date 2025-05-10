@@ -16,20 +16,21 @@ class CodeAddedScreen extends StatelessWidget {
     return CustomScaffold(
       appBar: const MyAppBar(),
       body: Column(
-        
         children: [
-           const PointsBalanceWidget(),
-           Expanded(
-             child: Center(
-               child: Text(
+          const PointsBalanceWidget(),
+          Expanded(
+            child: Center(
+              child: Text(
                 localeLang(context).congratueCodeAddedSuccessfully,
-                style: context.textTheme.headlineSmall,),
-             ),
-           ),
-           Padding(
-             padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingExtraBig),
-             child: CustomFilledButton(
-              onPressed: (){
+                style: context.textTheme.headlineSmall,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppConst.paddingExtraBig),
+            child: CustomFilledButton(
+              onPressed: () {
                 Get.back();
               },
               filledColor: context.theme.primaryColor,
@@ -37,14 +38,13 @@ class CodeAddedScreen extends StatelessWidget {
               text: localeLang(context).home,
               style: context.textTheme.headlineSmall,
               minimumSize: Size.fromHeight(AppConst.radiusExtraBig),
-                       ),
-           ),
-          const SizedBox(height: AppConst.paddingExtraBig,)
-
+            ),
+          ),
+          const SizedBox(
+            height: AppConst.paddingExtraBig,
+          )
         ],
       ),
-      
-
     );
   }
 }

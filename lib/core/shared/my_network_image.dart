@@ -10,7 +10,7 @@ class MyNetworkImage extends StatelessWidget {
     this.height,
     this.width,
     this.fit = BoxFit.cover,
-    this.placeHolder, 
+    this.placeHolder,
     this.borderRadius = BorderRadius.zero,
   });
   final String? imageUrl;
@@ -38,19 +38,20 @@ class MyNetworkImage extends StatelessWidget {
               fit: fit,
             ),
         errorWidget: (context, url, error) =>
-        imageUrl == null && placeHolder != null
-        ? _placeHolder!
-        : Image.asset(
-          AppAssets.placeholder,
-          height: height,
-          width: width,
-          fit: fit,
-        ),
+            imageUrl == null && placeHolder != null
+                ? _placeHolder!
+                : Image.asset(
+                    AppAssets.placeholder,
+                    height: height,
+                    width: width,
+                    fit: fit,
+                  ),
       ),
     );
   }
-  Widget? get _placeHolder{ 
-    if(placeHolder == null) return null;
+
+  Widget? get _placeHolder {
+    if (placeHolder == null) return null;
     return Align(
       child: SizedBox(
         width: width,

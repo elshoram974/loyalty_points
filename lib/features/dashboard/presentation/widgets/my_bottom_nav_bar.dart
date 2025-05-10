@@ -34,7 +34,8 @@ class MyBottomNavBar extends StatelessWidget {
               items: List.generate(
                 DashboardTabsEnum.values.length,
                 (i) {
-                  final DashboardTabItem type = DashboardTabsEnum.values[i].data;
+                  final DashboardTabItem type =
+                      DashboardTabsEnum.values[i].data;
                   if (type.isHidden) {
                     return const BottomNavigationBarItem(
                       icon: SizedBox.shrink(),

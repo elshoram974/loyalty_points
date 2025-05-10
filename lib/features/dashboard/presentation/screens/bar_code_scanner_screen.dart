@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
@@ -56,7 +55,6 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
               }
             },
           ),
-
           Positioned.fill(
             child: Stack(
               children: [
@@ -64,7 +62,7 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                   left: 0,
                   top: 0,
                   right: 0,
-                  height: top, 
+                  height: top,
                   child: Container(color: shadowColor),
                 ),
                 Positioned(
@@ -81,7 +79,6 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
                   height: dimensions,
                   child: Container(color: shadowColor),
                 ),
-
                 Positioned(
                   left: left + dimensions,
                   top: top,

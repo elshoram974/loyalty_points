@@ -29,7 +29,7 @@ class CancelAndConfirmButtons extends StatelessWidget {
         const SizedBox(width: AppConst.paddingDefault),
         Expanded(
           child: CustomFilledButton(
-            onPressed: (){
+            onPressed: () {
               Get.offNamed(AppRoute.codeAddedScreen);
             },
             filledColor: context.theme.primaryColor,
@@ -38,7 +38,6 @@ class CancelAndConfirmButtons extends StatelessWidget {
             style: context.textTheme.headlineSmall,
             minimumSize: Size.fromHeight(40),
           ),
-        
         ),
       ]),
     );

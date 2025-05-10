@@ -16,7 +16,8 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
   importance: Importance.max,
 );
 
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
 
 class NotificationService {
   static String? deviceToken;
@@ -31,78 +32,90 @@ class NotificationService {
       sound: true,
     );
 
-    await flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()?.createNotificationChannel(channel);
+    await flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.createNotificationChannel(channel);
 
     getDeviceToken();
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-    FirebaseMessaging.onMessage.listen((event) async{
+    FirebaseMessaging.onMessage.listen((event) async {
       log("onMessage: ${jsonEncode(event.toMap())}");
-      if(Platform.isIOS) {
+      if (Platform.isIOS) {
         _showIosMessage(event);
         return;
       }
       //(Map<String, dynamic> message) async => _showMessage(message);
       final RemoteNotification? notification = event.notification;
 
-      final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-      flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()?.requestNotificationsPermission();
+      final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+          FlutterLocalNotificationsPlugin();
+      flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin>()
+          ?.requestNotificationsPermission();
 
-      const DarwinInitializationSettings initializationSettingsIOS = DarwinInitializationSettings(
+      const DarwinInitializationSettings initializationSettingsIOS =
+          DarwinInitializationSettings(
         requestAlertPermission: true,
         requestBadgePermission: true,
         requestSoundPermission: true,
       );
 
-
       final AndroidNotification? android = notification?.android;
-      const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('@drawable/notification_icon'); 
+      const AndroidInitializationSettings initializationSettingsAndroid =
+          AndroidInitializationSettings('@drawable/notification_icon');
 
-      const InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
+      const InitializationSettings initializationSettings =
+          InitializationSettings(
+              android: initializationSettingsAndroid,
+              iOS: initializationSettingsIOS);
 
       BigPictureStyleInformation? bigPictureStyle;
       FilePathAndroidBitmap? image;
-      if(android?.imageUrl != null){
-        final String largeIconPath = await _downloadAndSaveFile(android!.imageUrl!, 'largeIcon');
+      if (android?.imageUrl != null) {
+        final String largeIconPath =
+            await _downloadAndSaveFile(android!.imageUrl!, 'largeIcon');
         image = FilePathAndroidBitmap(largeIconPath);
         bigPictureStyle = BigPictureStyleInformation(
-            image, 
-            contentTitle: notification?.title,
-            summaryText: notification?.body,
-            hideExpandedLargeIcon: true,
-          );
-
-      }
-      
-      final AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(
-          channel.id,
-          channel.name,
-          importance: Importance.max,
-          priority: Priority.max,
-          icon: android?.smallIcon,
-          styleInformation: bigPictureStyle,
-          largeIcon: image,
+          image,
+          contentTitle: notification?.title,
+          summaryText: notification?.body,
+          hideExpandedLargeIcon: true,
         );
-      
-      const DarwinNotificationDetails darwinNotificationDetails = DarwinNotificationDetails();
+      }
 
-      
+      final AndroidNotificationDetails androidNotificationDetails =
+          AndroidNotificationDetails(
+        channel.id,
+        channel.name,
+        importance: Importance.max,
+        priority: Priority.max,
+        icon: android?.smallIcon,
+        styleInformation: bigPictureStyle,
+        largeIcon: image,
+      );
+
+      const DarwinNotificationDetails darwinNotificationDetails =
+          DarwinNotificationDetails();
 
       flutterLocalNotificationsPlugin.initialize(
         initializationSettings,
         onDidReceiveNotificationResponse: (details) {
-          _navigate(jsonDecode(details.payload ??'{}'));
+          _navigate(jsonDecode(details.payload ?? '{}'));
         },
       );
-
 
       if (notification != null) {
         return flutterLocalNotificationsPlugin.show(
           notification.hashCode,
           notification.title,
           notification.body,
-          NotificationDetails(android: androidNotificationDetails, iOS: darwinNotificationDetails),
+          NotificationDetails(
+              android: androidNotificationDetails,
+              iOS: darwinNotificationDetails),
           payload: jsonEncode(event.toMap()),
         );
       }
@@ -112,9 +125,10 @@ class NotificationService {
       log("onResume: ${message.toMap()}");
       _navigate(message.toMap());
     });
-  
   }
-  static Future<String> _downloadAndSaveFile(String url, String fileName) async {
+
+  static Future<String> _downloadAndSaveFile(
+      String url, String fileName) async {
     final Directory directory = await getApplicationDocumentsDirectory();
     final String filePath = '${directory.path}/$fileName';
     await Get.find<dio.Dio>().download(url, filePath);
@@ -186,7 +200,7 @@ class NotificationService {
     //         from_notification: true);
     //   }));
     // }else{
-    //   NavigationService.handleUrls(message['data']['link']); 
+    //   NavigationService.handleUrls(message['data']['link']);
     // }
   }
 }

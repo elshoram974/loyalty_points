@@ -22,7 +22,6 @@ abstract class SignUpController extends GetxController {
   bool get isLoading;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-
   PhoneNumber? phone;
   String fullName = '';
   String email = '';
@@ -50,12 +49,11 @@ class SignUpControllerImp extends SignUpController {
   @override
   bool get isLoading => _isLoading;
 
-
   @override
   Future<void> signUp() async {
     if (NetworkInfo.showSnackBarWhenNoInternet) return;
 
-    if (!formKey.currentState!.validate()){ 
+    if (!formKey.currentState!.validate()) {
       ShowMySnackBar.call(
         localeLang(Get.context!).uHaveToFillFields,
         backgroundColor: Get.theme.colorScheme.error,

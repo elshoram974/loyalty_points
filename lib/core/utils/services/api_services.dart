@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -65,6 +66,8 @@ class APIServices {
       options: Options(headers: _header(token)),
     );
 
+    if (AppInfo.isDebugMode) log("response ${jsonEncode(response.data)}");
+
     if (response.data!['success'] == false) {
       throw response.data!['message'];
     }
@@ -84,7 +87,7 @@ class APIServices {
       link,
       options: Options(headers: _header(token)),
     );
-    if (AppInfo.isDebugMode) log("body ${response.data}");
+    if (AppInfo.isDebugMode) log("response ${jsonEncode(response.data)}");
 
     if (response.data!['success'] == false) {
       throw response.data!['message'];
