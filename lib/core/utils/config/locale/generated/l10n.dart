@@ -55,14 +55,14 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `point`
-  String get point {
-    return Intl.message('point', name: 'point', desc: '', args: []);
-  }
-
-  /// `Egyptian Pound`
-  String get pound {
-    return Intl.message('Egyptian Pound', name: 'pound', desc: '', args: []);
+  /// `{point} point = {pound} Egyptian Pound`
+  String pointsEqualEgyptionPounds(String point, String pound) {
+    return Intl.message(
+      '$point point = $pound Egyptian Pound',
+      name: 'pointsEqualEgyptionPounds',
+      desc: '',
+      args: [point, pound],
+    );
   }
 
   /// `Avaliable Points:`

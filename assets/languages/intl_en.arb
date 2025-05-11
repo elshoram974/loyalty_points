@@ -1,12 +1,19 @@
 {
-    "point":"point",
-    "pound": "Egyptian Pound",
+    "pointsEqualEgyptionPounds": "{point} point = {pound} Egyptian Pound",
+    "@pointsEqualEgyptionPounds": {
+        "placeholders": {
+            "point": {
+                "type": "String"
+            },
+            "pound": {
+                "type": "String"
+            }
+        }
+    },
     "avaliablePoints": "Avaliable Points:",
-
     "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "To redeem your points in Petrojak, you must have 5,000 points or more",
-
     "earned": "earned",
-    "replaced":"replaced",
+    "replaced": "replaced",
     "canceled": "canceled",
     "couponsHistory": "Coupons History",
     "ourPartners": "Our Partners",
