@@ -29,28 +29,24 @@ abstract final class ShowMyDialog {
     );
   }
 
-  static Future<bool?> back(
-    BuildContext context, {
+  static Future<bool?> back({
     String? body,
     void Function()? onGoBack,
-  }) {
-    return showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return CustomDialog(
-          title: localeLang(context).goBack,
-          body: body ?? localeLang(context).areYouSureYouWantToReturnBack,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          textCancel: localeLang(context).goBack,
-          onPressCancel: () {
-            if (onGoBack != null) onGoBack();
-            Get.back();
-            Get.back();
-          },
-          textConfirm: localeLang(context).stayHere,
-          onPressConfirm: Get.back,
-        );
-      },
+  }) async {
+    final bool? result = await Get.dialog<bool>(
+      CustomDialog(
+        title: localeLang().goBack,
+        body: body ?? localeLang().areYouSureYouWantToReturnBack,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        textCancel: localeLang().goBack,
+        onPressCancel: () {
+          if (onGoBack != null) onGoBack();
+          Get.back(result: true);
+        },
+        textConfirm: localeLang().stayHere,
+        onPressConfirm: Get.back,
+      ),
     );
+    return result;
   }
 }

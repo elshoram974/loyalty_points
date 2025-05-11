@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../config/locale/local_lang.dart';
-import '../functions/show_my_snack_bar.dart';
+import 'show_my_snack_bar.dart';
 
 class NetworkInfo {
   const NetworkInfo();

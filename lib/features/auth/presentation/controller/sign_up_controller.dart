@@ -8,8 +8,8 @@ import '../../../../core/status/status.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
-import '../../../../core/utils/functions/show_my_dialog.dart';
-import '../../../../core/utils/functions/show_my_snack_bar.dart';
+import '../../../../core/utils/helper/show_my_dialog.dart';
+import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../../../core/utils/types/account_type.dart';
 import '../../domain/entity/sign_up_body_data.dart';
@@ -94,6 +94,7 @@ class SignUpControllerImp extends SignUpController {
     update();
   }
 
+  bool _isBack = false;
   @override
   void onPopInvoked() async {
     if ((phone?.parseNumber().trim() ?? '').isNotEmpty ||
@@ -106,7 +107,8 @@ class SignUpControllerImp extends SignUpController {
         address.isNotEmpty ||
         profile != null ||
         attachments.any((e) => e != null)) {
-      await ShowMyDialog.back(Get.context!);
+      _isBack = await ShowMyDialog.back() == true;
+      if (_isBack) Get.back();
     } else {
       Get.back();
     }
