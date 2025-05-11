@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
-import 'package:loyalty_points/core/utils/constants/app_color.dart';
 import 'package:loyalty_points/core/utils/constants/app_constants.dart';
 
 import '../../../../core/shared/points_balance_widget.dart';
+
+import '../widgets/avaliable_points.dart/instructions_replacement_container.dart';
+import '../widgets/avaliable_points.dart/list_points_pounds.dart';
 
 class ReplacemrntScreen extends StatelessWidget {
   const ReplacemrntScreen({super.key});
@@ -14,34 +16,18 @@ class ReplacemrntScreen extends StatelessWidget {
     return ListView(
       children: [
         const PointsBalanceWidget(),
-        Container(
-          decoration: BoxDecoration(
-            color: AppColor.greyBackground,
-            borderRadius: BorderRadius.circular(AppConst.radiusDefault),
-          ),
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppConst.paddingDefault,
-            vertical: AppConst.paddingDefault,
-          ),
-          margin: const EdgeInsets.symmetric(
-              horizontal: AppConst.paddingDefault,
-              vertical: AppConst.paddingDefault),
-          child: Text(
-            textAlign: TextAlign.center,
-            localeLang(context)
-                .toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore,
-            style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold)
-          ),
-        ),
+        const ContainerForReplacement(),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
+          padding:
+              const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
           child: Text(
             localeLang(context).avaliablePoints,
             style: context.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
-            ),
-        )
+          ),
+        ),
+        const ListOfPointsAndPounds()
       ],
     );
   }
