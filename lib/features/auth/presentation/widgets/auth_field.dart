@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
-import '../../../../core/default_field.dart';
+import '../../../../core/shared/default_field.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 
 class AuthField extends StatelessWidget {
@@ -24,12 +24,14 @@ class AuthField extends StatelessWidget {
     this.isPhoneNumber = false,
     this.onPhoneInputChanged,
     this.textCapitalization = TextCapitalization.none,
+    this.labelStyle,
   });
   final TextEditingController? controller;
   final TextCapitalization textCapitalization;
   final IconData? suffixIconData;
   final String? hintText;
   final String label;
+  final TextStyle? labelStyle;
   final Widget? suffix;
   final bool obscureText;
   final bool readOnly;
@@ -49,8 +51,9 @@ class AuthField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: context.textTheme.bodyLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: labelStyle ??
+              context.textTheme.bodyLarge
+                  ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: AppConst.paddingSmall),
         MyDefaultField(

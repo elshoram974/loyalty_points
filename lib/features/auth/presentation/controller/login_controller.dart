@@ -10,7 +10,7 @@ import '../../../../core/status/status.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
-import '../../../../core/utils/functions/show_my_snack_bar.dart';
+import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../data/models/user_model.dart';
 import '../../domain/entity/login_request_data.dart';
