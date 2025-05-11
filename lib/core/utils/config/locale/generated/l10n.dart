@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `point`
+  String get point {
+    return Intl.message('point', name: 'point', desc: '', args: []);
+  }
+
+  /// `Egyptian Pound`
+  String get pound {
+    return Intl.message('Egyptian Pound', name: 'pound', desc: '', args: []);
+  }
+
   /// `Avaliable Points:`
   String get avaliablePoints {
     return Intl.message(
