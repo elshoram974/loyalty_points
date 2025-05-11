@@ -9,24 +9,17 @@ class BarcodeScannerScreen extends StatefulWidget {
   State<BarcodeScannerScreen> createState() => _BarcodeScannerScreenState();
 }
 
-class _BarcodeScannerScreenState extends State<BarcodeScannerScreen>
-    with WidgetsBindingObserver {
+class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
   late final MobileScannerController controller;
 
   @override
   void initState() {
-    WidgetsBinding.instance.addObserver(this);
-
     controller = MobileScannerController(
-      autoStart: false,
+      autoStart: true,
       facing: CameraFacing.back,
       torchEnabled: false,
       detectionSpeed: DetectionSpeed.noDuplicates,
-      returnImage: true,
-      formats: [BarcodeFormat.qrCode],
-      useNewCameraSelector: true
     );
-    // controller.start();
     super.initState();
   }
 
@@ -34,23 +27,6 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen>
   void dispose() {
     controller.dispose();
     super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    // If the controller is not ready, do not try to start or stop it.
-    // Permission dialogs can trigger lifecycle changes before the controller is ready.
-    if (!controller.value.hasCameraPermission) {
-      return;
-    }
-
-    switch (state) {
-      case AppLifecycleState.resumed:
-        controller.start();
-      case AppLifecycleState.inactive:
-        controller.stop();
-      default:
-    }
   }
 
   final double dimensions = 250;

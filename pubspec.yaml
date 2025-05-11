@@ -48,7 +48,9 @@ dependencies:
 
   # * for pick or take image
   image_picker: ^1.1.2
-
+  mobile_scanner: ^6.0.7
+  permission_handler: ^12.0.0+1
+  
   # * for loading
   skeletonizer: ^1.4.3
   
@@ -65,8 +67,6 @@ dependencies:
   # * Helper packages
   path_provider: ^2.1.5
   url_launcher: ^6.3.1
-  mobile_scanner: ^6.0.10
-  permission_handler: ^12.0.0+1
 
 dev_dependencies:
   flutter_test:
