@@ -4,7 +4,6 @@ import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/points_balance_widget.dart';
-import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../domain/entity/order_entity.dart';
 import '../widgets/orders_widgets/orders_widget.dart';

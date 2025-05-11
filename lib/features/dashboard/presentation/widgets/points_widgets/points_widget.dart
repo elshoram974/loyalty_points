@@ -21,13 +21,9 @@ class PointssWidget extends StatelessWidget {
                 children: [
                   if (points.orderStatus != null)
                     Text(
-                      points.orderStatus!.name,
+                      points.orderStatus!.localeName(context),
                       style: context.textTheme.labelLarge?.copyWith(
-                        color: points.orderStatus == PointsStatusEnum.earned
-                            ? Colors.green
-                            : points.orderStatus == PointsStatusEnum.replaced
-                                ? const Color.fromARGB(255, 239, 173, 67)
-                                : Colors.red,
+                        color: points.orderStatus!.color,
                       ),
                     ),
                   Text(

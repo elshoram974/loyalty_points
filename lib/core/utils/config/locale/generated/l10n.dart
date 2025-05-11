@@ -55,6 +55,51 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `point`
+  String get point {
+    return Intl.message('point', name: 'point', desc: '', args: []);
+  }
+
+  /// `Egyptian Pound`
+  String get pound {
+    return Intl.message('Egyptian Pound', name: 'pound', desc: '', args: []);
+  }
+
+  /// `Avaliable Points:`
+  String get avaliablePoints {
+    return Intl.message(
+      'Avaliable Points:',
+      name: 'avaliablePoints',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To redeem your points in Petrojak, you must have 5,000 points or more`
+  String get toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore {
+    return Intl.message(
+      'To redeem your points in Petrojak, you must have 5,000 points or more',
+      name: 'toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `earned`
+  String get earned {
+    return Intl.message('earned', name: 'earned', desc: '', args: []);
+  }
+
+  /// `replaced`
+  String get replaced {
+    return Intl.message('replaced', name: 'replaced', desc: '', args: []);
+  }
+
+  /// `canceled`
+  String get canceled {
+    return Intl.message('canceled', name: 'canceled', desc: '', args: []);
+  }
+
   /// `Coupons History`
   String get couponsHistory {
     return Intl.message(
