@@ -8,7 +8,7 @@ import '../../../../core/utils/constants/app_constants.dart';
 import '../../../auth/presentation/widgets/auth_field.dart';
 import '../controller/add_new_code_controller.dart';
 import '../widgets/add_new_code_widgets/barcode_camera_button.dart';
-import '../widgets/add_new_code_widgets/cancel_confirm_buttons.dart';
+import '../widgets/cancel_confirm_buttons.dart';
 import '../widgets/my_app_bar.dart';
 
 class AddNewCodeScreen extends GetView<AddNewCodeController> {

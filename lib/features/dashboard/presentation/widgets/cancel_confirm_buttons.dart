@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/shared/filled_button.dart';
-import '../../../../../core/utils/config/locale/local_lang.dart';
-import '../../../../../core/utils/constants/app_constants.dart';
-import '../../controller/add_new_code_controller.dart';
+import '../../../../core/shared/filled_button.dart';
+import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/constants/app_constants.dart';
+import '../controller/add_new_code_controller.dart';
 
 class CancelAndConfirmButtons extends StatelessWidget {
   const CancelAndConfirmButtons({super.key});
@@ -34,6 +34,7 @@ class CancelAndConfirmButtons extends StatelessWidget {
           const SizedBox(width: AppConst.paddingDefault),
           Expanded(
             child: GetBuilder<AddNewCodeController>(
+              init: AddNewCodeControllerImp(), 
               builder: (controller) {
                 return CustomFilledButton(
                   isLoading: controller.isLoading,

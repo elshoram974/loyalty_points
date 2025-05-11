@@ -1,4 +1,6 @@
 {
+    "instaBayNumber": "InstaBay Number",
+    "redeemWays": "Redeem ways:",
     "cashbackOnPoints": "Cashback of {pound} EGP on {point} points!",
 "@cashbackOnPoints": {
   "placeholders": {

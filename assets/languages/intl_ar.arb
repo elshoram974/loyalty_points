@@ -1,4 +1,6 @@
 {
+  "instaBayNumber":"رقم انستا باي",
+  "redeemWays": "طرق الاستبدال:",
   "cashbackOnPoints": "استرداد {pound} جنيه مصري نقدًا على {point} من النقاط!",
 "@cashbackOnPoints": {
   "placeholders": {

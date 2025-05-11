@@ -55,6 +55,21 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `InstaBay Number`
+  String get instaBayNumber {
+    return Intl.message(
+      'InstaBay Number',
+      name: 'instaBayNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Redeem ways:`
+  String get redeemWays {
+    return Intl.message('Redeem ways:', name: 'redeemWays', desc: '', args: []);
+  }
+
   /// `Cashback of {pound} EGP on {point} points!`
   String cashbackOnPoints(String pound, String point) {
     return Intl.message(
