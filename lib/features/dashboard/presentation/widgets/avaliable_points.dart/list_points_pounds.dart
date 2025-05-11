@@ -3,8 +3,14 @@ import 'package:loyalty_points/features/dashboard/presentation/widgets/avaliable
 
 import '../../../domain/entity/avaliable_points_entity.dart';
 
-class ListOfPointsAndPounds extends StatelessWidget {
-  const ListOfPointsAndPounds({super.key});
+class ListOfPointsAndPounds extends StatefulWidget {
+ const  ListOfPointsAndPounds({super.key,});
+  @override
+  State<ListOfPointsAndPounds> createState() => _ListOfPointsAndPoundsState();
+}
+
+class _ListOfPointsAndPoundsState extends State<ListOfPointsAndPounds> {
+   int selectedIndex=-1;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +19,16 @@ class ListOfPointsAndPounds extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: _avaliablePoints.length,
       itemBuilder: (context, index) {
-        return AvaliablePointsContainer(
-          avaliablepoints: _avaliablePoints[index],
+        return GestureDetector(
+          onTap: () {
+            setState(() {
+              selectedIndex = index;
+            });
+          },
+          child: AvaliablePointsContainer(
+            isSelected: selectedIndex == index,
+            avaliablepoints: _avaliablePoints[index],
+          ),
         );
       },
       separatorBuilder: (context, index) => const SizedBox(height: 8),
@@ -35,4 +49,13 @@ List<AvaliablePointsEntity> get _avaliablePoints => [
         points: 5000,
         pounds: 1000000,
       ),
+       AvaliablePointsEntity(
+        points: 5000,
+        pounds: 1000000,
+      ),
+       AvaliablePointsEntity(
+        points: 5000,
+        pounds: 1000000,
+      ),
+      
     ];

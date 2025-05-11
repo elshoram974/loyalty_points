@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 import 'package:loyalty_points/core/utils/constants/app_constants.dart';
 
+import '../../../../core/shared/filled_button.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 
 import '../widgets/avaliable_points.dart/instructions_replacement_container.dart';
@@ -27,7 +28,20 @@ class ReplacemrntScreen extends StatelessWidget {
             ),
           ),
         ),
-        const ListOfPointsAndPounds()
+        const ListOfPointsAndPounds(),
+        const SizedBox(
+          height: AppConst.paddingExtraBig,
+        ),
+        Center(
+          child: CustomFilledButton(
+           minimumSize: const Size(375, 50),
+            borderRadius: BorderRadius.circular(AppConst.radiusSmall),
+            onPressed: Get.back,
+            text: localeLang(context).confirm,
+            style: context.textTheme.headlineMedium,
+          ),
+        ),
+        
       ],
     );
   }
