@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_color.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 
 class ContainerForReplacement extends StatelessWidget {
   const ContainerForReplacement({
     super.key,
+    required this.text,
   });
-
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,12 +25,12 @@ class ContainerForReplacement extends StatelessWidget {
         horizontal: AppConst.paddingDefault,
         vertical: AppConst.paddingDefault,
       ),
-      child: Text(
-          textAlign: TextAlign.center,
-          localeLang(context)
-              .toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore,
+      child: Text(text,
+      textAlign: TextAlign.center,
           style: context.textTheme.titleLarge
               ?.copyWith(fontWeight: FontWeight.bold)),
     );
   }
 }
+
+         

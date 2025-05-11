@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:loyalty_points/features/dashboard/presentation/widgets/avaliable_points.dart/avaliable_points_container.dart';
+import 'package:loyalty_points/features/redeem/presentation/widgets/avaliable_points/avaliable_points_container.dart';
 
-import '../../../domain/entity/avaliable_points_entity.dart';
+import '../../../domain/entities/avaliable_points_entity.dart';
 
 class ListOfPointsAndPounds extends StatefulWidget {
  const  ListOfPointsAndPounds({super.key,});

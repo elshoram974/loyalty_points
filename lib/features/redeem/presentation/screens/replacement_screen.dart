@@ -6,8 +6,9 @@ import 'package:loyalty_points/core/utils/constants/app_constants.dart';
 import '../../../../core/shared/filled_button.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 
-import '../widgets/avaliable_points.dart/instructions_replacement_container.dart';
-import '../widgets/avaliable_points.dart/list_points_pounds.dart';
+import '../../../../core/utils/config/routes/routes.dart';
+import '../widgets/avaliable_points/instructions_replacement_container.dart';
+import '../widgets/avaliable_points/list_points_pounds.dart';
 
 class ReplacemrntScreen extends StatelessWidget {
   const ReplacemrntScreen({super.key});
@@ -17,7 +18,7 @@ class ReplacemrntScreen extends StatelessWidget {
     return ListView(
       children: [
         const PointsBalanceWidget(),
-        const ContainerForReplacement(),
+         ContainerForReplacement(text: localeLang(context).toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore('5000'),),
         Padding(
           padding:
               const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
@@ -36,7 +37,7 @@ class ReplacemrntScreen extends StatelessWidget {
           child: CustomFilledButton(
            minimumSize: const Size(375, 50),
             borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-            onPressed: Get.back,
+            onPressed:()=> Get.toNamed(AppRoute.finalredeemScreen),
             text: localeLang(context).confirm,
             style: context.textTheme.headlineMedium,
           ),

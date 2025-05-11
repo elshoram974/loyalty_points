@@ -8,6 +8,7 @@ import '../../../../features/dashboard/presentation/screens/dashboard_screen.dar
 import '../../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../../../features/auth/presentation/screens/login_screen.dart';
 import '../../../../features/auth/presentation/screens/sign_up_screen.dart';
+import '../../../../features/redeem/presentation/screens/redeem_final_screen.dart';
 import '../../bindings/add_new_code_bindings.dart';
 import '../../bindings/home_bindings.dart';
 import '../../bindings/login_bindings.dart';
@@ -24,6 +25,8 @@ abstract final class AppRoute {
   static const String newBarcode = "/newBarcode";
   static const String barCodeScanner = "/barCodeScanner";
   static const String codeAddedScreen = "/codeAddedScreen";
+    static const String finalredeemScreen = "/finalredeemScreen";
+
 
   static List<GetPage> get pages => [
         GetPage(
@@ -58,6 +61,10 @@ abstract final class AppRoute {
         GetPage(
           name: codeAddedScreen,
           page: () => const CodeAddedScreen(),
+        ),
+         GetPage(
+          name: finalredeemScreen,
+          page: () => const RedeemFinalScreen(),
         ),
       ];
 }

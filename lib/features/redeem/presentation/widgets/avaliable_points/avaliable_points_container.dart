@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
-import 'package:loyalty_points/features/dashboard/domain/entity/avaliable_points_entity.dart';
+import 'package:loyalty_points/features/redeem/domain/entities/avaliable_points_entity.dart';
 
 import '../../../../../core/utils/constants/app_constants.dart';
 
