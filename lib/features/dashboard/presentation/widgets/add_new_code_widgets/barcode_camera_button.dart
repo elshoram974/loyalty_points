@@ -16,7 +16,10 @@ class BarCodeCameraButton extends GetView<AddNewCodeController> {
     return InkWell(
       onTap: () async {
         final result = await Get.toNamed(AppRoute.barCodeScanner);
-        if (result is String) controller.textController.text = result;
+        if (result is String) {
+          controller.textController.text = result;
+          controller.update();
+        }
       },
       splashFactory: NoSplash.splashFactory,
       child: Padding(
