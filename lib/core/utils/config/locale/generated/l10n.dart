@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Coupons History`
+  String get couponsHistory {
+    return Intl.message(
+      'Coupons History',
+      name: 'couponsHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Our Partners`
   String get ourPartners {
     return Intl.message(
