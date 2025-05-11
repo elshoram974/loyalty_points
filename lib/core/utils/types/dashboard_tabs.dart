@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../features/dashboard/presentation/screens/home_screen.dart';
 import '../../../features/dashboard/presentation/screens/orders_screen.dart';
 import '../../../features/dashboard/presentation/screens/points_screen.dart';
+import '../../../features/dashboard/presentation/screens/replacement_screen.dart';
 import '../config/locale/local_lang.dart';
 
 enum DashboardTabsEnum {
@@ -77,7 +78,7 @@ class RedeemPointsTabItem extends DashboardTabItem {
   String get label => localeLang().redeemPoints;
 
   @override
-  Widget get screen => const Placeholder();
+  Widget get screen => const ReplacemrntScreen();
 
   @override
   bool get isHidden => true;
