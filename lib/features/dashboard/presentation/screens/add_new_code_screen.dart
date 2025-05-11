@@ -53,7 +53,7 @@ class AddNewCodeScreen extends StatelessWidget {
           const SizedBox(height: AppConst.paddingDefault),
           InkWell(
             onTap: () async {
-              final allowed = await requestCameraPermission();
+              final bool allowed = await requestCameraPermission();
               if (allowed) {
                 final result = await Get.toNamed(AppRoute.barCodeScanner);
                 if (result is String) {

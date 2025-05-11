@@ -18,6 +18,7 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
       autoStart: true,
       facing: CameraFacing.back,
       torchEnabled: false,
+      detectionSpeed: DetectionSpeed.noDuplicates,
     );
     super.initState();
   }

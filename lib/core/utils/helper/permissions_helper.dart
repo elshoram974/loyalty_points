@@ -1,7 +1,7 @@
 import 'package:permission_handler/permission_handler.dart';
 
 Future<bool> requestCameraPermission() async {
-  var status = await Permission.camera.status;
+  PermissionStatus status = await Permission.camera.status;
   if (!status.isGranted) {
     status = await Permission.camera.request();
   }
