@@ -1,4 +1,10 @@
 {
+  "avaliablePoints": "النقاط المتاحة:",
+  "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "لاستبدال نقاطك في بتروجاك يجب أن يكون لديك 5000 نقطه فأكثر ",
+
+  "earned": "مكتسبة",
+  "replaced":"مستبدله",
+  "canceled": "ملغية",
   "couponsHistory": "سجل القسائم",
   "ourPartners": "شركاؤنا",
   "congratulationsCodeAddedSuccessfully": "تهانينا تم اضافه الكود بنجاح",
