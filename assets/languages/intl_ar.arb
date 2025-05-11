@@ -1,4 +1,24 @@
 {
+  "cashbackOnPoints": "استرداد {pound} جنيه مصري نقدًا على {point} من النقاط!",
+"@cashbackOnPoints": {
+  "placeholders": {
+    "pound": {
+      "type": "String"
+    },
+    "point": {
+      "type": "String"
+    }
+  }
+},
+
+  "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "لاستبدال نقاطك في بتروجاك يجب أن يكون لديك {point} نقطه فأكثر ",
+  "@toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": {
+    "placeholders": {
+      "point": {
+        "type": "String"
+      }
+    }
+  },
   "pointsEqualEgyptionPounds": "{point} نقطة = {pound} جنيه مصري",
   "@pointsEqualEgyptionPounds": {
     "placeholders": {
@@ -11,7 +31,6 @@
     }
   },
   "avaliablePoints": "النقاط المتاحة:",
-  "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "لاستبدال نقاطك في بتروجاك يجب أن يكون لديك 5000 نقطه فأكثر ",
   "earned": "مكتسبة",
   "replaced": "مستبدله",
   "canceled": "ملغية",

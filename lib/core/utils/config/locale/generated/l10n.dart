@@ -55,6 +55,26 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Cashback of {pound} EGP on {point} points!`
+  String cashbackOnPoints(String pound, String point) {
+    return Intl.message(
+      'Cashback of $pound EGP on $point points!',
+      name: 'cashbackOnPoints',
+      desc: '',
+      args: [pound, point],
+    );
+  }
+
+  /// `To redeem your points in Petrojak, you must have {point} points or more`
+  String toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore(String point) {
+    return Intl.message(
+      'To redeem your points in Petrojak, you must have $point points or more',
+      name: 'toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore',
+      desc: '',
+      args: [point],
+    );
+  }
+
   /// `{point} point = {pound} Egyptian Pound`
   String pointsEqualEgyptionPounds(String point, String pound) {
     return Intl.message(
@@ -70,16 +90,6 @@ class S {
     return Intl.message(
       'Avaliable Points:',
       name: 'avaliablePoints',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `To redeem your points in Petrojak, you must have 5,000 points or more`
-  String get toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore {
-    return Intl.message(
-      'To redeem your points in Petrojak, you must have 5,000 points or more',
-      name: 'toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore',
       desc: '',
       args: [],
     );

@@ -1,4 +1,24 @@
 {
+    "cashbackOnPoints": "Cashback of {pound} EGP on {point} points!",
+"@cashbackOnPoints": {
+  "placeholders": {
+    "pound": {
+      "type": "String"
+    },
+    "point": {
+      "type": "String"
+    }
+  }
+},
+
+    "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "To redeem your points in Petrojak, you must have {point} points or more",
+    "@toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": {
+        "placeholders": {
+            "point": {
+                "type": "String"
+            }
+        }
+    },
     "pointsEqualEgyptionPounds": "{point} point = {pound} Egyptian Pound",
     "@pointsEqualEgyptionPounds": {
         "placeholders": {
@@ -11,7 +31,6 @@
         }
     },
     "avaliablePoints": "Avaliable Points:",
-    "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "To redeem your points in Petrojak, you must have 5,000 points or more",
     "earned": "earned",
     "replaced": "replaced",
     "canceled": "canceled",
