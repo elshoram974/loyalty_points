@@ -17,7 +17,7 @@ class CodeAddedScreen extends StatelessWidget {
       appBar: const MyAppBar(),
       body: Column(
         children: [
-          const PointsBalanceWidget(),
+          const PointsBalanceWidget(pointsBalance: '5000', pound: '5000', text: 'bnnb',),
           Expanded(
             child: Center(
               child: Text(
@@ -33,7 +33,6 @@ class CodeAddedScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppConst.radiusSmall),
             text: localeLang(context).home,
             style: context.textTheme.headlineSmall,
-            minimumSize: const Size(200, 50),
           ),
           const SizedBox(height: AppConst.paddingExtraBig)
         ],

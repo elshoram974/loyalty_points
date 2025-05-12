@@ -26,7 +26,7 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
           vertical: AppConst.paddingDefault,
         ),
         children: [
-          const PointsBalanceWidget(),
+          const PointsBalanceWidget(pointsBalance: '5000', pound: '5000', text: 'bnnb',),
           const SizedBox(height: 100),
           AuthField(
             label: localeLang(context).addNewCode,

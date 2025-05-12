@@ -6,7 +6,14 @@ import '../../../../../core/utils/constants/app_assets.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 
 class PointsBalanceWidget extends StatelessWidget {
-  const PointsBalanceWidget({super.key});
+  const PointsBalanceWidget(
+      {super.key,
+      required this.pointsBalance,
+      required this.pound,
+      required this.text});
+  final String pointsBalance;
+  final String pound;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +30,41 @@ class PointsBalanceWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            localeLang(context).pointsBalance,
-            style: context.textTheme.titleLarge?.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  localeLang(context).pointsBalance,
+                  style: context.textTheme.titleLarge?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              if (pound == "0")
+                Container(
+                  decoration: BoxDecoration(
+                     color: Colors.white,
+                    borderRadius: BorderRadius.circular(AppConst.radiusSmall),
+                  ),
+                 
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: AppConst.paddingSmall,
+                        vertical: AppConst.paddingExtraSmall),
+                    child: Row(
+                      children: [
+                        Image.asset(AppAssets.earned, width: 20),
+                        Text(
+                          localeLang().uncategorized,
+                          style: context.textTheme.titleSmall
+                              ?.copyWith(color:context.theme.primaryColor),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+            ],
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +73,7 @@ class PointsBalanceWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(AppConst.paddingSmall),
                   child: Text(
-                    "5,222",
+                    pointsBalance,
                     style: context.textTheme.headlineLarge?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -54,7 +90,7 @@ class PointsBalanceWidget extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    '100' + localeLang(context).egyptianPound,
+                    pound + localeLang(context).egyptianPound,
                     style: context.textTheme.titleSmall?.copyWith(
                       color: Colors.white,
                     ),
@@ -69,7 +105,8 @@ class PointsBalanceWidget extends StatelessWidget {
               Image.asset(AppAssets.iconBalance, width: 30),
               const SizedBox(width: AppConst.paddingExtraSmall),
               Text(
-                localeLang(context).transferablePointsBalance,
+                text,
+                //localeLang(context).transferablePointsBalance,
                 style: context.textTheme.labelMedium
                     ?.copyWith(color: Colors.white),
               ),

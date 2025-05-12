@@ -17,7 +17,7 @@ class ReplacemrntScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const PointsBalanceWidget(),
+        const PointsBalanceWidget(pointsBalance: '5000', pound: '0', text: 'bnnb',),
          ContainerForReplacement(text: localeLang(context).toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore('5000'),),
         Padding(
           padding:

@@ -20,7 +20,7 @@ class PointssScreen extends StatelessWidget {
         body: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
-              const SliverToBoxAdapter(child: PointsBalanceWidget()),
+              const SliverToBoxAdapter(child: const PointsBalanceWidget(pointsBalance: '5000', pound: '5000', text: 'bnnb',),),
               const SliverToBoxAdapter(child: OurPartnersWidget()),
               MySliverPinnedTaps(
                 tabs: [
