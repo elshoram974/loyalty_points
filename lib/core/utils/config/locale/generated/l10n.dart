@@ -55,6 +55,46 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Uncategorized`
+  String get uncategorized {
+    return Intl.message(
+      'Uncategorized',
+      name: 'uncategorized',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your request has been successfully confirmed. Please wait for the transfer to be completed.`
+  String get yourOrderConfirmed {
+    return Intl.message(
+      'Your request has been successfully confirmed. Please wait for the transfer to be completed.',
+      name: 'yourOrderConfirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.`
+  String get attend {
+    return Intl.message(
+      'Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.',
+      name: 'attend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to redeem {point} points for {pound} EGP?`
+  String replacepointswithpounds(String pound, String point) {
+    return Intl.message(
+      'Are you sure you want to redeem $point points for $pound EGP?',
+      name: 'replacepointswithpounds',
+      desc: '',
+      args: [pound, point],
+    );
+  }
+
   /// `E-wallets`
   String get wallets {
     return Intl.message('E-wallets', name: 'wallets', desc: '', args: []);

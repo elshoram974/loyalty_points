@@ -1,4 +1,18 @@
 {
+  "uncategorized": "غير مصنف",
+  "yourOrderConfirmed":"تم تاكيد طلبك بنجاح فضلا انتظر وصول التحويل اليك",
+  "attend": "يرجي الانتباه عند ادخال بيانات حسابك بتروجاك لن تتحمل مسؤوليه أي بيانات غير صحيحه وأي حالة لاحقة لعد الدفع",
+  "replacepointswithpounds": "هل أنت متأكد أنك تريد استبدال {point} من النقاط مقابل {pound} جنيه مصري؟",
+  "@replacepointswithpounds": {
+    "placeholders": {
+      "pound": {
+        "type": "String"
+      },
+      "point": {
+        "type": "String"
+      }
+    }
+  },
   "wallets": "المحافظ الالكترونيه",
   "transferToInstaBay": "التحويل ل إنستا باي",
   "instaBayNumber": "رقم انستا باي",
