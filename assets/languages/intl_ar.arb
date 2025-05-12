@@ -1,18 +1,19 @@
 {
-  "instaBayNumber":"رقم انستا باي",
+  "wallets": "المحافظ الالكترونيه",
+  "transferToInstaBay": "التحويل ل إنستا باي",
+  "instaBayNumber": "رقم انستا باي",
   "redeemWays": "طرق الاستبدال:",
   "cashbackOnPoints": "استرداد {pound} جنيه مصري نقدًا على {point} من النقاط!",
-"@cashbackOnPoints": {
-  "placeholders": {
-    "pound": {
-      "type": "String"
-    },
-    "point": {
-      "type": "String"
+  "@cashbackOnPoints": {
+    "placeholders": {
+      "pound": {
+        "type": "String"
+      },
+      "point": {
+        "type": "String"
+      }
     }
-  }
-},
-
+  },
   "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "لاستبدال نقاطك في بتروجاك يجب أن يكون لديك {point} نقطه فأكثر ",
   "@toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": {
     "placeholders": {

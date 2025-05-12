@@ -55,6 +55,21 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `E-wallets`
+  String get wallets {
+    return Intl.message('E-wallets', name: 'wallets', desc: '', args: []);
+  }
+
+  /// `Transfer to InstaPay`
+  String get transferToInstaBay {
+    return Intl.message(
+      'Transfer to InstaPay',
+      name: 'transferToInstaBay',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `InstaBay Number`
   String get instaBayNumber {
     return Intl.message(
