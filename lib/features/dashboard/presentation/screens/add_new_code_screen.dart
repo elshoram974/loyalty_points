@@ -21,18 +21,24 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
       canPop: false,
       onPopInvokedWithResult: (_, __) => controller.onPopInvoked(),
       body: ListView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppConst.paddingDefault,
-          vertical: AppConst.paddingDefault,
-        ),
         children: [
-          const PointsBalanceWidget(pointsBalance: '5000', pound: '5000', text: 'bnnb',),
+          const PointsBalanceWidget(
+            pointsBalance: 5000,
+            pound: 5000,
+            description: 'bnnb',
+            isuncategorized: true,
+          ),
           const SizedBox(height: 100),
-          AuthField(
-            label: localeLang(context).addNewCode,
-            labelStyle: context.textTheme.headlineSmall,
-            controller: controller.textController,
-            onChanged: (_) => controller.update(),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppConst.paddingDefault,
+            ),
+            child: AuthField(
+              label: localeLang(context).addNewCode,
+              labelStyle: context.textTheme.headlineSmall,
+              controller: controller.textController,
+              onChanged: (_) => controller.update(),
+            ),
           ),
           const SizedBox(height: AppConst.paddingDefault),
           const BarCodeCameraButton(),
