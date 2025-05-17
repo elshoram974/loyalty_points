@@ -8,7 +8,7 @@ import '../../../../core/utils/constants/app_constants.dart';
 import '../../../auth/presentation/widgets/auth_field.dart';
 import '../controller/add_new_code_controller.dart';
 import '../widgets/add_new_code_widgets/barcode_camera_button.dart';
-import '../widgets/add_new_code_widgets/cancel_confirm_buttons.dart';
+import '../widgets/cancel_confirm_buttons.dart';
 import '../widgets/my_app_bar.dart';
 
 class AddNewCodeScreen extends GetView<AddNewCodeController> {
@@ -21,18 +21,24 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
       canPop: false,
       onPopInvokedWithResult: (_, __) => controller.onPopInvoked(),
       body: ListView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppConst.paddingDefault,
-          vertical: AppConst.paddingDefault,
-        ),
         children: [
-          const PointsBalanceWidget(),
+          const PointsBalanceWidget(
+            pointsBalance: 5000,
+            pound: 5000,
+            description: 'bnnb',
+            isuncategorized: true,
+          ),
           const SizedBox(height: 100),
-          AuthField(
-            label: localeLang(context).addNewCode,
-            labelStyle: context.textTheme.headlineSmall,
-            controller: controller.textController,
-            onChanged: (_) => controller.update(),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppConst.paddingDefault,
+            ),
+            child: AuthField(
+              label: localeLang(context).addNewCode,
+              labelStyle: context.textTheme.headlineSmall,
+              controller: controller.textController,
+              onChanged: (_) => controller.update(),
+            ),
           ),
           const SizedBox(height: AppConst.paddingDefault),
           const BarCodeCameraButton(),

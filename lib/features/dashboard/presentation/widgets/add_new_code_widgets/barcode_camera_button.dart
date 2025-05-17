@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loyalty_points/core/utils/extensions/responsive_ex.dart';
 
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/config/routes/routes.dart';
@@ -14,13 +15,20 @@ class BarCodeCameraButton extends GetView<AddNewCodeController> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      radius: context.isTabletWidth ? AppConst.radiusBig : 0,
       onTap: () async {
         final result = await Get.toNamed(AppRoute.barCodeScanner);
-        if (result is String) controller.textController.text = result;
+        if (result is String) {
+          controller.textController.text = result;
+          controller.update();
+        }
       },
-      splashFactory: NoSplash.splashFactory,
+      borderRadius: BorderRadius.circular(AppConst.radiusSmall),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppConst.paddingSmall),
+        padding: const EdgeInsets.symmetric(
+          vertical: AppConst.paddingSmall,
+          horizontal: AppConst.paddingDefault,
+        ),
         child: Row(
           children: [
             Expanded(

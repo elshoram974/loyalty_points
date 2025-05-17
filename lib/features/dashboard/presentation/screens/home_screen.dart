@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           },
         ),
         SocialMediaWidget(items: SocialMediaType.allTypes),
-        const PointsBalanceWidget(),
+        const PointsBalanceWidget(pointsBalance: 5000, pound: 5000, description: 'bnnb', isuncategorized: false,),
         const AbusingCode()
       ],
     );

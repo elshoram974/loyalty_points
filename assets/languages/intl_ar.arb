@@ -1,12 +1,55 @@
 {
-  "point":"نقطه",
-
-"pound": "جنيه مصري",
+  "uncategorized": "غير مصنف",
+  "yourOrderConfirmed":"تم تاكيد طلبك بنجاح فضلا انتظر وصول التحويل اليك",
+  "attend": "يرجي الانتباه عند ادخال بيانات حسابك بتروجاك لن تتحمل مسؤوليه أي بيانات غير صحيحه وأي حالة لاحقة لعد الدفع",
+  "replacepointswithpounds": "هل أنت متأكد أنك تريد استبدال {point} من النقاط مقابل {pound} جنيه مصري؟",
+  "@replacepointswithpounds": {
+    "placeholders": {
+      "pound": {
+        "type": "String"
+      },
+      "point": {
+        "type": "String"
+      }
+    }
+  },
+  "wallets": "المحافظ الالكترونيه",
+  "transferToInstaBay": "التحويل ل إنستا باي",
+  "instaBayNumber": "رقم انستا باي",
+  "redeemWays": "طرق الاستبدال:",
+  "cashbackOnPoints": "استرداد {pound} جنيه مصري نقدًا على {point} من النقاط!",
+  "@cashbackOnPoints": {
+    "placeholders": {
+      "pound": {
+        "type": "String"
+      },
+      "point": {
+        "type": "String"
+      }
+    }
+  },
+  "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "لاستبدال نقاطك في بتروجاك يجب أن يكون لديك {point} نقطه فأكثر ",
+  "@toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": {
+    "placeholders": {
+      "point": {
+        "type": "String"
+      }
+    }
+  },
+  "pointsEqualEgyptionPounds": "{point} نقطة = {pound} جنيه مصري",
+  "@pointsEqualEgyptionPounds": {
+    "placeholders": {
+      "point": {
+        "type": "String"
+      },
+      "pound": {
+        "type": "String"
+      }
+    }
+  },
   "avaliablePoints": "النقاط المتاحة:",
-  "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "لاستبدال نقاطك في بتروجاك يجب أن يكون لديك 5000 نقطه فأكثر ",
-
   "earned": "مكتسبة",
-  "replaced":"مستبدله",
+  "replaced": "مستبدله",
   "canceled": "ملغية",
   "couponsHistory": "سجل القسائم",
   "ourPartners": "شركاؤنا",

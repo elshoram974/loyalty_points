@@ -55,14 +55,104 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `point`
-  String get point {
-    return Intl.message('point', name: 'point', desc: '', args: []);
+  /// `Uncategorized`
+  String get uncategorized {
+    return Intl.message(
+      'Uncategorized',
+      name: 'uncategorized',
+      desc: '',
+      args: [],
+    );
   }
 
-  /// `Egyptian Pound`
-  String get pound {
-    return Intl.message('Egyptian Pound', name: 'pound', desc: '', args: []);
+  /// `Your request has been successfully confirmed. Please wait for the transfer to be completed.`
+  String get yourOrderConfirmed {
+    return Intl.message(
+      'Your request has been successfully confirmed. Please wait for the transfer to be completed.',
+      name: 'yourOrderConfirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.`
+  String get attend {
+    return Intl.message(
+      'Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.',
+      name: 'attend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to redeem {point} points for {pound} EGP?`
+  String replacepointswithpounds(String pound, String point) {
+    return Intl.message(
+      'Are you sure you want to redeem $point points for $pound EGP?',
+      name: 'replacepointswithpounds',
+      desc: '',
+      args: [pound, point],
+    );
+  }
+
+  /// `E-wallets`
+  String get wallets {
+    return Intl.message('E-wallets', name: 'wallets', desc: '', args: []);
+  }
+
+  /// `Transfer to InstaPay`
+  String get transferToInstaBay {
+    return Intl.message(
+      'Transfer to InstaPay',
+      name: 'transferToInstaBay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `InstaBay Number`
+  String get instaBayNumber {
+    return Intl.message(
+      'InstaBay Number',
+      name: 'instaBayNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Redeem ways:`
+  String get redeemWays {
+    return Intl.message('Redeem ways:', name: 'redeemWays', desc: '', args: []);
+  }
+
+  /// `Cashback of {pound} EGP on {point} points!`
+  String cashbackOnPoints(String pound, String point) {
+    return Intl.message(
+      'Cashback of $pound EGP on $point points!',
+      name: 'cashbackOnPoints',
+      desc: '',
+      args: [pound, point],
+    );
+  }
+
+  /// `To redeem your points in Petrojak, you must have {point} points or more`
+  String toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore(String point) {
+    return Intl.message(
+      'To redeem your points in Petrojak, you must have $point points or more',
+      name: 'toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore',
+      desc: '',
+      args: [point],
+    );
+  }
+
+  /// `{point} point = {pound} Egyptian Pound`
+  String pointsEqualEgyptionPounds(String point, String pound) {
+    return Intl.message(
+      '$point point = $pound Egyptian Pound',
+      name: 'pointsEqualEgyptionPounds',
+      desc: '',
+      args: [point, pound],
+    );
   }
 
   /// `Avaliable Points:`
@@ -70,16 +160,6 @@ class S {
     return Intl.message(
       'Avaliable Points:',
       name: 'avaliablePoints',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `To redeem your points in Petrojak, you must have 5,000 points or more`
-  String get toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore {
-    return Intl.message(
-      'To redeem your points in Petrojak, you must have 5,000 points or more',
-      name: 'toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore',
       desc: '',
       args: [],
     );

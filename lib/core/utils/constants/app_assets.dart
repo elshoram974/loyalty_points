@@ -9,6 +9,9 @@ abstract final class AppAssets {
   static const String trueIcon = "$_imagesPath/true_icon.png";
   static const String waitingImage = "$_imagesPath/waiting_image.png";
   static const String iconBalance = "$_imagesPath/download.png";
+  static const String instaBay = "$_imagesPath/instabaywithoutground.png";
+  static const String wallet = "$_imagesPath/walet.png";
+  static const String earned = "$_imagesPath/earned.png";
 
 // * icons
   static const String _iconsPath = "assets/icons";

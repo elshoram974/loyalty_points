@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loyalty_points/core/utils/config/routes/routes.dart';
 
 import '../../../../../core/shared/filled_button.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
-import '../../controller/add_new_code_controller.dart';
 
-class CancelAndConfirmButtons extends StatelessWidget {
-  const CancelAndConfirmButtons({super.key});
+
+class PaymentsMethodCancelAndConfirmButtons extends StatelessWidget {
+  const PaymentsMethodCancelAndConfirmButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,21 +34,14 @@ class CancelAndConfirmButtons extends StatelessWidget {
           ),
           const SizedBox(width: AppConst.paddingDefault),
           Expanded(
-            child: GetBuilder<AddNewCodeController>(
-              builder: (controller) {
-                return CustomFilledButton(
-                  isLoading: controller.isLoading,
-                  onPressed: controller.textController.text.trim().isEmpty
-                      ? null
-                      : controller.addNewCode,
+            child: CustomFilledButton(
+                  onPressed:()=>Get.toNamed(AppRoute.successredeemScreen),
                   filledColor: context.theme.primaryColor,
                   borderRadius: radius,
                   text: localeLang(context).confirm,
                   style: style,
                   minimumSize: size,
-                );
-              },
-            ),
+                ),
           ),
         ],
       ),

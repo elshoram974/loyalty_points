@@ -1,12 +1,55 @@
 {
-    "point":"point",
-    "pound": "Egyptian Pound",
+    "uncategorized": "Uncategorized",
+    "yourOrderConfirmed": "Your request has been successfully confirmed. Please wait for the transfer to be completed.",
+    "attend": "Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.",
+    "replacepointswithpounds": "Are you sure you want to redeem {point} points for {pound} EGP?",
+    "@replacepointswithpounds": {
+        "placeholders": {
+            "pound": {
+                "type": "String"
+            },
+            "point": {
+                "type": "String"
+            }
+        }
+    },
+    "wallets": "E-wallets",
+    "transferToInstaBay": "Transfer to InstaPay",
+    "instaBayNumber": "InstaBay Number",
+    "redeemWays": "Redeem ways:",
+    "cashbackOnPoints": "Cashback of {pound} EGP on {point} points!",
+    "@cashbackOnPoints": {
+        "placeholders": {
+            "pound": {
+                "type": "String"
+            },
+            "point": {
+                "type": "String"
+            }
+        }
+    },
+    "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "To redeem your points in Petrojak, you must have {point} points or more",
+    "@toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": {
+        "placeholders": {
+            "point": {
+                "type": "String"
+            }
+        }
+    },
+    "pointsEqualEgyptionPounds": "{point} point = {pound} Egyptian Pound",
+    "@pointsEqualEgyptionPounds": {
+        "placeholders": {
+            "point": {
+                "type": "String"
+            },
+            "pound": {
+                "type": "String"
+            }
+        }
+    },
     "avaliablePoints": "Avaliable Points:",
-
-    "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "To redeem your points in Petrojak, you must have 5,000 points or more",
-
     "earned": "earned",
-    "replaced":"replaced",
+    "replaced": "replaced",
     "canceled": "canceled",
     "couponsHistory": "Coupons History",
     "ourPartners": "Our Partners",
