@@ -5,6 +5,7 @@
 		<key>CADisableMinimumFrameDurationOnPhone</key>
 		<true />
 		<key>CFBundleDevelopmentRegion</key>
+		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>LSApplicationQueriesSchemes</key>
 		<array>
 			<string>whatsapp</string>
@@ -12,7 +13,6 @@
 			<string>instagram</string>
 			<string>fb</string>
 		</array>
-		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>CFBundleDisplayName</key>
 		<string>Loyalty Points</string>
 		<key>CFBundleExecutable</key>
