@@ -7,6 +7,7 @@ import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/constants/app_strings.dart';
+import '../controller/dashboard_controller.dart';
 import '../widgets/home_widgets/abusing_code.dart';
 import '../widgets/home_widgets/social_media_widget.dart';
 
@@ -30,9 +31,24 @@ class HomeScreen extends StatelessWidget {
           },
         ),
         const SocialMediaWidget(),
-        const PointsBalanceWidget(pointsBalance: 5000, pound: 5000, description: 'bnnb', isuncategorized: false,),
+        const PointBalanceWithDataWidget(),
         const AbusingCode()
       ],
     );
+  }
+}
+
+class PointBalanceWithDataWidget extends StatelessWidget {
+  const PointBalanceWithDataWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<DashboardController>(builder: (controller) {
+      return const PointsBalanceWidget(
+        pointsBalance: 5000,
+        description: 'bnnb',
+        isUncategorized: false,
+      );
+    });
   }
 }

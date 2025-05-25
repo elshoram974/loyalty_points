@@ -5,19 +5,22 @@ import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_assets.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
+import '../../app_info.dart';
+import '../utils/config/controller/config_controller.dart';
+import '../utils/constants/app_strings.dart';
+import '../utils/functions/calc_helper.dart';
+import '../utils/models/config_model.dart';
 
 class PointsBalanceWidget extends StatelessWidget {
   const PointsBalanceWidget({
     super.key,
     required this.pointsBalance,
-    required this.pound,
     required this.description,
-    required this.isuncategorized,
+    required this.isUncategorized,
   });
-  final double pointsBalance;
-  final double pound;
+  final int pointsBalance;
   final String description;
-  final bool isuncategorized;
+  final bool isUncategorized;
 
   @override
   Widget build(BuildContext context) {
@@ -45,30 +48,28 @@ class PointsBalanceWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              isuncategorized
-                  ? Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius:
-                            BorderRadius.circular(AppConst.radiusSmall),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: AppConst.paddingSmall,
-                            vertical: AppConst.paddingExtraSmall),
-                        child: Row(
-                          children: [
-                            Image.asset(AppAssets.earned, width: 20),
-                            Text(
-                              localeLang().uncategorized,
-                              style: context.textTheme.titleSmall
-                                  ?.copyWith(color: context.theme.primaryColor),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  : const SizedBox(),
+              if (isUncategorized)
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(AppConst.radiusSmall),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: AppConst.paddingSmall,
+                        vertical: AppConst.paddingExtraSmall),
+                    child: Row(
+                      children: [
+                        Image.asset(AppAssets.earned, width: 20),
+                        Text(
+                          localeLang().uncategorized,
+                          style: context.textTheme.titleSmall
+                              ?.copyWith(color: context.theme.primaryColor),
+                        )
+                      ],
+                    ),
+                  ),
+                )
             ],
           ),
           Row(
@@ -87,19 +88,27 @@ class PointsBalanceWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 80,
                 height: 25,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppConst.paddingDefault,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(AppConst.radiusExtraBig),
                 ),
-                child: Center(
-                  child: Text(
-                    pound.withSeparator + localeLang(context).egyptianPound,
-                    style: context.textTheme.titleSmall?.copyWith(
-                      color: Colors.white,
-                    ),
-                  ),
+                child: GetBuilder<ConfigController>(
+                  id: AppString.updateBalance,
+                  builder: (controller) {
+                    final ConfigModel? config = AppInfo.config;
+                    return Center(
+                      child: Text(
+                        '${CalcHelper.calcBalance(pointPerPound: config?.repOnePoundEquity, points: pointsBalance).withSeparator} ${config?.currency ?? ''}',
+                        style: context.textTheme.titleSmall?.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
             ],

@@ -19,7 +19,7 @@ class RedeemSucessScreen extends StatelessWidget {
         appBar: const MyAppBar(),
         body: ListView(
           children: [
-              const PointsBalanceWidget(pointsBalance: 5000, pound: 5000, description: 'bnnb', isuncategorized: false,),
+              const PointsBalanceWidget(pointsBalance: 5000, description: 'bnnb', isUncategorized: false,),
             ContainerForReplacement(
               text: localeLang(context).cashbackOnPoints('100', '100'),
             ),

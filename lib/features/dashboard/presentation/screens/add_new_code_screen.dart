@@ -24,9 +24,8 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
         children: [
           const PointsBalanceWidget(
             pointsBalance: 5000,
-            pound: 5000,
             description: 'bnnb',
-            isuncategorized: true,
+            isUncategorized: true,
           ),
           const SizedBox(height: 100),
           Padding(

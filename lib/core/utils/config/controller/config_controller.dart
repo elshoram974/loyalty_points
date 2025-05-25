@@ -87,6 +87,7 @@ class ConfigControllerImp extends ConfigController {
     final List<String> ids = [
       AppString.updateHomeBanners,
       AppString.updateHomeSocial,
+      AppString.updateBalance,
     ];
 
     _isLoadingConfig = true;

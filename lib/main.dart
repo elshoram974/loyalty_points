@@ -34,9 +34,7 @@ void main() async {
   runApp(
     DevicePreview(
       enabled: AppInfo.isDebugMode,
-      builder: (context) {
-        return const MyApp();
-      },
+      builder: (context) => const MyApp(),
     ),
   );
 }
