@@ -19,7 +19,7 @@ class LoginFields extends StatelessWidget {
             key: controller.formKey,
             child: Column(
               children: [
-                AuthField(
+                AuthField( 
                   readOnly: controller.isLoading,
                   isPhoneNumber: true,
                   onPhoneInputChanged: (v) => controller.phone = v,

@@ -7,7 +7,6 @@ import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/constants/app_strings.dart';
-import '../../../../core/utils/types/social_media_type.dart';
 import '../widgets/home_widgets/abusing_code.dart';
 import '../widgets/home_widgets/social_media_widget.dart';
 
@@ -30,7 +29,7 @@ class HomeScreen extends StatelessWidget {
             );
           },
         ),
-        SocialMediaWidget(items: SocialMediaType.allTypes),
+        const SocialMediaWidget(),
         const PointsBalanceWidget(pointsBalance: 5000, pound: 5000, description: 'bnnb', isuncategorized: false,),
         const AbusingCode()
       ],

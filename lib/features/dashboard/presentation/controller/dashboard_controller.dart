@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../app_info.dart';
 import '../../../../core/status/status.dart';
+import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_strings.dart';
@@ -72,6 +73,7 @@ class DashboardControllerImp extends DashboardController {
       [
         updateFCMToken(),
         getUserData(),
+        Get.find<ConfigController>().getConfigData(),
       ],
     );
   }

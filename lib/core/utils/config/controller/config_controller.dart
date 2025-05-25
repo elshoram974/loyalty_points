@@ -36,7 +36,7 @@ class ConfigControllerImp extends ConfigController {
           .dark, //Get.isDarkMode ? Brightness.light : Brightness.dark,
     ));
 
-    getConfigData();
+    // getConfigData();
   }
 
   late Locale _locale = prefs.containsKey(AppString.kLocaleCode)
@@ -79,13 +79,15 @@ class ConfigControllerImp extends ConfigController {
   @override
   void toggleLanguage() => changeLocale(alternateLocale.toLocale);
 
-
   bool _isLoadingConfig = false;
   @override
   bool get isLoadingConfig => _isLoadingConfig;
   @override
   Future<void> getConfigData() async {
-    final List<String> ids = [AppString.updateHomeBanners];
+    final List<String> ids = [
+      AppString.updateHomeBanners,
+      AppString.updateHomeSocial,
+    ];
 
     _isLoadingConfig = true;
     update(ids);

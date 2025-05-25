@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
+import '../types/social_media_type.dart';
+
 class ConfigModel extends Equatable {
   final dynamic pointsValue;
   final String? currency;
@@ -12,8 +14,19 @@ class ConfigModel extends Equatable {
   final int? repMinimumPointsToRedeem;
   final int? sellerOnePoundEquity;
   final int? repOnePoundEquity;
+  final List social;
 
   List<String> get homeBanners => [banner1, banner2].nonNulls.toList();
+  List<SocialMediaType> get socialMedia {
+    final List<SocialMediaType> socialMedia = [];
+
+    for (Map e in social) {
+      if(e.entries.isEmpty) continue;
+      final SocialMediaType? type = SocialMediaType.fromType(e.keys.first, e.values.first);
+      if(type != null) socialMedia.add(type);
+    }
+    return socialMedia;
+  }
 
   const ConfigModel({
     this.pointsValue,
@@ -25,32 +38,40 @@ class ConfigModel extends Equatable {
     this.repMinimumPointsToRedeem,
     this.sellerOnePoundEquity,
     this.repOnePoundEquity,
+    this.social = const [],
   });
 
-  factory ConfigModel.fromMap(Map<String, dynamic> data) => ConfigModel(
-        pointsValue: data['points_value'] as dynamic,
-        currency: data['currency']?['code'] as String?,
-        loyaltyEnabled: data['loyalty_enabled'] as dynamic,
-        banner2: data['banner2'] as String?,
-        banner1: data['banner1'] as String?,
-        sellerMinimumPointsToRedeem:
-            data['seller_minimum_points_to_redeem'] as int?,
-        repMinimumPointsToRedeem: data['rep_minimum_points_to_redeem'] as int?,
-        sellerOnePoundEquity: data['seller_one_pound_equity'] as int?,
-        repOnePoundEquity: data['rep_one_pound_equity'] as int?,
-      );
+  factory ConfigModel.fromMap(Map<String, dynamic> data) {
 
-  Map<String, dynamic> toMap() => {
-        'points_value': pointsValue,
-        'currency': currency,
-        'loyalty_enabled': loyaltyEnabled,
-        'banner2': banner2,
-        'banner1': banner1,
-        'seller_minimum_points_to_redeem': sellerMinimumPointsToRedeem,
-        'rep_minimum_points_to_redeem': repMinimumPointsToRedeem,
-        'seller_one_pound_equity': sellerOnePoundEquity,
-        'rep_one_pound_equity': repOnePoundEquity,
-      };
+    return ConfigModel(
+      social: (data['social'] as List? ?? []),
+      pointsValue: data['points_value'] as dynamic,
+      currency: data['currency']?['code'] as String?,
+      loyaltyEnabled: data['loyalty_enabled'] as dynamic,
+      banner2: data['banner2'] as String?,
+      banner1: data['banner1'] as String?,
+      sellerMinimumPointsToRedeem:
+          data['seller_minimum_points_to_redeem'] as int?,
+      repMinimumPointsToRedeem: data['rep_minimum_points_to_redeem'] as int?,
+      sellerOnePoundEquity: data['seller_one_pound_equity'] as int?,
+      repOnePoundEquity: data['rep_one_pound_equity'] as int?,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'social': social,
+      'points_value': pointsValue,
+      'currency': currency,
+      'loyalty_enabled': loyaltyEnabled,
+      'banner2': banner2,
+      'banner1': banner1,
+      'seller_minimum_points_to_redeem': sellerMinimumPointsToRedeem,
+      'rep_minimum_points_to_redeem': repMinimumPointsToRedeem,
+      'seller_one_pound_equity': sellerOnePoundEquity,
+      'rep_one_pound_equity': repOnePoundEquity,
+    };
+  }
 
   /// `dart:convert`
   ///

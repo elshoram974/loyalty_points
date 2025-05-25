@@ -27,4 +27,5 @@ abstract final class AppString {
 
   static const String updateHomeUser = '$_update home user';
   static const String updateHomeBanners = '$_update home banners';
+  static const String updateHomeSocial = '$_update home social';
 }
