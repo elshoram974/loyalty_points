@@ -6,6 +6,7 @@ import '../../../../core/shared/custom_carousel_slider.dart';
 import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/config/controller/config_controller.dart';
+import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../widgets/home_widgets/abusing_code.dart';
 import '../widgets/home_widgets/social_media_widget.dart';
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           },
         ),
         const SocialMediaWidget(),
-        const PointsBalanceWidget(description: 'bnnb', isUncategorized: false),
+        PointsBalanceWidget(description: localeLang(context).transferablePointsBalance),
         const AbusingCode()
       ],
     );

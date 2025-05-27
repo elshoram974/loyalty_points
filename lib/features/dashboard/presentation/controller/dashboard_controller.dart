@@ -91,9 +91,13 @@ class DashboardControllerImp extends DashboardController {
 
   @override
   Future<void> getUserData() async {
+    final List<String> ids = [
+      AppString.updateHomeUser,
+      AppString.updateBalance,
+    ];
     Status<UserModel?>? realStatus;
     _isLoadingUserData = true;
-    update([AppString.updateHomeUser]);
+    update(ids);
 
     repo.getUserData().listen(
       (status) {
@@ -101,7 +105,7 @@ class DashboardControllerImp extends DashboardController {
           realStatus ??= status;
           _user = status.data;
           _isLoadingUserData = false;
-          update([AppString.updateHomeUser]);
+          update(ids);
         } else {
           realStatus = status;
         }
