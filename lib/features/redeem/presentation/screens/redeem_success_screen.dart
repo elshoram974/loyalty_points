@@ -19,14 +19,18 @@ class RedeemSucessScreen extends StatelessWidget {
         appBar: const MyAppBar(),
         body: ListView(
           children: [
-              const PointsBalanceWidget(pointsBalance: 5000, description: 'bnnb', isUncategorized: false,),
+            const PointsBalanceWidget(
+              description: 'bnnb',
+              isUncategorized: false,
+            ),
             ContainerForReplacement(
               text: localeLang(context).cashbackOnPoints('100', '100'),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
-                  vertical: AppConst.paddingBig,
-                  horizontal: AppConst.paddingExtraBig),
+                vertical: AppConst.paddingBig,
+                horizontal: AppConst.paddingExtraBig,
+              ),
               child: Text(
                 localeLang().yourOrderConfirmed,
                 style: context.textTheme.headlineLarge
@@ -35,7 +39,8 @@ class RedeemSucessScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
-                  horizontal: AppConst.paddingExtraBig),
+                horizontal: AppConst.paddingExtraBig,
+              ),
               child: CustomFilledButton(
                 onPressed: () => Get.toNamed(AppRoute.home),
                 filledColor: context.theme.primaryColor,
@@ -43,9 +48,7 @@ class RedeemSucessScreen extends StatelessWidget {
                 text: localeLang(context).home,
                 style: context.textTheme.headlineSmall,
               ),
-              
             ),
-          
           ],
         ));
   }

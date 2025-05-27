@@ -23,7 +23,6 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
       body: ListView(
         children: [
           const PointsBalanceWidget(
-            pointsBalance: 5000,
             description: 'bnnb',
             isUncategorized: true,
           ),

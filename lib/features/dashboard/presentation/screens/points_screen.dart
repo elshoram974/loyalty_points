@@ -9,8 +9,8 @@ import '../../domain/entity/points_entity.dart';
 import '../widgets/our_partners_container_widget.dart';
 import '../widgets/points_widgets/points_widget.dart';
 
-class PointssScreen extends StatelessWidget {
-  const PointssScreen({super.key});
+class PointsScreen extends StatelessWidget {
+  const PointsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,12 @@ class PointssScreen extends StatelessWidget {
         body: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
-              const SliverToBoxAdapter(child: PointsBalanceWidget(pointsBalance: 5000, description: 'bnnb', isUncategorized: false,),),
+              const SliverToBoxAdapter(
+                child: PointsBalanceWidget(
+                  description: 'bnnb',
+                  isUncategorized: false,
+                ),
+              ),
               const SliverToBoxAdapter(child: OurPartnersWidget()),
               MySliverPinnedTaps(
                 tabs: [
@@ -40,7 +45,7 @@ class PointssScreen extends StatelessWidget {
                 addRepaintBoundaries: false,
                 itemCount: _points.length,
                 itemBuilder: (context, index) {
-                  return PointssWidget(points: _points[index]);
+                  return PointsWidget(points: _points[index]);
                 },
                 separatorBuilder: (context, index) {
                   return Padding(
@@ -52,13 +57,13 @@ class PointssScreen extends StatelessWidget {
               ),
               ListView.separated(
                 addRepaintBoundaries: false,
-                itemCount: _coupons .length,
-                itemBuilder: (context, index) {
-                  return PointssWidget(points: _coupons [index]);
-                },
-                separatorBuilder: (context, index) {
+                itemCount: _coupons.length,
+                itemBuilder: (_, i) => PointsWidget(points: _coupons[i]),
+                separatorBuilder: (_, __) {
                   return Padding(
-                    padding: const EdgeInsets.all(AppConst.paddingDefault).copyWith(bottom: 0),
+                    padding: const EdgeInsets.all(
+                      AppConst.paddingDefault,
+                    ).copyWith(bottom: 0),
                     child: const Divider(thickness: 0.5),
                   );
                 },

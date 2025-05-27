@@ -21,17 +21,21 @@ class RedeemFinalScreen extends StatelessWidget {
         appBar: const MyAppBar(),
         body: ListView(
           children: [
-              const PointsBalanceWidget(pointsBalance: 5000, description: 'bnnb', isUncategorized: false,),
+            const PointsBalanceWidget(
+              description: 'bnnb',
+              isUncategorized: false,
+            ),
             ContainerForReplacement(
-                text: localeLang(context).cashbackOnPoints('100', '100')),
-            const PaymentMethodscontainer(),
+              text: localeLang(context).cashbackOnPoints('100', '100'),
+            ),
+            const PaymentMethodsContainer(),
             const SizedBox(height: AppConst.paddingDefault),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: AppConst.paddingDefault,
               ),
               child: AuthField(
-                label: localeLang(context).instaBayNumber,
+                label: localeLang(context).instaPayNumber,
                 labelStyle: context.textTheme.headlineSmall,
               ),
             ),

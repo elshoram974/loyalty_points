@@ -101,20 +101,20 @@ class S {
   }
 
   /// `Transfer to InstaPay`
-  String get transferToInstaBay {
+  String get transferToInstaPay {
     return Intl.message(
       'Transfer to InstaPay',
-      name: 'transferToInstaBay',
+      name: 'transferToInstaPay',
       desc: '',
       args: [],
     );
   }
 
-  /// `InstaBay Number`
-  String get instaBayNumber {
+  /// `InstaPay Number`
+  String get instaPayNumber {
     return Intl.message(
-      'InstaBay Number',
-      name: 'instaBayNumber',
+      'InstaPay Number',
+      name: 'instaPayNumber',
       desc: '',
       args: [],
     );
@@ -135,13 +135,16 @@ class S {
     );
   }
 
-  /// `To redeem your points in Petrojak, you must have {point} points or more`
-  String toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore(String point) {
+  /// `To redeem your points in {appName}, you must have {point} points or more`
+  String toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore(
+    String appName,
+    String point,
+  ) {
     return Intl.message(
-      'To redeem your points in Petrojak, you must have $point points or more',
-      name: 'toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore',
+      'To redeem your points in $appName, you must have $point points or more',
+      name: 'toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore',
       desc: '',
-      args: [point],
+      args: [appName, point],
     );
   }
 

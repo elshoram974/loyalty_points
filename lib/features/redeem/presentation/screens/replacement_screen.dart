@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 import 'package:loyalty_points/core/utils/constants/app_constants.dart';
 
+import '../../../../app_info.dart';
 import '../../../../core/shared/filled_button.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 
@@ -17,8 +18,14 @@ class ReplacemrntScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-              const PointsBalanceWidget(pointsBalance: 5000, description: 'bnnb', isUncategorized: false,),
-         ContainerForReplacement(text: localeLang(context).toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore('5000'),),
+        const PointsBalanceWidget(description: 'bnnb', isUncategorized: false),
+        ContainerForReplacement(
+          text: localeLang(context)
+              .toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore(
+            '5000',
+            AppInfo.appName,
+          ),
+        ),
         Padding(
           padding:
               const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
@@ -35,14 +42,13 @@ class ReplacemrntScreen extends StatelessWidget {
         ),
         Center(
           child: CustomFilledButton(
-           minimumSize: const Size(375, 50),
+            minimumSize: const Size(375, 50),
             borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-            onPressed:()=> Get.toNamed(AppRoute.finalredeemScreen),
+            onPressed: () => Get.toNamed(AppRoute.finalredeemScreen),
             text: localeLang(context).confirm,
             style: context.textTheme.headlineMedium,
           ),
         ),
-        
       ],
     );
   }

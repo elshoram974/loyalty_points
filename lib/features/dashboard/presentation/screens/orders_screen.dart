@@ -19,7 +19,12 @@ class OrdersScreen extends StatelessWidget {
         length: 1,
         child: CustomScrollView(
           slivers: [
-              const SliverToBoxAdapter(child: PointsBalanceWidget(pointsBalance: 5000,description: 'bnnb', isUncategorized: false,),),
+            const SliverToBoxAdapter(
+              child: PointsBalanceWidget(
+                description: 'bnnb',
+                isUncategorized: false,
+              ),
+            ),
             const SliverToBoxAdapter(child: OurPartnersWidget()),
             MySliverPinnedTaps(tabs: [Tab(text: localeLang(context).orders)]),
             // SliverToBoxAdapter(

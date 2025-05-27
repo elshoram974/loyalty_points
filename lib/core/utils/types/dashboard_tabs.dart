@@ -97,7 +97,7 @@ class PointsTabItem extends DashboardTabItem {
   String get label => localeLang().points;
 
   @override
-  Widget get screen => const PointssScreen();
+  Widget get screen => const PointsScreen();
 }
 
 class MenuTabItem extends DashboardTabItem {

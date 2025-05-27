@@ -4,8 +4,8 @@ import 'package:loyalty_points/features/dashboard/presentation/widgets/date_cont
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../domain/entity/points_entity.dart';
 
-class PointssWidget extends StatelessWidget {
-  const PointssWidget({super.key, required this.points});
+class PointsWidget extends StatelessWidget {
+  const PointsWidget({super.key, required this.points});
   final PointsEntity points;
   @override
   Widget build(BuildContext context) {

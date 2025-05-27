@@ -14,8 +14,8 @@
         }
     },
     "wallets": "E-wallets",
-    "transferToInstaBay": "Transfer to InstaPay",
-    "instaBayNumber": "InstaBay Number",
+    "transferToInstaPay": "Transfer to InstaPay",
+    "instaPayNumber": "InstaPay Number",
     "redeemWays": "Redeem ways:",
     "cashbackOnPoints": "Cashback of {pound} EGP on {point} points!",
     "@cashbackOnPoints": {
@@ -28,9 +28,12 @@
             }
         }
     },
-    "toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": "To redeem your points in Petrojak, you must have {point} points or more",
-    "@toRedeemYourPointsinPetrojakYouMustHave5000PointsOrMore": {
+    "toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore": "To redeem your points in {appName}, you must have {point} points or more",
+    "@toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore": {
         "placeholders": {
+            "appName": {
+                "type": "String"
+            },
             "point": {
                 "type": "String"
             }

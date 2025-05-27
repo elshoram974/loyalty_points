@@ -6,17 +6,15 @@ import '../../../../../core/utils/constants/app_assets.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../../../core/utils/types/payment_methods.dart';
 
-class PaymentMethodscontainer extends StatefulWidget {
-  const PaymentMethodscontainer({
-    super.key,
-  });
+class PaymentMethodsContainer extends StatefulWidget {
+  const PaymentMethodsContainer({super.key});
 
   @override
-  State<PaymentMethodscontainer> createState() =>
-      _PaymentMethodscontainerState();
+  State<PaymentMethodsContainer> createState() =>
+      _PaymentMethodsContainerState();
 }
 
-class _PaymentMethodscontainerState extends State<PaymentMethodscontainer> {
+class _PaymentMethodsContainerState extends State<PaymentMethodsContainer> {
   int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
@@ -28,9 +26,7 @@ class _PaymentMethodscontainerState extends State<PaymentMethodscontainer> {
               horizontal: AppConst.paddingBig, vertical: AppConst.paddingSmall),
           child: Text(
             localeLang(context).redeemWays,
-            style: context.textTheme.titleLarge?.copyWith(
-              
-            ),
+            style: context.textTheme.titleLarge?.copyWith(),
           ),
         ),
         Container(
@@ -87,8 +83,8 @@ class _PaymentMethodscontainerState extends State<PaymentMethodscontainer> {
 
 List<PaymentMethod> get options => [
       InstabayPayment(
-        image: AppAssets.instaBay,
-        title: localeLang().transferToInstaBay,
+        image: AppAssets.instaPay,
+        title: localeLang().transferToInstaPay,
       ),
       WalletsPayment(
         image: AppAssets.wallet,

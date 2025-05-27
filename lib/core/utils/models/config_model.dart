@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
+import '../types/account_type.dart';
 import '../types/social_media_type.dart';
 
 class ConfigModel extends Equatable {
@@ -10,20 +11,49 @@ class ConfigModel extends Equatable {
   final dynamic loyaltyEnabled;
   final String? banner2;
   final String? banner1;
-  final int? sellerMinimumPointsToRedeem;
-  final int? repMinimumPointsToRedeem;
-  final int? sellerOnePoundEquity;
-  final int? repOnePoundEquity;
-  final List social;
+
+  final int? _sellerMinimumPointsToRedeem;
+  final int? _repMinimumPointsToRedeem;
+  final int? _sellerOnePoundEquity;
+  final int? _repOnePoundEquity;
+  final List _social;
+
+  int? onePoundEquity(AccountType type) {
+    return _handleAccountTypeValues<int>(
+      type,
+      store: _sellerOnePoundEquity,
+      rep: _repOnePoundEquity,
+    );
+  }
+
+  int? oneMinimumPointsToRedeem(AccountType type) {
+    return _handleAccountTypeValues<int>(
+      type,
+      store: _sellerMinimumPointsToRedeem,
+      rep: _repMinimumPointsToRedeem,
+    );
+  }
+
+  T? _handleAccountTypeValues<T>(AccountType type, {T? store, T? rep}) {
+    if (type is StoreAccount) {
+      return store;
+    } else if (type is DeliveryManAccount) {
+      return rep;
+    }
+    return null;
+  }
 
   List<String> get homeBanners => [banner1, banner2].nonNulls.toList();
   List<SocialMediaType> get socialMedia {
     final List<SocialMediaType> socialMedia = [];
 
-    for (Map e in social) {
-      if(e.entries.isEmpty) continue;
-      final SocialMediaType? type = SocialMediaType.fromType(e.keys.first, e.values.first);
-      if(type != null) socialMedia.add(type);
+    for (Map e in _social) {
+      if (e.entries.isEmpty) continue;
+
+      final SocialMediaType? type =
+          SocialMediaType.fromType(e.keys.first, e.values.first);
+
+      if (type != null) socialMedia.add(type);
     }
     return socialMedia;
   }
@@ -34,15 +64,18 @@ class ConfigModel extends Equatable {
     this.loyaltyEnabled,
     this.banner2,
     this.banner1,
-    this.sellerMinimumPointsToRedeem,
-    this.repMinimumPointsToRedeem,
-    this.sellerOnePoundEquity,
-    this.repOnePoundEquity,
-    this.social = const [],
-  });
+    int? sellerMinimumPointsToRedeem,
+    int? repMinimumPointsToRedeem,
+    int? sellerOnePoundEquity,
+    int? repOnePoundEquity,
+    List<dynamic> social = const [],
+  })  : _repOnePoundEquity = repOnePoundEquity,
+        _sellerOnePoundEquity = sellerOnePoundEquity,
+        _repMinimumPointsToRedeem = repMinimumPointsToRedeem,
+        _sellerMinimumPointsToRedeem = sellerMinimumPointsToRedeem,
+        _social = social;
 
   factory ConfigModel.fromMap(Map<String, dynamic> data) {
-
     return ConfigModel(
       social: (data['social'] as List? ?? []),
       pointsValue: data['points_value'] as dynamic,
@@ -60,16 +93,16 @@ class ConfigModel extends Equatable {
 
   Map<String, dynamic> toMap() {
     return {
-      'social': social,
+      'social': _social,
       'points_value': pointsValue,
       'currency': currency,
       'loyalty_enabled': loyaltyEnabled,
       'banner2': banner2,
       'banner1': banner1,
-      'seller_minimum_points_to_redeem': sellerMinimumPointsToRedeem,
-      'rep_minimum_points_to_redeem': repMinimumPointsToRedeem,
-      'seller_one_pound_equity': sellerOnePoundEquity,
-      'rep_one_pound_equity': repOnePoundEquity,
+      'seller_minimum_points_to_redeem': _sellerMinimumPointsToRedeem,
+      'rep_minimum_points_to_redeem': _repMinimumPointsToRedeem,
+      'seller_one_pound_equity': _sellerOnePoundEquity,
+      'rep_one_pound_equity': _repOnePoundEquity,
     };
   }
 
@@ -103,11 +136,11 @@ class ConfigModel extends Equatable {
       banner2: banner2 ?? this.banner2,
       banner1: banner1 ?? this.banner1,
       sellerMinimumPointsToRedeem:
-          sellerMinimumPointsToRedeem ?? this.sellerMinimumPointsToRedeem,
+          sellerMinimumPointsToRedeem ?? _sellerMinimumPointsToRedeem,
       repMinimumPointsToRedeem:
-          repMinimumPointsToRedeem ?? this.repMinimumPointsToRedeem,
-      sellerOnePoundEquity: sellerOnePoundEquity ?? this.sellerOnePoundEquity,
-      repOnePoundEquity: repOnePoundEquity ?? this.repOnePoundEquity,
+          repMinimumPointsToRedeem ?? _repMinimumPointsToRedeem,
+      sellerOnePoundEquity: sellerOnePoundEquity ?? _sellerOnePoundEquity,
+      repOnePoundEquity: repOnePoundEquity ?? _repOnePoundEquity,
     );
   }
 
@@ -122,10 +155,10 @@ class ConfigModel extends Equatable {
       loyaltyEnabled,
       banner2,
       banner1,
-      sellerMinimumPointsToRedeem,
-      repMinimumPointsToRedeem,
-      sellerOnePoundEquity,
-      repOnePoundEquity,
+      _sellerMinimumPointsToRedeem,
+      _repMinimumPointsToRedeem,
+      _sellerOnePoundEquity,
+      _repOnePoundEquity,
     ];
   }
 }
