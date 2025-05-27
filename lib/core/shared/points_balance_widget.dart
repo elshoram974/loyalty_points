@@ -108,6 +108,7 @@ class _BalancePointsWidget extends StatelessWidget {
           final UserModel user = dashboardController.user ?? UserModel.empty();
           return CustomLoadingWidget(
             isLoading: dashboardController.isLoadingUserData,
+            ignoreContainers: true,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
