@@ -135,16 +135,16 @@ class S {
     );
   }
 
-  /// `To redeem your points in {appName}, you must have {point} points or more`
-  String toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore(
+  /// `To redeem your points in {appName}, you must have {minPoint} points or more`
+  String toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore(
     String appName,
-    String point,
+    String minPoint,
   ) {
     return Intl.message(
-      'To redeem your points in $appName, you must have $point points or more',
-      name: 'toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore',
+      'To redeem your points in $appName, you must have $minPoint points or more',
+      name: 'toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore',
       desc: '',
-      args: [appName, point],
+      args: [appName, minPoint],
     );
   }
 
@@ -159,10 +159,10 @@ class S {
   }
 
   /// `Avaliable Points:`
-  String get avaliablePoints {
+  String get availablePoints {
     return Intl.message(
       'Avaliable Points:',
-      name: 'avaliablePoints',
+      name: 'availablePoints',
       desc: '',
       args: [],
     );

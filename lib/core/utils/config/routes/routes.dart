@@ -8,7 +8,7 @@ import '../../../../features/dashboard/presentation/screens/dashboard_screen.dar
 import '../../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../../../features/auth/presentation/screens/login_screen.dart';
 import '../../../../features/auth/presentation/screens/sign_up_screen.dart';
-import '../../../../features/redeem/presentation/screens/redeem_final_screen.dart';
+import '../../../../features/redeem/presentation/screens/checkout_screen.dart';
 import '../../../../features/redeem/presentation/screens/redeem_success_screen.dart';
 import '../../bindings/add_new_code_bindings.dart';
 import '../../bindings/home_bindings.dart';
@@ -23,11 +23,11 @@ abstract final class AppRoute {
   static const String signUp = "/sign-up";
   static const String home = "/home";
   static const String waiting = "/waiting";
-  static const String newBarcode = "/newBarcode";
-  static const String barCodeScanner = "/barCodeScanner";
-  static const String codeAddedScreen = "/codeAddedScreen";
-  static const String finalredeemScreen = "/finalredeemScreen";
-  static const String successredeemScreen = "/successredeemScreen";
+  static const String newBarcode = "/new-barcode";
+  static const String barCodeScanner = "/barcode-scanner";
+  static const String codeAddedScreen = "/code-added";
+  static const String checkoutScreen = "/checkout";
+  static const String successRedeemScreen = "/success-redeem";
 
   static List<GetPage> get pages => [
         GetPage(
@@ -64,12 +64,12 @@ abstract final class AppRoute {
           page: () => const CodeAddedScreen(),
         ),
         GetPage(
-          name: finalredeemScreen,
-          page: () => const RedeemFinalScreen(),
+          name: checkoutScreen,
+          page: () => const CheckoutScreen(),
         ),
         GetPage(
-          name: successredeemScreen,
-          page: () => const RedeemSucessScreen(),
+          name: successRedeemScreen,
+          page: () => const RedeemSuccessScreen(),
         ),
       ];
 }

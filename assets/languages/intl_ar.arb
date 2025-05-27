@@ -28,13 +28,13 @@
       }
     }
   },
-  "toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore": "لاستبدال نقاطك في {appName} يجب أن يكون لديك {point} نقطه فأكثر ",
-  "@toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore": {
+  "toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": "لاستبدال نقاطك في {appName} يجب أن يكون لديك {minPoint} نقطه فأكثر ",
+  "@toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": {
     "placeholders": {
       "appName": {
         "type": "String"
       },
-      "point": {
+      "minPoint": {
         "type": "String"
       }
     }
@@ -50,7 +50,7 @@
       }
     }
   },
-  "avaliablePoints": "النقاط المتاحة:",
+  "availablePoints": "النقاط المتاحة:",
   "earned": "مكتسبة",
   "replaced": "مستبدله",
   "canceled": "ملغية",

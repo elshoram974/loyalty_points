@@ -35,7 +35,7 @@ class PaymentsMethodCancelAndConfirmButtons extends StatelessWidget {
           const SizedBox(width: AppConst.paddingDefault),
           Expanded(
             child: CustomFilledButton(
-                  onPressed:()=>Get.toNamed(AppRoute.successredeemScreen),
+                  onPressed:()=>Get.toNamed(AppRoute.successRedeemScreen),
                   filledColor: context.theme.primaryColor,
                   borderRadius: radius,
                   text: localeLang(context).confirm,

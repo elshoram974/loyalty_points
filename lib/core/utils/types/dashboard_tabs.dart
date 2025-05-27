@@ -78,7 +78,7 @@ class RedeemPointsTabItem extends DashboardTabItem {
   String get label => localeLang().redeemPoints;
 
   @override
-  Widget get screen => const ReplacemrntScreen();
+  Widget get screen => const ReplacementScreen();
 
   @override
   bool get isHidden => true;

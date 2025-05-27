@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loyalty_points/features/redeem/presentation/widgets/avaliable_points/avaliable_points_container.dart';
+import 'package:loyalty_points/features/redeem/presentation/widgets/available_points/avaliable_points_container.dart';
 
 import '../../../domain/entities/avaliable_points_entity.dart';
 
@@ -17,7 +17,7 @@ class _ListOfPointsAndPoundsState extends State<ListOfPointsAndPounds> {
     return ListView.separated(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: _avaliablePoints.length,
+      itemCount: _availablePoints.length,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
@@ -27,7 +27,7 @@ class _ListOfPointsAndPoundsState extends State<ListOfPointsAndPounds> {
           },
           child: AvaliablePointsContainer(
             isSelected: selectedIndex == index,
-            avaliablepoints: _avaliablePoints[index],
+            avaliablepoints: _availablePoints[index],
           ),
         );
       },
@@ -36,7 +36,7 @@ class _ListOfPointsAndPoundsState extends State<ListOfPointsAndPounds> {
   }
 }
 
-List<AvaliablePointsEntity> get _avaliablePoints => [
+List<AvaliablePointsEntity> get _availablePoints => [
       AvaliablePointsEntity(
         points: 540,
         pounds: 100000,

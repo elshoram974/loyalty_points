@@ -8,6 +8,7 @@ enum AccountStatusEnum { pending, active, cancelled }
 class UserModel extends Equatable {
   final int id;
   final int providerId;
+  final int pointsBalance;
   final String name;
   final String email;
   final String phone;
@@ -24,6 +25,7 @@ class UserModel extends Equatable {
   const UserModel({
     required this.id,
     required this.providerId,
+    required this.pointsBalance,
     required this.name,
     required this.email,
     required this.phone,
@@ -44,6 +46,8 @@ class UserModel extends Equatable {
             ? null
             : ImageFullUrl.fromMap(json['image_full_url']),
         providerId: int.parse("${json['provider_id'] ?? -1}"),
+        // pointsBalance: 50000,
+        pointsBalance: int.parse("${json['points_balance'] ?? -1}"),
         phone: json['phone'] as String,
         type: AccountType.fromMap(json['type'] as String),
         status: AccountStatusEnum.values[int.parse("${json['status'] ?? 0}")],
@@ -60,6 +64,7 @@ class UserModel extends Equatable {
         'email': email,
         'image_full_url': image?.toMap(),
         'provider_id': providerId,
+        'points_balance': pointsBalance,
         'phone': phone,
         'type': type.type,
         'status': status.index,
@@ -73,6 +78,7 @@ class UserModel extends Equatable {
     return UserModel(
       id: -1,
       providerId: -1,
+      pointsBalance: -1,
       name: 'name',
       email: 'email',
       phone: 'phone',
@@ -89,6 +95,7 @@ class UserModel extends Equatable {
   UserModel copyWith({
     int? id,
     int? providerId,
+    int? pointsBalance,
     String? name,
     String? email,
     String? phone,
@@ -103,6 +110,7 @@ class UserModel extends Equatable {
     return UserModel(
       id: id ?? this.id,
       providerId: providerId ?? this.providerId,
+      pointsBalance: pointsBalance ?? this.pointsBalance,
       name: name ?? this.name,
       email: email ?? this.email,
       phone: phone ?? this.phone,
@@ -121,6 +129,7 @@ class UserModel extends Equatable {
     return [
       id,
       providerId,
+      pointsBalance,
       name,
       email,
       phone,

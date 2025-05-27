@@ -6,25 +6,20 @@ import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../auth/presentation/widgets/auth_field.dart';
 import '../../../dashboard/presentation/widgets/my_app_bar.dart';
-import '../widgets/avaliable_points/instructions_replacement_container.dart';
+import '../widgets/available_points/instructions_replacement_container.dart';
 import '../widgets/redeem_points_final/cancel_confirm_buttons.dart';
 import '../widgets/redeem_points_final/confirm_replacement_colum.dart';
 import '../widgets/redeem_points_final/payment_methods_container.dart';
 
-class RedeemFinalScreen extends StatelessWidget {
-  const RedeemFinalScreen({
-    super.key,
-  });
+class CheckoutScreen extends StatelessWidget {
+  const CheckoutScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
         appBar: const MyAppBar(),
         body: ListView(
           children: [
-            const PointsBalanceWidget(
-              description: 'bnnb',
-              isUncategorized: false,
-            ),
+            const PointsBalanceWidget(description: 'bnnb'),
             ContainerForReplacement(
               text: localeLang(context).cashbackOnPoints('100', '100'),
             ),

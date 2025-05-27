@@ -113,9 +113,10 @@ class _BalancePointsWidget extends StatelessWidget {
               children: [
                 Flexible(
                   child: Padding(
-                    padding: const EdgeInsets.all(AppConst.paddingSmall).copyWith(bottom: 0),
+                    padding: const EdgeInsets.all(AppConst.paddingSmall)
+                        .copyWith(bottom: 0),
                     child: Text(
-                      5.withSeparator,
+                      user.pointsBalance.withSeparator,
                       style: context.textTheme.headlineLarge?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -142,7 +143,7 @@ class _BalancePointsWidget extends StatelessWidget {
                         isLoading: configController.isLoadingConfig,
                         child: Center(
                           child: Text(
-                            '${CalcHelper.calcBalance(pointPerPound: config?.onePoundEquity(user.type), points: 5).withSeparator} ${config?.currency ?? ''}',
+                            '${CalcHelper.calcBalance(pointPerPound: config?.onePoundEquity(user.type), points: user.pointsBalance).withSeparator} ${config?.currency ?? ''}',
                             style: context.textTheme.titleSmall?.copyWith(
                               color: Colors.white,
                             ),

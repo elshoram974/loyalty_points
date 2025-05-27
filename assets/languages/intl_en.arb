@@ -28,13 +28,13 @@
             }
         }
     },
-    "toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore": "To redeem your points in {appName}, you must have {point} points or more",
-    "@toRedeemYourPointsInAppNameYouMustHave5000PointsOrMore": {
+    "toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": "To redeem your points in {appName}, you must have {minPoint} points or more",
+    "@toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": {
         "placeholders": {
             "appName": {
                 "type": "String"
             },
-            "point": {
+            "minPoint": {
                 "type": "String"
             }
         }
@@ -50,7 +50,7 @@
             }
         }
     },
-    "avaliablePoints": "Avaliable Points:",
+    "availablePoints": "Avaliable Points:",
     "earned": "earned",
     "replaced": "replaced",
     "canceled": "canceled",
