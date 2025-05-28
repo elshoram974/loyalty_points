@@ -8,4 +8,11 @@ abstract final class CalcHelper {
     pointPerPound ??= 1;
     return points / pointPerPound;
   }
+  static int getPointsToConvert({int? points, int? pointPerPound}){
+    if(pointPerPound == 0) return -1;
+
+    points ??= 0;
+    pointPerPound ??= 1;
+    return (points - (points % pointPerPound)).abs();
+  }
 }

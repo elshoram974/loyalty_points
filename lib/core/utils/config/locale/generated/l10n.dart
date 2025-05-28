@@ -70,7 +70,7 @@ class S {
     String points,
     String balance,
     String currency,
-    int remainingPoints,
+    String remainingPoints,
   ) {
     return Intl.message(
       'You will convert $points points into $balance $currency\nRemaining points after the operation: $remainingPoints points',

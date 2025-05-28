@@ -23,7 +23,7 @@
         "type": "String"
       },
       "remainingPoints": {
-        "type": "int"
+        "type": "String"
       }
     }
   },
