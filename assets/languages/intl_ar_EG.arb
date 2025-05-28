@@ -1,4 +1,32 @@
 {
+  "notEnoughPointsToRedeem": "أنت تملك فقط {userPoints} نقطة، وتحتاج إلى {pointsNeeded} نقطة إضافية لاستبدال النقاط.",
+  "@notEnoughPointsToRedeem": {
+    "placeholders": {
+      "userPoints": {
+        "type": "String"
+      },
+      "pointsNeeded": {
+        "type": "String"
+      }
+    }
+  },
+  "pointsConversionConfirmation": "سوف تقوم بتحويل {points} نقطة إلى {balance} {currency}\nالنقاط المتبقية بعد العملية: {remainingPoints} نقطة",
+  "@pointsConversionConfirmation": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      },
+      "balance": {
+        "type": "String"
+      },
+      "currency": {
+        "type": "String"
+      },
+      "remainingPoints": {
+        "type": "int"
+      }
+    }
+  },
   "uncategorized": "غير مصنف",
   "yourOrderConfirmed": "تم تاكيد طلبك بنجاح فضلا انتظر وصول التحويل اليك",
   "attend": "يرجي الانتباه عند ادخال بيانات حسابك بتروجاك لن تتحمل مسؤوليه أي بيانات غير صحيحه وأي حالة لاحقة لعد الدفع",

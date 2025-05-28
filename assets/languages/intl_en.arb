@@ -1,4 +1,32 @@
 {
+    "notEnoughPointsToRedeem": "You only have {userPoints} points. You need {pointsNeeded} more points to redeem.",
+    "@notEnoughPointsToRedeem": {
+        "placeholders": {
+            "userPoints": {
+                "type": "String"
+            },
+            "pointsNeeded": {
+                "type": "String"
+            }
+        }
+    },
+    "pointsConversionConfirmation": "You will convert {points} points into {balance} {currency}\nRemaining points after the operation: {remainingPoints} points",
+    "@pointsConversionConfirmation": {
+        "placeholders": {
+            "points": {
+                "type": "String"
+            },
+            "balance": {
+                "type": "String"
+            },
+            "currency": {
+                "type": "String"
+            },
+            "remainingPoints": {
+                "type": "int"
+            }
+        }
+    },
     "uncategorized": "Uncategorized",
     "yourOrderConfirmed": "Your request has been successfully confirmed. Please wait for the transfer to be completed.",
     "attend": "Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.",

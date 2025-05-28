@@ -55,6 +55,31 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `You only have {userPoints} points. You need {pointsNeeded} more points to redeem.`
+  String notEnoughPointsToRedeem(String userPoints, String pointsNeeded) {
+    return Intl.message(
+      'You only have $userPoints points. You need $pointsNeeded more points to redeem.',
+      name: 'notEnoughPointsToRedeem',
+      desc: '',
+      args: [userPoints, pointsNeeded],
+    );
+  }
+
+  /// `You will convert {points} points into {balance} {currency}\nRemaining points after the operation: {remainingPoints} points`
+  String pointsConversionConfirmation(
+    String points,
+    String balance,
+    String currency,
+    int remainingPoints,
+  ) {
+    return Intl.message(
+      'You will convert $points points into $balance $currency\nRemaining points after the operation: $remainingPoints points',
+      name: 'pointsConversionConfirmation',
+      desc: '',
+      args: [points, balance, currency, remainingPoints],
+    );
+  }
+
   /// `Uncategorized`
   String get uncategorized {
     return Intl.message(
@@ -1172,7 +1197,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'ar', countryCode: 'EG'),
     ];
   }
 
