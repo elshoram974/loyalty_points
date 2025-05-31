@@ -8,6 +8,8 @@ ThemeData get lightTheme => ThemeData(
       cardColor: Colors.grey.shade300,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
+        enableFeedback: false,
+        landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
       ),
       colorScheme: const ColorScheme.light(
         primary: AppColor.primaryLight,
