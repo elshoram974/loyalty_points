@@ -61,7 +61,7 @@ class PaymentMethodsContainer extends StatelessWidget {
                     ),
                     Text(
                       localeLang(context).transferToPaymentName(
-                        PaymentMethod.values[index].title,
+                        PaymentMethod.values[index].name,
                       ),
                     ),
                   ],

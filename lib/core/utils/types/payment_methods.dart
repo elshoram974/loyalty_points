@@ -1,24 +1,16 @@
-abstract class PaymentMethod {
+import '../config/locale/local_lang.dart';
+import '../constants/app_assets.dart';
+
+enum PaymentMethod {
+  instaPay(AppAssets.instaPay),
+  wallet(AppAssets.wallet);
+
   final String image;
-  final String title;
 
-  void pay();
+  const PaymentMethod(this.image);
 
-  const PaymentMethod({required this.image, required this.title});
-}
+  String get toJson => this == instaPay ? 'instapay' : 'vodafone cash';
 
-class InstaPayPayment extends PaymentMethod {
-  const InstaPayPayment({required super.image, required super.title});
-  @override
-  void pay() {
-    print('Paying using Instabay');
-  }
-}
-
-class WalletsPayment extends PaymentMethod {
-  const WalletsPayment({required super.image, required super.title});
-  @override
-  void pay() {
-    print('Paying using Digital Wallet');
-  }
+  String get name =>
+      this == instaPay ? localeLang().instapay : localeLang().wallet;
 }
