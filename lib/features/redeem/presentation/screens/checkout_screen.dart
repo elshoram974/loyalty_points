@@ -66,9 +66,10 @@ class CheckoutScreen extends StatelessWidget {
                 builder: (_, __, helper) {
                   return Text(
                     localeLang(context).replacePointsWithCurrency(
-                        helper.redeemableBalanceString,
-                        helper.convertiblePointsString,
-                        helper.config?.currency ?? ''),
+                      helper.redeemableBalanceString,
+                      helper.convertiblePointsString,
+                      helper.config?.currency ?? '',
+                    ),
                     style: context.textTheme.titleLarge
                         ?.copyWith(fontWeight: FontWeight.bold),
                   );
