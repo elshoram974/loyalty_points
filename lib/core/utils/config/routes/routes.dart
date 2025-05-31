@@ -11,6 +11,7 @@ import '../../../../features/auth/presentation/screens/sign_up_screen.dart';
 import '../../../../features/redeem/presentation/screens/checkout_screen.dart';
 import '../../../../features/redeem/presentation/screens/redeem_success_screen.dart';
 import '../../bindings/add_new_code_bindings.dart';
+import '../../bindings/checkout_bindings.dart';
 import '../../bindings/home_bindings.dart';
 import '../../bindings/login_bindings.dart';
 import '../../bindings/sign_up_bindings.dart';
@@ -66,6 +67,7 @@ abstract final class AppRoute {
         GetPage(
           name: checkoutScreen,
           page: () => const CheckoutScreen(),
+          binding: CheckoutBindings(),
         ),
         GetPage(
           name: successRedeemScreen,
