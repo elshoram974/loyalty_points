@@ -29,13 +29,16 @@
   },
   "unCategorized": "غير مصنف",
   "yourOrderConfirmed": "تم تاكيد طلبك بنجاح فضلا انتظر وصول التحويل اليك",
-  "replacePointsWithPounds": "هل أنت متأكد أنك تريد استبدال {point} من النقاط مقابل {pound} جنيه مصري؟",
-  "@replacePointsWithPounds": {
+  "replacePointsWithCurrency": "هل أنت متأكد أنك تريد استبدال {point} من النقاط مقابل {pound} {currency}؟",
+  "@replacePointsWithCurrency": {
     "placeholders": {
       "pound": {
         "type": "String"
       },
       "point": {
+        "type": "String"
+      },
+      "currency": {
         "type": "String"
       }
     }

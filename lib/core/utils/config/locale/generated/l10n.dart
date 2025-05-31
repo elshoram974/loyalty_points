@@ -100,13 +100,17 @@ class S {
     );
   }
 
-  /// `Are you sure you want to redeem {point} points for {pound} EGP?`
-  String replacePointsWithPounds(String pound, String point) {
+  /// `Are you sure you want to redeem {point} points for {pound} {currency}?`
+  String replacePointsWithCurrency(
+    String pound,
+    String point,
+    String currency,
+  ) {
     return Intl.message(
-      'Are you sure you want to redeem $point points for $pound EGP?',
-      name: 'replacePointsWithPounds',
+      'Are you sure you want to redeem $point points for $pound $currency?',
+      name: 'replacePointsWithCurrency',
       desc: '',
-      args: [pound, point],
+      args: [pound, point, currency],
     );
   }
 

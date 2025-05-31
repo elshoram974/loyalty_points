@@ -29,13 +29,16 @@
     },
     "unCategorized": "Uncategorized",
     "yourOrderConfirmed": "Your request has been successfully confirmed. Please wait for the transfer to be completed.",
-    "replacePointsWithPounds": "Are you sure you want to redeem {point} points for {pound} EGP?",
-    "@replacePointsWithPounds": {
+    "replacePointsWithCurrency": "Are you sure you want to redeem {point} points for {pound} {currency}?",
+    "@replacePointsWithCurrency": {
         "placeholders": {
             "pound": {
                 "type": "String"
             },
             "point": {
+                "type": "String"
+            },
+            "currency": {
                 "type": "String"
             }
         }
