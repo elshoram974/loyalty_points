@@ -6,18 +6,12 @@ import '../../../../../core/utils/constants/app_assets.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../../../core/utils/types/payment_methods.dart';
 
-class PaymentMethodsContainer extends StatefulWidget {
+class PaymentMethodsContainer extends StatelessWidget {
   const PaymentMethodsContainer({super.key});
 
   @override
-  State<PaymentMethodsContainer> createState() =>
-      _PaymentMethodsContainerState();
-}
-
-class _PaymentMethodsContainerState extends State<PaymentMethodsContainer> {
-  int selectedIndex = -1;
-  @override
   Widget build(BuildContext context) {
+    int selectedIndex = 0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -32,11 +26,12 @@ class _PaymentMethodsContainerState extends State<PaymentMethodsContainer> {
         Container(
           height: 120,
           alignment: Alignment.center,
-          child: ListView.separated(
+          child: StatefulBuilder(builder: (context, setState) {
+            return ListView.separated(
               itemCount: options.length,
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
-              separatorBuilder: (context, index) =>
+              separatorBuilder: (_, index) =>
                   const SizedBox(width: AppConst.paddingSmall),
               itemBuilder: (_, index) {
                 final isSelected = selectedIndex == index;
@@ -44,11 +39,7 @@ class _PaymentMethodsContainerState extends State<PaymentMethodsContainer> {
                   children: [
                     Flexible(
                       child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            selectedIndex = index;
-                          });
-                        },
+                        onTap: () => setState(() => selectedIndex = index),
                         child: Container(
                           alignment: Alignment.center,
                           width: 180,
@@ -64,17 +55,16 @@ class _PaymentMethodsContainerState extends State<PaymentMethodsContainer> {
                               ),
                             ],
                           ),
-                          child: Image.asset(
-                            options[index].image,
-                            width: 200,
-                          ),
+                          child: Image.asset(options[index].image, width: 200),
                         ),
                       ),
                     ),
                     Text(options[index].title),
                   ],
                 );
-              }),
+              },
+            );
+          }),
         ),
       ],
     );
@@ -82,7 +72,7 @@ class _PaymentMethodsContainerState extends State<PaymentMethodsContainer> {
 }
 
 List<PaymentMethod> get options => [
-      InstabayPayment(
+      InstaPayPayment(
         image: AppAssets.instaPay,
         title: localeLang().transferToInstaPay,
       ),
