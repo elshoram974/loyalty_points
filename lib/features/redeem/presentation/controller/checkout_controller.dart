@@ -66,6 +66,6 @@ class CheckoutControllerImp extends CheckoutController {
     update();
     _isLoading = false;
     update();
-    Get.toNamed(AppRoute.successRedeemScreen);
+    Get.offNamed(AppRoute.successRedeemScreen);
   }
 }

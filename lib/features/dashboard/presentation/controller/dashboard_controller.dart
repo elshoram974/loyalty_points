@@ -62,9 +62,9 @@ class DashboardControllerImp extends DashboardController {
   }
 
   @override
-  void onInit() {
+  void onReady() {
     getAllData();
-    super.onInit();
+    super.onReady();
   }
 
   @override

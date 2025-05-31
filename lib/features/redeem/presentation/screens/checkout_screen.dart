@@ -31,6 +31,7 @@ class CheckoutScreen extends StatelessWidget {
                 return ContainerForReplacement(
                   text: localeLang(context).cashbackOnPoints(
                     helper.redeemableBalanceString,
+                    helper.config?.currency ?? '',
                     helper.convertiblePointsString,
                   ),
                 );
