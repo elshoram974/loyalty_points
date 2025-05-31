@@ -8,9 +8,9 @@ import '../../../auth/presentation/widgets/auth_field.dart';
 import '../../../dashboard/presentation/widgets/my_app_bar.dart';
 import '../widgets/available_points/instructions_replacement_container.dart';
 import '../widgets/points_builder_widget.dart';
-import '../widgets/redeem_points_final/cancel_confirm_buttons.dart';
-import '../widgets/redeem_points_final/confirm_replacement_colum.dart';
-import '../widgets/redeem_points_final/payment_methods_container.dart';
+import '../widgets/checkout_widgets/cancel_confirm_buttons.dart';
+import '../widgets/checkout_widgets/confirm_replacement_colum.dart';
+import '../widgets/checkout_widgets/payment_methods_container.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
@@ -39,9 +39,13 @@ class CheckoutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: AppConst.paddingDefault,
               ),
-              child: AuthField(
-                label: localeLang(context).instaPayNumber,
-                labelStyle: context.textTheme.headlineSmall,
+              child: Builder(
+                builder: (context) {
+                  return AuthField(
+                    label: localeLang(context).paymentMethodNumber('paymentMethodName'),
+                    labelStyle: context.textTheme.headlineSmall,
+                  );
+                }
               ),
             ),
             const ConfirmReplacement(),

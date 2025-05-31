@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/utils/config/locale/local_lang.dart';
-import '../../../../../core/utils/constants/app_assets.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../../../core/utils/types/payment_methods.dart';
 
@@ -28,7 +27,7 @@ class PaymentMethodsContainer extends StatelessWidget {
           alignment: Alignment.center,
           child: StatefulBuilder(builder: (context, setState) {
             return ListView.separated(
-              itemCount: options.length,
+              itemCount: PaymentMethod.values.length,
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               separatorBuilder: (_, index) =>
@@ -55,11 +54,16 @@ class PaymentMethodsContainer extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Image.asset(options[index].image, width: 200),
+                          child: Image.asset(PaymentMethod.values[index].image,
+                              width: 200),
                         ),
                       ),
                     ),
-                    Text(options[index].title),
+                    Text(
+                      localeLang(context).transferToPaymentName(
+                        PaymentMethod.values[index].title,
+                      ),
+                    ),
                   ],
                 );
               },
@@ -70,14 +74,3 @@ class PaymentMethodsContainer extends StatelessWidget {
     );
   }
 }
-
-List<PaymentMethod> get options => [
-      InstaPayPayment(
-        image: AppAssets.instaPay,
-        title: localeLang().transferToInstaPay,
-      ),
-      WalletsPayment(
-        image: AppAssets.wallet,
-        title: localeLang().wallets,
-      ),
-    ];

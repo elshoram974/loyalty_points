@@ -63,7 +63,7 @@ class PointsBalanceWidget extends StatelessWidget {
                       children: [
                         Image.asset(AppAssets.earned, width: 20),
                         Text(
-                          localeLang().uncategorized,
+                          localeLang().unCategorized,
                           style: context.textTheme.titleSmall
                               ?.copyWith(color: context.theme.primaryColor),
                         )
