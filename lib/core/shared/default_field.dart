@@ -52,6 +52,7 @@ class MyDefaultField extends StatefulWidget {
     this.focusNode,
     this.onPhoneInputSaved,
     this.onTap,
+    this.countries,
   });
   final GlobalKey<FormFieldState>? fieldKey;
   final String? labelText;
@@ -87,6 +88,7 @@ class MyDefaultField extends StatefulWidget {
   final TextInputType? keyboardType;
   final TextCapitalization textCapitalization;
   final Iterable<String>? autofillHints;
+  final List<String>? countries;
   final void Function(String)? onFieldSubmitted;
   final void Function()? onEditingComplete;
   final void Function()? onTap;
@@ -106,6 +108,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
       return InternationalPhoneNumberInput(
         textFieldController: widget.controller,
         hintText: widget.hintText,
+        countries: widget.countries,
         errorMessage: localeLang(context).invalidPhoneNumber,
         selectorConfig: SelectorConfig(
           leadingPadding: widget.horizontalPadding ?? AppConst.paddingDefault,

@@ -6,10 +6,10 @@ import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../auth/presentation/widgets/auth_field.dart';
 import '../../../dashboard/presentation/widgets/my_app_bar.dart';
+import '../controller/checkout_controller.dart';
 import '../widgets/available_points/instructions_replacement_container.dart';
 import '../widgets/points_builder_widget.dart';
 import '../widgets/checkout_widgets/cancel_confirm_buttons.dart';
-import '../widgets/checkout_widgets/confirm_replacement_colum.dart';
 import '../widgets/checkout_widgets/payment_methods_container.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -17,6 +17,9 @@ class CheckoutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
+        canPop: false,
+        onPopInvokedWithResult: (_, __) =>
+            Get.find<CheckoutController>().onPopInvoked(),
         appBar: const MyAppBar(),
         body: ListView(
           children: [
@@ -39,16 +42,39 @@ class CheckoutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: AppConst.paddingDefault,
               ),
-              child: Builder(
-                builder: (context) {
+              child: GetBuilder<CheckoutController>(
+                builder: (controller) {
                   return AuthField(
-                    label: localeLang(context).paymentMethodNumber('paymentMethodName'),
+                    onPhoneInputChanged: (phone) {
+                      controller.setPhoneNumber(phone);
+                    },
+                    label: localeLang(context)
+                        .paymentMethodNumber(controller.payment.name),
+                    isPhoneNumber: true,
+                    countries: const ["EG"],
                     labelStyle: context.textTheme.headlineSmall,
                   );
-                }
+                },
               ),
             ),
-            const ConfirmReplacement(),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppConst.paddingExtraBig,
+                vertical: AppConst.paddingDefault,
+              ),
+              child: PointsBuilderWidget(
+                builder: (_, __, helper) {
+                  return Text(
+                    localeLang(context).replacePointsWithCurrency(
+                        helper.redeemableBalanceString,
+                        helper.convertiblePointsString,
+                        helper.config?.currency ?? ''),
+                    style: context.textTheme.titleLarge
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  );
+                },
+              ),
+            ),
             const PaymentsMethodCancelAndConfirmButtons(),
           ],
         ));

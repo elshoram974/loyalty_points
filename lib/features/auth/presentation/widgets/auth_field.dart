@@ -25,6 +25,7 @@ class AuthField extends StatelessWidget {
     this.onPhoneInputChanged,
     this.textCapitalization = TextCapitalization.none,
     this.labelStyle,
+    this.countries,
   });
   final TextEditingController? controller;
   final TextCapitalization textCapitalization;
@@ -39,6 +40,7 @@ class AuthField extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextInputAction textInputAction;
   final Iterable<String>? autofillHints;
+  final List<String>? countries;
   final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
   final void Function(PhoneNumber)? onPhoneInputChanged;
@@ -57,6 +59,7 @@ class AuthField extends StatelessWidget {
         ),
         const SizedBox(height: AppConst.paddingSmall),
         MyDefaultField(
+          countries: countries,
           readOnly: readOnly,
           controller: controller,
           filled: true,

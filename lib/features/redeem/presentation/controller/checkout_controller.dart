@@ -1,20 +1,23 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/payment_methods.dart';
 
 abstract class CheckoutController extends GetxController {
   CheckoutController();
-  final TextEditingController textController = TextEditingController();
-
   bool get isLoading;
 
   int get selectedPaymentIndex;
 
   PaymentMethod get payment;
 
-  Future<void> addNewCode();
+  void setPayment(int newIndex);
+
+  void setPhoneNumber(PhoneNumber phone);
+
+  Future<void> makeRedeem();
 
   void onPopInvoked();
 }
@@ -27,18 +30,29 @@ class CheckoutControllerImp extends CheckoutController {
   @override
   bool get isLoading => _isLoading;
 
-  int get _selectedPaymentIndex => 0;
+  int _selectedPaymentIndex = 0;
   @override
   int get selectedPaymentIndex => _selectedPaymentIndex;
 
   @override
   PaymentMethod get payment => PaymentMethod.values[_selectedPaymentIndex];
 
+  PhoneNumber? _phoneNumber;
+
+  @override
+  void setPayment(int newIndex) {
+    _selectedPaymentIndex = newIndex;
+    update();
+  }
+
+  @override
+  void setPhoneNumber(PhoneNumber phone) => _phoneNumber = phone;
+
   bool _isBack = false;
   @override
   void onPopInvoked() async {
-    if (_isBack) return;
-    if (textController.text.trim().isNotEmpty) {
+    if (_isBack || _isLoading) return;
+    if (_phoneNumber?.phoneNumber?.trim().isNotEmpty == true) {
       _isBack = await ShowMyDialog.back() == true;
       if (_isBack) Get.back();
     } else {
@@ -47,16 +61,11 @@ class CheckoutControllerImp extends CheckoutController {
   }
 
   @override
-  void onClose() {
-    super.onClose();
-    textController.dispose();
-  }
-
-  @override
-  Future<void> addNewCode() async {
+  Future<void> makeRedeem() async {
     _isLoading = true;
     update();
     _isLoading = false;
     update();
+    Get.toNamed(AppRoute.successRedeemScreen);
   }
 }
