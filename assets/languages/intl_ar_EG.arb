@@ -62,10 +62,13 @@
     }
   },
   "redeemWays": "طرق الاستبدال:",
-  "cashbackOnPoints": "استرداد {pound} جنيه مصري نقدًا على {point} من النقاط!",
+  "cashbackOnPoints": "استرداد {pound} {currency} نقدًا على {point} من النقاط!",
   "@cashbackOnPoints": {
     "placeholders": {
       "pound": {
+        "type": "String"
+      },
+      "currency": {
         "type": "String"
       },
       "point": {

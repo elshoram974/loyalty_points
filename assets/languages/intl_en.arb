@@ -62,10 +62,13 @@
         }
     },
     "redeemWays": "Redeem ways:",
-    "cashbackOnPoints": "Cashback of {pound} EGP on {point} points!",
+    "cashbackOnPoints": "Cashback of {pound} {currency} on {point} points!",
     "@cashbackOnPoints": {
         "placeholders": {
             "pound": {
+                "type": "String"
+            },
+            "currency": {
                 "type": "String"
             },
             "point": {

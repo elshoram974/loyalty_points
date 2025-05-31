@@ -149,13 +149,13 @@ class S {
     return Intl.message('Redeem ways:', name: 'redeemWays', desc: '', args: []);
   }
 
-  /// `Cashback of {pound} EGP on {point} points!`
-  String cashbackOnPoints(String pound, String point) {
+  /// `Cashback of {pound} {currency} on {point} points!`
+  String cashbackOnPoints(String pound, String currency, String point) {
     return Intl.message(
-      'Cashback of $pound EGP on $point points!',
+      'Cashback of $pound $currency on $point points!',
       name: 'cashbackOnPoints',
       desc: '',
-      args: [pound, point],
+      args: [pound, currency, point],
     );
   }
 
