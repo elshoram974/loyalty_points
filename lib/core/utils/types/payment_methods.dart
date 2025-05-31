@@ -7,8 +7,8 @@ abstract class PaymentMethod {
   const PaymentMethod({required this.image, required this.title});
 }
 
-class InstabayPayment extends PaymentMethod {
-  const InstabayPayment({required super.image, required super.title});
+class InstaPayPayment extends PaymentMethod {
+  const InstaPayPayment({required super.image, required super.title});
   @override
   void pay() {
     print('Paying using Instabay');

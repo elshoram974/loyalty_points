@@ -10,8 +10,7 @@ import '../../features/auth/data/models/user_model.dart';
 import '../../features/dashboard/presentation/controller/dashboard_controller.dart';
 import '../utils/config/controller/config_controller.dart';
 import '../utils/constants/app_strings.dart';
-import '../utils/functions/calc_helper.dart';
-import '../utils/models/config_model.dart';
+import '../utils/helper/points_calc_helper.dart';
 import 'custom_loading.dart';
 
 class PointsBalanceWidget extends StatelessWidget {
@@ -139,12 +138,16 @@ class _BalancePointsWidget extends StatelessWidget {
                   child: GetBuilder<ConfigController>(
                     id: AppString.updateBalance,
                     builder: (configController) {
-                      final ConfigModel? config = AppInfo.config;
+                      final PointsCalcHelper pointsCalcHelper =
+                          PointsCalcHelper(
+                        config: AppInfo.config,
+                        user: user,
+                      );
                       return CustomLoadingWidget(
                         isLoading: configController.isLoadingConfig,
                         child: Center(
                           child: Text(
-                            '${CalcHelper.calcBalance(pointPerPound: config?.onePoundEquity(user.type), points: user.pointsBalance).withSeparator} ${config?.currency ?? ''}',
+                            '${pointsCalcHelper.redeemableBalanceString} ${pointsCalcHelper.config?.currency ?? ''}',
                             style: context.textTheme.titleSmall?.copyWith(
                               color: Colors.white,
                             ),
