@@ -81,10 +81,10 @@ class S {
   }
 
   /// `Uncategorized`
-  String get uncategorized {
+  String get unCategorized {
     return Intl.message(
       'Uncategorized',
-      name: 'uncategorized',
+      name: 'unCategorized',
       desc: '',
       args: [],
     );
@@ -100,48 +100,43 @@ class S {
     );
   }
 
-  /// `Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.`
-  String get attend {
-    return Intl.message(
-      'Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.',
-      name: 'attend',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Are you sure you want to redeem {point} points for {pound} EGP?`
-  String replacepointswithpounds(String pound, String point) {
+  String replacePointsWithPounds(String pound, String point) {
     return Intl.message(
       'Are you sure you want to redeem $point points for $pound EGP?',
-      name: 'replacepointswithpounds',
+      name: 'replacePointsWithPounds',
       desc: '',
       args: [pound, point],
     );
   }
 
-  /// `E-wallets`
-  String get wallets {
-    return Intl.message('E-wallets', name: 'wallets', desc: '', args: []);
+  /// `Instapay`
+  String get instapay {
+    return Intl.message('Instapay', name: 'instapay', desc: '', args: []);
   }
 
-  /// `Transfer to InstaPay`
-  String get transferToInstaPay {
+  /// `E-wallet`
+  String get wallet {
+    return Intl.message('E-wallet', name: 'wallet', desc: '', args: []);
+  }
+
+  /// `Transfer to {paymentName}`
+  String transferToPaymentName(String paymentName) {
     return Intl.message(
-      'Transfer to InstaPay',
-      name: 'transferToInstaPay',
+      'Transfer to $paymentName',
+      name: 'transferToPaymentName',
       desc: '',
-      args: [],
+      args: [paymentName],
     );
   }
 
-  /// `InstaPay Number`
-  String get instaPayNumber {
+  /// `{paymentMethodName} Number`
+  String paymentMethodNumber(String paymentMethodName) {
     return Intl.message(
-      'InstaPay Number',
-      name: 'instaPayNumber',
+      '$paymentMethodName Number',
+      name: 'paymentMethodNumber',
       desc: '',
-      args: [],
+      args: [paymentMethodName],
     );
   }
 

@@ -27,11 +27,10 @@
       }
     }
   },
-  "uncategorized": "غير مصنف",
+  "unCategorized": "غير مصنف",
   "yourOrderConfirmed": "تم تاكيد طلبك بنجاح فضلا انتظر وصول التحويل اليك",
-  "attend": "يرجي الانتباه عند ادخال بيانات حسابك بتروجاك لن تتحمل مسؤوليه أي بيانات غير صحيحه وأي حالة لاحقة لعد الدفع",
-  "replacepointswithpounds": "هل أنت متأكد أنك تريد استبدال {point} من النقاط مقابل {pound} جنيه مصري؟",
-  "@replacepointswithpounds": {
+  "replacePointsWithPounds": "هل أنت متأكد أنك تريد استبدال {point} من النقاط مقابل {pound} جنيه مصري؟",
+  "@replacePointsWithPounds": {
     "placeholders": {
       "pound": {
         "type": "String"
@@ -41,9 +40,24 @@
       }
     }
   },
-  "wallets": "المحافظ الالكترونيه",
-  "transferToInstaPay": "التحويل ل إنستا باي",
-  "instaPayNumber": "رقم انستا باي",
+  "instapay": "انستاباي",
+  "wallet": "المحفظة إلكترونية",
+  "transferToPaymentName": "تحويل إلى {paymentName}",
+  "@transferToPaymentName": {
+    "placeholders": {
+      "paymentName": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentMethodNumber": "رقم {paymentMethodName}",
+  "@paymentMethodNumber": {
+    "placeholders": {
+      "paymentMethodName": {
+        "type": "String"
+      }
+    }
+  },
   "redeemWays": "طرق الاستبدال:",
   "cashbackOnPoints": "استرداد {pound} جنيه مصري نقدًا على {point} من النقاط!",
   "@cashbackOnPoints": {

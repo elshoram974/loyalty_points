@@ -27,11 +27,10 @@
             }
         }
     },
-    "uncategorized": "Uncategorized",
+    "unCategorized": "Uncategorized",
     "yourOrderConfirmed": "Your request has been successfully confirmed. Please wait for the transfer to be completed.",
-    "attend": "Please make sure to enter your Petrojak account details carefully. We are not responsible for any incorrect information or any consequences due to failed payment.",
-    "replacepointswithpounds": "Are you sure you want to redeem {point} points for {pound} EGP?",
-    "@replacepointswithpounds": {
+    "replacePointsWithPounds": "Are you sure you want to redeem {point} points for {pound} EGP?",
+    "@replacePointsWithPounds": {
         "placeholders": {
             "pound": {
                 "type": "String"
@@ -41,9 +40,24 @@
             }
         }
     },
-    "wallets": "E-wallets",
-    "transferToInstaPay": "Transfer to InstaPay",
-    "instaPayNumber": "InstaPay Number",
+    "instapay": "Instapay",
+    "wallet": "E-wallet",
+    "transferToPaymentName": "Transfer to {paymentName}",
+    "@transferToPaymentName": {
+        "placeholders": {
+            "paymentName": {
+                "type": "String"
+            }
+        }
+    },
+    "paymentMethodNumber": "{paymentMethodName} Number",
+    "@paymentMethodNumber": {
+        "placeholders": {
+            "paymentMethodName": {
+                "type": "String"
+            }
+        }
+    },
     "redeemWays": "Redeem ways:",
     "cashbackOnPoints": "Cashback of {pound} EGP on {point} points!",
     "@cashbackOnPoints": {
