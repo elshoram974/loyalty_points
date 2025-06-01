@@ -18,10 +18,7 @@ class CodeAddedScreen extends StatelessWidget {
       body: Column(
         children: [
           const SliverToBoxAdapter(
-            child: PointsBalanceWidget(
-              description: 'bnnb',
-              isUncategorized: false,
-            ),
+            child: PointsBalanceWidget(isUncategorized: false),
           ),
           Expanded(
             child: Center(

@@ -21,10 +21,7 @@ class PointsScreen extends StatelessWidget {
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
               const SliverToBoxAdapter(
-                child: PointsBalanceWidget(
-                  description: 'bnnb',
-                  isUncategorized: false,
-                ),
+                child: PointsBalanceWidget(isUncategorized: false),
               ),
               const SliverToBoxAdapter(child: OurPartnersWidget()),
               MySliverPinnedTaps(

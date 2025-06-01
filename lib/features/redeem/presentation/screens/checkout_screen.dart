@@ -23,9 +23,7 @@ class CheckoutScreen extends StatelessWidget {
         appBar: const MyAppBar(),
         body: ListView(
           children: [
-            PointsBalanceWidget(
-              description: localeLang(context).transferablePointsBalance,
-            ),
+            const PointsBalanceWidget(),
             PointsBuilderWidget(
               builder: (_, __, helper) {
                 return ContainerForReplacement(

@@ -22,10 +22,7 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
       onPopInvokedWithResult: (_, __) => controller.onPopInvoked(),
       body: ListView(
         children: [
-          const PointsBalanceWidget(
-            description: 'bnnb',
-            isUncategorized: true,
-          ),
+          const PointsBalanceWidget(isUncategorized: true),
           const SizedBox(height: 100),
           Padding(
             padding: const EdgeInsets.symmetric(

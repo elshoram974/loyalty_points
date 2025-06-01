@@ -14,12 +14,7 @@ import '../utils/helper/points_calc_helper.dart';
 import 'custom_loading.dart';
 
 class PointsBalanceWidget extends StatelessWidget {
-  const PointsBalanceWidget({
-    super.key,
-    this.description,
-    this.isUncategorized = false,
-  });
-  final String? description;
+  const PointsBalanceWidget({super.key, this.isUncategorized = false});
   final bool isUncategorized;
 
   @override
@@ -74,22 +69,20 @@ class PointsBalanceWidget extends StatelessWidget {
             ],
           ),
           const _BalancePointsWidget(),
-          if (description?.trim().isNotEmpty == true) ...[
-            const SizedBox(height: AppConst.paddingSmall),
-            Row(
-              children: [
-                Image.asset(AppAssets.iconBalance, width: 30),
-                const SizedBox(width: AppConst.paddingExtraSmall),
-                Flexible(
-                  child: Text(
-                    description!,
-                    style: context.textTheme.labelMedium
-                        ?.copyWith(color: Colors.white),
-                  ),
+          const SizedBox(height: AppConst.paddingSmall),
+          Row(
+            children: [
+              Image.asset(AppAssets.iconBalance, width: 30),
+              const SizedBox(width: AppConst.paddingExtraSmall),
+              Flexible(
+                child: Text(
+                  localeLang(context).transferablePointsBalance,
+                  style: context.textTheme.labelMedium
+                      ?.copyWith(color: Colors.white),
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ],
       ),
     );

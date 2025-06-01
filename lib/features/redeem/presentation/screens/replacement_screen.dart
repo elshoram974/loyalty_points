@@ -21,9 +21,7 @@ class ReplacementScreen extends StatelessWidget {
       builder: (_, __, pointsHelper) {
         return Column(
           children: [
-            PointsBalanceWidget(
-              description: localeLang(context).transferablePointsBalance,
-            ),
+            const PointsBalanceWidget(),
             ContainerForReplacement(
               text: localeLang(context)
                   .toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore(
@@ -60,7 +58,8 @@ class ReplacementScreen extends StatelessWidget {
               child: CustomFilledButton(
                 minimumSize: const Size(375, 50),
                 borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-                onPressed: pointsHelper.chooseBasedOnPointsNeed<void Function()?>(
+                onPressed:
+                    pointsHelper.chooseBasedOnPointsNeed<void Function()?>(
                   null,
                   () => Get.toNamed(AppRoute.checkoutScreen),
                 ),
