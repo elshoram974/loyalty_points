@@ -30,6 +30,7 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
             ),
             child: AuthField(
               label: localeLang(context).addNewCode,
+              hintText: localeLang(context).addNewCode,
               labelStyle: context.textTheme.headlineSmall,
               controller: controller.textController,
               onChanged: (_) => controller.update(),
