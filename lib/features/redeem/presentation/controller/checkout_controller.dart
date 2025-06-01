@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -7,17 +8,21 @@ import '../../../../core/utils/types/payment_methods.dart';
 
 abstract class CheckoutController extends GetxController {
   CheckoutController();
+  final GlobalKey<FormFieldState> fieldKey = GlobalKey<FormFieldState>();
+
   bool get isLoading;
 
   int get selectedPaymentIndex;
 
   PaymentMethod get payment;
 
+  PhoneNumber? get phone;
+
   void setPayment(int newIndex);
 
   void setPhoneNumber(PhoneNumber phone);
 
-  Future<void> makeRedeem();
+  Future<void> makeRedeem(int points);
 
   void onPopInvoked();
 }
@@ -37,7 +42,9 @@ class CheckoutControllerImp extends CheckoutController {
   @override
   PaymentMethod get payment => PaymentMethod.values[_selectedPaymentIndex];
 
-  PhoneNumber? _phoneNumber;
+  PhoneNumber? _phone;
+  @override
+  PhoneNumber? get phone => _phone;
 
   @override
   void setPayment(int newIndex) {
@@ -46,13 +53,13 @@ class CheckoutControllerImp extends CheckoutController {
   }
 
   @override
-  void setPhoneNumber(PhoneNumber phone) => _phoneNumber = phone;
+  void setPhoneNumber(PhoneNumber phone) => _phone = phone;
 
   bool _isBack = false;
   @override
   void onPopInvoked() async {
     if (_isBack || _isLoading) return;
-    if (_phoneNumber?.phoneNumber?.trim().isNotEmpty == true) {
+    if (_phone?.phoneNumber?.trim().isNotEmpty == true) {
       _isBack = await ShowMyDialog.back() == true;
       if (_isBack) Get.back();
     } else {
@@ -61,7 +68,8 @@ class CheckoutControllerImp extends CheckoutController {
   }
 
   @override
-  Future<void> makeRedeem() async {
+  Future<void> makeRedeem(int points) async {
+    if (!fieldKey.currentState!.validate()) return;
     _isLoading = true;
     update();
     _isLoading = false;

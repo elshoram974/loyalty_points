@@ -44,13 +44,14 @@ class CheckoutScreen extends StatelessWidget {
                 horizontal: AppConst.paddingDefault,
               ),
               child: GetBuilder<CheckoutController>(
-                builder: (controller) {
+                builder: (c) {
                   return AuthField(
-                    onPhoneInputChanged: (phone) {
-                      controller.setPhoneNumber(phone);
-                    },
-                    label: localeLang(context)
-                        .paymentMethodNumber(controller.payment.name),
+                    fieldKey: c.fieldKey,
+                    onPhoneInputChanged: c.setPhoneNumber,
+                    label:
+                        localeLang(context).paymentMethodNumber(c.payment.name),
+                    hintText: localeLang(context)
+                        .enterPaymentMethodNumber(c.payment.name),
                     isPhoneNumber: true,
                     countries: const ["EG"],
                     labelStyle: context.textTheme.headlineSmall,

@@ -5,6 +5,7 @@ import '../../../../../core/shared/filled_button.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../controller/checkout_controller.dart';
+import '../points_builder_widget.dart';
 
 class PaymentsMethodCancelAndConfirmButtons extends StatelessWidget {
   const PaymentsMethodCancelAndConfirmButtons({super.key});
@@ -19,35 +20,41 @@ class PaymentsMethodCancelAndConfirmButtons extends StatelessWidget {
         vertical: AppConst.paddingExtraBig,
         horizontal: AppConst.paddingDefault,
       ),
-      child: GetBuilder<CheckoutController>(
-        builder: (controller) {
-          return Row(
-            children: [
-              Expanded(
-                child: CustomFilledButton(
-                  onPressed: () => Navigator.maybePop(context),
-                  filledColor: Colors.grey,
-                  borderRadius: radius,
-                  text: localeLang(context).cancel,
-                  style: style,
-                  minimumSize: size,
-                ),
-              ),
-              const SizedBox(width: AppConst.paddingDefault),
-              Expanded(
-                child: CustomFilledButton(
-                  isLoading: controller.isLoading,
-                  onPressed: controller.makeRedeem,
-                  filledColor: context.theme.primaryColor,
-                  borderRadius: radius,
-                  text: localeLang(context).confirm,
-                  style: style,
-                  minimumSize: size,
-                ),
-              ),
-            ],
-          );
-        },
+      child: Row(
+        children: [
+          Expanded(
+            child: CustomFilledButton(
+              onPressed: () => Navigator.maybePop(context),
+              filledColor: Colors.grey,
+              borderRadius: radius,
+              text: localeLang(context).cancel,
+              style: style,
+              minimumSize: size,
+            ),
+          ),
+          const SizedBox(width: AppConst.paddingDefault),
+          Expanded(
+            child: PointsBuilderWidget(
+              configId: '0',
+              dashboardId: '0',
+              builder: (_, __, helper) {
+                return GetBuilder<CheckoutController>(
+                  builder: (c) {
+                    return CustomFilledButton(
+                      isLoading: c.isLoading,
+                      onPressed: () => c.makeRedeem(helper.convertiblePoints),
+                      filledColor: context.theme.primaryColor,
+                      borderRadius: radius,
+                      text: localeLang(context).confirm,
+                      style: style,
+                      minimumSize: size,
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
