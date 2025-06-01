@@ -102,6 +102,7 @@ class MyDefaultField extends StatefulWidget {
 
 class _MyDefaultFieldState extends State<MyDefaultField> {
   late TextDirection? textDirection = widget.textDirection;
+  bool isValidPhone = false;
   @override
   Widget build(BuildContext context) {
     if (widget.isPhoneNumber) {
@@ -131,6 +132,14 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
           isoCode: AppInfo.initCountryIsoCode,
           phoneNumber: widget.initialValue,
         ),
+        onInputValidated: (value) => isValidPhone = value,
+        validator: (val) {
+          if (val?.isNotEmpty != true) return localeLang(context).fillField;
+
+          if (!isValidPhone) return localeLang(context).invalidPhoneNumber;
+
+          return null;
+        },
         keyboardType: TextInputType.phone,
         textAlignVertical: widget.textAlignVertical ?? TextAlignVertical.center,
         onSaved: (PhoneNumber phone) {
