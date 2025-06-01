@@ -39,7 +39,7 @@ class CancelAndConfirmButtons extends StatelessWidget {
                   isLoading: controller.isLoading,
                   onPressed: controller.textController.text.trim().isEmpty
                       ? null
-                      : controller.addNewCode,
+                      : controller.scanCode,
                   filledColor: context.theme.primaryColor,
                   borderRadius: radius,
                   text: localeLang(context).confirm,

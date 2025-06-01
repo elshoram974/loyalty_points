@@ -9,7 +9,7 @@ abstract class AddNewCodeController extends GetxController {
 
   bool get isLoading;
 
-  Future<void> addNewCode();
+  Future<void> scanCode();
 
   void onPopInvoked();
 }
@@ -41,7 +41,7 @@ class AddNewCodeControllerImp extends AddNewCodeController {
   }
 
   @override
-  Future<void> addNewCode() async {
+  Future<void> scanCode() async {
     _isLoading = true;
     update();
     _isLoading = false;
