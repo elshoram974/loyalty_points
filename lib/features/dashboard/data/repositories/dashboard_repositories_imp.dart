@@ -25,9 +25,13 @@ class DashboardRepositoriesImp extends DashboardRepositories {
   Stream<Status<UserModel?>> getUserData() async* {
     yield Success<UserModel?>(authLocalDataSource.getCurrentUser());
 
-    yield await executeAndHandleErrors<UserModel>(
+    final Status<UserModel> status = await executeAndHandleErrors<UserModel>(
       remoteDataSource.getCurrentUser,
     );
+
+    if (status is Success<UserModel>) authLocalDataSource.saveUser(status.data);
+
+    yield status;
   }
 
   @override

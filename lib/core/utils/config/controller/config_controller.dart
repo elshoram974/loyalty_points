@@ -79,7 +79,7 @@ class ConfigControllerImp extends ConfigController {
   @override
   void toggleLanguage() => changeLocale(alternateLocale.toLocale);
 
-  bool _isLoadingConfig = false;
+  bool _isLoadingConfig = true;
   @override
   bool get isLoadingConfig => _isLoadingConfig;
   @override
@@ -89,9 +89,6 @@ class ConfigControllerImp extends ConfigController {
       AppString.updateHomeSocial,
       AppString.updateBalance,
     ];
-
-    _isLoadingConfig = true;
-    update(ids);
 
     final Status<ConfigModel> status = await executeAndHandleErrors(
       () => dataSource(),

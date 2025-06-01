@@ -41,7 +41,7 @@ class DashboardControllerImp extends DashboardController {
   DashboardControllerImp(this.repo);
   final DashboardRepositories repo;
 
-  bool _isLoadingUserData = false;
+  bool _isLoadingUserData = true;
 
   @override
   bool get isLoadingUserData => _isLoadingUserData;
@@ -96,8 +96,6 @@ class DashboardControllerImp extends DashboardController {
       AppString.updateBalance,
     ];
     Status<UserModel?>? realStatus;
-    _isLoadingUserData = true;
-    update(ids);
 
     repo.getUserData().listen(
       (status) {

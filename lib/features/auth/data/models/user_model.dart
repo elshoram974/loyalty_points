@@ -47,7 +47,7 @@ class UserModel extends Equatable {
             : ImageFullUrl.fromMap(json['image_full_url']),
         providerId: int.parse("${json['provider_id'] ?? -1}"),
         // pointsBalance: 50000,
-        pointsBalance: int.parse("${json['points_balance'] ?? -1}"),
+        pointsBalance: int.parse("${json['points_balance'] ?? 0}"),
         phone: json['phone'] as String,
         type: AccountType.fromMap(json['type'] as String),
         status: AccountStatusEnum.values[int.parse("${json['status'] ?? 0}")],
@@ -78,7 +78,7 @@ class UserModel extends Equatable {
     return UserModel(
       id: -1,
       providerId: -1,
-      pointsBalance: -1,
+      pointsBalance: 0,
       name: 'name',
       email: 'email',
       phone: 'phone',
