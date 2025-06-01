@@ -6,8 +6,8 @@ import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/payment_methods.dart';
 
-abstract class CheckoutController extends GetxController {
-  CheckoutController();
+abstract class RedeemController extends GetxController {
+  RedeemController();
   final GlobalKey<FormFieldState> fieldKey = GlobalKey<FormFieldState>();
 
   bool get isLoading;
@@ -27,8 +27,8 @@ abstract class CheckoutController extends GetxController {
   void onPopInvoked();
 }
 
-class CheckoutControllerImp extends CheckoutController {
-  CheckoutControllerImp();
+class RedeemControllerImp extends RedeemController {
+  RedeemControllerImp();
 
   bool _isLoading = false;
 

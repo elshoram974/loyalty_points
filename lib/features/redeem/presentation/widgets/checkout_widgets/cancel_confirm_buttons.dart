@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../../../core/shared/filled_button.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
-import '../../controller/checkout_controller.dart';
+import '../../controller/redeem_controller.dart';
 import '../points_builder_widget.dart';
 
 class PaymentsMethodCancelAndConfirmButtons extends StatelessWidget {
@@ -38,7 +38,7 @@ class PaymentsMethodCancelAndConfirmButtons extends StatelessWidget {
               configId: '0',
               dashboardId: '0',
               builder: (_, __, helper) {
-                return GetBuilder<CheckoutController>(
+                return GetBuilder<RedeemController>(
                   builder: (c) {
                     return CustomFilledButton(
                       isLoading: c.isLoading,

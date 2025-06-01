@@ -6,7 +6,7 @@ import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../auth/presentation/widgets/auth_field.dart';
 import '../../../dashboard/presentation/widgets/my_app_bar.dart';
-import '../controller/checkout_controller.dart';
+import '../controller/redeem_controller.dart';
 import '../widgets/available_points/instructions_replacement_container.dart';
 import '../widgets/points_builder_widget.dart';
 import '../widgets/checkout_widgets/cancel_confirm_buttons.dart';
@@ -19,7 +19,7 @@ class CheckoutScreen extends StatelessWidget {
     return CustomScaffold(
         canPop: false,
         onPopInvokedWithResult: (_, __) =>
-            Get.find<CheckoutController>().onPopInvoked(),
+            Get.find<RedeemController>().onPopInvoked(),
         appBar: const MyAppBar(),
         body: ListView(
           children: [
@@ -43,7 +43,7 @@ class CheckoutScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: AppConst.paddingDefault,
               ),
-              child: GetBuilder<CheckoutController>(
+              child: GetBuilder<RedeemController>(
                 builder: (c) {
                   return AuthField(
                     fieldKey: c.fieldKey,

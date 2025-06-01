@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../../../core/utils/types/payment_methods.dart';
-import '../../controller/checkout_controller.dart';
+import '../../controller/redeem_controller.dart';
 
 class PaymentMethodsContainer extends StatelessWidget {
   const PaymentMethodsContainer({super.key});
@@ -25,7 +25,7 @@ class PaymentMethodsContainer extends StatelessWidget {
         Container(
           height: 120,
           alignment: Alignment.center,
-          child: GetBuilder<CheckoutController>(
+          child: GetBuilder<RedeemController>(
             builder: (controller) {
               return ListView.separated(
                 itemCount: PaymentMethod.values.length,
