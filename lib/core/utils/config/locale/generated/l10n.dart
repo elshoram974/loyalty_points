@@ -144,6 +144,16 @@ class S {
     );
   }
 
+  /// `Enter your {paymentMethodName} number`
+  String enterPaymentMethodNumber(String paymentMethodName) {
+    return Intl.message(
+      'Enter your $paymentMethodName number',
+      name: 'enterPaymentMethodNumber',
+      desc: '',
+      args: [paymentMethodName],
+    );
+  }
+
   /// `Redeem ways:`
   String get redeemWays {
     return Intl.message('Redeem ways:', name: 'redeemWays', desc: '', args: []);

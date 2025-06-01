@@ -44,7 +44,7 @@
     }
   },
   "instapay": "انستاباي",
-  "wallet": "المحفظة إلكترونية",
+  "wallet": "المحفظة الإلكترونية",
   "transferToPaymentName": "تحويل إلى {paymentName}",
   "@transferToPaymentName": {
     "placeholders": {
@@ -55,6 +55,14 @@
   },
   "paymentMethodNumber": "رقم {paymentMethodName}",
   "@paymentMethodNumber": {
+    "placeholders": {
+      "paymentMethodName": {
+        "type": "String"
+      }
+    }
+  },
+  "enterPaymentMethodNumber": "أدخل رقم {paymentMethodName} الخاص بك",
+  "@enterPaymentMethodNumber": {
     "placeholders": {
       "paymentMethodName": {
         "type": "String"

@@ -61,6 +61,14 @@
             }
         }
     },
+    "enterPaymentMethodNumber": "Enter your {paymentMethodName} number",
+    "@enterPaymentMethodNumber": {
+        "placeholders": {
+            "paymentMethodName": {
+                "type": "String"
+            }
+        }
+    },
     "redeemWays": "Redeem ways:",
     "cashbackOnPoints": "Cashback of {pound} {currency} on {point} points!",
     "@cashbackOnPoints": {
