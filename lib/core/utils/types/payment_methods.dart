@@ -9,7 +9,7 @@ enum PaymentMethod {
 
   const PaymentMethod(this.image);
 
-  String get toJson => this == instaPay ? 'instapay' : 'vodafone cash';
+  String get toJson => this == instaPay ? 'instapay' : 'wallet';
 
   String get name =>
       this == instaPay ? localeLang().instapay : localeLang().wallet;
