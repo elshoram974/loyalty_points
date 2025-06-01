@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
+import '../../../../core/status/status.dart';
 import '../../../../core/utils/config/routes/routes.dart';
+import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/payment_methods.dart';
+import '../../domain/entities/redeem_entity.dart';
 import '../../domain/repositories/redeem_repositories.dart';
 
 abstract class RedeemController extends GetxController {
@@ -16,8 +19,6 @@ abstract class RedeemController extends GetxController {
   int get selectedPaymentIndex;
 
   PaymentMethod get payment;
-
-  PhoneNumber? get phone;
 
   void setPayment(int newIndex);
 
@@ -45,8 +46,6 @@ class RedeemControllerImp extends RedeemController {
   PaymentMethod get payment => PaymentMethod.values[_selectedPaymentIndex];
 
   PhoneNumber? _phone;
-  @override
-  PhoneNumber? get phone => _phone;
 
   @override
   void setPayment(int newIndex) {
@@ -74,8 +73,20 @@ class RedeemControllerImp extends RedeemController {
     if (!fieldKey.currentState!.validate()) return;
     _isLoading = true;
     update();
+    final RedeemEntity redeemEntity = RedeemEntity(
+      points: points,
+      payment: payment,
+      paymentRef: _phone!.phoneNumber!,
+    );
+    final Status<void> redeemState = await repo.createRedeem(
+      redeemEntity,
+    );
+    await handleResponseInController<void>(
+      status: redeemState,
+      onSuccess: (_) => Get.offNamed(AppRoute.successRedeemScreen),
+    );
+
     _isLoading = false;
     update();
-    Get.offNamed(AppRoute.successRedeemScreen);
   }
 }

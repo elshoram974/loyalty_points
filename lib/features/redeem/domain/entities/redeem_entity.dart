@@ -3,7 +3,7 @@ import 'dart:convert';
 import '../../../../core/utils/types/payment_methods.dart';
 
 class RedeemEntity {
-  final String points;
+  final int points;
   final PaymentMethod payment;
   final String paymentRef;
 
