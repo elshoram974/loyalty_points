@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/utils/config/routes/routes.dart';
+import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../domain/repositories/add_new_code_repositories.dart';
 
@@ -39,6 +41,11 @@ class AddNewCodeControllerImp extends AddNewCodeController {
   Future<void> scanCode() async {
     _isLoading = true;
     update();
+
+    await handleResponseInController<void>(
+      status: await repo.scanCode(textController.text.trim()),
+      onSuccess: (_) => Get.offNamed(AppRoute.codeAddedScreen),
+    );
     _isLoading = false;
     update();
   }

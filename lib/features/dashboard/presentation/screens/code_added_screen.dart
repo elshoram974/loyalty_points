@@ -5,6 +5,7 @@ import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/filled_button.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../widgets/my_app_bar.dart';
 
@@ -14,12 +15,14 @@ class CodeAddedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
+      canPop: false,
+      onPopInvokedWithResult: (isPop, _) {
+        if (!isPop) goHome();
+      },
       appBar: const MyAppBar(),
       body: Column(
         children: [
-          const SliverToBoxAdapter(
-            child: PointsBalanceWidget(isUncategorized: false),
-          ),
+          const PointsBalanceWidget(isUncategorized: false),
           Expanded(
             child: Center(
               child: Text(
@@ -30,7 +33,7 @@ class CodeAddedScreen extends StatelessWidget {
             ),
           ),
           CustomFilledButton(
-            onPressed: Get.back,
+            onPressed: goHome,
             filledColor: context.theme.primaryColor,
             borderRadius: BorderRadius.circular(AppConst.radiusSmall),
             text: localeLang(context).home,
@@ -41,4 +44,6 @@ class CodeAddedScreen extends StatelessWidget {
       ),
     );
   }
+
+  void goHome() => Get.offAllNamed(AppRoute.home);
 }
