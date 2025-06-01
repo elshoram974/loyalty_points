@@ -13,8 +13,11 @@ class CheckoutBindings extends Bindings {
       RedeemRemoteDataSourceImp(Get.find<APIServices>()),
     );
     Get.put<RedeemRepositories>(
-      RedeemRepositoriesImp(remoteDataSource: Get.find<RedeemRemoteDataSource>()),
+      RedeemRepositoriesImp(
+          remoteDataSource: Get.find<RedeemRemoteDataSource>()),
     );
-    Get.put<RedeemController>(RedeemControllerImp());
+    Get.put<RedeemController>(
+      RedeemControllerImp(Get.find<RedeemRepositories>()),
+    );
   }
 }

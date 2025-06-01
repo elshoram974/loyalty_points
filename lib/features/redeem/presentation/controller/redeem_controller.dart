@@ -5,6 +5,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/payment_methods.dart';
+import '../../domain/repositories/redeem_repositories.dart';
 
 abstract class RedeemController extends GetxController {
   RedeemController();
@@ -28,7 +29,8 @@ abstract class RedeemController extends GetxController {
 }
 
 class RedeemControllerImp extends RedeemController {
-  RedeemControllerImp();
+  RedeemControllerImp(this.repo);
+  final RedeemRepositories repo;
 
   bool _isLoading = false;
 
