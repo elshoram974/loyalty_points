@@ -19,6 +19,8 @@ class AddNewCodeBindings extends Bindings {
       ),
     );
 
-    Get.put<AddNewCodeController>(AddNewCodeControllerImp());
+    Get.put<AddNewCodeController>(
+      AddNewCodeControllerImp(Get.find<AddNewCodeRepositories>()),
+    );
   }
 }
