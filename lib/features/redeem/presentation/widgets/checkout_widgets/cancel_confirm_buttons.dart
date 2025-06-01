@@ -42,7 +42,7 @@ class PaymentsMethodCancelAndConfirmButtons extends StatelessWidget {
                   builder: (c) {
                     return CustomFilledButton(
                       isLoading: c.isLoading,
-                      onPressed: () => c.makeRedeem(helper.convertiblePoints),
+                      onPressed: () => c.createRedeem(helper.convertiblePoints),
                       filledColor: context.theme.primaryColor,
                       borderRadius: radius,
                       text: localeLang(context).confirm,

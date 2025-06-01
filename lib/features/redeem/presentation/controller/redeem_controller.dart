@@ -24,7 +24,7 @@ abstract class RedeemController extends GetxController {
 
   void setPhoneNumber(PhoneNumber phone);
 
-  Future<void> makeRedeem(int points);
+  Future<void> createRedeem(int points);
 
   void onPopInvoked();
 }
@@ -56,20 +56,8 @@ class RedeemControllerImp extends RedeemController {
   @override
   void setPhoneNumber(PhoneNumber phone) => _phone = phone;
 
-  bool _isBack = false;
   @override
-  void onPopInvoked() async {
-    if (_isBack || _isLoading) return;
-    if (_phone?.phoneNumber?.trim().isNotEmpty == true) {
-      _isBack = await ShowMyDialog.back() == true;
-      if (_isBack) Get.back();
-    } else {
-      Get.back();
-    }
-  }
-
-  @override
-  Future<void> makeRedeem(int points) async {
+  Future<void> createRedeem(int points) async {
     if (!fieldKey.currentState!.validate()) return;
     _isLoading = true;
     update();
@@ -88,5 +76,17 @@ class RedeemControllerImp extends RedeemController {
 
     _isLoading = false;
     update();
+  }
+
+  bool _isBack = false;
+  @override
+  void onPopInvoked() async {
+    if (_isBack || _isLoading) return;
+    if (_phone?.phoneNumber?.trim().isNotEmpty == true) {
+      _isBack = await ShowMyDialog.back() == true;
+      if (_isBack) Get.back();
+    } else {
+      Get.back();
+    }
   }
 }
