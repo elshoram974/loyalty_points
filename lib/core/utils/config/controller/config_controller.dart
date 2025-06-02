@@ -90,6 +90,9 @@ class ConfigControllerImp extends ConfigController {
       AppString.updateBalance,
     ];
 
+    _isLoadingConfig = true;
+    update(ids);
+
     final Status<ConfigModel> status = await executeAndHandleErrors(
       () => dataSource(),
     );

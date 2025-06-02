@@ -95,6 +95,9 @@ class DashboardControllerImp extends DashboardController {
       AppString.updateHomeUser,
       AppString.updateBalance,
     ];
+    _isLoadingUserData = true;
+    update(ids);
+
     Status<UserModel?>? realStatus;
 
     repo.getUserData().listen(
@@ -112,8 +115,8 @@ class DashboardControllerImp extends DashboardController {
         if (realStatus is Failure<UserModel?>) {
           handleFailureStatus(realStatus as Failure<UserModel>);
         }
-
-        print("onDone");
+        _isLoadingUserData = false;
+        update(ids);
       },
     );
   }

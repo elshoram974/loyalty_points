@@ -5,6 +5,7 @@ import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../domain/repositories/add_new_code_repositories.dart';
+import 'dashboard_controller.dart';
 
 abstract class AddNewCodeController extends GetxController {
   AddNewCodeController();
@@ -21,8 +22,12 @@ abstract class AddNewCodeController extends GetxController {
 }
 
 class AddNewCodeControllerImp extends AddNewCodeController {
-  AddNewCodeControllerImp(this.repo);
+  AddNewCodeControllerImp({
+    required this.repo,
+    required this.dashboardController,
+  });
   final AddNewCodeRepositories repo;
+  final DashboardController dashboardController;
 
   bool _isLoading = false;
 
@@ -44,7 +49,10 @@ class AddNewCodeControllerImp extends AddNewCodeController {
 
     await handleResponseInController<void>(
       status: await repo.scanCode(textController.text.trim()),
-      onSuccess: (_) => Get.offNamed(AppRoute.codeAddedScreen),
+      onSuccess: (_) {
+        dashboardController.getUserData();
+        Get.offNamed(AppRoute.codeAddedScreen);
+      },
     );
     _isLoading = false;
     update();

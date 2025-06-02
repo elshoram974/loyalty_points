@@ -4,6 +4,7 @@ import '../../../features/dashboard/data/datasources/add_new_code_remote_data_so
 import '../../../features/dashboard/data/repositories/add_new_code_repositories_imp.dart';
 import '../../../features/dashboard/domain/repositories/add_new_code_repositories.dart';
 import '../../../features/dashboard/presentation/controller/add_new_code_controller.dart';
+import '../../../features/dashboard/presentation/controller/dashboard_controller.dart';
 import '../services/api_services.dart';
 
 class AddNewCodeBindings extends Bindings {
@@ -20,7 +21,10 @@ class AddNewCodeBindings extends Bindings {
     );
 
     Get.put<AddNewCodeController>(
-      AddNewCodeControllerImp(Get.find<AddNewCodeRepositories>()),
+      AddNewCodeControllerImp(
+        repo: Get.find<AddNewCodeRepositories>(),
+        dashboardController: Get.find<DashboardController>(),
+      ),
     );
   }
 }
