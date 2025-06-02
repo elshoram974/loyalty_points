@@ -25,7 +25,6 @@ class EditProfileScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(AppConst.paddingBig),
         children: [
-          const SizedBox(height: AppConst.paddingDefault),
           const EditProfileFields(),
           if (!context.isPhone) const EditProfileButton(),
         ],
