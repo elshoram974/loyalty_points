@@ -27,12 +27,14 @@ class AuthField extends StatelessWidget {
     this.labelStyle,
     this.countries,
     this.fieldKey,
+    this.initialValue,
   });
   final TextEditingController? controller;
   final TextCapitalization textCapitalization;
   final IconData? suffixIconData;
   final String? hintText;
   final String label;
+  final String? initialValue;
   final TextStyle? labelStyle;
   final Widget? suffix;
   final bool obscureText;
@@ -80,6 +82,7 @@ class AuthField extends StatelessWidget {
                 ),
           suffix: suffix,
           obscureText: obscureText,
+          initialValue: initialValue,
           onChanged: onChanged,
           isPhoneNumber: isPhoneNumber,
           autofillHints: autofillHints,

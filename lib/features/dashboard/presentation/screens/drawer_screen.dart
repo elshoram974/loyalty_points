@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../controller/dashboard_controller.dart';
@@ -21,7 +22,9 @@ class HomeDrawer extends GetView<DashboardController> {
           TileButtonWidget(
             icon: Icons.person_outline_outlined,
             title: localeLang(context).profile,
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRoute.EditProfile);
+            },
           ),
           TileButtonWidget(
             icon: Icons.stars_outlined,

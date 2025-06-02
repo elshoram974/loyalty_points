@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:loyalty_points/features/dashboard/presentation/screens/edit_profile.dart';
 
 import '../../../../features/auth/presentation/screens/waiting_screen.dart';
 import '../../../../features/dashboard/presentation/screens/add_new_code_screen.dart';
@@ -8,6 +9,7 @@ import '../../../../features/dashboard/presentation/screens/dashboard_screen.dar
 import '../../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../../../features/auth/presentation/screens/login_screen.dart';
 import '../../../../features/auth/presentation/screens/sign_up_screen.dart';
+import '../../../../features/dashboard/presentation/screens/edit_profile.dart';
 import '../../../../features/redeem/presentation/screens/checkout_screen.dart';
 import '../../../../features/redeem/presentation/screens/redeem_success_screen.dart';
 import '../../bindings/add_new_code_bindings.dart';
@@ -29,6 +31,8 @@ abstract final class AppRoute {
   static const String codeAddedScreen = "/code-added";
   static const String checkoutScreen = "/checkout";
   static const String successRedeemScreen = "/success-redeem";
+    static const String EditProfile = "/EditProfile";
+
 
   static List<GetPage> get pages => [
         GetPage(
@@ -72,6 +76,10 @@ abstract final class AppRoute {
         GetPage(
           name: successRedeemScreen,
           page: () => const RedeemSuccessScreen(),
+        ),
+        GetPage(
+          name: EditProfile,
+          page: () => const EditProfileScreen(),
         ),
       ];
 }
