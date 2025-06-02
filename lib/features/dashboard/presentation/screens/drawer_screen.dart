@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
