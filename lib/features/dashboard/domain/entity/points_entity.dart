@@ -4,7 +4,7 @@ import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 
 class PointsEntity extends Equatable {
   final PointsStatusEnum? orderStatus;
-  final double points;
+  final int points;
   final double orderNumber;
   final DateTime date;
 
@@ -20,30 +20,27 @@ class PointsEntity extends Equatable {
 }
 
 enum PointsStatusEnum {
-  earned,
-  replaced,
-  canceled;
-
+  discount,
+  addition;
   Color get color {
     switch (this) {
-      case PointsStatusEnum.earned:
+      case PointsStatusEnum.addition:
         return Colors.green;
-      case PointsStatusEnum.replaced:
+      case PointsStatusEnum.discount:
         return const Color.from(
             alpha: 1, red: 0.937, green: 0.678, blue: 0.263);
-      case PointsStatusEnum.canceled:
-        return Colors.red;
+      // case PointsStatusEnum.canceled:
+      //   return Colors.red;
     }
   }
 
   String localeName(BuildContext context) {
     switch (this) {
-      case PointsStatusEnum.earned:
-        return localeLang(context).earned;
-      case PointsStatusEnum.replaced:
-        return localeLang(context).replaced;
-      case PointsStatusEnum.canceled:
-        return localeLang(context).canceled;
+      case PointsStatusEnum.discount:
+        return localeLang(context).discount;
+      case PointsStatusEnum.addition:
+        return localeLang(context).addition;
+
     }
   }
 }

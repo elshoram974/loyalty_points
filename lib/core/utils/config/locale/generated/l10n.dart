@@ -192,6 +192,11 @@ class S {
     );
   }
 
+  /// `point`
+  String get point {
+    return Intl.message('point', name: 'point', desc: '', args: []);
+  }
+
   /// `Edit Profile Image`
   String get edit_profile_image {
     return Intl.message(
@@ -237,19 +242,14 @@ class S {
     );
   }
 
-  /// `earned`
-  String get earned {
-    return Intl.message('earned', name: 'earned', desc: '', args: []);
+  /// `addition`
+  String get addition {
+    return Intl.message('addition', name: 'addition', desc: '', args: []);
   }
 
-  /// `replaced`
-  String get replaced {
-    return Intl.message('replaced', name: 'replaced', desc: '', args: []);
-  }
-
-  /// `canceled`
-  String get canceled {
-    return Intl.message('canceled', name: 'canceled', desc: '', args: []);
+  /// `discount`
+  String get discount {
+    return Intl.message('discount', name: 'discount', desc: '', args: []);
   }
 
   /// `Coupons History`
