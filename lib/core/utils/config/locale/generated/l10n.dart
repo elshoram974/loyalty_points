@@ -192,6 +192,41 @@ class S {
     );
   }
 
+  /// `Edit Profile Image`
+  String get edit_profile_image {
+    return Intl.message(
+      'Edit Profile Image',
+      name: 'edit_profile_image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Your Profile`
+  String get edit_your_profile {
+    return Intl.message(
+      'Edit Your Profile',
+      name: 'edit_your_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current Password`
+  String get current_password {
+    return Intl.message(
+      'Current Password',
+      name: 'current_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message('Update', name: 'update', desc: '', args: []);
+  }
+
   /// `Avaliable Points:`
   String get availablePoints {
     return Intl.message(

@@ -187,6 +187,10 @@
       }
     }
   },
+  "edit_profile_image": "تعديل صورة الملف الشخصي",
+  "edit_your_profile": "تعديل الملف الشخصي",
+  "update": "تحديث",
+  "current_password": "كلمة المرور الحالية",
   "search": "بحث",
   "error": "خطأ",
   "understood": "فهمت",

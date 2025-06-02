@@ -106,6 +106,10 @@
             }
         }
     },
+    "edit_profile_image": "Edit Profile Image",
+    "edit_your_profile": "Edit Your Profile",
+    "current_password": "Current Password",
+    "update": "Update",
     "availablePoints": "Avaliable Points:",
     "earned": "earned",
     "replaced": "replaced",
