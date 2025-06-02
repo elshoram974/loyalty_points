@@ -39,13 +39,13 @@ class HomeDrawer extends GetView<DashboardController> {
             },
           ),
           const Spacer(flex: 5),
-          TileButtonWidget(
-            icon: Icons.language_outlined,
-            title: localeLang(context).changeLanguageTo(
-              Get.find<ConfigController>().alternateLocale.languageName,
-            ),
-            onTap: Get.find<ConfigController>().toggleLanguage,
-          ),
+          // TileButtonWidget(
+          //   icon: Icons.language_outlined,
+          //   title: localeLang(context).changeLanguageTo(
+          //     Get.find<ConfigController>().alternateLocale.languageName,
+          //   ),
+          //   onTap: Get.find<ConfigController>().toggleLanguage,
+          // ),
           TileButtonWidget(
             icon: Icons.login_outlined,
             title: localeLang(context).logOut,
