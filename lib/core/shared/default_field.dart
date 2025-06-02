@@ -154,6 +154,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
         isEnabled: !widget.readOnly,
         textStyle: widget.style,
         inputDecoration: InputDecoration(
+          enabled: !widget.readOnly,
           filled: widget.filled,
           fillColor: widget.fillColor,
           suffixIconColor: widget.suffixIconColor,
@@ -230,6 +231,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
         enableSuggestions: true,
         autofocus: widget.autofocus,
         style: widget.style,
+        enabled: !widget.readOnly,
       ),
     );
   }

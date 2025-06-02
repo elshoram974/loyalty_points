@@ -37,8 +37,9 @@ class _AttachmentsValidationWidgetState
         initialValue: widget.files,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: (files) {
-          if (files?.isNotEmpty != true || files?.contains(null) == true)
+          if (files?.isNotEmpty != true || files?.contains(null) == true) {
             return widget.errorMessage;
+          }
           return null;
         },
         builder: (state) {
