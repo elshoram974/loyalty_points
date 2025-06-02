@@ -13,26 +13,26 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            localeLang(context).edit_your_profile,
-            style: context.textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          localeLang(context).edit_your_profile,
+          style: context.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.bold,
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppConst.paddingDefault,
-          ),
-          child: ListView(
-            children: const [
-              SizedBox(height: AppConst.paddingDefault),
-              EditProfileFields(),
-              EditProfileButton(),
-            ],
-          ),
-        ));
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(AppConst.paddingBig),
+        children: [
+          const SizedBox(height: AppConst.paddingDefault),
+          const EditProfileFields(),
+          if (!context.isPhone) const EditProfileButton(),
+        ],
+      ),
+      bottomNavigationBar: context.isPhone
+          ? const EditProfileButton(borderRadius: BorderRadius.zero)
+          : null,
+    );
   }
 }

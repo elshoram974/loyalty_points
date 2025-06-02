@@ -27,6 +27,19 @@ class EditProfileFields extends StatelessWidget {
           height: AppConst.paddingDefault
         ),
         AuthField(
+          initialValue: user?.name,
+          label: localeLang(context).fullName,
+          suffixIconData: Icons.person,
+          textCapitalization: TextCapitalization.words,
+          autofillHints: const [AutofillHints.name],
+          hintText: localeLang(context).enterYourFullName,
+          validator: (val) =>
+              AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
+        ),
+        const SizedBox(
+          height: AppConst.paddingDefault,
+        ),
+        AuthField(
           readOnly: true,
           suffixIconData: Icons.mail_rounded,
           autofillHints: const [AutofillHints.email],
@@ -45,19 +58,7 @@ class EditProfileFields extends StatelessWidget {
           initialValue: user?.phone,
         ),
         const SizedBox(height: AppConst.paddingDefault),
-        AuthField(
-          initialValue: user?.name,
-          label: localeLang(context).fullName,
-          suffixIconData: Icons.person,
-          textCapitalization: TextCapitalization.words,
-          autofillHints: const [AutofillHints.name],
-          hintText: localeLang(context).enterYourFullName,
-          validator: (val) =>
-              AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
-        ),
-        const SizedBox(
-          height: AppConst.paddingDefault,
-        ),
+        
         PasswordField(
           isNewPass: false,
           label: localeLang(context).current_password,
