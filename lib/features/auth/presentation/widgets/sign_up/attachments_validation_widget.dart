@@ -17,9 +17,11 @@ class AttachmentsValidationWidget extends StatefulWidget {
     required this.files,
     this.onChanged,
     this.errorMessage,
+    this.topPadding = AppConst.paddingDefault,
   });
   final String title;
   final String? errorMessage;
+  final double? topPadding;
   final List<XFile?> files;
   final void Function(List<XFile?>)? onChanged;
 
@@ -51,7 +53,7 @@ class _AttachmentsValidationWidgetState
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: AppConst.paddingDefault),
+              SizedBox(height: widget.topPadding),
               Text(
                 widget.title,
                 style: context.textTheme.bodyLarge

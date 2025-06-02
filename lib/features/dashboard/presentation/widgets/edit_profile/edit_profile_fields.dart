@@ -19,6 +19,7 @@ class EditProfileFields extends StatelessWidget {
         AttachmentsValidationWidget(
           title: localeLang(context).edit_profile_image,
           errorMessage: localeLang(context).uHaveToAddProfileImage,
+          topPadding: 0,
           files: [null],
           onChanged: (p0) {},
         ),
@@ -82,7 +83,7 @@ class EditProfileFields extends StatelessWidget {
           autofillHints: const [AutofillHints.newPassword],
           hintText: localeLang(context).enterTheSamePassword,
         ),
-        const SizedBox(height: AppConst.paddingBig),
+        const SizedBox(height: AppConst.paddingExtraBig),
       ],
     );
   }
