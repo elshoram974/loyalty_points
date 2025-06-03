@@ -30,8 +30,8 @@ abstract final class AppRoute {
   static const String codeAddedScreen = "/code-added";
   static const String checkoutScreen = "/checkout";
   static const String successRedeemScreen = "/success-redeem";
-    static const String EditProfile = "/EditProfile";
-
+  static const String editProfile = "/edit-profile";
+  // static const String OrderDetails = '/OrderDetails';
 
   static List<GetPage> get pages => [
         GetPage(
@@ -77,8 +77,9 @@ abstract final class AppRoute {
           page: () => const RedeemSuccessScreen(),
         ),
         GetPage(
-          name: EditProfile,
+          name: editProfile,
           page: () => const EditProfileScreen(),
         ),
+        
       ];
 }

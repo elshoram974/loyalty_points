@@ -23,7 +23,7 @@ class HomeDrawer extends GetView<DashboardController> {
             icon: Icons.person_outline_outlined,
             title: localeLang(context).profile,
             onTap: () {
-              Get.toNamed(AppRoute.EditProfile);
+              Get.toNamed(AppRoute.editProfile);
             },
           ),
           TileButtonWidget(
