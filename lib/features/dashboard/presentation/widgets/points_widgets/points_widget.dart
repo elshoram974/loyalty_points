@@ -26,20 +26,26 @@ class PointsWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  children: [
-                    Text(
-                      points.orderStatus.localeName(context),
-                      style: context.textTheme.labelLarge?.copyWith(
-                        color: points.orderStatus.color,
+                SizedBox(
+                  width: 150,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        points.orderStatus.localeName(context),
+                        style: context.textTheme.labelLarge?.copyWith(
+                          color: points.orderStatus.color,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                    ),
-                    Text(
-                      '${points.orderNumber}',
-                      style: context.textTheme.labelLarge?.copyWith(
-                          color: const Color.fromARGB(255, 136, 131, 131)),
-                    ),
-                  ],
+                      Text(
+                        '${points.orderNumber}',
+                        style: context.textTheme.labelLarge?.copyWith(
+                            color: const Color.fromARGB(255, 136, 131, 131)),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
                 ),
                 Text(
                   localeLang(context).point_number(points.points.withSeparator),

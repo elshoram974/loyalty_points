@@ -43,9 +43,9 @@
       }
     }
   },
-   "accepted": "مقبول",
-   "rejected": "مرفوض",
-   "pending": "قيد الانتظار",
+  "accepted": "مقبول",
+  "rejected": "مرفوض",
+  "pending": "قيد الانتظار",
   "instapay": "انستاباي",
   "wallet": "المحفظة الإلكترونية",
   "transferToPaymentName": "تحويل إلى {paymentName}",
@@ -162,7 +162,7 @@
       }
     }
   },
-    "point_number": " {pointNumber} نقطة",
+  "point_number": " {pointNumber} نقطة",
   "@point_number": {
     "placeholders": {
       "pointNumber": {
@@ -201,7 +201,7 @@
       }
     }
   },
-   "paymentMethod": "طريقة الدفع",
+  "paymentMethod": "طريقة الدفع",
   "image_for_order": "صوره التحويل ",
   "edit_profile_image": "تعديل صورة الملف الشخصي",
   "edit_your_profile": "تعديل الملف الشخصي",

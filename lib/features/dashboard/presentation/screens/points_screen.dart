@@ -4,6 +4,7 @@ import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/my_sliver_pinned_tabs.dart';
 import '../../../../core/shared/points_balance_widget.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 import '../../domain/entity/points_entity.dart';
 import '../widgets/my_custom_divider.dart';
 import '../widgets/our_partners_container_widget.dart';
@@ -36,6 +37,7 @@ class PointsScreen extends StatelessWidget {
               ListView.separated(
                 addRepaintBoundaries: false,
                 itemCount: _points.length,
+                padding: const EdgeInsets.only(bottom: AppConst.paddingBig),
                 itemBuilder: (context, i) => PointsWidget(points: _points[i]),
                 separatorBuilder: (_, i) => const MyCustomDivider(),
               ),

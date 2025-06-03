@@ -106,17 +106,17 @@
             }
         }
     },
-  "point_number": " {pointNumber} point",
-  "@point_number": {
-    "placeholders": {
-      "pointNumber": {
-        "type": "String"
-      }
-    }
-  },
-     "accepted": "accepted",
-   "rejected": "rejected",
-   "pending": "pending",
+    "point_number": " {pointNumber} point",
+    "@point_number": {
+        "placeholders": {
+            "pointNumber": {
+                "type": "String"
+            }
+        }
+    },
+    "accepted": "accepted",
+    "rejected": "rejected",
+    "pending": "pending",
     "image_for_order": "Image for order",
     "paymentMethod": "Payment method",
     "status": "Status",
