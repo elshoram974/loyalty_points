@@ -10,7 +10,7 @@ import '../../../../core/shared/points_balance_widget.dart';
 
 import '../../../../core/utils/config/routes/routes.dart';
 import '../widgets/available_points/instructions_replacement_container.dart';
-import '../widgets/points_builder_widget.dart';
+import '../../../../core/shared/points_builder_widget.dart';
 
 class ReplacementScreen extends StatelessWidget {
   const ReplacementScreen({super.key});

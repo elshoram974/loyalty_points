@@ -8,7 +8,7 @@ import '../../../auth/presentation/widgets/auth_field.dart';
 import '../../../dashboard/presentation/widgets/my_app_bar.dart';
 import '../controller/redeem_controller.dart';
 import '../widgets/available_points/instructions_replacement_container.dart';
-import '../widgets/points_builder_widget.dart';
+import '../../../../core/shared/points_builder_widget.dart';
 import '../widgets/checkout_widgets/cancel_confirm_buttons.dart';
 import '../widgets/checkout_widgets/payment_methods_container.dart';
 
