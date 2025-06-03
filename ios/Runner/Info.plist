@@ -16,7 +16,7 @@
 			<string>fb</string>
 		</array>
 		<key>CFBundleDisplayName</key>
-		<string>Loyalty Points</string>
+		<string>الكسيب</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
@@ -24,7 +24,7 @@
 		<key>CFBundleInfoDictionaryVersion</key>
 		<string>6.0</string>
 		<key>CFBundleName</key>
-		<string>Loyalty Points</string>
+		<string>الكسيب</string>
 		<key>CFBundlePackageType</key>
 		<string>APPL</string>
 		<key>CFBundleShortVersionString</key>
