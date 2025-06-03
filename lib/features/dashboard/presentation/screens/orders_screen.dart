@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
+import 'package:loyalty_points/core/utils/types/payment_methods.dart';
 
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/my_sliver_pinned_tabs.dart';
@@ -24,44 +26,16 @@ class OrdersScreen extends StatelessWidget {
             ),
             const SliverToBoxAdapter(child: OurPartnersWidget()),
             MySliverPinnedTaps(tabs: [Tab(text: localeLang(context).orders)]),
-            // SliverToBoxAdapter(
-            //     child: Padding(
-            //   padding: const EdgeInsets.only(top: AppConst.paddingDefault),
-            //   child: Text(
-            //       textAlign: TextAlign.center,
-            //       localeLang(context).orders,
-            //       style: context.textTheme.headlineSmall?.copyWith(
-            //         color: Colors.black,
-            //         fontWeight: FontWeight.w500,
-            //       )),
-            // )),
-            // SliverToBoxAdapter(
-            //   child: Center(
-            //     child: Container(
-            //       width: 150,
-            //      // margin: const EdgeInsets.symmetric(horizontal: 120),
-            //       height: 5,
-            //       decoration: BoxDecoration(
-            //           color: context.theme.primaryColor,
-            //           borderRadius: BorderRadius.circular(10)),
-            //     ),
-            //   ),
-            // ),
             SliverList.separated(
               addRepaintBoundaries: false,
               itemCount: _orders.length,
-              itemBuilder: (context, index) {
-                return OrdersWidget(order: _orders[index]);
-              },
-              separatorBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.only(
-                      top: AppConst.paddingBig,
-                      left: AppConst.paddingBig,
-                      right: AppConst.paddingBig),
-                  child: Divider(thickness: 0.5),
-                );
-              },
+              itemBuilder: (_, i) => OrdersWidget(order: _orders[i]),
+              separatorBuilder: (_, i) => const Divider(
+                thickness: 0.5,
+                height: 1,
+                endIndent: AppConst.paddingBig,
+                indent: AppConst.paddingBig,
+              ),
             ),
           ],
         ),
@@ -76,53 +50,39 @@ List<OrderEntity> get _orders => [
         points: 540,
         price: 1400.25,
         date: DateTime(2000),
-      ),
-      OrderEntity(
-        orderStatus: OrderStatusEnum.pending,
-        points: 100,
-        price: 1000.25,
-        date: DateTime.now(),
-      ),
-      OrderEntity(
-        orderStatus: OrderStatusEnum.accepted,
-        points: 300,
-        price: 3001.25,
-        date: DateTime(2001),
+        phone: '0123456789',
+        paymentMethod: PaymentMethod.wallet,
+        imageUrl:
+            'https://onlinecheckwriter.com/wp-content/uploads/2024/03/online-payment.jpg',
       ),
       OrderEntity(
         orderStatus: OrderStatusEnum.rejected,
         points: 540,
         price: 1400.25,
         date: DateTime(2000),
-      ),
-      OrderEntity(
-        orderStatus: OrderStatusEnum.pending,
-        points: 100,
-        price: 1000.25,
-        date: DateTime.now(),
+        phone: '0123456789',
+        paymentMethod: PaymentMethod.wallet,
+        imageUrl:
+            'https://onlinecheckwriter.com/wp-content/uploads/2024/03/online-payment.jpg',
       ),
       OrderEntity(
         orderStatus: OrderStatusEnum.accepted,
-        points: 300,
-        price: 3001.25,
-        date: DateTime(2001),
+        points: 540,
+        price: 1400.25,
+        date: DateTime(2002),
+        phone: '0123456789',
+        paymentMethod: PaymentMethod.wallet,
+        imageUrl:
+            'https://onlinecheckwriter.com/wp-content/uploads/2024/03/online-payment.jpg',
       ),
       OrderEntity(
-        orderStatus: OrderStatusEnum.rejected,
+        orderStatus: OrderStatusEnum.pending,
         points: 540,
         price: 1400.25,
         date: DateTime(2000),
-      ),
-      OrderEntity(
-        orderStatus: OrderStatusEnum.pending,
-        points: 100,
-        price: 1000.25,
-        date: DateTime.now(),
-      ),
-      OrderEntity(
-        orderStatus: OrderStatusEnum.accepted,
-        points: 300,
-        price: 3001.25,
-        date: DateTime(2001),
+        phone: '0123456789',
+        paymentMethod: PaymentMethod.wallet,
+        imageUrl:
+            'https://onlinecheckwriter.com/wp-content/uploads/2024/03/online-payment.jpg',
       ),
     ];
