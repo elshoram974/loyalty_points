@@ -43,6 +43,9 @@
       }
     }
   },
+   "accepted": "مقبول",
+   "rejected": "مرفوض",
+   "pending": "قيد الانتظار",
   "instapay": "انستاباي",
   "wallet": "المحفظة الإلكترونية",
   "transferToPaymentName": "تحويل إلى {paymentName}",
@@ -106,6 +109,9 @@
       }
     }
   },
+  "status": "الحالة",
+  "price": "السعر",
+  "order_details": "تفاصيل الطلب",
   "point": "نقطة",
   "availablePoints": "النقاط المتاحة:",
   "addition": "اضافه",
@@ -187,6 +193,8 @@
       }
     }
   },
+   "paymentMethod": "طريقة الدفع",
+  "image_for_order": "صوره التحويل ",
   "edit_profile_image": "تعديل صورة الملف الشخصي",
   "edit_your_profile": "تعديل الملف الشخصي",
   "update": "تحديث",

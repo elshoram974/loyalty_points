@@ -106,6 +106,14 @@
             }
         }
     },
+     "accepted": "accepted",
+   "rejected": "rejected",
+   "pending": "pending",
+    "image_for_order": "Image for order",
+    "paymentMethod": "Payment method",
+    "status": "Status",
+    "price": "Price",
+    "order_details": "Order details",
     "point": "point",
     "edit_profile_image": "Edit Profile Image",
     "edit_your_profile": "Edit Your Profile",

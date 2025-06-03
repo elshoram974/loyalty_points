@@ -192,6 +192,61 @@ class S {
     );
   }
 
+  /// `accepted`
+  String get accepted {
+    return Intl.message('accepted', name: 'accepted', desc: '', args: []);
+  }
+
+  /// `rejected`
+  String get rejected {
+    return Intl.message('rejected', name: 'rejected', desc: '', args: []);
+  }
+
+  /// `pending`
+  String get pending {
+    return Intl.message('pending', name: 'pending', desc: '', args: []);
+  }
+
+  /// `Image for order`
+  String get image_for_order {
+    return Intl.message(
+      'Image for order',
+      name: 'image_for_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment method`
+  String get paymentMethod {
+    return Intl.message(
+      'Payment method',
+      name: 'paymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status`
+  String get status {
+    return Intl.message('Status', name: 'status', desc: '', args: []);
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message('Price', name: 'price', desc: '', args: []);
+  }
+
+  /// `Order details`
+  String get order_details {
+    return Intl.message(
+      'Order details',
+      name: 'order_details',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `point`
   String get point {
     return Intl.message('point', name: 'point', desc: '', args: []);
