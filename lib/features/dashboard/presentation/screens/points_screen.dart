@@ -15,7 +15,7 @@ class PointsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 1,
       child: CustomScaffold(
         body: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) {
@@ -29,9 +29,9 @@ class PointsScreen extends StatelessWidget {
                   Tab(
                     text: localeLang(context).pointsHistory,
                   ),
-                  Tab(
-                    text: localeLang(context).couponsHistory,
-                  ),
+                  // Tab(
+                  //   text: localeLang(context).couponsHistory,
+                  // ),
                 ],
               ),
             ];
@@ -52,19 +52,19 @@ class PointsScreen extends StatelessWidget {
                   );
                 },
               ),
-              ListView.separated(
-                addRepaintBoundaries: false,
-                itemCount: _coupons.length,
-                itemBuilder: (_, i) => PointsWidget(points: _coupons[i]),
-                separatorBuilder: (_, __) {
-                  return Padding(
-                    padding: const EdgeInsets.all(
-                      AppConst.paddingDefault,
-                    ).copyWith(bottom: 0),
-                    child: const Divider(thickness: 0.5),
-                  );
-                },
-              ),
+              // ListView.separated(
+              //   addRepaintBoundaries: false,
+              //   itemCount: _coupons.length,
+              //   itemBuilder: (_, i) => PointsWidget(points: _coupons[i]),
+              //   separatorBuilder: (_, __) {
+              //     return Padding(
+              //       padding: const EdgeInsets.all(
+              //         AppConst.paddingDefault,
+              //       ).copyWith(bottom: 0),
+              //       child: const Divider(thickness: 0.5),
+              //     );
+              //   },
+              // ),
             ],
           ),
         ),
@@ -90,7 +90,7 @@ List<PointsEntity> get _coupons => [
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.canceled,
+        orderStatus: PointsStatusEnum.discount,
         points: 540,
         orderNumber: 2222221400.25,
         date: DateTime(2000),
@@ -98,109 +98,109 @@ List<PointsEntity> get _coupons => [
     ];
 List<PointsEntity> get _points => [
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 540,
         orderNumber: 2222221400.25,
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.replaced,
+        orderStatus: PointsStatusEnum.discount,
         points: 100,
         orderNumber: 2222221000.25,
         date: DateTime.now(),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 300,
         orderNumber: 22222223001.25,
         date: DateTime(2001),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 540,
         orderNumber: 2222221400.25,
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.replaced,
+        orderStatus: PointsStatusEnum.discount,
         points: 100,
         orderNumber: 2222221000.25,
         date: DateTime.now(),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 300,
         orderNumber: 22222223001.25,
         date: DateTime(2001),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 540,
         orderNumber: 2222221400.25,
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.replaced,
+        orderStatus: PointsStatusEnum.discount,
         points: 100,
         orderNumber: 2222221000.25,
         date: DateTime.now(),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 300,
         orderNumber: 22222223001.25,
         date: DateTime(2001),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 540,
         orderNumber: 2222221400.25,
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.replaced,
+        orderStatus: PointsStatusEnum.discount,
         points: 100,
         orderNumber: 2222221000.25,
         date: DateTime.now(),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 300,
         orderNumber: 22222223001.25,
         date: DateTime(2001),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 540,
         orderNumber: 2222221400.25,
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.replaced,
+        orderStatus: PointsStatusEnum.discount,
         points: 100,
         orderNumber: 2222221000.25,
         date: DateTime.now(),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 300,
         orderNumber: 22222223001.25,
         date: DateTime(2001),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 540,
         orderNumber: 2222221400.25,
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.replaced,
+        orderStatus: PointsStatusEnum.discount,
         points: 100,
         orderNumber: 2222221000.25,
         date: DateTime.now(),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.earned,
+        orderStatus: PointsStatusEnum.addition,
         points: 300,
         orderNumber: 22222223001.25,
         date: DateTime(2001),

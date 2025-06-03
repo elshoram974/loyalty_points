@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/features/dashboard/presentation/widgets/date_container_widget.dart';
+import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../domain/entity/points_entity.dart';
 
@@ -33,10 +34,19 @@ class PointsWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(
-                ' ${points.points} ',
-                style: context.textTheme.labelLarge
-                    ?.copyWith(color: context.theme.primaryColor),
+              Row(
+                children: [
+                  Text(
+                    ' ${points.points} ',
+                    style: context.textTheme.labelLarge
+                        ?.copyWith(color: context.theme.primaryColor),
+                  ),
+                  Text(
+                    localeLang(context).point,
+                    style: context.textTheme.labelLarge
+                        ?.copyWith(color: context.theme.primaryColor),
+                  ),
+                ],
               ),
             ],
           ),
