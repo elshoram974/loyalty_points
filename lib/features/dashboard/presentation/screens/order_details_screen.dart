@@ -4,9 +4,11 @@ import 'package:loyalty_points/core/utils/constants/app_constants.dart';
 import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/my_network_image.dart';
+import '../../../../core/shared/points_builder_widget.dart';
+import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../domain/entity/order_entity.dart';
-import '../widgets/date_container_widget.dart';
+import 'package:intl/intl.dart' as intl;
 
 class OrdersDetailsScreen extends StatelessWidget {
   const OrdersDetailsScreen({
@@ -31,7 +33,17 @@ class OrdersDetailsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(AppConst.paddingDefault),
         children: [
-          DateContainerWidget(date: order.date),
+          // DateContainerWidget(date: order.date),
+          _DetailsCard(
+
+            icon: Icons.calendar_month_outlined,
+            title: localeLang(context).date,
+            value: intl.DateFormat.yMMMd(
+              Get.find<ConfigController>().locale.languageCode,
+            ).format(
+                DateTime(order.date.year, order.date.month, order.date.day)),
+                
+          ),
           _DetailsCard(
             icon: order.orderStatus.icon,
             title: localeLang(context).status,
@@ -43,10 +55,14 @@ class OrdersDetailsScreen extends StatelessWidget {
             title: localeLang(context).points,
             value: order.points.withSeparator,
           ),
-          _DetailsCard(
-            icon: Icons.price_check_outlined,
-            title: localeLang(context).price,
-            value: order.price.withSeparator,
+          PointsBuilderWidget(
+            builder: (_,__,helper) {
+              return _DetailsCard(
+                icon: Icons.price_check_outlined,
+                title: localeLang(context).price,
+                value: "${order.price.withSeparator} ${helper.config?.currency}",
+              );
+            }
           ),
           _DetailsCard(
             icon: Icons.phone_outlined,

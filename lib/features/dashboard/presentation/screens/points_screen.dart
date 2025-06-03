@@ -72,30 +72,6 @@ class PointsScreen extends StatelessWidget {
     );
   }
 }
-
-List<PointsEntity> get _coupons => [
-      PointsEntity(
-        points: 540,
-        orderNumber: 2222221400.25,
-        date: DateTime(2000),
-      ),
-      PointsEntity(
-        points: 540,
-        orderNumber: 2222221400.25,
-        date: DateTime(2000),
-      ),
-      PointsEntity(
-        points: 540,
-        orderNumber: 2222221400.25,
-        date: DateTime(2000),
-      ),
-      PointsEntity(
-        orderStatus: PointsStatusEnum.discount,
-        points: 540,
-        orderNumber: 2222221400.25,
-        date: DateTime(2000),
-      ),
-    ];
 List<PointsEntity> get _points => [
       PointsEntity(
         orderStatus: PointsStatusEnum.addition,

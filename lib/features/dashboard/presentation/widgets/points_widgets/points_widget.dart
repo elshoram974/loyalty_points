@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
 import 'package:loyalty_points/features/dashboard/presentation/widgets/date_container_widget.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
@@ -37,7 +38,7 @@ class PointsWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    ' ${points.points} ',
+                    ' ${points.points.withSeparator} ',
                     style: context.textTheme.labelLarge
                         ?.copyWith(color: context.theme.primaryColor),
                   ),
