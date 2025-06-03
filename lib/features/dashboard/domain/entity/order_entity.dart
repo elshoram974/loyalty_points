@@ -53,7 +53,7 @@ enum OrderStatusEnum {
       case accepted:
         return Colors.green;
       case pending:
-        return  Colors.orange;
+        return Color(0xFFF57C00);
       case rejected:
         return Get.theme.colorScheme.error;
     }
