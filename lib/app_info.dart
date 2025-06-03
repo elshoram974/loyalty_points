@@ -8,7 +8,7 @@ abstract final class AppInfo {
 
   static const String baseURL = "https://points.petrojac.com";
 
-  static const String appName = "Loyalty Points";
+  static const String appName = "الكسيب";
   static const String appId = "com.petrojac.loyaltyPoints";
   static const String appVersion = "1.0.0";
   static const int appBuildVersion = 1;

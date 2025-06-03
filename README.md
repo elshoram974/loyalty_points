@@ -1,4 +1,4 @@
-# Loyalty Points
+# الكسيب
 
 A loyalty program, where points can be collected with every purchase products.
 
