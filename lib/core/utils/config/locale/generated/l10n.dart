@@ -192,6 +192,16 @@ class S {
     );
   }
 
+  /// ` {pointNumber} point`
+  String point_number(String pointNumber) {
+    return Intl.message(
+      ' $pointNumber point',
+      name: 'point_number',
+      desc: '',
+      args: [pointNumber],
+    );
+  }
+
   /// `accepted`
   String get accepted {
     return Intl.message('accepted', name: 'accepted', desc: '', args: []);

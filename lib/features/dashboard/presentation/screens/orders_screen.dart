@@ -7,6 +7,7 @@ import '../../../../core/shared/my_sliver_pinned_tabs.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../domain/entity/order_entity.dart';
+import '../widgets/my_custom_divider.dart';
 import '../widgets/orders_widgets/orders_widget.dart';
 import '../widgets/our_partners_container_widget.dart';
 
@@ -29,12 +30,10 @@ class OrdersScreen extends StatelessWidget {
               addRepaintBoundaries: false,
               itemCount: _orders.length,
               itemBuilder: (_, i) => OrdersWidget(order: _orders[i]),
-              separatorBuilder: (_, i) => const Divider(
-                thickness: 0.5,
-                height: 1,
-                endIndent: AppConst.paddingBig,
-                indent: AppConst.paddingBig,
-              ),
+              separatorBuilder: (_, i) => const MyCustomDivider(),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: AppConst.paddingBig),
             ),
           ],
         ),
@@ -42,6 +41,8 @@ class OrdersScreen extends StatelessWidget {
     );
   }
 }
+
+
 
 List<OrderEntity> get _orders => [
       OrderEntity(
@@ -69,6 +70,26 @@ List<OrderEntity> get _orders => [
         points: 540,
         price: 1400.25,
         date: DateTime(2002),
+        phone: '0123456789',
+        paymentMethod: PaymentMethod.wallet,
+        imageUrl:
+            'https://onlinecheckwriter.com/wp-content/uploads/2024/03/online-payment.jpg',
+      ),
+      OrderEntity(
+        orderStatus: OrderStatusEnum.pending,
+        points: 540,
+        price: 1400.25,
+        date: DateTime(2000),
+        phone: '0123456789',
+        paymentMethod: PaymentMethod.wallet,
+        imageUrl:
+            'https://onlinecheckwriter.com/wp-content/uploads/2024/03/online-payment.jpg',
+      ),
+      OrderEntity(
+        orderStatus: OrderStatusEnum.pending,
+        points: 540,
+        price: 1400.25,
+        date: DateTime(2000),
         phone: '0123456789',
         paymentMethod: PaymentMethod.wallet,
         imageUrl:

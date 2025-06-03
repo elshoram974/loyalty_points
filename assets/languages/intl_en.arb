@@ -106,6 +106,14 @@
             }
         }
     },
+  "point_number": " {pointNumber} point",
+  "@point_number": {
+    "placeholders": {
+      "pointNumber": {
+        "type": "String"
+      }
+    }
+  },
      "accepted": "accepted",
    "rejected": "rejected",
    "pending": "pending",

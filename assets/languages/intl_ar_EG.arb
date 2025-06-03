@@ -162,6 +162,14 @@
       }
     }
   },
+    "point_number": " {pointNumber} نقطة",
+  "@point_number": {
+    "placeholders": {
+      "pointNumber": {
+        "type": "String"
+      }
+    }
+  },
   "logout": "تسجيل الخروج",
   "privacyPolicy": "سياسة الخصوصية",
   "termsAndConditions": "الشروط والأحكام",

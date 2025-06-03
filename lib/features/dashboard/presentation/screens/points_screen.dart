@@ -4,8 +4,8 @@ import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/my_sliver_pinned_tabs.dart';
 import '../../../../core/shared/points_balance_widget.dart';
-import '../../../../core/utils/constants/app_constants.dart';
 import '../../domain/entity/points_entity.dart';
+import '../widgets/my_custom_divider.dart';
 import '../widgets/our_partners_container_widget.dart';
 import '../widgets/points_widgets/points_widget.dart';
 
@@ -26,12 +26,7 @@ class PointsScreen extends StatelessWidget {
               const SliverToBoxAdapter(child: OurPartnersWidget()),
               MySliverPinnedTaps(
                 tabs: [
-                  Tab(
-                    text: localeLang(context).pointsHistory,
-                  ),
-                  // Tab(
-                  //   text: localeLang(context).couponsHistory,
-                  // ),
+                  Tab(text: localeLang(context).pointsHistory),
                 ],
               ),
             ];
@@ -41,30 +36,9 @@ class PointsScreen extends StatelessWidget {
               ListView.separated(
                 addRepaintBoundaries: false,
                 itemCount: _points.length,
-                itemBuilder: (context, index) {
-                  return PointsWidget(points: _points[index]);
-                },
-                separatorBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(AppConst.paddingDefault)
-                        .copyWith(bottom: 0),
-                    child: const Divider(thickness: 0.5),
-                  );
-                },
+                itemBuilder: (context, i) => PointsWidget(points: _points[i]),
+                separatorBuilder: (_, i) => const MyCustomDivider(),
               ),
-              // ListView.separated(
-              //   addRepaintBoundaries: false,
-              //   itemCount: _coupons.length,
-              //   itemBuilder: (_, i) => PointsWidget(points: _coupons[i]),
-              //   separatorBuilder: (_, __) {
-              //     return Padding(
-              //       padding: const EdgeInsets.all(
-              //         AppConst.paddingDefault,
-              //       ).copyWith(bottom: 0),
-              //       child: const Divider(thickness: 0.5),
-              //     );
-              //   },
-              // ),
             ],
           ),
         ),
@@ -72,6 +46,7 @@ class PointsScreen extends StatelessWidget {
     );
   }
 }
+
 List<PointsEntity> get _points => [
       PointsEntity(
         orderStatus: PointsStatusEnum.addition,

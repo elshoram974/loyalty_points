@@ -20,7 +20,10 @@ class OrdersWidget extends StatelessWidget {
           : null,
       onTap: () => Get.to(() => OrdersDetailsScreen(order: order)),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppConst.paddingDefault),
+        padding: const EdgeInsets.only(
+          top: AppConst.paddingSmall,
+          bottom: AppConst.paddingBig,
+        ),
         child: Column(
           children: [
             DateContainerWidget(date: order.date),
@@ -32,30 +35,18 @@ class OrdersWidget extends StatelessWidget {
                   style: context.textTheme.labelLarge
                       ?.copyWith(color: order.orderStatus.color),
                 ),
-                Row(
-                  children: [
-                    Text(
-                      ' ${order.points.withSeparator} ',
-                      style: context.textTheme.labelLarge
-                          ?.copyWith(color: context.theme.primaryColor),
-                    ),
-                    Text(
-                      localeLang(context).point,
-                      style: context.textTheme.labelLarge
-                          ?.copyWith(color: context.theme.primaryColor),
-                    ),
-                  ],
+                Text(
+                  localeLang(context).point_number(order.points.withSeparator),
+                  style: context.textTheme.labelLarge
+                      ?.copyWith(color: context.theme.primaryColor),
                 ),
-                PointsBuilderWidget(
-                  builder: (_,__,helper){
+                PointsBuilderWidget(builder: (_, __, helper) {
                   return Text(
                     '${order.price.withSeparator} ${helper.config?.currency}',
                     style: context.textTheme.labelLarge
                         ?.copyWith(color: context.theme.primaryColor),
                   );
-                  }
-                ),
-  
+                }),
               ],
             ),
           ],

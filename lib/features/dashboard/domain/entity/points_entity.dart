@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
 
 class PointsEntity extends Equatable {
-  final PointsStatusEnum? orderStatus;
+  final PointsStatusEnum orderStatus;
   final int points;
   final double orderNumber;
   final DateTime date;
 
   const PointsEntity({
-    this.orderStatus,
+    required this.orderStatus,
     required this.points,
     required this.orderNumber,
     required this.date,
@@ -29,8 +29,6 @@ enum PointsStatusEnum {
       case PointsStatusEnum.discount:
         return const Color.from(
             alpha: 1, red: 0.937, green: 0.678, blue: 0.263);
-      // case PointsStatusEnum.canceled:
-      //   return Colors.red;
     }
   }
 
