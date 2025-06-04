@@ -8,6 +8,7 @@ import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../controller/dashboard_controller.dart';
 import '../widgets/drawer_widgets/tile_button_widget.dart';
+import 'terms_screen.dart';
 
 class HomeDrawer extends GetView<DashboardController> {
   const HomeDrawer({super.key});
@@ -45,7 +46,14 @@ class HomeDrawer extends GetView<DashboardController> {
             icon: Icons.policy_outlined,
             title: localeLang(context).termsConditions,
             onTap: () {
-              controller.changeHomeScreen(DashboardTabsEnum.redeemPoints.index);
+              Get.to(TermsScreen());
+            },
+          ),
+          TileButtonWidget(
+            icon: Icons.description_outlined,
+            title: localeLang(context).termsConditions,
+            onTap: () {
+              Get.to(TermsScreen());
             },
           ),
           const Spacer(flex: 5),
