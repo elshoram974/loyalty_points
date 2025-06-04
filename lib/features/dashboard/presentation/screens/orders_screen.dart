@@ -19,7 +19,7 @@ class OrdersScreen extends StatelessWidget {
     return CustomScaffold(
       body: DefaultTabController(
         length: 1,
-        child: CustomScrollView(
+        child: CustomScrollView( 
           slivers: [
             const SliverToBoxAdapter(
               child: PointsBalanceWidget(isUncategorized: false),

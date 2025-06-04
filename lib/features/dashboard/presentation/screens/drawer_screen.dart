@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_constants.dart';
+import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../controller/dashboard_controller.dart';
 import '../widgets/drawer_widgets/tile_button_widget.dart';
@@ -18,7 +19,7 @@ class HomeDrawer extends GetView<DashboardController> {
       child: Column(
         spacing: AppConst.paddingDefault,
         children: [
-          const Spacer(flex: 4),
+          const Spacer(flex: 2),
           TileButtonWidget(
             icon: Icons.person_outline_outlined,
             title: localeLang(context).profile,
@@ -40,7 +41,24 @@ class HomeDrawer extends GetView<DashboardController> {
               controller.changeHomeScreen(DashboardTabsEnum.redeemPoints.index);
             },
           ),
+          TileButtonWidget(
+            icon: Icons.policy_outlined,
+            title: localeLang(context).termsConditions,
+            onTap: () {
+              controller.changeHomeScreen(DashboardTabsEnum.redeemPoints.index);
+            },
+          ),
           const Spacer(flex: 5),
+          TileButtonWidget(
+            icon: Icons.delete_outline,
+            title: localeLang(context).delete_account,
+            onTap: () => ShowMyDialog.removeAccount(
+              () {
+                print("object");
+              },
+            ),
+          ),
+          const Spacer(flex: 6),
           // TileButtonWidget(
           //   icon: Icons.language_outlined,
           //   title: localeLang(context).changeLanguageTo(
@@ -53,7 +71,7 @@ class HomeDrawer extends GetView<DashboardController> {
             title: localeLang(context).logOut,
             onTap: controller.logOut,
           ),
-          const SizedBox(height: AppConst.paddingDefault)
+          const SizedBox(height: AppConst.paddingDefault),
         ],
       ),
     );

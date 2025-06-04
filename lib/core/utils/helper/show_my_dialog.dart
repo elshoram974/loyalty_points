@@ -49,4 +49,22 @@ abstract final class ShowMyDialog {
     );
     return result;
   }
+
+  static Future<bool?> removeAccount([void Function()? onPressRemove]) async {
+    final bool? result = await Get.dialog<bool>(
+      CustomDialog(
+        title: localeLang().delete_account,
+        body: localeLang().do_you_want_to_delete_your_account,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        textCancel: localeLang().delete_account,
+        onPressCancel: () {
+          Get.back();
+          if (onPressRemove != null) onPressRemove();
+        },
+        textConfirm: localeLang().cancel,
+        onPressConfirm: Get.back,
+      ),
+    );
+    return result;
+  }
 }
