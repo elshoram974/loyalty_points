@@ -170,6 +170,9 @@
       }
     }
   },
+  "do_you_want_to_delete_your_account": "هل تريد حذف حسابك؟",
+  "termsConditions": "الشروط والاحكام",
+  "delete_account": "حذف الحساب",
   "logout": "تسجيل الخروج",
   "privacyPolicy": "سياسة الخصوصية",
   "termsAndConditions": "الشروط والأحكام",

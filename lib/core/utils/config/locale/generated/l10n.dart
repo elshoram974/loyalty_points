@@ -202,6 +202,36 @@ class S {
     );
   }
 
+  /// `Do you want to delete your account?`
+  String get do_you_want_to_delete_your_account {
+    return Intl.message(
+      'Do you want to delete your account?',
+      name: 'do_you_want_to_delete_your_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms & Conditions`
+  String get termsConditions {
+    return Intl.message(
+      'Terms & Conditions',
+      name: 'termsConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Account`
+  String get delete_account {
+    return Intl.message(
+      'Delete Account',
+      name: 'delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `accepted`
   String get accepted {
     return Intl.message('accepted', name: 'accepted', desc: '', args: []);

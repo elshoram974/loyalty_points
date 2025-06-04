@@ -114,6 +114,9 @@
             }
         }
     },
+    "do_you_want_to_delete_your_account": "Do you want to delete your account?",
+    "termsConditions": "Terms & Conditions",
+    "delete_account": "Delete Account",
     "accepted": "accepted",
     "rejected": "rejected",
     "pending": "pending",
