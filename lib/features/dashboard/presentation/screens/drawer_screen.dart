@@ -43,7 +43,7 @@ class HomeDrawer extends GetView<DashboardController> {
               controller.changeHomeScreen(DashboardTabsEnum.redeemPoints.index);
             },
           ),
-           const Spacer(flex: 5),
+          const Spacer(flex: 5),
           TileButtonWidget(
             icon: Icons.policy_outlined,
             title: localeLang(context).termsConditions,
@@ -58,14 +58,19 @@ class HomeDrawer extends GetView<DashboardController> {
               Get.to(PrivacyScreen());
             },
           ),
-         
+
           TileButtonWidget(
             icon: Icons.delete_outline,
             title: localeLang(context).delete_account,
-            onTap: () => ShowMyDialog.removeAccount(
-              () {
-                
+            onTap: () => ShowMyDialog.dialog(
+              body: localeLang().do_you_want_to_delete_your_account,
+              title: localeLang().delete_account,
+              textCancel: localeLang().delete_account,
+              onPressCancel: () {
+                Get.back();
               },
+              textConfirm: localeLang().cancel,
+              onPressConfirm: Get.back,
             ),
           ),
           const Spacer(flex: 6),
@@ -79,10 +84,15 @@ class HomeDrawer extends GetView<DashboardController> {
           TileButtonWidget(
             icon: Icons.login_outlined,
             title: localeLang(context).logOut,
-            onTap: () => ShowMyDialog.logout(
-              () {
-                
+            onTap: () => ShowMyDialog.dialog(
+              body: localeLang().do_you_want_to_logout,
+              title: localeLang().logout,
+              textCancel: localeLang().logOut,
+              onPressCancel: () {
+               controller.logOut();
               },
+              textConfirm: localeLang().cancel,
+              onPressConfirm: Get.back,
             ),
           ),
           const SizedBox(height: AppConst.paddingDefault),

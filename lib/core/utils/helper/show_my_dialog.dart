@@ -5,7 +5,7 @@ import '../../../features/dashboard/presentation/controller/dashboard_controller
 import '../../shared/dialog/custom_dialog.dart';
 import '../config/locale/local_lang.dart';
 
-abstract final class ShowMyDialog extends GetView<DashboardController>{
+abstract final class ShowMyDialog extends GetView<DashboardController> {
   const ShowMyDialog();
 
   static Future<T> loading<T>(Future<T> Function() asyncFunction) {
@@ -51,38 +51,40 @@ abstract final class ShowMyDialog extends GetView<DashboardController>{
     return result;
   }
 
-  static Future<bool?> removeAccount([void Function()? onPressRemove]) async {
+  static Future<bool?> dialog({
+    void Function()? onPressRemove,
+    String? body,
+    String? title,
+    String? textCancel,
+    String? textConfirm,
+    void Function()? onPressConfirm,
+    void Function()? onPressCancel,
+  }) async {
     final bool? result = await Get.dialog<bool>(
       CustomDialog(
-        title: localeLang().delete_account,
-        body: localeLang().do_you_want_to_delete_your_account,
         crossAxisAlignment: CrossAxisAlignment.center,
-        textCancel: localeLang().delete_account,
+        body: body ?? '',
+        title: title ?? '',
+        textCancel: textCancel ?? '',
+        textConfirm: textConfirm ?? '',
         onPressCancel: () {
-          Get.back();
-          if (onPressRemove != null) onPressRemove();
+          if (onPressCancel != null) {
+            onPressCancel();
+          }
+          Get.back(result: false);
         },
-        textConfirm: localeLang().cancel,
-        onPressConfirm: Get.back,
+        onPressConfirm: () {
+          if (onPressRemove != null) {
+            onPressRemove();
+          }
+          if (onPressConfirm != null) {
+            onPressConfirm();
+          }
+          Get.back(result: true);
+        },
       ),
     );
-    return result;
-  }
-  static Future<bool?> logout([void Function()? onPressRemove]) async {
-    final bool? result = await Get.dialog<bool>(
-      CustomDialog(
-        title: localeLang().logOut,
-        body: localeLang().do_you_want_to_logout,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        textCancel: localeLang().logOut,
-        onPressCancel: () {
-          Get.back();
-          if (onPressRemove != null) onPressRemove();
-        },
-        textConfirm: localeLang().cancel,
-        onPressConfirm: Get.back,
-      ),
-    );
+
     return result;
   }
 }
