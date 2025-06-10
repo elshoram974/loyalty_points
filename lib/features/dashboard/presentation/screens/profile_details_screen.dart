@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/constants/app_constants.dart';
-import 'package:loyalty_points/features/dashboard/presentation/screens/profile_details_fields.dart';
+import 'package:loyalty_points/features/dashboard/presentation/widgets/profile_details/profile_details_fields.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../auth/data/models/user_model.dart';
@@ -16,7 +16,7 @@ class ProfileDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          localeLang(context).edit_your_profile,
+          localeLang(context).profile,
           style: context.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -29,9 +29,9 @@ class ProfileDetailsScreen extends StatelessWidget {
           if (!context.isPhone) const EditProfileButton(),
         ],
       ),
-      bottomNavigationBar: context.isPhone
-          ? const EditProfileButton(borderRadius: BorderRadius.zero)
-          : null,
+      // bottomNavigationBar: context.isPhone
+      //     ? const EditProfileButton(borderRadius: BorderRadius.zero)
+      //     : null,
     );
   }
 }
