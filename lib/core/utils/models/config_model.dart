@@ -128,6 +128,7 @@ class ConfigModel extends Equatable {
     int? repMinimumPointsToRedeem,
     int? sellerOnePoundEquity,
     int? repOnePoundEquity,
+    List<dynamic>? social,
   }) {
     return ConfigModel(
       pointsValue: pointsValue ?? this.pointsValue,
@@ -141,6 +142,7 @@ class ConfigModel extends Equatable {
           repMinimumPointsToRedeem ?? _repMinimumPointsToRedeem,
       sellerOnePoundEquity: sellerOnePoundEquity ?? _sellerOnePoundEquity,
       repOnePoundEquity: repOnePoundEquity ?? _repOnePoundEquity,
+      social: social ?? _social
     );
   }
 

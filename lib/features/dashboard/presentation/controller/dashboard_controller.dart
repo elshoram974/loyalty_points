@@ -26,11 +26,11 @@ abstract class DashboardController extends GetxController {
   int get selectedScreen;
   void changeHomeScreen(int selected);
 
-  Future<void> getAllData();
+  Future<void> getAllData([bool isReload = false]);
 
   Future<void> updateFCMToken();
 
-  Future<void> getUserData();
+  Future<void> getUserData([bool isReload = false]);
 
   Future<void> logOut();
 
@@ -38,8 +38,9 @@ abstract class DashboardController extends GetxController {
 }
 
 class DashboardControllerImp extends DashboardController {
-  DashboardControllerImp(this.repo);
   final DashboardRepositories repo;
+  final ConfigController configController;
+  DashboardControllerImp({required this.repo, required this.configController});
 
   bool _isLoadingUserData = true;
 
@@ -68,16 +69,15 @@ class DashboardControllerImp extends DashboardController {
   }
 
   @override
-  Future<void> getAllData() async {
+  Future<void> getAllData([bool isReload = false]) async {
     await Future.wait(
       [
         updateFCMToken(),
-        getUserData(),
-        Get.find<ConfigController>().getConfigData(),
+        getUserData(isReload),
+        configController.getConfigData(isReload),
       ],
     );
   }
-
   @override
   Future<void> updateFCMToken() async {
     return handleResponseInController<void>(
@@ -90,13 +90,15 @@ class DashboardControllerImp extends DashboardController {
   }
 
   @override
-  Future<void> getUserData() async {
+  Future<void> getUserData([bool isReload = false]) async {
     final List<String> ids = [
       AppString.updateHomeUser,
       AppString.updateBalance,
     ];
-    _isLoadingUserData = true;
-    update(ids);
+    if (!isReload) {
+      _isLoadingUserData = true;
+      update(ids);
+    }
 
     Status<UserModel?>? realStatus;
 

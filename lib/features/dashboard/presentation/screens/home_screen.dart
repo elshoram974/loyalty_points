@@ -7,6 +7,7 @@ import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/constants/app_strings.dart';
+import '../controller/dashboard_controller.dart';
 import '../widgets/home_widgets/abusing_code.dart';
 import '../widgets/home_widgets/social_media_widget.dart';
 
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: Get.find<ConfigController>().getConfigData,
+      onRefresh: () => Get.find<DashboardController>().getAllData(true),
       child: ListView(
         children: [
           GetBuilder<ConfigController>(

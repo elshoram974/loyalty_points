@@ -25,7 +25,7 @@ abstract class ConfigController extends GetxController {
   void toggleLanguage();
 
   bool get isLoadingConfig;
-  Future<void> getConfigData();
+  Future<void> getConfigData([bool isReload = false]);
 }
 
 class ConfigControllerImp extends ConfigController {
@@ -84,15 +84,17 @@ class ConfigControllerImp extends ConfigController {
   @override
   bool get isLoadingConfig => _isLoadingConfig;
   @override
-  Future<void> getConfigData() async {
+  Future<void> getConfigData([bool isReload = false]) async {
     final List<String> ids = [
       AppString.updateHomeBanners,
       AppString.updateHomeSocial,
       AppString.updateBalance,
     ];
 
-    _isLoadingConfig = true;
-    update(ids);
+    if(!isReload){
+      _isLoadingConfig = true;
+      update(ids);
+    }
 
     final Status<ConfigModel> status = await executeAndHandleErrors(
       () => dataSource(),
