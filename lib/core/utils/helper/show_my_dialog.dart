@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../features/dashboard/presentation/controller/dashboard_controller.dart';
 import '../../shared/dialog/custom_dialog.dart';
 import '../config/locale/local_lang.dart';
 
-abstract final class ShowMyDialog {
+abstract final class ShowMyDialog extends GetView<DashboardController>{
   const ShowMyDialog();
 
   static Future<T> loading<T>(Future<T> Function() asyncFunction) {
@@ -57,6 +58,23 @@ abstract final class ShowMyDialog {
         body: localeLang().do_you_want_to_delete_your_account,
         crossAxisAlignment: CrossAxisAlignment.center,
         textCancel: localeLang().delete_account,
+        onPressCancel: () {
+          Get.back();
+          if (onPressRemove != null) onPressRemove();
+        },
+        textConfirm: localeLang().cancel,
+        onPressConfirm: Get.back,
+      ),
+    );
+    return result;
+  }
+  static Future<bool?> logout([void Function()? onPressRemove]) async {
+    final bool? result = await Get.dialog<bool>(
+      CustomDialog(
+        title: localeLang().logOut,
+        body: localeLang().do_you_want_to_logout,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        textCancel: localeLang().logOut,
         onPressCancel: () {
           Get.back();
           if (onPressRemove != null) onPressRemove();

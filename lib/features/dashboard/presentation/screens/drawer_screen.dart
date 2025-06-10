@@ -64,7 +64,7 @@ class HomeDrawer extends GetView<DashboardController> {
             title: localeLang(context).delete_account,
             onTap: () => ShowMyDialog.removeAccount(
               () {
-                print("object");
+                
               },
             ),
           ),
@@ -79,7 +79,11 @@ class HomeDrawer extends GetView<DashboardController> {
           TileButtonWidget(
             icon: Icons.login_outlined,
             title: localeLang(context).logOut,
-            onTap: controller.logOut,
+            onTap: () => ShowMyDialog.logout(
+              () {
+                
+              },
+            ),
           ),
           const SizedBox(height: AppConst.paddingDefault),
         ],
