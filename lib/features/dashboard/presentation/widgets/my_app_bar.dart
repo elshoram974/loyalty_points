@@ -38,16 +38,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                           child: ClipOval(
                             child: MyNetworkImage(
                               controller.user?.image?.path,
-                              placeHolder: CircleAvatar(
-                                radius: double.maxFinite,
-                                backgroundColor: AppColor.greyBackground,
-                                child: FittedBox(
-                                  child: Text(
-                                    name.nameAbbreviation,
-                                    style: context.textTheme.headlineLarge,
-                                  ),
-                                ),
-                              ),
+                              placeHolder: UserImagePlaceHolder(name: name),
                             ),
                           ),
                         ),
@@ -76,4 +67,24 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(60);
+}
+
+class UserImagePlaceHolder extends StatelessWidget {
+  const UserImagePlaceHolder({super.key, required this.name});
+
+  final String name;
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      radius: double.maxFinite,
+      backgroundColor: AppColor.greyBackground,
+      child: FittedBox(
+        child: Text(
+          name.nameAbbreviation,
+          style: context.textTheme.headlineLarge,
+        ),
+      ),
+    );
+  }
 }
