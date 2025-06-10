@@ -212,51 +212,281 @@ class S {
     );
   }
 
-  /// `These terms and conditions applies to the {appName} app (hereby referred to as "Application") for mobile devices  (hereby referred to as "Service Provider") as a Free service.`
+  /// `These terms and conditions applies to the {appName} app for mobile devices  (hereby referred to as "Service Provider") as a Free service.`
   String termsIntro(String appName) {
     return Intl.message(
-      'These terms and conditions applies to the $appName app (hereby referred to as "Application") for mobile devices  (hereby referred to as "Service Provider") as a Free service.',
+      'These terms and conditions applies to the $appName app for mobile devices  (hereby referred to as "Service Provider") as a Free service.',
       name: 'termsIntro',
       desc: '',
       args: [appName],
     );
   }
 
-  /// `Upon downloading or utilizing the Application, you are automatically agreeing to the following terms. It is strongly advised that you thoroughly read and understand these terms prior to using the Application. Unauthorized copying, modification of the Application, any part of the Application, or our trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.`
-  String get termsAgreement {
+  /// `Privacy Policy\n`
+  String get privacyTitle {
     return Intl.message(
-      'Upon downloading or utilizing the Application, you are automatically agreeing to the following terms. It is strongly advised that you thoroughly read and understand these terms prior to using the Application. Unauthorized copying, modification of the Application, any part of the Application, or our trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.',
-      name: 'termsAgreement',
+      'Privacy Policy\\n',
+      name: 'privacyTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as possible. As such, they reserve the right to modify the Application or charge for their services at any time and for any reason. The Service Provider assures you that any charges for the Application or its services will be clearly communicated to you.`
-  String get termsRightsAndCharges {
+  /// `This privacy policy applies to the {appName} app for mobile devices (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS".\n`
+  String privacyIntro(String appName) {
     return Intl.message(
-      'The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as possible. As such, they reserve the right to modify the Application or charge for their services at any time and for any reason. The Service Provider assures you that any charges for the Application or its services will be clearly communicated to you.',
-      name: 'termsRightsAndCharges',
+      'This privacy policy applies to the $appName app for mobile devices (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS".\\n',
+      name: 'privacyIntro',
+      desc: '',
+      args: [appName],
+    );
+  }
+
+  /// `Your Consent`
+  String get yourAgreement {
+    return Intl.message(
+      'Your Consent',
+      name: 'yourAgreement',
       desc: '',
       args: [],
     );
   }
 
-  /// `The Application stores and processes personal data that you have provided to the Service Provider in order to provide the Service. It is your responsibility to maintain the security of your phone and access to the Application. The Service Provider strongly advise against jailbreaking or rooting your phone, which involves removing software restrictions and limitations imposed by the official operating system of your device. Such actions could expose your phone to malware, viruses, malicious programs, compromise your phone's security features, and may result in the Application not functioning correctly or at all.`
-  String get termsPrivacy {
+  /// `By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.`
+  String get consent {
     return Intl.message(
-      'The Application stores and processes personal data that you have provided to the Service Provider in order to provide the Service. It is your responsibility to maintain the security of your phone and access to the Application. The Service Provider strongly advise against jailbreaking or rooting your phone, which involves removing software restrictions and limitations imposed by the official operating system of your device. Such actions could expose your phone to malware, viruses, malicious programs, compromise your phone\'s security features, and may result in the Application not functioning correctly or at all.',
-      name: 'termsPrivacy',
+      'By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.',
+      name: 'consent',
       desc: '',
       args: [],
     );
   }
 
-  /// `Please note that the Application utilizes third-party services that have their own Terms and Conditions. Below are the links to the Terms and Conditions of the third-party service providers used by the Application:`
-  String get termsThirdParty {
+  /// `These terms and conditions are effective as of 2025-06-04`
+  String get dateOfTerms {
     return Intl.message(
-      'Please note that the Application utilizes third-party services that have their own Terms and Conditions. Below are the links to the Terms and Conditions of the third-party service providers used by the Application:',
-      name: 'termsThirdParty',
+      'These terms and conditions are effective as of 2025-06-04',
+      name: 'dateOfTerms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.`
+  String get changeOnTerms {
+    return Intl.message(
+      'The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.',
+      name: 'changeOnTerms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacy_policy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Information Collection and Use`
+  String get privacyInfoCollectionTitle {
+    return Intl.message(
+      'Information Collection and Use',
+      name: 'privacyInfoCollectionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Alkassib app collects information when downloaded and used. This information may include:\n\n- Your device’s IP address\n- Pages you visit within the app, along with date/time and duration spent on each page\n- Total time spent in the app\n- The operating system used on your mobile device\n\nThe app does not collect precise location information.\n\nHowever, approximate location may be collected for purposes such as:\n\n- Location-based content, recommendations, and services\n- Analytics and performance improvement\n- Sending anonymous location data to third-party services to help improve the app\n\nThe service provider may use this data to contact you occasionally with important notices or promotional offers.\n\nYou may be asked to provide personally identifiable information, including but not limited to: name, email address, phone number, physical address, profile picture, and store image. This data will be retained and used as described in this privacy policy.`
+  String get privacyInfoCollection {
+    return Intl.message(
+      'The Alkassib app collects information when downloaded and used. This information may include:\n\n- Your device’s IP address\n- Pages you visit within the app, along with date/time and duration spent on each page\n- Total time spent in the app\n- The operating system used on your mobile device\n\nThe app does not collect precise location information.\n\nHowever, approximate location may be collected for purposes such as:\n\n- Location-based content, recommendations, and services\n- Analytics and performance improvement\n- Sending anonymous location data to third-party services to help improve the app\n\nThe service provider may use this data to contact you occasionally with important notices or promotional offers.\n\nYou may be asked to provide personally identifiable information, including but not limited to: name, email address, phone number, physical address, profile picture, and store image. This data will be retained and used as described in this privacy policy.',
+      name: 'privacyInfoCollection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Third-Party Access`
+  String get privacyThirdPartyTitle {
+    return Intl.message(
+      'Third-Party Access',
+      name: 'privacyThirdPartyTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aggregated and anonymized data may be sent periodically to third-party services to help improve the app. Your information may be shared with third parties as described in this privacy policy.\n\nPlease note that the app uses third-party services that have their own privacy policies. These include:`
+  String get privacyThirdParty {
+    return Intl.message(
+      'Aggregated and anonymized data may be sent periodically to third-party services to help improve the app. Your information may be shared with third parties as described in this privacy policy.\n\nPlease note that the app uses third-party services that have their own privacy policies. These include:',
+      name: 'privacyThirdParty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google Play Services`
+  String get privacyGooglePlay {
+    return Intl.message(
+      'Google Play Services',
+      name: 'privacyGooglePlay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The service provider may disclose user-provided and automatically collected data:\n\n- When required by law, such as to comply with a subpoena or similar legal process\n- When disclosure is necessary to protect rights, personal safety, investigate fraud, or respond to a government request\n- With trusted third-party service providers who act on behalf of the provider and are bound to comply with this privacy policy`
+  String get privacyDisclosure {
+    return Intl.message(
+      'The service provider may disclose user-provided and automatically collected data:\n\n- When required by law, such as to comply with a subpoena or similar legal process\n- When disclosure is necessary to protect rights, personal safety, investigate fraud, or respond to a government request\n- With trusted third-party service providers who act on behalf of the provider and are bound to comply with this privacy policy',
+      name: 'privacyDisclosure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Opt-Out Rights`
+  String get privacyOptOutTitle {
+    return Intl.message(
+      'Opt-Out Rights',
+      name: 'privacyOptOutTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can easily stop all data collection by uninstalling the app. Use the standard uninstallation process available on your device or through the app store.`
+  String get privacyOptOut {
+    return Intl.message(
+      'You can easily stop all data collection by uninstalling the app. Use the standard uninstallation process available on your device or through the app store.',
+      name: 'privacyOptOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data Retention Policy`
+  String get privacyRetentionTitle {
+    return Intl.message(
+      'Data Retention Policy',
+      name: 'privacyRetentionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The service provider will retain user-provided data for as long as you use the app and for a reasonable time afterward. To request deletion of your data, please contact us at devetechno.co.uk@gmail.com and we will respond within a reasonable timeframe.`
+  String get privacyRetention {
+    return Intl.message(
+      'The service provider will retain user-provided data for as long as you use the app and for a reasonable time afterward. To request deletion of your data, please contact us at devetechno.co.uk@gmail.com and we will respond within a reasonable timeframe.',
+      name: 'privacyRetention',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Children`
+  String get privacyChildrenTitle {
+    return Intl.message(
+      'Children',
+      name: 'privacyChildrenTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The app is not intended for children under the age of 13 and does not knowingly collect personal information from them. If it is discovered that a child under 13 has provided personal data, it will be deleted immediately.\n\nIf you are a parent or guardian and believe your child has shared personal information, please contact us at devetechno.co.uk@gmail.com so we can take appropriate action.`
+  String get privacyChildren {
+    return Intl.message(
+      'The app is not intended for children under the age of 13 and does not knowingly collect personal information from them. If it is discovered that a child under 13 has provided personal data, it will be deleted immediately.\n\nIf you are a parent or guardian and believe your child has shared personal information, please contact us at devetechno.co.uk@gmail.com so we can take appropriate action.',
+      name: 'privacyChildren',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Security`
+  String get privacySecurityTitle {
+    return Intl.message(
+      'Security',
+      name: 'privacySecurityTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The service provider is committed to maintaining the confidentiality of your information. Physical, electronic, and procedural safeguards are used to protect the data that is processed and stored.`
+  String get privacySecurity {
+    return Intl.message(
+      'The service provider is committed to maintaining the confidentiality of your information. Physical, electronic, and procedural safeguards are used to protect the data that is processed and stored.',
+      name: 'privacySecurity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Changes`
+  String get privacyChangesTitle {
+    return Intl.message(
+      'Changes',
+      name: 'privacyChangesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.This privacy policy is effective as of 2025-06-04`
+  String get privacyChanges {
+    return Intl.message(
+      'This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.This privacy policy is effective as of 2025-06-04',
+      name: 'privacyChanges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Us`
+  String get privacyContactUsTitle {
+    return Intl.message(
+      'Contact Us',
+      name: 'privacyContactUsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you have any questions regarding privacy while using the app, or concerns about our practices, please contact us at devetechno.co.uk@gmail.com.`
+  String get privacyContactUs {
+    return Intl.message(
+      'If you have any questions regarding privacy while using the app, or concerns about our practices, please contact us at devetechno.co.uk@gmail.com.',
+      name: 'privacyContactUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The app stores and processes personal data you have provided to the service provider to provide the service...`
+  String get termsPersonalData {
+    return Intl.message(
+      'The app stores and processes personal data you have provided to the service provider to provide the service...',
+      name: 'termsPersonalData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please note that the app uses third-party services that have their own terms and conditions...`
+  String get termsThirdPartyServices {
+    return Intl.message(
+      'Please note that the app uses third-party services that have their own terms and conditions...',
+      name: 'termsThirdPartyServices',
       desc: '',
       args: [],
     );
@@ -272,61 +502,41 @@ class S {
     );
   }
 
-  /// `Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.\n\nIf you are using the application outside of a Wi-Fi area, please be aware that your mobile network provider's agreement terms still apply. Consequently, you may incur charges from your mobile provider for data usage during the connection to the application, or other third-party charges. By using the application, you accept responsibility for any such charges, including roaming data charges if you use the application outside of your home territory (i.e., region or country) without disabling data roaming. If you are not the bill payer for the device on which you are using the application, they assume that you have obtained permission from the bill payer.\n\nSimilarly, the Service Provider cannot always assume responsibility for your usage of the application. For instance, it is your responsibility to ensure that your device remains charged. If your device runs out of battery and you are unable to access the Service, the Service Provider cannot be held responsible.\n\nIn terms of the Service Provider's responsibility for your use of the application, it is important to note that while they strive to ensure that it is updated and accurate at all times, they do rely on third parties to provide information to them so that they can make it available to you. The Service Provider accepts no liability for any loss, direct or indirect, that you experience as a result of relying entirely on this functionality of the application.\n\nThe Service Provider may wish to update the application at some point. The application is currently available as per the requirements for the operating system (and for any additional systems they decide to extend the availability of the application to) may change, and you will need to download the updates if you want to continue using the application. The Service Provider does not guarantee that it will always update the application so that it is relevant to you and/or compatible with the particular operating system version installed on your device. However, you agree to always accept updates to the application when offered to you. The Service Provider may also wish to cease providing the application and may terminate its use at any time without providing termination notice to you. Unless they inform you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application, and (if necessary) delete it from your device.`
-  String get termsDisclaimer {
+  /// `Please note that the service provider is not responsible for certain issues...`
+  String get termsConnectivityDisclaimer {
     return Intl.message(
-      'Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.\n\nIf you are using the application outside of a Wi-Fi area, please be aware that your mobile network provider\'s agreement terms still apply. Consequently, you may incur charges from your mobile provider for data usage during the connection to the application, or other third-party charges. By using the application, you accept responsibility for any such charges, including roaming data charges if you use the application outside of your home territory (i.e., region or country) without disabling data roaming. If you are not the bill payer for the device on which you are using the application, they assume that you have obtained permission from the bill payer.\n\nSimilarly, the Service Provider cannot always assume responsibility for your usage of the application. For instance, it is your responsibility to ensure that your device remains charged. If your device runs out of battery and you are unable to access the Service, the Service Provider cannot be held responsible.\n\nIn terms of the Service Provider\'s responsibility for your use of the application, it is important to note that while they strive to ensure that it is updated and accurate at all times, they do rely on third parties to provide information to them so that they can make it available to you. The Service Provider accepts no liability for any loss, direct or indirect, that you experience as a result of relying entirely on this functionality of the application.\n\nThe Service Provider may wish to update the application at some point. The application is currently available as per the requirements for the operating system (and for any additional systems they decide to extend the availability of the application to) may change, and you will need to download the updates if you want to continue using the application. The Service Provider does not guarantee that it will always update the application so that it is relevant to you and/or compatible with the particular operating system version installed on your device. However, you agree to always accept updates to the application when offered to you. The Service Provider may also wish to cease providing the application and may terminate its use at any time without providing termination notice to you. Unless they inform you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application, and (if necessary) delete it from your device.',
-      name: 'termsDisclaimer',
+      'Please note that the service provider is not responsible for certain issues...',
+      name: 'termsConnectivityDisclaimer',
       desc: '',
       args: [],
     );
   }
 
-  /// `Changes to These Terms and Conditions`
+  /// `If you use the app outside of Wi-Fi coverage...`
+  String get termsDataCharges {
+    return Intl.message(
+      'If you use the app outside of Wi-Fi coverage...',
+      name: 'termsDataCharges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Changes to These Terms & Conditions`
   String get termsChangesTitle {
     return Intl.message(
-      'Changes to These Terms and Conditions',
+      'Changes to These Terms & Conditions',
       name: 'termsChangesTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.`
-  String get termsChanges {
+  /// `if you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at devetechno.co.uk@gmail.com`
+  String get termsContact {
     return Intl.message(
-      'The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.',
-      name: 'termsChanges',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `These terms and conditions are effective as of 2024-10-07`
-  String get termsEffectiveDate {
-    return Intl.message(
-      'These terms and conditions are effective as of 2024-10-07',
-      name: 'termsEffectiveDate',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Contact Us`
-  String get termsContactUsTitle {
-    return Intl.message(
-      'Contact Us',
-      name: 'termsContactUsTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at devetechno.co.uk@gmail.com.`
-  String get termsContactUs {
-    return Intl.message(
-      'If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at devetechno.co.uk@gmail.com.',
-      name: 'termsContactUs',
+      'if you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at devetechno.co.uk@gmail.com',
+      name: 'termsContact',
       desc: '',
       args: [],
     );

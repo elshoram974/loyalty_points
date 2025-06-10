@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loyalty_points/features/dashboard/presentation/screens/privacy_screen.dart';
 
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
@@ -42,6 +43,7 @@ class HomeDrawer extends GetView<DashboardController> {
               controller.changeHomeScreen(DashboardTabsEnum.redeemPoints.index);
             },
           ),
+           const Spacer(flex: 5),
           TileButtonWidget(
             icon: Icons.policy_outlined,
             title: localeLang(context).termsConditions,
@@ -51,12 +53,12 @@ class HomeDrawer extends GetView<DashboardController> {
           ),
           TileButtonWidget(
             icon: Icons.description_outlined,
-            title: localeLang(context).termsConditions,
+            title: localeLang(context).privacy_policy,
             onTap: () {
-              Get.to(TermsScreen());
+              Get.to(PrivacyScreen());
             },
           ),
-          const Spacer(flex: 5),
+         
           TileButtonWidget(
             icon: Icons.delete_outline,
             title: localeLang(context).delete_account,
