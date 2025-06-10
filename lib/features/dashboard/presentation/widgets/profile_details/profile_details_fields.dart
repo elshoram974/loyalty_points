@@ -18,13 +18,11 @@ class ProfileDetails extends StatelessWidget {
     return Column(
       children: [
         GetBuilder<DashboardController>(builder: (controller) {
-          return ClipOval(
-            child: MyNetworkImage(
-              controller.user?.image?.path,
-              placeHolder: const CircleAvatar(
-                radius: double.maxFinite,
-                backgroundColor: AppColor.greyBackground,
-              ),
+          return MyNetworkImage(
+            controller.user?.image?.path,
+            placeHolder: const CircleAvatar(
+              radius: double.maxFinite,
+              backgroundColor: AppColor.greyBackground,
             ),
           );
         }),
@@ -65,7 +63,7 @@ class ProfileDetails extends StatelessWidget {
           children: [
             ElevatedButton.icon(
               onPressed: () {
-                Get.toNamed( AppRoute.editProfile);
+                Get.toNamed(AppRoute.editProfile);
               },
               icon: const Icon(
                 Icons.edit,
@@ -86,15 +84,15 @@ class ProfileDetails extends StatelessWidget {
             const SizedBox(width: AppConst.paddingDefault),
             ElevatedButton.icon(
               onPressed: () {
-                // TODO: Navigate to change password screen
+                Get.toNamed(AppRoute.editPassword);
               },
               icon: const Icon(
                 Icons.lock,
                 color: Colors.white,
               ),
               label: Text(
-                localeLang(context).forgetPassword,
-                style:const TextStyle(color: Colors.white),
+                localeLang(context).editPassword,
+                style: const TextStyle(color: Colors.white),
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: context.theme.primaryColor,
