@@ -15,7 +15,7 @@ class EditPasswordScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          localeLang(context).edit_your_profile,
+          localeLang(context).editPassword,
           style: context.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -28,6 +28,9 @@ class EditPasswordScreen extends StatelessWidget {
           if (!context.isPhone) const EditProfileButton(),
         ],
       ),
+      bottomNavigationBar: context.isPhone
+          ? const EditProfileButton(borderRadius: BorderRadius.zero)
+          : null,
 
     );
   }
