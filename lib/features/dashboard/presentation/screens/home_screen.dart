@@ -14,25 +14,28 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        GetBuilder<ConfigController>(
-          id: AppString.updateHomeBanners,
-          builder: (controller) {
-            return CustomLoadingWidget(
-              isLoading: controller.isLoadingConfig,
-              child: CustomCarouselSlider(
-                images: controller.isLoadingConfig
-                    ? ['', '']
-                    : AppInfo.config?.homeBanners ?? [],
-              ),
-            );
-          },
-        ),
-        const SocialMediaWidget(),
-        const PointsBalanceWidget(),
-        const AbusingCode()
-      ],
+    return RefreshIndicator(
+      onRefresh: Get.find<ConfigController>().getConfigData,
+      child: ListView(
+        children: [
+          GetBuilder<ConfigController>(
+            id: AppString.updateHomeBanners,
+            builder: (controller) {
+              return CustomLoadingWidget(
+                isLoading: controller.isLoadingConfig,
+                child: CustomCarouselSlider(
+                  images: controller.isLoadingConfig
+                      ? ['', '']
+                      : AppInfo.config?.homeBanners ?? [],
+                ),
+              );
+            },
+          ),
+          const SocialMediaWidget(),
+          const PointsBalanceWidget(),
+          const AbusingCode()
+        ],
+      ),
     );
   }
 }
