@@ -38,8 +38,9 @@ abstract class DashboardController extends GetxController {
 }
 
 class DashboardControllerImp extends DashboardController {
-  DashboardControllerImp(this.repo);
   final DashboardRepositories repo;
+  final ConfigController configController;
+  DashboardControllerImp({required this.repo, required this.configController});
 
   bool _isLoadingUserData = true;
 
@@ -73,11 +74,10 @@ class DashboardControllerImp extends DashboardController {
       [
         updateFCMToken(),
         getUserData(isReload),
-        Get.find<ConfigController>().getConfigData(isReload),
+        configController.getConfigData(isReload),
       ],
     );
   }
-
   @override
   Future<void> updateFCMToken() async {
     return handleResponseInController<void>(
