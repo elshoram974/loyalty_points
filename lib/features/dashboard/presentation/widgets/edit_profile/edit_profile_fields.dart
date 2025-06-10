@@ -6,7 +6,6 @@ import '../../../../../core/utils/functions/app_validate.dart';
 import '../../controller/dashboard_controller.dart';
 import '../../../../auth/data/models/user_model.dart';
 import '../../../../auth/presentation/widgets/auth_field.dart';
-import '../../../../auth/presentation/widgets/password_field.dart';
 import '../../../../auth/presentation/widgets/sign_up/attachments_validation_widget.dart';
 
 class EditProfileFields extends StatelessWidget {
@@ -23,16 +22,14 @@ class EditProfileFields extends StatelessWidget {
           files: [null],
           onChanged: (p0) {},
         ),
-         const SizedBox(
-          height: AppConst.paddingDefault
-        ),
+        const SizedBox(height: AppConst.paddingDefault),
         AuthField(
-          initialValue: user?.name,
+          //initialValue: user?.name,
           label: localeLang(context).fullName,
           suffixIconData: Icons.person,
           textCapitalization: TextCapitalization.words,
           autofillHints: const [AutofillHints.name],
-          hintText: localeLang(context).enterYourFullName,
+         //hintText: localeLang(context).enterYourFullName,
           validator: (val) =>
               AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
         ),
@@ -40,15 +37,12 @@ class EditProfileFields extends StatelessWidget {
           height: AppConst.paddingDefault,
         ),
         AuthField(
-          readOnly: true,
           suffixIconData: Icons.mail_rounded,
           autofillHints: const [AutofillHints.email],
-          initialValue: user?.email,
+          //initialValue: user?.email,
           label: localeLang(context).email,
         ),
-        const SizedBox(
-          height: AppConst.paddingDefault
-        ),
+        const SizedBox(height: AppConst.paddingDefault),
         AuthField(
           readOnly: true,
           suffixIconData: Icons.phone,
@@ -58,32 +52,32 @@ class EditProfileFields extends StatelessWidget {
           initialValue: user?.phone,
         ),
         const SizedBox(height: AppConst.paddingDefault),
-        
-        PasswordField(
-          isNewPass: false,
-          label: localeLang(context).current_password,
-          textInputAction: TextInputAction.next,
-          autofillHints: const [AutofillHints.newPassword],
-          hintText: localeLang(context).current_password,
-        ),
-        const SizedBox(
-          height: AppConst.paddingDefault,
-        ),
-        PasswordField(
-          isNewPass: true,
-          label: localeLang(context).password,
-          textInputAction: TextInputAction.next,
-          autofillHints: const [AutofillHints.newPassword],
-          hintText: localeLang(context).enterNewPassword,
-        ),
-        const SizedBox(
-          height: AppConst.paddingDefault,
-        ),
-        PasswordField(
-          label: localeLang(context).confirmPassword,
-          autofillHints: const [AutofillHints.newPassword],
-          hintText: localeLang(context).enterTheSamePassword,
-        ),
+
+        // PasswordField(
+        //   isNewPass: false,
+        //   label: localeLang(context).current_password,
+        //   textInputAction: TextInputAction.next,
+        //   autofillHints: const [AutofillHints.newPassword],
+        //   hintText: localeLang(context).current_password,
+        // ),
+        // const SizedBox(
+        //   height: AppConst.paddingDefault,
+        // ),
+        // PasswordField(
+        //   isNewPass: true,
+        //   label: localeLang(context).password,
+        //   textInputAction: TextInputAction.next,
+        //   autofillHints: const [AutofillHints.newPassword],
+        //   hintText: localeLang(context).enterNewPassword,
+        // ),
+        // const SizedBox(
+        //   height: AppConst.paddingDefault,
+        // ),
+        // PasswordField(
+        //   label: localeLang(context).confirmPassword,
+        //   autofillHints: const [AutofillHints.newPassword],
+        //   hintText: localeLang(context).enterTheSamePassword,
+        // ),
         const SizedBox(height: AppConst.paddingExtraBig),
       ],
     );
