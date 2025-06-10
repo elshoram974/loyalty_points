@@ -3,29 +3,31 @@ import 'package:get/get.dart';
 import '../../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../../core/utils/constants/app_constants.dart';
 import '../../../../../../core/utils/functions/app_validate.dart';
+import '../../../../../core/shared/filled_button.dart';
 import '../../../../../core/shared/my_network_image.dart';
 import '../../../../../core/utils/config/routes/routes.dart';
-import '../../../../../core/utils/constants/app_color.dart';
 import '../../../../auth/data/models/user_model.dart';
 import '../../../../auth/presentation/widgets/auth_field.dart';
 import '../../controller/dashboard_controller.dart';
+import '../my_app_bar.dart';
 
 class ProfileDetails extends StatelessWidget {
   const ProfileDetails({super.key});
   @override
   Widget build(BuildContext context) {
     final UserModel? user = Get.find<DashboardController>().user;
-    return Column(
+    return ListView(
+      padding: const EdgeInsets.all(AppConst.paddingBig),
       children: [
-        GetBuilder<DashboardController>(builder: (controller) {
-          return MyNetworkImage(
-            controller.user?.image?.path,
-            placeHolder: const CircleAvatar(
-              radius: double.maxFinite,
-              backgroundColor: AppColor.greyBackground,
-            ),
-          );
-        }),
+        Align(
+          child: MyNetworkImage(
+            user?.image?.path,
+            height: 200,
+            width: 200,
+            borderRadius: BorderRadius.circular(500),
+            placeHolder: UserImagePlaceHolder(name: user?.name ?? ''),
+          ),
+        ),
         const SizedBox(height: AppConst.paddingDefault),
         AuthField(
           readOnly: true,
@@ -38,9 +40,7 @@ class ProfileDetails extends StatelessWidget {
           validator: (val) =>
               AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
         ),
-        const SizedBox(
-          height: AppConst.paddingDefault,
-        ),
+        const SizedBox(height: AppConst.paddingDefault),
         AuthField(
           readOnly: true,
           suffixIconData: Icons.mail_rounded,
@@ -52,7 +52,7 @@ class ProfileDetails extends StatelessWidget {
         AuthField(
           readOnly: true,
           suffixIconData: Icons.phone,
-          autofillHints: [AutofillHints.telephoneNumber],
+          autofillHints: const [AutofillHints.telephoneNumber],
           textInputAction: TextInputAction.done,
           label: localeLang(context).mobileNumber,
           initialValue: user?.phone,
@@ -60,49 +60,41 @@ class ProfileDetails extends StatelessWidget {
         const SizedBox(height: AppConst.paddingBig),
         Wrap(
           alignment: WrapAlignment.center,
+          runSpacing: 12,
+          spacing: 12,
           children: [
-            ElevatedButton.icon(
-              onPressed: () {
-                Get.toNamed(AppRoute.editProfile);
-              },
-              icon: const Icon(
-                Icons.edit,
-                color: Colors.white,
-              ),
-              label: Text(
-                localeLang(context).edit_your_profile,
-                style: TextStyle(color: Colors.white),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: context.theme.primaryColor,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 12,
+            SizedBox(
+              width: 290,
+              child: OutlinedButton.icon(
+                onPressed: () {
+                  Get.toNamed(AppRoute.editProfile);
+                },
+                icon: Icon(Icons.edit, color: context.theme.primaryColor),
+                label: Text(
+                  localeLang(context).edit_your_profile,
+                  style: TextStyle(color: context.theme.primaryColor),
+                ),
+                style: OutlinedButton.styleFrom(
+                  side:
+                      BorderSide(color: context.theme.primaryColor, width: 1.5),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
                 ),
               ),
             ),
-            const SizedBox(width: AppConst.paddingDefault),
-            ElevatedButton.icon(
+            CustomFilledButton(
+              text: localeLang(context).editPassword,
+              icon: const Icon(Icons.lock, color: Colors.white),
               onPressed: () {
                 Get.toNamed(AppRoute.editPassword);
               },
-              icon: const Icon(
-                Icons.lock,
-                color: Colors.white,
-              ),
-              label: Text(
-                localeLang(context).editPassword,
-                style: const TextStyle(color: Colors.white),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: context.theme.primaryColor,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 12,
-                ),
-              ),
+              minimumSize: const Size(300, 50),
+              filledColor: context.theme.primaryColor,
+              borderRadius: BorderRadius.circular(12),
             ),
-            const SizedBox(height: AppConst.paddingDefault),
           ],
         ),
       ],
