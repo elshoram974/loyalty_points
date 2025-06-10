@@ -262,6 +262,16 @@ class S {
     );
   }
 
+  /// `Edit password`
+  String get editPassword {
+    return Intl.message(
+      'Edit password',
+      name: 'editPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `These terms and conditions are effective as of 2025-06-04`
   String get dateOfTerms {
     return Intl.message(
