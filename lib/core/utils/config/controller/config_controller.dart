@@ -39,11 +39,12 @@ class ConfigControllerImp extends ConfigController {
     // getConfigData();
   }
 
-  late Locale _locale = prefs.containsKey(AppString.kLocaleCode)
-      ? _localeFromCode(prefs.getString(AppString.kLocaleCode)!)
-      : Get.deviceLocale != null
-          ? _localeFromCode(Get.deviceLocale!.languageCode)
-          : AppInfo.supportedLocales.first.toLocale;
+  // late Locale _locale = prefs.containsKey(AppString.kLocaleCode)
+  //     ? _localeFromCode(prefs.getString(AppString.kLocaleCode)!)
+  //     : Get.deviceLocale != null
+  //         ? _localeFromCode(Get.deviceLocale!.languageCode)
+  //         : AppInfo.supportedLocales.first.toLocale;
+  late Locale _locale = AppInfo.supportedLocales.first.toLocale;
 
   Locale _localeFromCode(String langCode) {
     final LocaleModel lang = AppInfo.supportedLocales

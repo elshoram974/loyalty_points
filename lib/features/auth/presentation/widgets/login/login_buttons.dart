@@ -17,17 +17,17 @@ class LoginButtons extends StatelessWidget {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Align(
-            alignment: AlignmentDirectional.centerEnd,
-            child: TextButton(
-              onPressed: controller.isLoading ? null : () {},
-              child: Text(
-                localeLang(context).forgetPassword,
-                style: context.textTheme.titleSmall
-                    ?.copyWith(color: context.theme.primaryColor),
-              ),
-            ),
-          ),
+          // Align(
+          //   alignment: AlignmentDirectional.centerEnd,
+          //   child: TextButton(
+          //     onPressed: controller.isLoading ? null : () {},
+          //     child: Text(
+          //       localeLang(context).forgetPassword,
+          //       style: context.textTheme.titleSmall
+          //           ?.copyWith(color: context.theme.primaryColor),
+          //     ),
+          //   ),
+          // ),
           const SizedBox(height: AppConst.paddingExtraBig),
           CustomFilledButton(
             text: localeLang(context).login,

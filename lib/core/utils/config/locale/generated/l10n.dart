@@ -192,6 +192,481 @@ class S {
     );
   }
 
+  /// ` {pointNumber} point`
+  String point_number(String pointNumber) {
+    return Intl.message(
+      ' $pointNumber point',
+      name: 'point_number',
+      desc: '',
+      args: [pointNumber],
+    );
+  }
+
+  /// `Terms & Conditions\n`
+  String get termsTitle {
+    return Intl.message(
+      'Terms & Conditions\\n',
+      name: 'termsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `These terms and conditions applies to the {appName} app for mobile devices  (hereby referred to as "Service Provider") as a Free service.`
+  String termsIntro(String appName) {
+    return Intl.message(
+      'These terms and conditions applies to the $appName app for mobile devices  (hereby referred to as "Service Provider") as a Free service.',
+      name: 'termsIntro',
+      desc: '',
+      args: [appName],
+    );
+  }
+
+  /// `Privacy Policy\n`
+  String get privacyTitle {
+    return Intl.message(
+      'Privacy Policy\\n',
+      name: 'privacyTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This privacy policy applies to the {appName} app for mobile devices (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS".\n`
+  String privacyIntro(String appName) {
+    return Intl.message(
+      'This privacy policy applies to the $appName app for mobile devices (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS".\\n',
+      name: 'privacyIntro',
+      desc: '',
+      args: [appName],
+    );
+  }
+
+  /// `Your Consent`
+  String get yourAgreement {
+    return Intl.message(
+      'Your Consent',
+      name: 'yourAgreement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.`
+  String get consent {
+    return Intl.message(
+      'By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.',
+      name: 'consent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `These terms and conditions are effective as of 2025-06-04`
+  String get dateOfTerms {
+    return Intl.message(
+      'These terms and conditions are effective as of 2025-06-04',
+      name: 'dateOfTerms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.`
+  String get changeOnTerms {
+    return Intl.message(
+      'The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.',
+      name: 'changeOnTerms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacy_policy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Information Collection and Use`
+  String get privacyInfoCollectionTitle {
+    return Intl.message(
+      'Information Collection and Use',
+      name: 'privacyInfoCollectionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Alkassib app collects information when downloaded and used. This information may include:\n\n- Your device’s IP address\n- Pages you visit within the app, along with date/time and duration spent on each page\n- Total time spent in the app\n- The operating system used on your mobile device\n\nThe app does not collect precise location information.\n\nHowever, approximate location may be collected for purposes such as:\n\n- Location-based content, recommendations, and services\n- Analytics and performance improvement\n- Sending anonymous location data to third-party services to help improve the app\n\nThe service provider may use this data to contact you occasionally with important notices or promotional offers.\n\nYou may be asked to provide personally identifiable information, including but not limited to: name, email address, phone number, physical address, profile picture, and store image. This data will be retained and used as described in this privacy policy.`
+  String get privacyInfoCollection {
+    return Intl.message(
+      'The Alkassib app collects information when downloaded and used. This information may include:\n\n- Your device’s IP address\n- Pages you visit within the app, along with date/time and duration spent on each page\n- Total time spent in the app\n- The operating system used on your mobile device\n\nThe app does not collect precise location information.\n\nHowever, approximate location may be collected for purposes such as:\n\n- Location-based content, recommendations, and services\n- Analytics and performance improvement\n- Sending anonymous location data to third-party services to help improve the app\n\nThe service provider may use this data to contact you occasionally with important notices or promotional offers.\n\nYou may be asked to provide personally identifiable information, including but not limited to: name, email address, phone number, physical address, profile picture, and store image. This data will be retained and used as described in this privacy policy.',
+      name: 'privacyInfoCollection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Third-Party Access`
+  String get privacyThirdPartyTitle {
+    return Intl.message(
+      'Third-Party Access',
+      name: 'privacyThirdPartyTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aggregated and anonymized data may be sent periodically to third-party services to help improve the app. Your information may be shared with third parties as described in this privacy policy.\n\nPlease note that the app uses third-party services that have their own privacy policies. These include:`
+  String get privacyThirdParty {
+    return Intl.message(
+      'Aggregated and anonymized data may be sent periodically to third-party services to help improve the app. Your information may be shared with third parties as described in this privacy policy.\n\nPlease note that the app uses third-party services that have their own privacy policies. These include:',
+      name: 'privacyThirdParty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google Play Services`
+  String get privacyGooglePlay {
+    return Intl.message(
+      'Google Play Services',
+      name: 'privacyGooglePlay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The service provider may disclose user-provided and automatically collected data:\n\n- When required by law, such as to comply with a subpoena or similar legal process\n- When disclosure is necessary to protect rights, personal safety, investigate fraud, or respond to a government request\n- With trusted third-party service providers who act on behalf of the provider and are bound to comply with this privacy policy`
+  String get privacyDisclosure {
+    return Intl.message(
+      'The service provider may disclose user-provided and automatically collected data:\n\n- When required by law, such as to comply with a subpoena or similar legal process\n- When disclosure is necessary to protect rights, personal safety, investigate fraud, or respond to a government request\n- With trusted third-party service providers who act on behalf of the provider and are bound to comply with this privacy policy',
+      name: 'privacyDisclosure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Opt-Out Rights`
+  String get privacyOptOutTitle {
+    return Intl.message(
+      'Opt-Out Rights',
+      name: 'privacyOptOutTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can easily stop all data collection by uninstalling the app. Use the standard uninstallation process available on your device or through the app store.`
+  String get privacyOptOut {
+    return Intl.message(
+      'You can easily stop all data collection by uninstalling the app. Use the standard uninstallation process available on your device or through the app store.',
+      name: 'privacyOptOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data Retention Policy`
+  String get privacyRetentionTitle {
+    return Intl.message(
+      'Data Retention Policy',
+      name: 'privacyRetentionTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The service provider will retain user-provided data for as long as you use the app and for a reasonable time afterward. To request deletion of your data, please contact us at devetechno.co.uk@gmail.com and we will respond within a reasonable timeframe.`
+  String get privacyRetention {
+    return Intl.message(
+      'The service provider will retain user-provided data for as long as you use the app and for a reasonable time afterward. To request deletion of your data, please contact us at devetechno.co.uk@gmail.com and we will respond within a reasonable timeframe.',
+      name: 'privacyRetention',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Children`
+  String get privacyChildrenTitle {
+    return Intl.message(
+      'Children',
+      name: 'privacyChildrenTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The app is not intended for children under the age of 13 and does not knowingly collect personal information from them. If it is discovered that a child under 13 has provided personal data, it will be deleted immediately.\n\nIf you are a parent or guardian and believe your child has shared personal information, please contact us at devetechno.co.uk@gmail.com so we can take appropriate action.`
+  String get privacyChildren {
+    return Intl.message(
+      'The app is not intended for children under the age of 13 and does not knowingly collect personal information from them. If it is discovered that a child under 13 has provided personal data, it will be deleted immediately.\n\nIf you are a parent or guardian and believe your child has shared personal information, please contact us at devetechno.co.uk@gmail.com so we can take appropriate action.',
+      name: 'privacyChildren',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Security`
+  String get privacySecurityTitle {
+    return Intl.message(
+      'Security',
+      name: 'privacySecurityTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The service provider is committed to maintaining the confidentiality of your information. Physical, electronic, and procedural safeguards are used to protect the data that is processed and stored.`
+  String get privacySecurity {
+    return Intl.message(
+      'The service provider is committed to maintaining the confidentiality of your information. Physical, electronic, and procedural safeguards are used to protect the data that is processed and stored.',
+      name: 'privacySecurity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Changes`
+  String get privacyChangesTitle {
+    return Intl.message(
+      'Changes',
+      name: 'privacyChangesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.This privacy policy is effective as of 2025-06-04`
+  String get privacyChanges {
+    return Intl.message(
+      'This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.This privacy policy is effective as of 2025-06-04',
+      name: 'privacyChanges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Us`
+  String get privacyContactUsTitle {
+    return Intl.message(
+      'Contact Us',
+      name: 'privacyContactUsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you have any questions regarding privacy while using the app, or concerns about our practices, please contact us at devetechno.co.uk@gmail.com.`
+  String get privacyContactUs {
+    return Intl.message(
+      'If you have any questions regarding privacy while using the app, or concerns about our practices, please contact us at devetechno.co.uk@gmail.com.',
+      name: 'privacyContactUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The app stores and processes personal data you have provided to the service provider to provide the service...`
+  String get termsPersonalData {
+    return Intl.message(
+      'The app stores and processes personal data you have provided to the service provider to provide the service...',
+      name: 'termsPersonalData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please note that the app uses third-party services that have their own terms and conditions...`
+  String get termsThirdPartyServices {
+    return Intl.message(
+      'Please note that the app uses third-party services that have their own terms and conditions...',
+      name: 'termsThirdPartyServices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google Play Services`
+  String get termsGooglePlay {
+    return Intl.message(
+      'Google Play Services',
+      name: 'termsGooglePlay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please note that the service provider is not responsible for certain issues...`
+  String get termsConnectivityDisclaimer {
+    return Intl.message(
+      'Please note that the service provider is not responsible for certain issues...',
+      name: 'termsConnectivityDisclaimer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you use the app outside of Wi-Fi coverage...`
+  String get termsDataCharges {
+    return Intl.message(
+      'If you use the app outside of Wi-Fi coverage...',
+      name: 'termsDataCharges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Changes to These Terms & Conditions`
+  String get termsChangesTitle {
+    return Intl.message(
+      'Changes to These Terms & Conditions',
+      name: 'termsChangesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `if you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at devetechno.co.uk@gmail.com`
+  String get termsContact {
+    return Intl.message(
+      'if you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at devetechno.co.uk@gmail.com',
+      name: 'termsContact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to delete your account?`
+  String get do_you_want_to_delete_your_account {
+    return Intl.message(
+      'Do you want to delete your account?',
+      name: 'do_you_want_to_delete_your_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms & Conditions`
+  String get termsConditions {
+    return Intl.message(
+      'Terms & Conditions',
+      name: 'termsConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Account`
+  String get delete_account {
+    return Intl.message(
+      'Delete Account',
+      name: 'delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `accepted`
+  String get accepted {
+    return Intl.message('accepted', name: 'accepted', desc: '', args: []);
+  }
+
+  /// `rejected`
+  String get rejected {
+    return Intl.message('rejected', name: 'rejected', desc: '', args: []);
+  }
+
+  /// `pending`
+  String get pending {
+    return Intl.message('pending', name: 'pending', desc: '', args: []);
+  }
+
+  /// `Image for order`
+  String get image_for_order {
+    return Intl.message(
+      'Image for order',
+      name: 'image_for_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment method`
+  String get paymentMethod {
+    return Intl.message(
+      'Payment method',
+      name: 'paymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status`
+  String get status {
+    return Intl.message('Status', name: 'status', desc: '', args: []);
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message('Price', name: 'price', desc: '', args: []);
+  }
+
+  /// `Order details`
+  String get order_details {
+    return Intl.message(
+      'Order details',
+      name: 'order_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `point`
+  String get point {
+    return Intl.message('point', name: 'point', desc: '', args: []);
+  }
+
+  /// `Edit Profile Image`
+  String get edit_profile_image {
+    return Intl.message(
+      'Edit Profile Image',
+      name: 'edit_profile_image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Your Profile`
+  String get edit_your_profile {
+    return Intl.message(
+      'Edit Your Profile',
+      name: 'edit_your_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current Password`
+  String get current_password {
+    return Intl.message(
+      'Current Password',
+      name: 'current_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message('Update', name: 'update', desc: '', args: []);
+  }
+
   /// `Avaliable Points:`
   String get availablePoints {
     return Intl.message(
@@ -202,19 +677,14 @@ class S {
     );
   }
 
-  /// `earned`
-  String get earned {
-    return Intl.message('earned', name: 'earned', desc: '', args: []);
+  /// `addition`
+  String get addition {
+    return Intl.message('addition', name: 'addition', desc: '', args: []);
   }
 
-  /// `replaced`
-  String get replaced {
-    return Intl.message('replaced', name: 'replaced', desc: '', args: []);
-  }
-
-  /// `canceled`
-  String get canceled {
-    return Intl.message('canceled', name: 'canceled', desc: '', args: []);
+  /// `discount`
+  String get discount {
+    return Intl.message('discount', name: 'discount', desc: '', args: []);
   }
 
   /// `Coupons History`

@@ -63,10 +63,13 @@ dependencies:
   firebase_core: ^3.13.0
   firebase_messaging: ^15.2.5
   flutter_local_notifications: ^19.1.0
-
+ 
+  
   # * Helper packages
   path_provider: ^2.1.5
   url_launcher: ^6.3.1
+  #* for native splash screen
+  flutter_native_splash: ^2.4.4
 
 dev_dependencies:
   flutter_test:

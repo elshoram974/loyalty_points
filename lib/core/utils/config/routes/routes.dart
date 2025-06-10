@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:loyalty_points/features/dashboard/presentation/screens/edit_profile.dart';
 
 import '../../../../features/auth/presentation/screens/waiting_screen.dart';
 import '../../../../features/dashboard/presentation/screens/add_new_code_screen.dart';
@@ -29,6 +30,8 @@ abstract final class AppRoute {
   static const String codeAddedScreen = "/code-added";
   static const String checkoutScreen = "/checkout";
   static const String successRedeemScreen = "/success-redeem";
+  static const String editProfile = "/edit-profile";
+  // static const String OrderDetails = '/OrderDetails';
 
   static List<GetPage> get pages => [
         GetPage(
@@ -73,5 +76,10 @@ abstract final class AppRoute {
           name: successRedeemScreen,
           page: () => const RedeemSuccessScreen(),
         ),
+        GetPage(
+          name: editProfile,
+          page: () => const EditProfileScreen(),
+        ),
+        
       ];
 }

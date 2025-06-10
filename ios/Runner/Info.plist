@@ -5,7 +5,7 @@
 		<key>FLTEnableImpeller</key>
 		<false/>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
-		<true />
+		<true/>
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>LSApplicationQueriesSchemes</key>
@@ -16,7 +16,7 @@
 			<string>fb</string>
 		</array>
 		<key>CFBundleDisplayName</key>
-		<string>Loyalty Points</string>
+		<string>الكسيب</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
@@ -24,7 +24,7 @@
 		<key>CFBundleInfoDictionaryVersion</key>
 		<string>6.0</string>
 		<key>CFBundleName</key>
-		<string>Loyalty Points</string>
+		<string>الكسيب</string>
 		<key>CFBundlePackageType</key>
 		<string>APPL</string>
 		<key>CFBundleShortVersionString</key>
@@ -34,13 +34,13 @@
 		<key>CFBundleVersion</key>
 		<string>$(FLUTTER_BUILD_NUMBER)</string>
 		<key>LSRequiresIPhoneOS</key>
-		<true />
+		<true/>
 		<key>NSCameraUsageDescription</key>
 		<string>To upload or change profile picture or attachment from Camera</string>
 		<key>NSPhotoLibraryUsageDescription</key>
 		<string>To upload or change profile picture or attachment from Photo Library</string>
 		<key>UIApplicationSupportsIndirectInputEvents</key>
-		<true />
+		<true/>
 		<key>UIBackgroundModes</key>
 		<array>
 			<string>fetch</string>
@@ -63,5 +63,7 @@
 			<string>UIInterfaceOrientationLandscapeLeft</string>
 			<string>UIInterfaceOrientationLandscapeRight</string>
 		</array>
+		<key>UIStatusBarHidden</key>
+		<false/>
 	</dict>
 </plist>

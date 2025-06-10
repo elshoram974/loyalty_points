@@ -106,10 +106,82 @@
             }
         }
     },
+    "point_number": " {pointNumber} point",
+    "@point_number": {
+        "placeholders": {
+            "pointNumber": {
+                "type": "String"
+            }
+        }
+    },
+    "termsTitle": "Terms & Conditions\\n",
+    "termsIntro": "These terms and conditions applies to the {appName} app for mobile devices  (hereby referred to as \"Service Provider\") as a Free service.",
+    "@termsIntro": {
+        "placeholders": {
+            "appName": {
+                "type": "String"
+            }
+        }
+    },
+    "privacyTitle": "Privacy Policy\\n",
+    "privacyIntro": "This privacy policy applies to the {appName} app for mobile devices (hereby referred to as \"Service Provider\") as a Free service. This service is intended for use \"AS IS\".\\n",
+    "@privacyIntro": {
+        "placeholders": {
+            "appName": {
+                "type": "String"
+            }
+        }
+    },
+    "yourAgreement": "Your Consent",
+    "consent":"By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.",
+   
+    "dateOfTerms":"These terms and conditions are effective as of 2025-06-04",
+    "changeOnTerms":"The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.",
+    "privacy_policy": "Privacy Policy",
+    "privacyInfoCollectionTitle": "Information Collection and Use",
+    "privacyInfoCollection": "The Alkassib app collects information when downloaded and used. This information may include:\n\n- Your device’s IP address\n- Pages you visit within the app, along with date/time and duration spent on each page\n- Total time spent in the app\n- The operating system used on your mobile device\n\nThe app does not collect precise location information.\n\nHowever, approximate location may be collected for purposes such as:\n\n- Location-based content, recommendations, and services\n- Analytics and performance improvement\n- Sending anonymous location data to third-party services to help improve the app\n\nThe service provider may use this data to contact you occasionally with important notices or promotional offers.\n\nYou may be asked to provide personally identifiable information, including but not limited to: name, email address, phone number, physical address, profile picture, and store image. This data will be retained and used as described in this privacy policy.",
+    "privacyThirdPartyTitle": "Third-Party Access",
+    "privacyThirdParty": "Aggregated and anonymized data may be sent periodically to third-party services to help improve the app. Your information may be shared with third parties as described in this privacy policy.\n\nPlease note that the app uses third-party services that have their own privacy policies. These include:",
+    "privacyGooglePlay": "Google Play Services",
+    "privacyDisclosure": "The service provider may disclose user-provided and automatically collected data:\n\n- When required by law, such as to comply with a subpoena or similar legal process\n- When disclosure is necessary to protect rights, personal safety, investigate fraud, or respond to a government request\n- With trusted third-party service providers who act on behalf of the provider and are bound to comply with this privacy policy",
+    "privacyOptOutTitle": "Opt-Out Rights",
+    "privacyOptOut": "You can easily stop all data collection by uninstalling the app. Use the standard uninstallation process available on your device or through the app store.",
+    "privacyRetentionTitle": "Data Retention Policy",
+    "privacyRetention": "The service provider will retain user-provided data for as long as you use the app and for a reasonable time afterward. To request deletion of your data, please contact us at devetechno.co.uk@gmail.com and we will respond within a reasonable timeframe.",
+    "privacyChildrenTitle": "Children",
+    "privacyChildren": "The app is not intended for children under the age of 13 and does not knowingly collect personal information from them. If it is discovered that a child under 13 has provided personal data, it will be deleted immediately.\n\nIf you are a parent or guardian and believe your child has shared personal information, please contact us at devetechno.co.uk@gmail.com so we can take appropriate action.",
+    "privacySecurityTitle": "Security",
+    "privacySecurity": "The service provider is committed to maintaining the confidentiality of your information. Physical, electronic, and procedural safeguards are used to protect the data that is processed and stored.",
+    "privacyChangesTitle": "Changes",
+    "privacyChanges": "This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.This privacy policy is effective as of 2025-06-04",
+    "privacyContactUsTitle": "Contact Us",
+    "privacyContactUs": "If you have any questions regarding privacy while using the app, or concerns about our practices, please contact us at devetechno.co.uk@gmail.com.",
+    "termsPersonalData": "The app stores and processes personal data you have provided to the service provider to provide the service...",
+    "termsThirdPartyServices": "Please note that the app uses third-party services that have their own terms and conditions...",
+    "termsGooglePlay": "Google Play Services",
+    "termsConnectivityDisclaimer": "Please note that the service provider is not responsible for certain issues...",
+    "termsDataCharges": "If you use the app outside of Wi-Fi coverage...",
+    "termsChangesTitle": "Changes to These Terms & Conditions",
+    "termsContact": "if you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at devetechno.co.uk@gmail.com",
+    "do_you_want_to_delete_your_account": "Do you want to delete your account?",
+    "termsConditions": "Terms & Conditions",
+    "delete_account": "Delete Account",
+    "accepted": "accepted",
+    "rejected": "rejected",
+    "pending": "pending",
+    "image_for_order": "Image for order",
+    "paymentMethod": "Payment method",
+    "status": "Status",
+    "price": "Price",
+    "order_details": "Order details",
+    "point": "point",
+    "edit_profile_image": "Edit Profile Image",
+    "edit_your_profile": "Edit Your Profile",
+    "current_password": "Current Password",
+    "update": "Update",
     "availablePoints": "Avaliable Points:",
-    "earned": "earned",
-    "replaced": "replaced",
-    "canceled": "canceled",
+    "addition": "addition",
+    "discount": "discount",
     "couponsHistory": "Coupons History",
     "ourPartners": "Our Partners",
     "congratulationsCodeAddedSuccessfully": "Congratulations Code added successfully",
