@@ -94,7 +94,9 @@ class CustomFilledButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius:
                   borderRadius ?? BorderRadius.circular(AppConst.radiusDefault),
+
             ),
+            
           ),
           child: SizedBox.square(
             dimension: min(
