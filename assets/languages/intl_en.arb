@@ -132,6 +132,7 @@
             }
         }
     },
+    "do_you_want_to_logout": "Do you want to logout?",
     "yourAgreement": "Your Consent",
     "consent":"By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.",
     "editPassword":"Edit password",
