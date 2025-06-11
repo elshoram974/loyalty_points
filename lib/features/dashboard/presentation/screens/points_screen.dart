@@ -23,7 +23,6 @@ class PointsScreen extends StatelessWidget {
     final PointsController pointsController = Get.find<PointsController>();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if(pointsController.isInitialLoading) return;
       pointsController.getPoints();
     });
 

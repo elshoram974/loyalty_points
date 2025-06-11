@@ -55,7 +55,6 @@ class PointsControllerImp extends PointsController {
         _points.addAll(results.data);
       },
     );
-    _totalItems = _points.length;
     _isLoadingMore = false;
     update();
   }
