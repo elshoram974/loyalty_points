@@ -4,6 +4,7 @@ import 'package:loyalty_points/features/dashboard/domain/entity/points_entity.da
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/functions/execute_and_handle_remote_errors.dart';
 import '../../../auth/data/datasources/auth_local_data_source.dart';
+import '../../domain/entity/order_entity.dart';
 import '../../domain/repositories/dashboard_repositories.dart';
 import '../datasources/dashboard_remote_data_source.dart';
 
@@ -47,7 +48,15 @@ class DashboardRepositoriesImp extends DashboardRepositories {
 
   @override
   Future<Status<List<PointsEntity>>> getPoints(int page) {
-    // TODO: implement getPoints
-    throw UnimplementedError();
+    return executeAndHandleErrors<List<PointsEntity>>(
+      () => remoteDataSource.getPoints(page),
+    );
+  }
+
+  @override
+  Future<Status<List<OrderEntity>>> getOrders(int page) {
+    return executeAndHandleErrors<List<OrderEntity>>(
+      () => remoteDataSource.getOrders(page),
+    );
   }
 }

@@ -1,5 +1,6 @@
 import '../../../../core/status/status.dart';
 import '../../../auth/data/models/user_model.dart';
+import '../entity/order_entity.dart';
 import '../entity/points_entity.dart';
 
 abstract class DashboardRepositories {
@@ -12,4 +13,6 @@ abstract class DashboardRepositories {
   Future<Status<void>> logout();
 
   Future<Status<List<PointsEntity>>> getPoints(int page);
+  
+  Future<Status<List<OrderEntity>>> getOrders(int page);
 }
