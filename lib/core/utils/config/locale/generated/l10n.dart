@@ -242,6 +242,16 @@ class S {
     );
   }
 
+  /// `Do you want to logout?`
+  String get do_you_want_to_logout {
+    return Intl.message(
+      'Do you want to logout?',
+      name: 'do_you_want_to_logout',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Your Consent`
   String get yourAgreement {
     return Intl.message(

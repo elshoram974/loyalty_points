@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:loyalty_points/core/utils/constants/app_constants.dart';
 import 'package:loyalty_points/features/dashboard/presentation/widgets/profile_details/profile_details_fields.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../auth/data/models/user_model.dart';
-import '../widgets/edit_profile/edit_profile_button.dart';
 
 class ProfileDetailsScreen extends StatelessWidget {
   const ProfileDetailsScreen({super.key, this.user});
@@ -22,13 +20,7 @@ class ProfileDetailsScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(AppConst.paddingBig),
-        children: [
-          const ProfileDetails(),
-          if (!context.isPhone) const EditProfileButton(),
-        ],
-      ),
+      body: const ProfileDetails(),
       // bottomNavigationBar: context.isPhone
       //     ? const EditProfileButton(borderRadius: BorderRadius.zero)
       //     : null,
