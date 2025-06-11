@@ -100,8 +100,7 @@ class ServerFailure<T> extends Failure<T> {
         res.copyWith(
             message: localeLang().thereIsProblemWithServerTryAgainLater),
       );
-    } else if (res.unauthorizedError &&
-        Get.currentRoute != AppRoute.login) {
+    } else if (res.unauthorizedError && Get.currentRoute != AppRoute.login) {
       Get.find<AuthLocalDataSource>().logOut().then(
             (_) => Get.offAllNamed(AppRoute.login),
           );

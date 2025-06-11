@@ -39,16 +39,12 @@ class TermsScreen extends StatelessWidget {
           ParagraphPolicy(
             paragraph: localeLang(context).termsDataCharges,
           ),
-
-
- 
           ParagraphPolicy(
             title: localeLang(context).termsChangesTitle,
           ),
           ParagraphPolicy(
             paragraph: localeLang(context).changeOnTerms,
           ),
-        
           ParagraphPolicy(
             paragraph: localeLang(context).dateOfTerms,
           ),

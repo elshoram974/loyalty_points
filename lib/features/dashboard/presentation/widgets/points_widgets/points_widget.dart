@@ -32,7 +32,7 @@ class PointsWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        points.orderStatus.localeName(context),
+                        points.orderStatus.name,
                         style: context.textTheme.labelLarge?.copyWith(
                           color: points.orderStatus.color,
                         ),

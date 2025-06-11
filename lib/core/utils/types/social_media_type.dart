@@ -9,16 +9,15 @@ abstract class SocialMediaType extends Equatable {
 
   IconData get icon;
 
-
   static List<SocialMediaType> allTypes(String url) => List.unmodifiable(
-    [
-      TikTokSocial(url),
-      WhatsappSocial(url),
-      TelegramSocial(url),
-      InstagramSocial(url),
-      FacebookSocial(url),
-    ],
-  );
+        [
+          TikTokSocial(url),
+          WhatsappSocial(url),
+          TelegramSocial(url),
+          InstagramSocial(url),
+          FacebookSocial(url),
+        ],
+      );
 
   static SocialMediaType? fromType(String type, String url) {
     final List<SocialMediaType> types = allTypes(url);

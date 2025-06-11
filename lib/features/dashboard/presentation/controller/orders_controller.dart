@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 import '../../domain/entity/order_entity.dart';
 
-
 /// Transaction history controller
 abstract class OrdersController extends GetxController {
   OrdersController();

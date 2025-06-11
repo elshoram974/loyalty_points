@@ -17,9 +17,9 @@ class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      body: DefaultTabController( 
+      body: DefaultTabController(
         length: 1,
-        child: CustomScrollView( 
+        child: CustomScrollView(
           slivers: [
             const SliverToBoxAdapter(
               child: PointsBalanceWidget(isUncategorized: false),
@@ -41,8 +41,6 @@ class OrdersScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 List<OrderEntity> get _orders => [
       OrderEntity(

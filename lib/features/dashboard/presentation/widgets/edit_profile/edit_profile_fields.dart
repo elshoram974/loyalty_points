@@ -29,7 +29,7 @@ class EditProfileFields extends StatelessWidget {
           suffixIconData: Icons.person,
           textCapitalization: TextCapitalization.words,
           autofillHints: const [AutofillHints.name],
-         //hintText: localeLang(context).enterYourFullName,
+          //hintText: localeLang(context).enterYourFullName,
           validator: (val) =>
               AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
         ),

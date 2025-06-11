@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
+import '../../../../core/utils/models/pagination_model.dart';
 import '../../domain/entity/points_entity.dart';
 import '../../domain/repositories/dashboard_repositories.dart';
 
@@ -9,6 +10,8 @@ abstract class PointsController extends GetxController {
   PointsController();
   bool get isInitialLoading;
   bool get isLoadingMore;
+
+  bool get hasMoreItem;
 
   List<PointsEntity> get points;
 
@@ -21,14 +24,18 @@ class PointsControllerImp extends PointsController {
   PointsControllerImp(this.repo);
   final DashboardRepositories repo;
   int _page = 1;
+  int _totalItems = 0;
 
   bool _isInitialLoading = true;
   @override
-  bool get isInitialLoading => _isInitialLoading;
+  bool get isInitialLoading => _isInitialLoading && _points.isEmpty;
 
   bool _isLoadingMore = false;
   @override
   bool get isLoadingMore => _isLoadingMore;
+
+  @override
+  bool get hasMoreItem => _totalItems > _points.length;
 
   final List<PointsEntity> _points = [];
   @override
@@ -36,15 +43,19 @@ class PointsControllerImp extends PointsController {
 
   @override
   Future<void> getMorePoints() async {
-    if (_isLoadingMore) return;
+    if (_isInitialLoading || _isLoadingMore || !hasMoreItem) return;
 
     _isLoadingMore = true;
     update();
 
-    handleResponseInController<List<PointsEntity>>(
+    handleResponseInController<PaginationModel<PointsEntity>>(
       status: await repo.getPoints(++_page),
-      onSuccess: (results) => _points.addAll(results),
+      onSuccess: (results) {
+        _totalItems = results.totalItems;
+        _points.addAll(results.data);
+      },
     );
+    _totalItems = _points.length;
     _isLoadingMore = false;
     update();
   }
@@ -57,11 +68,12 @@ class PointsControllerImp extends PointsController {
       update();
     }
 
-    handleResponseInController<List<PointsEntity>>(
+    handleResponseInController<PaginationModel<PointsEntity>>(
       status: await repo.getPoints(_page),
       onSuccess: (results) {
         _points.clear();
-        _points.addAll(results);
+        _totalItems = results.totalItems;
+        _points.addAll(results.data);
       },
     );
     _isInitialLoading = false;

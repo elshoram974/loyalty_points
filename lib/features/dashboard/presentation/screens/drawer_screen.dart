@@ -89,7 +89,7 @@ class HomeDrawer extends GetView<DashboardController> {
               title: localeLang().logout,
               textCancel: localeLang().logOut,
               onPressCancel: () {
-               controller.logOut();
+                controller.logOut();
               },
               textConfirm: localeLang().cancel,
               onPressConfirm: Get.back,

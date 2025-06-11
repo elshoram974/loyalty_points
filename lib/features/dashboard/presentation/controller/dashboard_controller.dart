@@ -78,6 +78,7 @@ class DashboardControllerImp extends DashboardController {
       ],
     );
   }
+
   @override
   Future<void> updateFCMToken() async {
     return handleResponseInController<void>(

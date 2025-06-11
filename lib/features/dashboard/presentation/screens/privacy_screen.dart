@@ -58,7 +58,7 @@ class PrivacyScreen extends StatelessWidget {
             title: localeLang(context).privacyChangesTitle,
             paragraph: localeLang(context).privacyChanges,
           ),
-            ParagraphPolicy(
+          ParagraphPolicy(
             title: localeLang(context).yourAgreement,
             paragraph: localeLang(context).consent,
           ),

@@ -131,19 +131,18 @@ class ConfigModel extends Equatable {
     List<dynamic>? social,
   }) {
     return ConfigModel(
-      pointsValue: pointsValue ?? this.pointsValue,
-      currency: currency ?? this.currency,
-      loyaltyEnabled: loyaltyEnabled ?? this.loyaltyEnabled,
-      banner2: banner2 ?? this.banner2,
-      banner1: banner1 ?? this.banner1,
-      sellerMinimumPointsToRedeem:
-          sellerMinimumPointsToRedeem ?? _sellerMinimumPointsToRedeem,
-      repMinimumPointsToRedeem:
-          repMinimumPointsToRedeem ?? _repMinimumPointsToRedeem,
-      sellerOnePoundEquity: sellerOnePoundEquity ?? _sellerOnePoundEquity,
-      repOnePoundEquity: repOnePoundEquity ?? _repOnePoundEquity,
-      social: social ?? _social
-    );
+        pointsValue: pointsValue ?? this.pointsValue,
+        currency: currency ?? this.currency,
+        loyaltyEnabled: loyaltyEnabled ?? this.loyaltyEnabled,
+        banner2: banner2 ?? this.banner2,
+        banner1: banner1 ?? this.banner1,
+        sellerMinimumPointsToRedeem:
+            sellerMinimumPointsToRedeem ?? _sellerMinimumPointsToRedeem,
+        repMinimumPointsToRedeem:
+            repMinimumPointsToRedeem ?? _repMinimumPointsToRedeem,
+        sellerOnePoundEquity: sellerOnePoundEquity ?? _sellerOnePoundEquity,
+        repOnePoundEquity: repOnePoundEquity ?? _repOnePoundEquity,
+        social: social ?? _social);
   }
 
   @override

@@ -14,8 +14,7 @@ class OurPartnersWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(
-          horizontal: AppConst.paddingDefault,
-          vertical: AppConst.paddingSmall),
+          horizontal: AppConst.paddingDefault, vertical: AppConst.paddingSmall),
       decoration: const BoxDecoration(
         color: AppColor.greyBackground,
         border: Border(

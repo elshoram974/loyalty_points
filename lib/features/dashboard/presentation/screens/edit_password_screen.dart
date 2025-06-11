@@ -6,6 +6,7 @@ import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../auth/data/models/user_model.dart';
 import '../widgets/edit_password/edit_password_fields.dart';
 import '../widgets/edit_profile/edit_profile_button.dart';
+
 class EditPasswordScreen extends StatelessWidget {
   const EditPasswordScreen({super.key, this.user});
   final UserModel? user;
@@ -31,7 +32,6 @@ class EditPasswordScreen extends StatelessWidget {
       bottomNavigationBar: context.isPhone
           ? const EditProfileButton(borderRadius: BorderRadius.zero)
           : null,
-
     );
   }
 }

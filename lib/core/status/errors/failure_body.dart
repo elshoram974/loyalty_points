@@ -19,7 +19,6 @@ class FailureBody extends Equatable {
 
   bool get unauthorizedError => code == 401 || code == 302;
 
-
   factory FailureBody.fromMap(Map<String, dynamic> data) => FailureBody(
         code: data['code'] as int,
         type: data['type'] as String,

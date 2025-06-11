@@ -35,14 +35,12 @@ class OrdersDetailsScreen extends StatelessWidget {
         children: [
           // DateContainerWidget(date: order.date),
           _DetailsCard(
-
             icon: Icons.calendar_month_outlined,
             title: localeLang(context).date,
             value: intl.DateFormat.yMMMd(
               Get.find<ConfigController>().locale.languageCode,
             ).format(
                 DateTime(order.date.year, order.date.month, order.date.day)),
-                
           ),
           _DetailsCard(
             icon: order.orderStatus.icon,
@@ -55,15 +53,13 @@ class OrdersDetailsScreen extends StatelessWidget {
             title: localeLang(context).points,
             value: order.points.withSeparator,
           ),
-          PointsBuilderWidget(
-            builder: (_,__,helper) {
-              return _DetailsCard(
-                icon: Icons.price_check_outlined,
-                title: localeLang(context).price,
-                value: "${order.price.withSeparator} ${helper.config?.currency}",
-              );
-            }
-          ),
+          PointsBuilderWidget(builder: (_, __, helper) {
+            return _DetailsCard(
+              icon: Icons.price_check_outlined,
+              title: localeLang(context).price,
+              value: "${order.price.withSeparator} ${helper.config?.currency}",
+            );
+          }),
           _DetailsCard(
             icon: Icons.phone_outlined,
             title: localeLang(context).mobileNumber,

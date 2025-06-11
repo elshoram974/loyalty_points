@@ -19,6 +19,8 @@ abstract final class AppInfo {
   // static const bool isDebugMode = false;
   static const bool isDebugMode = kDebugMode;
 
+  static const int paginationLimit = 10;
+
   /// Config data that we get from dashboard
   static ConfigModel? config;
 

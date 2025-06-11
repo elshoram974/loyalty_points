@@ -91,7 +91,7 @@ class ConfigControllerImp extends ConfigController {
       AppString.updateBalance,
     ];
 
-    if(!isReload){
+    if (!isReload) {
       _isLoadingConfig = true;
       update(ids);
     }

@@ -1,19 +1,22 @@
 import 'dart:developer';
 
+import '../../../../app_info.dart';
 import '../../../../core/utils/constants/app_links.dart';
 import '../../../../core/utils/constants/app_strings.dart';
+import '../../../../core/utils/models/pagination_model.dart';
 import '../../../../core/utils/services/api_services.dart';
 import '../../../../core/utils/services/push_notification_service.dart';
 import '../../../auth/data/models/user_model.dart';
 import '../../domain/entity/order_entity.dart';
 import '../../domain/entity/points_entity.dart';
+import '../model/points_model.dart';
 
 abstract class DashboardRemoteDataSource {
   const DashboardRemoteDataSource();
   Future<void> updateFCMTokenAndAddAllUsersTopic(String? fcmToken);
   Future<UserModel> getCurrentUser();
-  Future<List<PointsEntity>> getPoints(int page);
-  Future<List<OrderEntity>> getOrders(int page);
+  Future<PaginationModel<PointsEntity>> getPoints(int page);
+  Future<PaginationModel<OrderEntity>> getOrders(int page);
 }
 
 class DashboardRemoteDataSourceImp extends DashboardRemoteDataSource {
@@ -51,20 +54,19 @@ class DashboardRemoteDataSourceImp extends DashboardRemoteDataSource {
   }
 
   @override
-  Future<List<PointsEntity>> getPoints(int page) async {
+  Future<PaginationModel<PointsEntity>> getPoints(int page) async {
     final Map<String, dynamic> res = await apiServices.get(
-      AppLinks.pointsHistory,
+      "${AppLinks.pointsHistory}?page=$page&limit=${AppInfo.paginationLimit}",
     );
-    log(res.toString());
-    return [];
+    return PaginationModel<PointsModel>.fromMap(res, PointsModel.fromMap);
   }
 
   @override
-  Future<List<OrderEntity>> getOrders(int page) async {
+  Future<PaginationModel<OrderEntity>> getOrders(int page) async {
     final Map<String, dynamic> res = await apiServices.get(
-      AppLinks.ordersHistory,
+      "${AppLinks.ordersHistory}?page=$page&limit=${AppInfo.paginationLimit}",
     );
-    log(res.toString());
-    return [];
+    throw "Not implemented yet";
+    // return PaginationModel<PointsModel>.fromMap(res, PointsModel.fromMap);
   }
 }

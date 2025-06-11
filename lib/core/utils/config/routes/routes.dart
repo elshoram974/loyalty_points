@@ -93,6 +93,5 @@ abstract final class AppRoute {
           name: editPassword,
           page: () => const EditPasswordScreen(),
         ),
-        
       ];
 }
