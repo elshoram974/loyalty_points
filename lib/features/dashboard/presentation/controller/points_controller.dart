@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 
+import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../domain/entity/points_entity.dart';
+import '../../domain/repositories/points_repositories.dart';
 
 /// Transaction history controller
 abstract class PointsController extends GetxController {
@@ -11,15 +13,16 @@ abstract class PointsController extends GetxController {
   List<PointsEntity> get points;
 
   /// Transaction history data
-  Future<void> getPoints();
+  Future<void> getPoints([bool isReload = false]);
   Future<void> getMorePoints();
 }
 
 class PointsControllerImp extends PointsController {
-  PointsControllerImp();
+  PointsControllerImp(this.repo);
+  final PointsRepositories repo;
+  int _page = 1;
 
   bool _isInitialLoading = true;
-
   @override
   bool get isInitialLoading => _isInitialLoading;
 
@@ -27,17 +30,41 @@ class PointsControllerImp extends PointsController {
   @override
   bool get isLoadingMore => _isLoadingMore;
 
-  List<PointsEntity> _points = [];
+  final List<PointsEntity> _points = [];
   @override
   List<PointsEntity> get points => List.unmodifiable(_points);
 
   @override
   Future<void> getMorePoints() async {
-    // TODO: implement getMorePoints
+    if (_isLoadingMore) return;
+
+    _isLoadingMore = true;
+    update();
+
+    handleResponseInController<List<PointsEntity>>(
+      status: await repo.getPoints(++_page),
+      onSuccess: (results) => _points.addAll(results),
+    );
+    _isLoadingMore = false;
+    update();
   }
 
   @override
-  Future<void> getPoints() async {
-    // TODO: implement getPoints
+  Future<void> getPoints([bool isReload = false]) async {
+    _page = 1;
+    if (!isReload) {
+      _isInitialLoading = true;
+      update();
+    }
+
+    handleResponseInController<List<PointsEntity>>(
+      status: await repo.getPoints(_page),
+      onSuccess: (results) {
+        _points.clear();
+        _points.addAll(results);
+      },
+    );
+    _isInitialLoading = false;
+    update();
   }
 }
