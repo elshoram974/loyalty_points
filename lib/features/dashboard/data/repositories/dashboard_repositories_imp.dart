@@ -1,4 +1,5 @@
 import 'package:loyalty_points/features/auth/data/models/user_model.dart';
+import 'package:loyalty_points/features/dashboard/domain/entity/points_entity.dart';
 
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/functions/execute_and_handle_remote_errors.dart';
@@ -42,5 +43,11 @@ class DashboardRepositoriesImp extends DashboardRepositories {
         await authLocalDataSource.logOut();
       },
     );
+  }
+
+  @override
+  Future<Status<List<PointsEntity>>> getPoints(int page) {
+    // TODO: implement getPoints
+    throw UnimplementedError();
   }
 }

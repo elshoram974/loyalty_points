@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../domain/entity/points_entity.dart';
-import '../../domain/repositories/points_repositories.dart';
+import '../../domain/repositories/dashboard_repositories.dart';
 
 /// Transaction history controller
 abstract class PointsController extends GetxController {
@@ -19,7 +19,7 @@ abstract class PointsController extends GetxController {
 
 class PointsControllerImp extends PointsController {
   PointsControllerImp(this.repo);
-  final PointsRepositories repo;
+  final DashboardRepositories repo;
   int _page = 1;
 
   bool _isInitialLoading = true;

@@ -2,9 +2,7 @@ import 'package:get/get.dart';
 
 import '../../../features/dashboard/data/datasources/dashboard_remote_data_source.dart';
 import '../../../features/dashboard/data/repositories/dashboard_repositories_imp.dart';
-import '../../../features/dashboard/data/repositories/points_repositories_imp.dart';
 import '../../../features/dashboard/domain/repositories/dashboard_repositories.dart';
-import '../../../features/dashboard/domain/repositories/points_repositories.dart';
 import '../../../features/dashboard/presentation/controller/dashboard_controller.dart';
 import '../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../../features/dashboard/presentation/controller/orders_controller.dart';
@@ -17,14 +15,6 @@ class HomeBindings extends Bindings {
   void dependencies() {
     Get.put<OrdersController>(OrdersControllerImp());
 
-    Get.put<PointsRepositories>(
-      const PointsRepositoriesImp(),
-    );
-
-    Get.put<PointsController>(
-      PointsControllerImp(Get.find<PointsRepositories>()),
-    );
-
     Get.put<DashboardRemoteDataSource>(
       DashboardRemoteDataSourceImp(Get.find<APIServices>()),
     );
@@ -33,6 +23,10 @@ class HomeBindings extends Bindings {
         remoteDataSource: Get.find<DashboardRemoteDataSource>(),
         authLocalDataSource: Get.find<AuthLocalDataSource>(),
       ),
+    );
+
+    Get.put<PointsController>(
+      PointsControllerImp(Get.find<DashboardRepositories>()),
     );
     Get.put<DashboardController>(
       DashboardControllerImp(
