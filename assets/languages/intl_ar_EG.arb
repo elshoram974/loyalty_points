@@ -1,4 +1,5 @@
 {
+  "redeem": "استبدال",
   "notEnoughPointsToRedeem": "أنت تملك فقط {userPoints} نقطة، وتحتاج إلى {pointsNeeded} نقطة إضافية لاستبدال النقاط.",
   "@notEnoughPointsToRedeem": {
     "placeholders": {

@@ -121,7 +121,7 @@ List<PointsEntity> get _points => [
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.discount,
+        orderStatus: PointsStatusEnum.redeem,
         points: 100,
         orderNumber: 2222221000,
         date: DateTime.now(),
@@ -139,7 +139,7 @@ List<PointsEntity> get _points => [
         date: DateTime(2000),
       ),
       PointsEntity(
-        orderStatus: PointsStatusEnum.discount,
+        orderStatus: PointsStatusEnum.redeem,
         points: 100,
         orderNumber: 2222221000,
         date: DateTime.now(),

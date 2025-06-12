@@ -28,9 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -52,6 +53,11 @@ class S {
 
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
+  }
+
+  /// `Redeem`
+  String get redeem {
+    return Intl.message('Redeem', name: 'redeem', desc: '', args: []);
   }
 
   /// `You only have {userPoints} points. You need {pointsNeeded} more points to redeem.`
@@ -1148,7 +1154,7 @@ class S {
 
   /// `A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.`
   String
-      get loyalty_program_for_PetroJac_oil_shops_and_station_agents_products {
+  get loyalty_program_for_PetroJac_oil_shops_and_station_agents_products {
     return Intl.message(
       'A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.',
       name:

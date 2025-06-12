@@ -4,23 +4,23 @@ import '../config/locale/local_lang.dart';
 import '../constants/app_color.dart';
 
 enum PointsStatusEnum {
-  discount,
+  redeem,
   add;
 
   Color get color {
     switch (this) {
-      case PointsStatusEnum.add:
+      case add:
         return Colors.green;
-      case PointsStatusEnum.discount:
+      case redeem:
         return AppColor.pendingTextColor;
     }
   }
 
   String get name {
     switch (this) {
-      case PointsStatusEnum.discount:
-        return localeLang().discount;
-      case PointsStatusEnum.add:
+      case redeem:
+        return localeLang().redeem;
+      case add:
         return localeLang().addition;
     }
   }
@@ -30,7 +30,7 @@ enum PointsStatusEnum {
       case 'add':
         return add;
       case 'subtract':
-        return discount;
+        return redeem;
     }
     return add;
   }

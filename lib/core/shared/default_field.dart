@@ -103,6 +103,13 @@ class MyDefaultField extends StatefulWidget {
 class _MyDefaultFieldState extends State<MyDefaultField> {
   late TextDirection? textDirection = widget.textDirection;
   bool isValidPhone = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialValue != null) detectDirections(widget.initialValue!);
+  }
+
   @override
   Widget build(BuildContext context) {
     if (widget.isPhoneNumber) {
@@ -214,10 +221,7 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
         inputFormatters: widget.inputFormatters,
         key: widget.fieldKey,
         onChanged: (val) {
-          if (widget.textDirection == null) {
-            textDirection = val.direction;
-            setState(() {});
-          }
+          detectDirections(val);
           if (widget.onChanged != null) widget.onChanged!(val);
         },
         textCapitalization: widget.textCapitalization,
@@ -234,6 +238,13 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
         enabled: !widget.readOnly,
       ),
     );
+  }
+
+  void detectDirections(String val) {
+    if (widget.textDirection == null) {
+      textDirection = val.direction;
+      setState(() {});
+    }
   }
 
   PhoneNumber removeZerosInFirstNum(PhoneNumber phone) {

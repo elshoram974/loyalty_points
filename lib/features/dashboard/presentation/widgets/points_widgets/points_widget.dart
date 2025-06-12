@@ -37,13 +37,14 @@ class PointsWidget extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    Text(
-                      '${points.orderNumber}',
-                      style: context.textTheme.labelLarge?.copyWith(
-                        color: AppColor.grey,
+                    if (points.orderNumber != null)
+                      Text(
+                        '${points.orderNumber}',
+                        style: context.textTheme.labelLarge?.copyWith(
+                          color: AppColor.grey,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
                   ],
                 ),
                 Text(
