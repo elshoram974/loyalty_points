@@ -18,7 +18,7 @@ abstract final class AppColor {
 
   static const Color borderColor = Colors.grey;
 
-  static const Color discountColor = Color(0xFFEFAD43);
+  static const Color pendingTextColor = Color(0xFFBB780D);
 
   // static const Color active = Color(0xFFE87282);
 

@@ -6,6 +6,7 @@ import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/my_sliver_pinned_tabs.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/constants/app_constants.dart';
+import '../../../../core/utils/types/order_status_enum.dart';
 import '../../domain/entity/order_entity.dart';
 import '../widgets/my_custom_divider.dart';
 import '../widgets/orders_widgets/orders_widget.dart';

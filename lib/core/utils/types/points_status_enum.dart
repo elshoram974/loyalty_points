@@ -12,7 +12,7 @@ enum PointsStatusEnum {
       case PointsStatusEnum.add:
         return Colors.green;
       case PointsStatusEnum.discount:
-        return AppColor.discountColor;
+        return AppColor.pendingTextColor;
     }
   }
 
