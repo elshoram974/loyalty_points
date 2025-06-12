@@ -69,7 +69,6 @@ class ProfileDetails extends StatelessWidget {
               width: 290,
               child: OutlinedButton.icon(
                 onPressed: () => Get.toNamed(AppRoute.editProfile),
-                icon: Icon(Icons.edit, color: context.theme.primaryColor),
                 label: Text(
                   localeLang(context).edit_your_profile,
                   style: TextStyle(color: context.theme.primaryColor),
@@ -87,7 +86,6 @@ class ProfileDetails extends StatelessWidget {
             ),
             CustomFilledButton(
               text: localeLang(context).editPassword,
-              icon: const Icon(Icons.lock, color: Colors.white),
               onPressed: () => Get.toNamed(AppRoute.editPassword),
               minimumSize: const Size(300, 50),
               filledColor: context.theme.primaryColor,

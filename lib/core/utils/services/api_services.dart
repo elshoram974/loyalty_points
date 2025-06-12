@@ -27,6 +27,10 @@ class APIServices {
   ) async {
     final String? token = await _getAuthToken;
 
+    if (AppInfo.isDebugMode) {
+      print("endpoint: $link, body: $body");
+    }
+
     final Response response = await _dio.post(
       link,
       data: body,
