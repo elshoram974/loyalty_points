@@ -8,8 +8,8 @@ class OrderEntity extends Equatable {
   final int points;
   final double price;
   final DateTime date;
-  final String? phone;
-  final PaymentMethod? paymentMethod;
+  final String phone;
+  final PaymentMethod paymentMethod;
   final String? imageUrl;
 
   const OrderEntity({

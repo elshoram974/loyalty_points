@@ -10,6 +10,16 @@ enum PaymentMethod {
   const PaymentMethod(this.image);
 
   String get toJson => this == instaPay ? 'instapay' : 'wallet';
+  
+  factory PaymentMethod.fromString(String? inString) {
+    switch (inString) {
+      case 'instapay':
+        return instaPay;
+      case 'wallet':
+        return wallet;
+    }
+    return instaPay;
+  }
 
   String get name =>
       this == instaPay ? localeLang().instapay : localeLang().wallet;

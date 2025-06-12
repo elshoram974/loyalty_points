@@ -61,15 +61,16 @@ class OrdersDetailsScreen extends StatelessWidget {
             );
           }),
           _DetailsCard(
-            icon: Icons.phone_outlined,
-            title: localeLang(context).mobileNumber,
-            value: order.phone.toString(),
-            valueDirection: TextDirection.ltr,
-          ),
-          _DetailsCard(
             icon: Icons.payment_outlined,
             title: localeLang(context).paymentMethod,
-            value: order.paymentMethod?.name ?? '',
+            value: order.paymentMethod.name,
+          ),
+          _DetailsCard(
+            icon: Icons.phone_outlined,
+            title: localeLang(context)
+                .paymentMethodNumber(order.paymentMethod.name),
+            value: order.phone.toString(),
+            valueDirection: TextDirection.ltr,
           ),
           const SizedBox(height: 16),
           Text(
@@ -124,7 +125,8 @@ class _DetailsCard extends StatelessWidget {
             value,
             textDirection: valueDirection,
             style: TextStyle(
-              color: valueColor ?? Theme.of(context).textTheme.bodyMedium?.color,
+              color:
+                  valueColor ?? Theme.of(context).textTheme.bodyMedium?.color,
               fontSize: 16,
             ),
           ),

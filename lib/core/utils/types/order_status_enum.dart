@@ -42,7 +42,8 @@ enum OrderStatusEnum {
         return Icons.close;
     }
   }
-    factory OrderStatusEnum.fromString(String? inString) {
+
+  factory OrderStatusEnum.fromString(String? inString) {
     switch (inString) {
       case 'complete':
         return accepted;
