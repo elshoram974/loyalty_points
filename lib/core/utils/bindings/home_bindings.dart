@@ -13,8 +13,6 @@ import '../services/api_services.dart';
 class HomeBindings extends Bindings {
   @override
   void dependencies() {
-    Get.put<OrdersController>(OrdersControllerImp());
-
     Get.put<DashboardRemoteDataSource>(
       DashboardRemoteDataSourceImp(Get.find<APIServices>()),
     );
@@ -27,6 +25,9 @@ class HomeBindings extends Bindings {
 
     Get.put<PointsController>(
       PointsControllerImp(Get.find<DashboardRepositories>()),
+    );
+    Get.put<OrdersController>(
+      OrdersControllerImp(Get.find<DashboardRepositories>()),
     );
     Get.put<DashboardController>(
       DashboardControllerImp(

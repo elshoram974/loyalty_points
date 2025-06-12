@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import '../../../../core/utils/constants/app_links.dart';
 import '../../../../core/utils/services/api_services.dart';
 import '../../domain/entities/redeem_entity.dart';
@@ -15,10 +13,6 @@ class RedeemRemoteDataSourceImp extends RedeemRemoteDataSource {
 
   @override
   Future<void> createRedeem(RedeemEntity data) async {
-    final Map<String, dynamic> res = await apiServices.post(
-      AppLinks.createRedeem,
-      data.toJson(),
-    );
-    log(res.toString());
+    await apiServices.post(AppLinks.createRedeem, data.toJson());
   }
 }

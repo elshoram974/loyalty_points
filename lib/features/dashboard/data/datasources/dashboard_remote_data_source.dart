@@ -6,6 +6,8 @@ import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/models/pagination_model.dart';
 import '../../../../core/utils/services/api_services.dart';
 import '../../../../core/utils/services/push_notification_service.dart';
+import '../../../../core/utils/types/order_status_enum.dart';
+import '../../../../core/utils/types/payment_methods.dart';
 import '../../../auth/data/models/user_model.dart';
 import '../../domain/entity/order_entity.dart';
 import '../../domain/entity/points_entity.dart';
@@ -66,7 +68,17 @@ class DashboardRemoteDataSourceImp extends DashboardRemoteDataSource {
     final Map<String, dynamic> res = await apiServices.get(
       "${AppLinks.ordersHistory}?page=$page&limit=${AppInfo.paginationLimit}",
     );
-    throw "Not implemented yet";
-    // return PaginationModel<PointsModel>.fromMap(res, PointsModel.fromMap);
+    return PaginationModel<OrderEntity>.fromMap(
+      res,
+      (map) => OrderEntity(
+        orderStatus: OrderStatusEnum.rejected,
+        points: 540,
+        price: 1400.25,
+        date: DateTime(2000),
+        phone: '+20123456789',
+        paymentMethod: PaymentMethod.wallet,
+        imageUrl: null,
+      ),
+    );
   }
 }

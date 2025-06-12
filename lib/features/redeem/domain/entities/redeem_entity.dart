@@ -5,19 +5,19 @@ import '../../../../core/utils/types/payment_methods.dart';
 class RedeemEntity {
   final int points;
   final PaymentMethod payment;
-  final String paymentRef;
+  final String phoneNumber;
 
   const RedeemEntity({
     required this.points,
     required this.payment,
-    required this.paymentRef,
+    required this.phoneNumber,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'points': points,
       'payment_method': payment.toJson,
-      'payment_ref': paymentRef,
+      'payment_info': phoneNumber,
     };
   }
 

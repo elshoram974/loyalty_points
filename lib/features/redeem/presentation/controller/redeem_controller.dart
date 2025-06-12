@@ -64,7 +64,7 @@ class RedeemControllerImp extends RedeemController {
     final RedeemEntity redeemEntity = RedeemEntity(
       points: points,
       payment: payment,
-      paymentRef: _phone!.phoneNumber!,
+      phoneNumber: _phone!.phoneNumber!,
     );
     final Status<void> redeemState = await repo.createRedeem(
       redeemEntity,

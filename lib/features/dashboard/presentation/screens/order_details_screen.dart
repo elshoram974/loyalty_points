@@ -64,6 +64,7 @@ class OrdersDetailsScreen extends StatelessWidget {
             icon: Icons.phone_outlined,
             title: localeLang(context).mobileNumber,
             value: order.phone.toString(),
+            valueDirection: TextDirection.ltr,
           ),
           _DetailsCard(
             icon: Icons.payment_outlined,
@@ -95,12 +96,14 @@ class _DetailsCard extends StatelessWidget {
     required this.value,
     this.valueColor,
     this.icon,
+    this.valueDirection,
   });
 
   final String title;
   final String value;
   final Color? valueColor;
   final IconData? icon;
+  final TextDirection? valueDirection;
 
   @override
   Widget build(BuildContext context) {
@@ -115,11 +118,15 @@ class _DetailsCard extends StatelessWidget {
           title,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        subtitle: Text(
-          value,
-          style: TextStyle(
-            color: valueColor ?? Theme.of(context).textTheme.bodyMedium?.color,
-            fontSize: 16,
+        subtitle: Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: Text(
+            value,
+            textDirection: valueDirection,
+            style: TextStyle(
+              color: valueColor ?? Theme.of(context).textTheme.bodyMedium?.color,
+              fontSize: 16,
+            ),
           ),
         ),
       ),
