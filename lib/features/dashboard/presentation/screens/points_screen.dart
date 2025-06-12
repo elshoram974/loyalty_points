@@ -117,31 +117,31 @@ List<PointsEntity> get _points => [
       PointsEntity(
         orderStatus: PointsStatusEnum.add,
         points: 540,
-        orderNumber: 2222221400.25,
+        orderNumber: 2222221400,
         date: DateTime(2000),
       ),
       PointsEntity(
         orderStatus: PointsStatusEnum.discount,
         points: 100,
-        orderNumber: 2222221000.25,
+        orderNumber: 2222221000,
         date: DateTime.now(),
       ),
       PointsEntity(
         orderStatus: PointsStatusEnum.add,
         points: 300,
-        orderNumber: 22222223001.25,
+        orderNumber: 22222223001,
         date: DateTime(2001),
       ),
       PointsEntity(
         orderStatus: PointsStatusEnum.add,
         points: 540,
-        orderNumber: 2222221400.25,
+        orderNumber: 2222221400,
         date: DateTime(2000),
       ),
       PointsEntity(
         orderStatus: PointsStatusEnum.discount,
         points: 100,
-        orderNumber: 2222221000.25,
+        orderNumber: 2222221000,
         date: DateTime.now(),
       ),
     ];

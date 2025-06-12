@@ -5,7 +5,7 @@ import '../../../../core/utils/types/points_status_enum.dart';
 class PointsEntity extends Equatable {
   final PointsStatusEnum orderStatus;
   final int points;
-  final double orderNumber;
+  final int orderNumber;
   final DateTime date;
 
   const PointsEntity({

@@ -10,6 +10,8 @@ abstract final class AppColor {
   static const Color secondaryLight = Color(0xFF000000);
   static const Color secondaryDark = Color(0xFF000000);
 
+  static const Color grey = Colors.grey;
+
   static const Color greyBackground = Color(0xFFBDBDBD);
 
   static const List<Color> backgroundGradient = [Colors.white, greyBackground];

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
 import 'package:loyalty_points/features/dashboard/presentation/widgets/date_container_widget.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../../core/utils/constants/app_color.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../domain/entity/points_entity.dart';
 
@@ -26,26 +27,24 @@ class PointsWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  width: 150,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(
-                        points.orderStatus.name,
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: points.orderStatus.color,
-                        ),
-                        textAlign: TextAlign.center,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      points.orderStatus.name,
+                      style: context.textTheme.labelLarge?.copyWith(
+                        color: points.orderStatus.color,
                       ),
-                      Text(
-                        '${points.orderNumber}',
-                        style: context.textTheme.labelLarge?.copyWith(
-                            color: const Color.fromARGB(255, 136, 131, 131)),
-                        textAlign: TextAlign.center,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      '${points.orderNumber}',
+                      style: context.textTheme.labelLarge?.copyWith(
+                        color: AppColor.grey,
                       ),
-                    ],
-                  ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
                 Text(
                   localeLang(context).point_number(points.points.withSeparator),

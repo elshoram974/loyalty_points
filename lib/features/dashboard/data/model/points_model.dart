@@ -25,7 +25,7 @@ class PointsModel extends PointsEntity {
     this.updatedAt,
   }) : super(
           orderStatus: PointsStatusEnum.fromString(type),
-          orderNumber: 0.0,
+          orderNumber: qrCodeId ?? 0,
           date: createdAt ?? DateTime.now(),
         );
 
