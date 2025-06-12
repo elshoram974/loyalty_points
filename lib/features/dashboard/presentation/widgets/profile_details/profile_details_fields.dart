@@ -47,6 +47,7 @@ class ProfileDetails extends StatelessWidget {
           autofillHints: const [AutofillHints.email],
           initialValue: user?.email,
           label: localeLang(context).email,
+          textDirection: TextDirection.ltr,
         ),
         const SizedBox(height: AppConst.paddingDefault),
         AuthField(
@@ -56,6 +57,7 @@ class ProfileDetails extends StatelessWidget {
           textInputAction: TextInputAction.done,
           label: localeLang(context).mobileNumber,
           initialValue: user?.phone,
+          textDirection: TextDirection.ltr,
         ),
         const SizedBox(height: AppConst.paddingBig),
         Wrap(
@@ -66,9 +68,7 @@ class ProfileDetails extends StatelessWidget {
             SizedBox(
               width: 290,
               child: OutlinedButton.icon(
-                onPressed: () {
-                  Get.toNamed(AppRoute.editProfile);
-                },
+                onPressed: () => Get.toNamed(AppRoute.editProfile),
                 icon: Icon(Icons.edit, color: context.theme.primaryColor),
                 label: Text(
                   localeLang(context).edit_your_profile,
@@ -88,9 +88,7 @@ class ProfileDetails extends StatelessWidget {
             CustomFilledButton(
               text: localeLang(context).editPassword,
               icon: const Icon(Icons.lock, color: Colors.white),
-              onPressed: () {
-                Get.toNamed(AppRoute.editPassword);
-              },
+              onPressed: () => Get.toNamed(AppRoute.editPassword),
               minimumSize: const Size(300, 50),
               filledColor: context.theme.primaryColor,
               borderRadius: BorderRadius.circular(12),

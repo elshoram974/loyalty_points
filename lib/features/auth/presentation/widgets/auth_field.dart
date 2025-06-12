@@ -28,6 +28,8 @@ class AuthField extends StatelessWidget {
     this.countries,
     this.fieldKey,
     this.initialValue,
+    this.textDirection,
+    this.textAlign = TextAlign.start,
   });
   final TextEditingController? controller;
   final TextCapitalization textCapitalization;
@@ -36,6 +38,8 @@ class AuthField extends StatelessWidget {
   final String label;
   final String? initialValue;
   final TextStyle? labelStyle;
+  final TextDirection? textDirection;
+  final TextAlign textAlign;
   final Widget? suffix;
   final bool obscureText;
   final bool readOnly;
@@ -67,6 +71,8 @@ class AuthField extends StatelessWidget {
           countries: countries,
           readOnly: readOnly,
           controller: controller,
+          textDirection: textDirection,
+          textAlign: textAlign,
           filled: true,
           fillColor: Theme.of(context).scaffoldBackgroundColor,
           hintText: hintText,
