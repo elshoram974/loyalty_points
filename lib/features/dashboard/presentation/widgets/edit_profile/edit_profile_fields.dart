@@ -6,7 +6,7 @@ import '../../../../../core/utils/functions/app_validate.dart';
 import '../../controller/dashboard_controller.dart';
 import '../../../../auth/data/models/user_model.dart';
 import '../../../../auth/presentation/widgets/auth_field.dart';
-import '../../../../auth/presentation/widgets/sign_up/attachments_validation_widget.dart';
+import 'edit_profile_image_widget.dart';
 
 class EditProfileFields extends StatelessWidget {
   const EditProfileFields({super.key});
@@ -15,11 +15,8 @@ class EditProfileFields extends StatelessWidget {
     final UserModel? user = Get.find<DashboardController>().user;
     return Column(
       children: [
-        AttachmentsValidationWidget(
-          title: localeLang(context).edit_profile_image,
-          errorMessage: localeLang(context).uHaveToAddProfileImage,
-          topPadding: 0,
-          files: [null],
+        EditProfileImageWidget(
+          userImage: user?.image?.path,
           onChanged: (file) {},
         ),
         const SizedBox(height: AppConst.paddingDefault),
