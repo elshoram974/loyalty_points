@@ -43,7 +43,7 @@ class _EditProfileImageWidgetState extends State<EditProfileImageWidget> {
         const SizedBox(height: AppConst.paddingDefault),
         Center(
           child: SizedBox.square(
-            dimension: 80,
+            dimension: 200,
             child: InkWell(
               onTap: widget.onChanged == null
                   ? null
@@ -53,27 +53,30 @@ class _EditProfileImageWidgetState extends State<EditProfileImageWidget> {
                       widget.onChanged?.call(image);
                       setState(() {});
                     },
-              borderRadius: BorderRadius.circular(AppConst.radiusSmall),
+              borderRadius: BorderRadius.circular(500),
               child: DottedBorder(
                 color: AppColor.borderColor,
                 strokeWidth: 1,
                 strokeCap: StrokeCap.butt,
                 dashPattern: const [5, 5],
                 padding: EdgeInsets.zero,
-                borderType: BorderType.RRect,
-                radius: const Radius.circular(AppConst.radiusSmall),
+                borderType: BorderType.Circle,
                 child: image == null
                     ? Stack(
+                        fit: StackFit.expand,
+                        clipBehavior: Clip.hardEdge,
                         children: [
-                          MyNetworkImage(
-                            widget.userImage,
-                            height: 200,
-                            width: 200,
-                            placeHolder: const SizedBox.shrink(),
+                          Hero(
+                            tag: widget.userImage ?? 'user image',
+                            child: MyNetworkImage(
+                              widget.userImage,
+                              placeHolder: const SizedBox.shrink(),
+                              borderRadius: BorderRadius.circular(500),
+                            ),
                           ),
                           const Positioned(
-                            right: AppConst.paddingExtraSmall,
-                            top: AppConst.paddingExtraSmall,
+                            right: AppConst.paddingExtraBig,
+                            top: AppConst.paddingExtraBig,
                             child: Icon(
                               FontAwesomeIcons.penToSquare,
                               size: 18,
@@ -82,38 +85,40 @@ class _EditProfileImageWidgetState extends State<EditProfileImageWidget> {
                           ),
                         ],
                       )
-                    : Stack(children: [
-                        ClipRRect(
-                          borderRadius:
-                              BorderRadius.circular(AppConst.radiusSmall),
-                          child: Image.file(
-                            File(image!.path),
-                            width: double.infinity,
-                            height: 120,
-                            fit: BoxFit.cover,
+                    : Stack(
+                        fit: StackFit.expand,
+                        clipBehavior: Clip.hardEdge,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(500),
+                            child: Image.file(
+                              File(image!.path),
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        ),
-                        Positioned(
-                          right: 0,
-                          top: 0,
-                          child: GestureDetector(
-                            onTap: () {
-                              image = null;
-                              widget.onChanged?.call(image);
-                              setState(() {});
-                            },
-                            child: const Padding(
-                              padding:
-                                  EdgeInsets.all(AppConst.paddingExtraSmall),
-                              child: Icon(
-                                Icons.delete_forever,
-                                size: 18,
-                                color: Colors.red,
+                          Positioned(
+                            right: AppConst.paddingExtraBig,
+                            top: AppConst.paddingExtraBig,
+                            child: GestureDetector(
+                              onTap: () {
+                                image = null;
+                                widget.onChanged?.call(image);
+                                setState(() {});
+                              },
+                              child: const Padding(
+                                padding:
+                                    EdgeInsets.all(AppConst.paddingExtraSmall),
+                                child: Icon(
+                                  Icons.delete_forever,
+                                  size: 18,
+                                  color: Colors.red,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ]),
+                        ],
+                      ),
               ),
             ),
           ),

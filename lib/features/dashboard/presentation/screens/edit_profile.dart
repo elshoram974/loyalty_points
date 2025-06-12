@@ -24,14 +24,11 @@ class EditProfileScreen extends StatelessWidget {
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppConst.paddingBig),
-        children: [
-          const EditProfileFields(),
-          if (!context.isPhone) const EditProfileButton(),
+        children: const [
+          EditProfileFields(),
+          EditProfileButton(),
         ],
       ),
-      bottomNavigationBar: context.isPhone
-          ? const EditProfileButton(borderRadius: BorderRadius.zero)
-          : null,
     );
   }
 }

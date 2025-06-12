@@ -20,12 +20,15 @@ class ProfileDetails extends StatelessWidget {
       padding: const EdgeInsets.all(AppConst.paddingDefault),
       children: [
         Align(
-          child: MyNetworkImage(
-            user?.image?.path,
-            height: 200,
-            width: 200,
-            borderRadius: BorderRadius.circular(500),
-            placeHolder: UserImagePlaceHolder(name: user?.name ?? ''),
+          child: Hero(
+            tag: user?.image?.path ?? 'user image',
+            child: MyNetworkImage(
+              user?.image?.path,
+              height: 200,
+              width: 200,
+              borderRadius: BorderRadius.circular(500),
+              placeHolder: UserImagePlaceHolder(name: user?.name ?? ''),
+            ),
           ),
         ),
         const SizedBox(height: AppConst.paddingDefault),

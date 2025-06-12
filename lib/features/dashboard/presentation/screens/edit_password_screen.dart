@@ -23,15 +23,13 @@ class EditPasswordScreen extends StatelessWidget {
         ),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(AppConst.paddingBig),
-        children: [
-          const EditPasswordFields(),
-          if (!context.isPhone) const EditProfileButton(),
+        padding: const EdgeInsets.all(AppConst.paddingDefault),
+        children: const [
+          EditPasswordFields(),
+          SizedBox(height: 100),
+          EditProfileButton(),
         ],
       ),
-      bottomNavigationBar: context.isPhone
-          ? const EditProfileButton(borderRadius: BorderRadius.zero)
-          : null,
     );
   }
 }

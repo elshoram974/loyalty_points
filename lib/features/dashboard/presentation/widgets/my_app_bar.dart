@@ -40,10 +40,13 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                         children: [
                           AspectRatio(
                             aspectRatio: 1,
-                            child: ClipOval(
-                              child: MyNetworkImage(
-                                controller.user?.image?.path,
-                                placeHolder: UserImagePlaceHolder(name: name),
+                            child: Hero(
+                              tag: controller.user?.image?.path ?? 'user image',
+                              child: ClipOval(
+                                child: MyNetworkImage(
+                                  controller.user?.image?.path,
+                                  placeHolder: UserImagePlaceHolder(name: name),
+                                ),
                               ),
                             ),
                           ),
