@@ -25,9 +25,7 @@ class HomeDrawer extends GetView<DashboardController> {
           TileButtonWidget(
             icon: Icons.person_outline_outlined,
             title: localeLang(context).profile,
-            onTap: () {
-              Get.toNamed(AppRoute.profileDetails);
-            },
+            onTap: () => Get.toNamed(AppRoute.profileDetails),
           ),
           TileButtonWidget(
             icon: Icons.stars_outlined,
@@ -47,16 +45,12 @@ class HomeDrawer extends GetView<DashboardController> {
           TileButtonWidget(
             icon: Icons.policy_outlined,
             title: localeLang(context).termsConditions,
-            onTap: () {
-              Get.to(TermsScreen());
-            },
+            onTap: () => Get.to(() => const TermsScreen()),
           ),
           TileButtonWidget(
             icon: Icons.description_outlined,
             title: localeLang(context).privacy_policy,
-            onTap: () {
-              Get.to(PrivacyScreen());
-            },
+            onTap: () => Get.to(() => const PrivacyScreen()),
           ),
 
           TileButtonWidget(
@@ -66,9 +60,7 @@ class HomeDrawer extends GetView<DashboardController> {
               body: localeLang().do_you_want_to_delete_your_account,
               title: localeLang().delete_account,
               textCancel: localeLang().delete_account,
-              onPressCancel: () {
-                Get.back();
-              },
+              onPressCancel: controller.logOut,
               textConfirm: localeLang().cancel,
               onPressConfirm: Get.back,
             ),
@@ -88,9 +80,7 @@ class HomeDrawer extends GetView<DashboardController> {
               body: localeLang().do_you_want_to_logout,
               title: localeLang().logout,
               textCancel: localeLang().logOut,
-              onPressCancel: () {
-                controller.logOut();
-              },
+              onPressCancel: controller.logOut,
               textConfirm: localeLang().cancel,
               onPressConfirm: Get.back,
             ),

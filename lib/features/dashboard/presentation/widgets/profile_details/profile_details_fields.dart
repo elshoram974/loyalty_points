@@ -17,7 +17,7 @@ class ProfileDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final UserModel? user = Get.find<DashboardController>().user;
     return ListView(
-      padding: const EdgeInsets.all(AppConst.paddingBig),
+      padding: const EdgeInsets.all(AppConst.paddingDefault),
       children: [
         Align(
           child: MyNetworkImage(

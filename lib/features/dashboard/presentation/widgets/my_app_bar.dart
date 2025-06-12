@@ -6,6 +6,7 @@ import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/my_network_image.dart';
 import '../../../../core/shared/responsive/constrained_box.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_assets.dart';
 import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
@@ -31,28 +32,34 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                   final String name = controller.user?.name ?? '';
                   return CustomLoadingWidget(
                     isLoading: controller.isLoadingUserData,
-                    child: Row(
-                      children: [
-                        AspectRatio(
-                          aspectRatio: 1,
-                          child: ClipOval(
-                            child: MyNetworkImage(
-                              controller.user?.image?.path,
-                              placeHolder: UserImagePlaceHolder(name: name),
+                    child: GestureDetector(
+                      onTap: controller.user == null
+                          ? null
+                          : () => Get.toNamed(AppRoute.profileDetails),
+                      child: Row(
+                        children: [
+                          AspectRatio(
+                            aspectRatio: 1,
+                            child: ClipOval(
+                              child: MyNetworkImage(
+                                controller.user?.image?.path,
+                                placeHolder: UserImagePlaceHolder(name: name),
+                              ),
                             ),
                           ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: context.textTheme.bodyMedium,
-                            children: [
-                              TextSpan(text: localeLang(context).welcomeToYou),
-                              const TextSpan(text: ",\n"),
-                              TextSpan(text: name),
-                            ],
+                          RichText(
+                            text: TextSpan(
+                              style: context.textTheme.bodyMedium,
+                              children: [
+                                TextSpan(
+                                    text: localeLang(context).welcomeToYou),
+                                const TextSpan(text: ",\n"),
+                                TextSpan(text: name),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },
