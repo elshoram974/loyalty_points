@@ -15,6 +15,8 @@ import '../../../../features/redeem/presentation/screens/checkout_screen.dart';
 import '../../../../features/redeem/presentation/screens/redeem_success_screen.dart';
 import '../../bindings/add_new_code_bindings.dart';
 import '../../bindings/checkout_bindings.dart';
+import '../../bindings/profile_bindings.dart';
+import '../../bindings/update_profile_bindings.dart';
 import '../../bindings/home_bindings.dart';
 import '../../bindings/login_bindings.dart';
 import '../../bindings/sign_up_bindings.dart';
@@ -82,12 +84,14 @@ abstract final class AppRoute {
           page: () => const RedeemSuccessScreen(),
         ),
         GetPage(
-          name: editProfile,
-          page: () => const EditProfileScreen(),
-        ),
-        GetPage(
           name: profileDetails,
           page: () => const ProfileDetailsScreen(),
+          binding: ProfileBindings(),
+        ),
+        GetPage(
+          name: editProfile,
+          page: () => const EditProfileScreen(),
+          binding: UpdateProfileBindings(),
         ),
         GetPage(
           name: editPassword,
