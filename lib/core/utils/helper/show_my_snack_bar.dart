@@ -45,6 +45,12 @@ abstract final class ShowMySnackBar {
     );
   }
 
+  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason> success(
+    String content,
+  ) {
+    return call(content, backgroundColor: Colors.green);
+  }
+
   static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
       reRequestPermissionToast({
     required String text,

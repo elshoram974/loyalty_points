@@ -2,11 +2,13 @@ import '../../../../core/utils/constants/app_links.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/services/api_services.dart';
 import '../../domain/entity/profile_body_data.dart';
+import '../../domain/entity/update_pass_data.dart';
 
 abstract class EditProfileRemoteDataSource {
   const EditProfileRemoteDataSource();
 
   Future<void> updateProfile(ProfileBodyData data);
+  Future<void> updatePassword(UpdatePasswordData data);
 }
 
 class EditProfileRemoteDataSourceImp extends EditProfileRemoteDataSource {
@@ -23,6 +25,20 @@ class EditProfileRemoteDataSourceImp extends EditProfileRemoteDataSource {
       },
       files: {
         if (data.profile != null) AppString.image: [data.profile!],
+      },
+    );
+  }
+
+  @override
+  Future<void> updatePassword(UpdatePasswordData data) async {
+    await apiServices.post(
+      AppLinks.updatePassword,
+      {
+        if (data.currentPassword != null)
+          AppString.oldPassword: data.currentPassword,
+        if (data.newPassword != null) AppString.password: data.newPassword,
+        if (data.confirmPassword != null)
+          AppString.passwordConfirmation: data.confirmPassword,
       },
     );
   }

@@ -55,6 +55,46 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Points redeemed successfully`
+  String get pointsRedeemedSuccess {
+    return Intl.message(
+      'Points redeemed successfully',
+      name: 'pointsRedeemedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New code added successfully`
+  String get newCodeAddedSuccess {
+    return Intl.message(
+      'New code added successfully',
+      name: 'newCodeAddedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get passwordChangedSuccess {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'passwordChangedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile updated successfully`
+  String get profileUpdatedSuccess {
+    return Intl.message(
+      'Profile updated successfully',
+      name: 'profileUpdatedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Redeem`
   String get redeem {
     return Intl.message('Redeem', name: 'redeem', desc: '', args: []);

@@ -1,4 +1,8 @@
 {
+    "pointsRedeemedSuccess": "Points redeemed successfully",
+    "newCodeAddedSuccess": "New code added successfully",
+    "passwordChangedSuccess": "Password changed successfully",
+    "profileUpdatedSuccess": "Profile updated successfully",
     "redeem": "Redeem",
     "notEnoughPointsToRedeem": "You only have {userPoints} points. You need {pointsNeeded} more points to redeem.",
     "@notEnoughPointsToRedeem": {

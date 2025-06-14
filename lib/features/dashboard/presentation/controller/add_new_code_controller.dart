@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
+import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../domain/repositories/add_new_code_repositories.dart';
 import 'dashboard_controller.dart';
 
@@ -52,6 +54,7 @@ class AddNewCodeControllerImp extends AddNewCodeController {
       onSuccess: (_) {
         dashboardController.getUserData();
         Get.offNamed(AppRoute.codeAddedScreen);
+        ShowMySnackBar.success(localeLang(Get.context!).newCodeAddedSuccess);
       },
     );
     _isLoading = false;

@@ -63,7 +63,7 @@ class UpdateProfileControllerImp extends UpdateProfileController {
     }
     _isLoading = true;
     update();
-    final Status<void> signUpState = await repo.updateProfile(
+    final Status<void> updateProfileState = await repo.updateProfile(
       ProfileBodyData(
         fullName: fullName,
         profile: profile,
@@ -71,11 +71,12 @@ class UpdateProfileControllerImp extends UpdateProfileController {
       ),
     );
     handleResponseInController<void>(
-      status: signUpState,
+      status: updateProfileState,
       onSuccess: (data) async {
         TextInput.finishAutofillContext();
         await dashboardController.getUserData();
         Get.back();
+        ShowMySnackBar.success(localeLang(Get.context!).profileUpdatedSuccess);
       },
     );
 

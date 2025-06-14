@@ -1,4 +1,8 @@
 {
+  "pointsRedeemedSuccess": "تم استبدال النقاط بنجاح",
+  "newCodeAddedSuccess": "تم إضافة الكود الجديد بنجاح",
+  "passwordChangedSuccess": "تم تغيير كلمة المرور بنجاح",
+  "profileUpdatedSuccess": "تم تحديث الملف الشخصي بنجاح",
   "redeem": "استبدال",
   "notEnoughPointsToRedeem": "أنت تملك فقط {userPoints} نقطة، وتحتاج إلى {pointsNeeded} نقطة إضافية لاستبدال النقاط.",
   "@notEnoughPointsToRedeem": {

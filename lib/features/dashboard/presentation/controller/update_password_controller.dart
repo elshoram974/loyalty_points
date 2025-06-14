@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/status/status.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 
+import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
+import '../../domain/entity/update_pass_data.dart';
 import '../../domain/repositories/edit_profile_repositories.dart';
 
 abstract class UpdatePasswordController extends GetxController {
@@ -44,20 +48,21 @@ class UpdatePasswordControllerImp extends UpdatePasswordController {
     _isLoading = true;
     update();
 
-    // final Status<void> signUpState = await repo.updateProfile(
-    //   UpdatePasswordData(
-    //     oldPassword: oldPassword,
-    //     newPassword: newPassword,
-    //     newPasswordAgain: newPasswordAgain,
-    //   ),
-    // );
-    // handleResponseInController<void>(
-    //   status: signUpState,
-    //   onSuccess: (data) async {
-    //     TextInput.finishAutofillContext();
-    //     Get.back();
-    //   },
-    // );
+    final Status<void> updatePasswordState = await repo.updatePassword(
+      UpdatePasswordData(
+        confirmPassword: confirmPassword,
+        newPassword: newPassword,
+        currentPassword: currentPassword,
+      ),
+    );
+    handleResponseInController<void>(
+      status: updatePasswordState,
+      onSuccess: (data) {
+        TextInput.finishAutofillContext();
+        Get.back();
+        ShowMySnackBar.success(localeLang(Get.context!).passwordChangedSuccess);
+      },
+    );
 
     _isLoading = false;
     update();

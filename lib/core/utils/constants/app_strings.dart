@@ -8,6 +8,7 @@ abstract final class AppString {
   static const String name = 'name';
   static const String email = 'email';
   static const String password = 'password';
+  static const String oldPassword = 'old_password';
   static const String passwordConfirmation = 'password_confirmation';
   static const String type = 'type';
   static const String phone = 'phone';

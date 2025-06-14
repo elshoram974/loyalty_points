@@ -3,9 +3,11 @@ import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../core/status/status.dart';
+import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
+import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../../../core/utils/types/payment_methods.dart';
 import '../../domain/entities/redeem_entity.dart';
 import '../../domain/repositories/redeem_repositories.dart';
@@ -71,7 +73,10 @@ class RedeemControllerImp extends RedeemController {
     );
     await handleResponseInController<void>(
       status: redeemState,
-      onSuccess: (_) => Get.offNamed(AppRoute.successRedeemScreen),
+      onSuccess: (_) {
+        Get.offNamed(AppRoute.successRedeemScreen);
+        ShowMySnackBar.success(localeLang(Get.context!).pointsRedeemedSuccess);
+      },
     );
 
     _isLoading = false;
