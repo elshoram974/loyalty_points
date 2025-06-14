@@ -50,13 +50,14 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                               ),
                             ),
                           ),
+                          const SizedBox(width: AppConst.paddingSmall),
                           RichText(
                             text: TextSpan(
                               style: context.textTheme.bodyMedium,
                               children: [
                                 TextSpan(
                                     text: localeLang(context).welcomeToYou),
-                                const TextSpan(text: ",\n"),
+                                const TextSpan(text: "\n"),
                                 TextSpan(text: name),
                               ],
                             ),
