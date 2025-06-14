@@ -53,6 +53,7 @@ class MyDefaultField extends StatefulWidget {
     this.onPhoneInputSaved,
     this.onTap,
     this.countries,
+    this.autoDispose = false,
   });
   final GlobalKey<FormFieldState>? fieldKey;
   final String? labelText;
@@ -85,6 +86,7 @@ class MyDefaultField extends StatefulWidget {
   final bool obscureText;
   final bool readOnly;
   final bool autofocus;
+  final bool autoDispose;
   final TextInputType? keyboardType;
   final TextCapitalization textCapitalization;
   final Iterable<String>? autofillHints;
@@ -107,7 +109,20 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
   @override
   void initState() {
     super.initState();
-    if (widget.initialValue != null) detectDirections(widget.initialValue!);
+    if (widget.initialValue != null) {
+      detectDirections(widget.initialValue!);
+    } else if (widget.controller?.text != null) {
+      detectDirections(widget.controller!.text);
+    }
+  }
+
+  @override
+  void dispose() {
+    if (widget.autoDispose) {
+      widget.controller?.dispose();
+      widget.focusNode?.dispose();
+    }
+    super.dispose();
   }
 
   @override

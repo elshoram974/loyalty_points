@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:loyalty_points/features/dashboard/presentation/screens/edit_profile.dart';
+import 'package:loyalty_points/features/dashboard/presentation/screens/update_profile_screen.dart';
 
 import '../../../../features/auth/presentation/screens/waiting_screen.dart';
 import '../../../../features/dashboard/presentation/screens/add_new_code_screen.dart';
@@ -16,6 +16,7 @@ import '../../../../features/redeem/presentation/screens/redeem_success_screen.d
 import '../../bindings/add_new_code_bindings.dart';
 import '../../bindings/checkout_bindings.dart';
 import '../../bindings/profile_bindings.dart';
+import '../../bindings/update_password_bindings.dart';
 import '../../bindings/update_profile_bindings.dart';
 import '../../bindings/home_bindings.dart';
 import '../../bindings/login_bindings.dart';
@@ -90,12 +91,13 @@ abstract final class AppRoute {
         ),
         GetPage(
           name: editProfile,
-          page: () => const EditProfileScreen(),
+          page: () => const UpdateProfileScreen(),
           binding: UpdateProfileBindings(),
         ),
         GetPage(
           name: editPassword,
           page: () => const EditPasswordScreen(),
+          binding: UpdatePasswordBindings(),
         ),
       ];
 }

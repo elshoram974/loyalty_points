@@ -25,7 +25,7 @@ abstract class UpdateProfileController extends GetxController {
 
   Future<void> updateProfile();
 
-  void onPopInvoked();
+  void onPopInvoked(bool isPopped);
 }
 
 class UpdateProfileControllerImp extends UpdateProfileController {
@@ -35,6 +35,13 @@ class UpdateProfileControllerImp extends UpdateProfileController {
     required this.repo,
     required this.dashboardController,
   });
+
+  @override
+  void onInit() {
+    fullName = user?.name ?? '';
+    email = user?.email ?? '';
+    super.onInit();
+  }
 
   UserModel? get user => dashboardController.user;
 
@@ -59,7 +66,7 @@ class UpdateProfileControllerImp extends UpdateProfileController {
     final Status<void> signUpState = await repo.updateProfile(
       ProfileBodyData(
         fullName: fullName,
-        profile: profile!,
+        profile: profile,
         email: email,
       ),
     );
@@ -78,8 +85,11 @@ class UpdateProfileControllerImp extends UpdateProfileController {
 
   bool _isBack = false;
   @override
-  void onPopInvoked() async {
-    if (fullName != user?.name || email != user?.email || profile != null) {
+  void onPopInvoked(bool isPopped) async {
+    if (isPopped) return;
+    if (fullName != user?.name ||
+        email != user?.email.toLowerCase() ||
+        profile != null) {
       _isBack = await ShowMyDialog.back() == true;
       if (_isBack) Get.back();
     } else {

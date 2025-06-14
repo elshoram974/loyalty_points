@@ -30,6 +30,7 @@ class AuthField extends StatelessWidget {
     this.initialValue,
     this.textDirection,
     this.textAlign = TextAlign.start,
+    this.autoDispose = false,
   });
   final TextEditingController? controller;
   final TextCapitalization textCapitalization;
@@ -44,6 +45,7 @@ class AuthField extends StatelessWidget {
   final bool obscureText;
   final bool readOnly;
   final bool isPhoneNumber;
+  final bool autoDispose;
   final TextInputType? keyboardType;
   final TextInputAction textInputAction;
   final Iterable<String>? autofillHints;
@@ -69,6 +71,7 @@ class AuthField extends StatelessWidget {
         MyDefaultField(
           fieldKey: fieldKey,
           countries: countries,
+          autoDispose: autoDispose,
           readOnly: readOnly,
           controller: controller,
           textDirection: textDirection,
