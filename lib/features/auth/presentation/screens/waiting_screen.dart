@@ -20,7 +20,7 @@ class WaitingScreen extends StatelessWidget {
           horizontal: AppConst.paddingExtraBig,
         ),
         children: [
-          Center(child: Image.asset(AppAssets.fullLogo, width: 250)),
+          Center(child: Image.asset(AppAssets.businessLogo, width: 250)),
           const SizedBox(height: 25),
           const SignUpCompletedImageTextWidget(),
           const SizedBox(height: 25),

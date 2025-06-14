@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(
                 horizontal: AppConst.paddingExtraBig),
-            child: Image.asset(AppAssets.fullLogo),
+            child: Image.asset(AppAssets.businessLogo),
           ),
           const SizedBox(height: AppConst.paddingDefault),
           Text(

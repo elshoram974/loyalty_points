@@ -9,7 +9,7 @@ flutter_native_splash:
 
   # The image parameter allows you to specify an image used in the splash screen.  It must be a
   # png file and should be sized for 4x pixel density.
-  image: assets/images/light_mode.png
+  image: assets/images/logo_splash_light_mode.png
 
   branding: assets/images/branding_image.png
   branding_mode: bottom
@@ -21,7 +21,7 @@ flutter_native_splash:
   # set.
   color_dark: "#373737"
   # background_image_dark: "assets/dark-background.png"
-  image_dark: assets/images/dark_mode.png
+  image_dark: assets/images/logo_splash_dark_mode.png
   branding_dark: assets/images/branding_image_dark.png
 
   # Android 12 handles the splash screen differently than previous versions.  Please visit
@@ -35,7 +35,7 @@ flutter_native_splash:
     # 640 pixels in diameter.
     # App icon without an icon background: This should be 1152×1152 pixels, and fit within a circle
     # 768 pixels in diameter.
-    image: assets/images/light_mode.png
+    image: assets/images/logo_splash_light_mode.png
 
     # Splash screen background color.
     color: "#FFFFFF"
@@ -49,7 +49,7 @@ flutter_native_splash:
     # The image_dark, color_dark, icon_background_color_dark, and branding_dark set values that
     # apply when the device is in dark mode. If they are not specified, the app will use the
     # parameters from above.
-    image_dark: assets/images/dark_mode.png
+    image_dark: assets/images/logo_splash_dark_mode.png
     color_dark: "#373737"
     #icon_background_color_dark: "#eeeeee"
     branding_dark: assets/images/branding_image_dark.png
