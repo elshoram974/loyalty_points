@@ -72,18 +72,20 @@ class OrdersDetailsScreen extends StatelessWidget {
             value: order.phone.toString(),
             valueDirection: TextDirection.ltr,
           ),
-          const SizedBox(height: 16),
-          Text(
-            localeLang(context).image_for_order,
-            style: context.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.bold,
+          if (order.imageUrl != null) ...[
+            const SizedBox(height: 16),
+            Text(
+              localeLang(context).image_for_order,
+              style: context.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          const SizedBox(height: 8),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: MyNetworkImage(order.imageUrl),
-          ),
+            const SizedBox(height: 8),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: MyNetworkImage(order.imageUrl),
+            ),
+          ],
           const SizedBox(height: 8),
         ],
       ),
