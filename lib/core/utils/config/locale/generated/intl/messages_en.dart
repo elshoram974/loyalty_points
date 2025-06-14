@@ -73,6 +73,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "accountAlreadyExistsForThatEmail": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",
     ),
+    "addAtLeastOneImage": MessageLookupByLibrary.simpleMessage(
+      "You must add at least one image",
+    ),
     "addNewCode": MessageLookupByLibrary.simpleMessage("Add New Code"),
     "addition": MessageLookupByLibrary.simpleMessage("addition"),
     "address": MessageLookupByLibrary.simpleMessage("Address"),

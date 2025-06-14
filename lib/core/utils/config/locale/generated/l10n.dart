@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `You must add at least one image`
+  String get addAtLeastOneImage {
+    return Intl.message(
+      'You must add at least one image',
+      name: 'addAtLeastOneImage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Points redeemed successfully`
   String get pointsRedeemedSuccess {
     return Intl.message(

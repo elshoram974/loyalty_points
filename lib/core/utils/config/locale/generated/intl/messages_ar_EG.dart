@@ -73,6 +73,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "accountAlreadyExistsForThatEmail": MessageLookupByLibrary.simpleMessage(
       "الحساب موجود بالفعل لهذا البريد الإلكتروني.",
     ),
+    "addAtLeastOneImage": MessageLookupByLibrary.simpleMessage(
+      "يجب إضافة صورة واحدة على الأقل",
+    ),
     "addNewCode": MessageLookupByLibrary.simpleMessage("إضافة كود جديد"),
     "addition": MessageLookupByLibrary.simpleMessage("اضافه"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان"),
@@ -183,7 +186,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل رقم هاتفك",
     ),
     "enterYourProviderName": MessageLookupByLibrary.simpleMessage(
-      "أدخل اسم مزود الخدمة لك",
+      "أدخل اسم المورد",
     ),
     "error": MessageLookupByLibrary.simpleMessage("خطأ"),
     "fillField": MessageLookupByLibrary.simpleMessage("يرجى ملء هذا الحقل"),
@@ -318,7 +321,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "profileUpdatedSuccess": MessageLookupByLibrary.simpleMessage(
       "تم تحديث الملف الشخصي بنجاح",
     ),
-    "provider": MessageLookupByLibrary.simpleMessage("مزود الخدمة"),
+    "provider": MessageLookupByLibrary.simpleMessage("المورد"),
     "redeem": MessageLookupByLibrary.simpleMessage("استبدال"),
     "redeemPoints": MessageLookupByLibrary.simpleMessage("استبدال النقاط"),
     "redeemWays": MessageLookupByLibrary.simpleMessage("طرق الاستبدال:"),

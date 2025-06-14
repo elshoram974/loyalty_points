@@ -1,4 +1,5 @@
 {
+    "addAtLeastOneImage": "You must add at least one image",
     "pointsRedeemedSuccess": "Points redeemed successfully",
     "newCodeAddedSuccess": "New code added successfully",
     "passwordChangedSuccess": "Password changed successfully",
