@@ -71,7 +71,7 @@ class SignUpControllerImp extends SignUpController {
         address: address,
         accountType: accountType!,
         profile: profile!,
-        attachments: attachments.cast<XFile>(),
+        attachments: attachments.cast<XFile?>().nonNulls.toList(),
         email: email,
         provider: provider,
       ),
