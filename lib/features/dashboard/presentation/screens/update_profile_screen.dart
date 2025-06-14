@@ -13,7 +13,7 @@ class UpdateProfileScreen extends GetView<UpdateProfileController> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       canPop: false,
-      onPopInvokedWithResult: (isPopped, __) => controller.onPopInvoked(isPopped),
+      onPopInvokedWithResult: (popped, __) => controller.onPopInvoked(popped),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -25,9 +25,16 @@ class UpdateProfileScreen extends GetView<UpdateProfileController> {
       ),
       body: ListView(
         padding: const EdgeInsets.all(AppConst.paddingBig),
-        children: const [
-          EditProfileFields(),
-          EditProfileButton(),
+        children: [
+          const EditProfileFields(),
+          GetBuilder<UpdateProfileController>(
+            builder: (controller) {
+              return EditProfileButton(
+                isLoading: controller.isLoading,
+                onUpdate: controller.updateProfile,
+              );
+            },
+          ),
         ],
       ),
     );
