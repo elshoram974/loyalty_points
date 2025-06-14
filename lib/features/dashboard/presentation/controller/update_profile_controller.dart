@@ -87,7 +87,9 @@ class UpdateProfileControllerImp extends UpdateProfileController {
   @override
   void onPopInvoked(bool isPopped) async {
     if (isPopped) return;
-    if (fullName != user?.name || email != user?.email || profile != null) {
+    if (fullName != user?.name ||
+        email != user?.email.toLowerCase() ||
+        profile != null) {
       _isBack = await ShowMyDialog.back() == true;
       if (_isBack) Get.back();
     } else {

@@ -34,6 +34,7 @@ class SignUpFields extends StatelessWidget {
                 readOnly: controller.isLoading,
                 onChanged: (v) => controller.email = v.trim().toLowerCase(),
                 label: localeLang(context).email,
+                textCapitalization: TextCapitalization.none,
                 suffixIconData: Icons.mail_rounded,
                 autofillHints: const [AutofillHints.email],
                 hintText: localeLang(context).enterYourEmailAddress,

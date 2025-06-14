@@ -95,6 +95,7 @@ class DashboardControllerImp extends DashboardController {
     final List<String> ids = [
       AppString.updateHomeUser,
       AppString.updateBalance,
+      AppString.updateProfileDetails,
     ];
     if (!isReload) {
       _isLoadingUserData = true;

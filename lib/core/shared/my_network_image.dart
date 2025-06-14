@@ -12,10 +12,14 @@ class MyNetworkImage extends StatelessWidget {
     this.fit = BoxFit.cover,
     this.placeHolder,
     this.borderRadius = BorderRadius.zero,
+    this.placeHolderHeight,
+    this.placeHolderWidth,
   });
   final String? imageUrl;
   final double? height;
   final double? width;
+  final double? placeHolderHeight;
+  final double? placeHolderWidth;
   final BoxFit? fit;
   final BorderRadiusGeometry borderRadius;
   final Widget? placeHolder;
@@ -33,8 +37,8 @@ class MyNetworkImage extends StatelessWidget {
             placeHolder ??
             Image.asset(
               AppAssets.placeholder,
-              height: height,
-              width: width,
+              height: placeHolderHeight ?? height,
+              width: placeHolderWidth ?? width,
               fit: fit,
             ),
         errorWidget: (context, url, error) =>
@@ -42,8 +46,8 @@ class MyNetworkImage extends StatelessWidget {
                 ? _placeHolder!
                 : Image.asset(
                     AppAssets.placeholder,
-                    height: height,
-                    width: width,
+                    height: placeHolderHeight ?? height,
+                    width: placeHolderWidth ?? width,
                     fit: fit,
                   ),
       ),
