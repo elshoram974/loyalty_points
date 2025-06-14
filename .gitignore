@@ -56,11 +56,6 @@ app.*.map.json
 /android/app/release
 
 
-
-/lib/core/utils/config/locale/generated/intl/
-
-
-
 # iOS related
 ios/Flutter/Flutter.framework
 ios/Flutter/Flutter.podspec
