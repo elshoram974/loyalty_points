@@ -292,6 +292,7 @@
   "noInternetConnection": "لا يوجد اتصال بالإنترنت",
   "noData": "لا توجد بيانات",
   "unknown": "غير معروف",
+  "notExist": "غير موجود",
   "pageNotFound": "الصفحة غير موجودة",
   "pageNameNotFoundInRoutes": "الصفحة '{pageName}' غير موجودة في الصفحات",
   "@pageNameNotFoundInRoutes": {

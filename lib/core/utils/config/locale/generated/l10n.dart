@@ -1429,6 +1429,11 @@ class S {
     return Intl.message('Unknown', name: 'unknown', desc: '', args: []);
   }
 
+  /// `Not Exist`
+  String get notExist {
+    return Intl.message('Not Exist', name: 'notExist', desc: '', args: []);
+  }
+
   /// `Page not found`
   String get pageNotFound {
     return Intl.message(

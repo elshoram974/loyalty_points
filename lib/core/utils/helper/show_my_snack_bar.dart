@@ -13,10 +13,12 @@ abstract final class ShowMySnackBar {
     SnackBarAction? action,
     Color? backgroundColor,
   }) {
-    final ScaffoldMessengerState scaffold = ScaffoldMessenger.of(Get.context!);
+    final BuildContext context = Get.context!;
+    final ScaffoldMessengerState scaffold = ScaffoldMessenger.of(context);
     scaffold.clearSnackBars();
     return scaffold.showSnackBar(
       SnackBar(
+        width: context.isPhone ? null : 400,
         content: Text(
           content,
           textAlign: TextAlign.center,
@@ -34,7 +36,9 @@ abstract final class ShowMySnackBar {
         ),
         backgroundColor: backgroundColor,
         behavior: SnackBarBehavior.floating,
-        margin: const EdgeInsets.all(AppConst.paddingDefault),
+        margin: context.isPhone
+            ? const EdgeInsets.all(AppConst.paddingDefault)
+            : null,
         duration: duration ?? AppConst.duration,
         actionOverflowThreshold: 1,
       ),
