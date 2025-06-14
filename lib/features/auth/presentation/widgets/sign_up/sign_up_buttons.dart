@@ -28,7 +28,7 @@ class SignUpButtons extends StatelessWidget {
         const SizedBox(height: AppConst.paddingDefault),
         AttachmentsValidationWidget(
           title: localeLang(context).attachStorefrontPhotos,
-          errorMessage: localeLang(context).uHaveToAddTheThreeImages,
+          errorMessage: localeLang(context).addAtLeastOneImage,
           files: controller.attachments,
           onChanged: (images) => controller.attachments = images,
         ),
