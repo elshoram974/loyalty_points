@@ -290,6 +290,7 @@
     "noInternetConnection": "No internet connection",
     "noData": "No Data",
     "unknown": "Unknown",
+    "notExist": "Not Exist",
     "pageNotFound": "Page not found",
     "pageNameNotFoundInRoutes": "Page '{pageName}' not found in pages",
     "@pageNameNotFoundInRoutes": {

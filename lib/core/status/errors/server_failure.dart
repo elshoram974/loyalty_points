@@ -109,7 +109,7 @@ class ServerFailure<T> extends Failure<T> {
       );
     } else if (statusCode == 404) {
       return ServerFailure(
-        res.copyWith(message: localeLang().pageNotFound),
+        res.copyWith(message: localeLang().notExist),
       );
     }
     return ServerFailure(res);
