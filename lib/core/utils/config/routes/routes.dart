@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:loyalty_points/features/dashboard/presentation/screens/edit_profile.dart';
+import 'package:loyalty_points/features/dashboard/presentation/screens/update_profile.dart';
 
 import '../../../../features/auth/presentation/screens/waiting_screen.dart';
 import '../../../../features/dashboard/presentation/screens/add_new_code_screen.dart';
@@ -90,7 +90,7 @@ abstract final class AppRoute {
         ),
         GetPage(
           name: editProfile,
-          page: () => const EditProfileScreen(),
+          page: () => const UpdateProfileScreen(),
           binding: UpdateProfileBindings(),
         ),
         GetPage(

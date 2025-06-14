@@ -14,7 +14,7 @@ class UserModel extends Equatable {
   final String phone;
   final AccountStatusEnum status;
   final AccountType type;
-  final String address;
+  final String? address;
   final ImageFullUrl? image;
   final DateTime updatedAt;
   final DateTime createdAt;
@@ -51,7 +51,7 @@ class UserModel extends Equatable {
         phone: json['phone'] as String,
         type: AccountType.fromMap(json['type'] as String),
         status: AccountStatusEnum.values[int.parse("${json['status'] ?? 0}")],
-        address: json['country'] as String,
+        address: json['country'] as String?,
         updatedAt: DateTime.parse(json['updated_at'] as String),
         createdAt: DateTime.parse(json['created_at'] as String),
         emailVerifiedAt: DateTime.tryParse(

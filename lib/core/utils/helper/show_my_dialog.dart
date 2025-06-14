@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../features/dashboard/presentation/controller/dashboard_controller.dart';
 import '../../shared/dialog/custom_dialog.dart';
 import '../config/locale/local_lang.dart';
 
-abstract final class ShowMyDialog extends GetView<DashboardController> {
+abstract final class ShowMyDialog  {
   const ShowMyDialog();
 
   static Future<T> loading<T>(Future<T> Function() asyncFunction) {
