@@ -82,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "areYouSureYouWantToReturnBack": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to return back",
     ),
+    "area": MessageLookupByLibrary.simpleMessage("Area"),
     "attachProfilePhoto": MessageLookupByLibrary.simpleMessage(
       "Attach Profile Photo",
     ),
@@ -338,7 +339,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "replacePointsWithCurrency": m13,
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
+    "selectArea": MessageLookupByLibrary.simpleMessage(
+      "You must select an area",
+    ),
+    "selectCity": MessageLookupByLibrary.simpleMessage(
+      "You must select a city",
+    ),
     "selectDate": MessageLookupByLibrary.simpleMessage("Select date"),
+    "selectGovernorate": MessageLookupByLibrary.simpleMessage(
+      "You must select a governorate",
+    ),
     "selectMonth": MessageLookupByLibrary.simpleMessage("Select Month"),
     "selectProvider": MessageLookupByLibrary.simpleMessage("Select a provider"),
     "serverTookTooLong": MessageLookupByLibrary.simpleMessage(

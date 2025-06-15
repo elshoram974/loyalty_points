@@ -55,6 +55,36 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `You must select a governorate`
+  String get selectGovernorate {
+    return Intl.message(
+      'You must select a governorate',
+      name: 'selectGovernorate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must select a city`
+  String get selectCity {
+    return Intl.message(
+      'You must select a city',
+      name: 'selectCity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must select an area`
+  String get selectArea {
+    return Intl.message(
+      'You must select an area',
+      name: 'selectArea',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `You must add at least one image`
   String get addAtLeastOneImage {
     return Intl.message(
@@ -1175,6 +1205,11 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Area`
+  String get area {
+    return Intl.message('Area', name: 'area', desc: '', args: []);
   }
 
   /// `City`

@@ -1,4 +1,7 @@
 {
+    "selectGovernorate": "You must select a governorate",
+    "selectCity": "You must select a city",
+    "selectArea": "You must select an area",
     "addAtLeastOneImage": "You must add at least one image",
     "pointsRedeemedSuccess": "Points redeemed successfully",
     "newCodeAddedSuccess": "New code added successfully",
@@ -250,6 +253,7 @@
     "uHaveToAddTheThreeImages": "You have to add the three images",
     "uHaveToAddProfileImage": "You have to add a profile image",
     "uHaveToChooseAccountType": "You have to choose an account type",
+    "area": "Area",
     "city": "City",
     "governorate": "Governorate",
     "type": "Type",

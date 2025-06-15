@@ -1,4 +1,7 @@
 {
+  "selectGovernorate": "يجب اختيار المحافظة",
+  "selectCity": "يجب اختيار المدينة",
+  "selectArea": "يجب اختيار المنطقة",
   "addAtLeastOneImage": "يجب إضافة صورة واحدة على الأقل",
   "pointsRedeemedSuccess": "تم استبدال النقاط بنجاح",
   "newCodeAddedSuccess": "تم إضافة الكود الجديد بنجاح",
@@ -245,6 +248,7 @@
   "uHaveToAddTheThreeImages": "يجب عليك إضافة الثلاث صور",
   "uHaveToAddProfileImage": "يجب عليك إضافة صورة شخصية",
   "uHaveToChooseAccountType": "يجب عليك اختيار نوع الحساب",
+  "area": "المنطقة",
   "city": "المدينة",
   "governorate": "المحافظة",
   "type": "النوع",

@@ -8,6 +8,7 @@ import '../../../../../core/utils/constants/app_constants.dart';
 import '../../controller/sign_up_controller.dart';
 import 'attachments_validation_widget.dart';
 import 'choose_account_type_widget.dart';
+import 'choose_address_widget.dart';
 
 class SignUpButtons extends StatelessWidget {
   const SignUpButtons({super.key});
@@ -18,6 +19,7 @@ class SignUpButtons extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        const ChooseAddressWidget(),
         const ChooseAccountTypeWidget(),
         AttachmentsValidationWidget(
           title: localeLang(context).attachProfilePhoto,

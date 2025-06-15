@@ -82,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "areYouSureYouWantToReturnBack": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد أنك تريد العودة؟",
     ),
+    "area": MessageLookupByLibrary.simpleMessage("المنطقة"),
     "attachProfilePhoto": MessageLookupByLibrary.simpleMessage(
       "إرفاق صورة شخصية",
     ),
@@ -332,7 +333,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "replacePointsWithCurrency": m13,
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
+    "selectArea": MessageLookupByLibrary.simpleMessage("يجب اختيار المنطقة"),
+    "selectCity": MessageLookupByLibrary.simpleMessage("يجب اختيار المدينة"),
     "selectDate": MessageLookupByLibrary.simpleMessage("اختر التاريخ"),
+    "selectGovernorate": MessageLookupByLibrary.simpleMessage(
+      "يجب اختيار المحافظة",
+    ),
     "selectMonth": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
     "selectProvider": MessageLookupByLibrary.simpleMessage("اختر مزود الخدمة"),
     "serverTookTooLong": MessageLookupByLibrary.simpleMessage(

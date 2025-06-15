@@ -19,13 +19,15 @@ class SignUpScreen extends StatelessWidget {
           Get.find<SignUpController>().onPopInvoked(),
       body: Form(
         key: Get.find<SignUpController>().formKey,
-        child: ListView(
-          padding: const EdgeInsets.all(AppConst.paddingBig),
-          children: const [
-            LogoSignUpWidget(),
-            SignUpFields(),
-            SignUpButtons(),
-          ],
+        child: AutofillGroup(
+          child: ListView(
+            padding: const EdgeInsets.all(AppConst.paddingBig),
+            children: const [
+              LogoSignUpWidget(),
+              SignUpFields(),
+              SignUpButtons(),
+            ],
+          ),
         ),
       ),
     );
