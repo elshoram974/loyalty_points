@@ -70,7 +70,11 @@ class TelegramSocial extends SocialMediaType {
 }
 
 class WhatsappSocial extends SocialMediaType {
-  const WhatsappSocial(super.url);
+  WhatsappSocial(String number)
+      : super(
+          'https://wa.me/${number.replaceAll("+", '').replaceAll(RegExp(r'[^\d+]'), '').trim()}',
+        );
+
   @override
   String get name => 'whatsapp';
 
