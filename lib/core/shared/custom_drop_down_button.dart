@@ -75,18 +75,8 @@ class _CustomDropDownButtonState<T> extends State<CustomDropDownButton<T>> {
           controller: controller,
           enabled: enabled,
           focusNode: focusNode,
-          onChanged: (value) {
-            debounce(() {
-              selectedValue = null;
-              final List<T>? list = search(value);
-
-              if (list?.firstOrNull?.toString() == value) {
-                selectedValue = list!.first;
-              }
-
-              widget.onChanged?.call(selectedValue);
-            });
-          },
+          onFieldSubmitted: (_) => _selectItem(),
+          onChanged: (_) => debounce(_selectItem),
           validator: (val) {
             final String? err = widget.validator?.call(selectedValue);
             if (err != null) {
@@ -114,5 +104,19 @@ class _CustomDropDownButtonState<T> extends State<CustomDropDownButton<T>> {
         _controller.text = value.toString();
       },
     );
+  }
+
+  void _selectItem() {
+    if (selectedValue?.toString() == _controller.text.trim()) return;
+    selectedValue = null;
+    final List<T>? list = search(_controller.text.trim());
+
+    if (list?.firstOrNull?.toString() == _controller.text.trim()) {
+      selectedValue = list!.first;
+      _controller.text = _controller.text.trim();
+    }
+
+    widget.onChanged?.call(selectedValue);
+    setState(() {});
   }
 }
