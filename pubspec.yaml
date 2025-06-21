@@ -33,7 +33,7 @@ dependencies:
   # * local database
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  flutter_secure_storage: ^9.2.4
+  flutter_secure_storage: ^10.0.0-beta.4
   shared_preferences: ^2.5.3
   cached_network_image: ^3.4.1
 
@@ -62,7 +62,7 @@ dependencies:
 
   # * for firebase
   firebase_core: ^3.13.0
-  firebase_messaging: ^15.2.5
+  firebase_messaging: ^15.2.7
   flutter_local_notifications: ^19.1.0
  
   
