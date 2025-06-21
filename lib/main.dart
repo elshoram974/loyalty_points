@@ -1,7 +1,10 @@
+import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
@@ -19,6 +22,11 @@ import 'core/utils/helper/network_helper.dart';
 import 'core/utils/services/push_notification_service.dart';
 import 'firebase_options.dart';
 
+@pragma('vm:entry-point')
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  log('Handling a background message ${jsonEncode(message.toMap())}');
+}
+
 void main() async {
   if (AppInfo.isDebugMode) HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +39,8 @@ void main() async {
   );
   await InitialBindings.dependencies();
   await NotificationService.initialize();
+  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+
   runApp(
     DevicePreview(
       enabled: AppInfo.isDebugMode,

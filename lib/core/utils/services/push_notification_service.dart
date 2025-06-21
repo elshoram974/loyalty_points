@@ -11,8 +11,8 @@ import 'package:path_provider/path_provider.dart';
 final FirebaseMessaging fcm = FirebaseMessaging.instance;
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
-  'high_importance_channel', // id
-  'High Importance Notifications', // title
+  'high_importance_channel',
+  'High Importance Notifications',
   importance: Importance.max,
 );
 
@@ -39,53 +39,39 @@ class NotificationService {
 
     getDeviceToken();
 
-    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+    _initLocalNotification();
 
     FirebaseMessaging.onMessage.listen((event) async {
       log("onMessage: ${jsonEncode(event.toMap())}");
-      if (Platform.isIOS) {
-        _showIosMessage(event);
-        return;
-      }
-      //(Map<String, dynamic> message) async => _showMessage(message);
+
+      if (Platform.isIOS) return; // handled natively
       final RemoteNotification? notification = event.notification;
 
-      final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-          FlutterLocalNotificationsPlugin();
-      flutterLocalNotificationsPlugin
-          .resolvePlatformSpecificImplementation<
-              AndroidFlutterLocalNotificationsPlugin>()
-          ?.requestNotificationsPermission();
-
-      const DarwinInitializationSettings initializationSettingsIOS =
-          DarwinInitializationSettings(
-        requestAlertPermission: true,
-        requestBadgePermission: true,
-        requestSoundPermission: true,
-      );
-
       final AndroidNotification? android = notification?.android;
-      const AndroidInitializationSettings initializationSettingsAndroid =
-          AndroidInitializationSettings('@drawable/notification_icon');
-
-      const InitializationSettings initializationSettings =
-          InitializationSettings(
-              android: initializationSettingsAndroid,
-              iOS: initializationSettingsIOS);
+      // final AppleNotification? apple = notification?.apple;
 
       BigPictureStyleInformation? bigPictureStyle;
-      FilePathAndroidBitmap? image;
+      FilePathAndroidBitmap? androidImage;
+      // List<DarwinNotificationAttachment>? iosImages;
       if (android?.imageUrl != null) {
         final String largeIconPath =
             await _downloadAndSaveFile(android!.imageUrl!, 'largeIcon');
-        image = FilePathAndroidBitmap(largeIconPath);
+        androidImage = FilePathAndroidBitmap(largeIconPath);
         bigPictureStyle = BigPictureStyleInformation(
-          image,
+          androidImage,
           contentTitle: notification?.title,
           summaryText: notification?.body,
           hideExpandedLargeIcon: true,
         );
       }
+      // else if (apple?.imageUrl != null) {
+      //   final String notificationImage =
+      //       await _downloadAndSaveFile(apple!.imageUrl!, 'notification_image');
+
+      //   iosImages = List.unmodifiable(
+      //     [DarwinNotificationAttachment(notificationImage)],
+      //   );
+      // }
 
       final AndroidNotificationDetails androidNotificationDetails =
           AndroidNotificationDetails(
@@ -95,18 +81,18 @@ class NotificationService {
         priority: Priority.max,
         icon: android?.smallIcon,
         styleInformation: bigPictureStyle,
-        largeIcon: image,
+        largeIcon: androidImage,
       );
 
-      const DarwinNotificationDetails darwinNotificationDetails =
-          DarwinNotificationDetails();
-
-      flutterLocalNotificationsPlugin.initialize(
-        initializationSettings,
-        onDidReceiveNotificationResponse: (details) {
-          _navigate(jsonDecode(details.payload ?? '{}'));
-        },
-      );
+      // DarwinNotificationDetails darwinNotificationDetails =
+      //     DarwinNotificationDetails(
+      //   attachments: iosImages,
+      //   presentAlert: true,
+      //   presentBadge: true,
+      //   presentSound: true,
+      //   subtitle: apple?.subtitle,
+      //   badgeNumber: int.tryParse("${apple?.badge}"),
+      // );
 
       if (notification != null) {
         return flutterLocalNotificationsPlugin.show(
@@ -114,125 +100,66 @@ class NotificationService {
           notification.title,
           notification.body,
           NotificationDetails(
-              android: androidNotificationDetails,
-              iOS: darwinNotificationDetails),
+            android: androidNotificationDetails,
+            // iOS: darwinNotificationDetails,
+          ),
           payload: jsonEncode(event.toMap()),
         );
       }
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      log("onResume: ${message.toMap()}");
-      _navigate(message.toMap());
+      log("onResume: ${jsonEncode(message.toMap())}");
     });
   }
 
+  static void _initLocalNotification() {
+    const DarwinInitializationSettings initializationSettingsIOS =
+        DarwinInitializationSettings(
+      requestAlertPermission: true,
+      requestBadgePermission: true,
+      requestSoundPermission: true,
+    );
+
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('@drawable/notification_icon');
+
+    const InitializationSettings initializationSettings =
+        InitializationSettings(
+      android: initializationSettingsAndroid,
+      iOS: initializationSettingsIOS,
+    );
+
+    flutterLocalNotificationsPlugin.initialize(
+      initializationSettings,
+      onDidReceiveNotificationResponse: (details) {
+        log("onDidReceiveNotificationResponse: ${jsonDecode(details.payload ?? '{}')}");
+      },
+    );
+  }
+
   static Future<String> _downloadAndSaveFile(
-      String url, String fileName) async {
+    String url,
+    String fileName,
+  ) async {
     final Directory directory = await getApplicationDocumentsDirectory();
-    final String filePath = '${directory.path}/$fileName';
+
+    String ext = url.split(".").lastOrNull ?? 'png';
+
+    final String filePath = '${directory.path}/$fileName.$ext';
+
     await Get.find<dio.Dio>().download(url, filePath);
+
     return filePath;
   }
 
   static Future<String> getDeviceToken() async {
+    // if (Platform.isIOS) {
+    //   deviceToken = await fcm.getAPNSToken();
+    // } else {
     deviceToken = await fcm.getToken() ?? '';
+    // }
     log("fcmToken $deviceToken");
     return deviceToken!;
   }
-
-  static void _showIosMessage(RemoteMessage message) {
-    //log("onMessage: $message");
-
-    // OneContext().showDialog(
-    //   // barrierDismissible: false,
-    //   barrierDismissible: false,
-    //   builder: (context) => AlertDialog(
-    //     content: ListTile(
-    //       title: Text(message.notification!.title!),
-    //       subtitle:message.notification?.apple?.imageUrl == null ? Text(message.notification!.body!) : _dialogImageBody(message),
-    //     ),
-    //     actions: <Widget>[
-    //       Btn.basic(
-    //         child: Text(LangText(context).local.close_ucf),
-    //         onPressed: () => Navigator.of(context).pop(),
-    //       ),
-    //       Btn.basic(
-    //         child: Text(LangText(context).local.go),
-    //         onPressed: () {
-    //           Navigator.of(context).pop();
-    //           _serialiseAndNavigate(message.toMap());
-    //         },
-    //       ),
-    //     ],
-    //   ),
-    // );
-  }
-
-  static void _navigate(Map<String, dynamic> message) {
-    // if (is_logged_in.$ == false) {
-    //   OneContext().showDialog(
-    //       // barrierDismissible: false,
-    //       builder: (context) => AlertDialog(
-    //             title:  Text(LangText(context).local.you_are_not_logged_in),
-    //             content:  Text(LangText(context).local.please_log_in),
-    //             actions: <Widget>[
-    //               Btn.basic(
-    //                 child: Text(LangText(context).local.close_ucf),
-    //                 onPressed: () => Navigator.of(context).pop(),
-    //               ),
-    //               Btn.basic(
-    //                   child: Text(LangText(context).local.log_in),
-    //                   onPressed: () {
-    //                     Navigator.of(context).pop();
-    //                     OneContext().push(MaterialPageRoute(builder: (_) {
-    //                       return Login();
-    //                     }));
-    //                   }),
-    //             ],
-    //           ));
-    //   return;
-    // }
-    // if (message['data']['item_type'] == 'order') {
-    //   OneContext().push(MaterialPageRoute(builder: (_) {
-    //     return OrderDetails(
-    //         id: int.parse(message['data']['item_type_id']),
-    //         from_notification: true);
-    //   }));
-    // }else{
-    //   NavigationService.handleUrls(message['data']['link']);
-    // }
-  }
-}
-
-// class _dialogImageBody extends StatelessWidget {
-//   const _dialogImageBody(this.message);
-//   final RemoteMessage message;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       mainAxisSize: MainAxisSize.min,
-//       children: [
-//         const SizedBox(height: 16),
-//         Text(message.notification!.body!),
-//         const SizedBox(height: 16),
-//         ClipRRect(
-//           borderRadius: BorderRadius.circular(12),
-//           child: Image.network(
-//             message.notification!.apple!.imageUrl!,
-//             loadingBuilder: (context, child, loadingProgress) {
-//               if (loadingProgress == null) return child;
-//               return ShimmerHelper().buildBasicShimmer(height: 120.0);
-//             },
-//           )
-//         ),
-//       ],
-//     );
-//   }
-// }
-
-@pragma('vm:entry-point')
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  log('Handling a background message ${jsonEncode(message.toMap())}');
 }
