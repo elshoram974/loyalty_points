@@ -29,6 +29,7 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
               horizontal: AppConst.paddingDefault,
             ),
             child: AuthField(
+              
               label: localeLang(context).addNewCode,
               hintText: localeLang(context).addNewCode,
               labelStyle: context.textTheme.headlineSmall,

@@ -20,6 +20,7 @@ class SignUpFields extends StatelessWidget {
             spacing: AppConst.paddingDefault,
             children: [
               AuthField(
+                isRequired: true,
                 readOnly: controller.isLoading,
                 onChanged: (v) => controller.fullName = v.trim(),
                 label: localeLang(context).fullName,
@@ -31,6 +32,7 @@ class SignUpFields extends StatelessWidget {
                     AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
               ),
               AuthField(
+                isRequired:false,
                 readOnly: controller.isLoading,
                 onChanged: (v) => controller.email = v.trim().toLowerCase(),
                 label: localeLang(context).email,
@@ -42,6 +44,7 @@ class SignUpFields extends StatelessWidget {
                     val?.trim().toLowerCase(), 0, 100, FieldType.email),
               ),
               AuthField(
+                isRequired: true,
                 readOnly: controller.isLoading,
                 isPhoneNumber: true,
                 onPhoneInputChanged: (v) => controller.phone = v,
@@ -77,6 +80,7 @@ class SignUpFields extends StatelessWidget {
                     );
                   }),
               AuthField(
+                isRequired: true,
                 readOnly: controller.isLoading,
                 onChanged: (v) => controller.address = v.trim(),
                 label: localeLang(context).address,
@@ -88,6 +92,7 @@ class SignUpFields extends StatelessWidget {
                     AppValidator.auth(val?.trim(), 3, 100, FieldType.other),
               ),
               AuthField(
+                isRequired:false,
                 readOnly: controller.isLoading,
                 onChanged: (v) => controller.provider = v.trim(),
                 label: localeLang(context).provider,
