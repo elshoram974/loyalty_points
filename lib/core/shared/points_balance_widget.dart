@@ -8,6 +8,7 @@ import '../../../../../core/utils/constants/app_constants.dart';
 import '../../app_info.dart';
 import '../../features/auth/data/models/user_model.dart';
 import '../../features/dashboard/presentation/controller/dashboard_controller.dart';
+import '../../features/dashboard/presentation/widgets/replace_points_floating_button_widget.dart';
 import '../utils/config/controller/config_controller.dart';
 import '../utils/constants/app_strings.dart';
 import '../utils/helper/points_calc_helper.dart';
@@ -32,6 +33,7 @@ class PointsBalanceWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+
           Row(
             children: [
               Expanded(
@@ -43,6 +45,8 @@ class PointsBalanceWidget extends StatelessWidget {
                   ),
                 ),
               ),
+              
+ 
               if (isUncategorized)
                 Container(
                   decoration: BoxDecoration(
@@ -114,9 +118,13 @@ class _BalancePointsWidget extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
+                      
                     ),
+                    
                   ),
+                  
                 ),
+               
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: AppConst.paddingDefault,
@@ -150,6 +158,8 @@ class _BalancePointsWidget extends StatelessWidget {
                     },
                   ),
                 ),
+                 const SizedBox(width: 150),
+                 const ReplacePointsFloatingButtonWidget(),
               ],
             ),
           );
