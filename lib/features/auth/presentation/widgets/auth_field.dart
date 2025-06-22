@@ -31,7 +31,7 @@ class AuthField extends StatelessWidget {
     this.textDirection,
     this.textAlign = TextAlign.start,
     this.autoDispose = false,
-    this.isRequired=false,
+    this.isRequired = false,
   });
   final TextEditingController? controller;
   final TextCapitalization textCapitalization;
@@ -56,7 +56,7 @@ class AuthField extends StatelessWidget {
   final void Function(String)? onFieldSubmitted;
   final void Function(PhoneNumber)? onPhoneInputChanged;
   final String? Function(String?)? validator;
-  final bool? isRequired;
+  final bool isRequired;
 
   @override
   Widget build(BuildContext context) {
@@ -64,23 +64,24 @@ class AuthField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         RichText(
-  text: TextSpan(
-    text: label,
-    style: labelStyle ??
-        context.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
-    children: [
-      if (isRequired == true)
-      TextSpan(
-        text:  ' *',   
-        style: labelStyle ??
-            context.textTheme.bodyLarge?.copyWith(
-              fontWeight: FontWeight.normal,
-              color: Get.theme.colorScheme.error,
-            ),
-      ),
-    ],
-  ),
-),
+          text: TextSpan(
+            text: label,
+            style: labelStyle ??
+                context.textTheme.bodyLarge
+                    ?.copyWith(fontWeight: FontWeight.bold),
+            children: [
+              if (isRequired == true)
+                TextSpan(
+                  text: ' *',
+                  style: labelStyle ??
+                      context.textTheme.bodyLarge?.copyWith(
+                        fontWeight: FontWeight.normal,
+                        color: Get.theme.colorScheme.error,
+                      ),
+                ),
+            ],
+          ),
+        ),
         const SizedBox(height: AppConst.paddingSmall),
         MyDefaultField(
           fieldKey: fieldKey,
@@ -95,7 +96,16 @@ class AuthField extends StatelessWidget {
           hintText: hintText,
           keyboardType: keyboardType,
           textInputAction: textInputAction,
-          validator: validator,
+          validator: (val) {
+            if (isRequired) {
+              return validator?.call(val);
+            } else {
+              if (val?.trim().isNotEmpty == true) {
+                return validator?.call(val);
+              }
+            }
+            return null;
+          },
           textCapitalization: textCapitalization,
           prefix: suffixIconData == null
               ? null
