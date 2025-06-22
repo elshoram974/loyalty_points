@@ -6,8 +6,8 @@ import '../../../../../core/utils/constants/app_strings.dart';
 import '../../../../../core/utils/types/dashboard_tabs.dart';
 import '../../controller/dashboard_controller.dart';
 
-class AddNewBarcodeWidget extends StatelessWidget {
-  const AddNewBarcodeWidget({super.key});
+class AddNewBarcodeFloatingButton extends StatelessWidget {
+  const AddNewBarcodeFloatingButton({super.key});
 
   @override
   Widget build(BuildContext context) {
