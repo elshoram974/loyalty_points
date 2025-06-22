@@ -2,16 +2,16 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../features/dashboard/presentation/screens/add_new_code_screen.dart';
 import '../../../features/dashboard/presentation/screens/home_screen.dart';
 import '../../../features/dashboard/presentation/screens/orders_screen.dart';
 import '../../../features/dashboard/presentation/screens/points_screen.dart';
-import '../../../features/redeem/presentation/screens/replacement_screen.dart';
 import '../config/locale/local_lang.dart';
 
 enum DashboardTabsEnum {
   home(HomeTabItem()),
   orders(OrdersTabItem()),
-  redeemPoints(RedeemPointsTabItem()),
+  addPoints(AddNewCodeScreenTabItem()),
   points(PointsTabItem()),
   menu(MenuTabItem());
 
@@ -65,20 +65,20 @@ class OrdersTabItem extends DashboardTabItem {
   Widget get screen => const OrdersScreen();
 }
 
-class RedeemPointsTabItem extends DashboardTabItem {
-  const RedeemPointsTabItem();
+class AddNewCodeScreenTabItem extends DashboardTabItem {
+  const AddNewCodeScreenTabItem();
 
   @override
-  IconData get activeIcon => FontAwesomeIcons.arrowsRotate;
+  IconData get activeIcon => FontAwesomeIcons.barcode;
 
   @override
   IconData get icon => Icons.sync_outlined;
 
   @override
-  String get label => localeLang().redeemPoints;
+  String get label => localeLang().addNewCode;
 
   @override
-  Widget get screen => const ReplacementScreen();
+  Widget get screen => const AddNewCodeScreen();
 
   @override
   bool get isHidden => true;

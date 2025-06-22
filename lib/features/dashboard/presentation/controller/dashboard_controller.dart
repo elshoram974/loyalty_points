@@ -12,6 +12,7 @@ import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../../../core/utils/services/push_notification_service.dart';
+import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../../../auth/data/models/user_model.dart';
 import '../../domain/repositories/dashboard_repositories.dart';
 

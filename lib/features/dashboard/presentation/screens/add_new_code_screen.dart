@@ -9,7 +9,6 @@ import '../../../auth/presentation/widgets/auth_field.dart';
 import '../controller/add_new_code_controller.dart';
 import '../widgets/add_new_code_widgets/barcode_camera_button.dart';
 import '../widgets/cancel_confirm_buttons.dart';
-import '../widgets/my_app_bar.dart';
 
 class AddNewCodeScreen extends GetView<AddNewCodeController> {
   const AddNewCodeScreen({super.key});
@@ -17,7 +16,6 @@ class AddNewCodeScreen extends GetView<AddNewCodeController> {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      appBar: const MyAppBar(),
       canPop: false,
       onPopInvokedWithResult: (_, __) => controller.onPopInvoked(),
       body: ListView(

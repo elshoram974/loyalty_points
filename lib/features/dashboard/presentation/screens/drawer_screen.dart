@@ -37,9 +37,7 @@ class HomeDrawer extends GetView<DashboardController> {
           TileButtonWidget(
             icon: Icons.sync_outlined,
             title: localeLang(context).redeemPoints,
-            onTap: () {
-              controller.changeHomeScreen(DashboardTabsEnum.redeemPoints.index);
-            },
+            onTap: () => Get.toNamed(AppRoute.redeemScreen),
           ),
           const Spacer(flex: 5),
           TileButtonWidget(
