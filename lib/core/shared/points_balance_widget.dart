@@ -69,6 +69,7 @@ class PointsBalanceWidget extends StatelessWidget {
                 ),
             ],
           ),
+         const SizedBox(height: AppConst.paddingDefault,),
           const _BalancePointsWidget(),
           const SizedBox(height: AppConst.paddingSmall),
           Row(

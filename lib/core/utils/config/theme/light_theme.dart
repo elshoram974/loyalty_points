@@ -7,7 +7,7 @@ ThemeData get lightTheme => ThemeData(
       brightness: Brightness.light,
       cardColor: Colors.grey.shade300,
       textTheme:const TextTheme(
-        labelLarge: TextStyle(fontSize: 19),
+        labelLarge: TextStyle(fontSize: 17),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
