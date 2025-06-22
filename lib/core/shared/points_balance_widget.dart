@@ -24,7 +24,7 @@ class PointsBalanceWidget extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
       padding: const EdgeInsets.symmetric(
         horizontal: AppConst.paddingDefault,
-        vertical: AppConst.paddingSmall,
+        vertical: AppConst.paddingDefault,
       ),
       decoration: BoxDecoration(
         color: context.theme.primaryColor,
@@ -33,7 +33,6 @@ class PointsBalanceWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           Row(
             children: [
               Expanded(
@@ -45,8 +44,6 @@ class PointsBalanceWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              
- 
               if (isUncategorized)
                 Container(
                   decoration: BoxDecoration(
@@ -118,13 +115,9 @@ class _BalancePointsWidget extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
-                      
                     ),
-                    
                   ),
-                  
                 ),
-               
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: AppConst.paddingDefault,
@@ -158,8 +151,8 @@ class _BalancePointsWidget extends StatelessWidget {
                     },
                   ),
                 ),
-                 const SizedBox(width: 150),
-                 const ReplacePointsFloatingButtonWidget(),
+                const SizedBox(width: 150),
+                const ReplacePointsFloatingButtonWidget(),
               ],
             ),
           );
