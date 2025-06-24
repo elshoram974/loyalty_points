@@ -125,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "من خلال استخدامك للتطبيق، فإنك توافق على معالجة معلوماتك كما هو موضح في سياسة الخصوصية هذه حالياً وكما سيتم تعديلها من قبلنا.",
     ),
     "couldNotLaunch": MessageLookupByLibrary.simpleMessage("تعذر الفتح"),
+    "country": MessageLookupByLibrary.simpleMessage("الدولة"),
     "couponsHistory": MessageLookupByLibrary.simpleMessage("سجل القسائم"),
     "current_password": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الحالية",
@@ -335,6 +336,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "selectArea": MessageLookupByLibrary.simpleMessage("يجب اختيار المنطقة"),
     "selectCity": MessageLookupByLibrary.simpleMessage("يجب اختيار المدينة"),
+    "selectCountry": MessageLookupByLibrary.simpleMessage("يجب اختيار الدولة"),
     "selectDate": MessageLookupByLibrary.simpleMessage("اختر التاريخ"),
     "selectGovernorate": MessageLookupByLibrary.simpleMessage(
       "يجب اختيار المحافظة",

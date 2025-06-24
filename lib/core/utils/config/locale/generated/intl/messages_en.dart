@@ -127,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.",
     ),
     "couldNotLaunch": MessageLookupByLibrary.simpleMessage("Could not launch"),
+    "country": MessageLookupByLibrary.simpleMessage("Country"),
     "couponsHistory": MessageLookupByLibrary.simpleMessage("Coupons History"),
     "current_password": MessageLookupByLibrary.simpleMessage(
       "Current Password",
@@ -344,6 +345,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectCity": MessageLookupByLibrary.simpleMessage(
       "You must select a city",
+    ),
+    "selectCountry": MessageLookupByLibrary.simpleMessage(
+      "You must select a country",
     ),
     "selectDate": MessageLookupByLibrary.simpleMessage("Select date"),
     "selectGovernorate": MessageLookupByLibrary.simpleMessage(

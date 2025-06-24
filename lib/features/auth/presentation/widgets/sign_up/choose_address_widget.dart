@@ -31,13 +31,15 @@ class ChooseAddressWidget extends StatelessWidget {
             ],
           ),
         ),
+        if (context.isPhone) countryDropDown(),
         Row(
           spacing: AppConst.paddingDefault,
           children: [
+            if (!context.isPhone) Expanded(child: countryDropDown()),
             Expanded(
               child: CustomDropDownButton(
                 autofillHints: const [AutofillHints.addressState],
-                prefixIcon: Icons.map,
+                prefixIcon: Icons.location_city,
                 hint: localeLang(context).governorate,
                 items: [],
                 onChanged: (val) {},
@@ -47,7 +49,7 @@ class ChooseAddressWidget extends StatelessWidget {
             Expanded(
               child: CustomDropDownButton(
                 autofillHints: const [AutofillHints.addressCity],
-                prefixIcon: Icons.location_city,
+                prefixIcon: Icons.location_on,
                 hint: localeLang(context).city,
                 errorMessage: localeLang(context).selectCity,
                 items: items,
@@ -56,23 +58,21 @@ class ChooseAddressWidget extends StatelessWidget {
                 },
               ),
             ),
-            if (!context.isPhone) Expanded(child: areaDropDown()),
           ],
         ),
-        if (context.isPhone) areaDropDown(),
       ],
     );
   }
 
-  Widget areaDropDown() {
+  Widget countryDropDown() {
     return Builder(
       builder: (context) {
         return CustomDropDownButton(
-          autofillHints: const [AutofillHints.sublocality],
-          hint: localeLang(context).area,
-          errorMessage: localeLang(context).selectArea,
+          autofillHints: const [AutofillHints.countryName],
+          hint: localeLang(context).country,
+          errorMessage: localeLang(context).selectCountry,
           items: items,
-          prefixIcon: Icons.location_on,
+          prefixIcon: Icons.map,
         );
       },
     );

@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `You must select a country`
+  String get selectCountry {
+    return Intl.message(
+      'You must select a country',
+      name: 'selectCountry',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `You must select a governorate`
   String get selectGovernorate {
     return Intl.message(
@@ -1220,6 +1230,11 @@ class S {
   /// `Governorate`
   String get governorate {
     return Intl.message('Governorate', name: 'governorate', desc: '', args: []);
+  }
+
+  /// `Country`
+  String get country {
+    return Intl.message('Country', name: 'country', desc: '', args: []);
   }
 
   /// `Type`

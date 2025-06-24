@@ -1,4 +1,5 @@
 {
+  "selectCountry": "يجب اختيار الدولة",
   "selectGovernorate": "يجب اختيار المحافظة",
   "selectCity": "يجب اختيار المدينة",
   "selectArea": "يجب اختيار المنطقة",
@@ -251,6 +252,7 @@
   "area": "المنطقة",
   "city": "المدينة",
   "governorate": "المحافظة",
+  "country": "الدولة",
   "type": "النوع",
   "haveAnAccount": "لديك حساب؟",
   "loyalty_program_for_PetroJac_oil_shops_and_station_agents_products": "برنامج ولاء لمحلات زيوت ووكلاء محطات بتروجاك و الذي يمكن تجميع النقاط مع كل عملية شرائية من منتجات بتروجاك من الزيوت",
