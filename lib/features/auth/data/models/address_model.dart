@@ -24,6 +24,9 @@ class AddressModel extends Equatable {
 
   Map<String, dynamic> toMap() => {'id': id, 'name': name};
 
+  @override
+  String toString() => name;
+
   factory AddressModel.empty() {
     return const AddressModel(id: -1, name: 'name');
   }

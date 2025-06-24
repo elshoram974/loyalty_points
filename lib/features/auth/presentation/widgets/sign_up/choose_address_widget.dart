@@ -5,6 +5,7 @@ import '../../../../../core/shared/custom_drop_down_button.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../../../../core/utils/constants/app_strings.dart';
+import '../../../data/models/address_model.dart';
 import '../../controller/sign_up_controller.dart';
 
 class ChooseAddressWidget extends StatelessWidget {
@@ -77,12 +78,12 @@ class ChooseAddressWidget extends StatelessWidget {
   Widget countryDropDown(SignUpController controller) {
     return Builder(
       builder: (context) {
-        return CustomDropDownButton(
-          enabled: controller.cities.isNotEmpty,
+        return CustomDropDownButton<AddressModel>(
+          enabled: controller.countries.isNotEmpty,
           autofillHints: const [AutofillHints.countryName],
           hint: localeLang(context).country,
           errorMessage: localeLang(context).selectCountry,
-          items: items,
+          items: controller.countries,
           prefixIcon: Icons.map,
         );
       },
