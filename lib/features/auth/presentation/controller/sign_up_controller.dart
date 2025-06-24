@@ -7,11 +7,13 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
+import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
 import '../../../../core/utils/types/account_type.dart';
+import '../../data/models/address_model.dart';
 import '../../domain/entity/sign_up_body_data.dart';
 import '../../domain/repositories/auth_repositories.dart';
 
@@ -22,17 +24,27 @@ abstract class SignUpController extends GetxController {
   bool get isLoading;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  List<AddressModel> get countries;
+  List<AddressModel> get governorates;
+  List<AddressModel> get cities;
+
   PhoneNumber? phone;
   String fullName = '';
   String email = '';
   String password = '';
   String passwordConfirmation = '';
-  int? areaId;
+  AddressModel? country;
+  AddressModel? governorate;
+  AddressModel? city;
   String? provider;
   AccountType? accountType;
 
   XFile? profile;
   List<XFile?> attachments = List.filled(3, null, growable: false);
+
+  Future<void> getCountries();
+  Future<void> getGovernorates();
+  Future<void> getCities();
 
   Future<void> signUp();
 
@@ -48,6 +60,67 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   bool get isLoading => _isLoading;
+
+  final List<AddressModel> _countries = [];
+  final List<AddressModel> _governorates = [];
+  final List<AddressModel> _cities = [];
+
+  @override
+  List<AddressModel> get countries => _countries;
+  @override
+  List<AddressModel> get governorates => _governorates;
+  @override
+  List<AddressModel> get cities => _cities;
+
+  @override
+  void onReady() {
+    getCountries();
+    super.onReady();
+  }
+
+  @override
+  Future<void> getCountries() async {
+    final Status<List<AddressModel>> countriesState = await repo.getCountries();
+    handleResponseInController<List<AddressModel>>(
+      status: countriesState,
+      onSuccess: (data) {
+        _countries.clear();
+        _countries.addAll(data);
+        update([AppString.updateAddress]);
+      },
+    );
+  }
+
+  @override
+  Future<void> getGovernorates() async {
+    final Status<List<AddressModel>> governoratesState =
+        await repo.getGovernorates(
+      country!.id,
+    );
+    handleResponseInController<List<AddressModel>>(
+      status: governoratesState,
+      onSuccess: (data) {
+        _governorates.clear();
+        _governorates.addAll(data);
+        update([AppString.updateAddress]);
+      },
+    );
+  }
+
+  @override
+  Future<void> getCities() async {
+    final Status<List<AddressModel>> citiesState = await repo.getCities(
+      governorate!.id,
+    );
+    handleResponseInController<List<AddressModel>>(
+      status: citiesState,
+      onSuccess: (data) {
+        _cities.clear();
+        _cities.addAll(data);
+        update([AppString.updateAddress]);
+      },
+    );
+  }
 
   @override
   Future<void> signUp() async {
@@ -75,7 +148,7 @@ class SignUpControllerImp extends SignUpController {
         fullName: fullName,
         password: password,
         passwordConfirmation: passwordConfirmation,
-        areaId: areaId!,
+        areaId: city!.id,
         accountType: accountType!,
         profile: profile!,
         attachments: attachments.cast<XFile?>().nonNulls.toList(),
@@ -111,7 +184,9 @@ class SignUpControllerImp extends SignUpController {
         email.isNotEmpty ||
         provider?.isNotEmpty == true ||
         accountType != null ||
-        areaId != null ||
+        country != null ||
+        governorate != null ||
+        city != null ||
         profile != null ||
         attachments.any((e) => e != null)) {
       _isBack = await ShowMyDialog.back() == true;

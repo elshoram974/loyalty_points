@@ -17,16 +17,19 @@ class SignUpScreen extends StatelessWidget {
       canPop: false,
       onPopInvokedWithResult: (_, __) =>
           Get.find<SignUpController>().onPopInvoked(),
-      body: Form(
-        key: Get.find<SignUpController>().formKey,
-        child: AutofillGroup(
-          child: ListView(
-            padding: const EdgeInsets.all(AppConst.paddingBig),
-            children: const [
-              LogoSignUpWidget(),
-              SignUpFields(),
-              SignUpButtons(),
-            ],
+      body: RefreshIndicator(
+        onRefresh: Get.find<SignUpController>().getCountries,
+        child: Form(
+          key: Get.find<SignUpController>().formKey,
+          child: AutofillGroup(
+            child: ListView(
+              padding: const EdgeInsets.all(AppConst.paddingBig),
+              children: const [
+                LogoSignUpWidget(),
+                SignUpFields(),
+                SignUpButtons(),
+              ],
+            ),
           ),
         ),
       ),

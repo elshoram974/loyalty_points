@@ -27,6 +27,9 @@ abstract final class AppString {
 
   // Getx controllers updates id
   static const String _update = 'update';
+
+  static const String updateAddress = '$_update address';
+
   static const String updateSelectedScreen = '$_update selected home screen';
 
   static const String updateHomeUser = '$_update home user';
