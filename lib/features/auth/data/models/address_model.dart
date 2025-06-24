@@ -14,9 +14,9 @@ class AddressModel extends Equatable {
         name: json['name'] as String,
       );
 
-  static List<AddressModel> fromMaps(List<Map> data) {
+  static List<AddressModel> fromMaps(List data) {
     List<AddressModel> list = [];
-    for (Map element in data) {
+    for (var element in data) {
       list.add(AddressModel.fromMap(element));
     }
     return list;

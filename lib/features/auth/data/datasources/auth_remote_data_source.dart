@@ -71,7 +71,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     final Map<String, dynamic> res = await apiServices.get(
       AppLinks.countriesList,
     );
-    log(res.toString());
 
     return AddressModel.fromMaps(res['data']);
   }
@@ -81,7 +80,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     final Map<String, dynamic> res = await apiServices.get(
       "${AppLinks.governoratesList}/$countryId",
     );
-    log(res.toString());
 
     return AddressModel.fromMaps(res['data']);
   }
@@ -91,7 +89,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     final Map<String, dynamic> res = await apiServices.get(
       "${AppLinks.areasList}/$governorateId",
     );
-    log(res.toString());
 
     return AddressModel.fromMaps(res['data']);
   }
