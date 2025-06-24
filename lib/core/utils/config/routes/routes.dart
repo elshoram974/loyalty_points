@@ -13,6 +13,7 @@ import '../../../../features/dashboard/presentation/screens/edit_password_screen
 import '../../../../features/dashboard/presentation/screens/profile_details_screen.dart';
 import '../../../../features/redeem/presentation/screens/checkout_screen.dart';
 import '../../../../features/redeem/presentation/screens/redeem_success_screen.dart';
+import '../../../../features/redeem/presentation/screens/replacement_screen.dart';
 import '../../bindings/add_new_code_bindings.dart';
 import '../../bindings/checkout_bindings.dart';
 import '../../bindings/profile_bindings.dart';
@@ -34,6 +35,7 @@ abstract final class AppRoute {
   static const String barCodeScanner = "/barcode-scanner";
   static const String codeAddedScreen = "/code-added";
   static const String checkoutScreen = "/checkout";
+  static const String redeemScreen = "/redeem";
   static const String successRedeemScreen = "/success-redeem";
   static const String editProfile = "/edit-profile";
   static const String profileDetails = "/profile-details";
@@ -56,7 +58,7 @@ abstract final class AppRoute {
         GetPage(
           name: home,
           page: () => const DashboardScreen(),
-          binding: HomeBindings(),
+          bindings: [HomeBindings(), AddNewCodeBindings()],
         ),
         GetPage(
           name: waiting,
@@ -65,7 +67,6 @@ abstract final class AppRoute {
         GetPage(
           name: newBarcode,
           page: () => const AddNewCodeScreen(),
-          binding: AddNewCodeBindings(),
         ),
         GetPage(
           name: barCodeScanner,
@@ -79,6 +80,10 @@ abstract final class AppRoute {
           name: checkoutScreen,
           page: () => const CheckoutScreen(),
           binding: CheckoutBindings(),
+        ),
+        GetPage(
+          name: redeemScreen,
+          page: () => const ReplacementScreen(),
         ),
         GetPage(
           name: successRedeemScreen,

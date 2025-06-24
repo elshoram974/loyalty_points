@@ -26,5 +26,6 @@ abstract final class AppConst {
   static const Duration animationsDefault = Duration(milliseconds: 300);
 
   // * borders width
+  static const double borderSmallWidth = 2;
   static const double borderDefaultWidth = 5;
 }

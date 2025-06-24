@@ -12,6 +12,7 @@ abstract final class AppAssets {
   static const String instaPay = "$_imagesPath/instapay.png";
   static const String wallet = "$_imagesPath/wallet.png";
   static const String earned = "$_imagesPath/earned.png";
+   static const String points = "$_imagesPath/points.png";
 
 // * icons
   static const String _iconsPath = "assets/icons";

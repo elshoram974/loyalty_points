@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/my_sliver_pinned_tabs.dart';
-import '../../../../core/shared/points_balance_widget.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/types/order_status_enum.dart';
@@ -41,9 +40,9 @@ class OrdersScreen extends StatelessWidget {
           child: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) {
               return [
-                const SliverToBoxAdapter(
-                  child: PointsBalanceWidget(isUncategorized: false),
-                ),
+                // const SliverToBoxAdapter(
+                //   child: PointsBalanceWidget(isUncategorized: false),
+                // ),
                 const SliverToBoxAdapter(child: OurPartnersWidget()),
                 MySliverPinnedTaps(
                   tabs: [Tab(text: localeLang(context).orders)],

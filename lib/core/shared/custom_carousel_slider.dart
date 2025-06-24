@@ -34,8 +34,8 @@ class CustomCarouselSlider extends StatelessWidget {
           },
           options: CarouselOptions(
             /// aspect ratio 3.18 because viewportFraction = 0.94 not equal 1
-            /// this make real aspect ratio = 3 : 1
-            aspectRatio: 3.18,
+            /// this make real aspect ratio = 2 : 1
+            aspectRatio: 2.127,
             viewportFraction: 0.94,
             initialPage: 0,
             enableInfiniteScroll: autoPlay,

@@ -15,87 +15,93 @@ class SignUpFields extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SignUpController>(
       builder: (controller) {
-        return Column(
-          spacing: AppConst.paddingDefault,
-          children: [
-            AuthField(
-              readOnly: controller.isLoading,
-              onChanged: (v) => controller.fullName = v.trim(),
-              label: localeLang(context).fullName,
-              suffixIconData: Icons.person,
-              textCapitalization: TextCapitalization.words,
-              autofillHints: const [AutofillHints.name],
-              hintText: localeLang(context).enterYourFullName,
-              validator: (val) =>
-                  AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
-            ),
-            AuthField(
-              readOnly: controller.isLoading,
-              onChanged: (v) => controller.email = v.trim().toLowerCase(),
-              label: localeLang(context).email,
-              textCapitalization: TextCapitalization.none,
-              suffixIconData: Icons.mail_rounded,
-              autofillHints: const [AutofillHints.email],
-              hintText: localeLang(context).enterYourEmailAddress,
-              validator: (val) => AppValidator.auth(
-                  val?.trim().toLowerCase(), 0, 100, FieldType.email),
-            ),
-            AuthField(
-              readOnly: controller.isLoading,
-              isPhoneNumber: true,
-              onPhoneInputChanged: (v) => controller.phone = v,
-              label: localeLang(context).mobileNumber,
-              hintText: localeLang(context).enterYourMobileNumber,
-              autofillHints: const [
-                AutofillHints.telephoneNumber,
-                AutofillHints.telephoneNumberDevice,
-              ],
-            ),
-            PasswordField(
-              isNewPass: true,
-              readOnly: controller.isLoading,
-              label: localeLang(context).password,
-              textInputAction: TextInputAction.next,
-              onChanged: (val) => {
-                controller.password = val,
-                controller.update(['confirm-password'])
-              },
-              autofillHints: const [AutofillHints.newPassword],
-              hintText: localeLang(context).enterNewPassword,
-            ),
-            GetBuilder<SignUpController>(
-              id: 'confirm-password',
-              builder: (controller) {
-                return PasswordField(
-                  readOnly: controller.isLoading,
-                  label: localeLang(context).confirmPassword,
-                  otherPass: controller.password,
-                  autofillHints: const [AutofillHints.newPassword],
-                  hintText: localeLang(context).enterTheSamePassword,
-                  onChanged: (val) => controller.passwordConfirmation = val,
-                );
-              },
-            ),
-            // AuthField(
-            //   readOnly: controller.isLoading,
-            //   onChanged: (v) => controller.address = v.trim(),
-            //   label: localeLang(context).address,
-            //   textCapitalization: TextCapitalization.words,
-            //   suffixIconData: Icons.location_on,
-            //   autofillHints: const [AutofillHints.fullStreetAddress],
-            //   hintText: localeLang(context).enterYourFullAddress,
-            //   validator: (val) =>
-            //       AppValidator.auth(val?.trim(), 3, 100, FieldType.other),
-            // ),
-            AuthField(
-              readOnly: controller.isLoading,
-              onChanged: (v) => controller.provider = v.trim(),
-              label: localeLang(context).provider,
-              textCapitalization: TextCapitalization.words,
-              suffixIconData: Icons.storefront_rounded,
-              hintText: localeLang(context).enterYourProviderName,
-            ),
-          ],
+        return AutofillGroup(
+          child: Column(
+            spacing: AppConst.paddingDefault,
+            children: [
+              AuthField(
+                isRequired: true,
+                readOnly: controller.isLoading,
+                onChanged: (v) => controller.fullName = v.trim(),
+                label: localeLang(context).fullName,
+                suffixIconData: Icons.person,
+                textCapitalization: TextCapitalization.words,
+                autofillHints: const [AutofillHints.name],
+                hintText: localeLang(context).enterYourFullName,
+                validator: (val) =>
+                    AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
+              ),
+              AuthField(
+                isRequired:false,
+                readOnly: controller.isLoading,
+                onChanged: (v) => controller.email = v.trim().toLowerCase(),
+                label: localeLang(context).email,
+                textCapitalization: TextCapitalization.none,
+                suffixIconData: Icons.mail_rounded,
+                autofillHints: const [AutofillHints.email],
+                hintText: localeLang(context).enterYourEmailAddress,
+                validator: (val) => AppValidator.auth(
+                    val?.trim().toLowerCase(), 0, 100, FieldType.email),
+              ),
+              AuthField(
+                isRequired: true,
+                readOnly: controller.isLoading,
+                isPhoneNumber: true,
+                onPhoneInputChanged: (v) => controller.phone = v,
+                label: localeLang(context).mobileNumber,
+                hintText: localeLang(context).enterYourMobileNumber,
+                autofillHints: const [
+                  AutofillHints.telephoneNumber,
+                  AutofillHints.telephoneNumberDevice,
+                ],
+              ),
+              PasswordField(
+                isNewPass: true,
+                readOnly: controller.isLoading,
+                label: localeLang(context).password,
+                textInputAction: TextInputAction.next,
+                onChanged: (val) => {
+                  controller.password = val,
+                  controller.update(['confirm-password'])
+                },
+                autofillHints: const [AutofillHints.newPassword],
+                hintText: localeLang(context).enterNewPassword,
+              ),
+              GetBuilder<SignUpController>(
+                  id: 'confirm-password',
+                  builder: (controller) {
+                    return PasswordField(
+                      readOnly: controller.isLoading,
+                      label: localeLang(context).confirmPassword,
+                      otherPass: controller.password,
+                      autofillHints: const [AutofillHints.newPassword],
+                      hintText: localeLang(context).enterTheSamePassword,
+                      onChanged: (val) => controller.passwordConfirmation = val,
+                    );
+                  }),
+              AuthField(
+                isRequired: true,
+                readOnly: controller.isLoading,
+                onChanged: (v) => controller.address = v.trim(),
+                label: localeLang(context).address,
+                textCapitalization: TextCapitalization.words,
+                suffixIconData: Icons.location_on,
+                autofillHints: const [AutofillHints.fullStreetAddress],
+                hintText: localeLang(context).enterYourFullAddress,
+                validator: (val) =>
+                    AppValidator.auth(val?.trim(), 3, 100, FieldType.other),
+              ),
+              AuthField(
+                isRequired:false,
+                readOnly: controller.isLoading,
+                onChanged: (v) => controller.provider = v.trim(),
+                label: localeLang(context).provider,
+                textCapitalization: TextCapitalization.words,
+                suffixIconData: Icons.storefront,
+                hintText: localeLang(context).enterYourProviderName,
+              ),
+            ],
+          ),
         );
       },
     );

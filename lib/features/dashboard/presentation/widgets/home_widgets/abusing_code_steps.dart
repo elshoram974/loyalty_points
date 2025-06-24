@@ -16,30 +16,26 @@ class AbusingCodeSteps extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CircleAvatar(
-          backgroundColor: AppColor.greyBackground,
-          radius: 30,
-          child: Padding(
-            padding: EdgeInsets.all(AppConst.paddingSmall),
-            child: Image.asset(ico),
-          ),
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundColor: AppColor.greyBackground,
+        radius: 30,
+        child: Padding(
+          padding: const EdgeInsets.all(AppConst.paddingSmall),
+          child: Image.asset(ico),
         ),
-        Text(
-          title,
-          textAlign: TextAlign.center,
-          style: context.textTheme.titleLarge?.copyWith(
-            color: context.theme.primaryColor,
-            fontWeight: FontWeight.bold,
-          ),
+      ),
+      title: Text(
+        title,
+        style: context.textTheme.titleLarge?.copyWith(
+          color: context.theme.primaryColor,
+          fontWeight: FontWeight.bold,
         ),
-        Text(
-          subTitle,
-          style: context.textTheme.labelLarge,
-          textAlign: TextAlign.center,
-        ),
-      ],
+      ),
+      subtitle: Text(
+        subTitle,
+        style: context.textTheme.titleSmall,
+      ),
     );
   }
 }

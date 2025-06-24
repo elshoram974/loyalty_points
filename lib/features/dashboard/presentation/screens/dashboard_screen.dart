@@ -6,9 +6,8 @@ import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../controller/dashboard_controller.dart';
+import '../widgets/home_widgets/add_new_barcode_floating_button.dart';
 import '../widgets/my_bottom_nav_bar.dart';
-import '../widgets/replace_points_floating_button_widget.dart';
-import 'drawer_screen.dart';
 import '../widgets/my_app_bar.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -21,8 +20,7 @@ class DashboardScreen extends StatelessWidget {
       onPopInvokedWithResult: (_, __) =>
           Get.find<DashboardController>().onPopInvoked(),
       appBar: const MyAppBar(),
-      drawer: const HomeDrawer(),
-      floatingActionButton: const ReplacePointsFloatingButtonWidget(),
+      floatingActionButton: const AddNewBarcodeFloatingButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: const MyBottomNavBar(),
       body: GetBuilder<DashboardController>(

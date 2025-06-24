@@ -20,6 +20,9 @@ abstract final class AppColor {
 
   static const Color pendingTextColor = Color(0xFFBB780D);
 
+
+  static const Color logout = Color(0xFFF5DDDD);
+
   // static const Color active = Color(0xFFE87282);
 
   // static const Color _selectedLight = secondary;

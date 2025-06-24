@@ -19,12 +19,7 @@ class MyBottomNavBar extends StatelessWidget {
           id: AppString.updateSelectedScreen,
           builder: (controller) {
             return BottomNavigationBar(
-              onTap: (value) {
-                if (value == DashboardTabsEnum.menu.index) {
-                  return Scaffold.of(context).openEndDrawer();
-                }
-                controller.changeHomeScreen(value);
-              },
+              onTap: controller.changeHomeScreen,
               currentIndex: controller.selectedScreen,
               showUnselectedLabels: true,
               showSelectedLabels: true,

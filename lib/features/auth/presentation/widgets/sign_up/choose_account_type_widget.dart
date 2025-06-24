@@ -32,10 +32,20 @@ class ChooseAccountTypeWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: AppConst.paddingDefault),
-              Text(
-                localeLang(context).type,
-                style: context.textTheme.bodyLarge
-                    ?.copyWith(fontWeight: FontWeight.bold),
+              RichText(
+                text: TextSpan(
+                    text: localeLang(context).type,
+                    style: context.textTheme.bodyLarge
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                    children: [
+                      TextSpan(
+                        text: ' *',
+                        style: context.textTheme.bodyLarge?.copyWith(
+                          fontWeight: FontWeight.normal,
+                          color: Get.theme.colorScheme.error,
+                        ),
+                      ),
+                    ]),
               ),
               Container(
                 margin: state.hasError

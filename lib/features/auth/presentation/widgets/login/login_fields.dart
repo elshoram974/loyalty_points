@@ -20,6 +20,7 @@ class LoginFields extends StatelessWidget {
             child: Column(
               children: [
                 AuthField(
+                  isRequired: true,
                   readOnly: controller.isLoading,
                   isPhoneNumber: true,
                   onPhoneInputChanged: (v) => controller.phone = v,

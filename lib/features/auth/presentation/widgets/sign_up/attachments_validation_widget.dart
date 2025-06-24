@@ -54,10 +54,20 @@ class _AttachmentsValidationWidgetState
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: widget.topPadding),
-              Text(
-                widget.title,
-                style: context.textTheme.bodyLarge
-                    ?.copyWith(fontWeight: FontWeight.bold),
+              RichText(
+                text: TextSpan(
+                    text: widget.title,
+                    style: context.textTheme.bodyLarge
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                    children: [
+                      TextSpan(
+                        text: ' *',
+                        style: context.textTheme.bodyLarge?.copyWith(
+                          fontWeight: FontWeight.normal,
+                          color: Get.theme.colorScheme.error,
+                        ),
+                      ),
+                    ]),
               ),
               const SizedBox(height: AppConst.paddingDefault),
               Row(

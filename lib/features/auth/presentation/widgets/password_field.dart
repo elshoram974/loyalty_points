@@ -38,6 +38,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return AuthField(
+      isRequired: true,
       readOnly: widget.readOnly,
       controller: widget.controller,
       onChanged: widget.onChanged,

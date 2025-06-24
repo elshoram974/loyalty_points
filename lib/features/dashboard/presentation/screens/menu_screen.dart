@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:loyalty_points/features/dashboard/presentation/screens/privacy_screen.dart';
 
+import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
+import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../controller/dashboard_controller.dart';
 import '../widgets/drawer_widgets/tile_button_widget.dart';
+import 'privacy_screen.dart';
 import 'terms_screen.dart';
 
-class HomeDrawer extends GetView<DashboardController> {
-  const HomeDrawer({super.key});
+class MenuScreen extends GetView<DashboardController> {
+  const MenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      backgroundColor: context.theme.primaryColor,
-      child: Column(
-        spacing: AppConst.paddingDefault,
+    return CustomScaffold(
+      body: ListView(
+        padding: const EdgeInsets.all(AppConst.paddingDefault),
         children: [
-          const Spacer(flex: 2),
           TileButtonWidget(
             icon: Icons.person_outline_outlined,
             title: localeLang(context).profile,
@@ -37,11 +37,8 @@ class HomeDrawer extends GetView<DashboardController> {
           TileButtonWidget(
             icon: Icons.sync_outlined,
             title: localeLang(context).redeemPoints,
-            onTap: () {
-              controller.changeHomeScreen(DashboardTabsEnum.redeemPoints.index);
-            },
+            onTap: () => Get.toNamed(AppRoute.redeemScreen),
           ),
-          const Spacer(flex: 5),
           TileButtonWidget(
             icon: Icons.policy_outlined,
             title: localeLang(context).termsConditions,
@@ -65,7 +62,6 @@ class HomeDrawer extends GetView<DashboardController> {
               onPressConfirm: Get.back,
             ),
           ),
-          const Spacer(flex: 6),
           // TileButtonWidget(
           //   icon: Icons.language_outlined,
           //   title: localeLang(context).changeLanguageTo(
@@ -74,8 +70,10 @@ class HomeDrawer extends GetView<DashboardController> {
           //   onTap: Get.find<ConfigController>().toggleLanguage,
           // ),
           TileButtonWidget(
-            icon: Icons.login_outlined,
+            icon: Icons.logout_outlined,
             title: localeLang(context).logOut,
+            color: AppColor.logout,
+            trailingIcon: null,
             onTap: () => ShowMyDialog.dialog(
               body: localeLang().do_you_want_to_logout,
               title: localeLang().logout,
