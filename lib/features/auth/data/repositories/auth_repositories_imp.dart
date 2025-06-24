@@ -1,3 +1,4 @@
+import 'package:loyalty_points/features/auth/data/models/address_model.dart';
 import 'package:loyalty_points/features/auth/domain/entity/sign_up_body_data.dart';
 
 import '../../../../core/status/status.dart';
@@ -40,6 +41,27 @@ class AuthRepositoriesImp extends AuthRepositories {
   Future<Status<void>> signUp(SignUpBodyData body) {
     return executeAndHandleErrors<void>(
       () => remoteDataSource.signUp(body),
+    );
+  }
+
+  @override
+  Future<Status<List<AddressModel>>> getCountries() {
+    return executeAndHandleErrors<List<AddressModel>>(
+      () => remoteDataSource.getCountries(),
+    );
+  }
+
+  @override
+  Future<Status<List<AddressModel>>> getGovernorates(int countryId) {
+    return executeAndHandleErrors<List<AddressModel>>(
+      () => remoteDataSource.getGovernorates(countryId),
+    );
+  }
+
+  @override
+  Future<Status<List<AddressModel>>> getCities(int governorateId) {
+    return executeAndHandleErrors<List<AddressModel>>(
+      () => remoteDataSource.getCities(governorateId),
     );
   }
 }
