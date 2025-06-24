@@ -18,11 +18,13 @@ class CustomDropDownButton<T> extends StatefulWidget {
     this.errorMessage,
     this.enabled = true,
     this.autofillHints,
+    this.initItem,
   });
   final bool enabled;
   final String? hint;
   final String? errorMessage;
   final List<T> items;
+  final T? initItem;
   final IconData? prefixIcon;
   final Iterable<String>? autofillHints;
   final void Function(T?)? onChanged;
@@ -61,6 +63,12 @@ class _CustomDropDownButtonState<T> extends State<CustomDropDownButton<T>> {
 
   @override
   Widget build(BuildContext context) {
+    if (isDisabled) {
+      selectedValue = widget.initItem;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _controller.text = selectedValue?.toString() ?? '';
+      });
+    }
     return TypeAheadField<T>(
       controller: _controller,
       suggestionsCallback: search,
@@ -75,6 +83,7 @@ class _CustomDropDownButtonState<T> extends State<CustomDropDownButton<T>> {
           controller: controller,
           enabled: enabled,
           focusNode: focusNode,
+          onTapOutside: (event) => FocusScope.of(context).unfocus(),
           onFieldSubmitted: (_) => _selectItem(),
           onChanged: (_) => debounce(_selectItem),
           validator: (val) {

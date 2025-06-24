@@ -198,12 +198,12 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
       );
     }
     return PopScope(
-      onPopInvokedWithResult: (_, __) => widget.focusNode?.unfocus(),
+      onPopInvokedWithResult: (_, __) => FocusScope.of(context).unfocus(),
       child: TextFormField(
         obscureText: widget.obscureText,
         focusNode: widget.focusNode,
         onTap: widget.onTap,
-        onTapOutside: (event) => widget.focusNode?.unfocus(),
+        onTapOutside: (event) => FocusScope.of(context).unfocus(),
         decoration: InputDecoration(
           filled: widget.filled,
           fillColor: widget.fillColor,

@@ -44,27 +44,27 @@ class ChooseAddressWidget extends StatelessWidget {
                 if (!context.isPhone)
                   Expanded(child: countryDropDown(controller)),
                 Expanded(
-                  child: CustomDropDownButton(
-                    enabled: controller.country != null && controller.governorates.isNotEmpty,
+                  child: CustomDropDownButton<AddressModel>(
+                    enabled: controller.country != null &&
+                        controller.governorates.isNotEmpty,
                     autofillHints: const [AutofillHints.addressState],
                     prefixIcon: Icons.location_city,
                     hint: localeLang(context).governorate,
-                    items: [],
-                    onChanged: (val) {},
+                    items: controller.governorates,
+                    onChanged: controller.selectGovernorate,
                     errorMessage: localeLang(context).selectGovernorate,
                   ),
                 ),
                 Expanded(
-                  child: CustomDropDownButton(
-                    enabled: controller.governorate != null && controller.cities.isNotEmpty,
+                  child: CustomDropDownButton<AddressModel>(
+                    enabled: controller.governorate != null &&
+                        controller.cities.isNotEmpty,
                     autofillHints: const [AutofillHints.addressCity],
                     prefixIcon: Icons.location_on,
                     hint: localeLang(context).city,
                     errorMessage: localeLang(context).selectCity,
-                    items: items,
-                    onChanged: (val) {
-                      print(val);
-                    },
+                    items: controller.cities,
+                    onChanged: controller.selectCity,
                   ),
                 ),
               ],
@@ -85,10 +85,9 @@ class ChooseAddressWidget extends StatelessWidget {
           errorMessage: localeLang(context).selectCountry,
           items: controller.countries,
           prefixIcon: Icons.map,
+          onChanged: controller.selectCountry,
         );
       },
     );
   }
 }
-
-List<String> get items => ["القاهرة", "الجيزة", "gharbia"];

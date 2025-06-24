@@ -49,7 +49,7 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppString.email: data.email,
       AppString.password: data.password,
       AppString.passwordConfirmation: data.passwordConfirmation,
-      AppString.country: data.areaId,
+      AppString.addressId: data.areaId,
       AppString.type: data.accountType.type,
       AppString.phone: data.phone.phoneNumber,
       if (data.provider?.trim().isNotEmpty == true)

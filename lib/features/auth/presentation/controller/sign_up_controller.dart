@@ -42,6 +42,10 @@ abstract class SignUpController extends GetxController {
   XFile? profile;
   List<XFile?> attachments = List.filled(3, null, growable: false);
 
+  void selectCountry(AddressModel? country);
+  void selectGovernorate(AddressModel? governorate);
+  void selectCity(AddressModel? city);
+
   Future<void> getCountries();
   Future<void> getGovernorates();
   Future<void> getCities();
@@ -79,7 +83,41 @@ class SignUpControllerImp extends SignUpController {
   }
 
   @override
+  void selectCountry(AddressModel? country) {
+    this.country = country;
+    governorate = null;
+    city = null;
+    _governorates.clear();
+    _cities.clear();
+    update([AppString.updateAddress]);
+    getGovernorates();
+  }
+
+  @override
+  void selectGovernorate(AddressModel? governorate) {
+    this.governorate = governorate;
+    city = null;
+    _cities.clear();
+    update([AppString.updateAddress]);
+    getCities();
+  }
+
+  @override
+  void selectCity(AddressModel? city) {
+    this.city = city;
+    update([AppString.updateAddress]);
+  }
+
+  @override
   Future<void> getCountries() async {
+    _countries.clear();
+    _governorates.clear();
+    _cities.clear();
+    country = null;
+    governorate = null;
+    city = null;
+    update([AppString.updateAddress]);
+
     final Status<List<AddressModel>> countriesState = await repo.getCountries();
     handleResponseInController<List<AddressModel>>(
       status: countriesState,
@@ -93,6 +131,7 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   Future<void> getGovernorates() async {
+    if (country == null) return;
     final Status<List<AddressModel>> governoratesState =
         await repo.getGovernorates(
       country!.id,
@@ -109,6 +148,7 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   Future<void> getCities() async {
+    if (governorate == null) return;
     final Status<List<AddressModel>> citiesState = await repo.getCities(
       governorate!.id,
     );
