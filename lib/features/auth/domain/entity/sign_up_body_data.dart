@@ -8,7 +8,7 @@ class SignUpBodyData {
   final String fullName;
   final String password;
   final String passwordConfirmation;
-  final String address;
+  final int areaId;
   final String email;
   final String? provider;
   final AccountType accountType;
@@ -20,7 +20,7 @@ class SignUpBodyData {
     required this.fullName,
     required this.password,
     required this.passwordConfirmation,
-    required this.address,
+    required this.areaId,
     required this.accountType,
     required this.profile,
     required this.attachments,

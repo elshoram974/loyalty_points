@@ -27,7 +27,7 @@ abstract class SignUpController extends GetxController {
   String email = '';
   String password = '';
   String passwordConfirmation = '';
-  String address = '';
+  int? areaId;
   String? provider;
   AccountType? accountType;
 
@@ -62,17 +62,24 @@ class SignUpControllerImp extends SignUpController {
     }
     _isLoading = true;
     update();
+
+    late final String tempEmail;
+    if (email.trim().isEmpty) {
+      tempEmail = "${phone!.phoneNumber}@email.com";
+    } else {
+      tempEmail = email.trim();
+    }
     final Status<void> signUpState = await repo.signUp(
       SignUpBodyData(
         phone: phone!,
         fullName: fullName,
         password: password,
         passwordConfirmation: passwordConfirmation,
-        address: address,
+        areaId: areaId!,
         accountType: accountType!,
         profile: profile!,
         attachments: attachments.cast<XFile?>().nonNulls.toList(),
-        email: email,
+        email: tempEmail,
         provider: provider,
       ),
     );
@@ -104,7 +111,7 @@ class SignUpControllerImp extends SignUpController {
         email.isNotEmpty ||
         provider?.isNotEmpty == true ||
         accountType != null ||
-        address.isNotEmpty ||
+        areaId != null ||
         profile != null ||
         attachments.any((e) => e != null)) {
       _isBack = await ShowMyDialog.back() == true;

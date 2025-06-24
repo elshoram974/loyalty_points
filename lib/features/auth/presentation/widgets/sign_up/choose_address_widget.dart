@@ -12,13 +12,24 @@ class ChooseAddressWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      spacing: AppConst.paddingDefault,
+      spacing: AppConst.paddingSmall,
       children: [
-        const SizedBox(height: AppConst.paddingExtraSmall),
-        Text(
-          localeLang(context).address,
-          style: context.textTheme.bodyLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
+        const SizedBox(height: AppConst.paddingSmall),
+        RichText(
+          text: TextSpan(
+            text: localeLang(context).address,
+            style: context.textTheme.bodyLarge
+                ?.copyWith(fontWeight: FontWeight.bold),
+            children: [
+              TextSpan(
+                text: ' *',
+                style: TextStyle(
+                  fontWeight: FontWeight.normal,
+                  color: Get.theme.colorScheme.error,
+                ),
+              ),
+            ],
+          ),
         ),
         Row(
           spacing: AppConst.paddingDefault,

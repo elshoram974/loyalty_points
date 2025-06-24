@@ -38,20 +38,23 @@ class LoginButtons extends StatelessWidget {
           const SizedBox(height: 70),
           RichText(
             textAlign: TextAlign.center,
-            text: TextSpan(style: context.textTheme.titleMedium, children: [
-              TextSpan(text: localeLang(context).doNotHaveAnAccount),
-              const TextSpan(text: ' '),
-              TextSpan(
-                  text: localeLang(context).signUp,
-                  style: context.textTheme.titleMedium?.copyWith(
-                    color: context.theme.primaryColor,
-                    decoration: TextDecoration.underline,
-                    decorationColor: context.theme.primaryColor,
-                    decorationThickness: 2,
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () => Get.toNamed(AppRoute.signUp)),
-            ]),
+            text: TextSpan(
+              style: context.textTheme.titleMedium,
+              children: [
+                TextSpan(text: localeLang(context).doNotHaveAnAccount),
+                const TextSpan(text: ' '),
+                TextSpan(
+                    text: localeLang(context).signUp,
+                    style: context.textTheme.titleMedium?.copyWith(
+                      color: context.theme.primaryColor,
+                      decoration: TextDecoration.underline,
+                      decorationColor: context.theme.primaryColor,
+                      decorationThickness: 2,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => Get.toNamed(AppRoute.signUp)),
+              ],
+            ),
           ),
         ],
       );

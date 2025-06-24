@@ -16,6 +16,7 @@ abstract final class AppString {
   static const String attachments = 'attachments[]';
   static const String providerName = 'provider_name';
   static const String country = 'country';
+  static const String addressId = 'address_id';
   static const String fcmToken = 'fcm_token';
   static const String emailOrPhone = 'email_or_phone';
   static const String loginBy = 'login_by';
