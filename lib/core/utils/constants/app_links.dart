@@ -4,6 +4,9 @@ abstract final class AppLinks {
   static const String login = '/api/auth/login';
   static const String signUp = '/api/auth/register';
   static const String providersList = '/api/providers/list';
+  static const String countriesList = '/api/addresses/countries';
+  static const String governoratesList = '/api/addresses/states';
+  static const String areasList = '/api/addresses/areas';
 
   static const String updateFCMToken = '/api/update-fcm-token';
 

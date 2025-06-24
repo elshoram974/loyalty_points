@@ -5,6 +5,7 @@ import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/services/api_services.dart';
 import '../../domain/entity/login_request_data.dart';
 import '../../domain/entity/sign_up_body_data.dart';
+import '../models/address_model.dart';
 import '../models/user_model.dart';
 
 abstract class AuthRemoteDataSource {
@@ -12,6 +13,10 @@ abstract class AuthRemoteDataSource {
   Future<({UserModel user, String token})> login(LoginRequestData data);
 
   Future<({UserModel user, String token})> signUp(SignUpBodyData data);
+
+  Future<List<AddressModel>> getCountries();
+  Future<List<AddressModel>> getGovernorates(int countryId);
+  Future<List<AddressModel>> getCities(int governorateId);
 }
 
 class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
@@ -59,5 +64,35 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       user: UserModel.fromMap(res['data']['user']),
       token: res['data']['token'] as String,
     );
+  }
+
+  @override
+  Future<List<AddressModel>> getCountries() async {
+    final Map<String, dynamic> res = await apiServices.get(
+      AppLinks.countriesList,
+    );
+    log(res.toString());
+
+    return AddressModel.fromMaps(res['data']);
+  }
+
+  @override
+  Future<List<AddressModel>> getGovernorates(int countryId) async {
+    final Map<String, dynamic> res = await apiServices.get(
+      "${AppLinks.governoratesList}/$countryId",
+    );
+    log(res.toString());
+
+    return AddressModel.fromMaps(res['data']);
+  }
+
+  @override
+  Future<List<AddressModel>> getCities(int governorateId) async {
+    final Map<String, dynamic> res = await apiServices.get(
+      "${AppLinks.areasList}/$governorateId",
+    );
+    log(res.toString());
+
+    return AddressModel.fromMaps(res['data']);
   }
 }
