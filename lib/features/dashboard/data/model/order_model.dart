@@ -12,7 +12,6 @@ class OrderModel extends OrderEntity {
   final String? paymentInfo;
   final String? paymentRef;
   final String? status;
-  final String? adminNote;
   final String? noteBy;
   final String? equity;
   final DateTime? createdAt;
@@ -27,7 +26,7 @@ class OrderModel extends OrderEntity {
     this.paymentInfo,
     this.paymentRef,
     this.status,
-    this.adminNote,
+    super.adminNote,
     this.noteBy,
     this.equity,
     this.createdAt,

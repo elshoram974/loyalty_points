@@ -7,14 +7,18 @@ class PointsEntity extends Equatable {
   final int points;
   final int? orderNumber;
   final DateTime date;
+  final String? description;
+  final DateTime? updatedAt;
 
   const PointsEntity({
     required this.orderStatus,
     required this.points,
     required this.orderNumber,
     required this.date,
+    this.description,
+    this.updatedAt,
   });
 
   @override
-  List<Object?> get props => [orderStatus, points, orderNumber, date];
+  List<Object?> get props => [description, updatedAt, orderStatus, points, orderNumber, date];
 }

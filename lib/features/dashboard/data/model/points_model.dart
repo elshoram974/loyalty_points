@@ -8,10 +8,8 @@ class PointsModel extends PointsEntity {
   final int? userId;
   final int? qrCodeId;
   final String? type;
-  final dynamic description;
   final dynamic processedAt;
   final DateTime? createdAt;
-  final DateTime? updatedAt;
 
   PointsModel({
     this.id,
@@ -19,10 +17,10 @@ class PointsModel extends PointsEntity {
     this.qrCodeId,
     this.type,
     super.points = 0,
-    this.description,
+    super.description,
     this.processedAt,
     this.createdAt,
-    this.updatedAt,
+    super.updatedAt,
   }) : super(
           orderStatus: PointsStatusEnum.fromString(type),
           orderNumber: qrCodeId,
@@ -35,7 +33,7 @@ class PointsModel extends PointsEntity {
         qrCodeId: data['qr_code_id'] as int?,
         type: data['type'] as String?,
         points: (data['points'] as int?) ?? 0,
-        description: data['description'] as dynamic,
+        description: data['description'] as String?,
         processedAt: data['processed_at'] as dynamic,
         createdAt: data['created_at'] == null
             ? null
@@ -75,7 +73,7 @@ class PointsModel extends PointsEntity {
     int? qrCodeId,
     String? type,
     int? points,
-    dynamic description,
+    String? description,
     dynamic processedAt,
     DateTime? createdAt,
     DateTime? updatedAt,

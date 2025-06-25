@@ -9,35 +9,43 @@ import '../../../domain/entity/points_entity.dart';
 class PointsWidget extends StatelessWidget {
   const PointsWidget({super.key, required this.points});
   final PointsEntity points;
+  // final String text;
+  // final int points;
+  // final double? price;
+  // final DateTime createdDate;
+  // final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        leading: Padding(
-          padding: const EdgeInsets.all(AppConst.paddingSmall),
-          child: Image.asset(AppAssets.points),
-        ),
-        title: Row(
-          children: [
-            Text(
-              points.orderStatus.name,
-              style: context.textTheme.labelLarge?.copyWith(
-                color: context.theme.primaryColor,
-                fontWeight: FontWeight.bold,
+    return InkWell(
+      // onTap: onTap,
+      child: Card(
+        child: ListTile(
+          leading: Padding(
+            padding: const EdgeInsets.all(AppConst.paddingSmall),
+            child: Image.asset(AppAssets.points),
+          ),
+          title: Row(
+            children: [
+              Text(
+                points.orderStatus.name,
+                style: context.textTheme.labelLarge?.copyWith(
+                  color: context.theme.primaryColor,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-         const   Spacer(),
-           
-            Text(
-              '${localeLang(context).point_number(points.points.withSeparator)}',
-              style: context.textTheme.labelLarge
-                  ?.copyWith(color: context.theme.primaryColor),
-            ),
-          ],
-        ),
-        subtitle: Text(
-          points.orderNumber != null ? '${points.orderNumber}' : '',
-          style: context.textTheme.titleSmall,
+           const   Spacer(),
+             
+              Text(
+                '${localeLang(context).point_number(points.points.withSeparator)}',
+                style: context.textTheme.labelLarge
+                    ?.copyWith(color: context.theme.primaryColor),
+              ),
+            ],
+          ),
+          subtitle: Text(
+            points.orderNumber != null ? '${points.orderNumber}' : '',
+            style: context.textTheme.titleSmall,
+          ),
         ),
       ),
     );
