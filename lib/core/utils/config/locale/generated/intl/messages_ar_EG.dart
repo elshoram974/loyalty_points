@@ -216,10 +216,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage("اكتمل التسجيل"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
-    "loyalty_program_for_PetroJac_oil_shops_and_station_agents_products":
-        MessageLookupByLibrary.simpleMessage(
-          "برنامج ولاء لمحلات زيوت ووكلاء محطات بتروجاك و الذي يمكن تجميع النقاط مع كل عملية شرائية من منتجات بتروجاك من الزيوت",
-        ),
     "menu": MessageLookupByLibrary.simpleMessage("القائمة"),
     "mobileNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "newCodeAddedSuccess": MessageLookupByLibrary.simpleMessage(

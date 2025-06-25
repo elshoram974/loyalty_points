@@ -224,10 +224,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Register Completed",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("Log Out"),
-    "loyalty_program_for_PetroJac_oil_shops_and_station_agents_products":
-        MessageLookupByLibrary.simpleMessage(
-          "A loyalty program for PetroJac oil shops and station agents, where points can be collected with every purchase of PetroJac oil products.",
-        ),
     "menu": MessageLookupByLibrary.simpleMessage("Menu"),
     "mobileNumber": MessageLookupByLibrary.simpleMessage("Mobile Number"),
     "newCodeAddedSuccess": MessageLookupByLibrary.simpleMessage(
