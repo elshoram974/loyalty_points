@@ -69,9 +69,9 @@ class PointsBalanceWidget extends StatelessWidget {
                 ),
             ],
           ),
-         const SizedBox(height: AppConst.paddingDefault,),
+         const SizedBox(height: AppConst.paddingDefault),
           const _BalancePointsWidget(),
-          const SizedBox(height: AppConst.paddingSmall),
+          const SizedBox(height: AppConst.paddingDefault),
           Row(
             children: [
               Image.asset(AppAssets.iconBalance, width: 30),
@@ -106,53 +106,60 @@ class _BalancePointsWidget extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(AppConst.paddingSmall)
-                        .copyWith(bottom: 0),
-                    child: Text(
-                      user.pointsBalance.withSeparator,
-                      style: context.textTheme.headlineLarge?.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppConst.paddingDefault,
-                    vertical: 2,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(
-                      AppConst.radiusExtraBig,
-                    ),
-                  ),
-                  child: GetBuilder<ConfigController>(
-                    id: AppString.updateBalance,
-                    builder: (configController) {
-                      final PointsCalcHelper pointsCalcHelper =
-                          PointsCalcHelper(
-                        config: AppInfo.config,
-                        user: user,
-                      );
-                      return CustomLoadingWidget(
-                        isLoading: configController.isLoadingConfig,
-                        child: Center(
+                Expanded(
+                  flex: 10,
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.all(AppConst.paddingSmall)
+                              .copyWith(bottom: 0),
                           child: Text(
-                            '${pointsCalcHelper.redeemableBalanceString} ${pointsCalcHelper.config?.currency ?? ''}',
-                            style: context.textTheme.titleSmall?.copyWith(
+                            user.pointsBalance.withSeparator,
+                            style: context.textTheme.headlineLarge?.copyWith(
                               color: Colors.white,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                      );
-                    },
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppConst.paddingDefault,
+                          vertical: 2,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(
+                            AppConst.radiusExtraBig,
+                          ),
+                        ),
+                        child: GetBuilder<ConfigController>(
+                          id: AppString.updateBalance,
+                          builder: (configController) {
+                            final PointsCalcHelper pointsCalcHelper =
+                                PointsCalcHelper(
+                              config: AppInfo.config,
+                              user: user,
+                            );
+                            return CustomLoadingWidget(
+                              isLoading: configController.isLoadingConfig,
+                              child: Center(
+                                child: Text(
+                                  '${pointsCalcHelper.redeemableBalanceString} ${pointsCalcHelper.config?.currency ?? ''}',
+                                  style: context.textTheme.titleSmall?.copyWith(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(width: 150),
+                const Spacer(),
                 const ReplacePointsFloatingButtonWidget(),
               ],
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../config/locale/local_lang.dart';
 import '../constants/app_color.dart';
@@ -34,4 +35,25 @@ enum PointsStatusEnum {
     }
     return add;
   }
+    IconData get icon {
+    switch (this) {
+      case add:
+        return Icons.check_outlined;
+      case redeem:
+        return FontAwesomeIcons.recycle;
+ 
+    }
+  }
+
+  // factory PointsStatusEnum.fromString(String? inString) {
+  //   switch (inString) {
+  //     case 'complete':
+  //       return add;
+  //     case 'pending':
+  //       return redeem;
+  //     case 'cancelled':
+  //       return rejected;
+  //   }
+  //   return rejected;
+  //}
 }

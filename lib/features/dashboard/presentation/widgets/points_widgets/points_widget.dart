@@ -2,49 +2,100 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/constants/app_assets.dart';
 import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
+import '../../../../../core/shared/points_builder_widget.dart';
+import '../../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
-import '../../../domain/entity/points_entity.dart';
+import 'package:intl/intl.dart' as intl;
 
 class PointsWidget extends StatelessWidget {
-  const PointsWidget({super.key, required this.points});
-  final PointsEntity points;
-  // final String text;
-  // final int points;
-  // final double? price;
-  // final DateTime createdDate;
-  // final void Function()? onTap;
+  const PointsWidget({
+    super.key,
+    required this.text,
+    required this.points,
+    required this.createdDate,
+    required this.color,
+    this.price,
+    this.onTap,
+  });
+  final Color color;
+  final String text;
+  final int points;
+  final double? price;
+  final DateTime createdDate;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: onTap,
+      onTap: onTap,
       child: Card(
-        child: ListTile(
-          leading: Padding(
-            padding: const EdgeInsets.all(AppConst.paddingSmall),
-            child: Image.asset(AppAssets.points),
+        margin: const EdgeInsets.symmetric(
+          horizontal: AppConst.paddingDefault,
+          vertical: AppConst.paddingExtraSmall,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppConst.paddingDefault,
+            vertical: AppConst.paddingSmall,
           ),
-          title: Row(
+          child: Row(
+            spacing: AppConst.paddingSmall,
             children: [
-              Text(
-                points.orderStatus.name,
-                style: context.textTheme.labelLarge?.copyWith(
-                  color: context.theme.primaryColor,
-                  fontWeight: FontWeight.bold,
+              Image.asset(
+                AppAssets.points,
+                height: 60,
+                width: 60,
+              ),
+              Expanded(
+                child: Row(
+                  spacing: AppConst.paddingSmall,
+                  children: [
+                    Text(
+                      text,
+                      style: context.textTheme.labelLarge?.copyWith(
+                        color: color,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    if (price != null)
+                      Expanded(
+                        child: PointsBuilderWidget(
+                          builder: (_, __, helper) {
+                            return Text(
+                              '${price!.withSeparator} ${helper.config?.currency}',
+                              textAlign: TextAlign.center,
+                              style: context.textTheme.labelLarge
+                                  ?.copyWith(color: context.theme.primaryColor),
+                            );
+                          },
+                        ),
+                      )
+                    else
+                      const Spacer(),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            localeLang(context)
+                                .point_number(points.withSeparator),
+                            style: context.textTheme.labelLarge
+                                ?.copyWith(color: context.theme.primaryColor),
+                          ),
+                          Text(
+                            intl.DateFormat.yMMMd(
+                              Get.find<ConfigController>().locale.languageCode,
+                            ).format(createdDate),
+                            style: context.textTheme.labelLarge
+                                ?.copyWith(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
-           const   Spacer(),
-             
-              Text(
-                '${localeLang(context).point_number(points.points.withSeparator)}',
-                style: context.textTheme.labelLarge
-                    ?.copyWith(color: context.theme.primaryColor),
-              ),
             ],
-          ),
-          subtitle: Text(
-            points.orderNumber != null ? '${points.orderNumber}' : '',
-            style: context.textTheme.titleSmall,
           ),
         ),
       ),

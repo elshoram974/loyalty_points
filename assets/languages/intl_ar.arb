@@ -164,6 +164,8 @@
     "cameraPermissionsRequired": "يتطلب صلاحية الكاميرا",
     "pressToUseCamera": "اواضغط لاستخدام الكاميرا",
     "findBarCode": "ايجاد الكود",
+    "pointsDetails": "تفاصيل النقاط",
+    "orderNumber": "رقم الطلب",
     "howToAbusingCode": "كيفية حرق الاكواد؟",
     "egyptianPound": "ج.م",
     "couldNotLaunch": "تعذر الفتح",

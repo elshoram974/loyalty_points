@@ -203,6 +203,7 @@
     "couldNotLaunch": "Could not launch",
     "invalidPhoneNumber": "Invalid phone number",
     "backToLogin": "Back to login",
+    "pointsDetails": "Points Details",
     "PleaseWaitThisMayTakeSomeTime": "Please wait, this may take some time",
     "beforeYouCanLoginAnAdministratorMustManuallyActivateYourAccount": "Before you can log in, an administrator must manually activate your account",
     "successfully": "Successfully!",
@@ -239,6 +240,7 @@
         }
     },
     "logout": "Log Out",
+    "orderNumber": "Order Number",
     "privacyPolicy": "Privacy Policy",
     "termsAndConditions": "Terms and Conditions",
     "welcomeToYou": "Welcome to you",

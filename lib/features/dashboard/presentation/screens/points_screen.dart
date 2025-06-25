@@ -5,13 +5,12 @@ import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/my_sliver_pinned_tabs.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/types/points_status_enum.dart';
 import '../../domain/entity/points_entity.dart';
 import '../controller/dashboard_controller.dart';
 import '../controller/points_controller.dart';
-import '../widgets/my_custom_divider.dart';
-import '../widgets/our_partners_container_widget.dart';
 import '../widgets/points_widgets/points_widget.dart';
 
 class PointsScreen extends StatelessWidget {
@@ -42,7 +41,7 @@ class PointsScreen extends StatelessWidget {
                 // const SliverToBoxAdapter(
                 //   child: PointsBalanceWidget(isUncategorized: false),
                 // ),
-                const SliverToBoxAdapter(child: OurPartnersWidget()),
+                // const SliverToBoxAdapter(child: OurPartnersWidget()),
                 MySliverPinnedTaps(
                   tabs: [
                     Tab(text: localeLang(context).pointsHistory),
@@ -80,10 +79,19 @@ class PointsScreen extends StatelessWidget {
                         SliverList.separated(
                           addRepaintBoundaries: false,
                           itemCount: points.length,
-                          separatorBuilder: (_, i) => const MyCustomDivider(),
+                          separatorBuilder: (_, i) => const SizedBox(),
                           itemBuilder: (_, i) => CustomLoadingWidget(
                             isLoading: c.isInitialLoading,
-                            child: PointsWidget(points: points[i]),
+                            child: PointsWidget(
+                              text: points[i].orderStatus.name,
+                              points: points[i].points,
+                              createdDate: points[i].date,
+                              color: points[i].orderStatus.color,
+                              onTap: () => Get.toNamed(
+                                AppRoute.pointsDetails,
+                                arguments: points[i],
+                              ),
+                            ),
                           ),
                         ),
                         if (c.hasMoreItem)
@@ -92,12 +100,17 @@ class PointsScreen extends StatelessWidget {
                               const SizedBox(height: AppConst.paddingDefault),
                               CustomLoadingWidget(
                                 isLoading: true,
-                                child: PointsWidget(points: points[0]),
+                                child: PointsWidget(
+                                  text: 'redeem',
+                                  points: 5432,
+                                  color: Colors.white,
+                                  createdDate: DateTime.now(),
+                                ),
                               )
                             ]),
                           ),
                         const SliverToBoxAdapter(
-                          child: SizedBox(height: AppConst.paddingBig),
+                          child: SizedBox(height: AppConst.paddingExtraBig),
                         ),
                       ],
                     ],
@@ -112,35 +125,11 @@ class PointsScreen extends StatelessWidget {
   }
 }
 
-List<PointsEntity> get _points => [
-      PointsEntity(
-        orderStatus: PointsStatusEnum.add,
-        points: 540,
-        orderNumber: 2222221400,
-        date: DateTime(2000),
-      ),
-      PointsEntity(
+List<PointsEntity> get _points => List.generate(
+      20,
+      (index) => PointsEntity(
         orderStatus: PointsStatusEnum.redeem,
-        points: 100,
-        orderNumber: 2222221000,
+        points: 1005,
         date: DateTime.now(),
       ),
-      PointsEntity(
-        orderStatus: PointsStatusEnum.add,
-        points: 300,
-        orderNumber: 22222223001,
-        date: DateTime(2001),
-      ),
-      PointsEntity(
-        orderStatus: PointsStatusEnum.add,
-        points: 540,
-        orderNumber: 2222221400,
-        date: DateTime(2000),
-      ),
-      PointsEntity(
-        orderStatus: PointsStatusEnum.redeem,
-        points: 100,
-        orderNumber: 2222221000,
-        date: DateTime.now(),
-      ),
-    ];
+    );
