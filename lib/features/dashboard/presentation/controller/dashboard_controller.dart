@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 import '../../../../app_info.dart';
 import '../../../../core/status/status.dart';
-import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_strings.dart';
@@ -39,8 +38,7 @@ abstract class DashboardController extends GetxController {
 
 class DashboardControllerImp extends DashboardController {
   final DashboardRepositories repo;
-  final ConfigController configController;
-  DashboardControllerImp({required this.repo, required this.configController});
+  DashboardControllerImp({required this.repo});
 
   bool _isLoadingUserData = true;
 
@@ -70,13 +68,8 @@ class DashboardControllerImp extends DashboardController {
 
   @override
   Future<void> getAllData([bool isReload = false]) async {
-    await Future.wait(
-      [
-        updateFCMToken(),
-        getUserData(isReload),
-        configController.getConfigData(isReload),
-      ],
-    );
+    await getUserData(isReload);
+    if (user != null) updateFCMToken();
   }
 
   @override

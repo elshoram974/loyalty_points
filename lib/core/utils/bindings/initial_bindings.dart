@@ -62,6 +62,5 @@ abstract final class InitialBindings {
         remoteDataSource: Get.find<AuthRemoteDataSource>(),
       ),
     );
-    Get.find<ConfigRemoteDataSource>()();
   }
 }

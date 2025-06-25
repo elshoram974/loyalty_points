@@ -40,7 +40,7 @@ class AuthLocalDataSourceImp extends AuthLocalDataSource {
   Future<void> logOut() async {
     await Future.wait(
       [
-        _storage.deleteAll(),
+        _storage.delete(key: AppString.kTokenKey),
         _userBox.clear(),
       ],
     );

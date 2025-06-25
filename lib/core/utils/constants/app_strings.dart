@@ -29,6 +29,7 @@ abstract final class AppString {
   static const String _update = 'update';
 
   static const String updateAddress = '$_update address';
+  static const String updateLoginIntro = '$_update login intro';
 
   static const String updateSelectedScreen = '$_update selected home screen';
 

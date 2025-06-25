@@ -36,7 +36,7 @@ class ConfigControllerImp extends ConfigController {
           .dark, //Get.isDarkMode ? Brightness.light : Brightness.dark,
     ));
 
-    // getConfigData();
+    getConfigData();
   }
 
   // late Locale _locale = prefs.containsKey(AppString.kLocaleCode)
@@ -89,6 +89,7 @@ class ConfigControllerImp extends ConfigController {
       AppString.updateHomeBanners,
       AppString.updateHomeSocial,
       AppString.updateBalance,
+      AppString.updateLoginIntro,
     ];
 
     if (!isReload) {

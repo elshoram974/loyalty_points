@@ -8,6 +8,7 @@ import '../../../../core/utils/constants/app_constants.dart';
 import '../controller/login_controller.dart';
 import '../widgets/login/login_buttons.dart';
 import '../widgets/login/login_fields.dart';
+import '../widgets/login/login_intro_text_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -23,24 +24,22 @@ class LoginScreen extends StatelessWidget {
         children: [
           const SizedBox(height: AppConst.paddingExtraBig),
           Text(
-            localeLang(context)
-                .welcome_to_businessName(localeLang(context).business_name),
+            localeLang(context).welcome_to_businessName(
+              localeLang(context).business_name,
+            ),
             textAlign: TextAlign.center,
-            style: context.textTheme.titleLarge
-                ?.copyWith(fontWeight: FontWeight.w500),
+            style: context.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w500,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
-                horizontal: AppConst.paddingExtraBig),
+              horizontal: AppConst.paddingExtraBig,
+            ),
             child: Image.asset(AppAssets.businessLogo),
           ),
           const SizedBox(height: AppConst.paddingDefault),
-          Text(
-            localeLang(context)
-                .loyalty_program_for_PetroJac_oil_shops_and_station_agents_products,
-            textAlign: TextAlign.center,
-            style: context.textTheme.bodySmall,
-          ),
+          const LoginIntroTextWidget(),
           const SizedBox(height: AppConst.paddingExtraBig),
           Text(
             localeLang(context).login,

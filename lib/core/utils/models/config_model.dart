@@ -11,6 +11,7 @@ class ConfigModel extends Equatable {
   final dynamic loyaltyEnabled;
   final String? banner2;
   final String? banner1;
+  final String? loginIntro;
 
   final int? _sellerMinimumPointsToRedeem;
   final int? _repMinimumPointsToRedeem;
@@ -64,6 +65,7 @@ class ConfigModel extends Equatable {
     this.loyaltyEnabled,
     this.banner2,
     this.banner1,
+    this.loginIntro,
     int? sellerMinimumPointsToRedeem,
     int? repMinimumPointsToRedeem,
     int? sellerOnePoundEquity,
@@ -88,6 +90,7 @@ class ConfigModel extends Equatable {
       repMinimumPointsToRedeem: data['rep_minimum_points_to_redeem'] as int?,
       sellerOnePoundEquity: data['seller_one_pound_equity'] as int?,
       repOnePoundEquity: data['rep_one_pound_equity'] as int?,
+      loginIntro: data['login_intro'] as String?,
     );
   }
 
@@ -103,6 +106,7 @@ class ConfigModel extends Equatable {
       'rep_minimum_points_to_redeem': _repMinimumPointsToRedeem,
       'seller_one_pound_equity': _sellerOnePoundEquity,
       'rep_one_pound_equity': _repOnePoundEquity,
+      'login_intro': loginIntro,
     };
   }
 
@@ -129,20 +133,23 @@ class ConfigModel extends Equatable {
     int? sellerOnePoundEquity,
     int? repOnePoundEquity,
     List<dynamic>? social,
+    String? loginIntro,
   }) {
     return ConfigModel(
-        pointsValue: pointsValue ?? this.pointsValue,
-        currency: currency ?? this.currency,
-        loyaltyEnabled: loyaltyEnabled ?? this.loyaltyEnabled,
-        banner2: banner2 ?? this.banner2,
-        banner1: banner1 ?? this.banner1,
-        sellerMinimumPointsToRedeem:
-            sellerMinimumPointsToRedeem ?? _sellerMinimumPointsToRedeem,
-        repMinimumPointsToRedeem:
-            repMinimumPointsToRedeem ?? _repMinimumPointsToRedeem,
-        sellerOnePoundEquity: sellerOnePoundEquity ?? _sellerOnePoundEquity,
-        repOnePoundEquity: repOnePoundEquity ?? _repOnePoundEquity,
-        social: social ?? _social);
+      pointsValue: pointsValue ?? this.pointsValue,
+      currency: currency ?? this.currency,
+      loyaltyEnabled: loyaltyEnabled ?? this.loyaltyEnabled,
+      banner2: banner2 ?? this.banner2,
+      banner1: banner1 ?? this.banner1,
+      sellerMinimumPointsToRedeem:
+          sellerMinimumPointsToRedeem ?? _sellerMinimumPointsToRedeem,
+      repMinimumPointsToRedeem:
+          repMinimumPointsToRedeem ?? _repMinimumPointsToRedeem,
+      sellerOnePoundEquity: sellerOnePoundEquity ?? _sellerOnePoundEquity,
+      repOnePoundEquity: repOnePoundEquity ?? _repOnePoundEquity,
+      social: social ?? _social,
+      loginIntro: loginIntro ?? this.loginIntro,
+    );
   }
 
   @override
@@ -160,6 +167,8 @@ class ConfigModel extends Equatable {
       _repMinimumPointsToRedeem,
       _sellerOnePoundEquity,
       _repOnePoundEquity,
+      _social,
+      loginIntro,
     ];
   }
 }
