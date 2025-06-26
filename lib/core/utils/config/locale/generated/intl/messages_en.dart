@@ -406,6 +406,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "There is a problem with the server. Try again later.",
         ),
+    "tiktok": MessageLookupByLibrary.simpleMessage("TikTok"),
     "toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": m15,
     "totalOrder": MessageLookupByLibrary.simpleMessage("Total Order"),
     "transferToPaymentName": m16,
