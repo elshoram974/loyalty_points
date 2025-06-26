@@ -34,7 +34,7 @@ class _TabWidget extends SliverPersistentHeaderDelegate {
         padding: const EdgeInsets.only(bottom: AppConst.paddingSmall),
         decoration: inTop
             ? const BoxDecoration(
-                color: Colors.white,
+                color: AppColor.offWhite,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black12,

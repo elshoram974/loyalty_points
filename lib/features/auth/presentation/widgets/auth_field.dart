@@ -92,7 +92,7 @@ class AuthField extends StatelessWidget {
           textDirection: textDirection,
           textAlign: textAlign,
           filled: true,
-          fillColor: Theme.of(context).scaffoldBackgroundColor,
+          fillColor: Colors.white,
           hintText: hintText,
           keyboardType: keyboardType,
           textInputAction: textInputAction,

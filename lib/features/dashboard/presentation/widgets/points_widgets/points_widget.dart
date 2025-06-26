@@ -39,7 +39,6 @@ class PointsAndOrdersWidget extends StatelessWidget {
             vertical: AppConst.paddingSmall,
           ),
           child: Row(
-            
             spacing: AppConst.paddingSmall,
             children: [
               Image.asset(
@@ -52,6 +51,7 @@ class PointsAndOrdersWidget extends StatelessWidget {
                   spacing: AppConst.paddingSmall,
                   children: [
                     Expanded(
+                      flex: 5,
                       child: Text(
                         text,
                         style: context.textTheme.labelLarge?.copyWith(
@@ -61,16 +61,18 @@ class PointsAndOrdersWidget extends StatelessWidget {
                       ),
                     ),
                     if (price != null)
-                      Expanded(                      
+                      Expanded(
+                        flex: 4,
                         child: PointsBuilderWidget(
                           builder: (_, __, helper) {
                             return Padding(
-                              padding: const EdgeInsets.only(right: AppConst.paddingSmall),
-                              child: Text(    
+                              padding: const EdgeInsets.only(
+                                  right: AppConst.paddingSmall),
+                              child: Text(
                                 '${price!.withSeparator} ${helper.config?.currency}',
-                               // textAlign: TextAlign.center,
-                                style: context.textTheme.labelLarge
-                                    ?.copyWith(color: context.theme.primaryColor),
+                                textAlign: TextAlign.center,
+                                style: context.textTheme.labelLarge?.copyWith(
+                                    color: context.theme.primaryColor),
                               ),
                             );
                           },
@@ -79,12 +81,14 @@ class PointsAndOrdersWidget extends StatelessWidget {
                     else
                       const Spacer(),
                     Expanded(
+                      flex: 6,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
                             localeLang(context)
                                 .point_number(points.withSeparator),
+                            textAlign: TextAlign.center,
                             style: context.textTheme.labelLarge
                                 ?.copyWith(color: context.theme.primaryColor),
                           ),
@@ -92,6 +96,7 @@ class PointsAndOrdersWidget extends StatelessWidget {
                             intl.DateFormat.yMMMd(
                               Get.find<ConfigController>().locale.languageCode,
                             ).format(createdDate),
+                            textAlign: TextAlign.center,
                             style: context.textTheme.labelLarge
                                 ?.copyWith(color: Colors.grey),
                           ),

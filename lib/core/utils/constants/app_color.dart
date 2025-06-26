@@ -14,6 +14,8 @@ abstract final class AppColor {
 
   static const Color greyBackground = Color(0xFFBDBDBD);
 
+  static const Color offWhite = Color(0xFFF1F1F1);
+
   static const List<Color> backgroundGradient = [Colors.white, greyBackground];
 
   static const Color borderColor = Colors.grey;
