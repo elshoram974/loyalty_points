@@ -57,7 +57,7 @@ class MenuScreen extends GetView<DashboardController> {
           ),
           if(items.isNotEmpty)
           TileButtonWidget(
-            icon: Icons.contact_support_sharp,
+            icon: Icons.contact_support_outlined,
             title: localeLang(context).contactUs,
             onTap: () => Get.to(() => ContactUsScreen(items)),
           ),
