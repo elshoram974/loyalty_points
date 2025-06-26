@@ -87,7 +87,6 @@ class ConfigControllerImp extends ConfigController {
   Future<void> getConfigData([bool isReload = false]) async {
     final List<String> ids = [
       AppString.updateHomeBanners,
-      AppString.updateHomeSocial,
       AppString.updateBalance,
       AppString.updateLoginIntro,
     ];
