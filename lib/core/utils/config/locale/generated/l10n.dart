@@ -55,6 +55,11 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `TikTok`
+  String get tiktok {
+    return Intl.message('TikTok', name: 'tiktok', desc: '', args: []);
+  }
+
   /// `You must select a country`
   String get selectCountry {
     return Intl.message(
