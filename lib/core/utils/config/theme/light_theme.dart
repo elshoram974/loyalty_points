@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import '../../constants/app_color.dart';
 
 ThemeData get lightTheme => ThemeData(
+      scaffoldBackgroundColor: Colors.white,
+      canvasColor: Colors.white,
       primaryColor: AppColor.primaryLight,
       brightness: Brightness.light,
       cardColor: Colors.grey.shade300,
-      textTheme:const TextTheme(
+      textTheme: const TextTheme(
         labelLarge: TextStyle(fontSize: 17),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
