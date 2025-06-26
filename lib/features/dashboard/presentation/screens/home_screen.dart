@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               );
             },
           ),
-          const PointsBalanceWidget(),
+          const PointsBalanceWidget(showRedeemButton: true),
           const AbusingCode()
         ],
       ),

@@ -7,6 +7,7 @@ import '../../../features/dashboard/presentation/controller/dashboard_controller
 import '../../../features/auth/data/datasources/auth_local_data_source.dart';
 import '../../../features/dashboard/presentation/controller/orders_controller.dart';
 import '../../../features/dashboard/presentation/controller/points_controller.dart';
+import '../config/controller/config_controller.dart';
 import '../services/api_services.dart';
 
 class HomeBindings extends Bindings {
@@ -29,7 +30,10 @@ class HomeBindings extends Bindings {
       OrdersControllerImp(Get.find<DashboardRepositories>()),
     );
     Get.put<DashboardController>(
-      DashboardControllerImp(repo: Get.find<DashboardRepositories>()),
+      DashboardControllerImp(
+        repo: Get.find<DashboardRepositories>(),
+        configController: Get.find<ConfigController>(),
+      ),
     );
   }
 }

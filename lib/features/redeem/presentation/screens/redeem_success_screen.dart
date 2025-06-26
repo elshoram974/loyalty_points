@@ -22,7 +22,7 @@ class RedeemSuccessScreen extends StatelessWidget {
       appBar: const MyAppBar(),
       body: ListView(
         children: [
-          const PointsBalanceWidget(),
+          const PointsBalanceWidget(isUncategorized: true),
           PointsBuilderWidget(
             builder: (_, __, helper) {
               return ContainerForReplacement(

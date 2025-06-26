@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/shared/filled_button.dart';
-import '../../../../core/utils/config/locale/local_lang.dart';
-import '../../../../core/utils/constants/app_constants.dart';
-import '../controller/add_new_code_controller.dart';
+import '../utils/config/locale/local_lang.dart';
+import '../utils/constants/app_constants.dart';
+import 'filled_button.dart';
 
 class CancelAndConfirmButtons extends StatelessWidget {
-  const CancelAndConfirmButtons({super.key});
+  const CancelAndConfirmButtons({
+    super.key,
+    this.isLoading = false,
+    this.onPressConfirm,
+  });
+
+  final bool isLoading;
+  final void Function()? onPressConfirm;
 
   @override
   Widget build(BuildContext context) {
@@ -33,20 +39,14 @@ class CancelAndConfirmButtons extends StatelessWidget {
           ),
           const SizedBox(width: AppConst.paddingDefault),
           Expanded(
-            child: GetBuilder<AddNewCodeController>(
-              builder: (controller) {
-                return CustomFilledButton(
-                  isLoading: controller.isLoading,
-                  onPressed: controller.textController.text.trim().isEmpty
-                      ? null
-                      : controller.scanCode,
-                  filledColor: context.theme.primaryColor,
-                  borderRadius: radius,
-                  text: localeLang(context).confirm,
-                  style: style,
-                  minimumSize: size,
-                );
-              },
+            child: CustomFilledButton(
+              isLoading: isLoading,
+              onPressed: onPressConfirm,
+              filledColor: context.theme.primaryColor,
+              borderRadius: radius,
+              text: localeLang(context).confirm,
+              style: style,
+              minimumSize: size,
             ),
           ),
         ],

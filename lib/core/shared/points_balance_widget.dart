@@ -15,17 +15,19 @@ import '../utils/helper/points_calc_helper.dart';
 import 'custom_loading.dart';
 
 class PointsBalanceWidget extends StatelessWidget {
-  const PointsBalanceWidget({super.key, this.isUncategorized = false});
+  const PointsBalanceWidget({
+    super.key,
+    this.isUncategorized = false,
+    this.showRedeemButton = false,
+  });
   final bool isUncategorized;
+  final bool showRedeemButton;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: AppConst.paddingDefault),
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppConst.paddingDefault,
-        vertical: AppConst.paddingDefault,
-      ),
+      margin: const EdgeInsets.all(AppConst.paddingDefault),
+      padding: const EdgeInsets.all(AppConst.paddingDefault),
       decoration: BoxDecoration(
         color: context.theme.primaryColor,
         borderRadius: BorderRadius.circular(AppConst.radiusDefault),
@@ -69,8 +71,8 @@ class PointsBalanceWidget extends StatelessWidget {
                 ),
             ],
           ),
-         const SizedBox(height: AppConst.paddingDefault),
-          const _BalancePointsWidget(),
+          const SizedBox(height: AppConst.paddingDefault),
+          _BalancePointsWidget(showRedeemButton),
           const SizedBox(height: AppConst.paddingDefault),
           Row(
             children: [
@@ -92,7 +94,8 @@ class PointsBalanceWidget extends StatelessWidget {
 }
 
 class _BalancePointsWidget extends StatelessWidget {
-  const _BalancePointsWidget();
+  const _BalancePointsWidget(this.showRedeemButton);
+  final bool showRedeemButton;
 
   @override
   Widget build(BuildContext context) {
@@ -159,8 +162,10 @@ class _BalancePointsWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Spacer(),
-                const ReplacePointsFloatingButtonWidget(),
+                if (showRedeemButton) ...[
+                  const Spacer(),
+                  const ReplacePointsFloatingButtonWidget(),
+                ],
               ],
             ),
           );

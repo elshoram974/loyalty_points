@@ -22,7 +22,7 @@ class CodeAddedScreen extends StatelessWidget {
       appBar: const MyAppBar(),
       body: Column(
         children: [
-          const PointsBalanceWidget(isUncategorized: false),
+          const PointsBalanceWidget(),
           Expanded(
             child: Center(
               child: Text(

@@ -5,8 +5,8 @@ import 'package:loyalty_points/core/utils/constants/app_constants.dart';
 import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
 
 import '../../../../app_info.dart';
+import '../../../../core/shared/cancel_confirm_buttons_widget.dart';
 import '../../../../core/shared/custom_scaffold.dart';
-import '../../../../core/shared/filled_button.dart';
 import '../../../../core/shared/points_balance_widget.dart';
 
 import '../../../../core/utils/config/routes/routes.dart';
@@ -58,17 +58,11 @@ class ReplacementScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Center(
-                child: CustomFilledButton(
-                  minimumSize: const Size(375, 50),
-                  borderRadius: BorderRadius.circular(AppConst.radiusSmall),
-                  onPressed:
-                      pointsHelper.chooseBasedOnPointsNeed<void Function()?>(
-                    null,
-                    () => Get.toNamed(AppRoute.checkoutScreen),
-                  ),
-                  text: localeLang(context).confirm,
-                  style: context.textTheme.headlineMedium,
+              CancelAndConfirmButtons(
+                onPressConfirm:
+                    pointsHelper.chooseBasedOnPointsNeed<void Function()?>(
+                  null,
+                  () => Get.toNamed(AppRoute.checkoutScreen),
                 ),
               ),
               const SizedBox(height: 50),

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../app_info.dart';
 import '../../../../core/status/status.dart';
+import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_strings.dart';
@@ -11,10 +12,11 @@ import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../../../core/utils/services/push_notification_service.dart';
+import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../../../auth/data/models/user_model.dart';
 import '../../domain/repositories/dashboard_repositories.dart';
 
-const int _initSelectedPage = 0;
+const int initSelectedPage = 0;
 
 abstract class DashboardController extends GetxController {
   DashboardController();
@@ -38,7 +40,11 @@ abstract class DashboardController extends GetxController {
 
 class DashboardControllerImp extends DashboardController {
   final DashboardRepositories repo;
-  DashboardControllerImp({required this.repo});
+  final ConfigController configController;
+  DashboardControllerImp({
+    required this.repo,
+    required this.configController,
+  });
 
   bool _isLoadingUserData = true;
 
@@ -50,7 +56,7 @@ class DashboardControllerImp extends DashboardController {
   @override
   UserModel? get user => _user;
 
-  int _selectedScreen = _initSelectedPage;
+  int _selectedScreen = initSelectedPage;
   @override
   int get selectedScreen => _selectedScreen;
 
@@ -68,7 +74,10 @@ class DashboardControllerImp extends DashboardController {
 
   @override
   Future<void> getAllData([bool isReload = false]) async {
-    await getUserData(isReload);
+    await Future.wait([
+      configController.getConfigData(isReload),
+      getUserData(isReload),
+    ]);
     if (user != null) updateFCMToken();
   }
 
@@ -132,9 +141,10 @@ class DashboardControllerImp extends DashboardController {
 
   DateTime _back = DateTime.now();
   @override
-  void onPopInvoked() {
-    if (_selectedScreen != _initSelectedPage) {
-      return changeHomeScreen(_initSelectedPage);
+  void onPopInvoked() async {
+    if (_selectedScreen != initSelectedPage) {
+      if (_selectedScreen == DashboardTabsEnum.addPoints.index) return;
+      return changeHomeScreen(initSelectedPage);
     }
 
     if (DateTime.now().difference(_back) < const Duration(seconds: 2)) {

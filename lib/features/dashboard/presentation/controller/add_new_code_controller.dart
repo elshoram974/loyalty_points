@@ -20,7 +20,7 @@ abstract class AddNewCodeController extends GetxController {
 
   Future<void> scanCode();
 
-  void onPopInvoked();
+  Future<void> onPopInvoked();
 }
 
 class AddNewCodeControllerImp extends AddNewCodeController {
@@ -35,8 +35,6 @@ class AddNewCodeControllerImp extends AddNewCodeController {
 
   @override
   bool get isLoading => _isLoading;
-
-  bool _isBack = false;
 
   @override
   void onClose() {
@@ -62,13 +60,12 @@ class AddNewCodeControllerImp extends AddNewCodeController {
   }
 
   @override
-  void onPopInvoked() async {
-    if (_isBack) return;
+  Future<void> onPopInvoked() async {
+    bool canBack = true;
     if (textController.text.trim().isNotEmpty) {
-      _isBack = await ShowMyDialog.back() == true;
-      if (_isBack) Get.back();
-    } else {
-      Get.back();
+      canBack = await ShowMyDialog.back() == true;
+      textController.text = '';
     }
+    if (canBack) dashboardController.changeHomeScreen(initSelectedPage);
   }
 }
