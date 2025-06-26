@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:loyalty_points/core/utils/extensions/date_ex.dart';
 import 'package:loyalty_points/core/utils/extensions/num_ex.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/config/controller/config_controller.dart';
@@ -29,12 +28,12 @@ class PointsDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(AppConst.paddingDefault),
         children: [
           _DetailsCard(
-              icon: Icons.history,
-              title: localeLang(context).lastUpdate,
-              value: intl.DateFormat.yMMMd(
+            icon: Icons.history,
+            title: localeLang(context).lastUpdate,
+            value: intl.DateFormat.yMMMd(
               Get.find<ConfigController>().locale.languageCode,
-            ).format(points.updatedAt!),),
-          
+            ).format(points.updatedAt!),
+          ),
           _DetailsCard(
             icon: points.orderStatus.icon,
             title: localeLang(context).status,
@@ -46,7 +45,7 @@ class PointsDetailsScreen extends StatelessWidget {
             title: localeLang(context).points,
             value: points.points.withSeparator,
           ),
-            _DetailsCard(
+          _DetailsCard(
             icon: Icons.calendar_month_outlined,
             title: localeLang(context).date,
             value: intl.DateFormat.yMMMd(

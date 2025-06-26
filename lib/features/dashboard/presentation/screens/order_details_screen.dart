@@ -33,7 +33,7 @@ class OrdersDetailsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(AppConst.paddingDefault),
         children: [
-          // DateContainerWidget(date: order.date),
+          // DateContainerWidget(date: order.date)
           _DetailsCard(
             icon: Icons.calendar_month_outlined,
             title: localeLang(context).date,
@@ -71,7 +71,13 @@ class OrdersDetailsScreen extends StatelessWidget {
                 .paymentMethodNumber(order.paymentMethod.name),
             value: order.phone.toString(),
             valueDirection: TextDirection.ltr,
-          ),
+          ),   
+          _DetailsCard(
+            title: localeLang(context).note,
+           value: order.adminNote ?? localeLang(context).noNotes,
+           icon: Icons.notes_outlined,
+           ),
+
           if (order.imageUrl != null) ...[
             const SizedBox(height: 16),
             Text(

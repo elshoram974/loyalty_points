@@ -234,12 +234,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "noInternetConnection": MessageLookupByLibrary.simpleMessage(
       "No internet connection",
     ),
+    "noNotes": MessageLookupByLibrary.simpleMessage("No notes"),
     "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
       "No user found for that email.",
     ),
     "notEnoughPointsToRedeem": m5,
     "notExist": MessageLookupByLibrary.simpleMessage("Not Exist"),
     "notSamePass": MessageLookupByLibrary.simpleMessage("Not same password"),
+    "note": MessageLookupByLibrary.simpleMessage("Note"),
     "orderNumber": MessageLookupByLibrary.simpleMessage("Order Number"),
     "order_details": MessageLookupByLibrary.simpleMessage("Order details"),
     "orders": MessageLookupByLibrary.simpleMessage("Orders"),

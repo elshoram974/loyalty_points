@@ -273,6 +273,8 @@
             }
         }
     },
+    "noNotes": "No notes",
+    "note":"Note", 
     "search": "Search",
     "error": "Error",
     "understood": "Understood",

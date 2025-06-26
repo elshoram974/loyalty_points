@@ -226,6 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noInternetConnection": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت",
     ),
+    "noNotes": MessageLookupByLibrary.simpleMessage("لا يوجد ملاحظات"),
     "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على مستخدم لهذا البريد الإلكتروني.",
     ),
@@ -234,6 +235,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "notSamePass": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير متطابقة",
     ),
+    "note": MessageLookupByLibrary.simpleMessage("ملاحظه"),
     "orderNumber": MessageLookupByLibrary.simpleMessage("رقم الطلب"),
     "order_details": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
     "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),

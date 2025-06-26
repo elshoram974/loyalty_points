@@ -1297,6 +1297,16 @@ class S {
     );
   }
 
+  /// `No notes`
+  String get noNotes {
+    return Intl.message('No notes', name: 'noNotes', desc: '', args: []);
+  }
+
+  /// `Note`
+  String get note {
+    return Intl.message('Note', name: 'note', desc: '', args: []);
+  }
+
   /// `Search`
   String get search {
     return Intl.message('Search', name: 'search', desc: '', args: []);

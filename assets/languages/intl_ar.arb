@@ -267,6 +267,8 @@
             }
         }
     },
+    "noNotes": "لا يوجد ملاحظات",
+    "note":"ملاحظه",
     "paymentMethod": "طريقة الدفع",
     "image_for_order": "صورة التحويل ",
     "edit_profile_image": "تعديل صورة الملف الشخصي",
