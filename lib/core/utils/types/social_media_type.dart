@@ -2,10 +2,16 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../config/locale/local_lang.dart';
+
 abstract class SocialMediaType extends Equatable {
   final String url;
 
+  String get type;
+
   String get name;
+  
+  String get description;
 
   IconData get icon;
 
@@ -22,7 +28,7 @@ abstract class SocialMediaType extends Equatable {
   static SocialMediaType? fromType(String type, String url) {
     final List<SocialMediaType> types = allTypes(url);
     for (SocialMediaType t in types) {
-      if (t.name == type) return t;
+      if (t.type == type) return t;
     }
     return null;
   }
@@ -30,43 +36,67 @@ abstract class SocialMediaType extends Equatable {
   const SocialMediaType(this.url);
 
   @override
-  List<Object?> get props => [url, name, icon];
+  List<Object?> get props => [url, type, icon];
 }
 
 class TikTokSocial extends SocialMediaType {
   const TikTokSocial(super.url);
   @override
-  String get name => 'tiktok';
+  String get type => 'tiktok';
 
   @override
   IconData get icon => FontAwesomeIcons.tiktok;
+  
+  @override
+  String get description => localeLang().contactUsWithTiktok;
+  
+  @override
+  String get name => localeLang().tiktok;
 }
 
 class FacebookSocial extends SocialMediaType {
   const FacebookSocial(super.url);
   @override
-  String get name => 'facebook';
+  String get type => 'facebook';
 
   @override
   IconData get icon => FontAwesomeIcons.facebook;
+  
+  @override
+  String get description => localeLang().contactUsWithFacebook;
+  
+  @override
+  String get name => localeLang().facebook;
 }
 
 class InstagramSocial extends SocialMediaType {
   const InstagramSocial(super.url);
   @override
-  String get name => 'instagram';
+  String get type => 'instagram';
 
   @override
   IconData get icon => FontAwesomeIcons.instagram;
+  
+  @override
+  String get description => localeLang().contactUsWithInstagram;
+  
+  @override
+  String get name => localeLang().instagram;
 }
 
 class TelegramSocial extends SocialMediaType {
   const TelegramSocial(super.url);
   @override
-  String get name => 'telegram';
+  String get type => 'telegram';
 
   @override
   IconData get icon => FontAwesomeIcons.telegram;
+  
+  @override
+  String get description => localeLang().contactUsWithTelegram;
+  
+  @override
+  String get name => localeLang().Telegram;
 }
 
 class WhatsappSocial extends SocialMediaType {
@@ -76,8 +106,15 @@ class WhatsappSocial extends SocialMediaType {
         );
 
   @override
-  String get name => 'whatsapp';
+  String get type => 'whatsapp';
 
   @override
   IconData get icon => FontAwesomeIcons.whatsapp;
+  
+  @override
+  String get description => localeLang().contactUsWithWhatsApp;
+  
+  @override
+  // TODO: implement name
+  String get name => localeLang().whatsapp;
 }

@@ -55,6 +55,91 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Social Media`
+  String get socialMedia {
+    return Intl.message(
+      'Social Media',
+      name: 'socialMedia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact us`
+  String get contactUs {
+    return Intl.message('Contact us', name: 'contactUs', desc: '', args: []);
+  }
+
+  /// `WhatsApp`
+  String get whatsapp {
+    return Intl.message('WhatsApp', name: 'whatsapp', desc: '', args: []);
+  }
+
+  /// `Contact us with WhatsApp`
+  String get contactUsWithWhatsApp {
+    return Intl.message(
+      'Contact us with WhatsApp',
+      name: 'contactUsWithWhatsApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact us with Telegram`
+  String get contactUsWithTelegram {
+    return Intl.message(
+      'Contact us with Telegram',
+      name: 'contactUsWithTelegram',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Telegram`
+  String get Telegram {
+    return Intl.message('Telegram', name: 'Telegram', desc: '', args: []);
+  }
+
+  /// `Contact us with Instagram`
+  String get contactUsWithInstagram {
+    return Intl.message(
+      'Contact us with Instagram',
+      name: 'contactUsWithInstagram',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Instagram`
+  String get instagram {
+    return Intl.message('Instagram', name: 'instagram', desc: '', args: []);
+  }
+
+  /// `Contact us with Facebook`
+  String get contactUsWithFacebook {
+    return Intl.message(
+      'Contact us with Facebook',
+      name: 'contactUsWithFacebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Facebook`
+  String get facebook {
+    return Intl.message('Facebook', name: 'facebook', desc: '', args: []);
+  }
+
+  /// `Contact us with TikTok`
+  String get contactUsWithTiktok {
+    return Intl.message(
+      'Contact us with TikTok',
+      name: 'contactUsWithTiktok',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `TikTok`
   String get tiktok {
     return Intl.message('TikTok', name: 'tiktok', desc: '', args: []);

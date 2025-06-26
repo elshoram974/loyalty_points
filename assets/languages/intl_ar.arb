@@ -1,4 +1,16 @@
 {
+
+    "socialMedia": "وسائل التواصل الاجتماعي",
+    "contactUs": "تواصل معنا",
+    "whatsapp": "واتساب",
+    "contactUsWithWhatsApp": "تواصل معنا عبر الواتساب",
+    "contactUsWithTelegram": "تواصل معنا عبر التليجرام",
+    "Telegram": "التليجرام",
+    "contactUsWithInstagram": "تواصل معنا عبر الانستجرام",
+    "instagram": "انستجرام",
+    "contactUsWithFacebook": "تواصل معنا عبر الفيسبوك",
+    "facebook": "فيسبوك",
+    "contactUsWithTiktok": "تواصل معنا عبر التيك توك",
     "tiktok": "تيك توك",
     "selectCountry": "يجب اختيار الدولة",
     "selectGovernorate": "يجب اختيار المحافظة",

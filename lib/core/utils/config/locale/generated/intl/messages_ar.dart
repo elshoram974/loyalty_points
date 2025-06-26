@@ -69,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseWaitThisMayTakeSomeTime": MessageLookupByLibrary.simpleMessage(
       "يرجي الانتظار ، فقد يستغرق ذلك بعض الوقت ",
     ),
+    "Telegram": MessageLookupByLibrary.simpleMessage("التليجرام"),
     "accepted": MessageLookupByLibrary.simpleMessage("مقبول"),
     "accountAlreadyExistsForThatEmail": MessageLookupByLibrary.simpleMessage(
       "الحساب موجود بالفعل لهذا البريد الإلكتروني.",
@@ -123,6 +124,22 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "consent": MessageLookupByLibrary.simpleMessage(
       "من خلال استخدامك للتطبيق، فإنك توافق على معالجة معلوماتك كما هو موضح في سياسة الخصوصية هذه حالياً وكما سيتم تعديلها من قبلنا.",
+    ),
+    "contactUs": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
+    "contactUsWithFacebook": MessageLookupByLibrary.simpleMessage(
+      "تواصل معنا عبر الفيسبوك",
+    ),
+    "contactUsWithInstagram": MessageLookupByLibrary.simpleMessage(
+      "تواصل معنا عبر الانستجرام",
+    ),
+    "contactUsWithTelegram": MessageLookupByLibrary.simpleMessage(
+      "تواصل معنا عبر التليجرام",
+    ),
+    "contactUsWithTiktok": MessageLookupByLibrary.simpleMessage(
+      "تواصل معنا عبر التيك توك",
+    ),
+    "contactUsWithWhatsApp": MessageLookupByLibrary.simpleMessage(
+      "تواصل معنا عبر الواتساب",
     ),
     "couldNotLaunch": MessageLookupByLibrary.simpleMessage("تعذر الفتح"),
     "country": MessageLookupByLibrary.simpleMessage("الدولة"),
@@ -191,6 +208,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "أدخل اسم المورد",
     ),
     "error": MessageLookupByLibrary.simpleMessage("خطأ"),
+    "facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
     "fillField": MessageLookupByLibrary.simpleMessage("يرجى ملء هذا الحقل"),
     "findCode": MessageLookupByLibrary.simpleMessage("إيجاد الكود"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
@@ -208,6 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "إذا عدت الآن، ستفقد جميع البيانات!",
     ),
     "image_for_order": MessageLookupByLibrary.simpleMessage("صورة التحويل "),
+    "instagram": MessageLookupByLibrary.simpleMessage("انستجرام"),
     "instapay": MessageLookupByLibrary.simpleMessage("انستاباي"),
     "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم الهاتف غير صحيح",
@@ -352,6 +371,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "showPassword": MessageLookupByLibrary.simpleMessage("إظهار كلمة المرور"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "socialMedia": MessageLookupByLibrary.simpleMessage(
+      "وسائل التواصل الاجتماعي",
+    ),
     "sslCertificateNotTrusted": MessageLookupByLibrary.simpleMessage(
       "شهادة SSL غير موثوقة.",
     ),
@@ -430,6 +452,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "wallet": MessageLookupByLibrary.simpleMessage("المحفظة الإلكترونية"),
     "welcomeToYou": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
     "welcome_to_businessName": m17,
+    "whatsapp": MessageLookupByLibrary.simpleMessage("واتساب"),
     "wrongPasswordProvidedForThatUser": MessageLookupByLibrary.simpleMessage(
       "تم تقديم كلمة مرور خاطئة لهذا المستخدم.",
     ),

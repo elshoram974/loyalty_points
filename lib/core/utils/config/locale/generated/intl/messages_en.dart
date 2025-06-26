@@ -69,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseWaitThisMayTakeSomeTime": MessageLookupByLibrary.simpleMessage(
       "Please wait, this may take some time",
     ),
+    "Telegram": MessageLookupByLibrary.simpleMessage("Telegram"),
     "accepted": MessageLookupByLibrary.simpleMessage("accepted"),
     "accountAlreadyExistsForThatEmail": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",
@@ -125,6 +126,22 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "consent": MessageLookupByLibrary.simpleMessage(
       "By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.",
+    ),
+    "contactUs": MessageLookupByLibrary.simpleMessage("Contact us"),
+    "contactUsWithFacebook": MessageLookupByLibrary.simpleMessage(
+      "Contact us with Facebook",
+    ),
+    "contactUsWithInstagram": MessageLookupByLibrary.simpleMessage(
+      "Contact us with Instagram",
+    ),
+    "contactUsWithTelegram": MessageLookupByLibrary.simpleMessage(
+      "Contact us with Telegram",
+    ),
+    "contactUsWithTiktok": MessageLookupByLibrary.simpleMessage(
+      "Contact us with TikTok",
+    ),
+    "contactUsWithWhatsApp": MessageLookupByLibrary.simpleMessage(
+      "Contact us with WhatsApp",
     ),
     "couldNotLaunch": MessageLookupByLibrary.simpleMessage("Could not launch"),
     "country": MessageLookupByLibrary.simpleMessage("Country"),
@@ -195,6 +212,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter your provider name",
     ),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
+    "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
     "fillField": MessageLookupByLibrary.simpleMessage("fill this field"),
     "findCode": MessageLookupByLibrary.simpleMessage("Find Code"),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forget password ?"),
@@ -214,6 +232,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "If you return now, you will lose all data!",
     ),
     "image_for_order": MessageLookupByLibrary.simpleMessage("Image for order"),
+    "instagram": MessageLookupByLibrary.simpleMessage("Instagram"),
     "instapay": MessageLookupByLibrary.simpleMessage("Instapay"),
     "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "Invalid phone number",
@@ -364,6 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "showPassword": MessageLookupByLibrary.simpleMessage("Show password"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+    "socialMedia": MessageLookupByLibrary.simpleMessage("Social Media"),
     "sslCertificateNotTrusted": MessageLookupByLibrary.simpleMessage(
       "The SSL certificate is not trusted.",
     ),
@@ -445,6 +465,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "wallet": MessageLookupByLibrary.simpleMessage("E-wallet"),
     "welcomeToYou": MessageLookupByLibrary.simpleMessage("Welcome to you"),
     "welcome_to_businessName": m17,
+    "whatsapp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
     "wrongPasswordProvidedForThatUser": MessageLookupByLibrary.simpleMessage(
       "Wrong password provided for that user.",
     ),

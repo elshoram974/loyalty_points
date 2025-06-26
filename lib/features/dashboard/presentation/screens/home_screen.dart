@@ -9,7 +9,6 @@ import '../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../controller/dashboard_controller.dart';
 import '../widgets/home_widgets/abusing_code.dart';
-import '../widgets/home_widgets/social_media_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -32,7 +31,6 @@ class HomeScreen extends StatelessWidget {
               );
             },
           ),
-          const SocialMediaWidget(),
           const PointsBalanceWidget(),
           const AbusingCode()
         ],

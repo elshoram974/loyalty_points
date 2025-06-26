@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../app_info.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
@@ -8,8 +9,10 @@ import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
+import '../../../../core/utils/types/social_media_type.dart';
 import '../controller/dashboard_controller.dart';
 import '../widgets/drawer_widgets/tile_button_widget.dart';
+import 'contact_us.dart';
 import 'privacy_screen.dart';
 import 'terms_screen.dart';
 
@@ -18,6 +21,9 @@ class MenuScreen extends GetView<DashboardController> {
 
   @override
   Widget build(BuildContext context) {
+    final List<SocialMediaType> items = List.unmodifiable(
+      AppInfo.config?.socialMedia ?? [],
+    );
     return CustomScaffold(
       body: ListView(
         padding: const EdgeInsets.all(AppConst.paddingDefault),
@@ -48,6 +54,12 @@ class MenuScreen extends GetView<DashboardController> {
             icon: Icons.description_outlined,
             title: localeLang(context).privacy_policy,
             onTap: () => Get.to(() => const PrivacyScreen()),
+          ),
+          if(items.isNotEmpty)
+          TileButtonWidget(
+            icon: Icons.contact_support_sharp,
+            title: localeLang(context).contactUs,
+            onTap: () => Get.to(() => ContactUsScreen(items)),
           ),
 
           TileButtonWidget(
