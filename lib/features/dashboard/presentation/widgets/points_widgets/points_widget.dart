@@ -8,8 +8,8 @@ import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import 'package:intl/intl.dart' as intl;
 
-class PointsWidget extends StatelessWidget {
-  const PointsWidget({
+class PointsAndOrdersWidget extends StatelessWidget {
+  const PointsAndOrdersWidget({
     super.key,
     required this.text,
     required this.points,
@@ -39,6 +39,7 @@ class PointsWidget extends StatelessWidget {
             vertical: AppConst.paddingSmall,
           ),
           child: Row(
+            
             spacing: AppConst.paddingSmall,
             children: [
               Image.asset(
@@ -50,22 +51,27 @@ class PointsWidget extends StatelessWidget {
                 child: Row(
                   spacing: AppConst.paddingSmall,
                   children: [
-                    Text(
-                      text,
-                      style: context.textTheme.labelLarge?.copyWith(
-                        color: color,
-                        fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Text(
+                        text,
+                        style: context.textTheme.labelLarge?.copyWith(
+                          color: color,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     if (price != null)
-                      Expanded(
+                      Expanded(                      
                         child: PointsBuilderWidget(
                           builder: (_, __, helper) {
-                            return Text(
-                              '${price!.withSeparator} ${helper.config?.currency}',
-                              textAlign: TextAlign.center,
-                              style: context.textTheme.labelLarge
-                                  ?.copyWith(color: context.theme.primaryColor),
+                            return Padding(
+                              padding: const EdgeInsets.only(right: AppConst.paddingSmall),
+                              child: Text(    
+                                '${price!.withSeparator} ${helper.config?.currency}',
+                               // textAlign: TextAlign.center,
+                                style: context.textTheme.labelLarge
+                                    ?.copyWith(color: context.theme.primaryColor),
+                              ),
                             );
                           },
                         ),

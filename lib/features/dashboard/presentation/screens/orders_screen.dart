@@ -5,15 +5,14 @@ import '../../../../core/shared/custom_loading.dart';
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/shared/my_sliver_pinned_tabs.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/types/order_status_enum.dart';
 import '../../../../core/utils/types/payment_methods.dart';
 import '../../domain/entity/order_entity.dart';
 import '../controller/dashboard_controller.dart';
 import '../controller/orders_controller.dart';
-import '../widgets/my_custom_divider.dart';
-import '../widgets/orders_widgets/orders_widget.dart';
-import '../widgets/our_partners_container_widget.dart';
+import '../widgets/points_widgets/points_widget.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
@@ -43,7 +42,7 @@ class OrdersScreen extends StatelessWidget {
                 // const SliverToBoxAdapter(
                 //   child: PointsBalanceWidget(isUncategorized: false),
                 // ),
-                const SliverToBoxAdapter(child: OurPartnersWidget()),
+                // const SliverToBoxAdapter(child: OurPartnersWidget()),
                 MySliverPinnedTaps(
                   tabs: [Tab(text: localeLang(context).orders)],
                 ),
@@ -79,10 +78,19 @@ class OrdersScreen extends StatelessWidget {
                         SliverList.separated(
                           addRepaintBoundaries: false,
                           itemCount: orders.length,
-                          separatorBuilder: (_, i) => const MyCustomDivider(),
+                          separatorBuilder: (_, i) => const SizedBox(),
                           itemBuilder: (_, i) => CustomLoadingWidget(
                             isLoading: c.isInitialLoading,
-                            child: OrdersWidget(order: orders[i]),
+                            child: PointsAndOrdersWidget(
+                                text: orders[i].orderStatus.name,
+                                points: orders[i].points,
+                                createdDate: orders[i].date,
+                                color: orders[i].orderStatus.color,
+                                price: orders[i].price,
+                                onTap: () => Get.toNamed(
+                                      AppRoute.ordersDetails,
+                                      arguments: orders[i],
+                                    )),
                           ),
                         ),
                         if (c.hasMoreItem)
@@ -91,7 +99,13 @@ class OrdersScreen extends StatelessWidget {
                               const SizedBox(height: AppConst.paddingDefault),
                               CustomLoadingWidget(
                                 isLoading: true,
-                                child: OrdersWidget(order: orders[0]),
+                                child: PointsAndOrdersWidget(
+                                  text: 'accepted',
+                                  points: 5432,
+                                  color: Colors.white,
+                                  createdDate: DateTime.now(),
+                                  price: 0.0,
+                                ),
                               )
                             ]),
                           ),

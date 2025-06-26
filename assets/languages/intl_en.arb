@@ -217,6 +217,7 @@
     "enterCode": "Enter the code",
     "enterCodeOnWebsiteOrApp": "Enter the code on the website or the app",
     "removeSticker": "Remove the sticker",
+    "lastUpdate": "Last Update",
     "removeStickerFromApp": "Remove the sticker from above {appName}",
     "@removeStickerFromApp": {
         "placeholders": {
@@ -278,7 +279,7 @@
     "save": "Save",
     "totalOrder": "Total Order",
     "selectMonth": "Select Month",
-    "date": "Date",
+    "date": "creation date",
     "selectDate": "Select date",
     "deliveryMan": "Delivery Man",
     "distributorOrStore": "Distributor / Store",

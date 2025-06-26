@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:loyalty_points/features/dashboard/presentation/screens/order_details_screen.dart';
 import 'package:loyalty_points/features/dashboard/presentation/screens/points_details_screen.dart';
 import 'package:loyalty_points/features/dashboard/presentation/screens/update_profile_screen.dart';
 
@@ -42,6 +43,8 @@ abstract final class AppRoute {
   static const String profileDetails = "/profile-details";
   static const String editPassword = "/edit-password";
   static const String pointsDetails = "/points-details";
+  static const String ordersDetails = "/orders-details";
+
 
   // static const String OrderDetails = '/OrderDetails';
 
@@ -109,6 +112,10 @@ abstract final class AppRoute {
         GetPage(
           name: pointsDetails,
           page: () => PointsDetailsScreen(points: Get.arguments),
+        ),
+        GetPage(
+          name: ordersDetails,
+          page: () => OrdersDetailsScreen(order: Get.arguments),
         ),
       ];
 }

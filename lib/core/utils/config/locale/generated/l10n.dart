@@ -897,6 +897,16 @@ class S {
     );
   }
 
+  /// `Points Details`
+  String get pointsDetails {
+    return Intl.message(
+      'Points Details',
+      name: 'pointsDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please wait, this may take some time`
   String get PleaseWaitThisMayTakeSomeTime {
     return Intl.message(
@@ -1017,6 +1027,11 @@ class S {
     );
   }
 
+  /// `Last Update`
+  String get lastUpdate {
+    return Intl.message('Last Update', name: 'lastUpdate', desc: '', args: []);
+  }
+
   /// `Remove the sticker from above {appName}`
   String removeStickerFromApp(String appName) {
     return Intl.message(
@@ -1080,6 +1095,16 @@ class S {
   /// `Log Out`
   String get logout {
     return Intl.message('Log Out', name: 'logout', desc: '', args: []);
+  }
+
+  /// `Order Number`
+  String get orderNumber {
+    return Intl.message(
+      'Order Number',
+      name: 'orderNumber',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Privacy Policy`
@@ -1307,9 +1332,9 @@ class S {
     );
   }
 
-  /// `Date`
+  /// `creation date`
   String get date {
-    return Intl.message('Date', name: 'date', desc: '', args: []);
+    return Intl.message('creation date', name: 'date', desc: '', args: []);
   }
 
   /// `Select date`

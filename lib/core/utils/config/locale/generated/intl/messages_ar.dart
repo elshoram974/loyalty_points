@@ -130,7 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "current_password": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الحالية",
     ),
-    "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
+    "date": MessageLookupByLibrary.simpleMessage("تاريخ الانشاء"),
     "dateOfTerms": MessageLookupByLibrary.simpleMessage(
       "هذه الشروط والأحكام سارية اعتبارًا من 4 يونيو 2025.",
     ),
@@ -212,6 +212,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "رقم الهاتف غير صحيح",
     ),
+    "lastUpdate": MessageLookupByLibrary.simpleMessage("اخر تحديث"),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage("اكتمل التسجيل"),
@@ -233,6 +234,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "notSamePass": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير متطابقة",
     ),
+    "orderNumber": MessageLookupByLibrary.simpleMessage("رقم الطلب"),
     "order_details": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
     "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
     "ourPartners": MessageLookupByLibrary.simpleMessage("شركاؤنا"),
@@ -253,6 +255,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "points": MessageLookupByLibrary.simpleMessage("النقاط"),
     "pointsBalance": MessageLookupByLibrary.simpleMessage("رصيد النقاط"),
     "pointsConversionConfirmation": m9,
+    "pointsDetails": MessageLookupByLibrary.simpleMessage("تفاصيل النقاط"),
     "pointsEqualEgyptionPounds": m10,
     "pointsHistory": MessageLookupByLibrary.simpleMessage("سجل النقاط"),
     "pointsRedeemedSuccess": MessageLookupByLibrary.simpleMessage(

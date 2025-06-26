@@ -279,7 +279,7 @@
     "save": "حفظ",
     "totalOrder": "إجمالي الطلب",
     "selectMonth": "اختر الشهر",
-    "date": "التاريخ",
+    "date": "تاريخ الانشاء",
     "selectDate": "اختر التاريخ",
     "delivery_man": "مندوب",
     "deliveryMan": "مندوب",
@@ -314,6 +314,7 @@
             }
         }
     },
+    "lastUpdate": "اخر تحديث",
     "back": "رجوع",
     "showPassword": "إظهار كلمة المرور",
     "hidePassword": "إخفاء كلمة المرور",

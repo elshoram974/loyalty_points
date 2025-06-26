@@ -82,7 +82,7 @@ class PointsScreen extends StatelessWidget {
                           separatorBuilder: (_, i) => const SizedBox(),
                           itemBuilder: (_, i) => CustomLoadingWidget(
                             isLoading: c.isInitialLoading,
-                            child: PointsWidget(
+                            child: PointsAndOrdersWidget(
                               text: points[i].orderStatus.name,
                               points: points[i].points,
                               createdDate: points[i].date,
@@ -100,7 +100,7 @@ class PointsScreen extends StatelessWidget {
                               const SizedBox(height: AppConst.paddingDefault),
                               CustomLoadingWidget(
                                 isLoading: true,
-                                child: PointsWidget(
+                                child: PointsAndOrdersWidget(
                                   text: 'redeem',
                                   points: 5432,
                                   color: Colors.white,

@@ -132,7 +132,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "current_password": MessageLookupByLibrary.simpleMessage(
       "Current Password",
     ),
-    "date": MessageLookupByLibrary.simpleMessage("Date"),
+    "date": MessageLookupByLibrary.simpleMessage("creation date"),
     "dateOfTerms": MessageLookupByLibrary.simpleMessage(
       "These terms and conditions are effective as of 2025-06-04",
     ),
@@ -218,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "Invalid phone number",
     ),
+    "lastUpdate": MessageLookupByLibrary.simpleMessage("Last Update"),
     "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
     "login": MessageLookupByLibrary.simpleMessage("Log in"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage(
@@ -239,6 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "notEnoughPointsToRedeem": m5,
     "notExist": MessageLookupByLibrary.simpleMessage("Not Exist"),
     "notSamePass": MessageLookupByLibrary.simpleMessage("Not same password"),
+    "orderNumber": MessageLookupByLibrary.simpleMessage("Order Number"),
     "order_details": MessageLookupByLibrary.simpleMessage("Order details"),
     "orders": MessageLookupByLibrary.simpleMessage("Orders"),
     "ourPartners": MessageLookupByLibrary.simpleMessage("Our Partners"),
@@ -259,6 +261,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "points": MessageLookupByLibrary.simpleMessage("Points"),
     "pointsBalance": MessageLookupByLibrary.simpleMessage("Points Balance"),
     "pointsConversionConfirmation": m9,
+    "pointsDetails": MessageLookupByLibrary.simpleMessage("Points Details"),
     "pointsEqualEgyptionPounds": m10,
     "pointsHistory": MessageLookupByLibrary.simpleMessage("Points History"),
     "pointsRedeemedSuccess": MessageLookupByLibrary.simpleMessage(
