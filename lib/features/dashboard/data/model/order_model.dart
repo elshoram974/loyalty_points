@@ -35,7 +35,8 @@ class OrderModel extends OrderEntity {
   }) : super(
           orderStatus: OrderStatusEnum.fromString(status),
           price: double.tryParse("$equity") ?? 0,
-          date: createdAt ?? DateTime.now(),
+          createdDate: createdAt ?? DateTime.now(),
+          updatedDate: updatedAt,
           phone: paymentInfo ?? '',
           paymentMethod: PaymentMethod.fromString(paymentMethodString),
           imageUrl: imageFullUrl?.path,

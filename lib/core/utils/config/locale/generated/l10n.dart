@@ -75,39 +75,9 @@ class S {
     return Intl.message('WhatsApp', name: 'whatsapp', desc: '', args: []);
   }
 
-  /// `Contact us with WhatsApp`
-  String get contactUsWithWhatsApp {
-    return Intl.message(
-      'Contact us with WhatsApp',
-      name: 'contactUsWithWhatsApp',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Contact us with Telegram`
-  String get contactUsWithTelegram {
-    return Intl.message(
-      'Contact us with Telegram',
-      name: 'contactUsWithTelegram',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Telegram`
   String get Telegram {
     return Intl.message('Telegram', name: 'Telegram', desc: '', args: []);
-  }
-
-  /// `Contact us with Instagram`
-  String get contactUsWithInstagram {
-    return Intl.message(
-      'Contact us with Instagram',
-      name: 'contactUsWithInstagram',
-      desc: '',
-      args: [],
-    );
   }
 
   /// `Instagram`
@@ -115,28 +85,18 @@ class S {
     return Intl.message('Instagram', name: 'instagram', desc: '', args: []);
   }
 
-  /// `Contact us with Facebook`
-  String get contactUsWithFacebook {
-    return Intl.message(
-      'Contact us with Facebook',
-      name: 'contactUsWithFacebook',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Facebook`
   String get facebook {
     return Intl.message('Facebook', name: 'facebook', desc: '', args: []);
   }
 
-  /// `Contact us with TikTok`
-  String get contactUsWithTiktok {
+  /// `Contact us with {contactName}`
+  String contactUsWith(String contactName) {
     return Intl.message(
-      'Contact us with TikTok',
-      name: 'contactUsWithTiktok',
+      'Contact us with $contactName',
+      name: 'contactUsWith',
       desc: '',
-      args: [],
+      args: [contactName],
     );
   }
 

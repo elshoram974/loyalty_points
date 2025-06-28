@@ -40,7 +40,7 @@ class OrdersDetailsScreen extends StatelessWidget {
             value: intl.DateFormat.yMMMd(
               Get.find<ConfigController>().locale.languageCode,
             ).format(
-                DateTime(order.date.year, order.date.month, order.date.day)),
+                DateTime(order.createdDate.year, order.createdDate.month, order.createdDate.day)),
           ),
           _DetailsCard(
             icon: order.orderStatus.icon,

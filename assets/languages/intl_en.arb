@@ -2,14 +2,17 @@
     "socialMedia": "Social Media",
     "contactUs": "Contact us",
     "whatsapp": "WhatsApp",
-    "contactUsWithWhatsApp": "Contact us with WhatsApp",
-    "contactUsWithTelegram": "Contact us with Telegram",
     "Telegram": "Telegram",
-    "contactUsWithInstagram": "Contact us with Instagram",
     "instagram": "Instagram",
-    "contactUsWithFacebook": "Contact us with Facebook",
     "facebook": "Facebook",
-    "contactUsWithTiktok": "Contact us with TikTok",
+    "contactUsWith": "Contact us with {contactName}",
+    "@contactUsWith": {
+        "placeholders": {
+            "contactName": {
+                "type": "String"
+            }
+        }
+    },
     "tiktok": "TikTok",
     "selectCountry": "You must select a country",
     "selectGovernorate": "You must select a governorate",
@@ -286,7 +289,7 @@
         }
     },
     "noNotes": "No notes",
-    "note":"Note", 
+    "note": "Note",
     "search": "Search",
     "error": "Error",
     "understood": "Understood",
