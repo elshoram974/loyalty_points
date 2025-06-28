@@ -34,6 +34,14 @@ class OrdersDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(AppConst.paddingDefault),
         children: [
           // DateContainerWidget(date: order.date)
+           _DetailsCard(
+            icon: Icons.update,
+            title: localeLang(context).lastUpdate,
+            value: intl.DateFormat.yMMMd(
+              Get.find<ConfigController>().locale.languageCode,
+            ).format(
+                DateTime(order.updatedDate?.year?? 0  , order.updatedDate?.month??0,  order.updatedDate?.day??0)),
+          ),
           _DetailsCard(
             icon: Icons.calendar_month_outlined,
             title: localeLang(context).date,
