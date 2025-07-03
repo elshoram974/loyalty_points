@@ -202,6 +202,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "goBack": MessageLookupByLibrary.simpleMessage("العودة"),
+    "goToSetting": MessageLookupByLibrary.simpleMessage("اذهب الى الاعدادات"),
     "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
     "haveAnAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
     "hidePassword": MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),
@@ -220,6 +221,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف غير صحيح",
     ),
     "lastUpdate": MessageLookupByLibrary.simpleMessage("اخر تحديث"),
+    "locationIsDenied": MessageLookupByLibrary.simpleMessage(
+      "تم رفض صلاحيات الوصول إلى الموقع",
+    ),
+    "locationIsDeniedPermanently": MessageLookupByLibrary.simpleMessage(
+      "تم رفض صلاحيات الموقع نهائيًا ولا يمكن طلبها مرة أخرى",
+    ),
+    "locationNotAccessed": MessageLookupByLibrary.simpleMessage(
+      "الموقع غير مفعل",
+    ),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage("اكتمل التسجيل"),
@@ -259,6 +269,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "paymentMethod": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
     "paymentMethodNumber": m8,
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
+    "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
+      "يرجى الذهاب إلى تفعيل موقعك",
+    ),
     "point": MessageLookupByLibrary.simpleMessage("نقطة"),
     "point_number": m9,
     "points": MessageLookupByLibrary.simpleMessage("النقاط"),

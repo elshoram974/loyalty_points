@@ -206,6 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forget password ?"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
+    "goToSetting": MessageLookupByLibrary.simpleMessage("Go to settings"),
     "governorate": MessageLookupByLibrary.simpleMessage("Governorate"),
     "haveAnAccount": MessageLookupByLibrary.simpleMessage("Have an account ?"),
     "hidePassword": MessageLookupByLibrary.simpleMessage("Hide password"),
@@ -226,6 +227,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Invalid phone number",
     ),
     "lastUpdate": MessageLookupByLibrary.simpleMessage("Last Update"),
+    "locationIsDenied": MessageLookupByLibrary.simpleMessage(
+      "Location permissions are denied",
+    ),
+    "locationIsDeniedPermanently": MessageLookupByLibrary.simpleMessage(
+      "Location permissions are permanently denied",
+    ),
+    "locationNotAccessed": MessageLookupByLibrary.simpleMessage(
+      "Location not accessed",
+    ),
     "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
     "login": MessageLookupByLibrary.simpleMessage("Log in"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage(
@@ -265,6 +275,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment method"),
     "paymentMethodNumber": m8,
     "pending": MessageLookupByLibrary.simpleMessage("pending"),
+    "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
+      "Please go to verify your location",
+    ),
     "point": MessageLookupByLibrary.simpleMessage("point"),
     "point_number": m9,
     "points": MessageLookupByLibrary.simpleMessage("Points"),
