@@ -55,6 +55,56 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Location permissions are permanently denied`
+  String get locationIsDeniedPermanently {
+    return Intl.message(
+      'Location permissions are permanently denied',
+      name: 'locationIsDeniedPermanently',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permissions are denied`
+  String get locationIsDenied {
+    return Intl.message(
+      'Location permissions are denied',
+      name: 'locationIsDenied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please go to verify your location`
+  String get pleaseGoToVerifyYourLocation {
+    return Intl.message(
+      'Please go to verify your location',
+      name: 'pleaseGoToVerifyYourLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location not accessed`
+  String get locationNotAccessed {
+    return Intl.message(
+      'Location not accessed',
+      name: 'locationNotAccessed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to settings`
+  String get goToSetting {
+    return Intl.message(
+      'Go to settings',
+      name: 'goToSetting',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Social Media`
   String get socialMedia {
     return Intl.message(

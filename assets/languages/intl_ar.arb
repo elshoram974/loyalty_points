@@ -1,4 +1,9 @@
 {
+    "locationIsDeniedPermanently":"تم رفض صلاحيات الموقع نهائيًا ولا يمكن طلبها مرة أخرى",
+    "locationIsDenied":"تم رفض صلاحيات الوصول إلى الموقع",
+    "pleaseGoToVerifyYourLocation": "يرجى الذهاب إلى تفعيل موقعك",
+    "locationNotAccessed": "الموقع غير مفعل",
+    "goToSetting": "اذهب الى الاعدادات",
     "socialMedia": "وسائل التواصل الاجتماعي",
     "contactUs": "تواصل معنا",
     "whatsapp": "واتساب",

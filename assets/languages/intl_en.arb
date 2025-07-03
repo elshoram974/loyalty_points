@@ -1,4 +1,9 @@
 {
+    "locationIsDeniedPermanently":"Location permissions are permanently denied",
+    "locationIsDenied": "Location permissions are denied",
+    "pleaseGoToVerifyYourLocation": "Please go to verify your location",
+    "locationNotAccessed": "Location not accessed",
+    "goToSetting": "Go to settings",
     "socialMedia": "Social Media",
     "contactUs": "Contact us",
     "whatsapp": "WhatsApp",
