@@ -29,40 +29,42 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m3(langName) => "تغيير اللغة إلى ${langName}";
 
-  static String m4(paymentMethodName) =>
+  static String m4(contactName) => "تواصل معنا عبر ${contactName}";
+
+  static String m5(paymentMethodName) =>
       "أدخل رقم ${paymentMethodName} الخاص بك";
 
-  static String m5(userPoints, pointsNeeded) =>
+  static String m6(userPoints, pointsNeeded) =>
       "أنت تملك فقط ${userPoints} نقطة، وتحتاج إلى ${pointsNeeded} نقطة إضافية لاستبدال النقاط.";
 
-  static String m6(pageName) => "الصفحة \'${pageName}\' غير موجودة في الصفحات";
+  static String m7(pageName) => "الصفحة \'${pageName}\' غير موجودة في الصفحات";
 
-  static String m7(paymentMethodName) => "رقم ${paymentMethodName}";
+  static String m8(paymentMethodName) => "رقم ${paymentMethodName}";
 
-  static String m8(pointNumber) => " ${pointNumber} نقطة";
+  static String m9(pointNumber) => " ${pointNumber} نقطة";
 
-  static String m9(points, balance, currency, remainingPoints) =>
+  static String m10(points, balance, currency, remainingPoints) =>
       "سوف تقوم بتحويل ${points} نقطة إلى ${balance} ${currency}\nالنقاط المتبقية بعد العملية: ${remainingPoints} نقطة";
 
-  static String m10(point, pound) => "${point} نقطة = ${pound} جنيه مصري";
+  static String m11(point, pound) => "${point} نقطة = ${pound} جنيه مصري";
 
-  static String m11(appName) =>
+  static String m12(appName) =>
       "تنطبق سياسة الخصوصية هذه على تطبيق ${appName}  على الأجهزة المحمولة كمزود خدمة مجاني. هذا التطبيق مخصص للاستخدام كما هو.";
 
-  static String m12(appName) => "قم بإزالة الملصق من فوق ${appName}";
+  static String m13(appName) => "قم بإزالة الملصق من فوق ${appName}";
 
-  static String m13(pound, point, currency) =>
+  static String m14(pound, point, currency) =>
       "هل أنت متأكد أنك تريد استبدال ${point} من النقاط مقابل ${pound} ${currency}؟";
 
-  static String m14(appName) =>
+  static String m15(appName) =>
       "تنطبق هذه الشروط والأحكام على تطبيق ${appName} للأجهزة المحمولة كمزود خدمة مجاني.";
 
-  static String m15(appName, minPoint) =>
+  static String m16(appName, minPoint) =>
       "لاستبدال نقاطك في ${appName} يجب أن يكون لديك ${minPoint} نقطه فأكثر ";
 
-  static String m16(paymentName) => "تحويل إلى ${paymentName}";
+  static String m17(paymentName) => "تحويل إلى ${paymentName}";
 
-  static String m17(businessName) => "مرحبا بك في ${businessName}";
+  static String m18(businessName) => "مرحبا بك في ${businessName}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -126,21 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "من خلال استخدامك للتطبيق، فإنك توافق على معالجة معلوماتك كما هو موضح في سياسة الخصوصية هذه حالياً وكما سيتم تعديلها من قبلنا.",
     ),
     "contactUs": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
-    "contactUsWithFacebook": MessageLookupByLibrary.simpleMessage(
-      "تواصل معنا عبر الفيسبوك",
-    ),
-    "contactUsWithInstagram": MessageLookupByLibrary.simpleMessage(
-      "تواصل معنا عبر الانستجرام",
-    ),
-    "contactUsWithTelegram": MessageLookupByLibrary.simpleMessage(
-      "تواصل معنا عبر التليجرام",
-    ),
-    "contactUsWithTiktok": MessageLookupByLibrary.simpleMessage(
-      "تواصل معنا عبر التيك توك",
-    ),
-    "contactUsWithWhatsApp": MessageLookupByLibrary.simpleMessage(
-      "تواصل معنا عبر الواتساب",
-    ),
+    "contactUsWith": m4,
     "couldNotLaunch": MessageLookupByLibrary.simpleMessage("تعذر الفتح"),
     "country": MessageLookupByLibrary.simpleMessage("الدولة"),
     "couponsHistory": MessageLookupByLibrary.simpleMessage("سجل القسائم"),
@@ -182,7 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterNewPassword": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة مرور جديدة",
     ),
-    "enterPaymentMethodNumber": m4,
+    "enterPaymentMethodNumber": m5,
     "enterThePassword": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة المرور",
     ),
@@ -214,6 +202,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "goBack": MessageLookupByLibrary.simpleMessage("العودة"),
+    "goToSetting": MessageLookupByLibrary.simpleMessage("اذهب الى الاعدادات"),
     "governorate": MessageLookupByLibrary.simpleMessage("المحافظة"),
     "haveAnAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟"),
     "hidePassword": MessageLookupByLibrary.simpleMessage("إخفاء كلمة المرور"),
@@ -232,6 +221,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "رقم الهاتف غير صحيح",
     ),
     "lastUpdate": MessageLookupByLibrary.simpleMessage("اخر تحديث"),
+    "locationIsDenied": MessageLookupByLibrary.simpleMessage(
+      "تم رفض صلاحيات الوصول إلى الموقع",
+    ),
+    "locationIsDeniedPermanently": MessageLookupByLibrary.simpleMessage(
+      "تم رفض صلاحيات الموقع نهائيًا ولا يمكن طلبها مرة أخرى",
+    ),
+    "locationNotAccessed": MessageLookupByLibrary.simpleMessage(
+      "الموقع غير مفعل",
+    ),
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage("اكتمل التسجيل"),
@@ -249,7 +247,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على مستخدم لهذا البريد الإلكتروني.",
     ),
-    "notEnoughPointsToRedeem": m5,
+    "notEnoughPointsToRedeem": m6,
     "notExist": MessageLookupByLibrary.simpleMessage("غير موجود"),
     "notSamePass": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير متطابقة",
@@ -259,7 +257,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "order_details": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
     "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
     "ourPartners": MessageLookupByLibrary.simpleMessage("شركاؤنا"),
-    "pageNameNotFoundInRoutes": m6,
+    "pageNameNotFoundInRoutes": m7,
     "pageNotFound": MessageLookupByLibrary.simpleMessage("الصفحة غير موجودة"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "passwordChangedSuccess": MessageLookupByLibrary.simpleMessage(
@@ -269,15 +267,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمة المرور المقدمة ضعيفة جدًا.",
     ),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
-    "paymentMethodNumber": m7,
+    "paymentMethodNumber": m8,
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
+    "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
+      "يرجى الذهاب إلى تفعيل موقعك",
+    ),
     "point": MessageLookupByLibrary.simpleMessage("نقطة"),
-    "point_number": m8,
+    "point_number": m9,
     "points": MessageLookupByLibrary.simpleMessage("النقاط"),
     "pointsBalance": MessageLookupByLibrary.simpleMessage("رصيد النقاط"),
-    "pointsConversionConfirmation": m9,
+    "pointsConversionConfirmation": m10,
     "pointsDetails": MessageLookupByLibrary.simpleMessage("تفاصيل النقاط"),
-    "pointsEqualEgyptionPounds": m10,
+    "pointsEqualEgyptionPounds": m11,
     "pointsHistory": MessageLookupByLibrary.simpleMessage("سجل النقاط"),
     "pointsRedeemedSuccess": MessageLookupByLibrary.simpleMessage(
       "تم استبدال النقاط بنجاح",
@@ -313,7 +314,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "privacyInfoCollectionTitle": MessageLookupByLibrary.simpleMessage(
       "جمع المعلومات واستخدامها",
     ),
-    "privacyIntro": m11,
+    "privacyIntro": m12,
     "privacyOptOut": MessageLookupByLibrary.simpleMessage(
       "يمكنك إيقاف جمع المعلومات من خلال التطبيق بكل سهولة عن طريق حذفه. يمكنك استخدام إجراءات الحذف المعتادة المتوفرة على جهازك أو من خلال سوق التطبيقات.",
     ),
@@ -350,8 +351,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "rejected": MessageLookupByLibrary.simpleMessage("مرفوض"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "removeSticker": MessageLookupByLibrary.simpleMessage("إزالة الملصق"),
-    "removeStickerFromApp": m12,
-    "replacePointsWithCurrency": m13,
+    "removeStickerFromApp": m13,
+    "replacePointsWithCurrency": m14,
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "selectArea": MessageLookupByLibrary.simpleMessage("يجب اختيار المنطقة"),
@@ -397,7 +398,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يقوم التطبيق بتخزين ومعالجة البيانات الشخصية التي قدمتها لمقدم الخدمة لتوفير الخدمة. تقع على عاتقك مسؤولية الحفاظ على أمان هاتفك والوصول إلى التطبيق. ينصح مقدم الخدمة بشدة بعدم كسر الحماية أو عمل روت لهاتفك، والذي يتضمن إزالة قيود البرامج والقيود المفروضة من قبل نظام التشغيل الرسمي لجهازك. قد تُعرّض هذه الإجراءات هاتفك للبرامج الضارة والفيروسات والبرامج الضارة، وتُضعف ميزات أمان هاتفك، وقد تؤدي إلى توقف التطبيق عن العمل بشكل صحيح أو توقفه تمامًا.",
     ),
     "termsGooglePlay": MessageLookupByLibrary.simpleMessage("خدمات جوجل بلاي"),
-    "termsIntro": m14,
+    "termsIntro": m15,
     "termsPersonalData": MessageLookupByLibrary.simpleMessage(
       "بمجرد تنزيلك أو استخدامك للتطبيق، فإنك توافق تلقائيًا على الشروط التالية. يُنصح بشدة بقراءة هذه الشروط وفهمها جيدًا قبل استخدام التطبيق. يُحظر تمامًا النسخ أو التعديل غير المصرح به للتطبيق أو أي جزء منه أو علاماتنا التجارية",
     ),
@@ -414,9 +415,9 @@ class MessageLookup extends MessageLookupByLibrary {
           "هناك مشكلة في الخادم. حاول مرة أخرى لاحقًا.",
         ),
     "tiktok": MessageLookupByLibrary.simpleMessage("تيك توك"),
-    "toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": m15,
+    "toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": m16,
     "totalOrder": MessageLookupByLibrary.simpleMessage("إجمالي الطلب"),
-    "transferToPaymentName": m16,
+    "transferToPaymentName": m17,
     "transferablePointsBalance": MessageLookupByLibrary.simpleMessage(
       "رصيد نقاط يسمح بالتحويل",
     ),
@@ -451,7 +452,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "update": MessageLookupByLibrary.simpleMessage("تحديث"),
     "wallet": MessageLookupByLibrary.simpleMessage("المحفظة الإلكترونية"),
     "welcomeToYou": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
-    "welcome_to_businessName": m17,
+    "welcome_to_businessName": m18,
     "whatsapp": MessageLookupByLibrary.simpleMessage("واتساب"),
     "wrongPasswordProvidedForThatUser": MessageLookupByLibrary.simpleMessage(
       "تم تقديم كلمة مرور خاطئة لهذا المستخدم.",

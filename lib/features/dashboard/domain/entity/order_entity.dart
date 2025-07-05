@@ -7,7 +7,8 @@ class OrderEntity extends Equatable {
   final OrderStatusEnum orderStatus;
   final int points;
   final double price;
-  final DateTime date;
+  final DateTime createdDate;
+  final DateTime? updatedDate;
   final String phone;
   final PaymentMethod paymentMethod;
   final String? imageUrl;
@@ -17,7 +18,8 @@ class OrderEntity extends Equatable {
     required this.orderStatus,
     required this.points,
     required this.price,
-    required this.date,
+    required this.createdDate,
+    this.updatedDate,
     required this.phone,
     required this.paymentMethod,
     required this.imageUrl,
@@ -29,7 +31,8 @@ class OrderEntity extends Equatable {
         orderStatus,
         points,
         price,
-        date,
+        createdDate,
+        updatedDate,
         phone,
         paymentMethod,
         imageUrl,

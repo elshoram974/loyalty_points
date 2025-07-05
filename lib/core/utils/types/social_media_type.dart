@@ -10,10 +10,10 @@ abstract class SocialMediaType extends Equatable {
   String get type;
 
   String get name;
-  
-  String get description;
 
   IconData get icon;
+
+  String get description => localeLang().contactUsWith(name);
 
   static List<SocialMediaType> allTypes(String url) => List.unmodifiable(
         [
@@ -46,10 +46,7 @@ class TikTokSocial extends SocialMediaType {
 
   @override
   IconData get icon => FontAwesomeIcons.tiktok;
-  
-  @override
-  String get description => localeLang().contactUsWithTiktok;
-  
+
   @override
   String get name => localeLang().tiktok;
 }
@@ -61,10 +58,7 @@ class FacebookSocial extends SocialMediaType {
 
   @override
   IconData get icon => FontAwesomeIcons.facebook;
-  
-  @override
-  String get description => localeLang().contactUsWithFacebook;
-  
+
   @override
   String get name => localeLang().facebook;
 }
@@ -76,10 +70,7 @@ class InstagramSocial extends SocialMediaType {
 
   @override
   IconData get icon => FontAwesomeIcons.instagram;
-  
-  @override
-  String get description => localeLang().contactUsWithInstagram;
-  
+
   @override
   String get name => localeLang().instagram;
 }
@@ -91,10 +82,7 @@ class TelegramSocial extends SocialMediaType {
 
   @override
   IconData get icon => FontAwesomeIcons.telegram;
-  
-  @override
-  String get description => localeLang().contactUsWithTelegram;
-  
+
   @override
   String get name => localeLang().Telegram;
 }
@@ -110,10 +98,7 @@ class WhatsappSocial extends SocialMediaType {
 
   @override
   IconData get icon => FontAwesomeIcons.whatsapp;
-  
-  @override
-  String get description => localeLang().contactUsWithWhatsApp;
-  
+
   @override
   // TODO: implement name
   String get name => localeLang().whatsapp;

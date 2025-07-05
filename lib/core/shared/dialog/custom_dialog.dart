@@ -8,6 +8,7 @@ class CustomDialog extends StatelessWidget {
   const CustomDialog({
     super.key,
     this.title = 'Title',
+    this.icon,
     this.body = 'This is my Body',
     this.bodyAlign,
     this.crossAxisAlignment = CrossAxisAlignment.stretch,
@@ -19,6 +20,7 @@ class CustomDialog extends StatelessWidget {
     this.textCancel,
   });
   final String title;
+  final IconData? icon;
   final String body;
   final String? textConfirm;
   final String? textCancel;
@@ -39,10 +41,19 @@ class CustomDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: crossAxisAlignment,
           children: [
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: context.textTheme.titleLarge,
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                
+                Flexible(
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: context.textTheme.titleLarge,
+                  ),
+                ),
+                if(icon != null) Icon(icon, color: Theme.of(context).primaryColor),
+              ],
             ),
             DialogBody(
               crossAxisAlignment: crossAxisAlignment,

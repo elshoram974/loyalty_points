@@ -29,40 +29,42 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m3(langName) => "Change language to ${langName}";
 
-  static String m4(paymentMethodName) =>
+  static String m4(contactName) => "Contact us with ${contactName}";
+
+  static String m5(paymentMethodName) =>
       "Enter your ${paymentMethodName} number";
 
-  static String m5(userPoints, pointsNeeded) =>
+  static String m6(userPoints, pointsNeeded) =>
       "You only have ${userPoints} points. You need ${pointsNeeded} more points to redeem.";
 
-  static String m6(pageName) => "Page \'${pageName}\' not found in pages";
+  static String m7(pageName) => "Page \'${pageName}\' not found in pages";
 
-  static String m7(paymentMethodName) => "${paymentMethodName} Number";
+  static String m8(paymentMethodName) => "${paymentMethodName} Number";
 
-  static String m8(pointNumber) => " ${pointNumber} point";
+  static String m9(pointNumber) => " ${pointNumber} point";
 
-  static String m9(points, balance, currency, remainingPoints) =>
+  static String m10(points, balance, currency, remainingPoints) =>
       "You will convert ${points} points into ${balance} ${currency}\nRemaining points after the operation: ${remainingPoints} points";
 
-  static String m10(point, pound) => "${point} point = ${pound} Egyptian Pound";
+  static String m11(point, pound) => "${point} point = ${pound} Egyptian Pound";
 
-  static String m11(appName) =>
+  static String m12(appName) =>
       "This privacy policy applies to the ${appName} app for mobile devices (hereby referred to as \"Service Provider\") as a Free service. This service is intended for use \"AS IS\".\\n";
 
-  static String m12(appName) => "Remove the sticker from above ${appName}";
+  static String m13(appName) => "Remove the sticker from above ${appName}";
 
-  static String m13(pound, point, currency) =>
+  static String m14(pound, point, currency) =>
       "Are you sure you want to redeem ${point} points for ${pound} ${currency}?";
 
-  static String m14(appName) =>
+  static String m15(appName) =>
       "These terms and conditions applies to the ${appName} app for mobile devices  (hereby referred to as \"Service Provider\") as a Free service.";
 
-  static String m15(appName, minPoint) =>
+  static String m16(appName, minPoint) =>
       "To redeem your points in ${appName}, you must have ${minPoint} points or more";
 
-  static String m16(paymentName) => "Transfer to ${paymentName}";
+  static String m17(paymentName) => "Transfer to ${paymentName}";
 
-  static String m17(businessName) => "Welcome to ${businessName}";
+  static String m18(businessName) => "Welcome to ${businessName}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -128,21 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.",
     ),
     "contactUs": MessageLookupByLibrary.simpleMessage("Contact us"),
-    "contactUsWithFacebook": MessageLookupByLibrary.simpleMessage(
-      "Contact us with Facebook",
-    ),
-    "contactUsWithInstagram": MessageLookupByLibrary.simpleMessage(
-      "Contact us with Instagram",
-    ),
-    "contactUsWithTelegram": MessageLookupByLibrary.simpleMessage(
-      "Contact us with Telegram",
-    ),
-    "contactUsWithTiktok": MessageLookupByLibrary.simpleMessage(
-      "Contact us with TikTok",
-    ),
-    "contactUsWithWhatsApp": MessageLookupByLibrary.simpleMessage(
-      "Contact us with WhatsApp",
-    ),
+    "contactUsWith": m4,
     "couldNotLaunch": MessageLookupByLibrary.simpleMessage("Could not launch"),
     "country": MessageLookupByLibrary.simpleMessage("Country"),
     "couponsHistory": MessageLookupByLibrary.simpleMessage("Coupons History"),
@@ -186,7 +174,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterNewPassword": MessageLookupByLibrary.simpleMessage(
       "Enter new password",
     ),
-    "enterPaymentMethodNumber": m4,
+    "enterPaymentMethodNumber": m5,
     "enterThePassword": MessageLookupByLibrary.simpleMessage(
       "Enter the password",
     ),
@@ -218,6 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage("Forget password ?"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
+    "goToSetting": MessageLookupByLibrary.simpleMessage("Go to settings"),
     "governorate": MessageLookupByLibrary.simpleMessage("Governorate"),
     "haveAnAccount": MessageLookupByLibrary.simpleMessage("Have an account ?"),
     "hidePassword": MessageLookupByLibrary.simpleMessage("Hide password"),
@@ -238,6 +227,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Invalid phone number",
     ),
     "lastUpdate": MessageLookupByLibrary.simpleMessage("Last Update"),
+    "locationIsDenied": MessageLookupByLibrary.simpleMessage(
+      "Location permissions are denied",
+    ),
+    "locationIsDeniedPermanently": MessageLookupByLibrary.simpleMessage(
+      "Location permissions are permanently denied",
+    ),
+    "locationNotAccessed": MessageLookupByLibrary.simpleMessage(
+      "Location not accessed",
+    ),
     "logOut": MessageLookupByLibrary.simpleMessage("Log out"),
     "login": MessageLookupByLibrary.simpleMessage("Log in"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage(
@@ -257,7 +255,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "noUserFoundForThatEmail": MessageLookupByLibrary.simpleMessage(
       "No user found for that email.",
     ),
-    "notEnoughPointsToRedeem": m5,
+    "notEnoughPointsToRedeem": m6,
     "notExist": MessageLookupByLibrary.simpleMessage("Not Exist"),
     "notSamePass": MessageLookupByLibrary.simpleMessage("Not same password"),
     "note": MessageLookupByLibrary.simpleMessage("Note"),
@@ -265,7 +263,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "order_details": MessageLookupByLibrary.simpleMessage("Order details"),
     "orders": MessageLookupByLibrary.simpleMessage("Orders"),
     "ourPartners": MessageLookupByLibrary.simpleMessage("Our Partners"),
-    "pageNameNotFoundInRoutes": m6,
+    "pageNameNotFoundInRoutes": m7,
     "pageNotFound": MessageLookupByLibrary.simpleMessage("Page not found"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwordChangedSuccess": MessageLookupByLibrary.simpleMessage(
@@ -275,15 +273,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "The password provided is too weak.",
     ),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment method"),
-    "paymentMethodNumber": m7,
+    "paymentMethodNumber": m8,
     "pending": MessageLookupByLibrary.simpleMessage("pending"),
+    "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
+      "Please go to verify your location",
+    ),
     "point": MessageLookupByLibrary.simpleMessage("point"),
-    "point_number": m8,
+    "point_number": m9,
     "points": MessageLookupByLibrary.simpleMessage("Points"),
     "pointsBalance": MessageLookupByLibrary.simpleMessage("Points Balance"),
-    "pointsConversionConfirmation": m9,
+    "pointsConversionConfirmation": m10,
     "pointsDetails": MessageLookupByLibrary.simpleMessage("Points Details"),
-    "pointsEqualEgyptionPounds": m10,
+    "pointsEqualEgyptionPounds": m11,
     "pointsHistory": MessageLookupByLibrary.simpleMessage("Points History"),
     "pointsRedeemedSuccess": MessageLookupByLibrary.simpleMessage(
       "Points redeemed successfully",
@@ -319,7 +320,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "privacyInfoCollectionTitle": MessageLookupByLibrary.simpleMessage(
       "Information Collection and Use",
     ),
-    "privacyIntro": m11,
+    "privacyIntro": m12,
     "privacyOptOut": MessageLookupByLibrary.simpleMessage(
       "You can easily stop all data collection by uninstalling the app. Use the standard uninstallation process available on your device or through the app store.",
     ),
@@ -356,8 +357,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "rejected": MessageLookupByLibrary.simpleMessage("rejected"),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "removeSticker": MessageLookupByLibrary.simpleMessage("Remove the sticker"),
-    "removeStickerFromApp": m12,
-    "replacePointsWithCurrency": m13,
+    "removeStickerFromApp": m13,
+    "replacePointsWithCurrency": m14,
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "selectArea": MessageLookupByLibrary.simpleMessage(
@@ -411,7 +412,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "termsGooglePlay": MessageLookupByLibrary.simpleMessage(
       "Google Play Services",
     ),
-    "termsIntro": m14,
+    "termsIntro": m15,
     "termsPersonalData": MessageLookupByLibrary.simpleMessage(
       "The app stores and processes personal data you have provided to the service provider to provide the service...",
     ),
@@ -427,9 +428,9 @@ class MessageLookup extends MessageLookupByLibrary {
           "There is a problem with the server. Try again later.",
         ),
     "tiktok": MessageLookupByLibrary.simpleMessage("TikTok"),
-    "toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": m15,
+    "toRedeemYourPointsInAppNameYouMustHaveMinPointsOrMore": m16,
     "totalOrder": MessageLookupByLibrary.simpleMessage("Total Order"),
-    "transferToPaymentName": m16,
+    "transferToPaymentName": m17,
     "transferablePointsBalance": MessageLookupByLibrary.simpleMessage(
       "Transferable Points Balance",
     ),
@@ -464,7 +465,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "update": MessageLookupByLibrary.simpleMessage("Update"),
     "wallet": MessageLookupByLibrary.simpleMessage("E-wallet"),
     "welcomeToYou": MessageLookupByLibrary.simpleMessage("Welcome to you"),
-    "welcome_to_businessName": m17,
+    "welcome_to_businessName": m18,
     "whatsapp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
     "wrongPasswordProvidedForThatUser": MessageLookupByLibrary.simpleMessage(
       "Wrong password provided for that user.",

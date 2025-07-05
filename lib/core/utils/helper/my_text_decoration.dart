@@ -39,7 +39,8 @@ abstract final class MyTextFieldDecoration {
             ),
       enabledBorder: enabledBorder,
       filled: true,
-      fillColor: Theme.of(context).scaffoldBackgroundColor,
+      fillColor: Colors.white
+      // Theme.of(context).scaffoldBackgroundColor,
     );
   }
 }

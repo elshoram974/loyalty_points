@@ -17,6 +17,10 @@
 		<string>instagram</string>
 		<string>fb</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>الكسيب</string>
 	<key>CFBundleExecutable</key>

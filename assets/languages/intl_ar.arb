@@ -1,16 +1,23 @@
 {
-
+    "locationIsDeniedPermanently":"تم رفض صلاحيات الموقع نهائيًا ولا يمكن طلبها مرة أخرى",
+    "locationIsDenied":"تم رفض صلاحيات الوصول إلى الموقع",
+    "pleaseGoToVerifyYourLocation": "يرجى الذهاب إلى تفعيل موقعك",
+    "locationNotAccessed": "الموقع غير مفعل",
+    "goToSetting": "اذهب الى الاعدادات",
     "socialMedia": "وسائل التواصل الاجتماعي",
     "contactUs": "تواصل معنا",
     "whatsapp": "واتساب",
-    "contactUsWithWhatsApp": "تواصل معنا عبر الواتساب",
-    "contactUsWithTelegram": "تواصل معنا عبر التليجرام",
     "Telegram": "التليجرام",
-    "contactUsWithInstagram": "تواصل معنا عبر الانستجرام",
     "instagram": "انستجرام",
-    "contactUsWithFacebook": "تواصل معنا عبر الفيسبوك",
     "facebook": "فيسبوك",
-    "contactUsWithTiktok": "تواصل معنا عبر التيك توك",
+    "contactUsWith": "تواصل معنا عبر {contactName}",
+    "@contactUsWith": {
+        "placeholders": {
+            "contactName": {
+                "type": "String"
+            }
+        }
+    },
     "tiktok": "تيك توك",
     "selectCountry": "يجب اختيار الدولة",
     "selectGovernorate": "يجب اختيار المحافظة",
@@ -281,7 +288,7 @@
         }
     },
     "noNotes": "لا يوجد ملاحظات",
-    "note":"ملاحظه",
+    "note": "ملاحظه",
     "paymentMethod": "طريقة الدفع",
     "image_for_order": "صورة التحويل ",
     "edit_profile_image": "تعديل صورة الملف الشخصي",
