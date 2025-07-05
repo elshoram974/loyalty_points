@@ -32,6 +32,7 @@ class HomeBindings extends Bindings {
     Get.put<DashboardController>(
       DashboardControllerImp(
         repo: Get.find<DashboardRepositories>(),
+        apiServices: Get.find<APIServices>(),
         configController: Get.find<ConfigController>(),
       ),
     );

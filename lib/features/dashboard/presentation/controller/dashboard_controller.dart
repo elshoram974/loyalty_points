@@ -11,6 +11,7 @@ import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/helper/show_my_snack_bar.dart';
+import '../../../../core/utils/services/api_services.dart';
 import '../../../../core/utils/services/push_notification_service.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../../../auth/data/models/user_model.dart';
@@ -41,8 +42,11 @@ abstract class DashboardController extends GetxController {
 class DashboardControllerImp extends DashboardController {
   final DashboardRepositories repo;
   final ConfigController configController;
+  final APIServices apiServices;
+
   DashboardControllerImp({
     required this.repo,
+    required this.apiServices,
     required this.configController,
   });
 
@@ -67,12 +71,6 @@ class DashboardControllerImp extends DashboardController {
   }
 
   @override
-  void onReady() {
-    getAllData();
-    super.onReady();
-  }
-
-  @override
   Future<void> getAllData([bool isReload = false]) async {
     await Future.wait([
       configController.getConfigData(isReload),
@@ -94,6 +92,7 @@ class DashboardControllerImp extends DashboardController {
 
   @override
   Future<void> getUserData([bool isReload = false]) async {
+    if (apiServices.token?.isNotEmpty != true) return;
     final List<String> ids = [
       AppString.updateHomeUser,
       AppString.updateBalance,
@@ -106,7 +105,7 @@ class DashboardControllerImp extends DashboardController {
 
     Status<UserModel?>? realStatus;
 
-    repo.getUserData().listen(
+    await repo.getUserData().listen(
       (status) {
         if (status is Success<UserModel?>) {
           realStatus ??= status;
@@ -124,7 +123,7 @@ class DashboardControllerImp extends DashboardController {
         _isLoadingUserData = false;
         update(ids);
       },
-    );
+    ).asFuture();
   }
 
   @override

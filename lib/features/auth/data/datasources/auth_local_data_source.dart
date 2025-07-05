@@ -2,6 +2,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../../../core/utils/constants/app_strings.dart';
+import '../../../../core/utils/services/api_services.dart';
 import '../models/user_model.dart';
 
 abstract class AuthLocalDataSource {
@@ -20,7 +21,6 @@ class AuthLocalDataSourceImp extends AuthLocalDataSource {
   @override
   Future<int> saveUser(UserModel user) async {
     await _userBox.clear();
-
     return _userBox.add(user.toMap());
   }
 
@@ -38,6 +38,7 @@ class AuthLocalDataSourceImp extends AuthLocalDataSource {
 
   @override
   Future<void> logOut() async {
+    setUserToken(null);
     await Future.wait(
       [
         _storage.delete(key: AppString.kTokenKey),

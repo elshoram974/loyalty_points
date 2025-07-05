@@ -24,6 +24,9 @@ abstract final class AppInfo {
   /// Config data that we get from dashboard
   static ConfigModel? config;
 
+  /// Use face id or fingerprint in login every time open app
+  static bool get useLocalAuth => config?.useLocalAuth ?? true;
+
   /// To add locale .. You have to add it in package(flutter intel)
   /// and add text in its file .arb and don't forget to add it in info.plist file
   // static List<LocaleModel> get supportedLocales => LocaleModel.fromLocales(

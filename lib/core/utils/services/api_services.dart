@@ -4,15 +4,24 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:get/get.dart' as g;
 import 'package:image_picker/image_picker.dart';
 
 import '../../../app_info.dart';
 import '../constants/app_strings.dart';
 
+void setUserToken(String? token) {
+  g.Get.find<APIServices>().token = token;
+}
+
 class APIServices {
-  const APIServices(this._dio, this._storage);
+  APIServices(this._dio, this._storage) {
+    _getAuthToken.then((value) => token = value);
+  }
   final Dio _dio;
   final FlutterSecureStorage _storage;
+
+  String? token;
 
   Map<String, dynamic> _header(String? token) {
     return {
@@ -25,7 +34,7 @@ class APIServices {
     final String link,
     final Object? body,
   ) async {
-    final String? token = await _getAuthToken;
+    token = await _getAuthToken;
 
     if (AppInfo.isDebugMode) {
       print("endpoint: $link, body: $body");
@@ -49,7 +58,7 @@ class APIServices {
     final Map<String, dynamic>? body, {
     required final Map<String, List<XFile>> files,
   }) async {
-    final String? token = await _getAuthToken;
+    token = await _getAuthToken;
     final Map<String, dynamic> data = {};
     data.addAll(body ?? {});
 
@@ -80,7 +89,7 @@ class APIServices {
   }
 
   Future<Map<String, dynamic>> get(final String link) async {
-    final String? token = await _getAuthToken;
+    token = await _getAuthToken;
 
     if (AppInfo.isDebugMode) {
       print("api $link");

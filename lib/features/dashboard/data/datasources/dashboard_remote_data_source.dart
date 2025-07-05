@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import '../../../../app_info.dart';
 import '../../../../core/utils/constants/app_links.dart';
 import '../../../../core/utils/constants/app_strings.dart';
@@ -49,7 +47,6 @@ class DashboardRemoteDataSourceImp extends DashboardRemoteDataSource {
   @override
   Future<UserModel> getCurrentUser() async {
     final Map<String, dynamic> res = await apiServices.get(AppLinks.user);
-    log(res.toString());
 
     return UserModel.fromMap(res);
   }

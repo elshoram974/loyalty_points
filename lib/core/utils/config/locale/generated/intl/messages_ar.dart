@@ -99,6 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "قبل أن تتمكن من تسجيل الدخول ،يجب أن يقوم المسئول بتفعيل حسابك يدويا",
         ),
+    "biometricPromptReason": MessageLookupByLibrary.simpleMessage(
+      "الرجاء تأكيد هويتك لتسهيل عملية تسجيل الدخول",
+    ),
     "business_name": MessageLookupByLibrary.simpleMessage("بتروجاك"),
     "cameraPermissionsRequired": MessageLookupByLibrary.simpleMessage(
       "يتطلب صلاحية الكاميرا",
@@ -233,6 +236,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage("اكتمل التسجيل"),
+    "loginWithBiometric": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول بالبصمة",
+    ),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "menu": MessageLookupByLibrary.simpleMessage("القائمة"),
     "mobileNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
@@ -375,6 +381,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "socialMedia": MessageLookupByLibrary.simpleMessage(
       "وسائل التواصل الاجتماعي",
     ),
+    "somethingWentWrongPleaseLogInWithPassword":
+        MessageLookupByLibrary.simpleMessage(
+          "حدث خطأ، يرجى تسجيل الدخول باستخدام كلمة المرور",
+        ),
     "sslCertificateNotTrusted": MessageLookupByLibrary.simpleMessage(
       "شهادة SSL غير موثوقة.",
     ),

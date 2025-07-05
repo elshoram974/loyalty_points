@@ -13,51 +13,62 @@ class LoginButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<LoginController>(builder: (controller) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Align(
-          //   alignment: AlignmentDirectional.centerEnd,
-          //   child: TextButton(
-          //     onPressed: controller.isLoading ? null : () {},
-          //     child: Text(
-          //       localeLang(context).forgetPassword,
-          //       style: context.textTheme.titleSmall
-          //           ?.copyWith(color: context.theme.primaryColor),
-          //     ),
-          //   ),
-          // ),
-          const SizedBox(height: AppConst.paddingExtraBig),
-          CustomFilledButton(
-            text: localeLang(context).login,
-            isLoading: controller.isLoading,
-            onPressed: controller.login,
-            style: context.textTheme.headlineMedium,
-          ),
-          const SizedBox(height: 70),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: context.textTheme.titleMedium,
-              children: [
-                TextSpan(text: localeLang(context).doNotHaveAnAccount),
-                const TextSpan(text: ' '),
-                TextSpan(
-                    text: localeLang(context).signUp,
-                    style: context.textTheme.titleMedium?.copyWith(
-                      color: context.theme.primaryColor,
-                      decoration: TextDecoration.underline,
-                      decorationColor: context.theme.primaryColor,
-                      decorationThickness: 2,
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () => Get.toNamed(AppRoute.signUp)),
-              ],
+    return GetBuilder<LoginController>(
+      builder: (controller) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Align(
+            //   alignment: AlignmentDirectional.centerEnd,
+            //   child: TextButton(
+            //     onPressed: controller.isLoading ? null : () {},
+            //     child: Text(
+            //       localeLang(context).forgetPassword,
+            //       style: context.textTheme.titleSmall
+            //           ?.copyWith(color: context.theme.primaryColor),
+            //     ),
+            //   ),
+            // ),
+            const SizedBox(height: AppConst.paddingExtraBig),
+            CustomFilledButton(
+              text: localeLang(context).login,
+              isLoading: controller.isLoading,
+              onPressed: controller.login,
+              style: context.textTheme.headlineMedium,
             ),
-          ),
-        ],
-      );
-    });
+            if (controller.showBiometricsButton) ...[
+              const SizedBox(height: AppConst.paddingDefault),
+              Center(
+                child: TextButton(
+                  onPressed: controller.biometricsLogin,
+                  child: Text(localeLang(context).loginWithBiometric),
+                ),
+              ),
+            ],
+            const SizedBox(height: 70),
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: context.textTheme.titleMedium,
+                children: [
+                  TextSpan(text: localeLang(context).doNotHaveAnAccount),
+                  const TextSpan(text: ' '),
+                  TextSpan(
+                      text: localeLang(context).signUp,
+                      style: context.textTheme.titleMedium?.copyWith(
+                        color: context.theme.primaryColor,
+                        decoration: TextDecoration.underline,
+                        decorationColor: context.theme.primaryColor,
+                        decorationThickness: 2,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => Get.toNamed(AppRoute.signUp)),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 }

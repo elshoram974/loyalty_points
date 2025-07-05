@@ -10,8 +10,21 @@ import '../widgets/home_widgets/add_new_barcode_floating_button.dart';
 import '../widgets/my_bottom_nav_bar.dart';
 import '../widgets/my_app_bar.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.find<DashboardController>().getAllData();
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

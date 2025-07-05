@@ -1,6 +1,7 @@
 import 'package:loyalty_points/features/auth/data/models/user_model.dart';
 import 'package:loyalty_points/features/dashboard/domain/entity/points_entity.dart';
 
+import '../../../../app_info.dart';
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/functions/execute_and_handle_remote_errors.dart';
 import '../../../../core/utils/models/pagination_model.dart';
@@ -32,7 +33,7 @@ class DashboardRepositoriesImp extends DashboardRepositories {
       remoteDataSource.getCurrentUser,
     );
 
-    if (status is Success<UserModel>) authLocalDataSource.saveUser(status.data);
+    if (status is Success<UserModel> && !AppInfo.useLocalAuth) authLocalDataSource.saveUser(status.data);
 
     yield status;
   }

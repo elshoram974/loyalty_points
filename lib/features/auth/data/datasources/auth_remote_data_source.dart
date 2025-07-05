@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import '../../../../core/utils/constants/app_links.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/services/api_services.dart';
@@ -33,7 +31,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
         AppString.loginBy: data.loginBy
       },
     );
-    log(res.toString());
 
     return (
       user: UserModel.fromMap(res['data']['user']),
@@ -58,7 +55,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppString.attachments: data.attachments,
       AppString.image: [data.profile],
     });
-    log(res.toString());
 
     return (
       user: UserModel.fromMap(res['data']['user']),

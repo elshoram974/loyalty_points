@@ -55,6 +55,36 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Please confirm your identity to simplify the login process`
+  String get biometricPromptReason {
+    return Intl.message(
+      'Please confirm your identity to simplify the login process',
+      name: 'biometricPromptReason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in with biometric`
+  String get loginWithBiometric {
+    return Intl.message(
+      'Log in with biometric',
+      name: 'loginWithBiometric',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong, please log in with your password`
+  String get somethingWentWrongPleaseLogInWithPassword {
+    return Intl.message(
+      'Something went wrong, please log in with your password',
+      name: 'somethingWentWrongPleaseLogInWithPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Location permissions are permanently denied`
   String get locationIsDeniedPermanently {
     return Intl.message(

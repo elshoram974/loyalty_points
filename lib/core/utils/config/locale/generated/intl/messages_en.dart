@@ -101,6 +101,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Before you can log in, an administrator must manually activate your account",
         ),
+    "biometricPromptReason": MessageLookupByLibrary.simpleMessage(
+      "Please confirm your identity to simplify the login process",
+    ),
     "business_name": MessageLookupByLibrary.simpleMessage("PetroJac"),
     "cameraPermissionsRequired": MessageLookupByLibrary.simpleMessage(
       "Camera permission is required",
@@ -240,6 +243,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "login": MessageLookupByLibrary.simpleMessage("Log in"),
     "loginCompleted": MessageLookupByLibrary.simpleMessage(
       "Register Completed",
+    ),
+    "loginWithBiometric": MessageLookupByLibrary.simpleMessage(
+      "Log in with biometric",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("Log Out"),
     "menu": MessageLookupByLibrary.simpleMessage("Menu"),
@@ -385,6 +391,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "showPassword": MessageLookupByLibrary.simpleMessage("Show password"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
     "socialMedia": MessageLookupByLibrary.simpleMessage("Social Media"),
+    "somethingWentWrongPleaseLogInWithPassword":
+        MessageLookupByLibrary.simpleMessage(
+          "Something went wrong, please log in with your password",
+        ),
     "sslCertificateNotTrusted": MessageLookupByLibrary.simpleMessage(
       "The SSL certificate is not trusted.",
     ),

@@ -1,5 +1,8 @@
 {
-    "locationIsDeniedPermanently":"Location permissions are permanently denied",
+    "biometricPromptReason": "Please confirm your identity to simplify the login process",
+    "loginWithBiometric": "Log in with biometric",
+    "somethingWentWrongPleaseLogInWithPassword": "Something went wrong, please log in with your password",
+    "locationIsDeniedPermanently": "Location permissions are permanently denied",
     "locationIsDenied": "Location permissions are denied",
     "pleaseGoToVerifyYourLocation": "Please go to verify your location",
     "locationNotAccessed": "Location not accessed",

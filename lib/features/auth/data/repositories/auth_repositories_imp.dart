@@ -1,8 +1,10 @@
 import 'package:loyalty_points/features/auth/data/models/address_model.dart';
 import 'package:loyalty_points/features/auth/domain/entity/sign_up_body_data.dart';
 
+import '../../../../app_info.dart';
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/functions/execute_and_handle_remote_errors.dart';
+import '../../../../core/utils/services/api_services.dart';
 import '../../domain/entity/login_request_data.dart';
 import '../../domain/repositories/auth_repositories.dart';
 import '../datasources/auth_local_data_source.dart';
@@ -24,9 +26,10 @@ class AuthRepositoriesImp extends AuthRepositories {
         final ({UserModel user, String token}) res =
             await remoteDataSource.login(data);
         if (res.user.isVerified) {
+          setUserToken(res.token);
           await Future.wait(
             [
-              localDataSource.saveUser(res.user),
+              if (!AppInfo.useLocalAuth) localDataSource.saveUser(res.user),
               localDataSource.saveToken(res.token),
             ],
           );

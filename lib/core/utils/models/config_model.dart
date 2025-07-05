@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 
+import '../../../app_info.dart';
 import '../types/account_type.dart';
 import '../types/social_media_type.dart';
 
@@ -12,6 +13,7 @@ class ConfigModel extends Equatable {
   final String? banner2;
   final String? banner1;
   final String? loginIntro;
+  final bool useLocalAuth;
 
   final int? _sellerMinimumPointsToRedeem;
   final int? _repMinimumPointsToRedeem;
@@ -66,6 +68,7 @@ class ConfigModel extends Equatable {
     this.banner2,
     this.banner1,
     this.loginIntro,
+    this.useLocalAuth = true,
     int? sellerMinimumPointsToRedeem,
     int? repMinimumPointsToRedeem,
     int? sellerOnePoundEquity,
@@ -91,6 +94,7 @@ class ConfigModel extends Equatable {
       sellerOnePoundEquity: data['seller_one_pound_equity'] as int?,
       repOnePoundEquity: data['rep_one_pound_equity'] as int?,
       loginIntro: data['login_intro'] as String?,
+      useLocalAuth: AppInfo.useLocalAuth,
     );
   }
 

@@ -14,6 +14,7 @@ import '../config/locale/generated/l10n.dart';
 import '../constants/app_strings.dart';
 import '../services/api_services.dart';
 import '../config/controller/config_datasource.dart';
+import 'home_bindings.dart';
 
 abstract final class InitialBindings {
   const InitialBindings();
@@ -62,5 +63,6 @@ abstract final class InitialBindings {
         remoteDataSource: Get.find<AuthRemoteDataSource>(),
       ),
     );
+    HomeBindings().dependencies();
   }
 }

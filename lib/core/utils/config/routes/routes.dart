@@ -21,7 +21,6 @@ import '../../bindings/checkout_bindings.dart';
 import '../../bindings/profile_bindings.dart';
 import '../../bindings/update_password_bindings.dart';
 import '../../bindings/update_profile_bindings.dart';
-import '../../bindings/home_bindings.dart';
 import '../../bindings/login_bindings.dart';
 import '../../bindings/sign_up_bindings.dart';
 import '../../middleware/login_middleware.dart';
@@ -45,14 +44,13 @@ abstract final class AppRoute {
   static const String pointsDetails = "/points-details";
   static const String ordersDetails = "/orders-details";
 
-
   // static const String OrderDetails = '/OrderDetails';
 
   static List<GetPage> get pages => [
         GetPage(
           name: login,
           page: () => const LoginScreen(),
-          binding: LoginBindings(),
+          bindings: [LoginBindings()],
           middlewares: [LoginMiddleWare(Get.find<AuthLocalDataSource>())],
         ),
         GetPage(
@@ -63,7 +61,7 @@ abstract final class AppRoute {
         GetPage(
           name: home,
           page: () => const DashboardScreen(),
-          bindings: [HomeBindings(), AddNewCodeBindings()],
+          bindings: [AddNewCodeBindings()],
         ),
         GetPage(
           name: waiting,

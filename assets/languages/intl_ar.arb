@@ -1,6 +1,9 @@
 {
-    "locationIsDeniedPermanently":"تم رفض صلاحيات الموقع نهائيًا ولا يمكن طلبها مرة أخرى",
-    "locationIsDenied":"تم رفض صلاحيات الوصول إلى الموقع",
+    "biometricPromptReason": "الرجاء تأكيد هويتك لتسهيل عملية تسجيل الدخول",
+    "loginWithBiometric": "تسجيل الدخول بالبصمة",
+    "somethingWentWrongPleaseLogInWithPassword": "حدث خطأ، يرجى تسجيل الدخول باستخدام كلمة المرور",
+    "locationIsDeniedPermanently": "تم رفض صلاحيات الموقع نهائيًا ولا يمكن طلبها مرة أخرى",
+    "locationIsDenied": "تم رفض صلاحيات الوصول إلى الموقع",
     "pleaseGoToVerifyYourLocation": "يرجى الذهاب إلى تفعيل موقعك",
     "locationNotAccessed": "الموقع غير مفعل",
     "goToSetting": "اذهب الى الاعدادات",
