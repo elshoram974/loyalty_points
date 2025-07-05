@@ -1,14 +1,18 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:geolocator/geolocator.dart';
 
 import '../../../../core/status/status.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/functions/handle_response_in_controller.dart';
+import '../../../../core/utils/helper/permissions_helper.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/helper/show_my_snack_bar.dart';
 import '../../../../core/utils/helper/network_helper.dart';
@@ -20,7 +24,6 @@ import '../../domain/repositories/auth_repositories.dart';
 abstract class SignUpController extends GetxController {
   SignUpController(this.repo);
   final AuthRepositories repo;
-
   bool get isLoading;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -182,6 +185,9 @@ class SignUpControllerImp extends SignUpController {
     } else {
       tempEmail = email.trim();
     }
+
+    final Position? position = await HandlePermissions.getCurrentLocation();
+    if (position == null) return;
     final Status<void> signUpState = await repo.signUp(
       SignUpBodyData(
         phone: phone!,

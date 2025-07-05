@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 import '../../shared/dialog/custom_dialog.dart';
+import '../../shared/dialog/open_location_dialog.dart';
 import '../config/locale/local_lang.dart';
 
-abstract final class ShowMyDialog  {
+abstract final class ShowMyDialog {
   const ShowMyDialog();
 
   static Future<T> loading<T>(Future<T> Function() asyncFunction) {
@@ -48,6 +50,34 @@ abstract final class ShowMyDialog  {
       ),
     );
     return result;
+  }
+
+  static Future<bool?> locationDialog({
+    String? body,
+    void Function()? onPressCancel,
+    void Function()? onPressConfirm,
+  }) async {
+    return Get.dialog<bool>(
+      CustomDialog(
+        icon: Icons.location_off,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        body: localeLang().pleaseGoToVerifyYourLocation ,
+        title: localeLang().locationNotAccessed ,
+        textCancel:localeLang().cancel,
+        textConfirm: localeLang().goToSetting ,
+        onPressCancel: () {
+          if (onPressCancel != null) {
+            onPressCancel();
+          }
+          Get.back(result: false);
+        },
+        onPressConfirm:(){
+          Geolocator.openLocationSettings();
+          Get.back();
+        }
+
+      ),
+    );
   }
 
   static Future<bool?> dialog({

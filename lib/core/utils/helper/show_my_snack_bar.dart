@@ -64,8 +64,19 @@ abstract final class ShowMySnackBar {
       action: SnackBarAction(
         label: actionText,
         onPressed: onPressed,
+        backgroundColor: Colors.white,
         textColor: Get.theme.primaryColor,
       ),
+    );
+  }
+
+  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason> error(
+    String text,
+  ) {
+    return call(
+      text,
+      duration: const Duration(seconds: 3),
+      backgroundColor: Get.theme.colorScheme.error,
     );
   }
 }
