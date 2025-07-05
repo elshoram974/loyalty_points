@@ -1,5 +1,4 @@
 import 'package:geolocator/geolocator.dart';
-import 'package:get/get.dart';
 
 import '../config/locale/local_lang.dart';
 import 'show_my_dialog.dart';

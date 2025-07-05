@@ -3,7 +3,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 import '../../shared/dialog/custom_dialog.dart';
-import '../../shared/dialog/open_location_dialog.dart';
 import '../config/locale/local_lang.dart';
 
 abstract final class ShowMyDialog {
