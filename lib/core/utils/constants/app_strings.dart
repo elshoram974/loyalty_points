@@ -13,6 +13,8 @@ abstract final class AppString {
   static const String type = 'type';
   static const String phone = 'phone';
   static const String image = 'image';
+  static const String latitude = 'latitude';
+  static const String longitude = 'longitude';
   static const String attachments = 'attachments[]';
   static const String providerName = 'provider_name';
   static const String country = 'country';

@@ -49,6 +49,8 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       AppString.addressId: data.areaId,
       AppString.type: data.accountType.type,
       AppString.phone: data.phone.phoneNumber,
+      AppString.latitude: data.position.latitude,
+      AppString.longitude: data.position.longitude,
       if (data.provider?.trim().isNotEmpty == true)
         AppString.providerName: data.provider,
     }, files: {

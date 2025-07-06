@@ -200,6 +200,7 @@ class SignUpControllerImp extends SignUpController {
         attachments: attachments.cast<XFile?>().nonNulls.toList(),
         email: tempEmail,
         provider: provider,
+        position: position,
       ),
     );
     handleResponseInController<void>(

@@ -29,6 +29,7 @@ abstract final class MyTextFieldDecoration {
       hintText: hintText,
       hintStyle: const TextStyle(color: AppColor.borderColor),
       contentPadding: const EdgeInsets.symmetric(horizontal: 22),
+      disabledBorder: const OutlineInputBorder(borderSide: BorderSide.none),
       border: border,
       suffixIcon: suffixIcon,
       prefixIcon: prefixIcon == null

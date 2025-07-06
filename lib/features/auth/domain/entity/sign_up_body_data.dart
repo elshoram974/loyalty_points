@@ -1,3 +1,4 @@
+import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -14,6 +15,7 @@ class SignUpBodyData {
   final AccountType accountType;
   final XFile profile;
   final List<XFile> attachments;
+  final Position position;
 
   SignUpBodyData({
     required this.phone,
@@ -26,5 +28,6 @@ class SignUpBodyData {
     required this.attachments,
     required this.provider,
     required this.email,
+    required this.position,
   });
 }
