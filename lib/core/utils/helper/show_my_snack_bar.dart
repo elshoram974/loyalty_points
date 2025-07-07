@@ -6,14 +6,15 @@ import '../constants/app_constants.dart';
 abstract final class ShowMySnackBar {
   const ShowMySnackBar();
 
-  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason> call(
+  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>? call(
     String content, {
     Duration? duration,
     TextStyle? style,
     SnackBarAction? action,
     Color? backgroundColor,
   }) {
-    final BuildContext context = Get.context!;
+    final BuildContext? context = Get.context;
+    if (context == null) return null;
     final ScaffoldMessengerState scaffold = ScaffoldMessenger.of(context);
     scaffold.clearSnackBars();
     return scaffold.showSnackBar(
@@ -45,13 +46,13 @@ abstract final class ShowMySnackBar {
     );
   }
 
-  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason> success(
+  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>? success(
     String content,
   ) {
     return call(content, backgroundColor: Colors.green);
   }
 
-  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
+  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>?
       reRequestPermissionToast({
     required String text,
     required String actionText,
@@ -70,7 +71,7 @@ abstract final class ShowMySnackBar {
     );
   }
 
-  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason> error(
+  static ScaffoldFeatureController<SnackBar, SnackBarClosedReason>? error(
     String text,
   ) {
     return call(
