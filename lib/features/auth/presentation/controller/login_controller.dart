@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:timer_count_down/timer_controller.dart';
 
 import '../../../../app_info.dart';
 import '../../../../core/status/status.dart';
@@ -22,11 +23,17 @@ import '../../domain/repositories/auth_repositories.dart';
 abstract class LoginController extends GetxController {
   bool get isLoading;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final CountdownController timerController = CountdownController();
 
   PhoneNumber? phone;
   String password = '';
 
   bool get showBiometricsButton;
+  bool get canUseBiometrics;
+  bool get hasFaceId;
+
+  void changeUsingBiometrics(bool value);
+  Future<void> checkAuthenticate();
 
   Future<void> login();
 
@@ -57,11 +64,13 @@ class LoginControllerImp extends LoginController {
   bool get showBiometricsButton =>
       _canAuthenticate && apiServices.token?.isNotEmpty == true;
 
-  // @override
-  // void onInit() {
-  //   checkAuthenticate();
-  //   super.onInit();
-  // }
+  late bool _canUseBiometrics = showBiometricsButton;
+  @override
+  bool get canUseBiometrics => _canUseBiometrics;
+
+  late bool _hasFaceId = Platform.isIOS;
+  @override
+  bool get hasFaceId => _hasFaceId;
 
   @override
   void onReady() {
@@ -69,12 +78,22 @@ class LoginControllerImp extends LoginController {
     super.onReady();
   }
 
+  @override
+  void changeUsingBiometrics(bool value) {
+    _canUseBiometrics = value;
+    update();
+  }
+
+  @override
   Future<void> checkAuthenticate() async {
-    final List<bool> auth = await Future.wait([
-      localAuth.isDeviceSupported(),
-      localAuth.canCheckBiometrics,
+    final List auth = await Future.wait([
+      localAuth.isDeviceSupported(), // 0
+      localAuth.canCheckBiometrics, // 1
+      localAuth.getAvailableBiometrics(), // 2
     ]);
-    _canAuthenticate = auth[0] && auth[1];
+    _canAuthenticate = (auth[0] as bool) && (auth[1] as bool);
+    _hasFaceId = (auth[2] as List<BiometricType>).contains(BiometricType.face);
+    _canUseBiometrics = showBiometricsButton;
 
     update();
   }
@@ -83,7 +102,7 @@ class LoginControllerImp extends LoginController {
   Future<void> biometricsLogin() async {
     await checkAuthenticate();
 
-    if (isLoading || !showBiometricsButton) return;
+    if (isLoading || !showBiometricsButton || !_canUseBiometrics) return;
     bool authenticated = false;
 
     try {
@@ -91,14 +110,24 @@ class LoginControllerImp extends LoginController {
         localizedReason: localeLang().biometricPromptReason,
         options: const AuthenticationOptions(
           useErrorDialogs: true,
-          biometricOnly: true,
           stickyAuth: true,
         ),
       );
     } catch (e) {
-      _canAuthenticate = false;
-      update();
+      if (AppInfo.isDebugMode) print(e.toString());
+      if (e is PlatformException) {
+        ShowMySnackBar.error(e.message ?? e.code);
+        if (e.code == 'LockedOut') {
+          if (timerController.isCompleted == true) {
+            timerController.restart();
+          } else {
+            timerController.start();
+          }
+          changeUsingBiometrics(false);
+        }
+      }
     }
+    // localAuth.stopAuthentication();
     if (!authenticated) return;
 
     _isLoading = true;
