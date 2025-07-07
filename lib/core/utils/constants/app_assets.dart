@@ -19,4 +19,5 @@ abstract final class AppAssets {
   static const String findBarCode = "$_iconsPath/find_barcode.png";
   static const String enterBarCode = "$_iconsPath/enter_barcode.png";
   static const String removeSticker = "$_iconsPath/remove_sticker.png";
+  static const String faceId = "$_iconsPath/face-id.png";
 }

@@ -76,7 +76,7 @@ abstract final class ShowMySnackBar {
   ) {
     return call(
       text,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 4),
       backgroundColor: Get.theme.colorScheme.error,
     );
   }
