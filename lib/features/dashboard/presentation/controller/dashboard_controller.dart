@@ -108,6 +108,7 @@ class DashboardControllerImp extends DashboardController {
     await repo.getUserData().listen(
       (status) {
         if (status is Success<UserModel?>) {
+          if(status.data == null) return;
           realStatus ??= status;
           _user = status.data;
           _isLoadingUserData = false;
