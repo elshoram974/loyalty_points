@@ -1,4 +1,13 @@
 {
+    "biometricWaitMessage": "Please wait {seconds} seconds before using biometric login again.",
+    "@biometricWaitMessage": {
+        "description": "Shown when the user must wait before retrying biometric login",
+        "placeholders": {
+            "seconds": {
+                "type": "int"
+            }
+        }
+    },
     "biometricPromptReason": "Please confirm your identity to simplify the login process",
     "loginWithBiometric": "Log in with biometric",
     "somethingWentWrongPleaseLogInWithPassword": "Something went wrong, please log in with your password",

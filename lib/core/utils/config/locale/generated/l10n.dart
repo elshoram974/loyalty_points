@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Please wait {seconds} seconds before using biometric login again.`
+  String biometricWaitMessage(int seconds) {
+    return Intl.message(
+      'Please wait $seconds seconds before using biometric login again.',
+      name: 'biometricWaitMessage',
+      desc: 'Shown when the user must wait before retrying biometric login',
+      args: [seconds],
+    );
+  }
+
   /// `Please confirm your identity to simplify the login process`
   String get biometricPromptReason {
     return Intl.message(
