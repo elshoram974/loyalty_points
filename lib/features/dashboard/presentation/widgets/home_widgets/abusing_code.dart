@@ -1,71 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
-import 'package:loyalty_points/features/dashboard/presentation/widgets/home_widgets/abusing_code_steps.dart';
+import '../../../../../app_info.dart';
+import '../../../../../core/utils/config/controller/config_controller.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
-import '../../../data/model/burn_steps_model.dart';
+import '../../../../../core/utils/constants/app_strings.dart';
+import '../../../../../core/utils/functions/handle_url.dart';
 
 class AbusingCode extends StatelessWidget {
   const AbusingCode({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
+    return GetBuilder<ConfigController>(
+      id: AppString.updateHomeBurnSteps,
+      builder: (_) {
+        if (AppInfo.config?.burnStepsHTML?.isNotEmpty != true) {
+          return const SizedBox();
+        }
+        return Padding(
           padding: const EdgeInsets.all(AppConst.paddingDefault),
-          child: Text(localeLang(context).howToAbusingCode,
-              style: context.textTheme.headlineSmall),
-        ),
-        // const SizedBox(height: AppConst.paddingDefault),
-        ListView.builder(
-          itemBuilder: (_, index) => AbusingCodeSteps(
-            index: index,
-            burnStepsModel: burnSteps[index],
-            
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                localeLang(context).howToAbusingCode,
+                style: context.textTheme.headlineSmall,
+              ),
+              Html(
+                data: AppInfo.config!.burnStepsHTML!,
+                onLinkTap: (url, attributes, element) {
+                  if (url != null) launchURL(url);
+                },
+              ),
+              const SizedBox(height: AppConst.paddingExtraBig),
+            ],
           ),
-          itemCount: burnSteps.length,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-        ),
-
-       const SizedBox(height: AppConst.paddingExtraBig),
-        // Column(
-        //   children: [
-        //     AbusingCodeSteps(
-        //       index: 0,
-        //       burnStepsModel: burnSteps[0],
-        //     ),
-        //     AbusingCodeSteps(
-        //       index: 1,
-        //       burnStepsModel: burnSteps[1],
-        //     ),
-        //     AbusingCodeSteps(
-        //       index: 2,
-        //       burnStepsModel: burnSteps[2],
-        //     ),
-            // AbusingCodeSteps(
-            //   ico: AppAssets.removeSticker,
-            //   title: localeLang().removeSticker,
-            //   subTitle:
-            //       localeLang().removeStickerFromApp(localeLang().business_name),
-            // ),
-            // const SizedBox(height: AppConst.paddingSmall),
-            // AbusingCodeSteps(
-            //     ico: AppAssets.findBarCode,
-            //     title: localeLang().findCode,
-            //     subTitle: localeLang().uniqueCodeUnderLabel),
-            // const SizedBox(height: AppConst.paddingSmall),
-            // AbusingCodeSteps(
-            //   ico: AppAssets.enterBarCode,
-            //   title: localeLang().enterCode,
-            //   subTitle: localeLang().enterCodeOnWebsiteOrApp,
-            // ),
-          ],
-      //  ),
-       // const SizedBox(height: AppConst.paddingExtraBig),
-     // ],
+        );
+      },
     );
   }
 }

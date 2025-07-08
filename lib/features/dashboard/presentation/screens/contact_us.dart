@@ -15,8 +15,10 @@ class ContactUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           localeLang(context).contactUs,
+          textAlign: TextAlign.center,
           style: context.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.bold,
           ),

@@ -10,9 +10,12 @@ class ConfigModel extends Equatable {
   final dynamic pointsValue;
   final String? currency;
   final dynamic loyaltyEnabled;
+  final String? banner4;
+  final String? banner3;
   final String? banner2;
   final String? banner1;
   final String? loginIntro;
+  final String? burnStepsHTML;
   final bool useLocalAuth;
 
   final int? _sellerMinimumPointsToRedeem;
@@ -46,7 +49,12 @@ class ConfigModel extends Equatable {
     return null;
   }
 
-  List<String> get homeBanners => [banner1, banner2].nonNulls.toList();
+  List<String> get homeBanners => [
+        banner1,
+        banner2,
+        banner3,
+        banner4,
+      ].nonNulls.toList();
   List<SocialMediaType> get socialMedia {
     final List<SocialMediaType> socialMedia = [];
 
@@ -65,6 +73,9 @@ class ConfigModel extends Equatable {
     this.pointsValue,
     this.currency,
     this.loyaltyEnabled,
+    this.burnStepsHTML,
+    this.banner4,
+    this.banner3,
     this.banner2,
     this.banner1,
     this.loginIntro,
@@ -86,6 +97,9 @@ class ConfigModel extends Equatable {
       pointsValue: data['points_value'] as dynamic,
       currency: data['currency']?['code'] as String?,
       loyaltyEnabled: data['loyalty_enabled'] as dynamic,
+      burnStepsHTML: data['burn_steps_html'] as String?,
+      banner4: data['banner4'] as String?,
+      banner3: data['banner3'] as String?,
       banner2: data['banner2'] as String?,
       banner1: data['banner1'] as String?,
       sellerMinimumPointsToRedeem:
@@ -104,6 +118,9 @@ class ConfigModel extends Equatable {
       'points_value': pointsValue,
       'currency': currency,
       'loyalty_enabled': loyaltyEnabled,
+      'burn_steps_html': burnStepsHTML,
+      'banner4': banner4,
+      'banner3': banner3,
       'banner2': banner2,
       'banner1': banner1,
       'seller_minimum_points_to_redeem': _sellerMinimumPointsToRedeem,
@@ -130,6 +147,9 @@ class ConfigModel extends Equatable {
     dynamic pointsValue,
     String? currency,
     dynamic loyaltyEnabled,
+    String? burnStepsHTML,
+    String? banner4,
+    String? banner3,
     String? banner2,
     String? banner1,
     int? sellerMinimumPointsToRedeem,
@@ -143,6 +163,9 @@ class ConfigModel extends Equatable {
       pointsValue: pointsValue ?? this.pointsValue,
       currency: currency ?? this.currency,
       loyaltyEnabled: loyaltyEnabled ?? this.loyaltyEnabled,
+      burnStepsHTML: burnStepsHTML ?? this.burnStepsHTML,
+      banner4: banner4 ?? this.banner4,
+      banner3: banner3 ?? this.banner3,
       banner2: banner2 ?? this.banner2,
       banner1: banner1 ?? this.banner1,
       sellerMinimumPointsToRedeem:
@@ -165,6 +188,9 @@ class ConfigModel extends Equatable {
       pointsValue,
       currency,
       loyaltyEnabled,
+      burnStepsHTML,
+      banner4,
+      banner3,
       banner2,
       banner1,
       _sellerMinimumPointsToRedeem,
