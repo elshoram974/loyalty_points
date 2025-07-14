@@ -1,4 +1,6 @@
 {
+    "seeMore": "See more",
+    "seeLess": "See less",
     "biometricWaitMessage": "Please wait {seconds} seconds before using biometric login again.",
     "@biometricWaitMessage": {
         "description": "Shown when the user must wait before retrying biometric login",
@@ -313,7 +315,7 @@
     "save": "Save",
     "totalOrder": "Total Order",
     "selectMonth": "Select Month",
-    "date": "creation date",
+    "date": "Creation date",
     "selectDate": "Select date",
     "deliveryMan": "Delivery Man",
     "distributorOrStore": "Distributor / Store",

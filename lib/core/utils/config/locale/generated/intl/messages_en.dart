@@ -144,7 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "current_password": MessageLookupByLibrary.simpleMessage(
       "Current Password",
     ),
-    "date": MessageLookupByLibrary.simpleMessage("creation date"),
+    "date": MessageLookupByLibrary.simpleMessage("Creation date"),
     "dateOfTerms": MessageLookupByLibrary.simpleMessage(
       "These terms and conditions are effective as of 2025-06-04",
     ),
@@ -371,6 +371,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "replacePointsWithCurrency": m15,
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
+    "seeLess": MessageLookupByLibrary.simpleMessage("See less"),
+    "seeMore": MessageLookupByLibrary.simpleMessage("See more"),
     "selectArea": MessageLookupByLibrary.simpleMessage(
       "You must select an area",
     ),

@@ -1,4 +1,6 @@
 {
+    "seeMore": "عرض المزيد",
+    "seeLess": "عرض أقل",
     "biometricWaitMessage": "يرجى الانتظار {seconds} ثانية قبل محاولة تسجيل الدخول بالبصمة مرة أخرى.",
     "@biometricWaitMessage": {
         "placeholders": {
@@ -312,7 +314,7 @@
     "save": "حفظ",
     "totalOrder": "إجمالي الطلب",
     "selectMonth": "اختر الشهر",
-    "date": "تاريخ الانشاء",
+    "date": "تاريخ الإنشاء",
     "selectDate": "اختر التاريخ",
     "delivery_man": "مندوب",
     "deliveryMan": "مندوب",

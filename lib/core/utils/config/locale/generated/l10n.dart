@@ -55,6 +55,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `See more`
+  String get seeMore {
+    return Intl.message('See more', name: 'seeMore', desc: '', args: []);
+  }
+
+  /// `See less`
+  String get seeLess {
+    return Intl.message('See less', name: 'seeLess', desc: '', args: []);
+  }
+
   /// `Please wait {seconds} seconds before using biometric login again.`
   String biometricWaitMessage(int seconds) {
     return Intl.message(
@@ -1482,9 +1492,9 @@ class S {
     );
   }
 
-  /// `creation date`
+  /// `Creation date`
   String get date {
-    return Intl.message('creation date', name: 'date', desc: '', args: []);
+    return Intl.message('Creation date', name: 'date', desc: '', args: []);
   }
 
   /// `Select date`

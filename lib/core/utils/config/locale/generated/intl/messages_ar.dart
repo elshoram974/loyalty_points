@@ -142,7 +142,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "current_password": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الحالية",
     ),
-    "date": MessageLookupByLibrary.simpleMessage("تاريخ الانشاء"),
+    "date": MessageLookupByLibrary.simpleMessage("تاريخ الإنشاء"),
     "dateOfTerms": MessageLookupByLibrary.simpleMessage(
       "هذه الشروط والأحكام سارية اعتبارًا من 4 يونيو 2025.",
     ),
@@ -365,6 +365,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "replacePointsWithCurrency": m15,
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
+    "seeLess": MessageLookupByLibrary.simpleMessage("عرض أقل"),
+    "seeMore": MessageLookupByLibrary.simpleMessage("عرض المزيد"),
     "selectArea": MessageLookupByLibrary.simpleMessage("يجب اختيار المنطقة"),
     "selectCity": MessageLookupByLibrary.simpleMessage("يجب اختيار المدينة"),
     "selectCountry": MessageLookupByLibrary.simpleMessage("يجب اختيار الدولة"),
