@@ -24,6 +24,7 @@ class ChooseAccountTypeWidget extends StatelessWidget {
         },
         builder: (state) {
           void onChangeAccountType(AccountType? accountType) {
+            if (c.isLoading) return;
             state.didChange(accountType);
             c.changeAccountType(accountType);
           }

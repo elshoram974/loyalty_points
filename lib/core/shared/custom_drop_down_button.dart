@@ -17,14 +17,14 @@ class CustomDropDownButton<T> extends StatefulWidget {
     this.validator,
     this.errorMessage,
     this.enabled = true,
+    this.readOnly = false,
     this.autofillHints,
-    this.initItem,
   });
   final bool enabled;
+  final bool readOnly;
   final String? hint;
   final String? errorMessage;
   final List<T> items;
-  final T? initItem;
   final IconData? prefixIcon;
   final Iterable<String>? autofillHints;
   final void Function(T?)? onChanged;
@@ -44,6 +44,7 @@ class _CustomDropDownButtonState<T> extends State<CustomDropDownButton<T>> {
   );
 
   List<T>? search(String query) {
+    if (isDisabled) return null;
     final String lowerCaseQuery = query.trim().toLowerCase();
     if (lowerCaseQuery.isEmpty) return widget.items;
     return widget.items
@@ -64,7 +65,6 @@ class _CustomDropDownButtonState<T> extends State<CustomDropDownButton<T>> {
   @override
   Widget build(BuildContext context) {
     if (isDisabled) {
-      selectedValue = widget.initItem;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _controller.text = selectedValue?.toString() ?? '';
       });
@@ -108,6 +108,8 @@ class _CustomDropDownButtonState<T> extends State<CustomDropDownButton<T>> {
       },
       itemBuilder: (_, i) => ListTile(title: Text(i.toString())),
       onSelected: (value) {
+        if (isDisabled) return;
+
         selectedValue = value;
         widget.onChanged?.call(selectedValue);
         _controller.text = value.toString();

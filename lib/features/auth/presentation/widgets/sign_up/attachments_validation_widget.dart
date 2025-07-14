@@ -124,11 +124,13 @@ class _AttachmentsValidationWidgetState
                                       right: 0,
                                       top: 0,
                                       child: GestureDetector(
-                                        onTap: () {
-                                          images[i] = null;
-                                          onChange(images);
-                                          setState(() {});
-                                        },
+                                        onTap: widget.onChanged == null
+                                            ? null
+                                            : () {
+                                                images[i] = null;
+                                                onChange(images);
+                                                setState(() {});
+                                              },
                                         child: const Padding(
                                           padding: EdgeInsets.all(
                                               AppConst.paddingExtraSmall),

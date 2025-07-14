@@ -45,7 +45,7 @@ class ChooseAddressWidget extends StatelessWidget {
                   Expanded(child: countryDropDown(controller)),
                 Expanded(
                   child: CustomDropDownButton<AddressModel>(
-                    enabled: controller.country != null &&
+                    enabled: !controller.isLoading && controller.country != null &&
                         controller.governorates.isNotEmpty,
                     autofillHints: const [AutofillHints.addressState],
                     prefixIcon: Icons.location_city,
@@ -57,7 +57,7 @@ class ChooseAddressWidget extends StatelessWidget {
                 ),
                 Expanded(
                   child: CustomDropDownButton<AddressModel>(
-                    enabled: controller.governorate != null &&
+                    enabled: !controller.isLoading && controller.governorate != null &&
                         controller.cities.isNotEmpty,
                     autofillHints: const [AutofillHints.addressCity],
                     prefixIcon: Icons.location_on,
@@ -79,7 +79,7 @@ class ChooseAddressWidget extends StatelessWidget {
     return Builder(
       builder: (context) {
         return CustomDropDownButton<AddressModel>(
-          enabled: controller.countries.isNotEmpty,
+          enabled: !controller.isLoading && controller.countries.isNotEmpty,
           autofillHints: const [AutofillHints.countryName],
           hint: localeLang(context).country,
           errorMessage: localeLang(context).selectCountry,

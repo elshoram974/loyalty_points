@@ -11,17 +11,19 @@ abstract final class HandlePermissions {
     if (permission == LocationPermission.denied ||
         permission == LocationPermission.deniedForever ||
         permission == LocationPermission.unableToDetermine) {
-      permission = await Geolocator.requestPermission();
+      await Geolocator.requestPermission();
+      permission = await Geolocator.checkPermission();
       if (permission == LocationPermission.denied) {
         ShowMySnackBar.error(localeLang().locationIsDenied);
+        return null;
       } else if (permission == LocationPermission.deniedForever) {
         ShowMySnackBar.reRequestPermissionToast(
           text: localeLang().locationIsDeniedPermanently,
           actionText: localeLang().goToSetting,
           onPressed: Geolocator.openAppSettings,
         );
+        return null;
       }
-      return null;
     }
 
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();

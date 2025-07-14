@@ -31,18 +31,18 @@ class SignUpFields extends StatelessWidget {
                 validator: (val) =>
                     AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
               ),
-              AuthField(
-                isRequired:false,
-                readOnly: controller.isLoading,
-                onChanged: (v) => controller.email = v.trim().toLowerCase(),
-                label: localeLang(context).email,
-                textCapitalization: TextCapitalization.none,
-                suffixIconData: Icons.mail_rounded,
-                autofillHints: const [AutofillHints.email],
-                hintText: localeLang(context).enterYourEmailAddress,
-                validator: (val) => AppValidator.auth(
-                    val?.trim().toLowerCase(), 0, 100, FieldType.email),
-              ),
+              // AuthField(
+              //   isRequired:false,
+              //   readOnly: controller.isLoading,
+              //   onChanged: (v) => controller.email = v.trim().toLowerCase(),
+              //   label: localeLang(context).email,
+              //   textCapitalization: TextCapitalization.none,
+              //   suffixIconData: Icons.mail_rounded,
+              //   autofillHints: const [AutofillHints.email],
+              //   hintText: localeLang(context).enterYourEmailAddress,
+              //   validator: (val) => AppValidator.auth(
+              //       val?.trim().toLowerCase(), 0, 100, FieldType.email),
+              // ),
               AuthField(
                 isRequired: true,
                 readOnly: controller.isLoading,

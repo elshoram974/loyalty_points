@@ -15,34 +15,47 @@ class SignUpButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SignUpController controller = Get.find<SignUpController>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const ChooseAddressWidget(),
         const ChooseAccountTypeWidget(),
-        AttachmentsValidationWidget(
-          title: localeLang(context).attachProfilePhoto,
-          errorMessage: localeLang(context).uHaveToAddProfileImage,
-          files: [controller.profile],
-          onChanged: (images) => controller.profile = images.firstOrNull,
+        GetBuilder<SignUpController>(
+          builder: (controller) {
+            return AttachmentsValidationWidget(
+              title: localeLang(context).attachProfilePhoto,
+              errorMessage: localeLang(context).uHaveToAddProfileImage,
+              files: [controller.profile],
+              onChanged: controller.isLoading
+                  ? null
+                  : (images) => controller.profile = images.firstOrNull,
+            );
+          },
         ),
         const SizedBox(height: AppConst.paddingDefault),
-        AttachmentsValidationWidget(
-          title: localeLang(context).attachStorefrontPhotos,
-          errorMessage: localeLang(context).addAtLeastOneImage,
-          files: controller.attachments,
-          onChanged: (images) => controller.attachments = images,
+        GetBuilder<SignUpController>(
+          builder: (controller) {
+            return AttachmentsValidationWidget(
+              title: localeLang(context).attachStorefrontPhotos,
+              errorMessage: localeLang(context).addAtLeastOneImage,
+              files: controller.attachments,
+              onChanged: controller.isLoading
+                  ? null
+                  : (images) => controller.attachments = images,
+            );
+          },
         ),
         const SizedBox(height: 70),
-        GetBuilder<SignUpController>(builder: (controller) {
-          return CustomFilledButton(
-            text: localeLang(context).signUp,
-            isLoading: controller.isLoading,
-            onPressed: controller.signUp,
-            style: context.textTheme.headlineMedium,
-          );
-        }),
+        GetBuilder<SignUpController>(
+          builder: (controller) {
+            return CustomFilledButton(
+              text: localeLang(context).signUp,
+              isLoading: controller.isLoading,
+              onPressed: controller.signUp,
+              style: context.textTheme.headlineMedium,
+            );
+          },
+        ),
         const SizedBox(height: AppConst.paddingExtraBig),
         RichText(
           textAlign: TextAlign.center,

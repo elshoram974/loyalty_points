@@ -87,6 +87,7 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   void selectCountry(AddressModel? country) {
+    if (this.country == country) return;
     this.country = country;
     governorate = null;
     city = null;
@@ -98,6 +99,7 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   void selectGovernorate(AddressModel? governorate) {
+    if (this.governorate == governorate) return;
     this.governorate = governorate;
     city = null;
     _cities.clear();
@@ -107,6 +109,7 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   void selectCity(AddressModel? city) {
+    if (this.city == city) return;
     this.city = city;
     update([AppString.updateAddress]);
   }
@@ -177,6 +180,7 @@ class SignUpControllerImp extends SignUpController {
       return;
     }
     _isLoading = true;
+    update([AppString.updateAddress]);
     update();
 
     late final String tempEmail;
@@ -187,7 +191,12 @@ class SignUpControllerImp extends SignUpController {
     }
 
     final Position? position = await HandlePermissions.getCurrentLocation();
-    if (position == null) return;
+    if (position == null) {
+      _isLoading = false;
+      update([AppString.updateAddress]);
+      update();
+      return;
+    }
     final Status<void> signUpState = await repo.signUp(
       SignUpBodyData(
         phone: phone!,
@@ -212,6 +221,7 @@ class SignUpControllerImp extends SignUpController {
     );
 
     _isLoading = false;
+    update([AppString.updateAddress]);
     update();
   }
 
