@@ -10,6 +10,8 @@ import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../domain/entity/order_entity.dart';
 import 'package:intl/intl.dart' as intl;
 
+import '../widgets/orders_widgets/details_card.dart';
+
 class OrdersDetailsScreen extends StatelessWidget {
   const OrdersDetailsScreen({
     super.key,
@@ -35,7 +37,7 @@ class OrdersDetailsScreen extends StatelessWidget {
         children: [
           // DateContainerWidget(date: order.date)
           if (order.updatedDate == null) const SizedBox(),
-          _DetailsCard(
+          DetailsCard(
             icon: Icons.update,
             title: localeLang(context).lastUpdate,
             value: intl.DateFormat.yMMMd(
@@ -43,7 +45,7 @@ class OrdersDetailsScreen extends StatelessWidget {
             ).format(DateTime(order.updatedDate?.year ?? 0,
                 order.updatedDate?.month ?? 0, order.updatedDate?.day ?? 0)),
           ),
-          _DetailsCard(
+          DetailsCard(
             icon: Icons.calendar_month_outlined,
             title: localeLang(context).date,
             value: intl.DateFormat.yMMMd(
@@ -51,41 +53,42 @@ class OrdersDetailsScreen extends StatelessWidget {
             ).format(DateTime(order.createdDate.year, order.createdDate.month,
                 order.createdDate.day)),
           ),
-          _DetailsCard(
+          DetailsCard(
             icon: order.orderStatus.icon,
             title: localeLang(context).status,
             value: order.orderStatus.name,
             valueColor: order.orderStatus.color,
           ),
-          _DetailsCard(
+          DetailsCard(
             icon: Icons.star_outline,
             title: localeLang(context).points,
             value: order.points.withSeparator,
           ),
           PointsBuilderWidget(builder: (_, __, helper) {
-            return _DetailsCard(
+            return DetailsCard(
               icon: Icons.price_check_outlined,
               title: localeLang(context).price,
               value: "${order.price.withSeparator} ${helper.config?.currency}",
             );
           }),
-          _DetailsCard(
+          DetailsCard(
             icon: Icons.payment_outlined,
             title: localeLang(context).paymentMethod,
             value: order.paymentMethod.name,
           ),
-          _DetailsCard(
+          DetailsCard(
             icon: Icons.phone_outlined,
             title: localeLang(context)
                 .paymentMethodNumber(order.paymentMethod.name),
             value: order.phone.toString(),
             valueDirection: TextDirection.ltr,
           ),
-          _DetailsCard(
-            title: localeLang(context).note,
-            value: order.adminNote ?? localeLang(context).noNotes,
-            icon: Icons.notes_outlined,
-          ),
+          if (order.adminNote != null)
+            DetailsCard(
+              title: localeLang(context).note,
+              value: order.adminNote!,
+              icon: Icons.notes_outlined,
+            ),
 
           if (order.imageUrl != null) ...[
             const SizedBox(height: 16),
@@ -103,51 +106,6 @@ class OrdersDetailsScreen extends StatelessWidget {
           ],
           const SizedBox(height: 8),
         ],
-      ),
-    );
-  }
-}
-
-class _DetailsCard extends StatelessWidget {
-  const _DetailsCard({
-    required this.title,
-    required this.value,
-    this.valueColor,
-    this.icon,
-    this.valueDirection,
-  });
-
-  final String title;
-  final String value;
-  final Color? valueColor;
-  final IconData? icon;
-  final TextDirection? valueDirection;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: ListTile(
-        leading: icon != null
-            ? Icon(icon, color: valueColor ?? Theme.of(context).primaryColor)
-            : null,
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        subtitle: Align(
-          alignment: AlignmentDirectional.centerStart,
-          child: Text(
-            value,
-            textDirection: valueDirection,
-            style: TextStyle(
-              color:
-                  valueColor ?? Theme.of(context).textTheme.bodyMedium?.color,
-              fontSize: 16,
-            ),
-          ),
-        ),
       ),
     );
   }
