@@ -280,7 +280,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "paymentMethodNumber": m9,
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
-      "يرجى الذهاب إلى تفعيل موقعك",
+      "يرجى الذهاب لتشغيل موقعك",
     ),
     "point": MessageLookupByLibrary.simpleMessage("نقطة"),
     "point_number": m10,
