@@ -170,7 +170,7 @@ class SignUpControllerImp extends SignUpController {
 
   @override
   Future<void> signUp() async {
-    if (NetworkInfo.showSnackBarWhenNoInternet) return;
+    if (await NetworkInfo.showSnackBarWhenNoInternet) return;
 
     if (!formKey.currentState!.validate()) {
       ShowMySnackBar.call(

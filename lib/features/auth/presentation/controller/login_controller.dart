@@ -147,9 +147,8 @@ class LoginControllerImp extends LoginController {
 
   @override
   Future<void> login() async {
-    if (NetworkInfo.showSnackBarWhenNoInternet) return;
-
     if (!formKey.currentState!.validate()) return;
+    if (await NetworkInfo.showSnackBarWhenNoInternet) return;
     _isLoading = true;
     update();
     final Status<UserModel> loginState = await repo.login(

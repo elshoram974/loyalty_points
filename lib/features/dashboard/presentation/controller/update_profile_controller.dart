@@ -52,7 +52,7 @@ class UpdateProfileControllerImp extends UpdateProfileController {
 
   @override
   Future<void> updateProfile() async {
-    if (NetworkInfo.showSnackBarWhenNoInternet) return;
+    if (await NetworkInfo.showSnackBarWhenNoInternet) return;
 
     if (!formKey.currentState!.validate()) {
       ShowMySnackBar.call(

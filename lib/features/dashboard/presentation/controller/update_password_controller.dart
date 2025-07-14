@@ -36,7 +36,7 @@ class UpdatePasswordControllerImp extends UpdatePasswordController {
 
   @override
   Future<void> updatePassword() async {
-    if (NetworkInfo.showSnackBarWhenNoInternet) return;
+    if (await NetworkInfo.showSnackBarWhenNoInternet) return;
 
     if (!formKey.currentState!.validate()) {
       ShowMySnackBar.call(

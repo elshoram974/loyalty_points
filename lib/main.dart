@@ -18,7 +18,6 @@ import 'core/utils/config/locale/generated/l10n.dart';
 import 'core/utils/config/routes/routes.dart';
 import 'core/utils/config/theme/dark_theme.dart';
 import 'core/utils/config/theme/light_theme.dart';
-import 'core/utils/helper/network_helper.dart';
 import 'core/utils/services/push_notification_service.dart';
 import 'firebase_options.dart';
 
@@ -73,12 +72,6 @@ class MyApp extends StatelessWidget {
       getPages: AppRoute.pages,
       initialRoute: AppRoute.login,
       debugShowCheckedModeBanner: AppInfo.isDebugMode,
-      initialBinding: BindingsBuilder(
-        () async {
-          // await S.load(Get.find<ConfigController>().locale);
-          await NetworkInfo.init();
-        },
-      ),
     );
   }
 }

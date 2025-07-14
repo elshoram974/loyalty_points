@@ -1,5 +1,4 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../config/locale/local_lang.dart';
@@ -8,61 +7,20 @@ import 'show_my_snack_bar.dart';
 class NetworkInfo {
   const NetworkInfo();
 
-  static final List<ConnectivityResult> _results = [];
+  static Future<bool> get isConnected async {
+    final List<ConnectivityResult> connectivity =
+        await Connectivity().checkConnectivity();
 
-  static Future<void> init() async {
-    _results.addAll(await Connectivity().checkConnectivity());
-    checkConnectivity();
-  }
-
-  static bool get isConnected {
-    if (_results.isEmpty) {
-      Connectivity().checkConnectivity().then(
-        (result) {
-          _results.clear();
-          _results.addAll(result);
-          _networkMethod();
-        },
-      );
-    }
-    return !_results.contains(ConnectivityResult.none);
-  }
-
-  static void checkConnectivity() {
-    Connectivity().onConnectivityChanged.listen(
-      (List<ConnectivityResult> result) {
-        _results.clear();
-        _results.addAll(result);
-        _networkMethod();
-      },
-    );
-  }
-
-  static bool _whenOpenApp = true;
-  static void _networkMethod() {
-    if (_whenOpenApp) {
-      _whenOpenApp = false;
-      return;
-    }
-    if (isConnected) {
-      ShowMySnackBar.call(
-        localeLang().connectedToInternet,
-        backgroundColor: Colors.green,
-      );
-    } else {
-      ShowMySnackBar.call(
-        localeLang().noInternetConnection,
-        backgroundColor: Get.theme.colorScheme.error,
-      );
-    }
+    return !connectivity.contains(ConnectivityResult.none);
   }
 
   /// This getter returns true if no internet connection,
   /// and will show snackbar that return no internet connection
-  static bool get showSnackBarWhenNoInternet {
-    if (isConnected) return false;
+  static Future<bool> get showSnackBarWhenNoInternet async {
+    if (await isConnected) return false;
     ShowMySnackBar.call(
       localeLang().noInternetConnection,
+      duration: const Duration(seconds: 3),
       backgroundColor: Get.theme.colorScheme.error,
     );
     return true;
