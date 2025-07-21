@@ -386,7 +386,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectMonth": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
     "selectProvider": MessageLookupByLibrary.simpleMessage("اختر مزود الخدمة"),
-    "sendcode": MessageLookupByLibrary.simpleMessage("ارسال الرمز"),
+    "sendCode": MessageLookupByLibrary.simpleMessage("ارسال الرمز"),
     "serverTookTooLong": MessageLookupByLibrary.simpleMessage(
       "استغرق الخادم وقتًا طويلاً للرد.",
     ),

@@ -1868,8 +1868,8 @@ class S {
   }
 
   /// `Send code`
-  String get sendcode {
-    return Intl.message('Send code', name: 'sendcode', desc: '', args: []);
+  String get sendCode {
+    return Intl.message('Send code', name: 'sendCode', desc: '', args: []);
   }
 
   /// `Sign up`

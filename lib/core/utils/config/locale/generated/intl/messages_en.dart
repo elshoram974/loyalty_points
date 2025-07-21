@@ -396,7 +396,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectMonth": MessageLookupByLibrary.simpleMessage("Select Month"),
     "selectProvider": MessageLookupByLibrary.simpleMessage("Select a provider"),
-    "sendcode": MessageLookupByLibrary.simpleMessage("Send code"),
+    "sendCode": MessageLookupByLibrary.simpleMessage("Send code"),
     "serverTookTooLong": MessageLookupByLibrary.simpleMessage(
       "The server took too long to respond.",
     ),
