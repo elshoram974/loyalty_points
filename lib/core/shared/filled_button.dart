@@ -52,10 +52,7 @@ class CustomFilledButton extends StatelessWidget {
               padding: padding,
               minimumSize: minimumSize ?? const Size(256, 50),
               backgroundColor: filledColor ?? context.theme.primaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: borderRadius ??
-                    BorderRadius.circular(AppConst.radiusNearCircle),
-              ),
+              shape: RoundedRectangleBorder(borderRadius: _radius),
             ),
             child: text == null
                 ? icon
@@ -83,6 +80,9 @@ class CustomFilledButton extends StatelessWidget {
     );
   }
 
+  BorderRadiusGeometry get _radius =>
+      borderRadius ?? BorderRadius.circular(AppConst.radiusNearCircle);
+
   Builder _loadingFilledButton() {
     return Builder(
       builder: (context) {
@@ -91,10 +91,7 @@ class CustomFilledButton extends StatelessWidget {
           style: FilledButton.styleFrom(
             minimumSize: minimumSize ?? const Size(256, 50),
             backgroundColor: filledColor ?? context.theme.primaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius:
-                  borderRadius ?? BorderRadius.circular(AppConst.radiusDefault),
-            ),
+            shape: RoundedRectangleBorder(borderRadius: _radius),
           ),
           child: SizedBox.square(
             dimension: min(

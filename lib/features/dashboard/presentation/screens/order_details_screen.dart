@@ -22,6 +22,13 @@ class OrdersDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Widget orderImage = Hero(
+      tag: "${order.imageUrl}",
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: MyNetworkImage(order.imageUrl),
+      ),
+    );
     return CustomScaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -99,13 +106,94 @@ class OrdersDetailsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: MyNetworkImage(order.imageUrl),
+            GestureDetector(
+              onTap: () {
+                Get.to(() => _ImageDialog(orderImage), opaque: false);
+              },
+              child: orderImage,
             ),
           ],
           const SizedBox(height: 8),
         ],
+      ),
+    );
+  }
+}
+
+class _ImageDialog extends StatefulWidget {
+  const _ImageDialog(this.orderImage, {super.key});
+
+  final Widget orderImage;
+
+  @override
+  State<_ImageDialog> createState() => _ImageDialogState();
+}
+
+class _ImageDialogState extends State<_ImageDialog>
+    with SingleTickerProviderStateMixin {
+  final TransformationController _transformationController =
+      TransformationController();
+  late final AnimationController _animController;
+  late Animation<Matrix4> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _animController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 200),
+    )..addListener(() {
+        _transformationController.value = _animation.value;
+      });
+  }
+
+  @override
+  void dispose() {
+    _animController.dispose();
+    _transformationController.dispose();
+    super.dispose();
+  }
+
+  void _animateReset() {
+    _animation = Matrix4Tween(
+      begin: _transformationController.value,
+      end: Matrix4.identity(),
+    ).animate(CurveTween(curve: Curves.easeOut).animate(_animController));
+
+    _animController.forward(from: 0);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return InteractiveViewer(
+      transformationController: _transformationController,
+      onInteractionEnd: (_) => _animateReset(),
+      child: Dialog(
+        backgroundColor: Colors.transparent,
+        child: Stack(
+          children: [
+            widget.orderImage,
+            Positioned(
+              top: 8,
+              right: 8,
+              child: InkWell(
+                onTap: () => Navigator.of(context).pop(),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.5),
+                    shape: BoxShape.circle,
+                  ),
+                  padding: const EdgeInsets.all(4),
+                  child: const Icon(
+                    Icons.close,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
