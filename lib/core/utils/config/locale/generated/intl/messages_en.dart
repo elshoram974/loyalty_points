@@ -191,6 +191,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterValidEmail": MessageLookupByLibrary.simpleMessage(
       "Enter valid E-mail",
     ),
+    "enterValidMobileNumber": MessageLookupByLibrary.simpleMessage(
+      "Enter valid mobile number",
+    ),
     "enterYourEmailAddress": MessageLookupByLibrary.simpleMessage(
       "Enter your email address",
     ),
@@ -288,6 +291,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
       "Please go to verify your location",
     ),
+    "pleaseWriteYourCode": MessageLookupByLibrary.simpleMessage(
+      "Please write your code",
+    ),
     "point": MessageLookupByLibrary.simpleMessage("point"),
     "point_number": m10,
     "points": MessageLookupByLibrary.simpleMessage("Points"),
@@ -369,6 +375,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "removeSticker": MessageLookupByLibrary.simpleMessage("Remove the sticker"),
     "removeStickerFromApp": m14,
     "replacePointsWithCurrency": m15,
+    "resendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
+    "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "seeLess": MessageLookupByLibrary.simpleMessage("See less"),
@@ -388,6 +396,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectMonth": MessageLookupByLibrary.simpleMessage("Select Month"),
     "selectProvider": MessageLookupByLibrary.simpleMessage("Select a provider"),
+    "sendcode": MessageLookupByLibrary.simpleMessage("Send code"),
     "serverTookTooLong": MessageLookupByLibrary.simpleMessage(
       "The server took too long to respond.",
     ),

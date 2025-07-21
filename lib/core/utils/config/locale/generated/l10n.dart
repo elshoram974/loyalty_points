@@ -1832,6 +1832,46 @@ class S {
     );
   }
 
+  /// `Reset password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend code`
+  String get resendCode {
+    return Intl.message('Resend code', name: 'resendCode', desc: '', args: []);
+  }
+
+  /// `Enter valid mobile number`
+  String get enterValidMobileNumber {
+    return Intl.message(
+      'Enter valid mobile number',
+      name: 'enterValidMobileNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please write your code`
+  String get pleaseWriteYourCode {
+    return Intl.message(
+      'Please write your code',
+      name: 'pleaseWriteYourCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send code`
+  String get sendcode {
+    return Intl.message('Send code', name: 'sendcode', desc: '', args: []);
+  }
+
   /// `Sign up`
   String get signUp {
     return Intl.message('Sign up', name: 'signUp', desc: '', args: []);

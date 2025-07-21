@@ -187,6 +187,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterValidEmail": MessageLookupByLibrary.simpleMessage(
       "أدخل بريدًا إلكترونيًا صالحًا",
     ),
+    "enterValidMobileNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى ادخال رقم هاتف صالح",
+    ),
     "enterYourEmailAddress": MessageLookupByLibrary.simpleMessage(
       "أدخل البريد الإلكتروني الخاص بك",
     ),
@@ -282,6 +285,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
       "يرجى الذهاب لتشغيل موقعك",
     ),
+    "pleaseWriteYourCode": MessageLookupByLibrary.simpleMessage(
+      "يرجى كتابة كودك",
+    ),
     "point": MessageLookupByLibrary.simpleMessage("نقطة"),
     "point_number": m10,
     "points": MessageLookupByLibrary.simpleMessage("النقاط"),
@@ -363,6 +369,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "removeSticker": MessageLookupByLibrary.simpleMessage("إزالة الملصق"),
     "removeStickerFromApp": m14,
     "replacePointsWithCurrency": m15,
+    "resendCode": MessageLookupByLibrary.simpleMessage("اعادة الارسال"),
+    "resetPassword": MessageLookupByLibrary.simpleMessage(
+      "استعادة كلمة المرور",
+    ),
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
     "seeLess": MessageLookupByLibrary.simpleMessage("عرض أقل"),
@@ -376,6 +386,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectMonth": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
     "selectProvider": MessageLookupByLibrary.simpleMessage("اختر مزود الخدمة"),
+    "sendcode": MessageLookupByLibrary.simpleMessage("ارسال الرمز"),
     "serverTookTooLong": MessageLookupByLibrary.simpleMessage(
       "استغرق الخادم وقتًا طويلاً للرد.",
     ),
