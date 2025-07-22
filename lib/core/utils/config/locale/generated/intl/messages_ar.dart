@@ -118,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "changeOnTerms": MessageLookupByLibrary.simpleMessage(
       "يجوز لمقدم الخدمة تحديث شروطه وأحكامه دوريًا. لذلك، ننصحك بمراجعة هذه الصفحة بانتظام للاطلاع على أي تغييرات. سيُخطرك مقدم الخدمة بأي تغييرات من خلال نشر الشروط والأحكام الجديدة على هذه الصفحة.",
     ),
+    "changePassword": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
     "city": MessageLookupByLibrary.simpleMessage("المدينة"),
     "clientTookTooLong": MessageLookupByLibrary.simpleMessage(
       "استغرق العميل وقتًا طويلاً للرد.",
@@ -284,6 +285,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
       "يرجى الذهاب لتشغيل موقعك",
+    ),
+    "pleaseTryAgain": MessageLookupByLibrary.simpleMessage(
+      "يرجى المحاولة مرة أخرى",
     ),
     "pleaseWriteYourCode": MessageLookupByLibrary.simpleMessage(
       "يرجى كتابة كودك",

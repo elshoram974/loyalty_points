@@ -376,7 +376,8 @@
         }
     },
     "password": "كلمة المرور",
-    
+    "pleaseTryAgain": "يرجى المحاولة مرة أخرى",
+    "changePassword": "تغيير كلمة المرور",
     "enterThePassword": "أدخل كلمة المرور",
     "forgetPassword": "نسيت كلمة المرور؟",
     "sendCode": "ارسال الرمز",

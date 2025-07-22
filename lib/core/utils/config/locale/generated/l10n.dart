@@ -1807,6 +1807,26 @@ class S {
     );
   }
 
+  /// `Change Password`
+  String get changePassword {
+    return Intl.message(
+      'Change Password',
+      name: 'changePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please try again later`
+  String get pleaseTryAgain {
+    return Intl.message(
+      'Please try again later',
+      name: 'pleaseTryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Password`
   String get password {
     return Intl.message('Password', name: 'password', desc: '', args: []);

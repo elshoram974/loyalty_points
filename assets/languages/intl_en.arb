@@ -372,6 +372,8 @@
             }
         }
     },
+    "changePassword": "Change Password",
+    "pleaseTryAgain":"Please try again later",
     "password": "Password",
     "enterThePassword": "Enter the password",
     "forgetPassword": "Forget password ?",
