@@ -84,7 +84,7 @@ class ServerFailure<T> extends Failure<T> {
   }
   factory ServerFailure.fromBadResponse(DioException e) {
     final int? statusCode = e.response!.statusCode;
-    print(Get.currentRoute);
+    print("Error code: $statusCode, in API: ${e.requestOptions.uri.toString()}, Currant Route: ${Get.currentRoute}");
 
     final FailureBody res = FailureBody(
       type: e.type.name,
