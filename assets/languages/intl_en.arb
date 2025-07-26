@@ -372,9 +372,16 @@
             }
         }
     },
+    "changePassword": "Change Password",
+    "pleaseTryAgain":"Please try again later",
     "password": "Password",
     "enterThePassword": "Enter the password",
     "forgetPassword": "Forget password ?",
+    "resetPassword": "Reset password",
+    "resendCode": "Resend code",
+    "enterValidMobileNumber": "Enter valid mobile number",
+    "pleaseWriteYourCode": "Please write your code",
+    "sendCode": "Send code",
     "signUp": "Sign up",
     "doNotHaveAnAccount": "Don't have an account ?",
     "rememberMe": "Remember me",

@@ -80,13 +80,15 @@ class SignUpFields extends StatelessWidget {
                     );
                   }),
               AuthField(
-                isRequired:false,
+                isRequired:true,
                 readOnly: controller.isLoading,
                 onChanged: (v) => controller.provider = v.trim(),
                 label: localeLang(context).provider,
                 textCapitalization: TextCapitalization.words,
                 suffixIconData: Icons.storefront,
                 hintText: localeLang(context).enterYourProviderName,
+                validator: (val) =>
+                    AppValidator.auth(val?.trim(), 3, 100, FieldType.name),
               ),
             ],
           ),

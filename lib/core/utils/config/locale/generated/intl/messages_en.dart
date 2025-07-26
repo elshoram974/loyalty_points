@@ -120,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "changeOnTerms": MessageLookupByLibrary.simpleMessage(
       "The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.",
     ),
+    "changePassword": MessageLookupByLibrary.simpleMessage("Change Password"),
     "city": MessageLookupByLibrary.simpleMessage("City"),
     "clientTookTooLong": MessageLookupByLibrary.simpleMessage(
       "The client took too long to respond.",
@@ -190,6 +191,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "enterValidEmail": MessageLookupByLibrary.simpleMessage(
       "Enter valid E-mail",
+    ),
+    "enterValidMobileNumber": MessageLookupByLibrary.simpleMessage(
+      "Enter valid mobile number",
     ),
     "enterYourEmailAddress": MessageLookupByLibrary.simpleMessage(
       "Enter your email address",
@@ -288,6 +292,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseGoToVerifyYourLocation": MessageLookupByLibrary.simpleMessage(
       "Please go to verify your location",
     ),
+    "pleaseTryAgain": MessageLookupByLibrary.simpleMessage(
+      "Please try again later",
+    ),
+    "pleaseWriteYourCode": MessageLookupByLibrary.simpleMessage(
+      "Please write your code",
+    ),
     "point": MessageLookupByLibrary.simpleMessage("point"),
     "point_number": m10,
     "points": MessageLookupByLibrary.simpleMessage("Points"),
@@ -369,6 +379,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "removeSticker": MessageLookupByLibrary.simpleMessage("Remove the sticker"),
     "removeStickerFromApp": m14,
     "replacePointsWithCurrency": m15,
+    "resendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
+    "resetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "seeLess": MessageLookupByLibrary.simpleMessage("See less"),
@@ -388,6 +400,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "selectMonth": MessageLookupByLibrary.simpleMessage("Select Month"),
     "selectProvider": MessageLookupByLibrary.simpleMessage("Select a provider"),
+    "sendCode": MessageLookupByLibrary.simpleMessage("Send code"),
     "serverTookTooLong": MessageLookupByLibrary.simpleMessage(
       "The server took too long to respond.",
     ),

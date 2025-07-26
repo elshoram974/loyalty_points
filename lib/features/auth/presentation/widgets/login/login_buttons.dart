@@ -10,6 +10,7 @@ import '../../../../../core/utils/config/routes/routes.dart';
 import '../../../../../core/utils/constants/app_assets.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../controller/login_controller.dart';
+import 'forget_password.dart';
 
 class LoginButtons extends StatelessWidget {
   const LoginButtons({super.key});
@@ -21,18 +22,20 @@ class LoginButtons extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Align(
-            //   alignment: AlignmentDirectional.centerEnd,
-            //   child: TextButton(
-            //     onPressed: controller.isLoading ? null : () {},
-            //     child: Text(
-            //       localeLang(context).forgetPassword,
-            //       style: context.textTheme.titleSmall
-            //           ?.copyWith(color: context.theme.primaryColor),
-            //     ),
-            //   ),
-            // ),
-            const SizedBox(height: AppConst.paddingExtraBig),
+            Align(
+              alignment: AlignmentDirectional.centerEnd,
+              child: TextButton(
+                onPressed: controller.isLoading ? null : () {
+                  Get.to(() => const ResetPassword());
+                },
+                child: Text(
+                  localeLang(context).forgetPassword,
+                  style: context.textTheme.titleSmall
+                      ?.copyWith(color: context.theme.primaryColor),
+                ),
+              ),
+            ),
+            const SizedBox(height: AppConst.paddingSmall),
             SizedBox(
               height: 60,
               child: Row(

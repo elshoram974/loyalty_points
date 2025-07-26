@@ -91,25 +91,25 @@ class _ProfileDetailsState extends State<ProfileDetails> {
               runSpacing: 12,
               spacing: 12,
               children: [
-                SizedBox(
-                  width: 290,
-                  child: OutlinedButton.icon(
-                    onPressed: () => Get.toNamed(AppRoute.editProfile),
-                    label: Text(
-                      localeLang(context).edit_your_profile,
-                      style: TextStyle(color: context.theme.primaryColor),
-                    ),
-                    style: OutlinedButton.styleFrom(
-                      side: BorderSide(
-                          color: context.theme.primaryColor, width: 1.5),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 14),
-                    ),
-                  ),
-                ),
+                // SizedBox(
+                //   width: 290,
+                //   child: OutlinedButton.icon(
+                //     onPressed: () => Get.toNamed(AppRoute.editProfile),
+                //     label: Text(
+                //       localeLang(context).edit_your_profile,
+                //       style: TextStyle(color: context.theme.primaryColor),
+                //     ),
+                //     style: OutlinedButton.styleFrom(
+                //       side: BorderSide(
+                //           color: context.theme.primaryColor, width: 1.5),
+                //       shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(12),
+                //       ),
+                //       padding: const EdgeInsets.symmetric(
+                //           horizontal: 20, vertical: 14),
+                //     ),
+                //   ),
+                // ),
                 CustomFilledButton(
                   text: localeLang(context).editPassword,
                   onPressed: () => Get.toNamed(AppRoute.editPassword),
