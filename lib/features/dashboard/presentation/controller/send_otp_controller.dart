@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loyalty_points/core/utils/config/locale/local_lang.dart';
+
+import '../../../../core/utils/helper/show_my_snack_bar.dart';
 
 class AuthController extends GetxController {
   final Dio _dio = Dio();
@@ -18,23 +19,16 @@ class AuthController extends GetxController {
       );
 
       if (response.statusCode == 200) {
-        print("Password reset request successful");
         return true;
       } else {
-        Get.snackbar(
-          "Error",
-          response.data['message'] ?? localeLang().error,
-          backgroundColor: Colors.red,
-          colorText: Colors.white,
+        ShowMySnackBar.error(
+          localeLang(Get.context!).error,
         );
         return false;
       }
-    } on DioException catch (e) {
-      Get.snackbar(
-        "Network Error",
-        e.response?.data['message'] ?? localeLang().pleaseTryAgain,
-        backgroundColor: Colors.red,
-        colorText: Colors.white,
+    } on DioException {
+      ShowMySnackBar.error(
+        localeLang(Get.context!).error,
       );
       return false;
     }

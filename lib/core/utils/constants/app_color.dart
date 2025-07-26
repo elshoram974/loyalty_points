@@ -11,6 +11,8 @@ abstract final class AppColor {
   static const Color secondaryDark = Color(0xFF000000);
 
   static const Color grey = Colors.grey;
+    static const Color gray = Color(0xFF807D7D);
+
 
   static const Color greyBackground = Color(0xFFBDBDBD);
 
@@ -32,8 +34,8 @@ abstract final class AppColor {
 
   // static Color selected(BuildContext context) =>
   //     context.isDarkMode ? _selectedDark : _selectedLight;
-  // static Color grayLightDark(BuildContext context) =>
-  //     context.isDarkMode ? gray : grayLight;
+  // static Color Gray(BuildContext context) =>
+  //     context.isDarkMode ? grey : grey;
 
   // static const Color _backgroundLight = Color(0xFFFFFFFF);
   // static const Color backgroundDark = Color(0xFF373737);

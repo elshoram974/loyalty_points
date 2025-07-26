@@ -22,7 +22,7 @@ class ResetPasswordFields extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: AppConst.paddingDefault,
+                horizontal: AppConst.paddingBig,
                 vertical: AppConst.paddingSmall),
             child: MyDefaultField(
               fillColor: Colors.white,

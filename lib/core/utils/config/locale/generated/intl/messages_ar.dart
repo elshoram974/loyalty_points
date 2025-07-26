@@ -374,6 +374,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "removeStickerFromApp": m14,
     "replacePointsWithCurrency": m15,
     "resendCode": MessageLookupByLibrary.simpleMessage("اعادة الارسال"),
+    "resendCodeIn": MessageLookupByLibrary.simpleMessage(
+      "إعادة إرسال كود التحقق بعد",
+    ),
+    "resendCodeNow": MessageLookupByLibrary.simpleMessage(
+      "يمكنك إعادة إرسال الكود الآن",
+    ),
     "resetPassword": MessageLookupByLibrary.simpleMessage(
       "استعادة كلمة المرور",
     ),

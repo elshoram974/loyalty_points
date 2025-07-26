@@ -1,14 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
+import 'package:pinput/pinput.dart';
 import '../../../../../core/shared/custom_scaffold.dart';
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import 'count_down_widget.dart';
 import 'reset_password.dart';
 
 class VerificationOtpCode extends StatefulWidget {
-  const VerificationOtpCode({super.key});
+  final String phoneNumber;
+
+  const VerificationOtpCode({super.key, required this.phoneNumber});
 
   @override
   State<VerificationOtpCode> createState() => _VerificationOtpCodeState();
@@ -16,8 +18,21 @@ class VerificationOtpCode extends StatefulWidget {
 
 class _VerificationOtpCodeState extends State<VerificationOtpCode> {
   String _otpCode = "";
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
+    final defaultPinTheme = PinTheme(
+      width: 45,
+      height: 55,
+      textStyle: const TextStyle(fontSize: 20),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        border: Border.all(color: context.theme.primaryColor),
+        borderRadius: BorderRadius.circular(10),
+      ),
+    );
+
     return CustomScaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
@@ -25,54 +40,57 @@ class _VerificationOtpCodeState extends State<VerificationOtpCode> {
         backgroundColor: context.theme.primaryColor,
         title: Text(localeLang(context).resetPassword),
       ),
-      body: Directionality(
-        textDirection: TextDirection.ltr,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OtpTextField(
-              focusedBorderColor: context.theme.primaryColor,
-              showFieldAsBox: true,
-              numberOfFields: 6,
-              borderWidth: 2.0,
-              borderColor: Colors.red,
-              enabledBorderColor: const Color.fromARGB(255, 174, 166, 166),
-              onCodeChanged: (String code) {
-                setState(() {
-                  _otpCode = code;
-                });
-                if (code.length == 6) {
-                  FocusScope.of(context).unfocus();
-                }
-              },
-              //runs when every textfield is filled
-              onSubmit: (String verificationCode) {
-                _otpCode = verificationCode;
-              },
-            ),
-            const CountDownWidget(),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: 300,
-              child: FilledButton(
-                onPressed: () {
-                  if (_otpCode.length == 6) {
-                    Get.to(()=> const  ResetPasswordFields());
-                    // هنا تقدر تبعت الكود للسيرفر
-                    print("OTP: $_otpCode");
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        backgroundColor: context.theme.primaryColor,
-                        content: Text(localeLang(context).pleaseWriteYourCode),
-                      ),
-                    );
-                  }
+      body: Form(
+        key: formKey,
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Text('رقم الموبايل هو: ${widget.phoneNumber}'),
+              Pinput(
+                length: 6,
+                defaultPinTheme: defaultPinTheme,
+                focusedPinTheme: defaultPinTheme.copyWith(
+                  decoration: defaultPinTheme.decoration!.copyWith(
+                    border:
+                        Border.all(color: context.theme.primaryColor, width: 2),
+                  ),
+                ),
+                onChanged: (code) {
+                  setState(() {
+                    _otpCode = code;
+                  });
                 },
-                child: Text(localeLang(context).confirm),
+                onCompleted: (code) {
+                  _otpCode = code;
+                  FocusScope.of(context).unfocus();
+                },
               ),
-            ),
-          ],
+              const CountDownWidget(),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: 300,
+                child: FilledButton(
+                  onPressed: () {
+                    if (_otpCode.length != 6) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          backgroundColor: context.theme.primaryColor,
+                          content:
+                              Text(localeLang(context).pleaseWriteYourCode),
+                        ),
+                      );
+                      return;
+                    }
+                    print("OTP: $_otpCode");
+                    Get.to(() => const ResetPasswordFields());
+                  },
+                  child: Text(localeLang(context).confirm),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

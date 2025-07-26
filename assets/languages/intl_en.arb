@@ -373,7 +373,9 @@
         }
     },
     "changePassword": "Change Password",
-    "pleaseTryAgain":"Please try again later",
+    "resendCodeNow": "You can resend the code now",
+    "resendCodeIn": "Resend verification code in",
+    "pleaseTryAgain": "Please try again later",
     "password": "Password",
     "enterThePassword": "Enter the password",
     "forgetPassword": "Forget password ?",

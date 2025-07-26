@@ -17,37 +17,10 @@ class ResetPassword extends StatefulWidget {
 
 class _ResetPasswordState extends State<ResetPassword> {
   final TextEditingController _phoneController = TextEditingController();
-
-  bool _validatePhone(BuildContext context) {
-    final phone = _phoneController.text.trim();
-
-    if (phone.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            backgroundColor: context.theme.primaryColor,
-            content: Text(
-              localeLang(context).enterYourMobileNumber,
-            )),
-      );
-      return false;
-    }
-    if (phone.length < 10) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            backgroundColor: context.theme.primaryColor,
-            content: Text(
-              localeLang(context).enterValidMobileNumber,
-            )),
-      );
-      return false;
-    }
-    return true;
-  }
-
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final AuthController _authController = Get.put(AuthController());
   @override
   Widget build(BuildContext context) {
-    final AuthController _authController = Get.put(AuthController());
-
     return CustomScaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
@@ -55,35 +28,40 @@ class _ResetPasswordState extends State<ResetPassword> {
         backgroundColor: context.theme.primaryColor,
         title: Text(localeLang(context).resetPassword),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                vertical: 70, horizontal: AppConst.paddingDefault),
-            child: MyDefaultField(
-              controller: _phoneController,
-              keyboardType: TextInputType.phone,
-              isPhoneNumber: true,
-              fillColor: Colors.white,
-              filled: true,
-              hintText: localeLang(context).enterYourMobileNumber,
+      body: Form(
+        key: formKey,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: 70, horizontal: AppConst.paddingDefault),
+              child: MyDefaultField(
+                controller: _phoneController,
+                keyboardType: TextInputType.phone,
+                isPhoneNumber: true,
+                fillColor: Colors.white,
+                filled: true,
+                hintText: localeLang(context).enterYourMobileNumber,
+              ),
             ),
-          ),
-          FilledButton(
-            onPressed: () async {
-              if (_validatePhone(context)) {
-                final phone = _phoneController.text.trim();
-                final success =
-                    await _authController.requestPasswordReset(phone);
+            FilledButton(
+              onPressed: () async {
+                if (formKey.currentState!.validate()) {
+                  final phone = _phoneController.text.trim();
+                  final success =
+                      await _authController.requestPasswordReset(phone);
 
-                if (success) {
-                  Get.to(() => const VerificationOtpCode());
+                  if (success) {
+                    Get.to(() =>  VerificationOtpCode(
+                    phoneNumber: phone,
+                    ));
+                  }
                 }
-              }
-            },
-            child: Text(localeLang(context).sendCode),
-          ),
-        ],
+              },
+              child: Text(localeLang(context).sendCode),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,16 +1,20 @@
+import 'package:flutter/material.dart';
+
+import 'constants/app_color.dart';
+
 abstract final class AppStyle {
   const AppStyle();
 
-  // static const TextStyle styleBoldRegular16 = TextStyle(
-  //   fontSize: 16,
-  //   color: AppColor.gray,
-  //   fontWeight: FontWeight.bold,
-  // );
-  // static const TextStyle styleBoldRegular13 = TextStyle(
-  //   fontSize: 13,
-  //   color: Colors.white,
-  //   fontWeight: FontWeight.bold,
-  // );
+  static const TextStyle styleBoldRegular16 = TextStyle(
+    fontSize: 16,
+    color: AppColor.gray,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle styleBoldRegular13 = TextStyle(
+    fontSize: 13,
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
   // static const TextStyle styleBoldRegular24 = TextStyle(
   //   fontSize: 24,
   //   fontWeight: FontWeight.bold,

@@ -1817,6 +1817,26 @@ class S {
     );
   }
 
+  /// `You can resend the code now`
+  String get resendCodeNow {
+    return Intl.message(
+      'You can resend the code now',
+      name: 'resendCodeNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend verification code in`
+  String get resendCodeIn {
+    return Intl.message(
+      'Resend verification code in',
+      name: 'resendCodeIn',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please try again later`
   String get pleaseTryAgain {
     return Intl.message(
