@@ -10,7 +10,7 @@ import '../../../../../core/utils/config/routes/routes.dart';
 import '../../../../../core/utils/constants/app_assets.dart';
 import '../../../../../core/utils/constants/app_constants.dart';
 import '../../controller/login_controller.dart';
-import 'forget_password.dart';
+import '../../screens/forget_password_screen.dart';
 
 class LoginButtons extends StatelessWidget {
   const LoginButtons({super.key});

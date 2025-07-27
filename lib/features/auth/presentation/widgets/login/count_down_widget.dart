@@ -3,7 +3,7 @@ import 'package:loyalty_points/core/utils/constants/app_constants.dart';
 
 import '../../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../../core/utils/styles.dart';
-import 'packagr_time_count_down.dart';
+import 'package_time_count_down.dart';
 
 class CountDownWidget extends StatefulWidget {
   const CountDownWidget({super.key});
