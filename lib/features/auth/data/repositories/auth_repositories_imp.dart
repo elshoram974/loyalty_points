@@ -1,5 +1,6 @@
 import 'package:loyalty_points/features/auth/data/models/address_model.dart';
 import 'package:loyalty_points/features/auth/domain/entity/sign_up_body_data.dart';
+import 'package:loyalty_points/features/dashboard/domain/entity/set_new_password_data.dart';
 
 import '../../../../app_info.dart';
 import '../../../../core/status/status.dart';
@@ -66,5 +67,24 @@ class AuthRepositoriesImp extends AuthRepositories {
     return executeAndHandleErrors<List<AddressModel>>(
       () => remoteDataSource.getCities(governorateId),
     );
+  }
+  
+  @override
+  Future<Status<void>> checkCode(String code) {
+    // TODO: implement checkCode
+    throw UnimplementedError();
+  }
+    
+  @override
+  Future<Status<void>> sendCode(String phone) {
+    // TODO: implement sendCode
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Status<void>> createNewPass(SetNewPasswordData newPass) async {
+    await Future.delayed(const Duration(seconds: 1));
+  return Success<void>(null);
+  
   }
 }
