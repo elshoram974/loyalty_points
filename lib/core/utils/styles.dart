@@ -10,9 +10,9 @@ abstract final class AppStyle {
     color: AppColor.gray,
     fontWeight: FontWeight.bold,
   );
-  static const TextStyle styleBoldRegular13 = TextStyle(
+  static TextStyle styleBoldRegular13 = const TextStyle(
     fontSize: 13,
-    color: Colors.black,
+    color: AppColor.primaryLight,
     fontWeight: FontWeight.bold,
   );
   // static const TextStyle styleBoldRegular24 = TextStyle(

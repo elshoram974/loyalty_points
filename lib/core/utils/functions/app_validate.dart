@@ -42,6 +42,19 @@ abstract final class AppValidator {
 
   static String? notEmpty(String? value) {
     if (value == null || value.trim() == "") return localeLang().fillField;
+
+    return null;
+  }
+
+  static String? otp(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return localeLang().fillField;
+    }
+
+    if (value.length != 6) {
+      return localeLang().cantBeLessThan(6.locale);
+    }
+
     return null;
   }
 }
