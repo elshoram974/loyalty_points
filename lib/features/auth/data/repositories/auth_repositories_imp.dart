@@ -70,21 +70,27 @@ class AuthRepositoriesImp extends AuthRepositories {
   }
   
   @override
-  Future<Status<void>> checkCode(String code) {
-    // TODO: implement checkCode
-    throw UnimplementedError();
-  }
-    
-  @override
-  Future<Status<void>> sendCode(String phone) {
-    // TODO: implement sendCode
-    throw UnimplementedError();
+  Future<Status<void>> sendCode(String mobile) {
+    return executeAndHandleErrors<void>(() async {
+      await remoteDataSource.sendCode(mobile);
+      return null;
+    });
   }
 
   @override
-  Future<Status<void>> createNewPass(SetNewPasswordData newPass) async {
-    await Future.delayed(const Duration(seconds: 1));
-  return Success<void>(null);
-  
+  Future<Status<void>> checkCode(String otp ) {
+    return executeAndHandleErrors<void>(() async {
+      await remoteDataSource.checkCode(otp: otp, mobile: '');
+      return null;
+    });
   }
+
+
+  @override
+Future<Status<void>> createNewPass(SetNewPasswordData newPass) {
+  return executeAndHandleErrors<void>(() async {
+    await remoteDataSource.createNewPass(newPass);
+    return null;
+  });
+}
 }

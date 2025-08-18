@@ -1,6 +1,7 @@
 import '../../../../core/utils/constants/app_links.dart';
 import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/services/api_services.dart';
+import '../../../dashboard/domain/entity/set_new_password_data.dart';
 import '../../domain/entity/login_request_data.dart';
 import '../../domain/entity/sign_up_body_data.dart';
 import '../models/address_model.dart';
@@ -8,6 +9,7 @@ import '../models/user_model.dart';
 
 abstract class AuthRemoteDataSource {
   const AuthRemoteDataSource();
+
   Future<({UserModel user, String token})> login(LoginRequestData data);
 
   Future<({UserModel user, String token})> signUp(SignUpBodyData data);
@@ -15,6 +17,12 @@ abstract class AuthRemoteDataSource {
   Future<List<AddressModel>> getCountries();
   Future<List<AddressModel>> getGovernorates(int countryId);
   Future<List<AddressModel>> getCities(int governorateId);
+
+  Future<void> sendCode(String mobile);
+
+  Future<void> checkCode({required String mobile, required String otp});
+
+  Future<void> createNewPass(SetNewPasswordData newPass);
 }
 
 class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
@@ -28,7 +36,7 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
       {
         AppString.emailOrPhone: data.emailOrPhone,
         AppString.password: data.password,
-        AppString.loginBy: data.loginBy
+        AppString.loginBy: data.loginBy,
       },
     );
 
@@ -69,7 +77,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     final Map<String, dynamic> res = await apiServices.get(
       AppLinks.countriesList,
     );
-
     return AddressModel.fromMaps(res['data']);
   }
 
@@ -78,7 +85,6 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     final Map<String, dynamic> res = await apiServices.get(
       "${AppLinks.governoratesList}/$countryId",
     );
-
     return AddressModel.fromMaps(res['data']);
   }
 
@@ -87,7 +93,40 @@ class AuthRemoteDataSourceImp extends AuthRemoteDataSource {
     final Map<String, dynamic> res = await apiServices.get(
       "${AppLinks.areasList}/$governorateId",
     );
-
     return AddressModel.fromMaps(res['data']);
+  }
+
+  @override
+  Future<void> sendCode(String mobile) async {
+    await apiServices.post(
+      AppLinks.sendCode,
+      {
+        'mobile': mobile,
+      },
+    );
+  }
+
+  @override
+  Future<void> checkCode({required String mobile, required String otp}) async {
+    await apiServices.post(
+      AppLinks.checkCode,
+      {
+        'mobile': mobile,
+        'otp': otp,
+      },
+    );
+  }
+
+  @override
+  Future<void> createNewPass(SetNewPasswordData newPass) async {
+    await apiServices.post(
+      AppLinks.newPassword,
+      {
+        'mobile': newPass.mobile,
+        'otp': newPass.otp,
+        AppString.password: newPass.password,
+      
+      },
+    );
   }
 }
