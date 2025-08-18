@@ -20,4 +20,7 @@ abstract final class AppLinks {
   static const String config = '/api/config';
   static const String updateProfile = '/api/customer/profile/update';
   static const String updatePassword = '/api/customer/update-password';
+  static const String sendCode    = '/api/auth/forgot/send-otp';   
+  static const String checkCode   = '/api/auth/forgot/verify-otp'; 
+  static const String newPassword = '/api/auth/forgot/reset-password' ;
 }
