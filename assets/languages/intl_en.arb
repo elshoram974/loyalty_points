@@ -401,5 +401,8 @@
     "noUserFoundForThatEmail": "No user found for that email.",
     "wrongPasswordProvidedForThatUser": "Wrong password provided for that user.",
     "theSuppliedAuthCredentialIsIncorrect": "The supplied auth credential is incorrect, malformed or has expired.",
-    "home": "Home"
+    "home": "Home",
+    "somethingWentWrong": "Something went wrong, please try again.",
+    "incorrectOtpTryAgain":"Incorrect OTP, please try again."
+
 }

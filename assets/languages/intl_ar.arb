@@ -402,5 +402,7 @@
     "noUserFoundForThatEmail": "لم يتم العثور على مستخدم لهذا البريد الإلكتروني.",
     "wrongPasswordProvidedForThatUser": "تم تقديم كلمة مرور خاطئة لهذا المستخدم.",
     "theSuppliedAuthCredentialIsIncorrect": "بيانات الاعتماد المقدمة غير صحيحة أو تالفة أو منتهية الصلاحية.",
-    "home": "الرئيسية"
+    "home": "الرئيسية",
+    "somethingWentWrong": "حدث خطأ ما، يرجى المحاولة مرة أخرى.",
+    "incorrectOtpTryAgain": "الرمز غير صحيح، يرجى المحاولة مرة أخرى."
 }

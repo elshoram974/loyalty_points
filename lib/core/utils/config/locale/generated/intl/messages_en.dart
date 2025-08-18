@@ -232,6 +232,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "If you return now, you will lose all data!",
     ),
     "image_for_order": MessageLookupByLibrary.simpleMessage("Image for order"),
+    "incorrectOtpTryAgain": MessageLookupByLibrary.simpleMessage(
+      "Incorrect OTP, please try again.",
+    ),
     "instagram": MessageLookupByLibrary.simpleMessage("Instagram"),
     "instapay": MessageLookupByLibrary.simpleMessage("Instapay"),
     "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
@@ -416,6 +419,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "showPassword": MessageLookupByLibrary.simpleMessage("Show password"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
     "socialMedia": MessageLookupByLibrary.simpleMessage("Social Media"),
+    "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
+      "Something went wrong, please try again.",
+    ),
     "somethingWentWrongPleaseLogInWithPassword":
         MessageLookupByLibrary.simpleMessage(
           "Something went wrong, please log in with your password",

@@ -2051,6 +2051,26 @@ class S {
   String get home {
     return Intl.message('Home', name: 'home', desc: '', args: []);
   }
+
+  /// `Something went wrong, please try again.`
+  String get somethingWentWrong {
+    return Intl.message(
+      'Something went wrong, please try again.',
+      name: 'somethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect OTP, please try again.`
+  String get incorrectOtpTryAgain {
+    return Intl.message(
+      'Incorrect OTP, please try again.',
+      name: 'incorrectOtpTryAgain',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

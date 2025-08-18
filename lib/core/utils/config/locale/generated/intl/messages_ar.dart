@@ -226,6 +226,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "إذا عدت الآن، ستفقد جميع البيانات!",
     ),
     "image_for_order": MessageLookupByLibrary.simpleMessage("صورة التحويل "),
+    "incorrectOtpTryAgain": MessageLookupByLibrary.simpleMessage(
+      "الرمز غير صحيح، يرجى المحاولة مرة أخرى.",
+    ),
     "instagram": MessageLookupByLibrary.simpleMessage("انستجرام"),
     "instapay": MessageLookupByLibrary.simpleMessage("انستاباي"),
     "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
@@ -407,6 +410,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "socialMedia": MessageLookupByLibrary.simpleMessage(
       "وسائل التواصل الاجتماعي",
+    ),
+    "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ ما، يرجى المحاولة مرة أخرى.",
     ),
     "somethingWentWrongPleaseLogInWithPassword":
         MessageLookupByLibrary.simpleMessage(
