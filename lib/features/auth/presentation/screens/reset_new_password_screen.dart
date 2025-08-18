@@ -8,13 +8,11 @@ import '../../../dashboard/presentation/widgets/edit_profile/edit_profile_button
 import '../controller/set_new_password_controller.dart';
 import '../widgets/password_field.dart';
 
-class ResetPasswordFields extends StatelessWidget {
+class ResetPasswordFields extends GetView<SetNewPasswordControllerImp> {
   const ResetPasswordFields({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(SetNewPasswordControllerImp(Get.find()));
-
     return CustomScaffold(
       appBar: AppBar(
         centerTitle: true,
