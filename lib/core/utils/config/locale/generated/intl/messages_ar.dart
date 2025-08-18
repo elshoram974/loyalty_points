@@ -178,6 +178,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterNewPassword": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة مرور جديدة",
     ),
+    "enterPasswordAndConfirmation": MessageLookupByLibrary.simpleMessage(
+      "يرجى ادخال كلمة المرور وتاكيد كلمة المرور",
+    ),
     "enterPaymentMethodNumber": m6,
     "enterThePassword": MessageLookupByLibrary.simpleMessage(
       "أدخل كلمة المرور",
@@ -253,6 +256,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "menu": MessageLookupByLibrary.simpleMessage("القائمة"),
     "mobileNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "mobileOrOtpMissing": MessageLookupByLibrary.simpleMessage(
+      "الموبايل أو كود التحقق مفقودين",
+    ),
     "newCodeAddedSuccess": MessageLookupByLibrary.simpleMessage(
       "تم إضافة الكود الجديد بنجاح",
     ),
@@ -282,6 +288,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "passwordProvidedIsTooWeak": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور المقدمة ضعيفة جدًا.",
+    ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور وتاكيد كلمة المرور غير متطابقين",
     ),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
     "paymentMethodNumber": m9,
@@ -493,6 +502,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "حدث خطأ غير معروف.",
     ),
     "update": MessageLookupByLibrary.simpleMessage("تحديث"),
+    "verficationStepIsrequired": MessageLookupByLibrary.simpleMessage(
+      "خطوة التحقق مطلوبة قبل ما تقدر تعيّن كلمة مرور جديدة",
+    ),
     "wallet": MessageLookupByLibrary.simpleMessage("المحفظة الإلكترونية"),
     "welcomeToYou": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
     "welcome_to_businessName": m19,

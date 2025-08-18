@@ -2071,6 +2071,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Verification step is required before you can set a new password`
+  String get verficationStepIsrequired {
+    return Intl.message(
+      'Verification step is required before you can set a new password',
+      name: 'verficationStepIsrequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile number or verification code is missing`
+  String get mobileOrOtpMissing {
+    return Intl.message(
+      'Mobile number or verification code is missing',
+      name: 'mobileOrOtpMissing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter password and confirmation`
+  String get enterPasswordAndConfirmation {
+    return Intl.message(
+      'Please enter password and confirmation',
+      name: 'enterPasswordAndConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password and confirmation do not match`
+  String get passwordsDoNotMatch {
+    return Intl.message(
+      'Password and confirmation do not match',
+      name: 'passwordsDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

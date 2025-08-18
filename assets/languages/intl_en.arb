@@ -403,6 +403,11 @@
     "theSuppliedAuthCredentialIsIncorrect": "The supplied auth credential is incorrect, malformed or has expired.",
     "home": "Home",
     "somethingWentWrong": "Something went wrong, please try again.",
-    "incorrectOtpTryAgain":"Incorrect OTP, please try again."
+    "incorrectOtpTryAgain":"Incorrect OTP, please try again.",
+    "verficationStepIsrequired": "Verification step is required before you can set a new password",
+    "mobileOrOtpMissing":"Mobile number or verification code is missing",
+    "enterPasswordAndConfirmation":"Please enter password and confirmation",
+    "passwordsDoNotMatch":"Password and confirmation do not match"
+
 
 }

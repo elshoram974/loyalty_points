@@ -404,5 +404,9 @@
     "theSuppliedAuthCredentialIsIncorrect": "بيانات الاعتماد المقدمة غير صحيحة أو تالفة أو منتهية الصلاحية.",
     "home": "الرئيسية",
     "somethingWentWrong": "حدث خطأ ما، يرجى المحاولة مرة أخرى.",
-    "incorrectOtpTryAgain": "الرمز غير صحيح، يرجى المحاولة مرة أخرى."
+    "incorrectOtpTryAgain": "الرمز غير صحيح، يرجى المحاولة مرة أخرى.",
+    "verficationStepIsrequired":"خطوة التحقق مطلوبة قبل ما تقدر تعيّن كلمة مرور جديدة",
+    "mobileOrOtpMissing":"الموبايل أو كود التحقق مفقودين",
+    "enterPasswordAndConfirmation":"يرجى ادخال كلمة المرور وتاكيد كلمة المرور",
+    "passwordsDoNotMatch":"كلمة المرور وتاكيد كلمة المرور غير متطابقين"
 }

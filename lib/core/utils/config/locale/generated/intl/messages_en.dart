@@ -182,6 +182,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterNewPassword": MessageLookupByLibrary.simpleMessage(
       "Enter new password",
     ),
+    "enterPasswordAndConfirmation": MessageLookupByLibrary.simpleMessage(
+      "Please enter password and confirmation",
+    ),
     "enterPaymentMethodNumber": m6,
     "enterThePassword": MessageLookupByLibrary.simpleMessage(
       "Enter the password",
@@ -261,6 +264,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("Log Out"),
     "menu": MessageLookupByLibrary.simpleMessage("Menu"),
     "mobileNumber": MessageLookupByLibrary.simpleMessage("Mobile Number"),
+    "mobileOrOtpMissing": MessageLookupByLibrary.simpleMessage(
+      "Mobile number or verification code is missing",
+    ),
     "newCodeAddedSuccess": MessageLookupByLibrary.simpleMessage(
       "New code added successfully",
     ),
@@ -288,6 +294,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "passwordProvidedIsTooWeak": MessageLookupByLibrary.simpleMessage(
       "The password provided is too weak.",
+    ),
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "Password and confirmation do not match",
     ),
     "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment method"),
     "paymentMethodNumber": m9,
@@ -504,6 +513,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "An unknown error occurred.",
     ),
     "update": MessageLookupByLibrary.simpleMessage("Update"),
+    "verficationStepIsrequired": MessageLookupByLibrary.simpleMessage(
+      "Verification step is required before you can set a new password",
+    ),
     "wallet": MessageLookupByLibrary.simpleMessage("E-wallet"),
     "welcomeToYou": MessageLookupByLibrary.simpleMessage("Welcome to you"),
     "welcome_to_businessName": m19,
