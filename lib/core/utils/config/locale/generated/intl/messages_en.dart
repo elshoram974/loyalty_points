@@ -285,6 +285,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "orderNumber": MessageLookupByLibrary.simpleMessage("Order Number"),
     "order_details": MessageLookupByLibrary.simpleMessage("Order details"),
     "orders": MessageLookupByLibrary.simpleMessage("Orders"),
+    "otpError": MessageLookupByLibrary.simpleMessage(
+      "Incorrect OTP, please try again.",
+    ),
     "ourPartners": MessageLookupByLibrary.simpleMessage("Our Partners"),
     "pageNameNotFoundInRoutes": m8,
     "pageNotFound": MessageLookupByLibrary.simpleMessage("Page not found"),

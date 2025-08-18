@@ -408,5 +408,6 @@
     "verficationStepIsrequired":"خطوة التحقق مطلوبة قبل ما تقدر تعيّن كلمة مرور جديدة",
     "mobileOrOtpMissing":"الموبايل أو كود التحقق مفقودين",
     "enterPasswordAndConfirmation":"يرجى ادخال كلمة المرور وتاكيد كلمة المرور",
-    "passwordsDoNotMatch":"كلمة المرور وتاكيد كلمة المرور غير متطابقين"
+    "passwordsDoNotMatch":"كلمة المرور وتاكيد كلمة المرور غير متطابقين",
+    "otpError":"الرمز غير صحيح، يرجى المحاولة مرة أخرى."
 }

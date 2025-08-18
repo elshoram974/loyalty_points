@@ -2111,6 +2111,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Incorrect OTP, please try again.`
+  String get otpError {
+    return Intl.message(
+      'Incorrect OTP, please try again.',
+      name: 'otpError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

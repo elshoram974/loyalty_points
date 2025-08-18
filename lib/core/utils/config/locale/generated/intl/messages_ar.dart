@@ -279,6 +279,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "orderNumber": MessageLookupByLibrary.simpleMessage("رقم الطلب"),
     "order_details": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
     "orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
+    "otpError": MessageLookupByLibrary.simpleMessage(
+      "الرمز غير صحيح، يرجى المحاولة مرة أخرى.",
+    ),
     "ourPartners": MessageLookupByLibrary.simpleMessage("شركاؤنا"),
     "pageNameNotFoundInRoutes": m8,
     "pageNotFound": MessageLookupByLibrary.simpleMessage("الصفحة غير موجودة"),
