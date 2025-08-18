@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
+
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/functions/app_validate.dart';
+import '../../../dashboard/presentation/controller/verifaction_otp_controller.dart';
 import '../widgets/login/count_down_widget.dart';
-import 'reset_new_password_screen.dart';
+
+// Controller
 
 class VerificationOtpCode extends StatefulWidget {
   final String phoneNumber;
@@ -17,8 +20,22 @@ class VerificationOtpCode extends StatefulWidget {
 }
 
 class _VerificationOtpCodeState extends State<VerificationOtpCode> {
-  String _otpCode = "";
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  //need to make binding
+  final VerificationOtpController _controller =
+      Get.put(VerificationOtpController(), permanent: false);
+
+  String _otpCode = "";
+
+  void _onConfirmPressed() {
+    final isValid = formKey.currentState!.validate();
+    if (!isValid) return;
+
+    _controller.confirmOtp(
+      phoneNumber: widget.phoneNumber,
+      otp: _otpCode,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +67,6 @@ class _VerificationOtpCodeState extends State<VerificationOtpCode> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Text('رقم الموبايل هو: ${widget.phoneNumber}'),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: Pinput(
@@ -61,14 +77,12 @@ class _VerificationOtpCodeState extends State<VerificationOtpCode> {
                   focusedPinTheme: defaultPinTheme.copyWith(
                     decoration: defaultPinTheme.decoration!.copyWith(
                       border: Border.all(
-                          color: context.theme.primaryColor, width: 2),
+                        color: context.theme.primaryColor,
+                        width: 2,
+                      ),
                     ),
                   ),
-                  onChanged: (code) {
-                    setState(() {
-                      _otpCode = code;
-                    });
-                  },
+                  onChanged: (code) => setState(() => _otpCode = code),
                   onCompleted: (code) {
                     _otpCode = code;
                     FocusScope.of(context).unfocus();
@@ -77,25 +91,26 @@ class _VerificationOtpCodeState extends State<VerificationOtpCode> {
               ),
               const CountDownWidget(),
               const SizedBox(height: 20),
-              SizedBox(
-                width: 300,
-                child: FilledButton(
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size(350, 50),
-                    backgroundColor: context.theme.primaryColor,
+              Obx(() {
+                final submitting = _controller.submitting;
+                return SizedBox(
+                  width: 300,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      minimumSize: const Size(350, 50),
+                      backgroundColor: context.theme.primaryColor,
+                    ),
+                    onPressed: submitting ? null : _onConfirmPressed,
+                    child: submitting
+                        ? const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : Text(localeLang(context).confirm),
                   ),
-                  onPressed: () {
-                    final isValid = formKey.currentState!.validate();
-                    if (isValid) {
-                      print("OTP: $_otpCode");
-                      Get.to(() => const ResetPasswordFields());
-                    } else {
-                      
-                    }
-                  },
-                  child: Text(localeLang(context).confirm),
-                ),
-              ),
+                );
+              }),
             ],
           ),
         ),
