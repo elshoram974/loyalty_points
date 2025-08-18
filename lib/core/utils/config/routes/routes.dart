@@ -3,6 +3,7 @@ import 'package:loyalty_points/features/dashboard/presentation/screens/order_det
 import 'package:loyalty_points/features/dashboard/presentation/screens/points_details_screen.dart';
 import 'package:loyalty_points/features/dashboard/presentation/screens/update_profile_screen.dart';
 
+import '../../../../features/auth/presentation/screens/reset_new_password_screen.dart';
 import '../../../../features/auth/presentation/screens/waiting_screen.dart';
 import '../../../../features/dashboard/presentation/screens/add_new_code_screen.dart';
 import '../../../../features/dashboard/presentation/screens/bar_code_scanner_screen.dart';
@@ -19,6 +20,7 @@ import '../../../../features/redeem/presentation/screens/replacement_screen.dart
 import '../../bindings/add_new_code_bindings.dart';
 import '../../bindings/checkout_bindings.dart';
 import '../../bindings/profile_bindings.dart';
+import '../../bindings/set_new_pass_binding.dart';
 import '../../bindings/update_password_bindings.dart';
 import '../../bindings/update_profile_bindings.dart';
 import '../../bindings/login_bindings.dart';
@@ -43,6 +45,7 @@ abstract final class AppRoute {
   static const String editPassword = "/edit-password";
   static const String pointsDetails = "/points-details";
   static const String ordersDetails = "/orders-details";
+  static const String resetPassword = "/reset-password";
 
   // static const String OrderDetails = '/OrderDetails';
 
@@ -115,5 +118,10 @@ abstract final class AppRoute {
           name: ordersDetails,
           page: () => OrdersDetailsScreen(order: Get.arguments),
         ),
+        GetPage(
+            name:resetPassword, 
+            page: () => const ResetPasswordFields(),
+            binding: ResetPasswordBinding(),
+  ),
       ];
 }
