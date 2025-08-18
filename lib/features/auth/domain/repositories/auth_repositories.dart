@@ -10,8 +10,8 @@ abstract class AuthRepositories {
 
   Future<Status<UserModel>> login(LoginRequestData data);
   Future<Status<void>> signUp(SignUpBodyData body);
-  Future<Status<void>> sendCode(String phone);
-  Future<Status<void>> checkCode(String code);
+  Future<Status<void>> sendCode(String mobile);
+  Future<Status<void>> checkCode(String otp,);
   Future<Status<void>> createNewPass(SetNewPasswordData newPass);
 
   Future<Status<List<AddressModel>>> getCountries();
