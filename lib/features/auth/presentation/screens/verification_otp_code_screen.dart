@@ -4,6 +4,7 @@ import 'package:pinput/pinput.dart';
 
 import '../../../../core/shared/custom_scaffold.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/functions/app_validate.dart';
 import '../../../dashboard/presentation/controller/verifaction_otp_controller.dart';
 import '../widgets/login/count_down_widget.dart';
@@ -21,7 +22,7 @@ class VerificationOtpCode extends StatefulWidget {
 
 class _VerificationOtpCodeState extends State<VerificationOtpCode> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  //need to make binding
+  //ntb
   final VerificationOtpController _controller =
       Get.put(VerificationOtpController(), permanent: false);
 
@@ -67,6 +68,27 @@ class _VerificationOtpCodeState extends State<VerificationOtpCode> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    localeLang().weHaveSendCodeTo,
+                    style:const TextStyle(
+                      fontSize: AppConst.paddingDefault,
+                      fontWeight: FontWeight.bold,
+                      ),
+                  ),
+                  Text(
+               ' ${widget.phoneNumber}',
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                      fontSize: AppConst.paddingMedium,
+                      fontWeight: FontWeight.bold,
+                      ),
+                  ),
+                ],
+              ),
+             const SizedBox(height: 30,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: Pinput(
@@ -89,7 +111,7 @@ class _VerificationOtpCodeState extends State<VerificationOtpCode> {
                   },
                 ),
               ),
-              const CountDownWidget(),
+               CountDownWidget(mobile: widget.phoneNumber),
               const SizedBox(height: 20),
               Obx(() {
                 final submitting = _controller.submitting;
