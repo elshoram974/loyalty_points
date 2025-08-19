@@ -9,6 +9,7 @@ abstract final class AppConst {
 
   static const double paddingExtraSmall = 4;
   static const double paddingSmall = 8;
+  static const double paddingMedium = 14;
   static const double paddingDefault = 16;
   static const double paddingBig = 24;
   static const double paddingExtraBig = 32;
