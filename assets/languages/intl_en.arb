@@ -408,7 +408,9 @@
     "mobileOrOtpMissing":"Mobile number or verification code is missing",
     "enterPasswordAndConfirmation":"Please enter password and confirmation",
     "passwordsDoNotMatch":"Password and confirmation do not match",
-    "otpError":"Incorrect OTP, please try again."
+    "otpError":"Incorrect OTP, please try again.",
+    "weHaveSendCodeTo":"We have sent code to"
+    
 
 
 }

@@ -509,6 +509,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "خطوة التحقق مطلوبة قبل ما تقدر تعيّن كلمة مرور جديدة",
     ),
     "wallet": MessageLookupByLibrary.simpleMessage("المحفظة الإلكترونية"),
+    "weHaveSendCodeTo": MessageLookupByLibrary.simpleMessage(
+      "لقد قمنا بارسال الرمز الى",
+    ),
     "welcomeToYou": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
     "welcome_to_businessName": m19,
     "whatsapp": MessageLookupByLibrary.simpleMessage("واتساب"),

@@ -2121,6 +2121,16 @@ class S {
       args: [],
     );
   }
+
+  /// `We have sent code to`
+  String get weHaveSendCodeTo {
+    return Intl.message(
+      'We have sent code to',
+      name: 'weHaveSendCodeTo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

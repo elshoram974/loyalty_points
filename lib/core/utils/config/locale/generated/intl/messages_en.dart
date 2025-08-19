@@ -520,6 +520,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Verification step is required before you can set a new password",
     ),
     "wallet": MessageLookupByLibrary.simpleMessage("E-wallet"),
+    "weHaveSendCodeTo": MessageLookupByLibrary.simpleMessage(
+      "We have sent code to",
+    ),
     "welcomeToYou": MessageLookupByLibrary.simpleMessage("Welcome to you"),
     "welcome_to_businessName": m19,
     "whatsapp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
