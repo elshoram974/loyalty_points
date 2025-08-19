@@ -63,7 +63,7 @@ class VerificationOtpController extends GetxController {
                 ? data['mobile'].toString()
                 : mobile;
 
-        Get.toNamed(
+        Get.offAllNamed(
           AppRoute.resetPassword,
           arguments: {
             'user_id': userId,
