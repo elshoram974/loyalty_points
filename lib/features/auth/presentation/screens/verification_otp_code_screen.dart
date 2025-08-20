@@ -68,25 +68,28 @@ class _VerificationOtpCodeState extends State<VerificationOtpCode> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    localeLang().weHaveSendCodeTo,
-                    style:const TextStyle(
-                      fontSize: AppConst.paddingDefault,
-                      fontWeight: FontWeight.bold,
-                      ),
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  style: const TextStyle(
+                    fontSize: AppConst.paddingDefault,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,    
                   ),
-                  Text(
-               ' ${widget.phoneNumber}',
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: AppConst.paddingMedium,
-                      fontWeight: FontWeight.bold,
+                  children: [
+                    TextSpan(
+                      text: localeLang().weHaveSendCodeTo,
+                    ),                  
+                    TextSpan(
+                      text: ' ${widget.phoneNumber}',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: AppConst.paddingMedium,
+                        fontWeight: FontWeight.bold,
                       ),
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
              const SizedBox(height: 30,),
               Padding(
