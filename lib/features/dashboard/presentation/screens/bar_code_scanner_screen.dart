@@ -23,11 +23,11 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   controller.dispose();
+  //   super.dispose();
+  // }
 
   final double dimensions = 250;
 

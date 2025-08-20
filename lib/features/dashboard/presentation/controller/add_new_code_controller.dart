@@ -36,11 +36,11 @@ class AddNewCodeControllerImp extends AddNewCodeController {
   @override
   bool get isLoading => _isLoading;
 
-  @override
-  void onClose() {
-    super.onClose();
-    textController.dispose();
-  }
+  // @override
+  // void onClose() {
+  //   super.onClose();
+  //   textController.dispose();
+  // }
 
   @override
   Future<void> scanCode() async {
