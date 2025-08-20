@@ -14,6 +14,7 @@ class CustomScaffold extends StatelessWidget {
     this.scaffoldKey,
     this.floatingActionButton,
     this.floatingActionButtonLocation,
+    this.resizeToAvoidBottomInset = true,
   });
   final bool canPop;
   final Widget? body;
@@ -24,6 +25,7 @@ class CustomScaffold extends StatelessWidget {
   final GlobalKey<ScaffoldState>? scaffoldKey;
   final void Function(bool, Object?)? onPopInvokedWithResult;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
+  final bool resizeToAvoidBottomInset;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,7 @@ class CustomScaffold extends StatelessWidget {
         floatingActionButtonLocation: floatingActionButtonLocation,
         endDrawer: drawer,
         bottomNavigationBar: bottomNavigationBar,
+        resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         body: SafeArea(
           child: MyResConstrainedBoxAlign(child: body ?? const SizedBox()),
         ),

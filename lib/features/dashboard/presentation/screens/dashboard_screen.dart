@@ -28,14 +28,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final kbOpen = MediaQuery.of(context).viewInsets.bottom > 0;
     return CustomScaffold(
+      resizeToAvoidBottomInset: false,
       canPop: false,
       onPopInvokedWithResult: (_, __) =>
           Get.find<DashboardController>().onPopInvoked(),
       appBar: const MyAppBar(),
-      floatingActionButton: const AddNewBarcodeFloatingButton(),
+      floatingActionButton: kbOpen ? null : const AddNewBarcodeFloatingButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const MyBottomNavBar(),
+      bottomNavigationBar:kbOpen ? null : const MyBottomNavBar(),
       body: GetBuilder<DashboardController>(
         id: AppString.updateSelectedScreen,
         builder: (controller) {
