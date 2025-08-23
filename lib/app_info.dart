@@ -6,6 +6,7 @@ import 'core/utils/models/config_model.dart';
 abstract final class AppInfo {
   const AppInfo();
 
+  // static const String baseURL = "http://192.168.100.200:8080/BackPetro";
   static const String baseURL = "https://points.petrojac.com";
 
   static const String appName = "الكسيب";
@@ -16,8 +17,8 @@ abstract final class AppInfo {
   /// country code like in locale to make initialize in phone fields
   static const String initCountryIsoCode = 'EG';
 
-  // static const bool isDebugMode = false;
-  static const bool isDebugMode = kDebugMode;
+  static const bool isDebugMode = false;
+  // static const bool isDebugMode = kDebugMode;
 
   static const int paginationLimit = 10;
 
