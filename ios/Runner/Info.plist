@@ -73,8 +73,9 @@
 	
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>We use your location to show nearby stores and offers and to improve delivery accuracy.</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>We use your location in the background to keep delivery updates accurate and show relevant nearby deals.</string>
+    <string>We need your location to deliver your order to the correct address and show nearby offers.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key> 
+    <string>We need your location to ensure your order reaches you at the right place and to show you nearby offers.</string>
+
 </dict>
 </plist>

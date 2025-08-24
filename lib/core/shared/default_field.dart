@@ -116,14 +116,14 @@ class _MyDefaultFieldState extends State<MyDefaultField> {
     }
   }
 
-  // @override
-  // void dispose() {
-  //   if (widget.autoDispose) {
-  //     widget.controller?.dispose();
-  //     widget.focusNode?.dispose();
-  //   }
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    if (widget.autoDispose) {
+      widget.controller?.dispose();
+      widget.focusNode?.dispose();
+    }
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
