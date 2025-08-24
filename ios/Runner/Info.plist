@@ -70,6 +70,11 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIStatusBarHidden</key>
+	
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+    <string>We use your location to show nearby stores and offers and to improve delivery accuracy.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We use your location in the background to keep delivery updates accurate and show relevant nearby deals.</string>
 </dict>
 </plist>
