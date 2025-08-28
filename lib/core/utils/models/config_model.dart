@@ -23,6 +23,7 @@ class ConfigModel extends Equatable {
   final int? _sellerOnePoundEquity;
   final int? _repOnePoundEquity;
   final List _social;
+  WhatsappSocial? whatsappSocial;
 
   int? onePoundEquity(AccountType type) {
     return _handleAccountTypeValues<int>(
@@ -65,11 +66,12 @@ class ConfigModel extends Equatable {
           SocialMediaType.fromType(e.keys.first, e.values.first);
 
       if (type != null) socialMedia.add(type);
+      if (type is WhatsappSocial) whatsappSocial = type;
     }
     return socialMedia;
   }
 
-  const ConfigModel({
+  ConfigModel({
     this.pointsValue,
     this.currency,
     this.loyaltyEnabled,
@@ -80,6 +82,7 @@ class ConfigModel extends Equatable {
     this.banner1,
     this.loginIntro,
     this.useLocalAuth = true,
+    this.whatsappSocial,
     int? sellerMinimumPointsToRedeem,
     int? repMinimumPointsToRedeem,
     int? sellerOnePoundEquity,

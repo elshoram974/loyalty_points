@@ -17,7 +17,7 @@ class ContactUsScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          localeLang(context).contactUs,
+          localeLang(context).socialMedia,
           textAlign: TextAlign.center,
           style: context.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.bold,

@@ -100,6 +100,5 @@ class WhatsappSocial extends SocialMediaType {
   IconData get icon => FontAwesomeIcons.whatsapp;
 
   @override
-  // TODO: implement name
   String get name => localeLang().whatsapp;
 }

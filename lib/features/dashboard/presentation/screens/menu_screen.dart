@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import '../../../../app_info.dart';
@@ -7,6 +8,7 @@ import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
 import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
+import '../../../../core/utils/functions/handle_url.dart';
 import '../../../../core/utils/helper/show_my_dialog.dart';
 import '../../../../core/utils/types/dashboard_tabs.dart';
 import '../../../../core/utils/types/social_media_type.dart';
@@ -55,12 +57,18 @@ class MenuScreen extends GetView<DashboardController> {
             title: localeLang(context).privacy_policy,
             onTap: () => Get.to(() => const PrivacyScreen()),
           ),
-          if(items.isNotEmpty)
-          TileButtonWidget(
-            icon: Icons.contact_support_outlined,
-            title: localeLang(context).contactUs,
-            onTap: () => Get.to(() => ContactUsScreen(items)),
-          ),
+          if (items.isNotEmpty)
+            TileButtonWidget(
+              icon: Icons.people_outlined,
+              title: localeLang(context).socialMedia,
+              onTap: () => Get.to(() => ContactUsScreen(items)),
+            ),
+          if (AppInfo.config?.whatsappSocial?.url != null)
+            TileButtonWidget(
+              icon: FontAwesomeIcons.whatsapp,
+              title: localeLang(context).contactUs,
+              onTap: () => launchURL(AppInfo.config!.whatsappSocial!.url),
+            ),
 
           TileButtonWidget(
             icon: Icons.delete_outline,
