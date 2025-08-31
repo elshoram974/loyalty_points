@@ -68,7 +68,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                   );
                 },
               ),
-              Image.asset(AppAssets.businessLogo),
+              // Image.asset(AppAssets.businessLogo),
             ],
           ),
         ),

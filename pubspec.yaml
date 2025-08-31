@@ -4,7 +4,7 @@ description: "A loyalty program, where points can be collected with every purcha
 
 publish_to: 'none'
 
-version: 1.0.2+2
+version: 1.0.2+3
 
 environment:
   sdk: ^3.6.1
