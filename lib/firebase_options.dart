@@ -63,6 +63,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '73977020857',
     projectId: 'petrojacapp',
     storageBucket: 'petrojacapp.firebasestorage.app',
-    iosBundleId: 'com.petrojac.loyaltyPoints',
+    iosBundleId: 'com.petrojac.kasieb',
   );
 }
