@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 import '../../../app_info.dart';
 import '../../status/errors/failure_body.dart';
@@ -11,7 +12,8 @@ Future<Status<T>> executeAndHandleErrors<T>(
 ]) async {
   try {
     return Success<T>(await function());
-  } catch (e) {
+  } catch (e, s) {
+    FirebaseCrashlytics.instance.recordError(e, s);
     if (AppInfo.isDebugMode) print("error: $e");
 
     T? data;
