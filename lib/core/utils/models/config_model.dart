@@ -16,6 +16,7 @@ class ConfigModel extends Equatable {
   final String? banner1;
   final String? loginIntro;
   final String? burnStepsHTML;
+  final String? clarityAppProjectId;
   final bool useLocalAuth;
 
   final int? _sellerMinimumPointsToRedeem;
@@ -83,6 +84,7 @@ class ConfigModel extends Equatable {
     this.loginIntro,
     this.useLocalAuth = true,
     this.whatsappSocial,
+    this.clarityAppProjectId,
     int? sellerMinimumPointsToRedeem,
     int? repMinimumPointsToRedeem,
     int? sellerOnePoundEquity,
@@ -111,6 +113,7 @@ class ConfigModel extends Equatable {
       sellerOnePoundEquity: data['seller_one_pound_equity'] as int?,
       repOnePoundEquity: data['rep_one_pound_equity'] as int?,
       loginIntro: data['login_intro'] as String?,
+      clarityAppProjectId: data['clarity_app_project_id'] as String?,
       useLocalAuth: AppInfo.useLocalAuth,
     );
   }
@@ -131,6 +134,7 @@ class ConfigModel extends Equatable {
       'seller_one_pound_equity': _sellerOnePoundEquity,
       'rep_one_pound_equity': _repOnePoundEquity,
       'login_intro': loginIntro,
+      'clarity_app_project_id': clarityAppProjectId,
     };
   }
 
@@ -161,6 +165,7 @@ class ConfigModel extends Equatable {
     int? repOnePoundEquity,
     List<dynamic>? social,
     String? loginIntro,
+    String? clarityAppProjectId,
   }) {
     return ConfigModel(
       pointsValue: pointsValue ?? this.pointsValue,
@@ -179,6 +184,7 @@ class ConfigModel extends Equatable {
       repOnePoundEquity: repOnePoundEquity ?? _repOnePoundEquity,
       social: social ?? _social,
       loginIntro: loginIntro ?? this.loginIntro,
+      clarityAppProjectId: clarityAppProjectId ?? this.clarityAppProjectId,
     );
   }
 
@@ -202,6 +208,7 @@ class ConfigModel extends Equatable {
       _repOnePoundEquity,
       _social,
       loginIntro,
+      clarityAppProjectId,
     ];
   }
 }

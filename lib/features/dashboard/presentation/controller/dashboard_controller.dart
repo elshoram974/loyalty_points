@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:clarity_flutter/clarity_flutter.dart';
 import 'package:get/get.dart';
 
 import '../../../../app_info.dart';
@@ -108,10 +109,11 @@ class DashboardControllerImp extends DashboardController {
     await repo.getUserData().listen(
       (status) {
         if (status is Success<UserModel?>) {
-          if(status.data == null) return;
+          if (status.data == null) return;
           realStatus ??= status;
           _user = status.data;
           _isLoadingUserData = false;
+          _setCustomUserDataClarity(_user);
           update(ids);
         } else {
           realStatus = status;
@@ -155,5 +157,24 @@ class DashboardControllerImp extends DashboardController {
       duration: const Duration(seconds: 2),
     );
     _back = DateTime.now();
+  }
+}
+
+void _setCustomUserDataClarity(UserModel? user) {
+  if (user == null) return;
+  void setTag(String key, String? value) {
+    if (value?.trim().isNotEmpty == true) {
+      final bool b = Clarity.setCustomTag(key, value!);
+
+      if (AppInfo.isDebugMode) print("Set $key to $value: $b ");
+    }
+  }
+
+  Clarity.setCustomUserId("${user.id}");
+
+  final Iterable<MapEntry<String, String?>> entries = user.toClarity().entries;
+
+  for (MapEntry<String, String?> d in entries) {
+    setTag(d.key, d.value);
   }
 }
