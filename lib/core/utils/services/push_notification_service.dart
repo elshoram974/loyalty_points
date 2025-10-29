@@ -154,12 +154,14 @@ class NotificationService {
   }
 
   static Future<String> getDeviceToken() async {
-    // if (Platform.isIOS) {
-    //   deviceToken = await fcm.getAPNSToken();
-    // } else {
-    deviceToken = await fcm.getToken() ?? '';
-    // }
+    try {
+      deviceToken = await fcm.getToken() ?? '';
+    } catch (e) {
+      if (Platform.isIOS) {
+        deviceToken = await fcm.getAPNSToken();
+      }
+    }
     log("fcmToken $deviceToken");
-    return deviceToken!;
+    return deviceToken ?? '';
   }
 }

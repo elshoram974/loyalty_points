@@ -92,15 +92,17 @@ class _AttachmentsValidationWidgetState
                           borderRadius:
                               BorderRadius.circular(AppConst.radiusSmall),
                           child: DottedBorder(
-                            color: state.hasError && images[i] == null
-                                ? context.theme.colorScheme.error
-                                : AppColor.borderColor,
-                            strokeWidth: 1,
-                            strokeCap: StrokeCap.butt,
-                            dashPattern: const [5, 5],
-                            padding: EdgeInsets.zero,
-                            borderType: BorderType.RRect,
-                            radius: const Radius.circular(AppConst.radiusSmall),
+                            options: RoundedRectDottedBorderOptions(
+                              color: state.hasError && images[i] == null
+                                  ? context.theme.colorScheme.error
+                                  : AppColor.borderColor,
+                              strokeWidth: 1,
+                              strokeCap: StrokeCap.butt,
+                              dashPattern: const [5, 5],
+                              padding: EdgeInsets.zero,
+                              radius:
+                                  const Radius.circular(AppConst.radiusSmall),
+                            ),
                             child: images[i] == null
                                 ? const Center(
                                     child: Icon(

@@ -108,10 +108,6 @@ class LoginControllerImp extends LoginController {
     try {
       authenticated = await localAuth.authenticate(
         localizedReason: localeLang().biometricPromptReason,
-        options: const AuthenticationOptions(
-          useErrorDialogs: true,
-          stickyAuth: true,
-        ),
       );
     } catch (e) {
       if (AppInfo.isDebugMode) print(e.toString());
