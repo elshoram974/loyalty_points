@@ -69,6 +69,9 @@ dependencies:
 
   # * for firebase
   firebase_core: ^3.13.0
+  firebase_crashlytics: ^4.3.10
+  firebase_analytics: ^11.6.0
+  clarity_flutter: ^1.4.3
   firebase_messaging: ^15.2.7
   flutter_local_notifications: ^19.1.0
  
@@ -94,6 +97,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - shorebird.yaml
 
 
   # example:

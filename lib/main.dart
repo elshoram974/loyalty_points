@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
+import 'dart:ui';
 
+import 'package:clarity_flutter/clarity_flutter.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -37,15 +40,38 @@ void main() async {
     ],
   );
   await InitialBindings.dependencies();
-  await NotificationService.initialize();
+  await Future.wait(
+    [
+      NotificationService.initialize(),
+      Get.find<ConfigController>().getConfigData(true),
+    ],
+  );
+
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
-  runApp(
-    DevicePreview(
-      enabled: AppInfo.isDebugMode,
-      builder: (context) => const MyApp(),
-    ),
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
+
+  final String? clarityId = AppInfo.config?.clarityAppProjectId;
+
+  Widget myApp = DevicePreview(
+    enabled: AppInfo.isDebugMode,
+    builder: (context) => const MyApp(),
   );
+
+  if (clarityId?.trim().isNotEmpty == true) {
+    myApp = ClarityWidget(
+      clarityConfig: ClarityConfig(
+        projectId: clarityId!,
+        logLevel: AppInfo.isDebugMode ? LogLevel.Debug : LogLevel.Info,
+      ),
+      app: myApp,
+    );
+  }
+  runApp(myApp);
 }
 
 class MyApp extends StatelessWidget {

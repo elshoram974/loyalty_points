@@ -7,7 +7,6 @@ import '../../../../core/shared/my_network_image.dart';
 import '../../../../core/shared/responsive/constrained_box.dart';
 import '../../../../core/utils/config/locale/local_lang.dart';
 import '../../../../core/utils/config/routes/routes.dart';
-import '../../../../core/utils/constants/app_assets.dart';
 import '../../../../core/utils/constants/app_color.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/constants/app_strings.dart';

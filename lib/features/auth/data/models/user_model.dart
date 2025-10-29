@@ -73,6 +73,22 @@ class UserModel extends Equatable {
         'created_at': createdAt.toIso8601String(),
         'email_verified_at': emailVerifiedAt?.toIso8601String(),
       };
+  Map<String, String?> toClarity() => {
+        'id': id.toString(),
+        'name': name,
+        'email': email,
+        'image_link': image?.path,
+        'provider_id': providerId.toString(),
+        'points_balance': pointsBalance.toString(),
+        'phone': phone,
+        'type': type.type,
+        'account_status': status.name,
+        'country': address,
+        'updated_at': updatedAt.toString(),
+        'created_at': createdAt.toString(),
+        'email_verified_at': emailVerifiedAt?.toString(),
+        'is_verified': isVerified.toString(),
+      };
 
   factory UserModel.empty() {
     return UserModel(
