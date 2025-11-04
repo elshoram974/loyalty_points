@@ -9,6 +9,7 @@ abstract final class AppInfo {
 
   static const String appName = "الكسيب";
   static const String appId = "com.petrojac.loyaltyPoints";
+  static const String iosAppId = "com.petrojac.kasieb";
   static const String appVersion = "1.0.0";
   static const int appBuildVersion = 1;
 

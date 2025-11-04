@@ -55,12 +55,13 @@ class _EditProfileImageWidgetState extends State<EditProfileImageWidget> {
                     },
               borderRadius: BorderRadius.circular(500),
               child: DottedBorder(
-                color: AppColor.borderColor,
-                strokeWidth: 1,
-                strokeCap: StrokeCap.butt,
-                dashPattern: const [5, 5],
-                padding: EdgeInsets.zero,
-                borderType: BorderType.Circle,
+                options: CircularDottedBorderOptions(
+                  color: AppColor.borderColor,
+                  strokeWidth: 1,
+                  strokeCap: StrokeCap.butt,
+                  dashPattern: const [5, 5],
+                  padding: EdgeInsets.zero,
+                ),
                 child: image == null
                     ? Stack(
                         fit: StackFit.expand,
